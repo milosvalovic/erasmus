@@ -1,0 +1,309 @@
+@import "reset.css";
+@import "fonts.css";
+
+#mainNav {
+    position: absolute;
+    font-family: Cairo-Regular, serif;
+    background-color: #ffffff;
+}
+
+#mainNav .navbar-brand {
+    color: #343a40
+}
+
+#mainNav a.navbar-brand i.ukf-logo {
+    width: 100px;
+    height: 100px;
+    display: block;
+    background: url("../../img/ukf_logo_blue.png") no-repeat;
+    background-size: 100px 100px;
+}
+
+#mainNav ul .navbar-brand i.erasmus-logo {
+    width: 150px;
+    height: 100px;
+    background: url("../../img/erasmus_logo_blue.png") no-repeat;
+    background-size: 150px 100px;
+    display: none;
+}
+
+#mainNav .navbar-toggler {
+    font-size: 12px;
+    font-weight: 800;
+    padding: 13px;
+    color: #343a40;
+    background: url("../../img/toogle_navigation.png") no-repeat;
+}
+
+#mainNav .navbar-nav>li.nav-item>a {
+    font-size: 20px;
+    border-bottom: solid 2px transparent;
+}
+
+@media only screen and (min-width: 992px) {
+    #mainNav a.navbar-brand i.ukf-logo {
+        background: url("../../img/ukf_logo_white.png") no-repeat;
+        background-size: 100px 100px;
+    }
+
+    #mainNav ul .navbar-brand i.erasmus-logo {
+        display: block;
+        background: url("../../img/erasmus_logo_white.png") no-repeat;
+        background-size: 150px 100px;
+    }
+
+    #mainNav {
+        border-bottom: 1px solid transparent;
+        background: transparent
+    }
+
+    #mainNav .navbar-brand {
+        padding: 10px 20px;
+        color: #fff
+    }
+
+    #mainNav .navbar-brand:focus,
+    #mainNav .navbar-nav>li.nav-item>a {
+        padding: 10px 20px;
+        color: #fff
+    }
+
+    #mainNav .navbar-nav>li.nav-item>a:focus,
+    #mainNav .navbar-nav>li.nav-item>a.nav-link:hover {
+        border-bottom: solid 2px #23b9ce;
+    }
+
+    #mainNav a.navbar-brand i.ukf-logo:hover {
+        background: url("../../img/ukf_logo_blue.png");
+        background-size: 100px 100px;
+    }
+
+    #mainNav a.navbar-brand i.erasmus-logo:hover {
+        background: url("../../img/erasmus_logo_blue.png");
+        background-size: 150px 100px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #mainNav {
+        -webkit-transition: background-color 0.2s;
+        -moz-transition: background-color 0.2s;
+        transition: background-color 0.2s;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        -webkit-backface-visibility: hidden
+    }
+
+    #mainNav.is-fixed {
+        position: fixed;
+        top: -67px;
+        -webkit-transition: -webkit-transform 0.2s;
+        -moz-transition: -moz-transform 0.2s;
+        transition: transform 0.2s;
+        border-bottom: 1px solid #fff;
+        background-color: rgba(255, 255, 255, 0.9)
+    }
+
+    #mainNav.is-fixed .navbar-brand {
+        color: #212529
+    }
+
+    #mainNav.is-fixed .navbar-nav .links>li.nav-item>a {
+        color: #212529
+    }
+
+    #mainNav.is-visible {
+        -webkit-transform: translate3d(0, 100%, 0);
+        -moz-transform: translate3d(0, 100%, 0);
+        -ms-transform: translate3d(0, 100%, 0);
+        -o-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0)
+    }
+}
+
+header.masthead {
+    width: 100vw;
+    height: 100vh;
+    background: url(../../img/erasmus_background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+header.masthead .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #212529;
+    opacity: 0.7;
+}
+
+header.masthead,
+header.masthead .post-heading,
+header.masthead .site-heading {
+    padding: 150px 0 150px;
+    color: white
+}
+
+@media only screen and (min-width: 768px) {
+    header.masthead,
+    header.masthead .post-heading,
+    header.masthead .site-heading {
+        padding: 150px 0
+    }
+}
+
+header.masthead .site-heading {
+    text-align: center
+}
+
+header.masthead h1,
+header.masthead .site-heading h1 {
+    font-size: 50px;
+    margin-top: 0
+}
+
+header.masthead .subheading,
+header.masthead .site-heading .subheading {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.1;
+    display: block;
+    margin: 10px 0 0;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+}
+
+@media only screen and (min-width: 768px) {
+    header.masthead   h1,
+    header.masthead .site-heading h1 {
+        font-size: 80px
+    }
+}
+
+header.masthead .post-heading h1 {
+    font-size: 35px
+}
+
+header.masthead .post-heading .meta,
+header.masthead .post-heading .subheading {
+    line-height: 1.1;
+    display: block
+}
+
+header.masthead .post-heading .subheading {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 10px 0 30px;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+}
+
+header.masthead .post-heading .meta {
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    font-family: 'Lora', 'Times New Roman', serif
+}
+
+header.masthead .post-heading .meta a {
+    color: #fff
+}
+
+@media only screen and (min-width: 768px) {
+    header.masthead .post-heading h1 {
+        font-size: 55px
+    }
+
+    header.masthead .post-heading .subheading {
+        font-size: 30px
+    }
+}
+
+div.search-modal h1{
+    font-family: Cairo-Bold, serif;
+    font-style: italic;
+    font-size: 35px;
+    text-align: left;
+    margin-bottom: 30px;
+    color: #000000;
+}
+
+div.search-modal{
+    padding: 30px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    -webkit-box-shadow: 10px 10px 17px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 17px -7px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 17px -7px rgba(0,0,0,0.75);
+}
+
+div.input-items {
+    overflow: auto;
+}
+div.input-items > form > label{
+    position: absolute;
+    font-family: Cairo-SemiBold, serif;
+    color: #000;
+}
+
+div.input-items > form > input, select{
+    width: 49%;
+    height: 50px;
+    position: relative;
+    top: 23px;
+    font-family: Cairo-Regular, serif;
+    font-size: 20px;
+    padding-left: 10px;
+    margin-bottom: 35px;
+    border: solid 1px #a6a6a6;
+}
+
+div.input-items > form > select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(../../img/drop_down_arrow.gif) 96% / 15% no-repeat;
+    background-size: 25px 15px;
+}
+
+div.input-items > form > input, select > option{
+    font-family: Cairo-Regular, serif;
+    font-size: 20px;
+}
+
+div.input-items > form > input[name="country"], input[name="university"], input[name="from"]{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    left: 2px;
+}
+
+div.input-items > form > select[name="stays"], select[name="rating"], input[name="to"]{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    right: 3px;
+}
+
+div.input-items > form > select[name="stays"], select[name="rating"]::selection{
+    font-family: Cairo-Regular, serif;
+    font-size: 20px;
+}
+
+div.input-items > form > select[name="rating"], select[name="stays"]::selection{
+    font-family: Cairo-Regular, serif;
+    font-size: 20px;
+}
+
+div.input-items > form > input[type="submit"]{
+    width: 110px;
+    float: right;
+    font-family: Cairo-Bold, serif;
+    border: solid 1px #898989;
+    border-radius: 5px;
+    background: #007183;
+    color: white;
+}
