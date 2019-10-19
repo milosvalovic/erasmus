@@ -14,17 +14,23 @@ class CreateMobilityTable extends Migration
     public function up()
     {
         Schema::create('mobility', function (Blueprint $table) {
-            $table->increments('ID');
-            $table->foreign('mobility_types_ID')
-                ->references('ID')->on('partner_university')
-                ->onDelete('cascade');
+            $table->bigIncrements('ID');
+            $table->unsignedBigInteger('mobility_types_ID');
             $table->tinyInteger('deleted');
-            $table->foreign('partner_university_ID')
-                ->references('ID')->on('mobility_types')
-                ->onDelete('cascade');
+            $table->unsignedBigInteger('partner_university_ID');
             $table->smallInteger('grant');
-            $table->increments('info')->nullable();
+            $table->text('info')->nullable();
             $table->timestamps();
+
+            $table->foreign('mobility_types_ID')
+                ->references('ID')
+                ->on('mobility_types')
+                ->onDelete('cascade');
+
+            $table->foreign('partner_university_ID')
+                ->references('ID')
+                ->on('partner_university')
+                ->onDelete('cascade');
         });
     }
 

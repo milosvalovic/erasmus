@@ -14,7 +14,7 @@ class CreateStaticTextTable extends Migration
     public function up()
     {
         Schema::create('static_text', function (Blueprint $table) {
-            $table->increments('ID');
+            $table->bigIncrements('ID');
             $table->string('name', 45);
             $table->text('description');
             $table->tinyInteger('deleted');

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStatusSeasonTable extends Migration
+class CreateBlogStatus extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateStatusSeasonTable extends Migration
      */
     public function up()
     {
-        Schema::create('status_season', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('blog_status', function (Blueprint $table) {
+            $table->increments('ID');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ class CreateStatusSeasonTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('status_season');
+        //
     }
 }

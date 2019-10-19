@@ -13,7 +13,10 @@ class CreateStatusBlog extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('status_blog', function (Blueprint $table) {
+            $table->increments('ID');
+            $table->timestamps();
+        });
     }
 
     /**

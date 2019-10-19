@@ -14,7 +14,7 @@ class CreateBlogFilesTable extends Migration
     public function up()
     {
         Schema::create('blog_files', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('ID');
             $table->timestamps();
         });
     }

@@ -14,7 +14,8 @@ class CreateSeasonStatusTable extends Migration
     public function up()
     {
         Schema::create('season_status', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('ID');
+            $table->string('name', 45);
             $table->timestamps();
         });
     }
