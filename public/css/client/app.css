@@ -4,7 +4,7 @@
 #mainNav {
     position: absolute;
     font-family: Cairo-Regular, serif;
-    background-color: #ffffff;
+    background-color: #eee;
 }
 
 #mainNav .navbar-brand {
@@ -35,7 +35,7 @@
     background: url("../../img/toogle_navigation.png") no-repeat;
 }
 
-#mainNav .navbar-nav>li.nav-item>a {
+#mainNav .navbar-nav > li.nav-item > a {
     font-size: 20px;
     border-bottom: solid 2px transparent;
 }
@@ -67,13 +67,13 @@
     }
 
     #mainNav .navbar-brand:focus,
-    #mainNav .navbar-nav>li.nav-item>a {
+    #mainNav .navbar-nav > li.nav-item > a {
         padding: 10px 20px;
         color: #fff
     }
 
-    #mainNav .navbar-nav>li.nav-item>a:focus,
-    #mainNav .navbar-nav>li.nav-item>a.nav-link:hover {
+    #mainNav .navbar-nav > li.nav-item > a:focus,
+    #mainNav .navbar-nav > li.nav-item > a.nav-link:hover {
         border-bottom: solid 2px #23b9ce;
     }
 
@@ -115,7 +115,7 @@
         color: #212529
     }
 
-    #mainNav.is-fixed .navbar-nav .links>li.nav-item>a {
+    #mainNav.is-fixed .navbar-nav .links > li.nav-item > a {
         color: #212529
     }
 
@@ -151,7 +151,7 @@ header.masthead .overlay {
 header.masthead,
 header.masthead .post-heading,
 header.masthead .site-heading {
-    padding: 150px 0 150px;
+    padding: 140px 0 140px;
     color: white
 }
 
@@ -159,7 +159,7 @@ header.masthead .site-heading {
     header.masthead,
     header.masthead .post-heading,
     header.masthead .site-heading {
-        padding: 150px 0
+        padding: 140px 0
     }
 }
 
@@ -184,7 +184,7 @@ header.masthead .site-heading .subheading {
 }
 
 @media only screen and (min-width: 768px) {
-    header.masthead   h1,
+    header.masthead h1,
     header.masthead .site-heading h1 {
         font-size: 80px
     }
@@ -228,7 +228,7 @@ header.masthead .post-heading .meta a {
     }
 }
 
-div.search-modal h1{
+div.search-modal h1 {
     font-family: Cairo-Bold, serif;
     font-style: italic;
     font-size: 35px;
@@ -237,25 +237,26 @@ div.search-modal h1{
     color: #000000;
 }
 
-div.search-modal{
+div.search-modal {
     padding: 30px;
     border-radius: 5px;
     background-color: #ffffff;
-    -webkit-box-shadow: 10px 10px 17px -7px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 17px -7px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 17px -7px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 17px -7px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 17px -7px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 17px -7px rgba(0, 0, 0, 0.75);
 }
 
 div.input-items {
     overflow: auto;
 }
-div.input-items > form > label{
+
+div.input-items > form > label {
     position: absolute;
     font-family: Cairo-SemiBold, serif;
     color: #000;
 }
 
-div.input-items > form > input, select{
+div.input-items > form > input, select {
     width: 49%;
     height: 50px;
     position: relative;
@@ -267,7 +268,7 @@ div.input-items > form > input, select{
     border: solid 1px #a6a6a6;
 }
 
-div.input-items > form > select{
+div.input-items > form > select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -275,34 +276,34 @@ div.input-items > form > select{
     background-size: 25px 15px;
 }
 
-div.input-items > form > input, select > option{
+div.input-items > form > input, select > option {
     font-family: Cairo-Regular, serif;
     font-size: 20px;
 }
 
-div.input-items > form > input[name="country"], input[name="university"], input[name="from"]{
+div.input-items > form > input[name="country"], input[name="university"], input[name="from"] {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     left: 2px;
 }
 
-div.input-items > form > select[name="stays"], select[name="rating"], input[name="to"]{
+div.input-items > form > select[name="stays"], select[name="rating"], input[name="to"] {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     right: 3px;
 }
 
-div.input-items > form > select[name="stays"], select[name="rating"]::selection{
+div.input-items > form > select[name="stays"], select[name="rating"]::selection {
     font-family: Cairo-Regular, serif;
     font-size: 20px;
 }
 
-div.input-items > form > select[name="rating"], select[name="stays"]::selection{
+div.input-items > form > select[name="rating"], select[name="stays"]::selection {
     font-family: Cairo-Regular, serif;
     font-size: 20px;
 }
 
-div.input-items > form > input[type="submit"]{
+div.input-items > form > input[type="submit"] {
     width: 110px;
     float: right;
     font-family: Cairo-Bold, serif;
@@ -310,4 +311,87 @@ div.input-items > form > input[type="submit"]{
     border-radius: 5px;
     background: #007183;
     color: white;
+}
+
+div.input-items > form > input[type="submit"]:hover {
+    background: #004351;
+}
+
+section#current-opportunities h2.section-heading {
+    font-family: Cairo-Bold, serif;
+    font-style: italic;
+    font-size: 35px;
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #000000;
+}
+
+section#current-opportunities img {
+    width: 250px;
+    height: 170px;
+    margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 1200px) {
+    section#current-opportunities img {
+        width: 350px;
+        height: 230px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    section#current-opportunities img {
+        width: 250px;
+        height: 170px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    section#current-opportunities img {
+        width: 350px;
+        height: 230px;
+    }
+}
+
+section#current-opportunities a.current-opportunitie-name {
+    color: #000000;
+    font-family: Cairo-Bold, serif;
+    font-size: 20px;
+    font-style: italic;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+section#current-opportunities a.current-opportunitie-name:hover {
+    color: #555555;
+}
+
+section#current-opportunities p.current-opportunitie-date {
+    font-family: Cairo-Light, serif;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+section#current-opportunities p.current-opportunitie-comments {
+    font-family: Cairo-Regular, serif;
+    font-size: 18px;
+    color: #007183;
+    margin-bottom: 20px;
+}
+
+section#current-opportunities div#more-opportunitie {
+    margin-top: 30px;
+}
+
+section#current-opportunities div#more-opportunitie a{
+    font-family: Cairo-Light, serif;
+    font-size: 18px;
+    text-decoration: none;
+    color: #23b9ce;
+}
+
+section#current-opportunities div#more-opportunitie a:hover {
+    color: #239691;
 }
