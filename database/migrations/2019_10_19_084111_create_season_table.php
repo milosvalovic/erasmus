@@ -20,11 +20,10 @@ class CreateSeasonTable extends Migration
             $table->smallInteger('count_students');
             $table->smallInteger('count_registrations');
             $table->unsignedBigInteger('mobility_ID');
-            $table->tinyInteger('auto_confirm');
-            $table->tinyInteger('deleted');
             $table->date('date_start_mobility');
             $table->date('date_end_mobility');
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('mobility_ID')
                 ->references('ID')

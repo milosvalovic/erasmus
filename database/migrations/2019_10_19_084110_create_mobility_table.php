@@ -16,11 +16,11 @@ class CreateMobilityTable extends Migration
         Schema::create('mobility', function (Blueprint $table) {
             $table->bigIncrements('ID');
             $table->unsignedBigInteger('mobility_types_ID');
-            $table->tinyInteger('deleted');
             $table->unsignedBigInteger('partner_university_ID');
             $table->smallInteger('grant');
             $table->text('info')->nullable();
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('mobility_types_ID')
                 ->references('ID')

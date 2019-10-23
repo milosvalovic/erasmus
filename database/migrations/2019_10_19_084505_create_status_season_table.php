@@ -17,9 +17,9 @@ class CreateStatusSeasonTable extends Migration
             $table->increments('ID');
             $table->unsignedBigInteger('season_status_ID');
             $table->unsignedBigInteger('users_season_ID');
-            $table->date('date');
             $table->unsignedBigInteger('users_ID');
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('season_status_ID')
                 ->references('ID')
@@ -34,7 +34,7 @@ class CreateStatusSeasonTable extends Migration
             $table->foreign('users_ID')
                 ->references('ID')
                 ->on('users')
-                ->onDelete('cascade');
+                ->onDelete('restrict');
         });
     }
 

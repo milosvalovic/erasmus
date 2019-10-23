@@ -17,6 +17,7 @@ class CreateSeasonStatusTable extends Migration
             $table->bigIncrements('ID');
             $table->string('name', 45);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

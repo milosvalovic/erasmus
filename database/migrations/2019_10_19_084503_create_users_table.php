@@ -19,10 +19,11 @@ class CreateUsersTable extends Migration
             $table->string('password', 128);
             $table->string('first_name', 45);
             $table->string('last_name', 45);
-            $table->smallInteger('deleted');
             $table->unsignedBigInteger('roles_ID');
             $table->smallInteger('newsletter');
+            $table->string('hash',128);
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('roles_ID')
                 ->references('ID')
