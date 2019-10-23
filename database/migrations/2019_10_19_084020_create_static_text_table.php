@@ -17,8 +17,8 @@ class CreateStaticTextTable extends Migration
             $table->bigIncrements('ID');
             $table->string('name', 45);
             $table->text('description');
-            $table->tinyInteger('deleted');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

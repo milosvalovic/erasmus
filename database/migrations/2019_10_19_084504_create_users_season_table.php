@@ -17,9 +17,8 @@ class CreateUsersSeasonTable extends Migration
             $table->bigIncrements('ID');
             $table->unsignedBigInteger('users_ID')->nullable();
             $table->unsignedBigInteger('season_ID')->nullable();
-            $table->date('date');
-            $table->tinyInteger('deleted');
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('users_ID')
                 ->references('ID')
