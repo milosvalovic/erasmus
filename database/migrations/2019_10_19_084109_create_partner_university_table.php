@@ -15,7 +15,7 @@ class CreatePartnerUniversityTable extends Migration
     {
         Schema::create('partner_university', function (Blueprint $table) {
             $table->bigIncrements('ID');
-            $table->string('country', 45);
+            $table->unsignedInteger('country_ID');
             $table->string('city', 45);
             $table->string('address',100);
             $table->string('name', 100);
@@ -25,6 +25,12 @@ class CreatePartnerUniversityTable extends Migration
             $table->string('coordinates', 150);
             $table->timestamps();
             $table->softDeletes();
+
+            $table->foreign('country_ID')
+                ->references('ID')
+                ->on('countries')
+                ->onDelete('cascade');
+
         });
     }
 

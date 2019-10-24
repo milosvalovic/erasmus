@@ -16,7 +16,7 @@ class CreateBlogTable extends Migration
         Schema::create('blog', function (Blueprint $table) {
             $table->increments('ID');
             $table->text('article');
-            $table->varchar('title',200);
+            $table->string('title',200);
             $table->tinyInteger('status');
             $table->unsignedBigInteger('users_ID');
             $table->unsignedBigInteger('mobility_ID');
