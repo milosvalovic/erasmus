@@ -6,4 +6,3 @@
 @show
 
 @yield('content')
-@include('layout.client.footer')

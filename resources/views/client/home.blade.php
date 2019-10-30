@@ -1,5 +1,6 @@
 @extends('layout.client.master')
 @section('title', 'Domov')
+@section('css', asset('css/client/home.css'))
 @section('masthead')
     @include('client.layout.home.masthead')
 @endsection
@@ -8,4 +9,5 @@
     @include('client.layout.home.universities')
     @include('client.layout.home.newsletter')
     @include('client.layout.home.contact')
+    @include('layout.client.footer')
 @endsection

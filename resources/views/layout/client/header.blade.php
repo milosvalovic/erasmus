@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/jquery-jvectormap/jqvmap.min.css') }}"/>
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/client/app.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="@yield('css')"/>
 
     <script type="text/javascript" src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('vendor/bootstrap/bootstrap.min.js') }}"></script>
