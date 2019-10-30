@@ -14,14 +14,15 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/animate-css/animate.min.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/bootstrap/bootstrap.min.css') }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('vendor/font-awesome/font-awesome.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('vendor/jquery-jvectormap/jqvmap.min.css') }}"/>
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/client/app.css') }}"/>
 
     <script type="text/javascript" src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('vendor/bootstrap/bootstrap.min.js') }}"></script>
-    <script type="text/javascript"
-            src="{{ asset('vendor/jquery-jvectormap/jquery-jvectormap-2.0.3.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('vendor/jquery-jvectormap/jquery.vmap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('vendor/jquery-jvectormap/jquery.vmap.world.js') }}"></script>
     <script type="text/javascript" src="{{ asset('vendor/typed-js/typed.min.js') }}"></script>
 
     <script type="text/javascript" src="{{ asset('js/client/app.js') }}"></script>
@@ -48,6 +49,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/') }}">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/') }}">FAQ</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/') }}">Účet</a>
@@ -103,41 +107,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="section-heading">Naše aktualné ponuky mobilít</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-3 col-sm-6 text-center">
-                <img src="{{ asset('uploads/temp/a.jpg') }}" alt="Popis mobility a" title="Popis mobility a"
-                     class="rounded">
-                <br/>
-                <a href="{{ url('/') }}" class="current-opportunitie-name">Europa - studijny pobyt</a>
-                <p class="current-opportunitie-date">prihlasky do 13.10.2019</p>
-                <p class="current-opportunitie-comments">36 kommentarov</p>
-            </div>
-            <div class="col-xl-3 col-sm-6 text-center">
-                <img src="{{ asset('uploads/temp/b.jpg') }}" alt="Popis mobility b" title="Popis mobility b"
-                     class="rounded">
-                <br/>
-                <a href="{{ url('/') }}" class="current-opportunitie-name">Tchaj-wan, Hongkong, Čína</a>
-                <p class="current-opportunitie-date">prihlášky do 20.11.2019</p>
-                <p class="current-opportunitie-comments">10 kommentarov</p>
-            </div>
-            <div class="col-xl-3 col-sm-6 text-center">
-                <img src="{{ asset('uploads/temp/c.jpg') }}" alt="Popis mobility c" title="Popis mobility c"
-                     class="rounded">
-                <br/>
-                <a href="{{ url('/') }}" class="current-opportunitie-name">Rusko - St. Petersburg</a>
-                <p class="current-opportunitie-date">prihlášky do 13.11.2019</p>
-                <p class="current-opportunitie-comments">23 kommentarov</p>
-            </div>
-            <div class="col-xl-3 col-sm-6 text-center">
-                <img src="{{ asset('uploads/temp/d.jpg') }}" alt="Popis mobility d" title="Popis mobility d"
-                     class="rounded">
-                <br/>
-                <a href="{{ url('/') }}" class="current-opportunitie-name">Malajsie</a>
-                <p class="current-opportunitie-date">prihlášky do 12.12.2019</p>
-                <p class="current-opportunitie-comments">45 kommentarov</p>
+                <h2 class="section-heading">Naše aktualné ponuky pobytov</h2>
             </div>
         </div>
         <div class="row">
@@ -174,7 +144,145 @@
                 <p class="current-opportunitie-comments">5 kommentarov</p>
             </div>
         </div>
-        <div class="row" id="more-opportunitie">
+        <div class="row more-opportunitie">
+            <div class="container">
+                <div class="cold-md-12 text-right">
+                    <a href="{{ url('/') }}">Ďalšie pobyty ...</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="section-heading">Naše aktualné ponuky stážov</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-3 col-sm-6 text-center">
+                <img src="{{ asset('uploads/temp/e.gif') }}" alt="Popis mobility e" title="Popis mobility e"
+                     class="rounded">
+                <br/>
+                <a href="{{ url('/') }}" class="current-opportunitie-name">Taiwan</a>
+                <p class="current-opportunitie-date">prihlášky do 09.10.2019</p>
+                <p class="current-opportunitie-comments">33 kommentarov</p>
+            </div>
+            <div class="col-xl-3 col-sm-6 text-center">
+                <img src="{{ asset('uploads/temp/f.jpg') }}" alt="Popis mobility f" title="Popis mobility f"
+                     class="rounded">
+                <br/>
+                <a href="{{ url('/') }}" class="current-opportunitie-name">USA</a>
+                <p class="current-opportunitie-date">prihlášky do 05.11.2019</p>
+                <p class="current-opportunitie-comments">13 kommentarov</p>
+            </div>
+            <div class="col-xl-3 col-sm-6 text-center">
+                <img src="{{ asset('uploads/temp/g.jpg') }}" alt="Popis mobility g" title="Popis mobility g"
+                     class="rounded">
+                <br/>
+                <a href="{{ url('/') }}" class="current-opportunitie-name">Latinská Amerika</a>
+                <p class="current-opportunitie-date">prihlášky do 11.11.2019</p>
+                <p class="current-opportunitie-comments">35 kommentarov</p>
+            </div>
+            <div class="col-xl-3 col-sm-6 text-center">
+                <img src="{{ asset('uploads/temp/h.jpg') }}" alt="Popis mobility h" title="Popis mobility h"
+                     class="rounded">
+                <br/>
+                <a href="{{ url('/') }}" class="current-opportunitie-name">Velká Británie</a>
+                <p class="current-opportunitie-date">prihlášky do 12.18.2019</p>
+                <p class="current-opportunitie-comments">5 kommentarov</p>
+            </div>
+        </div>
+        <div class="row more-opportunitie">
+            <div class="container">
+                <div class="cold-md-12 text-right">
+                    <a href="{{ url('/') }}">Ďalšie pobyty ...</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="section-heading">Naše aktualné ponuky prednáškových pobytov</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-3 col-sm-6 text-center">
+                <img src="{{ asset('uploads/temp/e.gif') }}" alt="Popis mobility e" title="Popis mobility e"
+                     class="rounded">
+                <br/>
+                <a href="{{ url('/') }}" class="current-opportunitie-name">Taiwan</a>
+                <p class="current-opportunitie-date">prihlášky do 09.10.2019</p>
+                <p class="current-opportunitie-comments">33 kommentarov</p>
+            </div>
+            <div class="col-xl-3 col-sm-6 text-center">
+                <img src="{{ asset('uploads/temp/f.jpg') }}" alt="Popis mobility f" title="Popis mobility f"
+                     class="rounded">
+                <br/>
+                <a href="{{ url('/') }}" class="current-opportunitie-name">USA</a>
+                <p class="current-opportunitie-date">prihlášky do 05.11.2019</p>
+                <p class="current-opportunitie-comments">13 kommentarov</p>
+            </div>
+            <div class="col-xl-3 col-sm-6 text-center">
+                <img src="{{ asset('uploads/temp/g.jpg') }}" alt="Popis mobility g" title="Popis mobility g"
+                     class="rounded">
+                <br/>
+                <a href="{{ url('/') }}" class="current-opportunitie-name">Latinská Amerika</a>
+                <p class="current-opportunitie-date">prihlášky do 11.11.2019</p>
+                <p class="current-opportunitie-comments">35 kommentarov</p>
+            </div>
+            <div class="col-xl-3 col-sm-6 text-center">
+                <img src="{{ asset('uploads/temp/h.jpg') }}" alt="Popis mobility h" title="Popis mobility h"
+                     class="rounded">
+                <br/>
+                <a href="{{ url('/') }}" class="current-opportunitie-name">Velká Británie</a>
+                <p class="current-opportunitie-date">prihlášky do 12.18.2019</p>
+                <p class="current-opportunitie-comments">5 kommentarov</p>
+            </div>
+        </div>
+        <div class="row more-opportunitie">
+            <div class="container">
+                <div class="cold-md-12 text-right">
+                    <a href="{{ url('/') }}">Ďalšie pobyty ...</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="section-heading">Naše aktualné ponuky školení</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-3 col-sm-6 text-center">
+                <img src="{{ asset('uploads/temp/e.gif') }}" alt="Popis mobility e" title="Popis mobility e"
+                     class="rounded">
+                <br/>
+                <a href="{{ url('/') }}" class="current-opportunitie-name">Taiwan</a>
+                <p class="current-opportunitie-date">prihlášky do 09.10.2019</p>
+                <p class="current-opportunitie-comments">33 kommentarov</p>
+            </div>
+            <div class="col-xl-3 col-sm-6 text-center">
+                <img src="{{ asset('uploads/temp/f.jpg') }}" alt="Popis mobility f" title="Popis mobility f"
+                     class="rounded">
+                <br/>
+                <a href="{{ url('/') }}" class="current-opportunitie-name">USA</a>
+                <p class="current-opportunitie-date">prihlášky do 05.11.2019</p>
+                <p class="current-opportunitie-comments">13 kommentarov</p>
+            </div>
+            <div class="col-xl-3 col-sm-6 text-center">
+                <img src="{{ asset('uploads/temp/g.jpg') }}" alt="Popis mobility g" title="Popis mobility g"
+                     class="rounded">
+                <br/>
+                <a href="{{ url('/') }}" class="current-opportunitie-name">Latinská Amerika</a>
+                <p class="current-opportunitie-date">prihlášky do 11.11.2019</p>
+                <p class="current-opportunitie-comments">35 kommentarov</p>
+            </div>
+            <div class="col-xl-3 col-sm-6 text-center">
+                <img src="{{ asset('uploads/temp/h.jpg') }}" alt="Popis mobility h" title="Popis mobility h"
+                     class="rounded">
+                <br/>
+                <a href="{{ url('/') }}" class="current-opportunitie-name">Velká Británie</a>
+                <p class="current-opportunitie-date">prihlášky do 12.18.2019</p>
+                <p class="current-opportunitie-comments">5 kommentarov</p>
+            </div>
+        </div>
+        <div class="row more-opportunitie">
             <div class="container">
                 <div class="cold-md-12 text-right">
                     <a href="{{ url('/') }}">Ďalšie pobyty ...</a>
@@ -183,5 +291,131 @@
         </div>
     </div>
 </section>
+<section class="page-section" id="partner-universities">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="section-heading">Naše partnerské Univerzity</h2>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div id="vmap" style="width: 73vw; height: 400px; margin: 0 auto"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="page-section" id="newsletter">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 newsletter-width text-center">
+                <div class="newsletter-background">
+                    <h2 class="section-heading">CHCETE BYŤ INFORMOVANÝ AKO PRVÝ O podujatiach k MOBILITáM?</h2>
+                    <form action="{{ url('/') }}" method="POST" enctype="application/x-www-form-urlencoded">
+                        <input type="email" name="email" value="meno.priezvisko@student.ukf.sk">
+                        <input type="submit" value="ÁNO">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="page-section" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-heading">Kontakt</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <h3 class="contact-title">Ing. Silvia Hrozenská, PhD.</h3>
+                <ul>
+                    <li><span class="item-name">Pracovisko:</span> Oddelenie pre medzinárodné vzťahy</li>
+                    <li><span class="item-name">Telefón do zamestnania:</span> +421 37 6408 032</li>
+                    <li><span class="item-name">Mobilný telefon:</span> +421 948 261622</li>
+                    <li><span class="item-name">Označenie</span> kancelárie: THA217</li>
+                    <li><span class="item-name">E-mail:</span> shrozenska@ukf.sk</li>
+                </ul>
+            </div>
+            <div class="col-lg-6 col-sm-12">
+                <h3 class="contact-title">Ing. Anita Garajová, PhD.</h3>
+                <ul>
+                    <li><span class="item-name">Pracovisko:</span> ddelenie pre medzinárodné vzťahy</li>
+                    <li><span class="item-name">Telefón do zamestnania:</span> tel/fax: +421 37 6408 031</li>
+                    <li><span class="item-name">Mobilný telefon:</span> +421 948 261622</li>
+                    <li><span class="item-name">Označenie</span></li>
+                    <li><span class="item-name">E-mail:</span> agarajova@ukf.sk</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <h3 class="contact-title">Ing. Silvia Hrozenská, PhD.</h3>
+                <ul>
+                    <li><span class="item-name">Pracovisko:</span> Oddelenie pre medzinárodné vzťahy</li>
+                    <li><span class="item-name">Telefón do zamestnania:</span> +421 37 6408 032</li>
+                    <li><span class="item-name">Mobilný telefon:</span> +421 948 261622</li>
+                    <li><span class="item-name">Označenie</span> kancelárie: THA217</li>
+                    <li><span class="item-name">E-mail:</span> shrozenska@ukf.sk</li>
+                </ul>
+            </div>
+            <div class="col-lg-6 col-sm-12">
+                <h3 class="contact-title">Ing. Anita Garajová, PhD.</h3>
+                <ul>
+                    <li><span class="item-name">Pracovisko:</span> ddelenie pre medzinárodné vzťahy</li>
+                    <li><span class="item-name">Telefón do zamestnania:</span> tel/fax: +421 37 6408 031</li>
+                    <li><span class="item-name">Mobilný telefon:</span> +421 948 261622</li>
+                    <li><span class="item-name">Označenie</span></li>
+                    <li><span class="item-name">E-mail:</span> agarajova@ukf.sk</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <h3 class="contact-title hours">Úradné hodiny pre študentov</h3>
+                <ul>
+                    <li><span class="item-name">Po</span> 08:30 - 11:00</li>
+                    <li><span class="item-name">Ut</span> bez úradných hodín</li>
+                    <li><span class="item-name">St</span> 08:30 - 11:00</li>
+                    <li><span class="item-name">Št</span> bez úradných hodín</li>
+                    <li><span class="item-name">Pi</span> bez úradných hodín</li>
+                </ul>
+            </div>
+            <div class="col-lg-6 col-sm-12">
+                <h3 class="contact-title address">Oddelenie pre medzinárodné vzťahy</h3>
+                <ul>
+                    <li><span class="item-name"></span>Tr. A. Hlinku 1</li>
+                    <li><span class="item-name"></span>949 74 Nitra</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="page-section" id="footer">
+    <div class="container-fluid footer-background">
+        <div class="row">
+            <div class="col-xl-6 text-left">
+                <ul class="social-navigation">
+                    <li><a class="social-nav-link" href="{{ url('/') }}"><i class="fa fa-facebook"></i></a></li>
+                    <li><a class="social-nav-link" href="{{ url('/') }}"><i class="fa fa-instagram"></i></a></li>
+                </ul>
+            </div>
+            <div class="col-xl-6 text-right">
+                <ul class="footer-navigation">
+                    <li><a class="footer-nav-link" href="{{ url('/') }}">Stáže</a></li>
+                    <li><a class="footer-nav-link" href="{{ url('/') }}">Pobyty</a></li>
+                    <li><a class="footer-nav-link" href="{{ url('/') }}">Kontakt</a></li>
+                    <li><a class="footer-nav-link" href="{{ url('/') }}">Blog</a></li>
+                    <li><a class="footer-nav-link" href="{{ url('/') }}">FAQ</a></li>
+                    <li><a class="footer-nav-link" href="{{ url('/') }}">Účet</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
