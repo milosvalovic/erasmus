@@ -1,4 +1,4 @@
-<section class="page-section" id="partner-universities">
+<div class="page-section" id="partner-universities">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -13,4 +13,4 @@
             </div>
         </div>
     </div>
-</section>
+</div>

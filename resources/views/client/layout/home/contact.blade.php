@@ -1,4 +1,4 @@
-<section class="page-section" id="contact">
+<div class="page-section" id="contact">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -70,4 +70,4 @@
             </div>
         </div>
     </div>
-</section>
+</div>

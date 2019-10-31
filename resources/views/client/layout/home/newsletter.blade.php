@@ -1,4 +1,4 @@
-<section class="page-section" id="newsletter">
+<div class="page-section" id="newsletter">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 newsletter-width text-center">
@@ -12,4 +12,4 @@
             </div>
         </div>
     </div>
-</section>
+</div>
