@@ -132,21 +132,29 @@ div.content p {
     margin-top: 5px;
 }
 
-td, th{
+table {
+    display: inline-table !important;
+}
+
+td, th {
     font-family: Cairo-Regular, serif;
     font-size: 18px;
 }
 
-th{
+th {
     font-size: 20px;
     color: #ffffff;
 }
 
-thead.thead-color{
+thead.thead-color {
     background-color: #007183;
 }
 
 @media only screen and (max-width: 575px) {
+    table {
+        display: block !important;
+    }
+
     div.title > h1 {
         font-size: 45px;
     }
@@ -155,7 +163,7 @@ thead.thead-color{
         font-size: 15px;
     }
 
-    td, th{
+    td, th {
         font-size: 15px;
     }
 

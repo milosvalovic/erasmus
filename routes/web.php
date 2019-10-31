@@ -12,5 +12,5 @@
 */
 
 Route::get('/', function () {
-    return view('client/faq');
+    return view('errors/500');
 });
