@@ -1,7 +1,7 @@
-@import "reset.css";
-@import "fonts.css";
-@import "nav.css";
-@import "footer.css";
+@import "../layout/reset.css";
+@import "../layout/fonts.css";
+@import "../layout/nav.css";
+@import "layout/footer.css";
 
 header.masthead {
     width: 100vw;

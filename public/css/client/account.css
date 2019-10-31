@@ -1,6 +1,6 @@
-@import "reset.css";
-@import "fonts.css";
-@import "nav.css";
+@import "../layout/reset.css";
+@import "../layout/fonts.css";
+@import "../layout/nav.css";
 
 .login, .image {
     min-height: 100vh;
