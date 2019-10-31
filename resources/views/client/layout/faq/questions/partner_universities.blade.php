@@ -2,7 +2,7 @@
     <div class="col-xl-12 text-left">
         <h1 class="faq-heading"><i class="fa fa-university heading-icon"></i>&nbsp;Partnerské Univerzity
         </h1>
-        <table class="table">
+        <table class="table table-responsive">
             <thead class="thead-color">
             <tr>
                 <th>Krajina</th>

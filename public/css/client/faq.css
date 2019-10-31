@@ -145,3 +145,25 @@ th{
 thead.thead-color{
     background-color: #007183;
 }
+
+@media only screen and (max-width: 575px) {
+    div.title > h1 {
+        font-size: 45px;
+    }
+
+    div.content p {
+        font-size: 15px;
+    }
+
+    td, th{
+        font-size: 15px;
+    }
+
+    div.content h1 {
+        font-size: 25px;
+    }
+
+    div.content h1 > i.heading-icon {
+        font-size: 40px;
+    }
+}

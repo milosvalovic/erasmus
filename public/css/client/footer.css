@@ -35,6 +35,12 @@ footer#footer ul.footer-navigation li > a:hover, footer#footer ul.social-navigat
 
 @media only screen and (max-width: 575px) {
     footer#footer ul.footer-navigation li > a, footer#footer ul.social-navigation li > a {
-        margin-right: 20px;
+        padding-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 568px) {
+    footer#footer ul.footer-navigation li > a, footer#footer ul.social-navigation li > a {
+        display: block;
     }
 }
