@@ -1,6 +1,7 @@
 <?php
 
 return [
+    //App
     'name' => 'Erasmus+',
 
     //Common
@@ -11,13 +12,13 @@ return [
     'contact' => 'Kontakt',
 
     //Navigation
+    'nav_home' => 'Domov',
     'nav_internships' => 'Stáže',
     'nav_stays' => 'Pobyty',
     'nav_contact' => 'Kontakt',
     'nav_blog' => 'Blog',
     'nav_faq' => 'FAQ',
     'nav_account' => 'Účet',
-
 
     //Forget Password
     'forget_password_title' => 'Nájdite svoj účet',
@@ -46,6 +47,12 @@ return [
     //FAQ
     'faq_title' => 'Často kladané otázky',
 
+    //Internships
+    'internships_title' => 'Zoznam stážov',
+
+    //Stays
+    'stays_title' => 'Zoznam pobytov',
+
     //Home
     'home_opportunitie_internship' => 'Naše aktualné ponuky stážov',
     'home_opportunitie_lecture_stays' => 'Naše aktualné ponuky prednáškových pobytov',
@@ -72,7 +79,6 @@ return [
     'search_modal_label_to_example' => '02.02.2020',
     'search_modal_submit' => 'Hľadať',
 
-
     //Newsletter
     'newsletter_title' => 'CHCETE BYŤ INFORMOVANÝ AKO PRVÝ O podujatiach k MOBILITáM?',
     'newsletter_submit' => 'ÁNO',
@@ -92,6 +98,5 @@ return [
     'errors_500_title' => '500',
     'errors_500_subtitle' => 'Chyba servera',
     'errors_500_description' => 'S našimi servermi sa niečo pokazilo, skúste to znova neskôr.',
-    'errors_500_button' => 'Späť na hlavnú stránku',
-
+    'errors_500_button' => 'Späť na hlavnú stránku'
 ];

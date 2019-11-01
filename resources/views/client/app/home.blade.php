@@ -1,5 +1,5 @@
 @extends('layout.client.app.master')
-@section('title', 'Domov')
+@section('title', __('app.nav_home'))
 @section('css', asset('css/client/app/home.css'))
 @section('masthead')
     @include('client.app.layout.home.masthead')

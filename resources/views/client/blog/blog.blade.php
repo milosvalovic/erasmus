@@ -1,5 +1,5 @@
 @extends('layout.client.blog.master')
-@section('title', 'Blog')
+@section('title', __('app.nav_blog'))
 @section('css', asset('css/client/blog/blog.css'))
 @section('masthead')
     @include('client.blog.layout.masthead')

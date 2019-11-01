@@ -1,3 +1,4 @@
+<div class="container">
 <div class="row">
     <div class="col-xl-12 text-left">
         <h1 class="faq-heading"><i class="fa fa-info-circle heading-icon"></i>&nbsp;Základné informácie</h1>

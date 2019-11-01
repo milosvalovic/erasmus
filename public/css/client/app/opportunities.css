@@ -1,11 +1,13 @@
 @import "../../layout/reset.css";
 @import "../../layout/fonts.css";
 @import "../../layout/nav.css";
+@import "../../layout/contact.css";
+@import "../../layout/newsletter.css";
 @import "layout/footer.css";
 
 header.masthead {
     width: 100vw;
-    background: url(../../../img/faq_background.jpg) no-repeat center center;
+    background: url(../../../img/erasmus_background.jpg) no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -111,67 +113,91 @@ div.content {
     background: #ffffff;
 }
 
-div.content h1 {
+div#contact h2.section-heading {
     font-family: Cairo-Bold, serif;
-    font-size: 30px;
-    color: #007183;
+    font-style: italic;
+    font-size: 35px;
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #000000;
+}
+
+@media only screen and (max-width: 992px) {
+    div#contact h2.section-heading {
+        text-align: center;
+    }
+}
+
+div#internships{
     margin-top: 50px;
-    margin-bottom: 10px;
 }
 
-div.content h1 > i.heading-icon {
-    font-size: 50px;
-    color: #007183;
+div#internships img {
+    width: 250px;
+    height: 170px;
+    margin-bottom: 5px;
 }
 
-div.content p {
-    font-family: Cairo-Regular, serif;
-    font-size: 20px;
-    line-height: 30px;
-    text-align: justify;
-    margin-top: 5px;
+@media only screen and (max-width: 1200px) {
+    div#internships img {
+        width: 350px;
+        height: 230px;
+    }
 }
 
-table {
-    display: inline-table !important;
-}
-
-td, th {
-    font-family: Cairo-Regular, serif;
-    font-size: 18px;
-}
-
-th {
-    font-size: 20px;
-    color: #ffffff;
-}
-
-thead.thead-color {
-    background-color: #007183;
+@media only screen and (max-width: 768px) {
+    div#internships img {
+        width: 250px;
+        height: 170px;
+    }
 }
 
 @media only screen and (max-width: 575px) {
-    table {
-        display: block !important;
+    div#internships img {
+        width: 350px;
+        height: 230px;
     }
+}
 
-    div.title > h1 {
-        font-size: 45px;
-    }
+div#internships a.internship-name {
+    color: #000000;
+    font-family: Cairo-Bold, serif;
+    font-size: 20px;
+    font-style: italic;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
 
-    div.content p {
-        font-size: 15px;
-    }
+div#internships a.internship-name:hover {
+    color: #555555;
+}
 
-    td, th {
-        font-size: 15px;
-    }
+div#internships p.internship-date {
+    font-family: Cairo-Light, serif;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 
-    div.content h1 {
-        font-size: 25px;
-    }
+div#internships p.internship-comments {
+    font-family: Cairo-Regular, serif;
+    font-size: 18px;
+    color: #007183;
+    margin-bottom: 20px;
+}
 
-    div.content h1 > i.heading-icon {
-        font-size: 40px;
-    }
+div#internships div.more-opportunitie {
+    margin-top: 30px;
+}
+
+div#internships div.more-opportunitie a {
+    font-family: Cairo-Light, serif;
+    font-size: 18px;
+    text-decoration: none;
+    color: #23b9ce;
+}
+
+div#internships div.more-opportunitie a:hover {
+    color: #239691;
 }
