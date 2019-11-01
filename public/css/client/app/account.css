@@ -1,13 +1,13 @@
-@import "../layout/reset.css";
-@import "../layout/fonts.css";
-@import "../layout/nav.css";
+@import "../../layout/reset.css";
+@import "../../layout/fonts.css";
+@import "../../layout/nav.css";
 
 .login, .image {
     min-height: 100vh;
 }
 
 .bg-image {
-    background: url(../../img/erasmus_background.jpg) no-repeat center center fixed;
+    background: url(../../../img/erasmus_background.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -72,7 +72,7 @@
     color: #ffffff;
     font-family: Cairo-SemiBold, serif;
     margin-bottom: 50px;
-    padding-left: 0px;
+    padding-left: 0;
     float: right;
     border: solid 1px black;
 }
@@ -102,7 +102,7 @@ ul.sub-nav > li > a:hover{
 @media only screen and (min-width: 992px) {
     #mainNav ul .navbar-brand i.erasmus-logo {
         display: block;
-        background: url("../../img/erasmus_logo_light_blue.png") no-repeat;
+        background: url("../../../img/erasmus_logo_light_blue.png") no-repeat;
         background-size: 150px 100px;
     }
 }

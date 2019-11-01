@@ -1,12 +1,12 @@
-@import "../layout/reset.css";
-@import "../layout/fonts.css";
-@import "../layout/nav.css";
+@import "../../layout/reset.css";
+@import "../../layout/fonts.css";
+@import "../../layout/nav.css";
 @import "layout/footer.css";
 
 header.masthead {
     width: 100vw;
     height: 100vh;
-    background: url(../../img/erasmus_background.jpg) no-repeat center center fixed;
+    background: url(../../../img/erasmus_background.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -147,7 +147,7 @@ div.input-items > form > select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background: url(../../img/drop_down_arrow.gif) 96% / 15% no-repeat;
+    background: url(../../../img/drop_down_arrow.gif) 96% / 15% no-repeat;
     background-size: 25px 15px;
 }
 
@@ -340,7 +340,7 @@ div#current-opportunities div.more-opportunitie a:hover {
     font-size: 25px;
     background-color: #ffffff;
     color: #007183;
-    border-radius: 0px 5px 5px 0px;
+    border-radius: 0 5px 5px 0;
 }
 
 .newsletter-background > form > input[type="submit"]:hover {
@@ -432,4 +432,3 @@ div#contact ul > li > span.item-name {
         text-align: center;
     }
 }
-

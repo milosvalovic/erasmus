@@ -12,7 +12,7 @@
 
     <link rel="manifest" href="{{ asset('fav/site.webmanifest') }}">
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/client/fonts.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/layout/fonts.css') }}"/>
     <title>Erasmus+ | 500</title>
 </head>
 <style type="text/css">

@@ -1,11 +1,11 @@
-@import "../layout/reset.css";
-@import "../layout/fonts.css";
-@import "../layout/nav.css";
+@import "../../layout/reset.css";
+@import "../../layout/fonts.css";
+@import "../../layout/nav.css";
 @import "layout/footer.css";
 
 header.masthead {
     width: 100vw;
-    background: url(../../img/erasmus_background.jpg) no-repeat center center;
+    background: url(../../../img/faq_background.jpg) no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

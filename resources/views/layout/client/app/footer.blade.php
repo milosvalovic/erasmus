@@ -3,8 +3,22 @@
         <div class="row">
             <div class="col-xl-6 text-left">
                 <ul class="social-navigation">
-                    <li><a class="social-nav-link" href="{{ url('/') }}"><i class="fa fa-facebook"></i></a></li>
-                    <li><a class="social-nav-link" href="{{ url('/') }}"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item">
+                        <a href="{{ url('/') }}">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-instagram fa-stack-1x fa-inverse social-nav-link"></i>
+                </span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="{{ url('/') }}">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse social-nav-link"></i>
+                </span>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="col-xl-6 text-right">

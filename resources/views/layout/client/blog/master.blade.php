@@ -1,4 +1,4 @@
-@include('layout.client.header')
+@include('layout.client.blog.header')
 
 @include('layout.client.navigation')
 

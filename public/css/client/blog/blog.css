@@ -1,6 +1,6 @@
-@import "../layout/reset.css";
-@import "../layout/fonts.css";
-@import "../layout/nav.css";
+@import "../../layout/reset.css";
+@import "../../layout/fonts.css";
+@import "../../layout/nav.css";
 
 body {
     font-size: 20px;
@@ -58,18 +58,6 @@ blockquote {
     border-bottom-left-radius: 5px;
 }
 
-::-moz-selection {
-    color: #fff;
-    background: #007183;
-    text-shadow: none;
-}
-
-::selection {
-    color: #fff;
-    background: #007183;
-    text-shadow: none;
-}
-
 img::-moz-selection {
     color: #fff;
     background: transparent;
@@ -87,9 +75,7 @@ img::-moz-selection {
 
 header.masthead {
     margin-bottom: 50px;
-    background: no-repeat center center;
-    background-color: #868e96;
-    background-attachment: scroll;
+    background: #868e96 no-repeat scroll center center;
     position: relative;
     background-size: cover;
 }
@@ -265,7 +251,6 @@ header.masthead .post-heading .meta a {
     display: block;
     margin: 0;
     transition: top 0.3s ease, opacity 0.3s ease;
-    vertical-align: middle;
     vertical-align: baseline;
     opacity: 0;
 }
