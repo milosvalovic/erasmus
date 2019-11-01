@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="section-heading">Naše partnerské Univerzity</h2>
+                <h2 class="section-heading">@lang('app.home_partner_universitites')</h2>
             </div>
             <div class="container">
                 <div class="row">

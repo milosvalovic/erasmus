@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-12">
-        <h2 class="section-heading">Naše aktualné ponuky školení</h2>
+        <h2 class="section-heading">@lang('app.home_opportunitie_trainings')</h2>
     </div>
 </div>
 <div class="row">
@@ -40,7 +40,7 @@
 <div class="row more-opportunitie">
     <div class="container">
         <div class="cold-md-12 text-right">
-            <a href="{{ url('/') }}">Ďalšie pobyty ...</a>
+            <a href="{{ url('/') }}">@lang('app.home_more_button')</a>
         </div>
     </div>
 </div>

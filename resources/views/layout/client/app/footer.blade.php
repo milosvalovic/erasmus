@@ -23,12 +23,12 @@
             </div>
             <div class="col-xl-6 text-right">
                 <ul class="footer-navigation">
-                    <li><a class="footer-nav-link" href="{{ url('/') }}">Stáže</a></li>
-                    <li><a class="footer-nav-link" href="{{ url('/') }}">Pobyty</a></li>
-                    <li><a class="footer-nav-link" href="{{ url('/') }}">Kontakt</a></li>
-                    <li><a class="footer-nav-link" href="{{ url('/') }}">Blog</a></li>
-                    <li><a class="footer-nav-link" href="{{ url('/') }}">FAQ</a></li>
-                    <li><a class="footer-nav-link" href="{{ url('/') }}">Účet</a></li>
+                    <li><a class="footer-nav-link" href="{{ url('/') }}">@lang('app.nav_internships')</a></li>
+                    <li><a class="footer-nav-link" href="{{ url('/') }}">@lang('app.nav_stays')</a></li>
+                    <li><a class="footer-nav-link" href="{{ url('/') }}">@lang('app.nav_contact')</a></li>
+                    <li><a class="footer-nav-link" href="{{ url('/') }}">@lang('app.nav_blog')</a></li>
+                    <li><a class="footer-nav-link" href="{{ url('/') }}">@lang('app.nav_faq')</a></li>
+                    <li><a class="footer-nav-link" href="{{ url('/') }}">@lang('app.nav_account')</a></li>
                 </ul>
             </div>
         </div>

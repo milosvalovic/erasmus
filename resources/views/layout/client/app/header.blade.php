@@ -19,6 +19,6 @@
 
     <link rel="stylesheet" type="text/css" href="@yield('css')"/>
 
-    <title>Erasmus+ | @yield('title')</title>
+    <title>@lang('app.name') | @yield('title')</title>
 </head>
 <body>

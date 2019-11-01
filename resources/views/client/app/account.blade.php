@@ -2,5 +2,5 @@
 @section('title', 'Účet')
 @section('css', asset('css/client/app/account.css'))
 @section('masthead')
-   @include('client.app.layout.account.forget_password')
+   @include('client.app.layout.account.register')
 @endsection

@@ -9,27 +9,27 @@
                     <div class="row">
                         <div class="col-md-9 col-lg-8 text-left mx-auto">
                             <div class="content">
-                                <h3>Registrácia</h3>
+                                <h3>@lang('app.register_title')</h3>
                                 <form action="{{ url('/') }}" method="POST" enctype="application/x-www-form-urlencoded">
-                                    <label for="firstname">Meno</label>
-                                    <input type="text" name="firstname" id="firstname" value="" placeholder="Michal">
+                                    <label for="firstname">@lang('app.register_input_label_firstname')</label>
+                                    <input type="text" name="firstname" id="firstname" value="" placeholder="@lang('app.register_input_firstname_example')">
                                     <br/>
-                                    <label for="lastname">Priezvisko</label>
-                                    <input type="text" name="lastname" id="lastname" value="" placeholder="Králik">
+                                    <label for="lastname">@lang('app.register_input_label_lastname')</label>
+                                    <input type="text" name="lastname" id="lastname" value="" placeholder="@lang('app.register_input_lastname_example')">
                                     <br/>
-                                    <label for="email">Email</label>
-                                    <input type="email" name="email" id="email" value="" placeholder="meno.priezvisko@student.ukf.sk">
+                                    <label for="email">@lang('app.register_input_label_email')</label>
+                                    <input type="email" name="email" id="email" value="" placeholder="@lang('app.right_email_format')">
                                     <br/>
-                                    <label for="password">Heslo</label>
+                                    <label for="password">@lang('app.register_input_label_password')</label>
                                     <input type="password" name="password" id="password" value="" placeholder="********">
                                     <br/>
-                                    <label for="confirm-password">Potvrdenie hesla</label>
+                                    <label for="confirm-password">@lang('app.register_input_label_confirm_password')</label>
                                     <input type="password" name="confirm" id="confirm-password" value="" placeholder="********">
                                     <br/>
-                                    <input type="submit" value="Registrovať sa">
+                                    <input type="submit" value="@lang('app.register_input_submit')">
                                 </form>
                                 <ul class="sub-nav">
-                                    <li><a class="sub-nav-item" href="{{ url('/') }}">Späť na prihlásenie</a></li>
+                                    <li><a class="sub-nav-item" href="{{ url('/') }}">@lang('app.back_to_login')</a></li>
                                 </ul>
                             </div>
                         </div>

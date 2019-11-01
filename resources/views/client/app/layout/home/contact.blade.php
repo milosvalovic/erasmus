@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="section-heading">Kontakt</h2>
+                <h2 class="section-heading">@lang('app.contact')</h2>
             </div>
         </div>
         <div class="row">
@@ -52,7 +52,7 @@
 
         <div class="row">
             <div class="col-lg-6 col-sm-12">
-                <h3 class="contact-title hours">Úradné hodiny pre študentov</h3>
+                <h3 class="contact-title hours">@lang('app.contact_hours')</h3>
                 <ul>
                     <li><span class="item-name">Po</span> 08:30 - 11:00</li>
                     <li><span class="item-name">Ut</span> bez úradných hodín</li>
@@ -62,7 +62,7 @@
                 </ul>
             </div>
             <div class="col-lg-6 col-sm-12">
-                <h3 class="contact-title address">Oddelenie pre medzinárodné vzťahy</h3>
+                <h3 class="contact-title address">@lang('app.contact_address')</h3>
                 <ul>
                     <li><span class="item-name"></span>Tr. A. Hlinku 1</li>
                     <li><span class="item-name"></span>949 74 Nitra</li>

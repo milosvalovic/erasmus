@@ -9,19 +9,19 @@
                     <div class="row">
                         <div class="col-md-9 col-lg-8 text-left mx-auto">
                             <div class="content">
-                                <h3>Prihlásenie</h3>
+                                <h3>@lang('app.login_title')</h3>
                                 <form action="{{ url('/') }}" method="POST" enctype="application/x-www-form-urlencoded">
-                                    <label for="email">Email</label>
-                                    <input type="email" name="email" id="email" value="" placeholder="meno.priezvisko@student.ukf.sk">
+                                    <label for="email">@lang('app.login_input_label_email')</label>
+                                    <input type="email" name="email" id="email" value="" placeholder="@lang('app.right_email_format')">
                                     <br/>
-                                    <label for="password">Heslo</label>
+                                    <label for="password">@lang('app.login_input_label_password')</label>
                                     <input type="password" name="password" id="password" value="" placeholder="********">
                                     <br/>
-                                    <input type="submit" value="Prihlásiť sa">
+                                    <input type="submit" value="@lang('app.login_input_submit')">
                                 </form>
                                 <ul class="sub-nav">
-                                    <li><a class="sub-nav-item" href="{{ url('/') }}">Vytvoriť účet</a></li>
-                                    <li><a class="sub-nav-item" href="{{ url('/') }}">Zabudli ste údaje na prístup k účtu?</a></li>
+                                    <li><a class="sub-nav-item" href="{{ url('/') }}">@lang('app.new_account')</a></li>
+                                    <li><a class="sub-nav-item" href="{{ url('/') }}">@lang('app.login_forget_password')</a></li>
                                 </ul>
                             </div>
                         </div>

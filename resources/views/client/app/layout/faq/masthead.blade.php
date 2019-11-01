@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-xl-12 text-left">
                 <div class="title">
-                    <h1>Často kladané otázky</h1>
+                    <h1>@lang('app.faq_title')</h1>
                 </div>
             </div>
         </div>

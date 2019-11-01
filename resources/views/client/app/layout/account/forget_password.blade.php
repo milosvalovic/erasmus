@@ -9,18 +9,18 @@
                     <div class="row">
                         <div class="col-md-9 col-lg-8 text-left mx-auto">
                             <div class="content">
-                                <h3>Nájdite svoj účet</h3>
-                                <p>Na vyhľadanie svojho účtu zadajte svoju e-mailovú adresu</p>
+                                <h3>@lang('app.forget_password_title')</h3>
+                                <p>@lang('app.forget_password_description')</p>
                                 <form action="{{ url('/') }}" method="POST" enctype="application/x-www-form-urlencoded">
-                                    <label for="email">Email</label>
+                                    <label for="email">@lang('app.forget_password_input_label_email')</label>
                                     <input type="email" name="email" id="email" value=""
-                                           placeholder="meno.priezvisko@student.ukf.sk">
+                                           placeholder="@lang('app.right_email_format')">
                                     <br/>
-                                    <input type="submit" value="Poslať">
+                                    <input type="submit" value="@lang('app.forget_password_input_submit')">
                                 </form>
                                 <ul class="sub-nav">
-                                    <li><a class="sub-nav-item" href="{{ url('/') }}">Späť na prihlásenie</a></li>
-                                    <li><a class="sub-nav-item" href="{{ url('/') }}">Vytvoriť účet</a></li>
+                                    <li><a class="sub-nav-item" href="{{ url('/') }}">@lang('app.back_to_login')</a></li>
+                                    <li><a class="sub-nav-item" href="{{ url('/') }}">@lang('app.new_account')</a></li>
                                 </ul>
                             </div>
                         </div>

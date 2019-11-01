@@ -34,7 +34,7 @@
             </div>
             <hr>
             <div class="clearfix">
-                <a class="btn btn-primary float-right" href="{{ url('/') }}">Staršie záznamy &rarr;</a>
+                <a class="btn btn-primary float-right" href="{{ url('/') }}">@lang('app.blog_older_posts')</a>
             </div>
         </div>
     </div>
