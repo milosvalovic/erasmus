@@ -13,6 +13,7 @@ return [
 
     //Navigation
     'nav_home' => 'Domov',
+    'nav_search' => 'Výsledky vyhľadávania',
     'nav_internships' => 'Stáže',
     'nav_stays' => 'Pobyty',
     'nav_contact' => 'Kontakt',
@@ -44,14 +45,11 @@ return [
     'register_input_label_confirm_password' => 'Potvrdenie hesla',
     'register_input_submit' => 'Registrovať sa',
 
-    //FAQ
+    //Titles
     'faq_title' => 'Často kladané otázky',
-
-    //Internships
     'internships_title' => 'Zoznam stážov',
-
-    //Stays
     'stays_title' => 'Zoznam pobytov',
+    'search_title' => 'Výsledky vyhľadávania',
 
     //Home
     'home_opportunitie_internship' => 'Naše aktualné ponuky stážov',

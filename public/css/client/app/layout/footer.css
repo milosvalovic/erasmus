@@ -57,10 +57,6 @@ footer#footer ul.social-navigation .social-nav-link:hover {
     footer#footer ul.footer-navigation, footer#footer ul.social-navigation {
         text-align: center;
     }
-
-    footer#footer ul.footer-navigation li > a{
-        margin-right: 0;
-    }
 }
 
 @media only screen and (max-width: 575px) {
@@ -72,5 +68,9 @@ footer#footer ul.social-navigation .social-nav-link:hover {
 @media only screen and (max-width: 568px) {
     footer#footer ul.footer-navigation li > a, footer#footer ul.social-navigation li > a {
         display: block;
+    }
+
+    footer#footer ul.footer-navigation li > a{
+        margin-right: 0;
     }
 }
