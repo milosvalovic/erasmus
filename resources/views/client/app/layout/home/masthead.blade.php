@@ -5,7 +5,7 @@
             <div class="col-lg-6"></div>
             <div class="col-lg-6 col-sm-12">
                 <div class="search-modal">
-                    <h1>Vyhľadávajte a <br>prihlaste sa na <span id="typed"></span>.</h1>
+                    <h1>Vyhľadávajte a prihlaste <br>sa na <span id="typed"></span>.</h1>
                     <div class="input-items">
                         <form action="{{ url('/') }}" method="POST" enctype="application/x-www-form-urlencoded">
                             <label for="krajina">KRAJINA</label>

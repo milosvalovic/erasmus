@@ -12,5 +12,5 @@
 */
 
 Route::get('/', function () {
-    return view('client.blog.article');
+    return view('client.app.home');
 });
