@@ -1,7 +1,7 @@
 <div class="container">
 <div class="row">
     <div class="col-xl-12 text-left">
-        <h1 class="faq-heading"><i class="fa fa-info-circle heading-icon"></i>&nbsp;Základné informácie</h1>
+        <h1 class="faq-heading"><i class="fa fa-info-circle heading-icon"></i>@lang('app.faq_title_basic_information')</h1>
         <p>Program Erasmus+ je zaměřen na vysokoškolské vzdělávání a je určen především pro studenty.Cílem
             programu je podpořit vzájemné vztahy a spolupráci mezi vysokými školami v rámci evropského
             prostoru, zvýšit úroveň transparentnosti a slučitelnosti kvalifikací vysokoškolského vzdělávání

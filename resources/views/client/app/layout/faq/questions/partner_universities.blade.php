@@ -1,14 +1,14 @@
 <div class="row">
     <div class="col-xl-12 text-left">
-        <h1 class="faq-heading"><i class="fa fa-university heading-icon"></i>&nbsp;Partnerské Univerzity
+        <h1 class="faq-heading"><i class="fa fa-university heading-icon"></i>@lang('app.faq_title_partner_university')
         </h1>
         <table class="table table-responsive">
             <thead class="thead-color">
             <tr>
-                <th>Krajina</th>
-                <th>Názov Univerzity</th>
-                <th>Mesto</th>
-                <th>Kontaktná osoba</th>
+                <th>@lang('app.faq_partner_university_table_title_country')</th>
+                <th>@lang('app.faq_partner_university_table_title_university')</th>
+                <th>@lang('app.faq_partner_university_table_title_city')</th>
+                <th>@lang('faq_partner_university_table_title_contact_person')</th>
             </tr>
             </thead>
             <tbody>

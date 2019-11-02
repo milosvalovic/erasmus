@@ -1,4 +1,4 @@
-<header class="masthead" style="background-image: url({{ url('/obrazok_mobility') }})">
+<header class="masthead" style="background-image: url({{ url('/img/obrazok_clanku.jpg') }})">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">

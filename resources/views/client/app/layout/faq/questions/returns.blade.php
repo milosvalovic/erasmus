@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-xl-12 text-left">
-        <h1 class="faq-heading"><i class="fa fa-file heading-icon"></i>&nbsp;Čo odovzdať po návrate
+        <h1 class="faq-heading"><i class="fa fa-file heading-icon"></i>@lang('app.faq_title_returns')
         </h1>
         <p>Learning agreement (Studijní smlouva)
             Před odjezdem do zahraničí si student sestaví konkrétní program studia (studijní plán) na

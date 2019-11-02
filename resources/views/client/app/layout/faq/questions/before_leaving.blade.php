@@ -1,7 +1,6 @@
 <div class="row">
     <div class="col-xl-12 text-left">
-        <h1 class="faq-heading"><i class="fa fa-calendar heading-icon"></i>&nbsp;Čo vybavyť pred
-            odchodom</h1>
+        <h1 class="faq-heading"><i class="fa fa-calendar heading-icon"></i>@lang('app.faq_title_leaving')</h1>
         <p>Studijní pobyt v zahraniční lze realizovat pouze na základě studijní smlouvy (Learning
             Agreement).
             LA a výpis známek (Transcript of Records) vydaný zahraniční institucí, na které byl studijní

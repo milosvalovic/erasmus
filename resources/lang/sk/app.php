@@ -4,6 +4,12 @@ return [
     //App
     'name' => 'Erasmus+',
 
+    //Titles
+    'faq_title' => 'Často kladané otázky',
+    'internships_title' => 'Zoznam stážov',
+    'stays_title' => 'Zoznam pobytov',
+    'search_title' => 'Výsledky vyhľadávania',
+
     //Common
     'right_email_format' => 'meno.priezvisko@student.ukf.sk',
     'new_account' => 'Vytvoriť účet',
@@ -45,12 +51,6 @@ return [
     'register_input_label_confirm_password' => 'Potvrdenie hesla',
     'register_input_submit' => 'Registrovať sa',
 
-    //Titles
-    'faq_title' => 'Často kladané otázky',
-    'internships_title' => 'Zoznam stážov',
-    'stays_title' => 'Zoznam pobytov',
-    'search_title' => 'Výsledky vyhľadávania',
-
     //Home
     'home_opportunitie_internship' => 'Naše aktualné ponuky stážov',
     'home_opportunitie_lecture_stays' => 'Naše aktualné ponuky prednáškových pobytov',
@@ -85,6 +85,36 @@ return [
     'blog_title' => 'Erasmus+ Blog',
     'blog_subtitle' => 'Všetky príbehy na jednom mieste.',
     'blog_older_posts' => 'Staršie záznamy &rarr;',
+
+    //Detail
+    'detail_from' => 'OD: ',
+    'detail_to' => 'DO: ',
+    'detail_submit_button' => 'Chcem sa zúčastniť',
+    'detail_description_title' => 'Popis',
+    'detail_country_title' => 'O krajine',
+    'detail_more_title' => 'Ďalšie informácie',
+    'detail_more_faq' => 'Často kladané otázky',
+    'detail_more_blog' => 'Príbehy študentov',
+    'detail_presentations_title' => 'Prezentacie účastníkov',
+    'detail_presentations_table_title_school' => 'Škola',
+    'detail_presentations_table_title_file' => 'Prezentácia',
+    'detail_presentations_table_file_download' => 'Stiahnúť',
+    'detail_photos_title' => 'Fotogaléria',
+    'detail_reviews_title' => 'Recenzie',
+
+    //FAQ
+    'faq_title_returns' => '&nbsp;Čo odovzdať po návrate',
+    'faq_title_leaving' => '&nbsp;Čo vybavyť pred odchodom',
+    'faq_title_how_to_choose' => '&nbsp;Ako si vybrať Univerzitu',
+    'faq_title_amount' => '&nbsp;Výška štipendia',
+    'faq_title_conditions' => '&nbsp;Podmineky účasti',
+    'faq_title_basic_information' => '&nbsp;Základné informácie',
+    'faq_title_partner_university' => '&nbsp;Partnerské Univerzity',
+    'faq_partner_university_table_title_country' => 'Krajina',
+    'faq_partner_university_table_title_university' => 'Názov Univerzity',
+    'faq_partner_university_table_title_city' => 'Mesto',
+    'faq_partner_university_table_title_contact_person' => 'Kontaktná osoba',
+
 
     //Errors - 404
     'errors_404_title' => '404',

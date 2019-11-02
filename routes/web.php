@@ -12,5 +12,5 @@
 */
 
 Route::get('/', function () {
-    return view('client.app.search');
+    return view('client.app.detail');
 });

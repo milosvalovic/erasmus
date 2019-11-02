@@ -1,7 +1,6 @@
 <div class="row">
     <div class="col-xl-12 text-left">
-        <h1 class="faq-heading"><i class="fa fa-graduation-cap heading-icon"></i>&nbsp;Ako si vybrať
-            Univerzitu</h1>
+        <h1 class="faq-heading"><i class="fa fa-graduation-cap heading-icon"></i>@lang('app.faq_title_how_to_choose')</h1>
         <p>Výběr škol zvažujte pečlivě a důkladně prozkoumejte všechny dostupné zdroje informací:
             internetové stránky jednotlivých partnerských škol (odkazy v tabulce výše)
             akce Modrá fakulta – správná volba (prezentace studentů z minulého ročníku najdete níže)

@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-xl-12 text-left">
-        <h1 class="faq-heading"><i class="fa fa-clipboard heading-icon"></i>&nbsp;Podmineky účasti</h1>
+        <h1 class="faq-heading"><i class="fa fa-clipboard heading-icon"></i>@lang('app.faq_title_conditions')</h1>
         <p>Studijní pobyty pro ak. rok 2019/20 mohou probíhat od 1. 6. 2019 do 30. 9. 2020. Délka studijního
             pobytu musí trvat minimálně 3 měsíce nebo jeden celý akademický trimestr, maximální délka pobytu
             je 12 měsíců.

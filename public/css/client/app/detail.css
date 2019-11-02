@@ -5,7 +5,7 @@
 
 header.masthead {
     width: 100vw;
-    background: url(../../../img/faq_background.jpg) no-repeat center center;
+    background-position: center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -104,6 +104,38 @@ div.title > h1 {
     margin-bottom: 10px;
 }
 
+nav.sub-navigation {
+    border-top: solid 1px #cecece;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 1px 6px 1px rgba(176, 176, 176, 1);
+    -moz-box-shadow: 0 1px 6px 1px rgba(176, 176, 176, 1);
+    box-shadow: 0 1px 6px 1px rgba(176, 176, 176, 1);
+}
+
+nav.sub-navigation h2 {
+    font-family: Cairo-SemiBold, serif;
+    font-size: 40px;
+    line-height: 0;
+}
+
+nav.sub-navigation ul > li {
+    font-family: Cairo-Regular, serif;
+    font-size: 18px;
+}
+
+nav.sub-navigation ul > li > span {
+    font-weight: bold;
+}
+
+nav.sub-navigation form.form-inline input[type="submit"] {
+    width: 170px;
+    font-family: Cairo-Bold, serif;
+    border: solid 1px #898989;
+    border-radius: 5px;
+    background: #007183;
+    color: white;
+}
+
 div.content {
     position: absolute;
     width: 100%;
@@ -111,17 +143,29 @@ div.content {
     background: #ffffff;
 }
 
-div.content h1 {
+div.content div.section-description,
+div.content div.section-country,
+div.content div.section-more,
+div.content div.section-presentations,
+div.content div.section-reviews {
+    margin-top: 40px;
+}
+
+div.content div.section-reviews {
+    margin-bottom: 50px;
+}
+
+div.content h3 {
     font-family: Cairo-Bold, serif;
-    font-size: 30px;
+    font-size: 35px;
     color: #007183;
-    margin-top: 50px;
     margin-bottom: 10px;
 }
 
-div.content h1 > i.heading-icon {
-    font-size: 50px;
-    color: #007183;
+div.content div.section-reviews h4 {
+    font-family: Cairo-Bold, serif;
+    font-size: 20px;
+    color: black;
 }
 
 div.content p {
@@ -129,6 +173,28 @@ div.content p {
     font-size: 18px;
     line-height: 25px;
     text-align: left;
+}
+
+div.content a {
+    font-family: Cairo-SemiBold, serif;
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+    color: black;
+}
+
+div.content a > span {
+    margin: 0 auto;
+    display: block;
+}
+
+div.section-more i.background,
+div.section-reviews i.background {
+    color: #007183;
+}
+
+div.section-more span i:hover {
+    color: #003e4f;
 }
 
 table {
@@ -145,32 +211,59 @@ th {
     color: #ffffff;
 }
 
+td > a:hover {
+    color: #007183;
+}
+
 thead.thead-color {
     background-color: #007183;
 }
 
-@media only screen and (max-width: 575px) {
-    table {
-        display: block !important;
+.column {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+    .column {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+div.content div.section-reviews div.review {
+    margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 765px) {
+    div.section-reviews h3, div.section-more h3 {
+        text-align: center;
     }
 
+    div.section-more a {
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
     div.title > h1 {
         font-size: 45px;
-    }
-
-    div.content p {
-        font-size: 15px;
-    }
-
-    td, th {
-        font-size: 15px;
-    }
-
-    div.content h1 {
-        font-size: 25px;
-    }
-
-    div.content h1 > i.heading-icon {
-        font-size: 40px;
     }
 }
