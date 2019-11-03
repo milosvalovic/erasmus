@@ -1,0 +1,104 @@
+.newsletter-background {
+    background-color: #007183;
+    margin-top: 40px;
+}
+
+div#newsletter > div.container-fluid{
+    padding: 0;
+}
+
+.newsletter-background > h2 {
+    font-family: Cairo-Bold, serif;
+    font-style: italic;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding-top: 20px;
+}
+
+.newsletter-background > form {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    right: 90px;
+}
+
+.newsletter-background > form > input {
+    width: 35%;
+    height: 50px;
+    position: relative;
+    font-family: Cairo-Regular, serif;
+    font-size: 20px;
+    padding-left: 20px;
+    background-color: #007183;
+    color: #00424c;
+    border: solid 2px #ffffff;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.newsletter-background > form > input[type="submit"] {
+    width: 180px;
+    position: absolute;
+    font-family: Cairo-Bold, serif;
+    font-size: 25px;
+    background-color: #ffffff;
+    color: #007183;
+    border-radius: 0 5px 5px 0;
+}
+
+.newsletter-background > form > input[type="submit"]:hover {
+    background-color: #00b0cc;
+    color: #ffffff;
+}
+
+@media only screen and (max-width: 992px) {
+    .newsletter-background > h2 {
+        font-size: 25px;
+    }
+
+    .newsletter-background > form {
+        right: 80px;
+    }
+
+    .newsletter-background > form > input {
+        font-size: 18px;
+    }
+
+    .newsletter-background > form > input[type="submit"] {
+        width: 160px;
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .newsletter-background > form {
+        right: 70.5px;
+    }
+
+    .newsletter-background > form > input {
+        font-size: 18px;
+    }
+
+    .newsletter-background > form > input[type="submit"] {
+        width: 150px;
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .newsletter-background > form {
+        right: 60px;
+    }
+
+    .newsletter-background > form > input {
+        width: 45%;
+        font-size: 18px;
+        height: 40px;
+    }
+
+    .newsletter-background > form > input[type="submit"] {
+        width: 120px;
+        font-size: 18px;
+    }
+}
