@@ -8,8 +8,11 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 
-class University extends BaseModel
+
+class University extends Model
 {
-
+    protected $table = 'partner_university';
+    protected $fillable = ['country_ID', 'city', 'address', 'name', 'acronym', 'info', 'image_URL'];
 }

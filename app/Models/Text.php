@@ -8,8 +8,10 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 
-class Text extends BaseModel
+class Text extends Model
 {
-
+    protected $table = 'static_text';
+    protected $fillable = ['name', 'text'];
 }

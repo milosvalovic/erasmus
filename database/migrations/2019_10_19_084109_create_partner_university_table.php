@@ -22,7 +22,6 @@ class CreatePartnerUniversityTable extends Migration
             $table->string('acronym', 10);
             $table->text('info')->nullable();
             $table->string('img_url', 128)->nullable();
-            $table->string('coordinates', 150);
             $table->timestamps();
             $table->softDeletes();
 
