@@ -12,8 +12,8 @@
 
     <link rel="manifest" href="{{ asset('fav/site.webmanifest') }}">
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/client/fonts.css') }}"/>
-    <title>Erasmus+ | 404</title>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/layout/fonts.css') }}"/>
+    <title>@lang('app.name') | @lang('app.errors_404_title')</title>
 </head>
 <style type="text/css">
     body {
@@ -111,10 +111,10 @@
 <div class="outer">
     <div class="middle">
         <div class="inner">
-            <h1>404</h1>
-            <h2>Ľutujeme, stránka sa nenašla</h2>
-            <p>Hľadaná stránka neexistuje alebo bola presunutá.</p>
-            <a href="{{ url('/') }}">Späť na hlavnú stránku</a>
+            <h1>@lang('app.errors_404_title')</h1>
+            <h2>@lang('app.errors_404_subtitle')</h2>
+            <p>@lang('app.errors_404_description')</p>
+            <a href="{{ url('/') }}">@lang('app.errors_404_button')</a>
         </div>
     </div>
 </div>
