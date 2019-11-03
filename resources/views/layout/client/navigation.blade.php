@@ -7,22 +7,22 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/') }}">@lang('app.nav_internships')</a>
+                    <a class="nav-link" href="{{ url('/') }}">Stáže</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/') }}t">@lang('app.nav_stays')</a>
+                    <a class="nav-link" href="{{ url('/') }}t">Pobyty</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/') }}">@lang('app.nav_contact')</a>
+                    <a class="nav-link" href="{{ url('/') }}">Kontakt</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/') }}">@lang('app.nav_blog')</a>
+                    <a class="nav-link" href="{{ url('/') }}">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/') }}">@lang('app.nav_faq')</a>
+                    <a class="nav-link" href="{{ url('/') }}">FAQ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/') }}">@lang('app.nav_account')</a>
+                    <a class="nav-link" href="{{ url('/') }}">Účet</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">

@@ -1,0 +1,108 @@
+@import "reset.css";
+@import "fonts.css";
+@import "nav.css";
+
+.login, .image {
+    min-height: 100vh;
+}
+
+.bg-image {
+    background: url(../../img/erasmus_background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.bg-shadow {
+    width: 100%;
+    height: 100%;
+    background-color: #212529;
+    opacity: 0.7;
+}
+
+.account .content{
+    margin-top: 130px;
+}
+
+.account .content p {
+    font-family: Cairo-Regular, serif;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 992px) {
+    .account .content{
+        margin-top: 180px;
+    }
+}
+
+.account h3 {
+    font-family: Cairo-SemiBold, serif;
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.account form > label {
+    position: absolute;
+    font-family: Cairo-Regular, serif;
+    font-size: 20px;
+    color: #000;
+}
+
+.account form > input {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    top: 23px;
+    font-family: Cairo-Regular, serif;
+    font-size: 18px;
+    padding-left: 20px;
+    margin-bottom: 35px;
+    border: solid 1px #a6a6a6;
+    border-radius: 5px;
+}
+
+.account form > input[type="submit"] {
+    width: 140px;
+    background-color: #007183;
+    color: #ffffff;
+    font-family: Cairo-SemiBold, serif;
+    margin-bottom: 50px;
+    padding-left: 0px;
+    float: right;
+    border: solid 1px black;
+}
+.account form > input[type="submit"]:hover {
+    background-color: #009baf;
+}
+
+ul.sub-nav{
+    clear: both;
+}
+
+ul.sub-nav > li{
+    margin-bottom: 10px;
+}
+
+ul.sub-nav > li > a{
+    font-family: Cairo-SemiBold, serif;
+    font-size: 18px;
+    color: #23b9ce;
+}
+
+ul.sub-nav > li > a:hover{
+    text-decoration: none;
+    color: #1e697d;
+}
+
+@media only screen and (min-width: 992px) {
+    #mainNav ul .navbar-brand i.erasmus-logo {
+        display: block;
+        background: url("../../img/erasmus_logo_light_blue.png") no-repeat;
+        background-size: 150px 100px;
+    }
+}
