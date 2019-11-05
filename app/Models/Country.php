@@ -12,6 +12,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Country extends Model
 {
-    protected $table = 'Countries';
+    protected $table = 'countries';
     protected $fillable= ['country_name','country_code'];
+
+
+    public function university(){
+        return $this->hasMany('App\Models\University');
+    }
 }

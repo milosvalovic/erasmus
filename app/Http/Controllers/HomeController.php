@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Mobility;
 use App\Models\University;
+use App\Models\Country;
 
 class HomeController extends BaseController
 {
@@ -90,4 +91,11 @@ class HomeController extends BaseController
     public function getAllMobilityType($typeID){
         return $this->getTopMobilityType($typeID,'','');
     }
+
+
+    public function test(){
+        $test = University::find(1)->country;
+        return $test;
+    }
+
 }

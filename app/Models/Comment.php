@@ -14,4 +14,14 @@ class Comment extends Model
 {
     protected $table = 'comments';
     protected $fillable = ['users_ID', 'mobility_ID', 'text', 'rating'];
+
+    public function user_season()
+    {
+        return $this->belongsTo('App\Models\User_Season','users_season_ID');
+    }
+
+    public function images()
+    {
+        return $this->hasMany('App\Models\Image');
+    }
 }

@@ -15,22 +15,16 @@ class CreateCommentsTable extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('ID');
-            $table->unsignedBigInteger('users_ID');;
-            $table->unsignedBigInteger('mobility_ID');
+            $table->unsignedBigInteger('users_season_ID');
             $table->text('comment');
             $table->tinyInteger('rating')->nullable();
             $table->timestamps();
             $table->softDeletes();
 
 
-            $table->foreign('users_ID')
+            $table->foreign('users_season_ID')
                 ->references('ID')
-                ->on('users')
-                ->onDelete('cascade');
-
-            $table->foreign('mobility_ID')
-                ->references('ID')
-                ->on('mobility')
+                ->on('users_season')
                 ->onDelete('cascade');
         });
     }

@@ -19,7 +19,7 @@ class CreateBlogTable extends Migration
             $table->string('title',200);
             $table->tinyInteger('status');
             $table->unsignedBigInteger('users_ID');
-            $table->unsignedBigInteger('mobility_ID');
+            $table->unsignedBigInteger('users_season_ID');
             $table->unsignedBigInteger('confirm_by');
             $table->timestamps();
             $table->softDeletes();
@@ -30,9 +30,9 @@ class CreateBlogTable extends Migration
                 ->on('users')
                 ->onDelete('cascade');
 
-            $table->foreign('mobility_ID')
+            $table->foreign('users_season_ID')
                 ->references('ID')
-                ->on('mobility')
+                ->on('users_season')
                 ->onDelete('cascade');
 
             $table->foreign('confirm_by')

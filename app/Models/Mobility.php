@@ -14,4 +14,18 @@ class Mobility extends Model
 {
     protected $table = 'mobility';
     protected $fillable = ['mobility_types_ID', 'partner_university_ID', 'grant', 'info'];
+
+    public function university()
+    {
+        return $this->belongsTo('App\Models\University', 'partner_university_ID');
+    }
+
+    public function mobility_type()
+    {
+        return $this->belongsTo('App\Models\Mobility_Type', 'mobility_types_ID');
+    }
+
+    public function season(){
+        return $this->hasMany('App\Models\Season');
+    }
 }

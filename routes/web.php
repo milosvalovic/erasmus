@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('client.app.detail');
+    return view('client/app/home');
 });
+
+
+
+Route::get('/test', 'HomeController@test');
