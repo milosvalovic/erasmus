@@ -1,4 +1,5 @@
 @extends('layout.client.app.master')
+@section('faq', 'active')
 @section('title', __('app.nav_faq'))
 @section('css', asset('css/client/app/faq.css'))
 @section('masthead')

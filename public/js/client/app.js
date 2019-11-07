@@ -11,6 +11,12 @@ $('document').ready(function () {
         });
     });
 
+    $("a[rel=example_group]").fancybox({
+        'transitionIn': 'none',
+        'transitionOut': 'none',
+        'titlePosition': 'over'
+    });
+
     const typed = new Typed('#typed', {
         strings: ['pobyty', 'stáže', 'prednáškové pobyty', 'školenia'],
         backSpeed: 70,
@@ -223,6 +229,9 @@ $('document').ready(function () {
         normalizeFunction: 'polynomial'
     });
 
-    $('#vmap').unbind("click");
     $('.jqvmap-zoomin').click();
+
+    $('#vmap').click(function () {
+        window.location.replace("/erasmus/public/faq#univerzity");
+    });
 });

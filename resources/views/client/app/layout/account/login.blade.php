@@ -20,8 +20,8 @@
                                     <input type="submit" value="@lang('app.login_input_submit')">
                                 </form>
                                 <ul class="sub-nav">
-                                    <li><a class="sub-nav-item" href="{{ url('/') }}">@lang('app.new_account')</a></li>
-                                    <li><a class="sub-nav-item" href="{{ url('/') }}">@lang('app.login_forget_password')</a></li>
+                                    <li><a class="sub-nav-item" href="{{ url('/registracia') }}">@lang('app.new_account')</a></li>
+                                    <li><a class="sub-nav-item" href="{{ url('/pomoc') }}">@lang('app.login_forget_password')</a></li>
                                 </ul>
                             </div>
                         </div>

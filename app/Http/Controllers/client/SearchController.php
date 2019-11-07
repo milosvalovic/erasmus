@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\client;
 
 use Illuminate\Http\Request;
 use App\Models\Mobility;
+use Illuminate\Routing\Controller;
 
-class SearchController extends BaseController
+class SearchController extends Controller
 {
-    //Vráti všetky mobility pod¾a vyh¾adávania pouívate¾a
+    //Vrï¿½ti vï¿½etky mobility podï¿½a vyhï¿½adï¿½vania pouï¿½ï¿½vateï¿½a
     public function searchMobility(Request $request){
 
             $countrySearch = $request->input('country');

@@ -69,8 +69,12 @@
         color: #fff
     }
 
-    #mainNav .navbar-nav > li.nav-item > a:focus,
     #mainNav .navbar-nav > li.nav-item > a.nav-link:hover {
+        border-bottom: solid 2px #23b9ce;
+    }
+
+    #mainNav .navbar-nav > li.nav-item > a.active,
+    #mainNav .navbar-nav > li.nav-item > a.active {
         border-bottom: solid 2px #23b9ce;
     }
 
