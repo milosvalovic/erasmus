@@ -7,22 +7,19 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/') }}">@lang('app.nav_internships')</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/') }}t">@lang('app.nav_stays')</a>
+                    <a class="nav-link @yield('stays')" href="{{ url('/') }}">@lang('app.nav_stays')</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/') }}">@lang('app.nav_contact')</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/') }}">@lang('app.nav_blog')</a>
+                    <a class="nav-link @yield('blog')" href="{{ url('/') }}">@lang('app.nav_blog')</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/') }}">@lang('app.nav_faq')</a>
+                    <a class="nav-link @yield('faq')" href="{{ url('/') }}">@lang('app.nav_faq')</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/') }}">@lang('app.nav_account')</a>
+                    <a class="nav-link @yield('account')" href="{{ url('/') }}">@lang('app.nav_account')</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">

@@ -14,14 +14,14 @@ return [
     'right_email_format' => 'meno.priezvisko@student.ukf.sk',
     'new_account' => 'Vytvoriť účet',
     'back_to_login' => 'Späť na prihlásenie',
-    'home_more_button' => 'Ďalšie pobyty ...',
+    'home_more_button' => 'Ukázať viac ...',
     'contact' => 'Kontakt',
+    'reviews' => 'recenzií',
 
     //Navigation
     'nav_home' => 'Domov',
     'nav_search' => 'Výsledky vyhľadávania',
-    'nav_internships' => 'Stáže',
-    'nav_stays' => 'Pobyty',
+    'nav_stays' => 'Mobility',
     'nav_contact' => 'Kontakt',
     'nav_blog' => 'Blog',
     'nav_faq' => 'FAQ',
@@ -52,10 +52,10 @@ return [
     'register_input_submit' => 'Registrovať sa',
 
     //Home
-    'home_opportunitie_internship' => 'Naše aktualné ponuky stážov',
-    'home_opportunitie_lecture_stays' => 'Naše aktualné ponuky prednáškových pobytov',
-    'home_opportunitie_stays' => 'Naše aktualné ponuky pobytov',
-    'home_opportunitie_trainings' => 'Naše aktualné ponuky školení',
+    'home_opportunitie_internship' => 'Naše najpopulárnejšie ponuky stážov',
+    'home_opportunitie_lecture_stays' => 'Naše najpopulárnejšie ponuky prednáškových pobytov',
+    'home_opportunitie_stays' => 'Naše najpopulárnejšie ponuky pobytov',
+    'home_opportunitie_trainings' => 'Naše najpopulárnejšie ponuky školení',
     'home_partner_universitites' => 'Naše partnerské Univerzity',
 
     //Home - Contact
@@ -71,8 +71,8 @@ return [
     'search_modal_label_university' => 'UNIVERZITA',
     'search_modal_label_university_example' => 'Technische Universität',
     'search_modal_label_rating' => 'HODNOTENIE',
-    'search_modal_label_from' => 'OD',
-    'search_modal_label_to' => 'DO',
+    'search_modal_label_from' => 'ZAČIATOK POBYTU',
+    'search_modal_label_to' => 'KONIEC POBYTU',
     'search_modal_label_from_example' => '01.01.2020',
     'search_modal_label_to_example' => '02.02.2020',
     'search_modal_submit' => 'Hľadať',

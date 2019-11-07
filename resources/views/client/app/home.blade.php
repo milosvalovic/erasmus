@@ -1,4 +1,5 @@
 @extends('layout.client.app.master')
+@section('home', __('active'))
 @section('title', __('app.nav_home'))
 @section('css', asset('css/client/app/home.css'))
 @section('masthead')

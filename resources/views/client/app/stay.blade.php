@@ -1,4 +1,5 @@
 @extends('layout.client.app.master')
+@section('stays', 'active')
 @section('title', __('app.nav_stays'))
 @section('css', asset('css/client/app/opportunities.css'))
 @section('masthead')
