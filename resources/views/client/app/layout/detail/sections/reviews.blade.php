@@ -12,6 +12,13 @@
                 <h4 class="user">user001</h4>
             </div>
             <div class="col-lg-10 col-md-9">
+                <div class="rating">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
                 <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
                     anim
                     id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -32,6 +39,13 @@
                 <h4 class="user">user002</h4>
             </div>
             <div class="col-lg-10 col-md-9">
+                <div class="rating">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
                 <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
                     anim
                     id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -52,6 +66,13 @@
                 <h4 class="user">user003</h4>
             </div>
             <div class="col-lg-10 col-md-9">
+                <div class="rating">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
                 <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
                     anim
                     id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem

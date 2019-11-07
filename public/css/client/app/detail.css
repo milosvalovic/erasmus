@@ -136,6 +136,10 @@ nav.sub-navigation form.form-inline input[type="submit"] {
     color: white;
 }
 
+#fancybox-wrap, #fancybox-content, #fancybox-close, #fancybox-left, #fancybox-right {
+    box-sizing: initial;
+}
+
 div.content {
     position: absolute;
     width: 100%;
@@ -220,7 +224,7 @@ thead.thead-color {
 }
 
 .column {
-    -ms-flex: 25%; /* IE10 */
+    -ms-flex: 25%;
     flex: 25%;
     max-width: 25%;
     padding: 0 4px;
@@ -230,6 +234,17 @@ thead.thead-color {
     margin-top: 8px;
     vertical-align: middle;
     width: 100%;
+}
+
+.rating{
+    margin-bottom: 20px;
+}
+
+.rating > span{
+    font-size: 25px;
+}
+.rating > span.checked{
+    color: #007183;
 }
 
 @media screen and (max-width: 800px) {
@@ -252,6 +267,18 @@ div.content div.section-reviews div.review {
     margin-bottom: 40px;
 }
 
+@media only screen and (max-width: 1200px) {
+    .user {
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .user {
+        margin-left: 0 !important;
+    }
+}
+
 @media only screen and (max-width: 765px) {
     div.section-reviews h3, div.section-more h3 {
         text-align: center;
@@ -259,6 +286,12 @@ div.content div.section-reviews div.review {
 
     div.section-more a {
         margin-bottom: 30px;
+    }
+
+    .rating{
+        width: 135px;
+        display: block;
+        margin: 10px auto;
     }
 }
 
