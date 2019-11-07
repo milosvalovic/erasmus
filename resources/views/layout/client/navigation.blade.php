@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link @yield('stays')" href="{{ url('/') }}">@lang('app.nav_stays')</a>
+                    <a class="nav-link @yield('mobilities')" href="{{ url('/') }}">@lang('app.nav_mobilities')</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/') }}">@lang('app.nav_contact')</a>

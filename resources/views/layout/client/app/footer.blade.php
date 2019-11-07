@@ -23,7 +23,7 @@
             </div>
             <div class="col-xl-6 text-right">
                 <ul class="footer-navigation">
-                    <li><a class="footer-nav-link" href="{{ url('/') }}">@lang('app.nav_stays')</a></li>
+                    <li><a class="footer-nav-link" href="{{ url('/') }}">@lang('app.nav_mobilities')</a></li>
                     <li><a class="footer-nav-link" href="{{ url('/') }}">@lang('app.nav_contact')</a></li>
                     <li><a class="footer-nav-link" href="{{ url('/') }}">@lang('app.nav_blog')</a></li>
                     <li><a class="footer-nav-link" href="{{ url('/') }}">@lang('app.nav_faq')</a></li>

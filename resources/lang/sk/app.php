@@ -6,8 +6,7 @@ return [
 
     //Titles
     'faq_title' => 'Často kladané otázky',
-    'internships_title' => 'Zoznam stážov',
-    'stays_title' => 'Zoznam pobytov',
+    'stays_title' => 'Zoznam mobilít',
     'search_title' => 'Výsledky vyhľadávania',
 
     //Common
@@ -21,7 +20,7 @@ return [
     //Navigation
     'nav_home' => 'Domov',
     'nav_search' => 'Výsledky vyhľadávania',
-    'nav_stays' => 'Mobility',
+    'nav_mobilities' => 'Mobility',
     'nav_contact' => 'Kontakt',
     'nav_blog' => 'Blog',
     'nav_faq' => 'FAQ',

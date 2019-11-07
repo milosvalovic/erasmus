@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('client/app/home');
+    return view('client/app/mobilities');
 });
 
 
