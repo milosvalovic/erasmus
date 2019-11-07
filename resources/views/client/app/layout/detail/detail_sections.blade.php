@@ -8,7 +8,29 @@
 </div>
 <script type="text/javascript" src="{{ asset('vendor/fancybox/jquery-1.4.3.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('vendor/bootstrap/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('vendor/typed-js/typed.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('vendor/fancybox/jquery.fancybox-1.3.4.pack.js') }}"></script>
 <script type="text/javascript" src="{{ asset('vendor/fancybox/jquery.easing-1.3.pack.js') }}"></script>
 <script type="text/javascript" src="{{ asset('vendor/fancybox/jquery.mousewheel-3.0.4.pack.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/client/app.js') }}"></script>
+<script type="text/javascript">
+    $('document').ready(function () {
+
+        $(".sub-navigation").hide();
+        $(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.sub-navigation').fadeIn();
+                } else {
+                    $('.sub-navigation').fadeOut();
+                }
+            });
+        });
+
+
+        $("a[rel=example_group]").fancybox({
+            'transitionIn': 'none',
+            'transitionOut': 'none',
+            'titlePosition': 'over'
+        });
+    });
+</script>
