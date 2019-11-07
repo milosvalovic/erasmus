@@ -4,7 +4,7 @@
             <div class="col-xl-6 text-left">
                 <ul class="social-navigation">
                     <li class="list-inline-item">
-                        <a href="{{ url('/') }}">
+                        <a href="@lang('url.instagram')" target="_blank">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-instagram fa-stack-1x fa-inverse social-nav-link"></i>
@@ -12,7 +12,7 @@
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="{{ url('/') }}">
+                        <a href="@lang('url.facebook')" target="_blank">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-facebook fa-stack-1x fa-inverse social-nav-link"></i>
@@ -23,11 +23,11 @@
             </div>
             <div class="col-xl-6 text-right">
                 <ul class="footer-navigation">
-                    <li><a class="footer-nav-link" href="{{ url('/') }}">@lang('app.nav_mobilities')</a></li>
-                    <li><a class="footer-nav-link" href="{{ url('/') }}">@lang('app.nav_contact')</a></li>
-                    <li><a class="footer-nav-link" href="{{ url('/') }}">@lang('app.nav_blog')</a></li>
-                    <li><a class="footer-nav-link" href="{{ url('/') }}">@lang('app.nav_faq')</a></li>
-                    <li><a class="footer-nav-link" href="{{ url('/') }}">@lang('app.nav_account')</a></li>
+                    <li><a class="footer-nav-link" href="{{ url('/mobility') }}">@lang('app.nav_mobilities')</a></li>
+                    <li><a class="footer-nav-link" href="{{ url('/#kontakt') }}">@lang('app.nav_contact')</a></li>
+                    <li><a class="footer-nav-link" href="{{ url('/blog') }}">@lang('app.nav_blog')</a></li>
+                    <li><a class="footer-nav-link" href="{{ url('/faq') }}">@lang('app.nav_faq')</a></li>
+                    <li><a class="footer-nav-link" href="{{ url('/prihlasovanie') }}">@lang('app.nav_account')</a></li>
                 </ul>
             </div>
         </div>

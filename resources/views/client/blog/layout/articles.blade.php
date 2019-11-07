@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
             <div class="post-preview">
-                <a href="{{ url('/') }}">
+                <a href="{{ url('/article') }}">
                     <h2 class="post-title">Prvý článok</h2>
                 </a>
                 <h3 class="post-subtitle">Názov miesta pobytu</h3>
@@ -10,7 +10,7 @@
             </div>
             <hr>
             <div class="post-preview">
-                <a href="{{ url('/') }}">
+                <a href="{{ url('/article') }}">
                     <h2 class="post-title">Druhý článok</h2>
                 </a>
                 <h3 class="post-subtitle">Názov miesta pobytu</h3>
@@ -18,7 +18,7 @@
             </div>
             <hr>
             <div class="post-preview">
-                <a href="{{ url('/') }}">
+                <a href="{{ url('/article') }}">
                     <h2 class="post-title">Tretí článok</h2>
                 </a>
                 <h3 class="post-subtitle">Názov miesta pobytu</h3>
@@ -26,7 +26,7 @@
             </div>
             <hr>
             <div class="post-preview">
-                <a href="{{ url('/') }}">
+                <a href="{{ url('/article') }}">
                     <h2 class="post-title">Štvrtý článok</h2>
                 </a>
                 <h3 class="post-subtitle">Názov miesta pobytu</h3>

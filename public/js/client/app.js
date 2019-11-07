@@ -223,6 +223,9 @@ $('document').ready(function () {
         normalizeFunction: 'polynomial'
     });
 
-    $('#vmap').unbind("click");
     $('.jqvmap-zoomin').click();
+
+    $('#vmap').click(function () {
+        window.location.replace("/erasmus/public/faq#univerzity");
+    });
 });

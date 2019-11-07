@@ -1,14 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\client;
+
 use App\Models\User;
 use App\Models\Mobility;
 use App\Models\University;
-use App\Models\Country;
+use Illuminate\Routing\Controller;
 
-class HomeController extends BaseController
+class HomeController extends Controller
 {
-    //Vráti všetky typy mobilít vo formáte {Názov:ID, Názov:ID}
+    public function home(){
+        return view('client.app.home');
+    }
+
+    //Vrï¿½ti vï¿½etky typy mobilï¿½t vo formï¿½te {Nï¿½zov:ID, Nï¿½zov:ID}
     public function getTypesOfMobility()
     {
         $mobilityTypes = \DB::table('mobility_types')->pluck('ID','name');
@@ -16,7 +21,7 @@ class HomeController extends BaseController
         return $mobilityTypes;
     }
 
-    //Vráti N ($limit) najlepšie hodnotených mobilít zadaného typu mobility
+    //Vrï¿½ti N ($limit) najlepï¿½ie hodnotenï¿½ch mobilï¿½t zadanï¿½ho typu mobility
     public function getTopMobilityType($typeID, $limit, $order_by)
     {
         $topMobility = Mobility::select('mobility.ID','mobility.mobility_types_ID','partner_university.img_url','countries.country_name','partner_university.name')
@@ -47,7 +52,7 @@ class HomeController extends BaseController
         return $topMobility;
     }
 
-    //Vráti 4 najlepšie hodnotené mobility každého typu
+    //Vrï¿½ti 4 najlepï¿½ie hodnotenï¿½ mobility kaï¿½dï¿½ho typu
     public function getTopMobility()
     {
         $limit = 4;
@@ -67,7 +72,7 @@ class HomeController extends BaseController
         return $arrayFinal;
     }
 
-    //Vráti Country Code pre mapu
+    //Vrï¿½ti Country Code pre mapu
     public function getCountryCodes(){
         $countries = University::leftJoin('countries', 'countries.ID', '=', 'partner_university.country_ID')
                                 ->where('partner_university.deleted_at','=',null)
@@ -76,7 +81,7 @@ class HomeController extends BaseController
         return array('countries'=>$countries);
     }
 
-    //Prihlásnie do Newsletteru
+    //Prihlï¿½snie do Newsletteru
     public function signInNewsletter($email){
         $updated = User::where('email', $email)->update(['newsletter' => 1]);
 
@@ -87,7 +92,7 @@ class HomeController extends BaseController
         }
     }
 
-    //Vráti všetky mobility daného typu
+    //Vrï¿½ti vï¿½etky mobility danï¿½ho typu
     public function getAllMobilityType($typeID){
         return $this->getTopMobilityType($typeID,'','');
     }

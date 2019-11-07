@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" id="univerzity">
     <div class="col-xl-12 text-left">
         <h1 class="faq-heading"><i class="fa fa-university heading-icon"></i>@lang('app.faq_title_partner_university')
         </h1>
@@ -8,7 +8,7 @@
                 <th>@lang('app.faq_partner_university_table_title_country')</th>
                 <th>@lang('app.faq_partner_university_table_title_university')</th>
                 <th>@lang('app.faq_partner_university_table_title_city')</th>
-                <th>@lang('faq_partner_university_table_title_contact_person')</th>
+                <th>@lang('app.faq_partner_university_table_title_contact_person')</th>
             </tr>
             </thead>
             <tbody>

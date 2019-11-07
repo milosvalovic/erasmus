@@ -29,7 +29,7 @@
                                     <input type="submit" value="@lang('app.register_input_submit')">
                                 </form>
                                 <ul class="sub-nav">
-                                    <li><a class="sub-nav-item" href="{{ url('/') }}">@lang('app.back_to_login')</a></li>
+                                    <li><a class="sub-nav-item" href="{{ url('/prihlasovanie') }}">@lang('app.back_to_login')</a></li>
                                 </ul>
                             </div>
                         </div>

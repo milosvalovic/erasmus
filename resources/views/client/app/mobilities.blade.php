@@ -7,7 +7,7 @@
 @endsection
 @section('content')
     <div class="content">
-        @include('client.app.layout.mobilities.stays')
+        @include('client.app.layout.mobilities.mobility')
         @include('client.app.layout.home.newsletter')
         @include('client.app.layout.home.contact')
         @include('layout.client.app.footer')

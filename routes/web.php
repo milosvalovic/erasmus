@@ -11,10 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('client/app/mobilities');
-});
+Route::get('/', 'client\HomeController@home');
 
+Route::get('/mobility', 'client\MobilitiesController@mobilities');
 
+Route::get('/detail', 'client\DetailController@detail');
 
-Route::get('/test', 'HomeController@test');
+Route::get('/#kontakt', 'client\HomeController@home');
+
+Route::get('/blog', 'blog\BlogController@blog');
+
+Route::get('/article', 'blog\BlogController@article');
+
+Route::get('/faq', 'client\FAQController@faq');
+
+Route::get('/prihlasovanie', 'client\AccountController@login');
+
+Route::get('/registracia', 'client\AccountController@register');
+
+Route::get('/pomoc', 'client\AccountController@forget_password');
