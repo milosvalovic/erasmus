@@ -17,6 +17,6 @@ class Country extends Model
 
 
     public function university(){
-        return $this->hasMany('App\Models\University');
+        return $this->hasMany('App\Models\University','country_ID','ID');
     }
 }

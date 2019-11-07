@@ -11,7 +11,7 @@ class Season_status extends Model
 
     public function status_season()
     {
-        return $this->hasMany('App\Models\Status_Season');
+        return $this->hasMany('App\Models\Status_Season','season_status_ID','ID');
     }
 
 }

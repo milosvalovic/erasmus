@@ -17,11 +17,11 @@ class Comment extends Model
 
     public function user_season()
     {
-        return $this->belongsTo('App\Models\User_Season','users_season_ID');
+        return $this->belongsTo('App\Models\User_Season','users_season_ID','ID');
     }
 
     public function images()
     {
-        return $this->hasMany('App\Models\Image');
+        return $this->hasMany('App\Models\Image','comments_ID','ID');
     }
 }

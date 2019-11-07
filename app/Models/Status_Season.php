@@ -11,16 +11,16 @@ class Status_season extends Model
 
     public function user_season()
     {
-        return $this->belongsTo('App\Models\User_Season', 'users_season_ID');
+        return $this->belongsTo('App\Models\User_Season', 'users_season_ID','ID');
     }
 
     public function season_status()
     {
-        return $this->belongsTo('App\Models\Season_Status','season_status_ID');
+        return $this->belongsTo('App\Models\Season_Status','season_status_ID','ID');
     }
 
     public function users()
     {
-        return $this->belongsTo('App\Models\User','users_id');
+        return $this->belongsTo('App\Models\User','users_id','ID');
     }
 }

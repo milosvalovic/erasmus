@@ -17,16 +17,16 @@ class Blog extends Model
 
     public function users_season()
     {
-        return $this->belongsTo('App\Models\Blog', 'users_season_ID');
+        return $this->belongsTo('App\Models\Blog', 'users_season_ID','ID');
     }
 
     public function user()
     {
-        return $this->belongsTo('App\Models\User','users_ID');
+        return $this->belongsTo('App\Models\User','users_ID','ID');
     }
 
     public function user_2()
     {
-        return $this->belongsTo('App\Models\User','confirm_by');
+        return $this->belongsTo('App\Models\User','confirm_by','ID');
     }
 }

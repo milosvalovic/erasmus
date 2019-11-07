@@ -18,11 +18,11 @@ class University extends Model
 
     public function country()
     {
-        return $this->belongsTo('App\Models\Country','country_ID');
+        return $this->belongsTo('App\Models\Country','country_ID','ID');
     }
 
     public function mobility()
     {
-        return $this->hasMany('App\Models\Mobility');
+        return $this->hasMany('App\Models\Mobility','partner_university_ID','ID');
     }
 }

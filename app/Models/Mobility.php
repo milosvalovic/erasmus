@@ -17,15 +17,15 @@ class Mobility extends Model
 
     public function university()
     {
-        return $this->belongsTo('App\Models\University', 'partner_university_ID');
+        return $this->belongsTo('App\Models\University', 'partner_university_ID','ID');
     }
 
     public function mobility_type()
     {
-        return $this->belongsTo('App\Models\Mobility_Type', 'mobility_types_ID');
+        return $this->belongsTo('App\Models\Mobility_Type', 'mobility_types_ID','ID');
     }
 
     public function season(){
-        return $this->hasMany('App\Models\Season');
+        return $this->hasMany('App\Models\Season','mobility_ID','ID');
     }
 }

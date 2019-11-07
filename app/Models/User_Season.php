@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class User_season extends Model
 {
-    protected $table = 'user_season';
+    protected $table = 'users_season';
     protected $fillable= ['user_ID','season_ID'];
 
     public function season()
@@ -16,21 +16,21 @@ class User_season extends Model
 
     public function status_season()
     {
-        return $this->hasMany('App\Models\Status_Season');
+        return $this->hasMany('App\Models\Status_Season', 'users_season_ID', 'ID');
     }
 
     public function user()
     {
-        return $this->belongsTo('App\Models\User','users_ID');
+        return $this->belongsTo('App\Models\User','users_ID','ID');
     }
 
-    public function comments()
+    public function comment()
     {
-        return $this->hasMany('App\Models\Comment');
+        return $this->hasMany('App\Models\Comment','users_season_ID','ID');
     }
 
     public function blog()
     {
-        return $this->hasMany('App\Models\Blog');
+        return $this->hasMany('App\Models\Blog','users_season_ID','ID');
     }
 }

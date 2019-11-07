@@ -11,7 +11,7 @@ class Image extends Model
 
     public function comments()
     {
-        return $this->belongsTo('App\Models\Comment','comments_ID');
+        return $this->belongsTo('App\Models\Comment','comments_ID','ID');
     }
 
 }

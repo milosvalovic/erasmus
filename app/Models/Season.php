@@ -17,11 +17,11 @@ class Season extends Model
 
     public function mobility()
     {
-        return $this->belongsTo('App\Models\Mobility','mobility_ID');
+        return $this->belongsTo('App\Models\Mobility','mobility_ID','ID');
     }
 
     public function user_season()
     {
-        return $this->hasMany('App\Models\User_Season');
+        return $this->hasMany('App\Models\User_Season','season_ID','ID');
     }
 }
