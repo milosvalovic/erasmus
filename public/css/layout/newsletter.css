@@ -3,7 +3,7 @@
     margin-top: 40px;
 }
 
-div#newsletter > div.container-fluid{
+div#newsletter > div.container-fluid {
     padding: 0;
 }
 
@@ -35,6 +35,25 @@ div#newsletter > div.container-fluid{
     border: solid 2px #ffffff;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+}
+
+::-webkit-input-placeholder {
+    color: #00424c;
+
+}
+
+::-moz-placeholder {
+    color: #00424c;
+
+}
+
+:-ms-input-placeholder {
+    color: #00424c;
+
+}
+
+:-moz-placeholder {
+    color: #00424c;
 }
 
 .newsletter-background > form > input[type="submit"] {

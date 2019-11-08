@@ -19,4 +19,6 @@
         @default
         @include('client.app.layout.account.login')
     @endswitch
+    <script type="text/javascript" src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('vendor/bootstrap/bootstrap.min.js') }}"></script>
 @endsection

@@ -23,7 +23,7 @@
     opacity: 0.7;
 }
 
-.account .content{
+.account .content {
     margin-top: 130px;
 }
 
@@ -35,7 +35,7 @@
 }
 
 @media only screen and (max-width: 992px) {
-    .account .content{
+    .account .content {
         margin-top: 180px;
     }
 }
@@ -76,33 +76,39 @@
     float: right;
     border: solid 1px black;
 }
+
 .account form > input[type="submit"]:hover {
     background-color: #009baf;
 }
 
-ul.sub-nav{
+ul.sub-nav {
     clear: both;
 }
 
-ul.sub-nav > li{
+ul.sub-nav > li {
     margin-bottom: 10px;
 }
 
-ul.sub-nav > li > a{
+ul.sub-nav > li > a {
     font-family: Cairo-SemiBold, serif;
     font-size: 18px;
     color: #23b9ce;
 }
 
-ul.sub-nav > li > a:hover{
+ul.sub-nav > li > a:hover {
     text-decoration: none;
     color: #1e697d;
 }
 
 @media only screen and (min-width: 992px) {
-    #mainNav ul .navbar-brand i.erasmus-logo {
+    #mainNav ul .navbar-brand i.ukf-logo {
         display: block;
-        background: url("../../../img/erasmus_logo_light_blue.png") no-repeat;
-        background-size: 150px 100px;
+        background: url("../../../img/ukf_logo_blue.png") no-repeat;
+        background-size: 100px 100px;
+    }
+
+    #mainNav ul .navbar-brand i.ukf-logo:hover {
+        background: url("../../../img/ukf_logo_black.png") no-repeat;
+        background-size: 100px 100px;
     }
 }

@@ -8,19 +8,24 @@
     color: #343a40
 }
 
-#mainNav a.navbar-brand i.ukf-logo {
-    width: 100px;
-    height: 100px;
-    display: block;
-    background: url("../../img/ukf_logo_blue.png") no-repeat;
-    background-size: 100px 100px;
-}
-
-#mainNav ul .navbar-brand i.erasmus-logo {
+#mainNav a.navbar-brand i.erasmus-logo {
     width: 150px;
     height: 100px;
+    display: block;
+    background: url("../../img/erasmus_logo_light_blue.png") no-repeat;
+    background-size: 150px 100px;
+}
+
+#mainNav a.navbar-brand i.erasmus-logo:hover {
     background: url("../../img/erasmus_logo_blue.png") no-repeat;
     background-size: 150px 100px;
+}
+
+#mainNav ul .navbar-brand i.ukf-logo {
+    width: 100px;
+    height: 100px;
+    background: url("../../img/ukf_logo_blue.png") no-repeat;
+    background-size: 100px 100px;
     display: none;
 }
 
@@ -42,15 +47,16 @@
 }
 
 @media only screen and (min-width: 992px) {
-    #mainNav a.navbar-brand i.ukf-logo {
-        background: url("../../img/ukf_logo_white.png") no-repeat;
-        background-size: 100px 100px;
-    }
-
-    #mainNav ul .navbar-brand i.erasmus-logo {
-        display: block;
+    #mainNav a.navbar-brand i.erasmus-logo {
         background: url("../../img/erasmus_logo_white.png") no-repeat;
         background-size: 150px 100px;
+    }
+
+    #mainNav ul .navbar-brand i.ukf-logo {
+        display: block;
+        background: url("../../img/ukf_logo_white.png") no-repeat;
+        background-size: 100px 100px;
+
     }
 
     #mainNav {
@@ -78,14 +84,14 @@
         border-bottom: solid 2px #23b9ce;
     }
 
+    #mainNav a.navbar-brand i.erasmus-logo:hover {
+        background: url("../../img/erasmus_logo_light_blue.png");
+        background-size: 150px 100px;
+    }
+
     #mainNav a.navbar-brand i.ukf-logo:hover {
         background: url("../../img/ukf_logo_blue.png");
         background-size: 100px 100px;
-    }
-
-    #mainNav a.navbar-brand i.erasmus-logo:hover {
-        background: url("../../img/erasmus_logo_blue.png");
-        background-size: 150px 100px;
     }
 }
 
