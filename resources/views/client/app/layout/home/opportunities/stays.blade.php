@@ -10,7 +10,7 @@
         <br/>
         <a href="{{ url('/detail') }}" class="current-opportunitie-name">Taiwan</a>
         <p class="current-opportunitie-date">prihlášky do 09.10.2019</p>
-        <p class="current-opportunitie-comments">33 @lang('app.reviews')</p>
+        <p class="current-opportunitie-comments">@lang('app.reviews')33</p>
     </div>
     <div class="col-xl-3 col-sm-6 text-center">
         <img src="{{ asset('uploads/temp/f.jpg') }}" alt="Popis mobility f" title="Popis mobility f"
@@ -18,7 +18,7 @@
         <br/>
         <a href="{{ url('/detail') }}" class="current-opportunitie-name">USA</a>
         <p class="current-opportunitie-date">prihlášky do 05.11.2019</p>
-        <p class="current-opportunitie-comments">13 @lang('app.reviews')</p>
+        <p class="current-opportunitie-comments">@lang('app.reviews')13</p>
     </div>
     <div class="col-xl-3 col-sm-6 text-center">
         <img src="{{ asset('uploads/temp/g.jpg') }}" alt="Popis mobility g" title="Popis mobility g"
@@ -26,7 +26,7 @@
         <br/>
         <a href="{{ url('/detail') }}" class="current-opportunitie-name">Latinská Amerika</a>
         <p class="current-opportunitie-date">prihlášky do 11.11.2019</p>
-        <p class="current-opportunitie-comments">35 @lang('app.reviews')</p>
+        <p class="current-opportunitie-comments">@lang('app.reviews')35</p>
     </div>
     <div class="col-xl-3 col-sm-6 text-center">
         <img src="{{ asset('uploads/temp/h.jpg') }}" alt="Popis mobility h" title="Popis mobility h"
@@ -34,7 +34,7 @@
         <br/>
         <a href="{{ url('/detail') }}" class="current-opportunitie-name">Velká Británie</a>
         <p class="current-opportunitie-date">prihlášky do 12.18.2019</p>
-        <p class="current-opportunitie-comments">5 @lang('app.reviews')</p>
+        <p class="current-opportunitie-comments">@lang('app.reviews')5</p>
     </div>
 </div>
 <div class="row more-opportunitie">
