@@ -35,7 +35,7 @@ class BlogSeeder extends Seeder
             'status' => 1,
             'users_ID' => 2,
             'users_season_ID' => 2,
-            'confirm_by' => 'FL'
+            'confirm_by' => '3'
         ]);
 
         DB::table('blog')->insert([

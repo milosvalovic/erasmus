@@ -19,7 +19,7 @@ class CreateContactTable extends Migration
             $table->string('lastname', 45);
             $table->string('title_before_name', 5)->nullable();
             $table->string('title_after_name', 5)->nullable();
-            $table->string('workplace', 10)->nullable();
+            $table->string('workplace', 64)->nullable();
             $table->string('telephone_work', 64);
             $table->string('phone', 64)->nullable();
             $table->string('room', 255)->nullable();

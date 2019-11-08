@@ -18,6 +18,7 @@ class UserSeeder extends Seeder
             'last_name' => 'Varga',
             'roles_ID' => 1,
             'newsletter' => 1,
+            'hash' => null
         ]);
 
         DB::table('users')->insert([
@@ -27,6 +28,7 @@ class UserSeeder extends Seeder
             'last_name' => 'Králik',
             'roles_ID' => 1,
             'newsletter' => 1,
+            'hash' => null
         ]);
 
         DB::table('users')->insert([
@@ -36,6 +38,7 @@ class UserSeeder extends Seeder
             'last_name' => 'Hrozenská',
             'roles_ID' => 2,
             'newsletter' => 0,
+            'hash' => null
         ]);
 
         DB::table('users')->insert([
@@ -45,6 +48,7 @@ class UserSeeder extends Seeder
             'last_name' => 'Admin',
             'roles_ID' => 3,
             'newsletter' => 0,
+            'hash' => null
         ]);
     }
 }
