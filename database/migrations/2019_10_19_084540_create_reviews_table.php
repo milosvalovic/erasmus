@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStaticTextTable extends Migration
+class CreateReviewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,19 @@ class CreateStaticTextTable extends Migration
      */
     public function up()
     {
-        Schema::create('static_text', function (Blueprint $table) {
+        Schema::create('reviews', function (Blueprint $table) {
             $table->bigIncrements('ID');
-            $table->string('name', 45);
-            $table->text('description');
+            $table->unsignedBigInteger('users_season_ID');
+            $table->text('review');
+            $table->tinyInteger('rating')->nullable();
             $table->timestamps();
             $table->softDeletes();
+
+
+            $table->foreign('users_season_ID')
+                ->references('ID')
+                ->on('users_season')
+                ->onDelete('cascade');
         });
     }
 
@@ -29,6 +36,6 @@ class CreateStaticTextTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('static_text');
+        Schema::dropIfExists('reviews');
     }
 }

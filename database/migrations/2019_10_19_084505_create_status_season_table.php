@@ -14,7 +14,7 @@ class CreateStatusSeasonTable extends Migration
     public function up()
     {
         Schema::create('status_season', function (Blueprint $table) {
-            $table->increments('ID');
+            $table->bigIncrements('ID');
             $table->unsignedBigInteger('season_status_ID');
             $table->unsignedBigInteger('users_season_ID');
             $table->unsignedBigInteger('users_ID');

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateImagesTable extends Migration
+class CreateAddressTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,12 @@ class CreateImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('images', function (Blueprint $table) {
+        Schema::create('address', function (Blueprint $table) {
             $table->bigIncrements('ID');
-            $table->unsignedBigInteger('reviews_ID');;
-            $table->string('url',150);
+            $table->string('street', 64);
+            $table->string('address', 64);
             $table->timestamps();
             $table->softDeletes();
-
-
-            $table->foreign('reviews_ID')
-                ->references('ID')
-                ->on('reviews')
-                ->onDelete('restrict');
         });
     }
 
@@ -35,6 +29,6 @@ class CreateImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('images');
+        Schema::dropIfExists('address');
     }
 }
