@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('last_name', 45);
             $table->unsignedBigInteger('roles_ID');
             $table->smallInteger('newsletter');
-            $table->string('hash',128);
+            $table->string('hash',128)->nullable();
             $table->timestamps();
             $table->softDeletes();
 

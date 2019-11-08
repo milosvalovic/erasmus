@@ -14,7 +14,7 @@ class CreateBlogTable extends Migration
     public function up()
     {
         Schema::create('blog', function (Blueprint $table) {
-            $table->increments('ID');
+            $table->bigIncrements('ID');
             $table->text('article');
             $table->string('title',200);
             $table->tinyInteger('status');
@@ -34,13 +34,6 @@ class CreateBlogTable extends Migration
                 ->references('ID')
                 ->on('users_season')
                 ->onDelete('cascade');
-
-            $table->foreign('confirm_by')
-                ->references('ID')
-                ->on('users')
-                ->onDelete('set null');
-
-
         });
     }
 
