@@ -15,7 +15,7 @@ return [
     'back_to_login' => 'Späť na prihlásenie',
     'home_more_button' => 'Ukázať viac ...',
     'contact' => 'Kontakt',
-    'reviews' => 'recenzií',
+    'reviews' => 'Recenzie: ',
 
     //Navigation
     'nav_home' => 'Domov',

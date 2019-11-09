@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCommentsTable extends Migration
+class CreatePresentationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('comments', function (Blueprint $table) {
-            $table->increments('ID');
+        Schema::create('presentations', function (Blueprint $table) {
+            $table->bigIncrements('ID');
             $table->unsignedBigInteger('users_season_ID');
-            $table->text('comment');
-            $table->tinyInteger('rating')->nullable();
+            $table->string('file_url',64);
             $table->timestamps();
             $table->softDeletes();
 
@@ -36,6 +35,6 @@ class CreateCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('presentations');
     }
 }
