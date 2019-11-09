@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Status_season extends Model
 {
+    use SoftDeletes;
+
     protected $table = 'status_season';
     protected $fillable= ['season_status_ID','users_season_ID','user_ID'];
 

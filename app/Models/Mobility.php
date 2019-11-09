@@ -9,9 +9,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class Mobility extends Model
 {
+    use SoftDeletes;
+    use \Staudenmeir\EloquentHasManyDeep\HasRelationships;
+
     protected $table = 'mobility';
     protected $fillable = ['mobility_types_ID', 'partner_university_ID', 'grant', 'info'];
 
@@ -28,4 +33,9 @@ class Mobility extends Model
     public function season(){
         return $this->hasMany('App\Models\Season','mobility_ID','ID');
     }
+
+    public function comment(){
+        return $this->HasManyDeep('App\Models\Comment',['App\Models\Season','App\Models\User_Season'],['mobility_ID','season_ID','users_season_ID'],['ID','ID','ID']);
+    }
+
 }

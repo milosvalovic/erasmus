@@ -9,10 +9,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class University extends Model
 {
+    use SoftDeletes;
+
     protected $table = 'partner_university';
     protected $fillable = ['country_ID', 'city', 'address', 'name', 'acronym', 'info', 'image_URL'];
 
