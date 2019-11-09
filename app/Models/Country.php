@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 class Country extends Model
 {
     protected $table = 'countries';
-    protected $fillable= ['country_name','country_code'];
+    protected $fillable= ['name','country_code','erasmus_code'];
 
 
     public function university(){

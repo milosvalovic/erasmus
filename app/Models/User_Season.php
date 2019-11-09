@@ -27,9 +27,9 @@ class User_season extends Model
         return $this->belongsTo('App\Models\User','users_ID','ID');
     }
 
-    public function comment()
+    public function review()
     {
-        return $this->hasMany('App\Models\Comment','users_season_ID','ID');
+        return $this->hasMany('App\Models\Review','users_season_ID','ID');
     }
 
     public function blog()

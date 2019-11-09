@@ -9,10 +9,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Comment extends Model
+class Review extends Model
 {
-    protected $table = 'comments';
+    use SoftDeletes;
+
+    protected $table = 'reviews';
     protected $fillable = ['users_ID', 'mobility_ID', 'text', 'rating'];
 
     public function user_season()
@@ -22,6 +25,6 @@ class Comment extends Model
 
     public function images()
     {
-        return $this->hasMany('App\Models\Image','comments_ID','ID');
+        return $this->hasMany('App\Models\Image','reviews_ID','ID');
     }
 }
