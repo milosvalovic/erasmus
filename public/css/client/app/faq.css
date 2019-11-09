@@ -119,16 +119,43 @@ div.content h1 {
     margin-bottom: 10px;
 }
 
+div.content h1:hover{
+    color: #00515e;
+}
+
+div.content a:hover {
+    text-decoration: none;
+}
+
 div.content h1 > i.heading-icon {
     font-size: 50px;
     color: #007183;
 }
+div.content h1 > i.heading-icon:hover {
+    color: #00515e;
+}
 
 div.content p {
-    font-family: Cairo-Regular, serif;
+    font-family: Cairo-Light, serif;
     font-size: 18px;
-    line-height: 25px;
+    line-height: 22px;
     text-align: left;
+    margin-bottom: 10px;
+}
+div.content h3 {
+    font-family: Cairo-SemiBold, serif;
+    font-size: 18px;
+}
+
+div.content ul > li.item {
+    font-family: Cairo-Light, serif;
+    font-size: 18px;
+    line-height: 22px;
+    list-style: circle;
+    margin-left: 40px;
+}
+div.content ul {
+    margin-bottom: 10px;
 }
 
 table {
