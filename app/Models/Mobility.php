@@ -35,7 +35,7 @@ class Mobility extends Model
     }
 
     public function comment(){
-        return $this->HasManyDeep('App\Models\Comment',['App\Models\Season','App\Models\User_Season'],['mobility_ID','season_ID','users_season_ID'],['ID','ID','ID']);
+        return $this->HasManyDeep('App\Models\Review',['App\Models\Season','App\Models\User_Season'],['mobility_ID','season_ID','users_season_ID'],['ID','ID','ID']);
     }
 
 }

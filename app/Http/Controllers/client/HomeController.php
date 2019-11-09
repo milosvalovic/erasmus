@@ -29,7 +29,7 @@ class HomeController extends Controller
             // function($query){$query->from('comments')->selectRaw('COUNT(comments.ID)');})
             //['count' => \DB::table('comments')->where('comments.mobility_ID', '=', 'mobility.ID')->count()])
             /*['avg' => \DB::table('comments')->selectRaw('avg(rating)')->where('comments.mobility_ID', '=', 'mobility.ID')])*/
-            //->addSelect(['count' => Comment::where('comments.mobility_ID','=','mobility.ID')->count()])
+            //->addSelect(['count' => Review::where('comments.mobility_ID','=','mobility.ID')->count()])
             ->selectRaw('(SELECT COUNT(comments.id) FROM comments WHERE comments.mobility_ID = mobility.ID) count')
             ->selectRaw('(SELECT AVG(rating) FROM comments WHERE comments.mobility_ID = mobility.ID) rating ')
             ->selectRaw('min(season.date_end_reg)')
@@ -116,12 +116,12 @@ class HomeController extends Controller
                 $query->select('ID','mobility_ID','date_end_reg')->where('date_end_reg','>',Carbon::now(+2));
             }
             ,'university.country' => function($query){
-                $query->select('ID','country_name');
+                $query->select('ID','name');
             }
             ,'season.user_season' => function($query){
                 $query->select('ID','season_ID');
             }
-            ,'season.user_season.comment' => function($query){
+            ,'season.user_season.review' => function($query){
                 $query->select('ID','users_season_ID','rating');
             }])
             ->withCount('comment')
