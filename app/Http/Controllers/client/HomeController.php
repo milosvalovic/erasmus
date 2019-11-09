@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\client;
 
+use App\Models\Address;
+use App\Models\Contact;
+use App\Models\Office_Hours;
 use App\Models\User;
 use App\Models\Mobility;
 use App\Models\University;
@@ -11,7 +14,7 @@ use Carbon\Carbon;
 class HomeController extends Controller
 {
     public function home(){
-        return view('client.app.home');
+        return view('client.app.home', ['contact' => Contact::all()->toArray(), 'office_hours' => Office_Hours::all(), 'address' => Address::all()]);
     }
 
     //Vr�ti v�etky typy mobil�t vo form�te {N�zov:ID, N�zov:ID}

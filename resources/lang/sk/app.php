@@ -60,6 +60,7 @@ return [
     //Home - Contact
     'contact_hours' => 'Úradné hodiny pre študentov',
     'contact_address' => 'Oddelenie pre medzinárodné vzťahy',
+    'off_day' => 'bez úradných hodín',
 
     //Home - Search modal
     'search_modal_title_part_one' => 'Vyhľadávajte a prihláste ',
