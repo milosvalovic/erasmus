@@ -30,3 +30,5 @@ Route::get('/prihlasovanie', 'client\AccountController@login');
 Route::get('/registracia', 'client\AccountController@register');
 
 Route::get('/pomoc', 'client\AccountController@forget_password');
+
+Route::get('/admin', 'system\SystemController@system');
