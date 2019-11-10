@@ -11,8 +11,10 @@
 |
 */
 
-Route::get('/', 'client\HomeController@home');
-
+Route::get('/', function () {
+    return view('system.student.profile');
+});
+//Route::get('/', 'client\HomeController@home');
 Route::get('/mobility', 'client\MobilitiesController@mobilities');
 
 Route::get('/detail', 'client\DetailController@detail');
