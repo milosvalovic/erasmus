@@ -21,6 +21,7 @@
     <body id="page-top">
         <div id="wrapper">
             @include('system.include.header')
+{{--            @include('system.include.top_navigation')--}}
 
             @section('content')
             @show

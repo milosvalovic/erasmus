@@ -11,4 +11,12 @@ class SystemController extends Controller
         return view('system.welcome_admin');
     }
 
+    public function users(){
+        return view('system.user_admin');
+    }
+
+    public function mobilities(){
+        return view('system.mobility_admin');
+    }
+
 }

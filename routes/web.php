@@ -31,4 +31,10 @@ Route::get('/registracia', 'client\AccountController@register');
 
 Route::get('/pomoc', 'client\AccountController@forget_password');
 
+
+// Admin routes
 Route::get('/admin', 'system\SystemController@system');
+
+Route::get('/admin/users', 'system\SystemController@users');
+
+Route::get('/admin/mobilities', 'system\SystemController@mobilities');
