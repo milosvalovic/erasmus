@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Review extends Model
 {
     use SoftDeletes;
+    use \Staudenmeir\EloquentHasManyDeep\HasRelationships;
 
     protected $table = 'reviews';
     protected $fillable = ['users_ID', 'mobility_ID', 'text', 'rating'];
@@ -26,5 +27,10 @@ class Review extends Model
     public function images()
     {
         return $this->hasMany('App\Models\Image','reviews_ID','ID');
+    }
+
+    public function user()
+    {
+        return $this->hasManyThrough('App\Models\User','App\Models\User_Season','users_ID','ID','ID','ID');
     }
 }
