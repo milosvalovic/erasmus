@@ -20,7 +20,7 @@ class CategorySeeder extends Seeder
         ]);
 
         DB::table('category')->insert([
-            'name' => 'Nezaradené'
+            'name' => 'Nezaradene'
         ]);
     }
 }

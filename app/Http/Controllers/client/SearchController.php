@@ -23,11 +23,14 @@ class SearchController extends Controller
             $ratingSearch = $request->input('rating');
 
 
-            $allMobility = Mobility::select('ID','mobility_types_ID','partner_university_ID')
+            $allMobility = Mobility::select('ID','mobility_types_ID','partner_university_ID','category_ID')
 
                 ->with([
                     'university' => function($query){
                         $query->select('ID','country_ID','name','img_url');
+                    }
+                    ,'category' => function($query) use ($offset){
+                        $query->select('ID','name');
                     }
                     ,'season' => function($query) use ($offset){
                         $query->select('ID','mobility_ID','date_end_reg')->where('date_end_reg','>',Carbon::now($offset));
