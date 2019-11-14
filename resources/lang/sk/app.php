@@ -60,6 +60,7 @@ return [
     //Home - Contact
     'contact_hours' => 'Úradné hodiny pre študentov',
     'contact_address' => 'Oddelenie pre medzinárodné vzťahy',
+    'off_day' => 'bez úradných hodín',
 
     //Home - Search modal
     'search_modal_title_part_one' => 'Vyhľadávajte a prihláste ',
@@ -102,13 +103,6 @@ return [
     'detail_reviews_title' => 'Recenzie',
 
     //FAQ
-    'faq_title_returns' => '&nbsp;Čo odovzdať po návrate',
-    'faq_title_leaving' => '&nbsp;Čo vybavyť pred odchodom',
-    'faq_title_how_to_choose' => '&nbsp;Ako si vybrať Univerzitu',
-    'faq_title_amount' => '&nbsp;Výška štipendia',
-    'faq_title_conditions' => '&nbsp;Podmineky účasti',
-    'faq_title_basic_information' => '&nbsp;Základné informácie',
-    'faq_title_partner_university' => '&nbsp;Partnerské Univerzity',
     'faq_partner_university_table_title_country' => 'Krajina',
     'faq_partner_university_table_title_university' => 'Názov Univerzity',
     'faq_partner_university_table_title_city' => 'Mesto',

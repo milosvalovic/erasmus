@@ -2,19 +2,20 @@
 /**
  * Created by PhpStorm.
  * User: ecneb
- * Date: 2019-10-19
- * Time: 16:56
+ * Date: 2019-11-09
+ * Time: 13:40
  */
 
 namespace App\Models;
 
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Text extends Model
+class Office_Hours extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'static_text';
-    protected $fillable = ['name', 'text'];
+    protected $table = 'office_hours';
+    protected $fillable = ['day', 'from', 'to', 'off'];
 }
