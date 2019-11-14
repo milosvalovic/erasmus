@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 128);
             $table->string('first_name', 45);
             $table->string('last_name', 45);
+            $table->boolean('verified')->default(false);
             $table->unsignedBigInteger('roles_ID');
             $table->smallInteger('newsletter');
             $table->string('hash',128)->nullable();
