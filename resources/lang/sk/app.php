@@ -19,12 +19,20 @@ return [
 
     //Navigation
     'nav_home' => 'Domov',
+
     'nav_search' => 'Výsledky vyhľadávania',
     'nav_mobilities' => 'Mobility',
     'nav_contact' => 'Kontakt',
     'nav_blog' => 'Blog',
     'nav_faq' => 'FAQ',
+
     'nav_account' => 'Účet',
+    'nav_logout' => 'Odhlasiť sa',
+
+    'nav_current_mobilities' => 'Aktuálne moblity',
+    'nav_profil_presentation' => 'Prezentácia',
+    'nav_profil_review' => 'Recenzia',
+    'nav_profil_blog' => 'Blog',
 
     //Forget Password
     'forget_password_title' => 'Nájdite svoj účet',
@@ -108,6 +116,16 @@ return [
     'faq_partner_university_table_title_city' => 'Mesto',
     'faq_partner_university_table_title_contact_person' => 'Kontaktná osoba',
 
+    //Profil
+    'profil_my_mobility' => 'Moje mobility',
+    'profil_presentation_upload' => 'Nahrať prezentáciu',
+    'profil_review_upload' => 'Napísať recenziu',
+    'profil_blog' => 'Napísať blog',
+    'profil_mobility' => 'Moje mobility',
+    'profil_choose_presentation' => 'Vyberte prezentáciu.',
+    'profil_choose_images' => 'Vyberte obrázky.',
+    'profil_upload' => 'Nahrať',
+    'profil_send' => 'Odoslať',
 
     //Errors - 404
     'errors_404_title' => '404',

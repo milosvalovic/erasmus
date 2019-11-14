@@ -11,10 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('system.student.profile');
-});
-//Route::get('/', 'client\HomeController@home');
+Route::get('/', 'client\HomeController@home');
+
 Route::get('/mobility', 'client\MobilitiesController@mobilities');
 
 Route::get('/detail', 'client\DetailController@detail');
@@ -29,6 +27,17 @@ Route::get('/faq', 'client\FAQController@faq');
 
 Route::get('/prihlasovanie', 'client\AccountController@login');
 
+Route::get('/odhlasenie', 'client\AccountController@login');
+
 Route::get('/registracia', 'client\AccountController@register');
 
 Route::get('/pomoc', 'client\AccountController@forget_password');
+
+Route::get('/profil', 'system\student\ProfileController@profil');
+
+Route::get('/profil/prezentacia', 'system\student\ProfileController@presentation');
+
+Route::get('/profil/recenzia', 'system\student\ProfileController@review');
+
+Route::get('/profil/blog', 'system\student\ProfileController@blog');
+
