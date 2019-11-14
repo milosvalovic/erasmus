@@ -16,6 +16,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('asd123'),
             'first_name' => 'Peter',
             'last_name' => 'Varga',
+            'verified' => 1,
             'roles_ID' => 1,
             'newsletter' => 1,
             'hash' => null
@@ -26,6 +27,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('asd123'),
             'first_name' => 'Michal',
             'last_name' => 'Králik',
+            'verified' => 1,
             'roles_ID' => 1,
             'newsletter' => 1,
             'hash' => null
@@ -36,6 +38,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('asd123'),
             'first_name' => 'Silvia',
             'last_name' => 'Hrozenská',
+            'verified' => 0,
             'roles_ID' => 2,
             'newsletter' => 0,
             'hash' => null
@@ -46,6 +49,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('root123'),
             'first_name' => 'Root',
             'last_name' => 'Admin',
+            'verified' => 1,
             'roles_ID' => 3,
             'newsletter' => 0,
             'hash' => null
