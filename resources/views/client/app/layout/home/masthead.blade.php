@@ -24,9 +24,9 @@
                             </select>
                             <br/>
                             <label for="from">@lang('app.search_modal_label_from')</label>
-                            <input type="text" name="from" id="from" value="" placeholder="@lang('app.search_modal_label_from_example')">
+                            <input type="text" name="from" id="from" value="" data-provide="datepicker" data-date-format="dd.mm.yyyy" placeholder="@lang('app.search_modal_label_from_example')">
                             <label for="to">@lang('app.search_modal_label_to')</label>
-                            <input type="text" name="to" id="to" value="" placeholder="@lang('app.search_modal_label_to_example')">
+                            <input type="text" name="to" id="to" value="" data-provide="datepicker" data-date-format="dd.mm.yyyy" placeholder="@lang('app.search_modal_label_to_example')">
                             <label for="search"></label>
                             <input type="submit" name="search" id="search" value="@lang('app.search_modal_submit')">
                         </form>

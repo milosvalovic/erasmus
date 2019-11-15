@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\client;
 
+use App\Models\Address;
+use App\Models\Contact;
+use App\Models\Office_Hours;
 use Illuminate\Http\Request;
 use App\Models\Mobility;
 use Illuminate\Routing\Controller;
@@ -10,6 +13,10 @@ use Carbon\Carbon;
 
 class SearchController extends Controller
 {
+    public function search(){
+        return view('client.app.search', ['contact' => Contact::all()->toArray(), 'office_hours' => Office_Hours::all(), 'address' => Address::all()]);
+    }
+
     //Vrati vsetky mobility podaa vyhladavania pouzivatela
     public function searchMobility(Request $request)
     {

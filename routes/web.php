@@ -17,6 +17,8 @@ Route::get('/mobility', 'client\MobilitiesController@mobilities');
 
 Route::get('/detail', 'client\DetailController@detail');
 
+Route::get('/hladat', 'client\SearchController@search');
+
 Route::get('/#kontakt', 'client\HomeController@home');
 
 Route::get('/blog', 'blog\BlogController@blog');
