@@ -95,6 +95,21 @@
     }
 }
 
+.dropdown-menu {
+    background-color: #ffffff1c;
+    border: none;
+}
+
+.dropdown-item {
+    color: #ffffff;
+    background-color: transparent;
+}
+
+.dropdown-item:hover {
+    color: #bcbcbc;
+    background-color: transparent;
+}
+
 @media only screen and (min-width: 992px) {
     #mainNav {
         -webkit-transition: background-color 0.2s;

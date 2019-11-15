@@ -18,8 +18,11 @@
                 <li class="nav-item">
                     <a class="nav-link @yield('faq')" href="{{ url('/faq') }}">@lang('app.nav_faq')</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link @yield('account')" href="{{ url('/prihlasovanie') }}">@lang('app.nav_account')</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle @yield('account')" id="logoutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="{{ url('/prihlasovanie') }}">@lang('app.nav_account')</a>
+                    <div class="dropdown-menu" aria-labelledby="logoutDropdown">
+                        <a class="dropdown-item" href="#">@lang('app.nav_logout')</a>
+                    </div>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
