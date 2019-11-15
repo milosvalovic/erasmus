@@ -14,11 +14,13 @@
                         <div class="input-items">
                             <form action="{{ url('/') }}" method="POST" enctype="multipart/form-data">
                                 <textarea name="review" id="review" cols="30" rows="10" placeholder="@lang('app.profil_review_placeholder')"></textarea>
+                                <div class="error text-danger">Some Errors related to something</div>
                                 <div class="input-images-container">
                                     <label for="images" class="input-images-trigger">@lang('app.profil_choose_images')</label>
                                     <input type="file" class="input-images" id="images" name="images" multiple="multiple">
                                 </div>
                                 <p class="selected-images"></p>
+                                <div class="error text-danger">Some Errors related to something</div>
                                 <input type="submit" name="send" id="send" value="@lang('app.profil_send')">
                             </form>
                         </div>

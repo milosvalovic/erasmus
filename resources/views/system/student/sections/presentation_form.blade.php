@@ -18,6 +18,7 @@
                                     <input type="file" class="input-presentation" id="presentation" name="presentation">
                                 </div>
                                 <p class="selected-presentation"></p>
+                                <div class="error text-danger">Some Errors related to something</div>
                                 <input type="submit" name="upload" id="upload" value="@lang('app.profil_upload')">
                             </form>
                         </div>

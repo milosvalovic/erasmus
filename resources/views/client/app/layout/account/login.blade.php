@@ -13,9 +13,11 @@
                                 <form action="{{ url('/') }}" method="POST" enctype="application/x-www-form-urlencoded">
                                     <label for="email">@lang('app.login_input_label_email')</label>
                                     <input type="email" name="email" id="email" value="" placeholder="@lang('app.right_email_format')">
+                                    <div class="error text-danger">Some Errors related to something</div>
                                     <br/>
                                     <label for="password">@lang('app.login_input_label_password')</label>
                                     <input type="password" name="password" id="password" value="" placeholder="********">
+                                    <div class="error text-danger">Some Errors related to something</div>
                                     <br/>
                                     <input type="submit" value="@lang('app.login_input_submit')">
                                 </form>

@@ -13,9 +13,11 @@
                                 <form action="{{ url('/') }}" method="POST" enctype="application/x-www-form-urlencoded">
                                     <label for="password">@lang('app.reset_password_new')</label>
                                     <input type="password" name="password" id="password" value="" placeholder="********">
+                                    <div class="error text-danger">Some Errors related to something</div>
                                     <br/>
                                     <label for="password">@lang('app.reset_password_confirm')</label>
                                     <input type="password" name="password" id="password" value="" placeholder="********">
+                                    <div class="error text-danger">Some Errors related to something</div>
                                     <br/>
                                     <input type="submit" value="@lang('app.reset_password_submit')">
                                 </form>

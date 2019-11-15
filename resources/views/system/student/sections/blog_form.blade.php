@@ -10,12 +10,15 @@
                     <label for="name">@lang('app.profil_blog_title')</label>
                     <input type="text" name="name" id="name" readonly
                            value="Prvý článok">
+                    <div class="error text-danger">Some Errors related to something</div>
                     <label for="place">@lang('app.profil_blog_place')</label>
                     <input type="text" name="place" id="place" readonly
                            value="USA">
+                    <div class="error text-danger">Some Errors related to something</div>
                     <label for="date">@lang('app.profil_blog_date')</label>
                     <input type="text" name="date" id="date" readonly
                            value="02.02.2019">
+                    <div class="error text-danger">Some Errors related to something</div>
                     <label for="send"></label>
                     <label for="standalone-container">@lang('app.profil_blog_story')</label>
                     <div id="standalone-container">
@@ -66,6 +69,7 @@
                         </div>
                         <div id="editor-blog"></div>
                     </div>
+                    <div class="error text-danger">Some Errors related to something</div>
                     <div class="sending-button">
                         <input type="submit" name="send" id="send" value="@lang('app.profil_send')">
                     </div>
