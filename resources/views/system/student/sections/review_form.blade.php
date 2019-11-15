@@ -13,7 +13,7 @@
                     <div class="col-lg-12">
                         <div class="input-items">
                             <form action="{{ url('/') }}" method="POST" enctype="multipart/form-data">
-                                <textarea name="review" id="review" cols="30" rows="10" placeholder="Vaša recenzia o mobilite"></textarea>
+                                <textarea name="review" id="review" cols="30" rows="10" placeholder="@lang('app.profil_review_placeholder')"></textarea>
                                 <div class="input-images-container">
                                     <label for="images" class="input-images-trigger">@lang('app.profil_choose_images')</label>
                                     <input type="file" class="input-images" id="images" name="images" multiple="multiple">

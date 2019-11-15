@@ -1,6 +1,9 @@
 </div>
 <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('vendor/bootstrap/bootstrap.min.js')}}"></script>
+<script src="{{asset('vendor/quill/katex.min.js')}}"></script>
+<script src="{{asset('vendor/quill/highlight.min.js')}}"></script>
+<script src="{{asset('vendor/quill/quill.js')}}"></script>
 <script>
     const presentationInput = document.querySelector(".input-presentation"),
         presentationButton = document.querySelector(".input-presentation-trigger"),
@@ -42,6 +45,17 @@
     });
     presentationInput.addEventListener("change", function (event) {
         presentationReturn.innerHTML = this.value;
+    });
+</script>
+<script>
+    let quill = new Quill('#editor-blog', {
+        modules: {
+            formula: true,
+            syntax: true,
+            toolbar: '#toolbar-container'
+        },
+        placeholder: '',
+        theme: 'snow'
     });
 </script>
 </body>

@@ -123,3 +123,10 @@ a {
 .text-info {
     margin-bottom: 10px;
 }
+
+@media (max-width: 992px) {
+    h2 {
+        margin-top: 35px;
+        font-size: 3.0rem;
+    }
+}

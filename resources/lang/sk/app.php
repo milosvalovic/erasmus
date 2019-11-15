@@ -126,6 +126,11 @@ return [
     'profil_choose_images' => 'Vyberte obrázky.',
     'profil_upload' => 'Nahrať',
     'profil_send' => 'Odoslať',
+    'profil_review_placeholder' => 'Vaša recenzia o mobilite',
+    'profil_blog_title' => 'NÁZOV ČLÁNKU',
+    'profil_blog_place' => 'MIESTO POBYTU',
+    'profil_blog_date' => 'DÁTUM',
+    'profil_blog_story' => 'VÁŠ PRÍBEH',
 
     //Errors - 404
     'errors_404_title' => '404',
