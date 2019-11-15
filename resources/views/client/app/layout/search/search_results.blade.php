@@ -26,11 +26,11 @@
                     </div>
                     <div class="from">
                         <label for="from">@lang('app.search_modal_label_from')</label>
-                        <input type="text" name="from" id="from" value="" data-provide="datepicker" data-date-format="dd.mm.yyyy" placeholder="">
+                        <input type="text" name="from" id="from" value="" data-provide="datepicker" data-date-format="dd.mm.yyyy" readonly placeholder="">
                     </div>
                     <div class="to">
                         <label for="to">@lang('app.search_modal_label_to')</label>
-                        <input type="text" name="to" id="to" value="" data-provide="datepicker" data-date-format="dd.mm.yyyy" placeholder="">
+                        <input type="text" name="to" id="to" value="" data-provide="datepicker" data-date-format="dd.mm.yyyy" readonly placeholder="">
                     </div>
                     <div class="search">
                         <label for="search"></label>
