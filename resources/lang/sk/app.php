@@ -40,6 +40,12 @@ return [
     'forget_password_input_label_email' => 'Email',
     'forget_password_input_submit' => 'Poslať',
 
+    //Rest Password
+    'reset_password_title' => 'Zmena hesla',
+    'reset_password_submit' => 'Zmeniť',
+    'reset_password_new' => 'Nové heslo',
+    'reset_password_confirm' => 'Potvrdenie hesla',
+
     //Login
     'login_title' => 'Prihlásenie',
     'login_input_label_email' => 'Email',
