@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CategorySeeder extends Seeder
 {
@@ -20,7 +21,7 @@ class CategorySeeder extends Seeder
         ]);
 
         DB::table('category')->insert([
-            'name' => 'Nezaradene'
+            'name' => 'Nezaradené'
         ]);
     }
 }

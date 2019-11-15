@@ -266,6 +266,14 @@ div.input-items > form > input[type="submit"]:hover {
     background: #004351;
 }
 
+div#current-opportunities .badge.badge-secondary{
+    color: #ffffff;
+}
+
+div#current-opportunities .badge-secondary{
+    background-color:#007183;
+}
+
 div#current-opportunities h2.section-heading,
 div#partner-universities h2.section-heading,
 div#kontakt h2.section-heading {

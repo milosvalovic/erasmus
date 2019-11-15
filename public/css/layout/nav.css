@@ -110,6 +110,22 @@
     background-color: transparent;
 }
 
+@media only screen and (max-width: 992px) {
+    .dropdown-menu {
+        background-color: rgba(0, 0, 0, 0.04);
+        border: none;
+    }
+
+    .dropdown-item {
+        color: rgba(0,0,0,.5);
+    }
+
+    .dropdown-item:hover {
+        color: #000000;
+        background-color: transparent;
+    }
+}
+
 @media only screen and (min-width: 992px) {
     #mainNav {
         -webkit-transition: background-color 0.2s;

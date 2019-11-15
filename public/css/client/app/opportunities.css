@@ -133,6 +133,14 @@ div#opportunities {
     margin-top: 50px;
 }
 
+div#opportunities .badge.badge-secondary{
+    color: #ffffff;
+}
+
+div#opportunities .badge-secondary{
+    background-color:#007183;
+}
+
 div#opportunities img {
     width: 250px;
     height: 170px;

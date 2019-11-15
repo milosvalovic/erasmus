@@ -6,6 +6,7 @@
                      class="rounded">
                 <br/>
                 <a href="{{ url('/detail') }}" class="opportunitie-name">Taiwan</a>
+                <span class="badge badge-secondary">CEEPUS</span>
                 <p class="opportunitie-date">prihlášky do 09.10.2019</p>
                 <p class="opportunitie-comments">@lang('app.reviews')33</p>
             </div>
@@ -14,6 +15,7 @@
                      class="rounded">
                 <br/>
                 <a href="{{ url('/detail') }}" class="opportunitie-name">USA</a>
+                <span class="badge badge-secondary">CEEPUS</span>
                 <p class="opportunitie-date">prihlášky do 05.11.2019</p>
                 <p class="opportunitie-comments">@lang('app.reviews')13</p>
             </div>
@@ -22,6 +24,7 @@
                      class="rounded">
                 <br/>
                 <a href="{{ url('/detail') }}" class="opportunitie-name">Latinská Amerika</a>
+                <span class="badge badge-secondary">CEEPUS</span>
                 <p class="opportunitie-date">prihlášky do 11.11.2019</p>
                 <p class="opportunitie-comments">@lang('app.reviews')35</p>
             </div>
@@ -30,6 +33,7 @@
                      class="rounded">
                 <br/>
                 <a href="{{ url('/detail') }}" class="opportunitie-name">Velká Británie</a>
+                <span class="badge badge-secondary">CEEPUS</span>
                 <p class="opportunitie-date">prihlášky do 12.18.2019</p>
                 <p class="opportunitie-comments">@lang('app.reviews')5</p>
             </div>
@@ -40,6 +44,7 @@
                      class="rounded">
                 <br/>
                 <a href="{{ url('/detail') }}" class="opportunitie-name">Taiwan</a>
+                <span class="badge badge-secondary">CEEPUS</span>
                 <p class="opportunitie-date">prihlášky do 09.10.2019</p>
                 <p class="opportunitie-comments">@lang('app.reviews')33</p>
             </div>
@@ -48,6 +53,7 @@
                      class="rounded">
                 <br/>
                 <a href="{{ url('/detail') }}" class="opportunitie-name">USA</a>
+                <span class="badge badge-secondary">CEEPUS</span>
                 <p class="opportunitie-date">prihlášky do 05.11.2019</p>
                 <p class="opportunitie-comments">@lang('app.reviews')13</p>
             </div>
@@ -56,6 +62,7 @@
                      class="rounded">
                 <br/>
                 <a href="{{ url('/detail') }}" class="opportunitie-name">Latinská Amerika</a>
+                <span class="badge badge-secondary">CEEPUS</span>
                 <p class="opportunitie-date">prihlášky do 11.11.2019</p>
                 <p class="opportunitie-comments">@lang('app.reviews')35</p>
             </div>
@@ -64,6 +71,7 @@
                      class="rounded">
                 <br/>
                 <a href="{{ url('/detail') }}" class="opportunitie-name">Velká Británie</a>
+                <span class="badge badge-secondary">CEEPUS</span>
                 <p class="opportunitie-date">prihlášky do 12.18.2019</p>
                 <p class="opportunitie-comments">@lang('app.reviews')5</p>
             </div>
