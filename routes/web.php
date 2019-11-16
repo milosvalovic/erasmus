@@ -20,6 +20,8 @@ Route::get('/domov/krajiny', 'client\HomeController@getCountryCodes');
 
 Route::post('hladat', ['as' => 'search', 'uses' => 'client\SearchController@search']);
 
+Route::get('/#kontakt', 'client\HomeController@home');
+
 Route::get('/prihlasovanie', 'client\AccountController@login');
 
 Route::get('/registracia', 'client\AccountController@register');
@@ -43,7 +45,7 @@ Route::get('/detail', 'client\DetailController@detail');
 
 Route::get('/hladat', 'client\SearchController@search');
 
-Route::get('/#kontakt', 'client\HomeController@home');
+Route::get('/#contact', 'client\HomeController@home');
 
 Route::get('/blog', 'blog\BlogController@blog');
 

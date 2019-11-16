@@ -91,6 +91,7 @@ return [
     'search_modal_label_from_example' => '01.01.2020',
     'search_modal_label_to_example' => '02.02.2020',
     'search_modal_submit' => 'Hľadať',
+    'no_match' => 'Vyhľadávacím kritériam neboli nájdené žiadné mobility',
 
     //Newsletter
     'newsletter_question' => 'CHCETE BYŤ INFORMOVANÝ AKO PRVÝ O podujatiach k MOBILITáM?',

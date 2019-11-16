@@ -1,4 +1,9 @@
 $('document').ready(function () {
+    $("#load").click(function(e){
+        e.preventDefault();
+        $("#search").append("<input type='hidden' name='number' value='"+$("#number-of-items > *").length+"'>").submit();
+    });
+
     const typed = new Typed('#typed', {
         strings: ['pobyty', 'stáže', 'prednáškové pobyty', 'školenia'],
         backSpeed: 70,

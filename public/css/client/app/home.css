@@ -276,7 +276,7 @@ div#current-opportunities .badge-secondary{
 
 div#current-opportunities h2.section-heading,
 div#partner-universities h2.section-heading,
-div#contact h2.section-heading {
+div#kontakt h2.section-heading {
     font-family: Cairo-Bold, serif;
     font-style: italic;
     font-size: 35px;
@@ -289,12 +289,12 @@ div#contact h2.section-heading {
 @media only screen and (max-width: 992px) {
     div#current-opportunities h2.section-heading,
     div#partner-universities h2.section-heading,
-    div#contact h2.section-heading {
+    div#kontakt h2.section-heading {
         text-align: center;
     }
 }
 
-div#contact h2.section-heading {
+div#kontakt h2.section-heading {
     margin-bottom: 0;
 }
 

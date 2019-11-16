@@ -346,3 +346,9 @@ form#search input[type="submit"]:hover {
         width: 150px;
     }
 }
+
+h2.no-match{
+    font-size: 20px;
+    margin: 50px;
+    font-family: Cairo-Regular, serif;
+}

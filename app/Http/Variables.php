@@ -13,5 +13,5 @@ class Variables
 {
     const HOME_PAGE_COUNT_MOBILITY = 4;
     const TIME_OFFSET = +2;
-
+    const NUMBER_OF_ITEMS = 8;
 }

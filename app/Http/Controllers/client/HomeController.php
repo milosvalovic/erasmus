@@ -20,7 +20,7 @@ class HomeController extends Controller
                 ['contact' => Contact::all()->toArray(),
                 'office_hours' => Office_Hours::all(), 'address' => Address::all(),
                 'mobilities' => $this->getTopMobility(),
-                'type' => Mobility_Type::pluck('name')->toArray(),
+                'type' => Mobility_Type::pluck('name', 'id'),
                 ]);
     }
 
