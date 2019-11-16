@@ -144,6 +144,9 @@ return [
     'newsletter_unsubscribe_text' => 'Neželáte si ďalej dostávať tieto zaujímavé informácie? Odhlásiť sa môžete',
     'newsletter_unsubscribe' => 'tu.',
 
+    //Email - activate
+    'newsletter_activate' => 'Aktivácia účtu',
+
     //Errors - 404
     'errors_404_title' => '404',
     'errors_404_subtitle' => 'Ľutujeme, stránka sa nenašla',

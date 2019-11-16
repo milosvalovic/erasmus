@@ -55,3 +55,13 @@ Route::get('/email/newsletter', function(){
        ->subject(Lang::get('app.newsletter_current_opportunities'));
     });
 });
+
+Route::get('/email/activate', function(){
+    $to_name="Firstname Lastname";
+    $to_email="username@gmail.com";
+    $data = array("header" => "", "text" => "", "activate_url"=>"");
+    Mail::send('mail.activate', $data, function($messeage) use ($to_name, $to_email){
+        $messeage->to($to_email)
+            ->subject(Lang::get('app.newsletter_activate'));
+    });
+});
