@@ -92,7 +92,7 @@ return [
     'search_modal_submit' => 'Hľadať',
 
     //Newsletter
-    'newsletter_title' => 'CHCETE BYŤ INFORMOVANÝ AKO PRVÝ O podujatiach k MOBILITáM?',
+    'newsletter_question' => 'CHCETE BYŤ INFORMOVANÝ AKO PRVÝ O podujatiach k MOBILITáM?',
     'newsletter_submit' => 'ÁNO',
 
     //Blog
@@ -138,14 +138,19 @@ return [
     'profil_blog_date' => 'DÁTUM',
     'profil_blog_story' => 'VÁŠ PRÍBEH',
 
+    //Email
+    'email_university_name' => 'Univerzita Konštantína Filozofa v Nitre 2019',
+
     //Email - newsletter
-    'newsletter_current_opportunities' => 'Naše najnovšie mobility',
-    'newsletter_university_name' => 'Univerzita Konštantína Filozofa v Nitre 2019',
+    'newsletter_title' => 'Naše najnovšie mobility',
     'newsletter_unsubscribe_text' => 'Neželáte si ďalej dostávať tieto zaujímavé informácie? Odhlásiť sa môžete',
     'newsletter_unsubscribe' => 'tu.',
 
     //Email - activate
-    'newsletter_activate' => 'Aktivácia účtu',
+    'activate_title' => 'Aktivácia účtu',
+
+    //Email - activate
+    'reset_title' => 'Zmena hesla',
 
     //Errors - 404
     'errors_404_title' => '404',

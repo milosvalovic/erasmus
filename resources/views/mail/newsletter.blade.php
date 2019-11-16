@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>@lang('app.newsletter_current_opportunities')</title>
+    <title>@lang('app.newsletter_title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" type="image/png" href="{{ asset('fav/favicon.ico') }}"/>
 </head>
@@ -13,7 +13,7 @@
             <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border: 1px solid #cccccc; border-collapse: collapse;">
                 <tr>
                     <td align="center" bgcolor="#70bbd9" style="font-size: 28px; font-weight: bold; font-family: Arial, sans-serif;">
-                        <img src="{{asset('img/newsletter_header.jpg')}}" alt="@lang('app.newsletter_current_opportunities')" width="749" height="207" style="display: block;" />
+                        <img src="{{asset('img/newsletter_header.jpg')}}" alt="@lang('app.newsletter_title')" width="749" height="207" style="display: block;" />
                     </td>
                 </tr>
                 <tr>
@@ -195,7 +195,7 @@
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
                                 <td style="color: #ffffff; font-family: Arial, sans-serif; font-size: 14px;" width="75%">
-                                    &reg; @lang('app.newsletter_university_name')
+                                    &reg; @lang('app.email_university_name')
                                     <br/> @lang('app.newsletter_unsubscribe_text') <a href="#" style="color: #ffffff;"><font color="#ffffff">@lang('app.newsletter_unsubscribe')</font></a>
                                 </td>
                                 <td align="right" width="25%">

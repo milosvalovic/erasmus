@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>@lang('app.activate_title')</title>
+    <title>@lang('app.reset_title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" type="image/png" href="{{ asset('fav/favicon.ico') }}"/>
 </head>
@@ -13,7 +13,7 @@
             <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border: 1px solid #cccccc; border-collapse: collapse;">
                 <tr>
                     <td align="center" bgcolor="#70bbd9" style="font-size: 28px; font-weight: bold; font-family: Arial, sans-serif;">
-                        <img src="{{ asset('img/activate_account_header.jpg') }}" alt="@lang('app.activate_title')" width="749" height="207" style="display: block;" />
+                        <img src="{{ asset('img/forget_password_header.jpg') }}" alt="@lang('app.reset_title')" width="749" height="207" style="display: block;" />
                     </td>
                 </tr>
                 <tr>
@@ -37,7 +37,7 @@
                                                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                                     <tr>
                                                         <td style="padding: 10px 0 0 0; font-family: Arial, sans-serif; font-size: 15px; text-align: center">
-                                                            <a href="#" style="text-decoration: none; background-color: #007183; color: #ffffff; padding: 20px; border-radius: 10px; text-transform: uppercase;"><b>Kliknite sem pre aktiváciu účtu</b></a>
+                                                            <a href="#" style="text-decoration: none; background-color: #007183; color: #ffffff; padding: 20px; border-radius: 10px; text-transform: uppercase;"><b>Kliknite sem pre zmenu hesla</b></a>
                                                         </td>
                                                     </tr>
                                                 </table>

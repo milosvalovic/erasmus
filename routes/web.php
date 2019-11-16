@@ -52,7 +52,7 @@ Route::get('/email/newsletter', function(){
     $data = array("header" => "", "text" => "", "mobilities"=> array(), "unsubscribe_url"=>"");
     Mail::send('mail.newsletter', $data, function($messeage) use ($to_name, $to_email){
        $messeage->to($to_email)
-       ->subject(Lang::get('app.newsletter_current_opportunities'));
+       ->subject(Lang::get('app.newsletter_title'));
     });
 });
 
@@ -62,6 +62,16 @@ Route::get('/email/activate', function(){
     $data = array("header" => "", "text" => "", "activate_url"=>"");
     Mail::send('mail.activate', $data, function($messeage) use ($to_name, $to_email){
         $messeage->to($to_email)
-            ->subject(Lang::get('app.newsletter_activate'));
+            ->subject(Lang::get('app.activate_title'));
+    });
+});
+
+Route::get('/email/reset', function(){
+    $to_name="Firstname Lastname";
+    $to_email="username@gmail.com";
+    $data = array("header" => "", "text" => "", "reset_url"=>"");
+    Mail::send('mail.activate', $data, function($messeage) use ($to_name, $to_email){
+        $messeage->to($to_email)
+            ->subject(Lang::get('app.reset_title'));
     });
 });
