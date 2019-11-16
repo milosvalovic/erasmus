@@ -5,7 +5,6 @@ namespace App\Http\Controllers\client;
 use App\Models\Address;
 use App\Models\Contact;
 use App\Models\Office_Hours;
-use App\Models\User;
 use App\Models\Mobility;
 use App\Models\University;
 use App\Models\Mobility_Type;
@@ -17,19 +16,43 @@ class HomeController extends Controller
 {
 
     public function home(){
-        return view('client.app.home', ['contact' => Contact::all()->toArray(), 'office_hours' => Office_Hours::all(), 'address' => Address::all()]);
+        return view('client.app.home',
+                ['contact' => Contact::all()->toArray(),
+                'office_hours' => Office_Hours::all(), 'address' => Address::all(),
+                'mobilities' => $this->getTopMobility(),
+                'type' => Mobility_Type::pluck('name')->toArray(),
+                ]);
     }
 
-    //Vrati vsetky typy mobilit vo formete {Nazov:ID, Nazov:ID}
-    public function getTypesOfMobility()
+    private function getTopMobility()
     {
-        $mobilityTypes = Mobility_Type::pluck('ID','name');
+        $limit = Variables::HOME_PAGE_COUNT_MOBILITY;
 
-        return $mobilityTypes;
+        $types = $this->getTypesOfMobility();
+        $topMobilityTypes = array();
+
+        foreach ($types as $key => $type){
+            $mobility =  $this->getTopMobilityType($type,$limit);
+
+            if(count($mobility)>0){
+
+                foreach ($mobility as $item){
+                    $item->review_avg = $item->review->avg('rating');
+                }
+
+                $sortedMobility = $mobility->sortByDesc(function($col) {
+                    return $col->review_avg;
+                })->values();
+
+
+                $topMobilityTypes[$key] = $sortedMobility;
+            }
+        }
+
+        return $topMobilityTypes;
     }
 
-    //Vrati N ($limit) najlepsie hodnotenych mobilit zadanaho typu mobility
-    public function getTopMobilityType($typeID, $limit)
+    private function getTopMobilityType($typeID, $limit)
     {
         $offset = Variables::TIME_OFFSET;
 
@@ -68,36 +91,13 @@ class HomeController extends Controller
         return $topMobility;
     }
 
-    //Vrati 4 najlepeie hodnotene mobility kazdeho typu
-    public function getTopMobility()
+    private function getTypesOfMobility()
     {
-        $limit = Variables::HOME_PAGE_COUNT_MOBILITY;
+        $mobilityTypes = Mobility_Type::pluck('ID','property');
 
-        $types = $this->getTypesOfMobility();
-        $arrayFinal = array();
-
-        foreach ($types as $key => $type){
-            $mobility =  $this->getTopMobilityType($type,$limit);
-
-            if(count($mobility)>0){
-
-                foreach ($mobility as $item){
-                    $item->review_avg = $item->review->avg('rating');
-                }
-
-                $sortedMobility = $mobility->sortByDesc(function($col) {
-                    return $col->review_avg;
-                })->values();
-
-
-                $arrayFinal[$key] = $sortedMobility;
-            }
-        }
-
-        return $arrayFinal;
+        return $mobilityTypes;
     }
 
-    //Vrati Country Code pre mapu
     public function getCountryCodes()
     {
         $countries = University::with('country')->get()->pluck('country.country_code');
@@ -105,19 +105,17 @@ class HomeController extends Controller
         return array('countries'=>$countries);
     }
 
-    //Prihlasnie do Newsletteru
-    public function signInNewsletter($email)
-    {
-        $updated = User::where('email', $email)->update(['newsletter' => 1]);
 
-        if($updated>0){
-            return $notification=['success:newsletter'];
-        }else{
-            return $notification=['error:newsletter'];
-        }
-    }
 
-    //Vrati vsetky mobility daneho typu
+
+
+
+
+
+
+
+
+
     public function getAllMobilityType($typeID)
     {
         $sortedMobility = $this->getTopMobilityType($typeID,'')->sortByDesc(function($col) {

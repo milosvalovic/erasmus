@@ -1,25 +1,25 @@
-div#kontakt h3 {
+div#contact h3 {
     font-family: Cairo-Black, serif;
     font-size: 20px;
     color: #007183;
 }
 
-div#kontakt h3.contact-title {
+div#contact h3.contact-title {
     margin-top: 30px;
 }
 
-div#kontakt h3.contact-title.hours, div#kontakt h3.contact-title.address {
+div#contact h3.contact-title.hours, div#contact h3.contact-title.address {
     font-family: Cairo-Bold, serif;
     font-size: 28px;
 }
 
-div#kontakt ul > li {
+div#contact ul > li {
     font-family: Cairo-Regular, serif;
     font-size: 18px;
     margin-top: 5px;
 }
 
-div#kontakt ul > li > span.item-name {
+div#contact ul > li > span.item-name {
     font-family: Cairo-Bold, serif;
     font-size: 18px;
     padding-left: 20px;
@@ -27,7 +27,7 @@ div#kontakt ul > li > span.item-name {
 }
 
 @media only screen and (max-width: 992px) {
-    div#kontakt ul, div#kontakt h3 {
+    div#contact ul, div#contact h3 {
         text-align: center;
     }
 }

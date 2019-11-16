@@ -16,6 +16,27 @@ use Illuminate\Support\Facades\Mail;
 
 Route::get('/', 'client\HomeController@home');
 
+Route::get('/domov/krajiny', 'client\HomeController@getCountryCodes');
+
+Route::post('hladat', ['as' => 'search', 'uses' => 'client\SearchController@search']);
+
+Route::get('/prihlasovanie', 'client\AccountController@login');
+
+Route::get('/registracia', 'client\AccountController@register');
+
+Route::get('/pomoc', 'client\AccountController@forget_password');
+
+
+
+
+
+
+
+
+
+
+
+
 Route::get('/mobility', 'client\MobilitiesController@mobilities');
 
 Route::get('/detail', 'client\DetailController@detail');
@@ -30,13 +51,7 @@ Route::get('/article', 'blog\BlogController@article');
 
 Route::get('/faq', 'client\FAQController@faq');
 
-Route::get('/prihlasovanie', 'client\AccountController@login');
-
 Route::get('/odhlasenie', 'client\AccountController@login');
-
-Route::get('/registracia', 'client\AccountController@register');
-
-Route::get('/pomoc', 'client\AccountController@forget_password');
 
 Route::get('/profil', 'system\student\ProfileController@profil');
 

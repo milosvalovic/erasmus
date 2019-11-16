@@ -14,6 +14,7 @@ return [
     'new_account' => 'Vytvoriť účet',
     'back_to_login' => 'Späť na prihlásenie',
     'home_more_button' => 'Ukázať viac ...',
+    'date_end' => 'prihlášky do ',
     'contact' => 'Kontakt',
     'reviews' => 'Recenzie: ',
 
@@ -67,7 +68,7 @@ return [
     //Home
     'home_opportunitie_internship' => 'Naše najpopulárnejšie ponuky stážov',
     'home_opportunitie_lecture_stays' => 'Naše najpopulárnejšie ponuky prednáškových pobytov',
-    'home_opportunitie_stays' => 'Naše najpopulárnejšie ponuky pobytov',
+    'home_opportunitie_stays' => 'Naše najpopulárnejšie študijné pobyty',
     'home_opportunitie_trainings' => 'Naše najpopulárnejšie ponuky školení',
     'home_partner_universitites' => 'Naše partnerské Univerzity',
 
@@ -93,7 +94,7 @@ return [
 
     //Newsletter
     'newsletter_question' => 'CHCETE BYŤ INFORMOVANÝ AKO PRVÝ O podujatiach k MOBILITáM?',
-    'newsletter_submit' => 'ÁNO',
+    'newsletter_link' => 'ÁNO, ZAREGISTROVAŤ SA',
 
     //Blog
     'blog_title' => 'Erasmus+ Blog',

@@ -1,4 +1,4 @@
-<div class="page-section" id="kontakt">
+<div class="page-section" id="contact">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
