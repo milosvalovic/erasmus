@@ -3,3 +3,80 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
+/*------------ADMIN general------------------------*/
+.admin-header{
+    grid-area: header;
+}
+
+.admin-footer{
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+}
+
+.admin-footer{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.admin-footer > p {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+/*--------ADMIN welcome page-----------*/
+.admin-welcome-page{
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 100px auto 100px;
+    background: #ffffff;
+    height: 100vh;
+    grid-template-areas:
+    "header title title title title title title title title"
+    "header content content content content content content content content"
+    "header footer footer footer footer footer footer footer footer";
+}
+
+.admin-welcome-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    grid-area: title;
+}
+
+.admin-welcome-title-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.admin-welcome-title-title > p{
+    margin-bottom: 0;
+}
+
+.admin-welcome-title-user-profile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-left: 1px solid grey;
+    padding-left: 10px;
+}
+
+.admin-welcome-title-user-profile > img{
+    margin-left: 20px;
+    width: 60px;
+    height: 60px;
+}
+
+.admin-welcome-title-user-profile > p {
+    margin-bottom: 0;
+}
+
+
+
+.admin-welcome-content{
+    padding: 20px;
+    grid-area: content;
+    background: #d6d7da;
+}

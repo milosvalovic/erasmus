@@ -19,36 +19,25 @@
 
     </head>
     <body id="page-top">
-        <div id="wrapper">
-            @include('system.include.header')
+{{--        <div id="wrapper">--}}
+{{--            @include('system.include.header')--}}
 {{--            @include('system.include.top_navigation')--}}
 
             @section('content')
             @show
 
-            @include('system.include.footer')
-        </div>
+{{--            @include('system.include.footer')--}}
+{{--        </div>--}}
 
-        <!-- Scroll to Top Button-->
         @include('system.include.scroll_to_top')
 
     </body>
-    <!-- Bootstrap, jQuery core-->
     <script type="text/javascript" src="{{ asset('js/system/jQuery/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/system/bootstrap/bootstrap.bundle.min.js') }}"></script>
-
-    <!-- Core plugin JavaScript-->
     <script type="text/javascript" src="{{ asset('js/system/jQuery/jquery.easing.min.js') }}"></script>
-
-    <!-- Custom scripts for all pages-->
     <script type="text/javascript" src="{{ asset('js/system/jQuery/sb-admin-2.min.js') }}"></script>
-
-    <!--Chart plugins -->
     <script type="text/javascript" src="{{ asset('js/system/charts/chart.min.js') }}"></script>
-
-    <!-- Page level custom scripts -->
     <script type="text/javascript" src="{{ asset('js/system/charts/chart-area-demo.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/system/charts/chart-pie-demo.js') }}"></script>
-
     <script type="text/javascript" src="{{ asset('js/system/front.js') }}"></script>
 </html>
