@@ -77,7 +77,7 @@ class SearchController extends Controller
                 });
             })
             ->skip(0)
-            ->take(isset($number_of_items)?(Variables::NUMBER_OF_ITEMS+$number_of_items):Variables::NUMBER_OF_MOBILITY_ITEMS)
+            ->take(isset($number_of_items)?(Variables::NUMBER_OF_MOBILITY_ITEMS+$number_of_items):Variables::NUMBER_OF_MOBILITY_ITEMS)
             ->get();
 
         if ($ratingSearch) {
