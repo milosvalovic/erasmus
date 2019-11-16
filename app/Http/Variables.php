@@ -13,5 +13,7 @@ class Variables
 {
     const HOME_PAGE_COUNT_MOBILITY = 4;
     const TIME_OFFSET = +2;
-    const NUMBER_OF_ITEMS = 8;
+    const NUMBER_OF_MOBILITY_ITEMS = 8;
+    const NUMBER_OF_MOBILITIES_IN_ROW = 4;
+    const NUMBER_OF_CONTACT_ROW = 2;
 }

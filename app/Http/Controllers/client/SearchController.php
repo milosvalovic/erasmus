@@ -77,7 +77,7 @@ class SearchController extends Controller
                 });
             })
             ->skip(0)
-            ->take(isset($number_of_items)?(Variables::NUMBER_OF_ITEMS+$number_of_items):Variables::NUMBER_OF_ITEMS)
+            ->take(isset($number_of_items)?(Variables::NUMBER_OF_ITEMS+$number_of_items):Variables::NUMBER_OF_MOBILITY_ITEMS)
             ->get();
 
         if ($ratingSearch) {
@@ -95,7 +95,7 @@ class SearchController extends Controller
                 return $col->date_end_reg;
             })->values();
         }
-        $sortedAllMobility = array_chunk($sortedAllMobility->toArray(), 4);
+        $sortedAllMobility = array_chunk($sortedAllMobility->toArray(), Variables::NUMBER_OF_MOBILITIES_IN_ROW);
 
         return view('client.app.search',
             ['contact' => Contact::all()->toArray(),

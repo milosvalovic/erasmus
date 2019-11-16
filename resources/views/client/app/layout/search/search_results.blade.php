@@ -84,7 +84,7 @@
         <div class="row more-opportunitie">
             <div class="container">
                 <div class="cold-md-12 text-right">
-                    <a id="load" href="#">Načítaj ďalšie</a>
+                    <a id="load" href="#">@lang('app.load_items')</a>
                 </div>
             </div>
         </div>

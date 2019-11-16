@@ -17,7 +17,7 @@ class HomeController extends Controller
 
     public function home(){
         return view('client.app.home',
-                ['contact' => Contact::all()->toArray(),
+                ['contact' => array_chunk(Contact::all()->toArray(), Variables::NUMBER_OF_CONTACT_ROW),
                 'office_hours' => Office_Hours::all(), 'address' => Address::all(),
                 'mobilities' => $this->getTopMobility(),
                 'type' => Mobility_Type::pluck('name', 'id'),
