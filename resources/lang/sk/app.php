@@ -138,6 +138,12 @@ return [
     'profil_blog_date' => 'DÁTUM',
     'profil_blog_story' => 'VÁŠ PRÍBEH',
 
+    //Email - newsletter
+    'newsletter_current_opportunities' => 'Naše najnovšie mobility',
+    'newsletter_university_name' => 'Univerzita Konštantína Filozofa v Nitre 2019',
+    'newsletter_unsubscribe_text' => 'Neželáte si ďalej dostávať tieto zaujímavé informácie? Odhlásiť sa môžete',
+    'newsletter_unsubscribe' => 'tu.',
+
     //Errors - 404
     'errors_404_title' => '404',
     'errors_404_subtitle' => 'Ľutujeme, stránka sa nenašla',

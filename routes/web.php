@@ -11,6 +11,9 @@
 |
 */
 
+use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Mail;
+
 Route::get('/', 'client\HomeController@home');
 
 Route::get('/mobility', 'client\MobilitiesController@mobilities');
@@ -43,3 +46,12 @@ Route::get('/profil/recenzia', 'system\student\ProfileController@review');
 
 Route::get('/profil/blog', 'system\student\ProfileController@blog');
 
+Route::get('/email/newsletter', function(){
+    $to_name="Firstname Lastname";
+    $to_email="username@gmail.com";
+    $data = array("header" => "", "text" => "", "mobilities"=> array(), "unsubscribe_url"=>"");
+    Mail::send('mail.newsletter', $data, function($messeage) use ($to_name, $to_email){
+       $messeage->to($to_email)
+       ->subject(Lang::get('app.newsletter_current_opportunities'));
+    });
+});
