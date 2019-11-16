@@ -67,6 +67,7 @@ body {
     margin-left: 20px;
     width: 60px;
     height: 60px;
+    border-radius: 7px;
 }
 
 .admin-welcome-title-user-profile > p {
