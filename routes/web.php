@@ -20,6 +20,10 @@ Route::get('/domov/krajiny', 'client\HomeController@getCountryCodes');
 
 Route::post('hladat', ['as' => 'search', 'uses' => 'client\SearchController@search']);
 
+Route::get('/mobility', 'client\MobilitiesController@mobilities');
+
+Route::get('/mobility/{id}/{perPage}', ['as' => 'mobility', 'uses' => 'client\MobilitiesController@mobilityByType']);
+
 Route::get('/#kontakt', 'client\HomeController@home');
 
 Route::get('/prihlasovanie', 'client\AccountController@login');
@@ -39,7 +43,6 @@ Route::get('/pomoc', 'client\AccountController@forget_password');
 
 
 
-Route::get('/mobility', 'client\MobilitiesController@mobilities');
 
 Route::get('/detail', 'client\DetailController@detail');
 

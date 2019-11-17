@@ -7,9 +7,9 @@
 @endsection
 @section('content')
     <div class="content">
-        @include('client.app.layout.mobilities.mobility')
+        @include('client.app.layout.mobilities.mobility', ['mobilities' => $mobilities])
         @include('client.app.layout.home.newsletter')
-        @include('client.app.layout.home.contact', ["contact" => array_chunk($contact, 2), "office_hours" => $office_hours, "address" => $address])
+        @include('client.app.layout.home.contact', ["contact" => $contact, "office_hours" => $office_hours, "address" => $address])
         @include('layout.client.app.footer')
     </div>
 @endsection

@@ -104,24 +104,4 @@ class HomeController extends Controller
 
         return array('countries'=>$countries);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-    public function getAllMobilityType($typeID)
-    {
-        $sortedMobility = $this->getTopMobilityType($typeID,'')->sortByDesc(function($col) {
-            return $col->date_end_reg;
-        })->values();
-
-        return $sortedMobility;
-    }
 }

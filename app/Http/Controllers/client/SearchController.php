@@ -98,7 +98,7 @@ class SearchController extends Controller
         $sortedAllMobility = array_chunk($sortedAllMobility->toArray(), Variables::NUMBER_OF_MOBILITIES_IN_ROW);
 
         return view('client.app.search',
-            ['contact' => Contact::all()->toArray(),
+            ['contact' => array_chunk(Contact::all()->toArray(), Variables::NUMBER_OF_CONTACT_ROW),
                 'office_hours' => Office_Hours::all(),
                 'address' => Address::all(),
                 'mobilities' => $sortedAllMobility,

@@ -201,6 +201,7 @@ div#opportunities p.opportunitie-comments {
 
 div#opportunities div.more-opportunitie {
     margin-top: 30px;
+    width: 100%;
 }
 
 div#opportunities div.more-opportunitie a {
@@ -347,8 +348,23 @@ form#search input[type="submit"]:hover {
     }
 }
 
-h2.no-match{
+h2.no-results{
     font-size: 20px;
     margin: 50px;
     font-family: Cairo-Regular, serif;
+}
+
+ul.pagination{
+    width: 100%;
+}
+
+ul.pagination > li{
+    margin: 0 auto;
+}
+
+.disabled{
+    font-family: Cairo-Light, serif;
+    font-size: 18px;
+    text-decoration: none;
+    color: #007183;
 }

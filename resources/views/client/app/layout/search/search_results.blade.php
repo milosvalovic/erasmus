@@ -41,7 +41,7 @@
         @if ($size == 0)
             <div class="row">
                 <div class="col-xl-12 text-center">
-                    <h2 class="no-match">@lang('app.no_match')</h2>
+                    <h2 class="no-results">@lang('app.search_no_match')</h2>
                 </div>
             </div>
         @elseif ($size == 1)
@@ -84,7 +84,7 @@
         <div class="row more-opportunitie">
             <div class="container">
                 <div class="cold-md-12 text-right">
-                    <a id="load" href="#">@lang('app.load_items')</a>
+                    <a id="load" href="#">@lang('app.search_load_items')</a>
                 </div>
             </div>
         </div>

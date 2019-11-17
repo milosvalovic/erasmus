@@ -19,7 +19,7 @@
 <div class="row more-opportunitie">
     <div class="container">
         <div class="cold-md-12 text-right">
-            <a href="{{ url('/mobility/'.$mobilita["mobility_types_ID"]) }}">@lang('app.home_more_button')</a>
+            <a href="{{ url('/mobility/'.$mobilita["mobility_types_ID"]).'/4' }}">@lang('app.home_more_button')</a>
         </div>
     </div>
 </div>
