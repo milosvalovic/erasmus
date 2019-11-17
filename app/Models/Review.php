@@ -31,6 +31,11 @@ class Review extends Model
 
     public function user()
     {
-        return $this->hasManyThrough('App\Models\User','App\Models\User_Season','users_ID','ID','ID','ID');
+        return $this->beThrough('App\Models\User','App\Models\User_Season','users_ID','ID','ID','ID');
     }
+
+    public function mobility(){
+        return $this->HasManyDeep('App\Models\Mobility',['App\Models\User_Season','App\Models\Season'],['ID','ID','ID'],['users_season_ID','season_ID','mobility_ID']);
+    }
+    
 }

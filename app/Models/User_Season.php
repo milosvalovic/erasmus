@@ -14,7 +14,7 @@ class User_season extends Model
 
     public function season()
     {
-        return $this->belongsTo('App\Models\Season','season_ID');
+        return $this->belongsTo('App\Models\Season','season_ID','ID');
     }
 
     public function status_season()
@@ -35,5 +35,10 @@ class User_season extends Model
     public function blog()
     {
         return $this->hasMany('App\Models\Blog','users_season_ID','ID');
+    }
+
+    public function presentation()
+    {
+        return $this->hasMany('App\Models\Presentation', 'users_season_ID','ID');
     }
 }

@@ -30,15 +30,28 @@ class Mobility extends Model
         return $this->belongsTo('App\Models\Mobility_Type', 'mobility_types_ID','ID');
     }
 
-    public function season(){
+    public function season()
+    {
         return $this->hasMany('App\Models\Season','mobility_ID','ID');
     }
 
-    public function review(){
+    public function review()
+    {
         return $this->HasManyDeep('App\Models\Review',['App\Models\Season','App\Models\User_Season'],['mobility_ID','season_ID','users_season_ID'],['ID','ID','ID']);
     }
 
-    public function category(){
+    public function category()
+    {
         return $this->belongsTo('App\Models\Category','category_ID','ID');
+    }
+
+    public function presentation()
+    {
+        return $this->HasManyDeep('App\Models\Presentation',['App\Models\Season','App\Models\User_Season'],['mobility_ID','season_ID','users_season_ID'],['ID','ID','ID']);
+    }
+
+    public function user_season()
+    {
+        return $this->hasManyThrough('App\Models\User_Season','App\Models\Season','mobility_ID','season_ID','ID','ID');
     }
 }
