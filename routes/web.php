@@ -18,13 +18,13 @@ Route::get('/', 'client\HomeController@home');
 
 Route::get('/domov/krajiny', 'client\HomeController@getCountryCodes');
 
-Route::post('hladat', ['as' => 'search', 'uses' => 'client\SearchController@search']);
+Route::post('/hladat', ['as' => 'search', 'uses' => 'client\SearchController@search']);
+
+Route::get('/#kontakt', 'client\HomeController@home');
 
 Route::get('/mobility', 'client\MobilitiesController@mobilities');
 
 Route::get('/mobility/{id}/{perPage}', ['as' => 'mobility', 'uses' => 'client\MobilitiesController@mobilityByType']);
-
-Route::get('/#kontakt', 'client\HomeController@home');
 
 Route::get('/prihlasovanie', 'client\AccountController@login');
 
@@ -32,7 +32,7 @@ Route::get('/registracia', 'client\AccountController@register');
 
 Route::get('/pomoc', 'client\AccountController@forget_password');
 
-
+Route::post('/blog/insert', ['as' => 'insert-article', 'uses' => 'blog\BlogController@insertArticle']);
 
 
 

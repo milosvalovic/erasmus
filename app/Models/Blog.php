@@ -16,7 +16,7 @@ class Blog extends Model
     use SoftDeletes;
 
     protected $table = 'blog';
-    protected $fillable = ['users_ID', 'text', 'title', 'mobility_ID', 'status', 'confirm_by'];
+    protected $fillable = ['ID', 'users_ID', 'title', 'article', 'publish_date', 'mobility_ID', 'status', 'confirm_by'];
 
     public function users_season()
     {
