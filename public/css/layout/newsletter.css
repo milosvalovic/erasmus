@@ -1,5 +1,6 @@
 .newsletter-background {
     background-color: #007183;
+    height: 130px;
     margin-top: 40px;
 }
 
@@ -16,108 +17,54 @@ div#newsletter > div.container-fluid {
     padding-top: 20px;
 }
 
-.newsletter-background > form {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    position: relative;
-    right: 90px;
-}
-
-.newsletter-background > form > input {
-    width: 35%;
-    height: 50px;
-    position: relative;
-    font-family: Cairo-Regular, serif;
-    font-size: 20px;
-    padding-left: 20px;
-    background-color: #007183;
-    color: #00424c;
-    border: solid 2px #ffffff;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
-::-webkit-input-placeholder {
-    color: #00424c;
-
-}
-
-::-moz-placeholder {
-    color: #00424c;
-
-}
-
-:-ms-input-placeholder {
-    color: #00424c;
-
-}
-
-:-moz-placeholder {
-    color: #00424c;
-}
-
-.newsletter-background > form > input[type="submit"] {
-    width: 180px;
-    position: absolute;
+.newsletter-background > a {
+    width: 300px;
+    display: block;
+    margin: 10px auto 0;
+    padding: 10px;
     font-family: Cairo-Bold, serif;
     font-size: 25px;
     background-color: #ffffff;
     color: #007183;
-    border-radius: 0 5px 5px 0;
+    border-radius: 5px;
 }
 
-.newsletter-background > form > input[type="submit"]:hover {
+.newsletter-background a:hover {
+    text-decoration: none;
     background-color: #00b0cc;
     color: #ffffff;
 }
 
 @media only screen and (max-width: 992px) {
+    .newsletter-background{
+        height: 120px;
+    }
+
     .newsletter-background > h2 {
         font-size: 25px;
     }
 
-    .newsletter-background > form {
-        right: 80px;
-    }
-
-    .newsletter-background > form > input {
-        font-size: 18px;
-    }
-
-    .newsletter-background > form > input[type="submit"] {
-        width: 160px;
+    .newsletter-background a {
         font-size: 18px;
     }
 }
 
 @media only screen and (max-width: 768px) {
-    .newsletter-background > form {
-        right: 70.5px;
+    .newsletter-background > h2 {
+        font-size: 20px;
     }
 
-    .newsletter-background > form > input {
-        font-size: 18px;
-    }
-
-    .newsletter-background > form > input[type="submit"] {
-        width: 150px;
-        font-size: 18px;
+    .newsletter-background a {
+        font-size: 15px;
     }
 }
 
 @media only screen and (max-width: 575px) {
-    .newsletter-background > form {
-        right: 60px;
+    .newsletter-background > h2 {
+        font-size: 15px;
     }
 
-    .newsletter-background > form > input {
-        width: 45%;
-        font-size: 18px;
-        height: 40px;
-    }
-
-    .newsletter-background > form > input[type="submit"] {
-        width: 120px;
-        font-size: 18px;
+    .newsletter-background a {
+        font-size: 13px;
     }
 }

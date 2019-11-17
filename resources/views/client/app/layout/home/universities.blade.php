@@ -6,7 +6,7 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-12">
+                    <div class="col-xl-12" id="university-map">
                         <div id="vmap" style="width: 73vw; height: 400px; margin: 0 auto"></div>
                     </div>
                 </div>

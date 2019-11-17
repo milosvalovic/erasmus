@@ -34,7 +34,7 @@
     font-weight: 800;
     padding: 13px;
     color: #343a40;
-    background: url("../../img/toogle_navigation.png") no-repeat;
+    background: url("../../img/toogle_navigation-blue.png") no-repeat;
 }
 
 #mainNav .navbar-nav > li.nav-item > a {
@@ -92,6 +92,41 @@
     #mainNav a.navbar-brand i.ukf-logo:hover {
         background: url("../../img/ukf_logo_blue.png");
         background-size: 100px 100px;
+    }
+}
+
+.dropdown-menu {
+    background-color: #ffffff1c;
+    border: none;
+}
+
+.dropdown-item {
+    color: #ffffff;
+    background-color: transparent;
+}
+
+.dropdown-item:hover {
+    color: #bcbcbc;
+    background-color: transparent;
+}
+
+.dropdown-divider{
+    border: none;
+}
+
+@media only screen and (max-width: 992px) {
+    .dropdown-menu {
+        background-color: rgba(0, 0, 0, 0.04);
+        border: none;
+    }
+
+    .dropdown-item {
+        color: rgba(0,0,0,.5);
+    }
+
+    .dropdown-item:hover {
+        color: #000000;
+        background-color: transparent;
     }
 }
 

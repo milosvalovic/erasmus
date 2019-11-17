@@ -1,0 +1,132 @@
+@import "reset.css";
+@import "fonts.css";
+
+body {
+    font-family: Cairo-Regular, serif;
+    line-height: 22px;
+    padding-top: 54px;
+    color: #868e96;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 0;
+        padding-left: 17rem;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Cairo-Bold, serif;
+    font-weight: 700;
+    color: #343a40;
+}
+
+h1 {
+    font-size: 6rem;
+    line-height: 5.5rem;
+}
+
+h2 {
+    margin-top: 30px;
+    font-size: 3.5rem;
+}
+
+a {
+    color: #007183;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+    font-size: 20px;
+}
+
+#mainNav .navbar-nav {
+    margin-top: 30px;
+}
+
+#mainNav{
+    padding-right: 15px !important;
+}
+
+#mainNav .navbar-toggler {
+    font-size: 12px;
+    font-weight: 800;
+    padding: 13px;
+    color: #343a40;
+    background: url("../../img/toogle_navigation-white.png") no-repeat;
+}
+
+#mainNav h5#logged-user {
+    font-family: Cairo-SemiBold, serif;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+@media (min-width: 992px) {
+    #mainNav {
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        width: 17rem;
+        height: 100vh;
+    }
+
+    #mainNav .navbar-brand {
+        display: flex;
+        margin: auto auto 0;
+        padding: 0.5rem;
+    }
+
+    #mainNav .navbar-brand .img-profile {
+        max-width: 10rem;
+        max-height: 10rem;
+        border: 0.5rem solid rgba(255, 255, 255, 0.2);
+    }
+
+    #mainNav .navbar-collapse {
+        display: flex;
+        align-items: flex-start;
+        flex-grow: 0;
+        width: 100%;
+        margin-bottom: auto;
+    }
+
+    #mainNav .navbar-collapse .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #mainNav .navbar-collapse .navbar-nav .nav-item {
+        display: block;
+    }
+
+    #mainNav .navbar-collapse .navbar-nav .nav-item .nav-link {
+        display: block;
+    }
+}
+
+.bg-primary {
+    background-color: #007183 !important;
+}
+
+.text-primary {
+    color: #007183 !important;
+}
+
+.text-info {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 992px) {
+    h2 {
+        margin-top: 35px;
+        font-size: 3.0rem;
+    }
+}

@@ -2,6 +2,10 @@
 @import "../../layout/fonts.css";
 @import "../../layout/nav.css";
 
+#mainNav{
+    position: fixed;
+}
+
 .login, .image {
     min-height: 100vh;
 }
@@ -24,7 +28,7 @@
 }
 
 .account .content {
-    margin-top: 130px;
+    margin-top: 160px;
 }
 
 .account .content p {

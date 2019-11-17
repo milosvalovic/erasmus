@@ -1,0 +1,148 @@
+@import "../../layout/reset.css";
+@import "../../layout/fonts.css";
+@import "../../layout/student.css";
+
+#mobility-title {
+    background: #f5f5f5;
+}
+
+#mobility-title .card .mobility-content > a {
+    font-family: Cairo-SemiBold, serif;
+    font-size: 30px;
+    text-transform: none;
+    color: #002a31;
+}
+
+#mobility-title .card .mobility-content > a:hover {
+    text-decoration: none;
+    color: #005e6e;
+}
+
+.mobility {
+    margin-top: 10px;
+}
+
+.mobility > ul {
+    margin-top: 40px;
+}
+
+.mobility > ul > li {
+    display: inline;
+    margin-left: 10px;
+}
+
+.mobility > ul > li > a {
+    color: #ffffff;
+    background-color: #007183;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 20px;
+}
+
+.mobility > ul > li > a:hover {
+    text-decoration: none;
+    background-color: #004253;
+}
+
+@media only screen and (max-width: 1330px) {
+    .mobility > ul > li {
+        display: block;
+        margin-bottom: 15px;
+    }
+}
+
+@media only screen and (max-width: 772px) {
+    .mobility > ul > li {
+        display: inline;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .mobility > ul > li {
+        display: block;
+    }
+}
+
+h5.modal-title {
+    font-size: 28px;
+}
+
+div.input-items > form .input-presentation-container, div.input-items > form .input-images-container {
+    margin: 30px auto 0;
+    width: 350px;
+}
+
+div.input-items > form .input-presentation-trigger, div.input-items > form .input-images-trigger {
+    display: block;
+    margin: 0 auto;
+    padding: 14px 45px;
+    background: #009aac;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+div.input-items > form label.input-presentation-trigger, div.input-items > form label.input-images-trigger {
+    color: #fff;
+}
+
+div.input-items > form .input-presentation, div.input-items > form .input-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 225px;
+    opacity: 0;
+    padding: 14px 0;
+    cursor: pointer;
+}
+
+div.input-items > form .selected-presentation, div.input-items > form .selected-images {
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+div.input-items > form .selected-presentation:not(:empty):before, div.input-items > form .selected-images:not(:empty):before {
+    font-weight: bold;
+    content: "Bude nahraté nasledovné súbory: ";
+}
+
+div.input-items > form > label {
+    position: absolute;
+    font-family: Cairo-SemiBold, serif;
+    color: #000;
+}
+
+div.input-items > form > input, select {
+    width: 49%;
+    height: 50px;
+    position: relative;
+    top: 23px;
+    font-family: Cairo-Regular, serif;
+    font-size: 20px;
+    padding-left: 10px;
+    margin-bottom: 35px;
+    border: solid 1px #a6a6a6;
+}
+
+div.input-items > form > input[type="submit"] {
+    width: 110px;
+    float: right;
+    font-family: Cairo-Bold, serif;
+    border: solid 1px #898989;
+    border-radius: 5px;
+    background: #007183;
+    color: white;
+}
+
+div.input-items > form > input[type="submit"]:hover {
+    background: #004351;
+}
+
+div.input-items > form input[type='file'] {
+    display: none;
+}
+
+div.input-items > form textarea {
+    width: 100%;
+    margin-top: 20px;
+}

@@ -14,23 +14,38 @@ return [
     'new_account' => 'Vytvoriť účet',
     'back_to_login' => 'Späť na prihlásenie',
     'home_more_button' => 'Ukázať viac ...',
+    'date_end' => 'prihlášky do ',
     'contact' => 'Kontakt',
     'reviews' => 'Recenzie: ',
 
     //Navigation
     'nav_home' => 'Domov',
+
     'nav_search' => 'Výsledky vyhľadávania',
     'nav_mobilities' => 'Mobility',
     'nav_contact' => 'Kontakt',
     'nav_blog' => 'Blog',
     'nav_faq' => 'FAQ',
+
     'nav_account' => 'Účet',
+    'nav_logout' => 'Odhlasiť sa',
+
+    'nav_current_mobilities' => 'Aktuálne moblity',
+    'nav_profil_presentation' => 'Prezentácia',
+    'nav_profil_review' => 'Recenzia',
+    'nav_profil_blog' => 'Blog',
 
     //Forget Password
     'forget_password_title' => 'Nájdite svoj účet',
     'forget_password_description' => 'Na vyhľadanie svojho účtu zadajte svoju e-mailovú adresu',
     'forget_password_input_label_email' => 'Email',
     'forget_password_input_submit' => 'Poslať',
+
+    //Rest Password
+    'reset_password_title' => 'Zmena hesla',
+    'reset_password_submit' => 'Zmeniť',
+    'reset_password_new' => 'Nové heslo',
+    'reset_password_confirm' => 'Potvrdenie hesla',
 
     //Login
     'login_title' => 'Prihlásenie',
@@ -53,7 +68,7 @@ return [
     //Home
     'home_opportunitie_internship' => 'Naše najpopulárnejšie ponuky stážov',
     'home_opportunitie_lecture_stays' => 'Naše najpopulárnejšie ponuky prednáškových pobytov',
-    'home_opportunitie_stays' => 'Naše najpopulárnejšie ponuky pobytov',
+    'home_opportunitie_stays' => 'Naše najpopulárnejšie študijné pobyty',
     'home_opportunitie_trainings' => 'Naše najpopulárnejšie ponuky školení',
     'home_partner_universitites' => 'Naše partnerské Univerzity',
 
@@ -77,9 +92,13 @@ return [
     'search_modal_label_to_example' => '02.02.2020',
     'search_modal_submit' => 'Hľadať',
 
+    //Search
+    'search_no_match' => 'Vyhľadávacím kritériam neboli nájdené žiadné mobility',
+    'search_load_items' => 'Načítaj ďalšie',
+
     //Newsletter
-    'newsletter_title' => 'CHCETE BYŤ INFORMOVANÝ AKO PRVÝ O podujatiach k MOBILITáM?',
-    'newsletter_submit' => 'ÁNO',
+    'newsletter_question' => 'CHCETE BYŤ INFORMOVANÝ AKO PRVÝ O podujatiach k MOBILITáM?',
+    'newsletter_link' => 'ÁNO, ZAREGISTROVAŤ SA',
 
     //Blog
     'blog_title' => 'Erasmus+ Blog',
@@ -108,6 +127,35 @@ return [
     'faq_partner_university_table_title_city' => 'Mesto',
     'faq_partner_university_table_title_contact_person' => 'Kontaktná osoba',
 
+    //Profil
+    'profil_my_mobility' => 'Moje mobility',
+    'profil_presentation_upload' => 'Nahrať prezentáciu',
+    'profil_review_upload' => 'Napísať recenziu',
+    'profil_blog' => 'Napísať blog',
+    'profil_mobility' => 'Moje mobility',
+    'profil_choose_presentation' => 'Vyberte prezentáciu.',
+    'profil_choose_images' => 'Vyberte obrázky.',
+    'profil_upload' => 'Nahrať',
+    'profil_send' => 'Odoslať',
+    'profil_review_placeholder' => 'Vaša recenzia o mobilite',
+    'profil_blog_title' => 'NÁZOV ČLÁNKU',
+    'profil_blog_place' => 'MIESTO POBYTU',
+    'profil_blog_date' => 'DÁTUM',
+    'profil_blog_story' => 'VÁŠ PRÍBEH',
+
+    //Email
+    'email_university_name' => 'Univerzita Konštantína Filozofa v Nitre 2019',
+
+    //Email - newsletter
+    'newsletter_title' => 'Naše najnovšie mobility',
+    'newsletter_unsubscribe_text' => 'Neželáte si ďalej dostávať tieto zaujímavé informácie? Odhlásiť sa môžete',
+    'newsletter_unsubscribe' => 'tu.',
+
+    //Email - activate
+    'activate_title' => 'Aktivácia účtu',
+
+    //Email - activate
+    'reset_title' => 'Zmena hesla',
 
     //Errors - 404
     'errors_404_title' => '404',

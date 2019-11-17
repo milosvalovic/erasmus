@@ -13,110 +13,110 @@ class CountrySeeder extends Seeder
     {
         DB::table('countries')->insert([
             'name' => 'Austria',
-            'country_code' => 'AT',
-            'erasmus_code' => 'A'
+            'country_code' => 'at',
+            'erasmus_code' => 'a'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Belgium',
-            'country_code' => 'BE',
-            'erasmus_code' => 'B'
+            'country_code' => 'be',
+            'erasmus_code' => 'b'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Cyprus',
-            'country_code' => 'CY',
-            'erasmus_code' => 'CY'
+            'country_code' => 'cy',
+            'erasmus_code' => 'cy'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Czech Republic',
-            'country_code' => 'CZ',
-            'erasmus_code' => 'CZ'
+            'country_code' => 'cz',
+            'erasmus_code' => 'cz'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Denmark',
-            'country_code' => 'DK',
-            'erasmus_code' => 'DK'
+            'country_code' => 'dk',
+            'erasmus_code' => 'v'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Estonia',
-            'country_code' => 'EE',
-            'erasmus_code' => 'EE'
+            'country_code' => 'ee',
+            'erasmus_code' => 'ee'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Finland',
-            'country_code' => 'FI',
-            'erasmus_code' => 'SF'
+            'country_code' => 'fi',
+            'erasmus_code' => 'sf'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'France',
-            'country_code' => 'FE',
-            'erasmus_code' => 'F'
+            'country_code' => 'fe',
+            'erasmus_code' => 'f'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Germany',
-            'country_code' => 'DE',
-            'erasmus_code' => 'D'
+            'country_code' => 'de',
+            'erasmus_code' => 'd'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Greece',
-            'country_code' => 'GR',
-            'erasmus_code' => 'G'
+            'country_code' => 'gr',
+            'erasmus_code' => 'g'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Hungary',
-            'country_code' => 'HU',
-            'erasmus_code' => 'HU'
+            'country_code' => 'hu',
+            'erasmus_code' => 'hu'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Ireland',
-            'country_code' => 'IE',
-            'erasmus_code' => 'IRL'
+            'country_code' => 'ie',
+            'erasmus_code' => 'irl'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Italy',
-            'country_code' => 'IT',
-            'erasmus_code' => 'I'
+            'country_code' => 'it',
+            'erasmus_code' => 'i'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Latvia',
-            'country_code' => 'LV',
-            'erasmus_code' => 'LV'
+            'country_code' => 'lv',
+            'erasmus_code' => 'lv'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Lithuania',
-            'country_code' => 'LT',
-            'erasmus_code' => 'LT'
+            'country_code' => 'lt',
+            'erasmus_code' => 'lt'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Luxembourg',
-            'country_code' => 'LU',
-            'erasmus_code' => 'LUX'
+            'country_code' => 'lu',
+            'erasmus_code' => 'lux'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Malta',
-            'country_code' => 'MT',
-            'erasmus_code' => 'MT'
+            'country_code' => 'mt',
+            'erasmus_code' => 'mt'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Netherlands',
-            'country_code' => 'NL',
-            'erasmus_code' => 'NL'
+            'country_code' => 'nl',
+            'erasmus_code' => 'nl'
         ]);
 
         DB::table('countries')->insert([
@@ -127,74 +127,74 @@ class CountrySeeder extends Seeder
 
         DB::table('countries')->insert([
             'name' => 'Slovakia',
-            'country_code' => 'SK',
-            'erasmus_code' => 'SK'
+            'country_code' => 'sk',
+            'erasmus_code' => 'sk'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Slovenia',
-            'country_code' => 'SI',
-            'erasmus_code' => 'SI'
+            'country_code' => 'si',
+            'erasmus_code' => 'si'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Spain',
-            'country_code' => 'ES',
-            'erasmus_code' => 'E'
+            'country_code' => 'es',
+            'erasmus_code' => 'e'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Sweden',
-            'country_code' => 'SE',
-            'erasmus_code' => 'S'
+            'country_code' => 'se',
+            'erasmus_code' => 's'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'United Kingdom',
-            'country_code' => 'UK',
-            'erasmus_code' => 'UK'
+            'country_code' => 'uk',
+            'erasmus_code' => 'uk'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Iceland',
-            'country_code' => 'IS',
-            'erasmus_code' => 'IS'
+            'country_code' => 'is',
+            'erasmus_code' => 'is'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Liechtenstein',
-            'country_code' => 'LI',
-            'erasmus_code' => 'FL'
+            'country_code' => 'li',
+            'erasmus_code' => 'fl'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Norway',
-            'country_code' => 'NO',
-            'erasmus_code' => 'N'
+            'country_code' => 'no',
+            'erasmus_code' => 'n'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Bulgaria',
-            'country_code' => 'BG',
-            'erasmus_code' => 'BG'
+            'country_code' => 'bg',
+            'erasmus_code' => 'bg'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Poland',
-            'country_code' => 'PL',
-            'erasmus_code' => 'PL'
+            'country_code' => 'pl',
+            'erasmus_code' => 'pl'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Romania',
-            'country_code' => 'RO',
-            'erasmus_code' => 'RO'
+            'country_code' => 'ro',
+            'erasmus_code' => 'ro'
         ]);
 
         DB::table('countries')->insert([
             'name' => 'Turkey',
-            'country_code' => 'TR',
-            'erasmus_code' => 'TR'
+            'country_code' => 'tr',
+            'erasmus_code' => 'tr'
         ]);
     }
 }

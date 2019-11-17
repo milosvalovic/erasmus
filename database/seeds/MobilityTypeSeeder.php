@@ -12,19 +12,23 @@ class MobilityTypeSeeder extends Seeder
     public function run()
     {
         DB::table('mobility_types')->insert([
-            'name' => 'Študijný pobyt'
+            'name' => 'Študijný pobyt',
+            'property' => 'studijny_pobyt'
         ]);
 
         DB::table('mobility_types')->insert([
-            'name' => 'Stáž'
+            'name' => 'Stáž',
+            'property' => 'staz'
         ]);
 
         DB::table('mobility_types')->insert([
-            'name' => 'Prednáškový pobyt'
+            'name' => 'Prednáškový pobyt',
+            'property' => 'prednaskovy_pobyt'
         ]);
 
         DB::table('mobility_types')->insert([
-            'name' => 'Školenie'
+            'name' => 'Školenie',
+            'property' => 'skolenie'
         ]);
     }
 }

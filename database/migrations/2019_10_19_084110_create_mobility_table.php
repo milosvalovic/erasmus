@@ -17,6 +17,7 @@ class CreateMobilityTable extends Migration
             $table->bigIncrements('ID');
             $table->unsignedBigInteger('mobility_types_ID');
             $table->unsignedBigInteger('partner_university_ID');
+            $table->unsignedBigInteger('category_ID');
             $table->smallInteger('grant');
             $table->text('info')->nullable();
             $table->timestamps();
@@ -30,6 +31,11 @@ class CreateMobilityTable extends Migration
             $table->foreign('partner_university_ID')
                 ->references('ID')
                 ->on('partner_university')
+                ->onDelete('cascade');
+
+            $table->foreign('category_ID')
+                ->references('ID')
+                ->on('category')
                 ->onDelete('cascade');
         });
     }
