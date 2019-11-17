@@ -71,8 +71,8 @@ Route::get('/email/newsletter', function(){
     $to_email="username@gmail.com";
     $data = array("header" => "", "text" => "", "mobilities"=> array(), "unsubscribe_url"=>"");
     Mail::send('mail.newsletter', $data, function($messeage) use ($to_name, $to_email){
-       $messeage->to($to_email)
-       ->subject(Lang::get('app.newsletter_title'));
+        $messeage->to($to_email)
+            ->subject(Lang::get('app.newsletter_title'));
     });
 });
 
@@ -94,4 +94,34 @@ Route::get('/email/reset', function(){
         $messeage->to($to_email)
             ->subject(Lang::get('app.reset_title'));
     });
+});
+
+
+
+
+// Admin routes
+Route::get('/admin', 'system\SystemController@system');
+
+Route::get('/admin/users', 'system\SystemController@users');
+
+Route::get('/admin/mobilities', 'system\SystemController@mobilities');
+
+
+Route::group(['middleware' => ['web']], function() {
+
+// Login Routes...
+    Route::get('/prihlasovanie', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginForm']);
+    Route::post('login', ['as' => 'login.post', 'uses' => 'Auth\LoginController@login']);
+
+    Route::get('/odhlasenie', 'Auth\LoginController@logout')->name('logout');
+
+// Registration Routes...
+    Route::get('/registracia', ['as' => 'register', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
+    Route::post('register', ['as' => 'register.post', 'uses' => 'Auth\RegisterController@register']);
+
+// Password Reset Routes...
+    Route::get('password/reset', ['as' => 'password.reset', 'uses' => 'Auth\ForgotPasswordController@showLinkRequestForm']);
+    Route::post('password/email', ['as' => 'password.email', 'uses' => 'Auth\ForgotPasswordController@sendResetLinkEmail']);
+    Route::get('password/reset/{token}', ['as' => 'password.reset.token', 'uses' => 'Auth\ResetPasswordController@showResetForm']);
+    Route::post('password/reset', ['as' => 'password.reset.post', 'uses' => 'Auth\ResetPasswordController@reset']);
 });
