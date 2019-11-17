@@ -20,8 +20,8 @@
                 <div class="mobility text-md-right">
                     <span class="text-primary">01.01.2019 - 02.02.2019</span>
                     <ul>
-                        <li><a href="{{url('/profil/prezentacia')}}" data-toggle="modal" data-target=".presentation-modal">@lang('app.profil_presentation_upload')</a></li>
-                        <li><a href="{{url('/profil/recenzia')}}" data-toggle="modal" data-target=".reviews-modal">@lang('app.profil_review_upload')</a></li>
+                        <li><a href="{{url('/profil/prezentacia')}}">@lang('app.profil_presentation_upload')</a></li>
+                        <li><a href="{{url('/profil/recenzia')}}">@lang('app.profil_review_upload')</a></li>
                         <li><a href="{{url('/profil/blog')}}">@lang('app.profil_blog')</a></li>
                     </ul>
                 </div>
@@ -43,8 +43,8 @@
                 <div class="mobility text-md-right">
                     <span class="text-primary">01.01.2019 - 02.02.2019</span>
                     <ul>
-                        <li><a href="{{url('/profil/prezentacia')}}" data-toggle="modal" data-target=".presentation-modal">@lang('app.profil_presentation_upload')</a></li>
-                        <li><a href="{{url('/profil/recenzia')}}" data-toggle="modal" data-target=".reviews-modal">@lang('app.profil_review_upload')</a></li>
+                        <li><a href="{{url('/profil/prezentacia')}}">@lang('app.profil_presentation_upload')</a></li>
+                        <li><a href="{{url('/profil/recenzia')}}">@lang('app.profil_review_upload')</a></li>
                         <li><a href="{{url('/profil/blog')}}">@lang('app.profil_blog')</a></li>
                     </ul>
                 </div>
@@ -66,8 +66,8 @@
                 <div class="mobility text-md-right">
                     <span class="text-primary">01.01.2019 - 02.02.2019</span>
                     <ul>
-                        <li><a href="{{url('/profil/prezentacia')}}" data-toggle="modal" data-target=".presentation-modal">@lang('app.profil_presentation_upload')</a></li>
-                        <li><a href="{{url('/profil/recenzia')}}" data-toggle="modal" data-target=".reviews-modal">@lang('app.profil_review_upload')</a></li>
+                        <li><a href="{{url('/profil/prezentacia')}}">@lang('app.profil_presentation_upload')</a></li>
+                        <li><a href="{{url('/profil/recenzia')}}">@lang('app.profil_review_upload')</a></li>
                         <li><a href="{{url('/profil/blog')}}">@lang('app.profil_blog')</a></li>
                     </ul>
                 </div>
@@ -89,8 +89,8 @@
                 <div class="mobility text-md-right">
                     <span class="text-primary">01.01.2019 - 02.02.2019</span>
                     <ul>
-                        <li><a href="{{url('/profil/prezentacia')}}" data-toggle="modal" data-target=".presentation-modal">@lang('app.profil_presentation_upload')</a></li>
-                        <li><a href="{{url('/profil/recenzia')}}" data-toggle="modal" data-target=".reviews-modal">@lang('app.profil_review_upload')</a></li>
+                        <li><a href="{{url('/profil/prezentacia')}}">@lang('app.profil_presentation_upload')</a></li>
+                        <li><a href="{{url('/profil/recenzia')}}">@lang('app.profil_review_upload')</a></li>
                         <li><a href="{{url('/profil/blog')}}">@lang('app.profil_blog')</a></li>
                     </ul>
                 </div>

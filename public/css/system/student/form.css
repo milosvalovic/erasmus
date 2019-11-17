@@ -1,0 +1,118 @@
+@import "../../layout/reset.css";
+@import "../../layout/fonts.css";
+@import "../../layout/student.css";
+
+div.input-items {
+    width: 100%;
+}
+
+div.input-items form > label {
+    position: relative;
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    font-family: Cairo-SemiBold, serif;
+    color: #000;
+}
+
+div.input-items form > input,
+div.input-items form > textarea,
+div.input-items form > select,
+div.input-items form .submit-button > input{
+    width: 70%;
+    height: 50px;
+    position: relative;
+    display: block;
+    font-family: Cairo-Regular, serif;
+    font-size: 20px;
+    padding-left: 10px;
+    margin: 0 auto 10px;
+    border: solid 1px #a6a6a6;
+}
+
+div.input-items form > textarea{
+    height: 150px;
+}
+
+div.input-items form > select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(../../../img/drop_down_arrow.gif) 96% / 15% no-repeat;
+    background-size: 25px 13px;
+}
+
+div.input-items form .submit-button {
+    width: 70%;
+    height: 50px;
+    margin: 0 auto;
+}
+
+div.input-items form .ql-toolbar.ql-snow, div.input-items form #editor-blog, div.input-items form .error {
+    width: 70%;
+    margin: 0 auto;
+}
+
+div.input-items form #editor-blog{
+    margin-bottom: 20px;
+}
+
+div.input-items form .submit-button > input[type="submit"]{
+    width: 110px;
+    height: 50px;
+    display: block;
+    float: right;
+    font-family: Cairo-Bold, serif;
+    margin-top: 30px;
+    border: solid 1px #898989;
+    border-radius: 5px;
+    background: #007183;
+    color: white;
+}
+
+div.input-items form .submit-button > input[type="submit"]:hover
+{
+    background: #004351;
+}
+
+div.input-items form .input-file-container {
+    width: 70%;
+    margin: 30px auto 20px;
+}
+
+div.input-items form .input-file-trigger {
+    display: block;
+    margin: 0 auto;
+    padding: 14px 45px;
+    background: #009aac;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+div.input-items form label.input-file-trigger {
+    color: #fff;
+}
+
+div.input-items form .input-file {
+    width: 225px;
+    opacity: 0;
+    padding: 14px 0;
+    cursor: pointer;
+}
+
+div.input-items form .selected-file {
+    width: 70%;
+    font-size: 15px;
+    margin: 0 auto;
+}
+
+div.input-items form .selected-file:not(:empty):before {
+    display: inline-block;
+    font-weight: bold;
+    content: "Budú nahraté nasledovné súbory: ";
+}
+
+div.input-items form input[type='file'] {
+    display: none;
+}

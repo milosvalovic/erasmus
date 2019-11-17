@@ -4,24 +4,33 @@
             <h2 class="  text-center">@lang('app.profil_blog')</h2>
             <div class="mb-5 heading-border"></div>
         </div>
-        @error('title')
-        <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
         <div class="row input-items">
             <div class="col-lg-12">
                 <form action="{{ action('blog\BlogController@insertArticle') }}" method="POST" enctype="application/x-www-form-urlencoded" id="new-blog-post">
                     <label for="name">@lang('app.profil_blog_title')</label>
                     <input type="text" name="title" id="title" value=""
-                           placeholder="Prvý článok">
-                    <div class="error text-danger">Some Errors related to something</div>
+                           placeholder="@lang('app.profil_article_title')">
+                    @if ($errors->any())
+                        @foreach ($errors->get('title') as $error)
+                            <div class="error text-danger">{{$error}}</div>
+                        @endforeach
+                    @endif
                     <label for="place">@lang('app.profil_blog_place')</label>
                     <input type="text" name="place" id="place" readonly
                            value="USA">
-                    <div class="error text-danger">Some Errors related to something</div>
+                    @if ($errors->any())
+                        @foreach ($errors->get('place') as $error)
+                            <div class="error text-danger">{{$error}}</div>
+                        @endforeach
+                    @endif
                     <label for="date">@lang('app.profil_blog_date')</label>
-                    <input type="text" name="date" id="date" readonly
+                    <input type="text" name="date" id="date"
                            value="{{ date("d.m.Y") }}">
-                    <div class="error text-danger">Some Errors related to something</div>
+                    @if ($errors->any())
+                        @foreach ($errors->get('date') as $error)
+                            <div class="error text-danger">{{$error}}</div>
+                        @endforeach
+                    @endif
                     <label for="send"></label>
                     <label for="standalone-container">@lang('app.profil_blog_story')</label>
                     <div id="standalone-container">
@@ -45,9 +54,13 @@
                         </div>
                         <div id="editor-blog"></div>
                     </div>
-                    <div class="error text-danger">Some Errors related to something</div>
+                    @if ($errors->any())
+                        @foreach ($errors->get('article') as $error)
+                            <div class="error text-danger">{{$error}}</div>
+                        @endforeach
+                    @endif
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <div class="sending-button">
+                    <div class="submit-button">
                         <input type="submit" name="send" id="send" value="@lang('app.profil_send')">
                     </div>
                 </form>

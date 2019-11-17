@@ -4,10 +4,12 @@ return [
     //App
     'name' => 'Erasmus+',
 
+
     //Titles
     'faq_title' => 'Často kladané otázky',
     'stays_title' => 'Zoznam mobilít',
     'search_title' => 'Výsledky vyhľadávania',
+
 
     //Common
     'right_email_format' => 'meno.priezvisko@student.ukf.sk',
@@ -17,6 +19,7 @@ return [
     'date_end' => 'prihlášky do ',
     'contact' => 'Kontakt',
     'reviews' => 'Recenzie: ',
+
 
     //Navigation
     'nav_home' => 'Domov',
@@ -35,11 +38,13 @@ return [
     'nav_profil_review' => 'Recenzia',
     'nav_profil_blog' => 'Blog',
 
+
     //Forget Password
     'forget_password_title' => 'Nájdite svoj účet',
     'forget_password_description' => 'Na vyhľadanie svojho účtu zadajte svoju e-mailovú adresu',
     'forget_password_input_label_email' => 'Email',
     'forget_password_input_submit' => 'Poslať',
+
 
     //Rest Password
     'reset_password_title' => 'Zmena hesla',
@@ -47,12 +52,14 @@ return [
     'reset_password_new' => 'Nové heslo',
     'reset_password_confirm' => 'Potvrdenie hesla',
 
+
     //Login
     'login_title' => 'Prihlásenie',
     'login_input_label_email' => 'Email',
     'login_input_label_password' => 'Heslo',
     'login_input_submit' => 'Prihlásiť sa',
     'login_forget_password' => 'Zabudli ste údaje na prístup k účtu?',
+
 
     //Register
     'register_title' => 'Registrácia',
@@ -65,6 +72,7 @@ return [
     'register_input_label_confirm_password' => 'Potvrdenie hesla',
     'register_input_submit' => 'Registrovať sa',
 
+
     //Home
     'home_opportunitie_internship' => 'Naše najpopulárnejšie ponuky stážov',
     'home_opportunitie_lecture_stays' => 'Naše najpopulárnejšie ponuky prednáškových pobytov',
@@ -72,10 +80,12 @@ return [
     'home_opportunitie_trainings' => 'Naše najpopulárnejšie ponuky školení',
     'home_partner_universitites' => 'Naše partnerské Univerzity',
 
+
     //Home - Contact
     'contact_hours' => 'Úradné hodiny pre študentov',
     'contact_address' => 'Oddelenie pre medzinárodné vzťahy',
     'off_day' => 'bez úradných hodín',
+
 
     //Home - Search modal
     'search_modal_title_part_one' => 'Vyhľadávajte a prihláste ',
@@ -92,18 +102,22 @@ return [
     'search_modal_label_to_example' => '02.02.2020',
     'search_modal_submit' => 'Hľadať',
 
+
     //Search
     'search_no_match' => 'Vyhľadávacím kritériam neboli nájdené žiadné mobility',
     'search_load_items' => 'Načítaj ďalšie',
+
 
     //Newsletter
     'newsletter_question' => 'CHCETE BYŤ INFORMOVANÝ AKO PRVÝ O podujatiach k MOBILITáM?',
     'newsletter_link' => 'ÁNO, ZAREGISTROVAŤ SA',
 
+
     //Blog
     'blog_title' => 'Erasmus+ Blog',
     'blog_subtitle' => 'Všetky príbehy na jednom mieste.',
     'blog_older_posts' => 'Staršie záznamy &rarr;',
+
 
     //Detail
     'detail_from' => 'OD: ',
@@ -121,11 +135,13 @@ return [
     'detail_photos_title' => 'Fotogaléria',
     'detail_reviews_title' => 'Recenzie',
 
+
     //FAQ
     'faq_partner_university_table_title_country' => 'Krajina',
     'faq_partner_university_table_title_university' => 'Názov Univerzity',
     'faq_partner_university_table_title_city' => 'Mesto',
     'faq_partner_university_table_title_contact_person' => 'Kontaktná osoba',
+
 
     //Profil
     'profil_my_mobility' => 'Moje mobility',
@@ -138,30 +154,37 @@ return [
     'profil_upload' => 'Nahrať',
     'profil_send' => 'Odoslať',
     'profil_review_placeholder' => 'Vaša recenzia o mobilite',
+    'profil_article_title' => 'Zadajte názov článku',
     'profil_blog_title' => 'NÁZOV ČLÁNKU',
     'profil_blog_place' => 'MIESTO POBYTU',
     'profil_blog_date' => 'DÁTUM',
     'profil_blog_story' => 'VÁŠ PRÍBEH',
 
+
     //Email
     'email_university_name' => 'Univerzita Konštantína Filozofa v Nitre 2019',
+
 
     //Email - newsletter
     'newsletter_title' => 'Naše najnovšie mobility',
     'newsletter_unsubscribe_text' => 'Neželáte si ďalej dostávať tieto zaujímavé informácie? Odhlásiť sa môžete',
     'newsletter_unsubscribe' => 'tu.',
 
+
     //Email - activate
     'activate_title' => 'Aktivácia účtu',
 
+
     //Email - activate
     'reset_title' => 'Zmena hesla',
+
 
     //Errors - 404
     'errors_404_title' => '404',
     'errors_404_subtitle' => 'Ľutujeme, stránka sa nenašla',
     'errors_404_description' => 'Hľadaná stránka neexistuje alebo bola presunutá.',
     'errors_404_button' => 'Späť na hlavnú stránku',
+
 
     //Errors - 500
     'errors_500_title' => '500',
