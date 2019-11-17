@@ -22,5 +22,9 @@ class SeasonStatusSeeder extends Seeder
         DB::table('season_status')->insert([
             'name' => 'Zamietnutá'
         ]);
+
+        DB::table('season_status')->insert([
+            'name' => 'Vybavená'
+        ]);
     }
 }

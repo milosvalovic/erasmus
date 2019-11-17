@@ -14,4 +14,8 @@ class Variables
     const HOME_PAGE_COUNT_MOBILITY = 4;
     const TIME_OFFSET = +2;
 
+    const SEASON_STATUS_PENDING_ID = 1;
+    const SEASON_STATUS_ACCEPT = 2;
+    const SEASON_STATUS_CANCEL_ID = 3;
+
 }
