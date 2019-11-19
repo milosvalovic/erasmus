@@ -18,9 +18,9 @@ class Blog extends Model
     protected $table = 'blog';
     protected $fillable = ['users_ID', 'text', 'title', 'mobility_ID', 'status', 'confirm_by'];
 
-    public function users_season()
+    public function user_season()
     {
-        return $this->belongsTo('App\Models\Blog', 'users_season_ID','ID');
+        return $this->belongsTo('App\Models\User_Season', 'users_season_ID','ID');
     }
 
     public function user()
