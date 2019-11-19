@@ -69,6 +69,41 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row admin-projects-diagram">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Mobility, udalosti, </h6>
+                    </div>
+                    <div class="card-body">
+
+                        <h4 class="small font-weight-bold">Tragické udalosti<span class="float-right">4%</span></h4>
+                        <div class="progress mb-4">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 4%" aria-valuenow="4" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                        <h4 class="small font-weight-bold">Prebieha termín prihlasovania<span class="float-right">17%</span></h4>
+                        <div class="progress mb-4">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 17%" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                        <h4 class="small font-weight-bold">Očakávané udalosti<span class="float-right">25%</span></h4>
+                        <div class="progress mb-4">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                        <h4 class="small font-weight-bold">Prebiehajúce udalosti<span class="float-right">24%</span></h4>
+                        <div class="progress mb-4">
+                            <div class="progress-bar" role="progressbar" style="width: 24%" aria-valuenow="24" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                        <h4 class="small font-weight-bold">Ukončené udalosti<span class="float-right">30%</span></h4>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         @include('system.include.footer')

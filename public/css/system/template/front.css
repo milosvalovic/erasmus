@@ -10542,7 +10542,11 @@ a:focus {
 }
 
 .sidebar-dark .nav-item .nav-link {
-    color: rgba(255, 255, 255, .8)
+    color: rgba(255, 255, 255, .8);
+}
+
+.sidebar-dark .nav-item .nav-link.active {
+    color: #ffffff;
 }
 
 .sidebar-dark .nav-item .nav-link i {
