@@ -19,17 +19,9 @@
 
     </head>
     <body id="page-top">
-{{--        <div id="wrapper">--}}
-{{--            @include('system.include.header')--}}
-{{--            @include('system.include.top_navigation')--}}
-
-            @section('content')
-            @show
-
-{{--            @include('system.include.footer')--}}
-{{--        </div>--}}
-
-        @include('system.include.scroll_to_top')
+    @section('content')
+    @show
+    @include('system.include.scroll_to_top')
 
     </body>
     <script type="text/javascript" src="{{ asset('js/system/jQuery/jquery.min.js') }}"></script>

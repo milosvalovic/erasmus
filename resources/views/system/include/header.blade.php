@@ -31,22 +31,72 @@
 
         <li class="nav-item">
             <a class="nav-link" href="{{ action('system\SystemController@users')}}">
-                <i class="fa fa-user-circle-o"></i>
-                <span>Členovia</span>
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <span>Používatelia</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{ action('system\SystemController@users')}}">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <span>Role používateľov</span>
             </a>
         </li>
 
         <li class="nav-item">
             <a class="nav-link" href="{{ action('system\SystemController@mobilities')}}">
-                <i class="fa fa-list-alt"></i>
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
                 <span>Mobility</span>
             </a>
         </li>
 
         <li class="nav-item">
+            <a class="nav-link" href="{{ action('system\SystemController@mobilities')}}">
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                <span>Kategórie mobilít</span>
+            </a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Ostatné
+        </div>
+
+        <li class="nav-item">
             <a class="nav-link" href="#">
-                <i class="fa fa-tag"></i>
-                <span>Blogy</span>
+                <i class="fa fa-tag" aria-hidden="true"></i>
+                <span>Spravovanie blogov</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fa fa-university" aria-hidden="true"></i>
+                <span>Správa univerzít</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fa fa-picture-o" aria-hidden="true"></i>
+                <span>Správa fotografií</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fa fa-question" aria-hidden="true"></i>
+                <span>FAQ</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                <span>Otváracie hodiny</span>
             </a>
         </li>
 
