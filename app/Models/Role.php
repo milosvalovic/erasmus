@@ -18,8 +18,8 @@ class Role extends Model
     protected $table = 'roles';
     protected $fillable = ['description', 'name'];
 
-    public function user()
+    public function users()
     {
-        return $this->hasMany('App\Models\User','roles_ID','ID');
+        return $this->belongsToMany(User::class);
     }
 }

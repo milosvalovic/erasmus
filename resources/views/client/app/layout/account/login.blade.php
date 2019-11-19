@@ -10,7 +10,19 @@
                         <div class="col-md-9 col-lg-8 text-left mx-auto">
                             <div class="content">
                                 <h3>@lang('app.login_title')</h3>
-                                <form action="{{ url('/') }}" method="POST" enctype="application/x-www-form-urlencoded">
+
+                                @if ($errors->first())
+                                    <div class="alert alert-danger">
+                                        <h5>{{$errors->first()}}</h5>
+                                    </div>
+                                @endif
+
+                                @if (session('verify'))
+                                    <div class="alert alert-info">
+                                        <h5>{{session('verify')}}</h5>
+                                    </div>
+                                @endif
+                                <form action="{{ route('login.post') }}" method="POST" enctype="application/x-www-form-urlencoded">
                                     <label for="email">@lang('app.login_input_label_email')</label>
                                     <input type="email" name="email" id="email" value="" placeholder="@lang('app.right_email_format')">
                                     <div class="error text-danger">Some Errors related to something</div>
@@ -20,10 +32,11 @@
                                     <div class="error text-danger">Some Errors related to something</div>
                                     <br/>
                                     <input type="submit" value="@lang('app.login_input_submit')">
+                                    {{ csrf_field() }}
                                 </form>
                                 <ul class="sub-nav">
                                     <li><a class="sub-nav-item" href="{{ url('/registracia') }}">@lang('app.new_account')</a></li>
-                                    <li><a class="sub-nav-item" href="{{ url('/pomoc') }}">@lang('app.login_forget_password')</a></li>
+                                    <li><a class="sub-nav-item" href="{{ route('password.request') }}">@lang('app.login_forget_password')</a></li>
                                 </ul>
                             </div>
                         </div>

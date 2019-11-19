@@ -11,13 +11,14 @@
                             <div class="content">
                                 <h3>@lang('app.forget_password_title')</h3>
                                 <p>@lang('app.forget_password_description')</p>
-                                <form action="{{ url('/') }}" method="POST" enctype="application/x-www-form-urlencoded">
+                                <form action="{{ route('password.email') }}" method="POST" enctype="application/x-www-form-urlencoded">
                                     <label for="email">@lang('app.forget_password_input_label_email')</label>
                                     <input type="email" name="email" id="email" value=""
                                            placeholder="@lang('app.right_email_format')">
                                     <div class="error text-danger">Some Errors related to something</div>
                                     <br/>
                                     <input type="submit" value="@lang('app.forget_password_input_submit')">
+                                    {{ csrf_field() }}
                                 </form>
                                 <ul class="sub-nav">
                                     <li><a class="sub-nav-item" href="{{ url('/prihlasovanie') }}">@lang('app.back_to_login')</a></li>

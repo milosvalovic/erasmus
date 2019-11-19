@@ -32,18 +32,6 @@ Route::get('/registracia', 'client\AccountController@register');
 
 Route::get('/pomoc', 'client\AccountController@forget_password');
 
-
-
-
-
-
-
-
-
-
-
-
-
 Route::get('/detail', 'client\DetailController@detail');
 
 Route::get('/hladat', 'client\SearchController@search');
@@ -107,6 +95,8 @@ Route::get('/admin/users', 'system\SystemController@users');
 Route::get('/admin/mobilities', 'system\SystemController@mobilities');
 
 
+
+
 Route::group(['middleware' => ['web']], function() {
 
 // Login Routes...
@@ -118,10 +108,16 @@ Route::group(['middleware' => ['web']], function() {
 // Registration Routes...
     Route::get('/registracia', ['as' => 'register', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
     Route::post('register', ['as' => 'register.post', 'uses' => 'Auth\RegisterController@register']);
+    Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 
 // Password Reset Routes...
-    Route::get('password/reset', ['as' => 'password.reset', 'uses' => 'Auth\ForgotPasswordController@showLinkRequestForm']);
-    Route::post('password/email', ['as' => 'password.email', 'uses' => 'Auth\ForgotPasswordController@sendResetLinkEmail']);
-    Route::get('password/reset/{token}', ['as' => 'password.reset.token', 'uses' => 'Auth\ResetPasswordController@showResetForm']);
-    Route::post('password/reset', ['as' => 'password.reset.post', 'uses' => 'Auth\ResetPasswordController@reset']);
+    /*Route::get('/pomoc', ['as' => 'password.reset', 'uses' => 'Auth\ForgotPasswordController@showLinkRequestForm']);
+    Route::post('/password/email', ['as' => 'password.email', 'uses' => 'Auth\ForgotPasswordController@sendResetLinkEmail']);
+    Route::get('/pomoc/{token}', ['as' => 'password.reset.token', 'uses' => 'Auth\ResetPasswordController@showResetForm']);
+    Route::post('/password/reset', ['as' => 'password.reset.post', 'uses' => 'Auth\ResetPasswordController@reset']);*/
+
+    Route::get('pomoc/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+    Route::post('pomoc/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+    Route::get('/pomoc/reset/{token}/{email}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+    Route::post('pomoc/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
 });

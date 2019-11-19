@@ -10,28 +10,51 @@
                         <div class="col-md-9 col-lg-8 text-left mx-auto">
                             <div class="content">
                                 <h3>@lang('app.register_title')</h3>
-                                <form action="{{ url('/') }}" method="POST" enctype="application/x-www-form-urlencoded">
+                                <form action="{{ route('register.post') }}" method="POST"
+                                      enctype="application/x-www-form-urlencoded">
                                     <label for="firstname">@lang('app.register_input_label_firstname')</label>
-                                    <input type="text" name="firstname" id="firstname" value="" placeholder="@lang('app.register_input_firstname_example')">
-                                    <div class="error text-danger">Some Errors related to something</div>
-                                    <br/>
-                                    <label for="lastname">@lang('app.register_input_label_lastname')</label>
-                                    <input type="text" name="lastname" id="lastname" value="" placeholder="@lang('app.register_input_lastname_example')">
-                                    <div class="error text-danger">Some Errors related to something</div>
-                                    <br/>
-                                    <label for="email">@lang('app.register_input_label_email')</label>
-                                    <input type="email" name="email" id="email" value="" placeholder="@lang('app.right_email_format')">
-                                    <div class="error text-danger">Some Errors related to something</div>
-                                    <br/>
-                                    <label for="password">@lang('app.register_input_label_password')</label>
-                                    <input type="password" name="password" id="password" value="" placeholder="********">
-                                    <div class="error text-danger">Some Errors related to something</div>
-                                    <br/>
-                                    <label for="confirm-password">@lang('app.register_input_label_confirm_password')</label>
-                                    <input type="password" name="confirm" id="confirm-password" value="" placeholder="********">
-                                    <div class="error text-danger">Some Errors related to something</div>
-                                    <br/>
-                                    <input type="submit" value="@lang('app.register_input_submit')">
+                                    <input type="text" name="firstname" id="firstname" value=""
+                                           placeholder="@lang('app.register_input_firstname_example')">
+                                    @if ($errors->has('firstname'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('lastname') }}</strong>
+                                    </span>
+                                    @endif
+                                        <br/>
+                                        <label for="lastname">@lang('app.register_input_label_lastname')</label>
+                                        <input type="text" name="lastname" id="lastname" value=""
+                                               placeholder="@lang('app.register_input_lastname_example')">
+                                        @if ($errors->has('lastname'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('lastname') }}</strong>
+                                    </span>
+                                        @endif
+
+                                        <br/>
+                                        <label for="email">@lang('app.register_input_label_email')</label>
+                                        <input type="email" name="email" id="email" value=""
+                                               placeholder="@lang('app.right_email_format')">
+                                        @if ($errors->has('email'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                        @endif
+                                        <br/>
+                                        <label for="password">@lang('app.register_input_label_password')</label>
+                                        <input type="password" name="password" id="password" value=""
+                                               placeholder="********">
+                                        @if ($errors->has('password'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                        @endif
+                                        <br/>
+                                        <label for="confirm-password">@lang('app.register_input_label_confirm_password')</label>
+                                        <input type="password" name="password_confirmation" id="confirm-password"
+                                               value="" placeholder="********">
+                                        <br/>
+                                        <input type="submit" value="@lang('app.register_input_submit')">
+                                        {{ csrf_field() }}
                                 </form>
                                 <ul class="sub-nav">
                                     <li><a class="sub-nav-item" href="{{ url('/prihlasovanie') }}">@lang('app.back_to_login')</a></li>

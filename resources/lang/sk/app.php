@@ -14,19 +14,16 @@ return [
     'new_account' => 'Vytvoriť účet',
     'back_to_login' => 'Späť na prihlásenie',
     'home_more_button' => 'Ukázať viac ...',
-    'date_end' => 'prihlášky do ',
     'contact' => 'Kontakt',
     'reviews' => 'Recenzie: ',
 
     //Navigation
     'nav_home' => 'Domov',
-
     'nav_search' => 'Výsledky vyhľadávania',
     'nav_mobilities' => 'Mobility',
     'nav_contact' => 'Kontakt',
     'nav_blog' => 'Blog',
     'nav_faq' => 'FAQ',
-
     'nav_account' => 'Účet',
     'nav_logout' => 'Odhlasiť sa',
 
@@ -53,6 +50,7 @@ return [
     'login_input_label_password' => 'Heslo',
     'login_input_submit' => 'Prihlásiť sa',
     'login_forget_password' => 'Zabudli ste údaje na prístup k účtu?',
+    'login_bad' => 'Email alebo heslo nie je správne.',
 
     //Register
     'register_title' => 'Registrácia',

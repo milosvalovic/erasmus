@@ -37,7 +37,7 @@
                                                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                                     <tr>
                                                         <td style="padding: 10px 0 0 0; font-family: Arial, sans-serif; font-size: 15px; text-align: center">
-                                                            <a href="#" style="text-decoration: none; background-color: #007183; color: #ffffff; padding: 20px; border-radius: 10px; text-transform: uppercase;"><b>Kliknite sem pre zmenu hesla</b></a>
+                                                            <a href="{{$reset_url}}" style="text-decoration: none; background-color: #007183; color: #ffffff; padding: 20px; border-radius: 10px; text-transform: uppercase;"><b>Kliknite sem pre zmenu hesla</b></a>
                                                         </td>
                                                     </tr>
                                                 </table>

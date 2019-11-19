@@ -16,6 +16,10 @@
         @include('client.app.layout.account.forget_password')
         @break
 
+        @case('reset_password')
+        @include('client.app.layout.account.reset_password')
+        @break
+
         @default
         @include('client.app.layout.account.login')
     @endswitch
