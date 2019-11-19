@@ -46,7 +46,7 @@ class DetailController extends Controller
             ->get();
 
         $firstMobility = $mobilityDetail->first();
-        $firstMobility->title = $firstMobility->mobility_type->name.': '.$firstMobility->university->name;
+        $firstMobility->title = $firstMobility->mobility_type->name.': '.$firstMobility->university->name.', '.$firstMobility->university->country->name;
 
             if($firstMobility->season->count() == 0){
                 $firstMobility->attend = 0;
