@@ -37,7 +37,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="{{ action('system\SystemController@users')}}">
+            <a class="nav-link" href="#">
                 <i class="fa fa-user" aria-hidden="true"></i>
                 <span>Role používateľov</span>
             </a>
@@ -51,7 +51,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="{{ action('system\SystemController@mobilities')}}">
+            <a class="nav-link" href="#">
                 <i class="fa fa-list-alt" aria-hidden="true"></i>
                 <span>Kategórie mobilít</span>
             </a>
