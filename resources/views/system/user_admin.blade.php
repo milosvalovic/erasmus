@@ -14,7 +14,7 @@
             </div>
         </div>
 
-        <div class="admin-welcome-content">k
+        <div class="admin-welcome-content">
             <div class="basic-info">
                 <h1>Správa používateľov</h1>
             </div>
