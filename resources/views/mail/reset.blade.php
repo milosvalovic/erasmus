@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>@lang('app.reset_title')</title>
+    <title>@lang('app.name') | @lang('app.nav_account') | @lang('app.nav_reset_password')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" type="image/png" href="{{ asset('fav/favicon.ico') }}"/>
 </head>

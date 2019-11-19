@@ -196,7 +196,7 @@
                             <tr>
                                 <td style="color: #ffffff; font-family: Arial, sans-serif; font-size: 14px;" width="75%">
                                     &reg; @lang('app.email_university_name')
-                                    <br/> @lang('app.newsletter_unsubscribe_text') <a href="#" style="color: #ffffff;"><font color="#ffffff">@lang('app.newsletter_unsubscribe')</font></a>
+                                    <br/> @lang('app.email_unsubscribe_text') <a href="#" style="color: #ffffff;"><font color="#ffffff">@lang('app.email_unsubscribe')</font></a>
                                 </td>
                                 <td align="right" width="25%">
                                     <table border="0" cellpadding="0" cellspacing="0">

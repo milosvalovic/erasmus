@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ecneb
- * Date: 2019-11-14
- * Time: 16:15
- */
 
-namespace App\Http\Controllers\system\student;
-
+namespace App\Http\Controllers\student;
 
 use Illuminate\Routing\Controller;
 

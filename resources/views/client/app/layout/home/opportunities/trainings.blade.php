@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-12">
-        <h2 class="section-heading">@lang('app.home_opportunitie_trainings')</h2>
+        <h2 class="section-heading">@lang('app.home_trainings_title')</h2>
     </div>
 </div>
 <div class="row">

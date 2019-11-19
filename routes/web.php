@@ -16,23 +16,28 @@ use Illuminate\Support\Facades\Mail;
 
 Route::get('/', 'client\HomeController@home');
 
-Route::get('/domov/krajiny', 'client\HomeController@getCountryCodes');
-
-Route::post('/hladat', ['as' => 'search', 'uses' => 'client\SearchController@search']);
+Route::get('/mapa/krajiny', 'client\HomeController@getCountryCodes');
 
 Route::get('/#kontakt', 'client\HomeController@home');
+
+Route::post('/hladat', ['as' => 'search', 'uses' => 'client\SearchController@search']);
 
 Route::get('/mobility', 'client\MobilitiesController@mobilities');
 
 Route::get('/mobility/{id}/{perPage}', ['as' => 'mobility', 'uses' => 'client\MobilitiesController@mobilityByType']);
 
-Route::get('/prihlasovanie', 'client\AccountController@login');
+Route::get('/clanok/novy', 'student\ArticleController@newArticle');
 
-Route::get('/registracia', 'client\AccountController@register');
+Route::post('/clanok/ulozit', ['as' => 'insert-article', 'uses' => 'student\ArticleController@insertArticle']);
 
-Route::get('/pomoc', 'client\AccountController@forget_password');
+Route::get('/prezentacia/nova', 'student\PresentationController@newPresentation');
 
-Route::post('/blog/insert', ['as' => 'insert-article', 'uses' => 'blog\BlogController@insertArticle']);
+Route::post('/prezentacia/ulozit', ['as' => 'insert-presentation', 'uses' => 'student\PresentationController@insertPresentation']);
+
+Route::get('/recenzia/nova', 'student\ReviewController@newReview');
+
+Route::post('/recenzia/ulozit', ['as' => 'insert-review', 'uses' => 'student\ReviewController@insertReview']);
+
 
 
 
@@ -58,7 +63,7 @@ Route::get('/faq', 'client\FAQController@faq');
 
 Route::get('/odhlasenie', 'client\AccountController@login');
 
-Route::get('/profil', 'system\student\ProfileController@profil');
+Route::get('/profil', 'student\ProfileController@profil');
 
 Route::get('/profil/prezentacia', 'system\student\ProfileController@presentation');
 
