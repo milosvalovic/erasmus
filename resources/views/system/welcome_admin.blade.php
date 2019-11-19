@@ -3,8 +3,6 @@
 @section('content')
     <div class="admin-welcome-page">
 
-
-
         @include('system.include.header')
         <div class="admin-welcome-title">
             <div class="admin-welcome-title-title">
@@ -18,65 +16,59 @@
         </div>
 
         <div class="admin-welcome-content">
-            <div class="basic-info">
-                <h1>Správa používateľov</h1>
+            <div class="row">
+
+                <!-- Earnings (Monthly) Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Celkový počet používateľov</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">1185</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fa fa-user-o fa-3x"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Earnings (Monthly) Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-success shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Počet mobilít a výziev</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">769</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fa fa-list-alt fa-3x" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Earnings (Monthly) Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-info shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Počet partnerských univerzít</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">35</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fa fa-university fa-3x" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <table class="table users-table">
-                <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Meno</th>
-                    <th scope="col">Priezvisko</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Rola</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td><a href="/edit-user/#">Eduard</a></td>
-                    <td><a href="/edit-user/#">Gábel</a></td>
-                    <td>eduard@gmail.com</td>
-                    <td>Administrátor</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td><a href="/edit-user/#">Bencé</a></td>
-                    <td><a href="/edit-user/#">Máte</a></td>
-                    <td>bence@gmail.com</td>
-                    <td>Administrátor</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td><a href="/edit-user/#">Dušan</a></td>
-                    <td><a href="/edit-user/#">Orlíček</a></td>
-                    <td>dusan@gmail.com</td>
-                    <td>Administrátor</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td><a href="/edit-user/#">Miloš</a></td>
-                    <td><a href="/edit-user/#">Valovič</a></td>
-                    <td>milos@gmail.com</td>
-                    <td>Administrátor</td>
-                </tr>
-                </tbody>
-            </table>
-
-            <nav class="admin-users-pagination" aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1"><</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#"> > </a>
-                    </li>
-                </ul>
-            </nav>
         </div>
 
         @include('system.include.footer')
