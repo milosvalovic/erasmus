@@ -4,6 +4,26 @@ body {
     box-sizing: border-box;
 }
 /*------------ADMIN general------------------------*/
+.admin-base-grid{
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 100px auto 45px;
+    background: #ffffff;
+    height: 100vh;
+    grid-template-areas:
+            "header title title title title title title title title"
+            "header content content content content content content content content"
+            "header footer footer footer footer footer footer footer footer";
+}
+
+.admin-content{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    grid-area: content;
+    position: relative;
+}
+
 .admin-header{
     grid-area: header;
     box-shadow: 11px 12px 7px #979797;
@@ -24,6 +44,41 @@ body {
     margin-bottom: 0;
     font-size: 14px;
 }
+
+/*-----title-----*/
+.admin-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    grid-area: title;
+}
+
+.admin-title-text{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.admin-title-user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-left: 1px solid grey;
+    padding-left: 10px;
+}
+
+.admin-title-user > img{
+    margin-left: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 7px;
+}
+
+.admin-title-user > p {
+    margin-bottom: 0;
+}
+
 
 /*--------ADMIN SideMenu-----------*/
 .admin-header > ul > a .sidebar-brand-icon i.admin-ukf-logo{
@@ -64,43 +119,6 @@ span[class='dashboard-admin']{
     "header footer footer footer footer footer footer footer footer";
 }
 
-.admin-welcome-title{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 20px;
-    grid-area: title;
-}
-
-.admin-welcome-title-title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.admin-welcome-title-title > p{
-    margin-bottom: 0;
-}
-
-.admin-welcome-title-user-profile{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-left: 1px solid grey;
-    padding-left: 10px;
-}
-
-.admin-welcome-title-user-profile > img{
-    margin-left: 15px;
-    width: 50px;
-    height: 50px;
-    border-radius: 7px;
-}
-
-.admin-welcome-title-user-profile > p {
-    margin-bottom: 0;
-}
-
 .admin-welcome-content{
     display: flex;
     flex-direction: column;
@@ -111,7 +129,7 @@ span[class='dashboard-admin']{
 
 
 
-
+/*--------ADMIN all users-----------*/
 
 table.users-table tr th > a{
     text-decoration: none;
@@ -124,7 +142,6 @@ table.users-table tr th > a{
 .user-table-wrapper{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
-    /*box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15) !important;*/
     padding: 10px;
     margin-top: 30px;
 }
@@ -171,7 +188,7 @@ a[class='page-link']:hover{
 }
 
 .admin-users-pagination > ul {
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .admin-projects-diagram{
@@ -182,6 +199,31 @@ a[class='page-link']:hover{
     min-width: 500px;
     width: 500px;
 }
+
+
+/*-------------ADMIN Mobility page---------------*/
+
+.admin-mobilities-table{
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.admin-mobilities-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
 
 
 

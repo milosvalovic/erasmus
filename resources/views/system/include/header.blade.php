@@ -43,7 +43,7 @@
             </a>
         </li>
 
-        <li class="nav-item admin-menu-links-hover">
+        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/mobilities')) ? 'active' : ''}}">
             <a class="nav-link" href="{{ action('system\SystemController@mobilities')}}">
                 <i class="fa fa-list-alt" aria-hidden="true"></i>
                 <span>Mobility</span>

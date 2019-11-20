@@ -3,12 +3,12 @@
 @section('content')
     <div class="admin-welcome-page">
         @include('system.include.header')
-        <div class="admin-welcome-title">
-            <div class="admin-welcome-title-title">
+
+        <div class="admin-title">
+            <div class="admin-title-text">
                 <h1>Používatelia</h1>
             </div>
-
-            <div class="admin-welcome-title-user-profile">
+            <div class="admin-title-user">
                 <p>Eduard Gábel</p>
                 <img src="{{ asset('img/cat.png') }}" alt="">
             </div>
@@ -38,8 +38,8 @@
                     <tbody>
                     <tr>
                         <th scope="row">1</th>
-                        <td><a href="/edit-user/#">Eduard</a></td>
-                        <td><a href="/edit-user/#">Gábel</a></td>
+                        <td>Eduard</td>
+                        <td>Gábel</td>
                         <td>eduard@gmail.com</td>
                         <td>Administrátor</td>
                         <th scope="row">
@@ -53,8 +53,8 @@
                     </tr>
                     <tr>
                         <th scope="row">2</th>
-                        <td><a href="/edit-user/#">Bencé</a></td>
-                        <td><a href="/edit-user/#">Máte</a></td>
+                        <td>Bencé</td>
+                        <td>Máte</td>
                         <td>bence@gmail.com</td>
                         <td>Administrátor</td>
                         <th scope="row">
@@ -68,8 +68,8 @@
                     </tr>
                     <tr>
                         <th scope="row">3</th>
-                        <td><a href="/edit-user/#">Dušan</a></td>
-                        <td><a href="/edit-user/#">Orlíček</a></td>
+                        <td>Dušan</td>
+                        <td>Orlíček</td>
                         <td>dusan@gmail.com</td>
                         <td>Administrátor</td>
                         <th scope="row">
@@ -83,8 +83,8 @@
                     </tr>
                     <tr>
                         <th scope="row">4</th>
-                        <td><a href="/edit-user/#">Miloš</a></td>
-                        <td><a href="/edit-user/#">Valovič</a></td>
+                        <td>Miloš</td>
+                        <td>Valovič</td>
                         <td>milos@gmail.com</td>
                         <td>Administrátor</td>
                         <th scope="row">
@@ -116,8 +116,6 @@
         </div>
 
         @include('system.include.footer')
-
-
     </div>
 @endsection
 
