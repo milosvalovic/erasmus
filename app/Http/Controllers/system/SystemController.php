@@ -27,6 +27,10 @@ class SystemController extends Controller
         return view('system.mobility_admin');
     }
 
+    public function mobility_category(){
+        return view('system.mobility_category_admin');
+    }
+
 
 
 }
