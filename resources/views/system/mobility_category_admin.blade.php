@@ -17,7 +17,7 @@
         <div class="admin-content">
             <div class="admin-mobility-category-table">
                 <div class="admin-mobility-category-title">
-                    <h2>Správa kategórií</h2>
+                    <h2>Správa kategórií mobilít</h2>
                     <a href="#">
                         <button type="button" class="btn btn-outline-primary btn-add">Pridať kategóriu</button>
                     </a>

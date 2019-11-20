@@ -17,7 +17,7 @@
         <div class="admin-content">
             <div class="admin-roles-table">
                 <div class="admin-roles-title">
-                    <h2>Správa Rolí</h2>
+                    <h2>Správa rolí</h2>
                     <a href="#">
                         <button type="button" class="btn btn-outline-primary btn-add">Pridať rolu</button>
                     </a>
