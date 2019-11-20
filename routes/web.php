@@ -98,6 +98,7 @@ Route::get('/admin/mobilities', 'system\SystemController@mobilities');
 
 Route::get('/admin/mobilities_category', 'system\SystemController@mobility_category');
 
+Route::get('/admin/blogs', 'system\SystemController@blogs_view');
 
 
 

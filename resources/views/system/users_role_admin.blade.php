@@ -6,7 +6,7 @@
 
         <div class="admin-title">
             <div class="admin-title-text">
-                <h1>Kategória mobilít</h1>
+                <h1>Administrácia rolí u členov</h1>
             </div>
             <div class="admin-title-user">
                 <p>Eduard Gábel</p>
@@ -15,11 +15,11 @@
         </div>
 
         <div class="admin-content">
-            <div class="admin-mobility-category-table">
-                <div class="admin-mobility-category-title">
-                    <h2>Správa kategórií mobilít</h2>
+            <div class="admin-roles-table">
+                <div class="admin-roles-title">
+                    <h2>Správa rolí</h2>
                     <a href="#">
-                        <button type="button" class="btn btn-outline-primary btn-add">Pridať kategóriu</button>
+                        <button type="button" class="btn btn-outline-primary btn-add">Pridať rolu</button>
                     </a>
                 </div>
 
@@ -28,13 +28,15 @@
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Názov</th>
+                        <th scope="col">Popis</th>
                         <th scope="col" class="user-form-actions">Akcie</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                         <th scope="row">1</th>
-                        <td>Študijný pobyt</td>
+                        <td>Administrátor</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
                         <th scope="row">
                             <a href="/edit-role/'number'">
                                 <button type="button" class="btn btn-outline-warning">Upraviť</button>
@@ -46,7 +48,6 @@
                     </tr>
                     </tbody>
                 </table>
-
 
                 <nav class="admin-users-pagination" aria-label="Page navigation example">
                     <ul class="pagination">
@@ -62,7 +63,6 @@
                     </ul>
                 </nav>
             </div>
-
         </div>
 
 

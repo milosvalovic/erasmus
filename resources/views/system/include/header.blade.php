@@ -57,16 +57,13 @@
             </a>
         </li>
 
-        <!-- Divider -->
-{{--        <hr class="sidebar-divider">--}}
-
         <!-- Heading -->
         <div class="sidebar-heading">
             Ostatné
         </div>
 
-        <li class="nav-item admin-menu-links-hover">
-            <a class="nav-link " href="#">
+        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/blogs')) ? 'active' : ''}}">
+            <a class="nav-link " href="{{ action('system\SystemController@blogs_view')}}">
                 <i class="fa fa-tag" aria-hidden="true"></i>
                 <span>Spravovanie blogov</span>
             </a>
