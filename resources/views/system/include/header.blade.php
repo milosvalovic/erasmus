@@ -77,7 +77,7 @@
             </a>
         </li>
 
-        <li class="nav-item admin-menu-links-hover">
+        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/open_hours')) ? 'active' : ''}}">
             <a class="nav-link " href="{{ action('system\SystemController@office_hours')}}">
                 <i class="fa fa-clock-o" aria-hidden="true"></i>
                 <span>Otváracie hodiny</span>
