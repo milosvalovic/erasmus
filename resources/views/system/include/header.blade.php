@@ -37,7 +37,7 @@
         </li>
 
         <li class="nav-item admin-menu-links-hover">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ action('system\SystemController@roles')}}">
                 <i class="fa fa-user" aria-hidden="true"></i>
                 <span>Role používateľov</span>
             </a>

@@ -15,6 +15,10 @@ class SystemController extends Controller
         return view('system.user_admin');
     }
 
+    public function roles(){
+        return view('system.users_role');
+    }
+
     public function edit_user(){
         return view('system.edit_user_admin');
     }
@@ -22,5 +26,7 @@ class SystemController extends Controller
     public function mobilities(){
         return view('system.mobility_admin');
     }
+
+
 
 }

@@ -3,7 +3,7 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
-/*------------ADMIN general------------------------*/
+/*------------------ADMIN general------------------------*/
 .admin-base-grid{
     display: grid;
     grid-template-columns: repeat(9, 1fr);
@@ -45,7 +45,19 @@ body {
     font-size: 14px;
 }
 
-/*-----title-----*/
+
+/*--------ADMIN table-----------*/
+.admin-table{
+    width: 500px;
+    background: #FFFFFF;
+    border-radius: 7px;
+}
+
+table.admin-table tr th a{
+    text-decoration: none;
+}
+
+/*--------ADMIN Title--------*/
 .admin-title {
     display: flex;
     flex-direction: row;
@@ -104,6 +116,10 @@ body {
 span[class='dashboard-admin']{
     font-size: 30px;
 }
+/*----------------END ADMIN general------------------------*/
+
+
+
 
 
 /*--------ADMIN Welcome page-----------*/
@@ -129,12 +145,7 @@ span[class='dashboard-admin']{
 
 
 
-/*--------ADMIN all users-----------*/
-
-table.users-table tr th > a{
-    text-decoration: none;
-}
-
+/*--------ADMIN Users-----------*/
 .user-form-actions{
     width: 200px;
 }
@@ -159,21 +170,10 @@ table.users-table tr th > a{
     padding-left: 20px;
 }
 
-.users-table{
-    width: 500px;
-    background: #ffffff;
-    border-radius: 7px;
-}
 
-.users-table > tbody > tr > td > a {
-    text-decoration: none;
-    color: #808080;
-}
 
-.users-table > tbody > tr > td > a:hover {
-    color: #ff0100;
-    cursor: pointer;
-}
+
+
 
 a[class="page-link"]{
     color: #007183;
@@ -201,8 +201,8 @@ a[class='page-link']:hover{
 }
 
 
-/*-------------ADMIN Mobility page---------------*/
 
+/*-------------ADMIN Mobility page---------------*/
 .admin-mobilities-table{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
@@ -217,6 +217,20 @@ a[class='page-link']:hover{
 }
 
 
+
+/*-------------ADMIN Mobility page---------------*/
+.admin-roles-table{
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.admin-roles-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
 
 
