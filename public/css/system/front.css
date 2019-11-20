@@ -4,6 +4,26 @@ body {
     box-sizing: border-box;
 }
 /*------------ADMIN general------------------------*/
+.admin-base-grid{
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 100px auto 45px;
+    background: #ffffff;
+    height: 100vh;
+    grid-template-areas:
+            "header title title title title title title title title"
+            "header content content content content content content content content"
+            "header footer footer footer footer footer footer footer footer";
+}
+
+.admin-content{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    grid-area: content;
+    position: relative;
+}
+
 .admin-header{
     grid-area: header;
     box-shadow: 11px 12px 7px #979797;
@@ -25,17 +45,68 @@ body {
     font-size: 14px;
 }
 
+/*-----title-----*/
+.admin-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    grid-area: title;
+}
+
+.admin-title-text{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.admin-title-user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-left: 1px solid grey;
+    padding-left: 10px;
+}
+
+.admin-title-user > img{
+    margin-left: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 7px;
+}
+
+.admin-title-user > p {
+    margin-bottom: 0;
+}
+
+
 /*--------ADMIN SideMenu-----------*/
+.admin-header > ul > a .sidebar-brand-icon i.admin-ukf-logo{
+    display: block;
+    background: url("../../img/ukf_logo_white.png") no-repeat;
+    background-size: 70px 70px;
+    width: 70px;
+    height: 70px;
+}
+
+.sidebar-brand{
+    margin-top: 10px;
+}
+
 .dashboard-admin > a > span{
     font-size: 20px;
 }
 
-.admin-menu-links-hover{
+.admin-menu-links-hover:hover{
     background-color: #0093aadb;
 }
 
+span[class='dashboard-admin']{
+    font-size: 30px;
+}
 
-/*--------ADMIN welcome page-----------*/
+
+/*--------ADMIN Welcome page-----------*/
 .admin-welcome-page{
     display: grid;
     grid-template-columns: repeat(9, 1fr);
@@ -48,49 +119,44 @@ body {
     "header footer footer footer footer footer footer footer footer";
 }
 
-.admin-welcome-title{
+.admin-welcome-content{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    grid-area: content;
+    position: relative;
+}
+
+
+
+/*--------ADMIN all users-----------*/
+
+table.users-table tr th > a{
+    text-decoration: none;
+}
+
+.user-form-actions{
+    width: 200px;
+}
+
+.user-table-wrapper{
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.user-table-wrapper .user-table-title {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 20px;
-    grid-area: title;
 }
 
-.admin-welcome-title-title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.admin-welcome-title-title > p{
-    margin-bottom: 0;
-}
-
-.admin-welcome-title-user-profile{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-left: 1px solid grey;
-    padding-left: 10px;
-}
-
-.admin-welcome-title-user-profile > img{
-    margin-left: 15px;
-    width: 50px;
-    height: 50px;
-    border-radius: 7px;
-}
-
-.admin-welcome-title-user-profile > p {
-    margin-bottom: 0;
-}
-
-.admin-welcome-content{
-    padding: 20px;
-    grid-area: content;
-    /*background: #d6d7da;*/
-    position: relative;
-    border-radius: 10px;
+.user-table-wrapper .user-table-title button.btn-add{
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 .users-table{
@@ -119,10 +185,10 @@ a[class='page-link']:hover{
 
 .admin-users-pagination {
     display: block;
-    bottom: 0;
-    position: absolute;
-    left: 50%;
-    right: 50%;
+}
+
+.admin-users-pagination > ul {
+    justify-content: flex-end;
 }
 
 .admin-projects-diagram{
@@ -133,6 +199,31 @@ a[class='page-link']:hover{
     min-width: 500px;
     width: 500px;
 }
+
+
+/*-------------ADMIN Mobility page---------------*/
+
+.admin-mobilities-table{
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.admin-mobilities-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
 
 
 

@@ -4,12 +4,11 @@
     <div class="admin-welcome-page">
 
         @include('system.include.header')
-        <div class="admin-welcome-title">
-            <div class="admin-welcome-title-title">
-                <h1>Administračný systém erazmus</h1>
+        <div class="admin-title">
+            <div class="admin-title-text">
+                <h1>Administračný systém</h1>
             </div>
-
-            <div class="admin-welcome-title-user-profile">
+            <div class="admin-title-user">
                 <p>Eduard Gábel</p>
                 <img src="{{ asset('img/cat.png') }}" alt="">
             </div>
