@@ -102,6 +102,8 @@ Route::get('/admin/blogs', 'system\SystemController@blogs_view');
 
 Route::get('/admin/universities', 'system\SystemController@universities');
 
+Route::get('/admin/images', 'system\SystemController@images');
+
 
 
 

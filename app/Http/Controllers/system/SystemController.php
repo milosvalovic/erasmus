@@ -39,6 +39,10 @@ class SystemController extends Controller
         return view ('system.universities_admin');
     }
 
+    public function images(){
+        return view ('system.images_admin');
+    }
+
 
 
 }
