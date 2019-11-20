@@ -23,7 +23,7 @@
                     </a>
                 </div>
 
-                <table class="table users-table">
+                <table class="table admin-table">
                     <thead>
                     <tr>
                         <th scope="col">ID</th>
