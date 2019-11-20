@@ -26,6 +26,18 @@ body {
 }
 
 /*--------ADMIN SideMenu-----------*/
+.admin-header > ul > a .sidebar-brand-icon i.admin-ukf-logo{
+    display: block;
+    background: url("../../img/ukf_logo_white.png") no-repeat;
+    background-size: 70px 70px;
+    width: 70px;
+    height: 70px;
+}
+
+.sidebar-brand{
+    margin-top: 10px;
+}
+
 .dashboard-admin > a > span{
     font-size: 20px;
 }
@@ -90,11 +102,11 @@ span[class='dashboard-admin']{
 }
 
 .admin-welcome-content{
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     grid-area: content;
-    /*background: #d6d7da;*/
     position: relative;
-    border-radius: 10px;
 }
 
 .users-table{
@@ -123,10 +135,10 @@ a[class='page-link']:hover{
 
 .admin-users-pagination {
     display: block;
-    bottom: 0;
-    position: absolute;
-    left: 50%;
-    right: 50%;
+}
+
+.admin-users-pagination > ul {
+    justify-content: center;
 }
 
 .admin-projects-diagram{

@@ -5,8 +5,9 @@
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center"
            href="{{ action('system\SystemController@system')}}">
-            <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fa fa-wheelchair-alt"></i>
+            <div class="sidebar-brand-icon">
+{{--                <i class="fa fa-wheelchair-alt"></i>--}}
+                <i class="admin-ukf-logo"></i>
             </div>
             <div class="sidebar-brand-text mx-3">Erasmus</div>
         </a>
@@ -15,11 +16,11 @@
 {{--        <hr class="sidebar-divider my-0">--}}
 
         <!-- Nav Item - Dashboard -->
-        <li class="nav-item dashboard-admin admin-menu-links-hover {{ (request()->is('admin')) ? 'active' : '' }}">
-            <a class="nav-link" href="/public/admin">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span class="dashboard-admin">Dashboard</span></a>
-        </li>
+{{--        <li class="nav-item dashboard-admin admin-menu-links-hover {{ (request()->is('admin')) ? 'active' : '' }}">--}}
+{{--            <a class="nav-link" href="/public/admin">--}}
+{{--                <i class="fas fa-fw fa-tachometer-alt"></i>--}}
+{{--                <span class="dashboard-admin">Dashboard</span></a>--}}
+{{--        </li>--}}
 
         <!-- Divider -->
 {{--        <hr class="sidebar-divider">--}}
