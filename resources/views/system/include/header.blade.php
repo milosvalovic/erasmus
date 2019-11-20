@@ -11,19 +11,6 @@
             <div class="sidebar-brand-text mx-3">Erasmus</div>
         </a>
 
-        <!-- Divider -->
-{{--        <hr class="sidebar-divider my-0">--}}
-
-        <!-- Nav Item - Dashboard -->
-{{--        <li class="nav-item dashboard-admin admin-menu-links-hover {{ (request()->is('admin')) ? 'active' : '' }}">--}}
-{{--            <a class="nav-link" href="/public/admin">--}}
-{{--                <i class="fas fa-fw fa-tachometer-alt"></i>--}}
-{{--                <span class="dashboard-admin">Dashboard</span></a>--}}
-{{--        </li>--}}
-
-        <!-- Divider -->
-{{--        <hr class="sidebar-divider">--}}
-
         <!-- Heading -->
         <div class="sidebar-heading">
             Administrácia tabuliek
@@ -69,8 +56,8 @@
             </a>
         </li>
 
-        <li class="nav-item admin-menu-links-hover">
-            <a class="nav-link " href="#">
+        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/universities')) ? 'active' : ''}}">
+            <a class="nav-link " href="{{ action('system\SystemController@universities')}}">
                 <i class="fa fa-university" aria-hidden="true"></i>
                 <span>Správa univerzít</span>
             </a>
@@ -96,12 +83,6 @@
                 <span>Otváracie hodiny</span>
             </a>
         </li>
-
-
-        <!-- Sidebar Toggler (Sidebar) -->
-{{--        <div class="text-center d-none d-md-inline">--}}
-{{--            <button class="rounded-circle border-0" id="sidebarToggle"></button>--}}
-{{--        </div>--}}
 
     </ul>
 </div>
