@@ -106,6 +106,8 @@ Route::get('/admin/images', 'system\SystemController@images');
 
 Route::get('/admin/faq', 'system\SystemController@faq');
 
+Route::get('/admin/open_hours', 'system\SystemController@office_hours');
+
 
 
 

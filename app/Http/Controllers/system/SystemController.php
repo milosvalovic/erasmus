@@ -43,9 +43,12 @@ class SystemController extends Controller
         return view ('system.images_admin');
     }
 
-
     public function faq(){
         return view ('system.faq_admin');
+    }
+
+    public function office_hours(){
+        return view ('system.office_hours_admin');
     }
 
 
