@@ -36,7 +36,7 @@
             </a>
         </li>
 
-        <li class="nav-item admin-menu-links-hover">
+        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/roles')) ? 'active' : ''}}">
             <a class="nav-link" href="{{ action('system\SystemController@roles')}}">
                 <i class="fa fa-user" aria-hidden="true"></i>
                 <span>Role používateľov</span>
@@ -50,7 +50,7 @@
             </a>
         </li>
 
-        <li class="nav-item admin-menu-links-hover">
+        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/mobilities_category')) ? 'active' : ''}}">
             <a class="nav-link" href="{{ action('system\SystemController@mobility_category')}}">
                 <i class="fa fa-list-alt" aria-hidden="true"></i>
                 <span>Kategórie mobilít</span>
