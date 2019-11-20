@@ -96,6 +96,8 @@ Route::get('/admin/roles', 'system\SystemController@roles');
 
 Route::get('/admin/mobilities', 'system\SystemController@mobilities');
 
+Route::get('/admin/mobilities_roles', 'system\SystemController@mobility_category');
+
 
 
 

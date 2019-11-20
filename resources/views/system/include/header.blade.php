@@ -51,7 +51,7 @@
         </li>
 
         <li class="nav-item admin-menu-links-hover">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ action('system\SystemController@mobility_category')}}">
                 <i class="fa fa-list-alt" aria-hidden="true"></i>
                 <span>Kategórie mobilít</span>
             </a>
