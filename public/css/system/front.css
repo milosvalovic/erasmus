@@ -30,8 +30,12 @@ body {
     font-size: 20px;
 }
 
-.admin-menu-links-hover{
+.admin-menu-links-hover:hover{
     background-color: #0093aadb;
+}
+
+span[class='dashboard-admin']{
+    font-size: 30px;
 }
 
 

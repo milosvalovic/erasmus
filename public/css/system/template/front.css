@@ -10538,6 +10538,8 @@ a:focus {
 }
 
 .sidebar-dark .sidebar-heading {
+    margin-top: 30px;
+    font-size: 13px;
     color: rgba(255, 255, 255, .4)
 }
 
