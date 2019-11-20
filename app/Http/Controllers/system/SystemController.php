@@ -35,6 +35,10 @@ class SystemController extends Controller
         return view('system.blogs_admin');
     }
 
+    public function universities(){
+        return view ('system.universities_admin');
+    }
+
 
 
 }

@@ -57,6 +57,10 @@ table.admin-table tr th a{
     text-decoration: none;
 }
 
+.image-in-table{
+    width: 100px;
+}
+
 /*--------ADMIN Title--------*/
 .admin-title {
     display: flex;
@@ -100,6 +104,14 @@ table.admin-table tr th a{
     width: 70px;
     height: 70px;
 }
+
+/*.admin-header > ul > a:hover{*/
+/*    background: #0093aadb;*/
+/*}*/
+
+/*.admin-header-link-active {*/
+/*    background: #0093aadb;*/
+/*}*/
 
 .sidebar-brand{
     margin-top: 10px;
@@ -256,6 +268,21 @@ a[class='page-link']:hover{
 }
 
 .admin-blogs-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/*-------------ADMIN Universities page---------------*/
+.admin-universities-table{
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.admin-universities-title{
     display: flex;
     flex-direction: row;
     justify-content: space-between;

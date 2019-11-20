@@ -100,6 +100,9 @@ Route::get('/admin/mobilities_category', 'system\SystemController@mobility_categ
 
 Route::get('/admin/blogs', 'system\SystemController@blogs_view');
 
+Route::get('/admin/universities', 'system\SystemController@universities');
+
+
 
 
 Route::group(['middleware' => ['web']], function() {
