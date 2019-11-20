@@ -17,9 +17,11 @@
         <div class="admin-welcome-content">
 
             <div class="user-table-wrapper">
-                <div class="basic-info">
-                    <h1>Správa používateľov</h1>
-                    <button>Pridať</button>
+                <div class="user-table-title">
+                    <h2>Správa používateľov</h2>
+                    <a href="#">
+                        <button type="button" class="btn btn-outline-primary btn-add">Pridať používateľa</button>
+                    </a>
                 </div>
 
                 <table class="table users-table">
@@ -30,7 +32,7 @@
                         <th scope="col">Priezvisko</th>
                         <th scope="col">Email</th>
                         <th scope="col">Rola</th>
-                        <th scope="col">Akcie</th>
+                        <th scope="col" class="user-form-actions">Akcie</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -40,6 +42,14 @@
                         <td><a href="/edit-user/#">Gábel</a></td>
                         <td>eduard@gmail.com</td>
                         <td>Administrátor</td>
+                        <th scope="row">
+                            <a href="/edit-user/'number'">
+                                <button type="button" class="btn btn-outline-warning">Upraviť</button>
+                            </a>
+                            <a href="/delete-user/'number'">
+                                <button type="button" class="btn btn-outline-danger">Odstrániť</button>
+                            </a>
+                        </th>
                     </tr>
                     <tr>
                         <th scope="row">2</th>
@@ -47,6 +57,14 @@
                         <td><a href="/edit-user/#">Máte</a></td>
                         <td>bence@gmail.com</td>
                         <td>Administrátor</td>
+                        <th scope="row">
+                            <a href="/edit-user/'number'">
+                                <button type="button" class="btn btn-outline-warning">Upraviť</button>
+                            </a>
+                            <a href="/delete-user/'number'">
+                                <button type="button" class="btn btn-outline-danger">Odstrániť</button>
+                            </a>
+                        </th>
                     </tr>
                     <tr>
                         <th scope="row">3</th>
@@ -54,6 +72,14 @@
                         <td><a href="/edit-user/#">Orlíček</a></td>
                         <td>dusan@gmail.com</td>
                         <td>Administrátor</td>
+                        <th scope="row">
+                            <a href="/edit-user/'number'">
+                                <button type="button" class="btn btn-outline-warning">Upraviť</button>
+                            </a>
+                            <a href="/delete-user/'number'">
+                                <button type="button" class="btn btn-outline-danger">Odstrániť</button>
+                            </a>
+                        </th>
                     </tr>
                     <tr>
                         <th scope="row">4</th>
@@ -61,6 +87,14 @@
                         <td><a href="/edit-user/#">Valovič</a></td>
                         <td>milos@gmail.com</td>
                         <td>Administrátor</td>
+                        <th scope="row">
+                            <a href="/edit-user/'number'">
+                                <button type="button" class="btn btn-outline-warning">Upraviť</button>
+                            </a>
+                            <a href="/delete-user/'number'">
+                                <button type="button" class="btn btn-outline-danger">Odstrániť</button>
+                            </a>
+                        </th>
                     </tr>
                     </tbody>
                 </table>

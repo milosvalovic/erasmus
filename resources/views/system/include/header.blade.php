@@ -6,7 +6,6 @@
         <a class="sidebar-brand d-flex align-items-center justify-content-center"
            href="{{ action('system\SystemController@system')}}">
             <div class="sidebar-brand-icon">
-{{--                <i class="fa fa-wheelchair-alt"></i>--}}
                 <i class="admin-ukf-logo"></i>
             </div>
             <div class="sidebar-brand-text mx-3">Erasmus</div>
