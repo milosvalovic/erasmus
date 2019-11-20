@@ -44,5 +44,10 @@ class SystemController extends Controller
     }
 
 
+    public function faq(){
+        return view ('system.faq_admin');
+    }
+
+
 
 }
