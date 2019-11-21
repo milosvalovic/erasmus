@@ -24,10 +24,6 @@ class SystemController extends Controller
 
 
 
-    public function mobility_category()
-    {
-        return view('system.mobility_category_admin');
-    }
 
     public function blogs_view()
     {
