@@ -6,6 +6,7 @@ namespace App\Http\Controllers\system;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -25,6 +26,12 @@ class UserController extends Controller
 
     public function addUser(Request $request)
     {
+        $validation = $this->validateCreate($request);
+        if ($validation->fails()) {
+            Session::flash('error', $validation->messages()->first());
+            return redirect()->back()->withInput();
+        }
+
         $user = User::create([
             'first_name' => $request->firstname,
             'last_name' => $request->lastname,
@@ -46,13 +53,35 @@ class UserController extends Controller
     public function editUser(Request $request)
     {
         $user = User::find($request->id);
-        $user->first_name = $request->firstname;
-        $user->last_name = $request->lastname;
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
         $user->email = $request->email;
-        $user->password = bcrypt($request->firstname);
+        $user->password = bcrypt($request->password);
         $user->save();
 
         $user->roles()->sync([$request->role]);
     }
+
+    public function validateCreate($request){
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email|unique:users',
+            'first_name' => 'required|string|max:50',
+            'last_name' => 'required|string|max:50',
+            'password' => 'required|string|'
+        ]);
+
+        return $validator;
+    }
+
+    public function validateUpdate($request){
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email|unique:users',
+            'first_name' => 'required|string|max:50',
+            'last_name' => 'required|string|max:50',
+        ]);
+
+        return $validator;
+    }
+
 
 }
