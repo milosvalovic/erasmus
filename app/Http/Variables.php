@@ -21,5 +21,6 @@ class Variables
     const SEASON_STATUS_PENDING_ID = 1;
     const SEASON_STATUS_ACCEPT = 2;
     const SEASON_STATUS_CANCEL_ID = 3;
+    const SEASON_STATUS_DONE = 4;
 
 }
