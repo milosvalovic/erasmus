@@ -17,7 +17,7 @@
         </div>
 
         <li class="nav-item admin-menu-links-hover {{ (request()->is('admin/users')) ? 'active' : '' }}">
-            <a class="nav-link" href="{{ action('system\SystemUserController@users')}}">
+            <a class="nav-link" href="{{ action('system\UserController@users')}}">
                 <i class="fa fa-user" aria-hidden="true"></i>
                 <span>Používatelia</span>
             </a>

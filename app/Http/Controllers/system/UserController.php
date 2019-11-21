@@ -7,7 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-class SystemUserController extends Controller
+class UserController extends Controller
 {
     public function system()
     {

@@ -90,7 +90,7 @@ Route::get('/email/reset', function(){
 // Admin routes
 Route::get('/admin', 'system\SystemController@system');
 
-Route::get('/admin/users', 'system\SystemUserController@users');
+Route::get('/admin/users', 'system\UserController@users');
 
 Route::get('/admin/roles', 'system\SystemController@roles');
 
