@@ -64,7 +64,7 @@
         </li>
 
         <li class="nav-item admin-menu-links-hover {{(request()->is('admin/images')) ? 'active' : ''}}">
-            <a class="nav-link " href="{{ action('system\SystemController@images')}}">
+            <a class="nav-link " href="{{ action('system\ImageController@images')}}">
                 <i class="fa fa-picture-o" aria-hidden="true"></i>
                 <span>Správa fotografií</span>
             </a>

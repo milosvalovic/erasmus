@@ -27,10 +27,6 @@ class SystemController extends Controller
 
 
 
-    public function images()
-    {
-        return view('system.images_admin');
-    }
 
     public function faq()
     {

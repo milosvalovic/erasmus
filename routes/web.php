@@ -102,7 +102,7 @@ Route::get('/admin/blogs', 'system\BlogController@blogs_view');
 
 Route::get('/admin/universities', 'system\UniversityController@universities');
 
-Route::get('/admin/images', 'system\SystemController@images');
+Route::get('/admin/images', 'system\ImageController@images');
 
 Route::get('/admin/faq', 'system\SystemController@faq');
 
