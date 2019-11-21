@@ -94,7 +94,7 @@ Route::get('/admin/users', 'system\UserController@users');
 
 Route::get('/admin/roles', 'system\UserRoleController@roles');
 
-Route::get('/admin/mobilities', 'system\SystemController@mobilities');
+Route::get('/admin/mobilities', 'system\MobilityController@mobilities');
 
 Route::get('/admin/mobilities_category', 'system\SystemController@mobility_category');
 

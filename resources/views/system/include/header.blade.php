@@ -31,7 +31,7 @@
         </li>
 
         <li class="nav-item admin-menu-links-hover {{(request()->is('admin/mobilities')) ? 'active' : ''}}">
-            <a class="nav-link" href="{{ action('system\SystemController@mobilities')}}">
+            <a class="nav-link" href="{{ action('system\MobilityController@mobilities')}}">
                 <i class="fa fa-list-alt" aria-hidden="true"></i>
                 <span>Mobility</span>
             </a>
