@@ -36,66 +36,23 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Eduard</td>
-                        <td>Gábel</td>
-                        <td>eduard@gmail.com</td>
-                        <td>Administrátor</td>
-                        <th scope="row">
-                            <a href="/edit-user/'number'">
-                                <button type="button" class="btn btn-outline-warning">Upraviť</button>
-                            </a>
-                            <a href="/delete-user/'number'">
-                                <button type="button" class="btn btn-outline-danger">Odstrániť</button>
-                            </a>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Bencé</td>
-                        <td>Máte</td>
-                        <td>bence@gmail.com</td>
-                        <td>Administrátor</td>
-                        <th scope="row">
-                            <a href="/edit-user/'number'">
-                                <button type="button" class="btn btn-outline-warning">Upraviť</button>
-                            </a>
-                            <a href="/delete-user/'number'">
-                                <button type="button" class="btn btn-outline-danger">Odstrániť</button>
-                            </a>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Dušan</td>
-                        <td>Orlíček</td>
-                        <td>dusan@gmail.com</td>
-                        <td>Administrátor</td>
-                        <th scope="row">
-                            <a href="/edit-user/'number'">
-                                <button type="button" class="btn btn-outline-warning">Upraviť</button>
-                            </a>
-                            <a href="/delete-user/'number'">
-                                <button type="button" class="btn btn-outline-danger">Odstrániť</button>
-                            </a>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Miloš</td>
-                        <td>Valovič</td>
-                        <td>milos@gmail.com</td>
-                        <td>Administrátor</td>
-                        <th scope="row">
-                            <a href="/edit-user/'number'">
-                                <button type="button" class="btn btn-outline-warning">Upraviť</button>
-                            </a>
-                            <a href="/delete-user/'number'">
-                                <button type="button" class="btn btn-outline-danger">Odstrániť</button>
-                            </a>
-                        </th>
-                    </tr>
+                    @foreach($users as $item)
+                        <tr>
+                            <th scope="row">{{$item->user_id}}</th>
+                            <td>{{$item->first_name}}</td>
+                            <td>{{$item->last_name}}</td>
+                            <td>{{$item->email}}</td>
+                            <td>{{$item->name}}</td>
+                            <th scope="row">
+                                <a href="/edit-user/{{$item->user_id}}">
+                                    <button type="button" class="btn btn-outline-warning">Upraviť</button>
+                                </a>
+                                <a href="/delete-user/{{$item->user_id}}">
+                                    <button type="button" class="btn btn-outline-danger">Odstrániť</button>
+                                </a>
+                            </th>
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
 
