@@ -17,11 +17,12 @@ class CreatePartnerUniversityTable extends Migration
             $table->bigIncrements('ID');
             $table->unsignedBigInteger('country_ID');
             $table->string('city', 45);
-            $table->string('address',100);
+            $table->string('address', 100);
             $table->string('name', 100);
             $table->string('acronym', 10);
             $table->text('info')->nullable();
             $table->string('img_url', 128)->nullable();
+            $table->string('thumb_url', 128)->nullable();
             $table->timestamps();
             $table->softDeletes();
 

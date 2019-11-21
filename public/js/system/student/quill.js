@@ -9,7 +9,7 @@ $('document').ready(function () {
         theme: 'snow'
     });
 
-    $("#new-blog-post").submit(function(event){
-        $(this).append("<textarea style='display: none' name='article' >"+quill.container.firstChild.innerHTML+"</textarea>");
+    $("#new-blog-post").submit(function (event) {
+        $(this).append("<textarea style='display: none' name='article' >" + quill.container.firstChild.innerHTML + "</textarea>");
     });
 });

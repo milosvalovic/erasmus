@@ -16,12 +16,12 @@
                     <a class="nav-link @yield('blog')" href="{{ url('/blog') }}">@lang('app.nav_blog')</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link @yield('faq')" href="{{ url('/faq') }}">@lang('app.nav_faq')</a>
+                    <a class="nav-link @yield('faq')" href="{{ url('/otazky') }}">@lang('app.nav_faq')</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle @yield('account')" id="logoutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">@lang('app.nav_account')</a>
                     <div class="dropdown-menu" aria-labelledby="logoutDropdown">
-                        <a class="dropdown-item" href="{{ url('/prihlasovanie') }}">@lang('app.profil_my_mobility')</a>
+                        <a class="dropdown-item" href="{{ url('/prihlasovanie') }}">@lang('app.nav_my_mobilities')</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ url('/odhlasenie') }}">@lang('app.nav_logout')</a>
                     </div>

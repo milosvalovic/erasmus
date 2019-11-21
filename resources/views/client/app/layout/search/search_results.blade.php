@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form action="{{ action('client\SearchController@search').'#search' }}" method="POST" enctype="application/x-www-form-urlencoded" id="search">
+                {{ Form::open(array('url' => '/hladat#search', "id"=>"search", "enctype"=>"application/x-www-form-urlencoded")) }}
                     <div class="country">
                         <label for="country">@lang('app.search_modal_label_country')</label>
                         <input type="text" name="country" id="country" value="{{ isset($last_search_criteria['country'])?$last_search_criteria['country']:'' }}" placeholder="">
@@ -35,7 +35,7 @@
                         <label for="search"></label>
                         <input type="submit" name="search" id="search" value="@lang('app.search_modal_submit')">
                     </div>
-                </form>
+                {{Form::close()}}
             </div>
         </div>
         @if ($size == 0)
@@ -48,7 +48,7 @@
             <div class="row" id="number-of-items">
                 @foreach (array_shift($mobilities) as $group)
                     <div class="col-xl-3 col-sm-6 text-center">
-                        <img src="{{ asset('uploads/mobilities/'.$group["university"]["img_url"]) }}"
+                        <img src="{{ asset($group["university"]["thumb_url"]) }}"
                              alt="{{$group["university"]["country"]["name"]}}"
                              title="{{$group["university"]["country"]["name"]}}"
                              class="rounded">
@@ -66,7 +66,7 @@
             <div class="row" id="number-of-items">
                 @foreach ($group as $mobilita)
                     <div class="col-xl-3 col-sm-6 text-center">
-                        <img src="{{ asset('uploads/mobilities/'.$mobilita["university"]["img_url"]) }}"
+                        <img src="{{ asset($mobilita["university"]["thumb_url"]) }}"
                              alt="{{$mobilita["university"]["country"]["name"]}}"
                              title="{{$mobilita["university"]["country"]["name"]}}"
                              class="rounded">
@@ -84,7 +84,7 @@
         <div class="row more-opportunitie">
             <div class="container">
                 <div class="cold-md-12 text-right">
-                    <a id="load" href="#">@lang('app.search_load_items')</a>
+                    <a id="load" href="#">@lang('pagination.show_more')</a>
                 </div>
             </div>
         </div>

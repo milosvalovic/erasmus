@@ -1,16 +1,17 @@
 <?php
 
-namespace App;
+namespace App\Models;
+
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Image extends Model
+class Images extends Model
 {
     use SoftDeletes;
 
     protected $table = 'images';
-    protected $fillable= ['url','comments_ID'];
+    protected $fillable= ['thumb-url','url','comments_ID'];
 
     public function comments()
     {

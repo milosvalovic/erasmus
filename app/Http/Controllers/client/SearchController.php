@@ -30,7 +30,7 @@ class SearchController extends Controller
         $allMobility = Mobility::select('ID', 'mobility_types_ID', 'partner_university_ID', 'category_ID')
             ->with([
                 'university' => function ($query) {
-                    $query->select('ID', 'country_ID', 'name', 'img_url');
+                    $query->select('ID', 'country_ID', 'name', 'img_url', 'thumb_url');
                 }
                 , 'category' => function ($query) use ($offset) {
                     $query->select('ID', 'name');
@@ -77,7 +77,7 @@ class SearchController extends Controller
                 });
             })
             ->skip(0)
-            ->take(isset($number_of_items)?(Variables::NUMBER_OF_MOBILITY_ITEMS+$number_of_items):Variables::NUMBER_OF_MOBILITY_ITEMS)
+            ->take(isset($number_of_items) ? (Variables::NUMBER_OF_MOBILITY_ITEMS + $number_of_items) : Variables::NUMBER_OF_MOBILITY_ITEMS)
             ->get();
 
         if ($ratingSearch) {
@@ -108,8 +108,8 @@ class SearchController extends Controller
                     "country" => $countrySearch,
                     "university" => $universitySearch,
                     "stays" => $typeSearch,
-                    "from" => ($dateStartSearch == '')? '':date("d.m.Y", strtotime($dateStartSearch)),
-                    "to" => ($dateEndSearch == '')? '':date("d.m.Y", strtotime($dateEndSearch)),
+                    "from" => ($dateStartSearch == '') ? '' : date("d.m.Y", strtotime($dateStartSearch)),
+                    "to" => ($dateEndSearch == '') ? '' : date("d.m.Y", strtotime($dateEndSearch)),
                     "rating" => $ratingSearch,
                 )
             ]);

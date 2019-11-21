@@ -6,8 +6,18 @@
                alt="">
         </span>
     </span>
-    <div>
-        <h5 id="logged-user">Meno Priezvisko</h5>
+    <div id="user-name">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a  class="nav-link dropdown-toggle" href="#" id="logged-user" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Meno Priezvisko
+                </a>
+                <div class="dropdown-menu user" aria-labelledby="logged-user" id="user">
+                    <a class="dropdown-item" href="{{ url('/') }}">@lang('app.nav_logout')</a>
+                </div>
+            </li>
+        </ul>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,10 +25,24 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{{url('/mobility')}}">@lang('app.nav_current_mobilities')</a>
+                <a class="nav-link js-scroll-trigger"
+                   href="{{url('/profil/mobility')}}">@lang('app.nav_my_mobilities')</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{{url('/odhlasenie')}}">@lang('app.nav_logout')</a>
+                <a class="nav-link js-scroll-trigger" href="{{url('/profil/prihlasky')}}">@lang('app.nav_sign_ups')</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    @lang('app.nav_home')
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ url('/mobility') }}">@lang('app.nav_main_screen')</a>
+                    <a class="dropdown-item" href="{{ url('/mobility') }}">@lang('app.nav_mobilities')</a>
+                    <a class="dropdown-item" href="{{ url('/#kontakt') }}">@lang('app.nav_contact')</a>
+                    <a class="dropdown-item" href="{{ url('/blog') }}">@lang('app.nav_blog')</a>
+                    <a class="dropdown-item" href="{{ url('/otazky') }}">@lang('app.nav_faq')</a>
+                </div>
             </li>
         </ul>
     </div>

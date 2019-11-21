@@ -1,7 +1,7 @@
 <section class="resume-section p-3 p-lg-5 " id="mobility-title">
     <div class="row my-auto">
         <div class="col-12">
-            <h2 class="  text-center">@lang('app.my_profil_title')</h2>
+            <h2 class="  text-center">@lang('app.profil_my_mobility_title')</h2>
             <div class="mb-5 heading-border"></div>
             @if(Session::has('success'))
                 <div class="alert alert-success text-center" role="alert">
@@ -31,9 +31,9 @@
                 <div class="mobility text-md-right">
                     <span class="text-primary">01.01.2019 - 02.02.2019</span>
                     <ul>
-                        <li><a href="{{url('/prezentacia/nova')}}">@lang('app.profil_presentation_nav')</a></li>
-                        <li><a href="{{url('/recenzia/nova')}}">@lang('app.profil_review_nav')</a></li>
-                        <li><a href="{{url('/clanok/novy')}}">@lang('app.profil_blog_nav')</a></li>
+                        <li><a href="{{url('profil/prezentacia/nova')}}">@lang('app.profil_presentation_nav')</a></li>
+                        <li><a href="{{url('profil/recenzia/nova')}}">@lang('app.profil_review_nav')</a></li>
+                        <li><a href="{{url('profil/clanok/novy')}}">@lang('app.profil_blog_nav')</a></li>
                     </ul>
                 </div>
             </div>
@@ -54,9 +54,9 @@
                 <div class="mobility text-md-right">
                     <span class="text-primary">01.01.2019 - 02.02.2019</span>
                     <ul>
-                        <li><a href="{{url('/prezentacia/nova')}}">@lang('app.profil_presentation_nav')</a></li>
-                        <li><a href="{{url('/recenzia/nova')}}">@lang('app.profil_review_nav')</a></li>
-                        <li><a href="{{url('/clanok/novy')}}">@lang('app.profil_blog_nav')</a></li>
+                        <li><a href="{{url('profil/prezentacia/nova')}}">@lang('app.profil_presentation_nav')</a></li>
+                        <li><a href="{{url('profil/recenzia/nova')}}">@lang('app.profil_review_nav')</a></li>
+                        <li><a href="{{url('profil/clanok/novy')}}">@lang('app.profil_blog_nav')</a></li>
                     </ul>
                 </div>
             </div>
@@ -77,9 +77,9 @@
                 <div class="mobility text-md-right">
                     <span class="text-primary">01.01.2019 - 02.02.2019</span>
                     <ul>
-                        <li><a href="{{url('/prezentacia/nova')}}">@lang('app.profil_presentation_nav')</a></li>
-                        <li><a href="{{url('/recenzia/nova')}}">@lang('app.profil_review_nav')</a></li>
-                        <li><a href="{{url('/clanok/novy')}}">@lang('app.profil_blog_nav')</a></li>
+                        <li><a href="{{url('profil/prezentacia/nova')}}">@lang('app.profil_presentation_nav')</a></li>
+                        <li><a href="{{url('profil/recenzia/nova')}}">@lang('app.profil_review_nav')</a></li>
+                        <li><a href="{{url('profil/clanok/novy')}}">@lang('app.profil_blog_nav')</a></li>
                     </ul>
                 </div>
             </div>
@@ -100,9 +100,9 @@
                 <div class="mobility text-md-right">
                     <span class="text-primary">01.01.2019 - 02.02.2019</span>
                     <ul>
-                        <li><a href="{{url('/prezentacia/nova')}}">@lang('app.profil_presentation_nav')</a></li>
-                        <li><a href="{{url('/recenzia/nova')}}">@lang('app.profil_review_nav')</a></li>
-                        <li><a href="{{url('/clanok/novy')}}">@lang('app.profil_blog_nav')</a></li>
+                        <li><a href="{{url('profil/prezentacia/nova')}}">@lang('app.profil_presentation_nav')</a></li>
+                        <li><a href="{{url('profil/recenzia/nova')}}">@lang('app.profil_review_nav')</a></li>
+                        <li><a href="{{url('profil/clanok/novy')}}">@lang('app.profil_blog_nav')</a></li>
                     </ul>
                 </div>
             </div>

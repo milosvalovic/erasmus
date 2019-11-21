@@ -2,7 +2,7 @@
 @import "../../layout/fonts.css";
 @import "../../layout/nav.css";
 
-#mainNav{
+#mainNav {
     position: fixed;
 }
 

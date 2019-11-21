@@ -14,14 +14,15 @@ use Carbon\Carbon;
 
 class HomeController extends Controller
 {
-
-    public function home(){
+    public function home()
+    {
         return view('client.app.home',
-                ['contact' => array_chunk(Contact::all()->toArray(), Variables::NUMBER_OF_CONTACT_ROW),
+            ['contact' => array_chunk(Contact::all()->toArray(), Variables::NUMBER_OF_CONTACT_ROW),
                 'office_hours' => Office_Hours::all(), 'address' => Address::all(),
                 'mobilities' => $this->getTopMobility(),
                 'type' => Mobility_Type::pluck('name', 'id'),
-                ]);
+                'in_row' => Variables::NUMBER_OF_MOBILITIES_IN_ROW
+            ]);
     }
 
     private function getTopMobility()
@@ -31,16 +32,16 @@ class HomeController extends Controller
         $types = $this->getTypesOfMobility();
         $topMobilityTypes = array();
 
-        foreach ($types as $key => $type){
-            $mobility =  $this->getTopMobilityType($type,$limit);
+        foreach ($types as $key => $type) {
+            $mobility = $this->getTopMobilityType($type, $limit);
 
-            if(count($mobility)>0){
+            if (count($mobility) > 0) {
 
-                foreach ($mobility as $item){
+                foreach ($mobility as $item) {
                     $item->review_avg = $item->review->avg('rating');
                 }
 
-                $sortedMobility = $mobility->sortByDesc(function($col) {
+                $sortedMobility = $mobility->sortByDesc(function ($col) {
                     return $col->review_avg;
                 })->values();
 
@@ -56,34 +57,31 @@ class HomeController extends Controller
     {
         $offset = Variables::TIME_OFFSET;
 
-        $topMobility = Mobility::select('ID','mobility_types_ID','partner_university_ID','category_ID')
+        $topMobility = Mobility::select('ID', 'mobility_types_ID', 'partner_university_ID', 'category_ID')
             ->with([
-                'university' => function($query){
-                    $query->select('ID','country_ID','name','img_url');
+                'university' => function ($query) {
+                    $query->select('ID', 'country_ID', 'name', 'img_url', 'thumb_url');
                 }
-                ,'category' => function($query) use ($offset){
-                    $query->select('ID','name');
+                , 'category' => function ($query) use ($offset) {
+                    $query->select('ID', 'name');
                 }
-                ,'season' => function($query) use ($offset){
-                    $query->select('ID','mobility_ID','date_end_reg')->where('date_end_reg','>',Carbon::now($offset));
+                , 'season' => function ($query) use ($offset) {
+                    $query->select('ID', 'mobility_ID', 'date_end_reg')->where('date_end_reg', '>', Carbon::now($offset));
                 }
-                ,'university.country' => function($query){
-                    $query->select('ID','name');
+                , 'university.country' => function ($query) {
+                    $query->select('ID', 'name');
                 }
-                ,'review' => function($query){
+                , 'review' => function ($query) {
                     $query->select('rating');
                 }
             ])
             ->withCount('review')
-
-            ->whereHas('season', function($query) use ($offset){
-                $query->where('season.date_end_reg','>',Carbon::now($offset));
+            ->whereHas('season', function ($query) use ($offset) {
+                $query->where('season.date_end_reg', '>', Carbon::now($offset));
             })
             ->where('mobility_types_ID', '=', $typeID)
-
             ->has('university')->has('university.country')
-
-            ->when($limit, function ($query, $limit){
+            ->when($limit, function ($query, $limit) {
                 $query->take($limit);
             })
             ->get();
@@ -93,7 +91,7 @@ class HomeController extends Controller
 
     private function getTypesOfMobility()
     {
-        $mobilityTypes = Mobility_Type::pluck('ID','property');
+        $mobilityTypes = Mobility_Type::pluck('ID', 'name');
 
         return $mobilityTypes;
     }
@@ -102,6 +100,6 @@ class HomeController extends Controller
     {
         $countries = University::with('country')->get()->pluck('country.country_code');
 
-        return array('countries'=>$countries);
+        return array('countries' => $countries);
     }
 }

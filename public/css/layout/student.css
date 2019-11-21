@@ -44,11 +44,7 @@ a {
     font-size: 20px;
 }
 
-#mainNav .navbar-nav {
-    margin-top: 30px;
-}
-
-#mainNav{
+#mainNav {
     padding-right: 15px !important;
 }
 
@@ -60,10 +56,35 @@ a {
     background: url("../../img/toogle_navigation-white.png") no-repeat;
 }
 
-#mainNav h5#logged-user {
+#mainNav div#user-name {
+    margin-bottom: 30px;
+}
+
+#mainNav a#logged-user {
     font-family: Cairo-SemiBold, serif;
     color: #ffffff;
     font-size: 20px;
+}
+
+.navbar-expand-lg .navbar-nav #user {
+    left: 5%;
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    left: 15%;
+}
+
+.dropdown-menu.show {
+    background-color: #018ea4;
+}
+
+.dropdown-item:focus, .dropdown-item {
+    color: #ffffff;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: transparent;
+    color: rgba(255, 255, 255, .75);
 }
 
 @media (min-width: 992px) {

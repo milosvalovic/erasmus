@@ -11,15 +11,19 @@ use Illuminate\Support\Facades\Validator;
 
 class ArticleController extends Controller
 {
-    public function newArticle(){
+    public function newArticle()
+    {
         return view('system.student.blog');
     }
 
-    public function insertArticle(Request $request){
+    public function insertArticle(Request $request)
+    {
         Validator::make($request->all(), [
             'title' => 'required|alpha|max:200',
             'article' => 'required',
             'date' => 'required|date',
+            'users_ID' => 'required|numeric',
+            'users_season_ID' => 'required|numeric',
         ])->validate();
 
         $blog = new Blog();
@@ -29,10 +33,10 @@ class ArticleController extends Controller
         $blog->users_ID = $request->input('users_ID');
         $blog->users_season_ID = $request->input('users_season_ID');
 
-        if($blog->save()){
+        if ($blog->save()) {
             Session::flash('success', Lang::get('app.article_success_messeage'));
             return redirect('/profil');
-        }else{
+        } else {
             Session::flash('error', Lang::get('app.article_fail_messeage'));
             return redirect('/profil');
         }

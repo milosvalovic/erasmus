@@ -3,16 +3,16 @@ footer .footer-background {
     background-color: #007183;
 }
 
-footer#footer ul.social-navigation{
+footer#footer ul.social-navigation {
     margin-top: 7px;
 }
 
-footer#footer ul.social-navigation .social-nav-link{
+footer#footer ul.social-navigation .social-nav-link {
     color: #007183;
     font-size: 28px;
 }
 
-footer#footer ul.social-navigation .fa-stack{
+footer#footer ul.social-navigation .fa-stack {
     line-height: 1.3em;
     height: 1em;
 }
@@ -36,7 +36,7 @@ footer#footer ul.footer-navigation li > a, footer#footer ul.social-navigation li
     color: #ffffff;
 }
 
-footer#footer ul.social-navigation li > a{
+footer#footer ul.social-navigation li > a {
     margin-right: 0;
 }
 
@@ -70,7 +70,7 @@ footer#footer ul.social-navigation .social-nav-link:hover {
         display: block;
     }
 
-    footer#footer ul.footer-navigation li > a{
+    footer#footer ul.footer-navigation li > a {
         margin-right: 0;
     }
 }

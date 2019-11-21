@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ecneb
- * Date: 2019-10-19
- * Time: 16:55
- */
 
 namespace App\Models;
 
@@ -20,11 +14,11 @@ class University extends Model
 
     public function country()
     {
-        return $this->belongsTo('App\Models\Country','country_ID','ID');
+        return $this->belongsTo('App\Models\Country', 'country_ID', 'ID');
     }
 
     public function mobility()
     {
-        return $this->hasMany('App\Models\Mobility','partner_university_ID','ID');
+        return $this->hasMany('App\Models\Mobility', 'partner_university_ID', 'ID');
     }
 }

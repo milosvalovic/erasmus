@@ -16,7 +16,6 @@ class CreateMobilityTypesTable extends Migration
         Schema::create('mobility_types', function (Blueprint $table) {
             $table->bigIncrements('ID');
             $table->string('name', 45);
-            $table->string('property', 45);
             $table->timestamps();
             $table->softDeletes();
         });

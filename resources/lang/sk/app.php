@@ -8,10 +8,7 @@ return [
     //Titles
     'search_modal_title_part_one' => 'Vyhľadávajte a prihláste ',
     'search_modal_title_part_two' => 'sa na ',
-    'home_stays_title' => 'Naše najpopulárnejšie študijné pobyty',
-    'home_internship_title' => 'Naše najpopulárnejšie ponuky stážov',
-    'home_lecture_stays_title' => 'Naše najpopulárnejšie ponuky prednáškových pobytov',
-    'home_trainings_title' => 'Naše najpopulárnejšie ponuky školení',
+    'home_type_title' => 'Naše najoblúbenejšie: ',
     'home_partner_universitites_title' => 'Naše partnerské Univerzity',
     'stays_title' => 'Zoznam mobilít',
     'contact_title' => 'Kontakt',
@@ -25,7 +22,8 @@ return [
     'forget_password_title' => 'Nájdite svoj účet',
     'reset_password_title' => 'Zmena hesla',
     'search_title' => 'Výsledky vyhľadávania',
-    'my_profil_title' => 'Moje mobility',
+    'profil_my_mobility_title' => 'Moje mobility',
+    'profil_my_signups_title' => 'Moje Prihlášky',
     'presentation_upload_title' => 'Nahrať prezentáciu',
     'review_upload_title' => 'Napísať recenziu',
     'new_article_title' => 'Napísať blog',
@@ -85,6 +83,7 @@ return [
 
     //Navigation
     'nav_home' => 'Domov',
+    'nav_main_screen' => 'Hlavná stránka',
     'nav_mobilities' => 'Mobility',
     'nav_contact' => 'Kontakt',
     'nav_blog' => 'Blog',
@@ -98,7 +97,9 @@ return [
     'nav_reset_password' => 'Nové heslo',
     'nav_logout' => 'Odhlasiť sa',
     'nav_search' => 'Výsledky vyhľadávania',
-    'nav_current_mobilities' => 'Aktuálne moblity',
+    'nav_my_mobilities' => 'Moje mobility',
+    'nav_my_signups' => 'Moje prihlášky',
+    'nav_sign_ups' => 'Prihlášky',
 
 
     //Email
@@ -140,6 +141,12 @@ return [
     'profil_blog_nav' => 'Napísať článok',
     'profil_presentation_nav' => 'Odovzdať prezentáciu',
     'profil_review_nav' => 'Napísat recenziu',
+
+    //Profil - Signups
+    'profil_signup_table_country' => 'Krajina',
+    'profil_signup_table_mobility' => 'Názov mobility',
+    'profil_signup_table_status' => 'Stav',
+    'profil_signup_table_detail' => 'Detail',
 
 
     //Profil - Presentation

@@ -26,7 +26,7 @@
                     <li><a class="footer-nav-link" href="{{ url('/mobility') }}">@lang('app.nav_mobilities')</a></li>
                     <li><a class="footer-nav-link" href="{{ url('/#kontakt') }}">@lang('app.nav_contact')</a></li>
                     <li><a class="footer-nav-link" href="{{ url('/blog') }}">@lang('app.nav_blog')</a></li>
-                    <li><a class="footer-nav-link" href="{{ url('/faq') }}">@lang('app.nav_faq')</a></li>
+                    <li><a class="footer-nav-link" href="{{ url('/otazky') }}">@lang('app.nav_faq')</a></li>
                     <li><a class="footer-nav-link" href="{{ url('/prihlasovanie') }}">@lang('app.nav_account')</a></li>
                 </ul>
             </div>
@@ -39,6 +39,6 @@
 <script type="text/javascript" src="{{ asset('vendor/jquery-jvectormap/jquery.vmap.world.js') }}"></script>
 <script type="text/javascript" src="{{ asset('vendor/typed-js/typed.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/client/app.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/client/app/app.js') }}"></script>
 </body>
 </html>

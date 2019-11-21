@@ -7,7 +7,7 @@
                 <div class="search-modal">
                     <h1>@lang('app.search_modal_title_part_one')<br>@lang('app.search_modal_title_part_two')<span id="typed"></span>.</h1>
                     <div class="input-items">
-                        <form action="{{ action('client\SearchController@search') }}" method="POST" enctype="application/x-www-form-urlencoded">
+                        {{ Form::open(array('url' => '/hladat', "enctype"=>"application/x-www-form-urlencoded")) }}
                             <label for="country">@lang('app.search_modal_label_country')</label>
                             <input type="text" name="country" id="country" value="" placeholder="@lang('app.search_modal_label_country_example')">
                             <label for="stay">@lang('app.search_modal_label_type')</label>
@@ -26,7 +26,7 @@
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <label for="search"></label>
                             <input type="submit" name="search" id="search" value="@lang('app.search_modal_submit')">
-                        </form>
+                        {{Form::close()}}
                     </div>
                 </div>
             </div>

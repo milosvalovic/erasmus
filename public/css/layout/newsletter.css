@@ -36,7 +36,7 @@ div#newsletter > div.container-fluid {
 }
 
 @media only screen and (max-width: 992px) {
-    .newsletter-background{
+    .newsletter-background {
         height: 120px;
     }
 

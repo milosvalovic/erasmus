@@ -4,6 +4,7 @@
 
 #mobility-title {
     background: #f5f5f5;
+    height: 100vh;
 }
 
 #mobility-title .card .mobility-content > a {
@@ -60,5 +61,34 @@
 @media only screen and (max-width: 500px) {
     .mobility > ul > li {
         display: block;
+    }
+}
+
+table {
+    display: inline-table !important;
+}
+
+td, th {
+    font-family: Cairo-Regular, serif;
+    font-size: 18px;
+}
+
+td > a:hover {
+    text-decoration: none;
+    color: #004253;
+}
+
+th {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+thead.thead-color {
+    background-color: #007183;
+}
+
+@media only screen and (max-width: 575px) {
+    table {
+        display: block !important;
     }
 }

@@ -16,7 +16,8 @@ class CreateImagesTable extends Migration
         Schema::create('images', function (Blueprint $table) {
             $table->bigIncrements('ID');
             $table->unsignedBigInteger('reviews_ID');;
-            $table->string('url',150);
+            $table->string('url', 150);
+            $table->string('thumb_url', 150);
             $table->timestamps();
             $table->softDeletes();
 

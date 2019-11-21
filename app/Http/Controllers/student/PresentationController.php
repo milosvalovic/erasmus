@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\student;
 
+use App\Http\Variables;
 use App\Models\Presentation;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -20,16 +21,16 @@ class PresentationController extends Controller
     {
         Validator::make($request->all(), [
             'file' => 'required|max:8000|mimes:pptx,pptm,ppt,pdf',
+            'users_season_ID' => 'required|numeric',
         ])->validate();
 
         $file = $request->file('file');
-        $destinationPath = 'uploads/presentations';
 
         $presentation = new Presentation();
         $presentation->users_season_ID = $request->input('users_season_ID');
-        $presentation->file_url = $destinationPath . '/' . $file->getClientOriginalName();
+        $presentation->file_url = Variables::PRESENTATIONS_SAVE_PATH . '/' . $file->getClientOriginalName();
 
-        $file->move($destinationPath, $file->getClientOriginalName());
+        $file->move(Variables::PRESENTATIONS_SAVE_PATH, $file->getClientOriginalName());
 
         if ($presentation->save()) {
             Session::flash('success', Lang::get('app.presentation_success_messeage'));

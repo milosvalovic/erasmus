@@ -6,23 +6,13 @@ use Illuminate\Routing\Controller;
 
 class ProfileController extends Controller
 {
-    public function profil()
+    public function mobilities()
     {
-        return view('system.student.profile');
+        return view('system.student.mobility');
     }
 
-    public function presentation()
+    public function signups()
     {
-        return view('system.student.presentation');
-    }
-
-    public function review()
-    {
-        return view('system.student.review');
-    }
-
-    public function blog()
-    {
-        return view('system.student.blog');
+        return view('system.student.signups');
     }
 }

@@ -18,7 +18,7 @@ div.input-items form > label {
 div.input-items form > input,
 div.input-items form > textarea,
 div.input-items form > select,
-div.input-items form .submit-button > input{
+div.input-items form .submit-button > input {
     width: 70%;
     height: 50px;
     position: relative;
@@ -30,7 +30,7 @@ div.input-items form .submit-button > input{
     border: solid 1px #a6a6a6;
 }
 
-div.input-items form > textarea{
+div.input-items form > textarea {
     height: 150px;
 }
 
@@ -53,11 +53,11 @@ div.input-items form .ql-toolbar.ql-snow, div.input-items form #editor-blog, div
     margin: 0 auto;
 }
 
-div.input-items form #editor-blog{
+div.input-items form #editor-blog {
     margin-bottom: 20px;
 }
 
-div.input-items form .submit-button > input[type="submit"]{
+div.input-items form .submit-button > input[type="submit"] {
     width: 110px;
     height: 50px;
     display: block;
@@ -70,8 +70,7 @@ div.input-items form .submit-button > input[type="submit"]{
     color: white;
 }
 
-div.input-items form .submit-button > input[type="submit"]:hover
-{
+div.input-items form .submit-button > input[type="submit"]:hover {
     background: #004351;
 }
 

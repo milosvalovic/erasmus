@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\client;
 
-
 use App\Http\Variables;
 use App\Models\Address;
 use App\Models\Contact;
@@ -20,13 +19,13 @@ class MobilitiesController extends Controller
             ['contact' => array_chunk(Contact::all()->toArray(), Variables::NUMBER_OF_CONTACT_ROW),
                 'office_hours' => Office_Hours::all(),
                 'address' => Address::all(),
-                'mobilities' => Season::simplePaginate(8),
+                'mobilities' => Season::simplePaginate(Variables::NUMBER_OF_MOBILITY_ITEMS),
             ]);
     }
 
     public function mobilityByType($typeID, $perPage)
     {
-        $sortedMobility = $this->getTopMobilityType($typeID, '', $perPage)->sortByDesc(function ($col) {
+        $sortedMobility = $this->getTopMobilityType($typeID, $perPage)->sortByDesc(function ($col) {
             return $col->date_end_reg;
         })->values();
 
@@ -38,13 +37,13 @@ class MobilitiesController extends Controller
             ]);
     }
 
-    private function getTopMobilityType($typeID, $limit, $perPage)
+    private function getTopMobilityType($typeID, $perPage)
     {
         $offset = Variables::TIME_OFFSET;
         $topMobility = Mobility::select('ID', 'mobility_types_ID', 'partner_university_ID', 'category_ID')
             ->with([
                 'university' => function ($query) {
-                    $query->select('ID', 'country_ID', 'name', 'img_url');
+                    $query->select('ID', 'country_ID', 'name', 'img_url', 'thumb_url');
                 }
                 , 'category' => function ($query) use ($offset) {
                     $query->select('ID', 'name');
@@ -65,10 +64,6 @@ class MobilitiesController extends Controller
             })
             ->where('mobility_types_ID', '=', $typeID)
             ->has('university')->has('university.country')
-            ->when($limit, function ($query, $limit) {
-                $query->take($limit);
-            })
-            ->skip(0)
             ->take($perPage)
             ->get();
 

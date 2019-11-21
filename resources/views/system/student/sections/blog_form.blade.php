@@ -10,11 +10,11 @@
                 <label for="name">@lang('app.article_name')</label>
                 <input type="text" name="title" id="title" value=""
                        placeholder="@lang('app.article_placeholder')">
-                @if ($errors->any())
-                    @foreach ($errors->get('title') as $error)
-                        <div class="error text-danger">{{$error}}</div>
-                    @endforeach
-                @endif
+                    @if ($errors->any())
+                        @foreach ($errors->get('title') as $error)
+                            <div class="error text-danger">{{$error}}</div>
+                        @endforeach
+                    @endif
                 <label for="place">@lang('app.article_place')</label>
                 <input type="text" name="place" id="place" readonly
                        value="USA">
