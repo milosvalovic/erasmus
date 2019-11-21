@@ -90,23 +90,23 @@ Route::get('/email/reset', function(){
 // Admin routes
 Route::get('/admin', 'system\SystemController@system');
 
-Route::get('/admin/users', 'system\SystemController@users');
+Route::get('/admin/users', 'system\UserController@users');
 
-Route::get('/admin/roles', 'system\SystemController@roles');
+Route::get('/admin/roles', 'system\UserRoleController@roles');
 
-Route::get('/admin/mobilities', 'system\SystemController@mobilities');
+Route::get('/admin/mobilities', 'system\MobilityController@mobilities');
 
-Route::get('/admin/mobilities_category', 'system\SystemController@mobility_category');
+Route::get('/admin/mobilities_category', 'system\CategoryMobilityController@mobility_category');
 
-Route::get('/admin/blogs', 'system\SystemController@blogs_view');
+Route::get('/admin/blogs', 'system\BlogController@blog');
 
-Route::get('/admin/universities', 'system\SystemController@universities');
+Route::get('/admin/universities', 'system\UniversityController@universities');
 
-Route::get('/admin/images', 'system\SystemController@images');
+Route::get('/admin/images', 'system\ImageController@images');
 
-Route::get('/admin/faq', 'system\SystemController@faq');
+Route::get('/admin/faq', 'system\FaqController@faq');
 
-Route::get('/admin/open_hours', 'system\SystemController@office_hours');
+Route::get('/admin/open_hours', 'system\OfficeHourController@office_hours');
 
 
 
