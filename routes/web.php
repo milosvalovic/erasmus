@@ -104,7 +104,7 @@ Route::get('/admin/universities', 'system\UniversityController@universities');
 
 Route::get('/admin/images', 'system\ImageController@images');
 
-Route::get('/admin/faq', 'system\SystemController@faq');
+Route::get('/admin/faq', 'system\FaqController@faq');
 
 Route::get('/admin/open_hours', 'system\SystemController@office_hours');
 

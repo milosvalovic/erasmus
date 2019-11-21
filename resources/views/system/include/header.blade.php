@@ -71,7 +71,7 @@
         </li>
 
         <li class="nav-item admin-menu-links-hover {{(request()->is('admin/faq')) ? 'active' : ''}}">
-            <a class="nav-link " href="{{ action('system\SystemController@faq')}}">
+            <a class="nav-link " href="{{ action('system\FaqController@faq')}}">
                 <i class="fa fa-question" aria-hidden="true"></i>
                 <span>FAQ</span>
             </a>
