@@ -55,10 +55,6 @@ class SystemController extends Controller
         $user->roles()->sync([$request->role]);
     }
 
-    public function roles()
-    {
-        return view('system.users_role_admin');
-    }
 
     public function edit_user()
     {

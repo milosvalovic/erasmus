@@ -92,7 +92,7 @@ Route::get('/admin', 'system\SystemController@system');
 
 Route::get('/admin/users', 'system\UserController@users');
 
-Route::get('/admin/roles', 'system\SystemController@roles');
+Route::get('/admin/roles', 'system\UserRoleController@roles');
 
 Route::get('/admin/mobilities', 'system\SystemController@mobilities');
 

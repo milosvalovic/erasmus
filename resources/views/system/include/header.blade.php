@@ -24,7 +24,7 @@
         </li>
 
         <li class="nav-item admin-menu-links-hover {{(request()->is('admin/roles')) ? 'active' : ''}}">
-            <a class="nav-link" href="{{ action('system\SystemController@roles')}}">
+            <a class="nav-link" href="{{ action('system\UserRoleController@roles')}}">
                 <i class="fa fa-user" aria-hidden="true"></i>
                 <span>Role používateľov</span>
             </a>
