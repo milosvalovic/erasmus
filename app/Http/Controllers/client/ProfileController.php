@@ -42,8 +42,8 @@ class ProfileController extends Controller
 
     //Ziskat vsetky prihlasky
     public function getReistrations(){
-        if(1) {
-            $userID = 1;//Auth::user()->id;
+        if(Auth::check()) {
+            $userID = Auth::user()->id;
 
             $registrations = User_Season::select('ID','users_ID','season_ID')
                 ->with([
