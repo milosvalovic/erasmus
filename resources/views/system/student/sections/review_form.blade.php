@@ -6,7 +6,7 @@
         </div>
         <div class="row input-items">
             <div class="col-lg-12">
-                {{ Form::open(array('url' => '/recenzia/ulozit','files'=>'true')) }}
+                {{ Form::open(array('url' => 'profil/recenzia/ulozit','files'=>'true')) }}
                     <label for="review">@lang('app.profil_review')</label>
                     <textarea name="review" id="review" cols="30" rows="10"></textarea>
                     @if ($errors->any())

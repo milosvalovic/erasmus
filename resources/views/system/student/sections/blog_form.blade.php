@@ -6,7 +6,7 @@
         </div>
         <div class="row input-items">
             <div class="col-lg-12">
-                {{ Form::open(array('url' => '/clanok/ulozit', "id"=>"new-blog-post")) }}
+                {{ Form::open(array('url' => 'profil/clanok/ulozit', "id"=>"new-blog-post")) }}
                 <label for="name">@lang('app.article_name')</label>
                 <input type="text" name="title" id="title" value=""
                        placeholder="@lang('app.article_placeholder')">

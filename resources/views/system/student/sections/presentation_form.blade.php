@@ -6,7 +6,7 @@
         </div>
         <div class="row input-items">
             <div class="col-lg-12">
-                {{ Form::open(array('url' => '/prezentacia/ulozit','files'=>'true')) }}
+                {{ Form::open(array('url' => 'profil/prezentacia/ulozit','files'=>'true')) }}
                     <div class="input-file-container">
                         <label for="file" class="input-file-trigger">@lang('app.presentation_choose')</label>
                         <input type="file" class="input-file" id="file" name="file">
