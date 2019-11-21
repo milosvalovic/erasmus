@@ -15,8 +15,6 @@ class SystemController extends Controller
     }
 
 
-
-
     public function edit_user()
     {
         return view('system.edit_user_admin');
@@ -25,14 +23,6 @@ class SystemController extends Controller
 
 
 
-
-
-
-
-    public function office_hours()
-    {
-        return view('system.office_hours_admin');
-    }
 
 
 }
