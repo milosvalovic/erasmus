@@ -25,10 +25,6 @@ class SystemController extends Controller
 
 
 
-    public function blogs_view()
-    {
-        return view('system.blogs_admin');
-    }
 
     public function universities()
     {
