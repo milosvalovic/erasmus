@@ -17,6 +17,14 @@ class UserSeeder extends Seeder
         $role_oraganizator = Role::where('name', 'organizator')->first();
         $role_administrator = Role::where('name', 'administrator')->first();
 
+        $admin = new User();
+        $admin->first_name = 'System';
+        $admin->last_name = 'System';
+        $admin->email = 'system@ukf.sk';
+        $admin->password = bcrypt(')-cfC9:kB[bm~Kz]');
+        $admin->newsletter = 0;
+        $admin->save();
+        $admin->roles()->attach($role_administrator);
 
         $student = new User();
         $student->first_name = 'Peter';
