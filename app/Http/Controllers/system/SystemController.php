@@ -26,10 +26,6 @@ class SystemController extends Controller
 
 
 
-    public function universities()
-    {
-        return view('system.universities_admin');
-    }
 
     public function images()
     {

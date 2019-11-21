@@ -57,7 +57,7 @@
         </li>
 
         <li class="nav-item admin-menu-links-hover {{(request()->is('admin/universities')) ? 'active' : ''}}">
-            <a class="nav-link " href="{{ action('system\SystemController@universities')}}">
+            <a class="nav-link " href="{{ action('system\UniversityController@universities')}}">
                 <i class="fa fa-university" aria-hidden="true"></i>
                 <span>Správa univerzít</span>
             </a>

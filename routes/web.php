@@ -100,7 +100,7 @@ Route::get('/admin/mobilities_category', 'system\CategoryMobilityController@mobi
 
 Route::get('/admin/blogs', 'system\BlogController@blogs_view');
 
-Route::get('/admin/universities', 'system\SystemController@universities');
+Route::get('/admin/universities', 'system\UniversityController@universities');
 
 Route::get('/admin/images', 'system\SystemController@images');
 
