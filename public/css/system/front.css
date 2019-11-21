@@ -3,7 +3,27 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
-/*------------ADMIN general------------------------*/
+/*------------------ADMIN general------------------------*/
+.admin-base-grid{
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 100px auto 45px;
+    background: #ffffff;
+    height: 100vh;
+    grid-template-areas:
+            "header title title title title title title title title"
+            "header content content content content content content content content"
+            "header footer footer footer footer footer footer footer footer";
+}
+
+.admin-content{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    grid-area: content;
+    position: relative;
+}
+
 .admin-header{
     grid-area: header;
     box-shadow: 11px 12px 7px #979797;
@@ -25,17 +45,96 @@ body {
     font-size: 14px;
 }
 
+
+/*--------ADMIN table-----------*/
+.admin-table{
+    width: 500px;
+    background: #FFFFFF;
+    border-radius: 7px;
+}
+
+table.admin-table tr th a{
+    text-decoration: none;
+}
+
+.image-in-table{
+    width: 100px;
+}
+
+/*--------ADMIN Title--------*/
+.admin-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    grid-area: title;
+}
+
+.admin-title-text{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.admin-title-user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-left: 1px solid grey;
+    padding-left: 10px;
+}
+
+.admin-title-user > img{
+    margin-left: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 7px;
+}
+
+.admin-title-user > p {
+    margin-bottom: 0;
+}
+
+
 /*--------ADMIN SideMenu-----------*/
+.admin-header > ul > a .sidebar-brand-icon i.admin-ukf-logo{
+    display: block;
+    background: url("../../img/ukf_logo_white.png") no-repeat;
+    background-size: 70px 70px;
+    width: 70px;
+    height: 70px;
+}
+
+/*.admin-header > ul > a:hover{*/
+/*    background: #0093aadb;*/
+/*}*/
+
+/*.admin-header-link-active {*/
+/*    background: #0093aadb;*/
+/*}*/
+
+.sidebar-brand{
+    margin-top: 10px;
+}
+
 .dashboard-admin > a > span{
     font-size: 20px;
 }
 
-.admin-menu-links-hover{
+.admin-menu-links-hover:hover{
     background-color: #0093aadb;
 }
 
+span[class='dashboard-admin']{
+    font-size: 30px;
+}
+/*----------------END ADMIN general------------------------*/
 
-/*--------ADMIN welcome page-----------*/
+
+
+
+
+/*--------ADMIN Welcome page-----------*/
 .admin-welcome-page{
     display: grid;
     grid-template-columns: repeat(9, 1fr);
@@ -48,66 +147,45 @@ body {
     "header footer footer footer footer footer footer footer footer";
 }
 
-.admin-welcome-title{
+.admin-welcome-content{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    grid-area: content;
+    position: relative;
+}
+
+
+
+/*--------ADMIN Users-----------*/
+.user-form-actions{
+    width: 200px;
+}
+
+.user-table-wrapper{
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.user-table-wrapper .user-table-title {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 20px;
-    grid-area: title;
 }
 
-.admin-welcome-title-title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.user-table-wrapper .user-table-title button.btn-add{
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
-.admin-welcome-title-title > p{
-    margin-bottom: 0;
-}
 
-.admin-welcome-title-user-profile{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-left: 1px solid grey;
-    padding-left: 10px;
-}
 
-.admin-welcome-title-user-profile > img{
-    margin-left: 15px;
-    width: 50px;
-    height: 50px;
-    border-radius: 7px;
-}
 
-.admin-welcome-title-user-profile > p {
-    margin-bottom: 0;
-}
 
-.admin-welcome-content{
-    padding: 20px;
-    grid-area: content;
-    /*background: #d6d7da;*/
-    position: relative;
-    border-radius: 10px;
-}
-
-.users-table{
-    width: 500px;
-    background: #ffffff;
-    border-radius: 7px;
-}
-
-.users-table > tbody > tr > td > a {
-    text-decoration: none;
-    color: #808080;
-}
-
-.users-table > tbody > tr > td > a:hover {
-    color: #ff0100;
-    cursor: pointer;
-}
 
 a[class="page-link"]{
     color: #007183;
@@ -119,10 +197,10 @@ a[class='page-link']:hover{
 
 .admin-users-pagination {
     display: block;
-    bottom: 0;
-    position: absolute;
-    left: 50%;
-    right: 50%;
+}
+
+.admin-users-pagination > ul {
+    justify-content: flex-end;
 }
 
 .admin-projects-diagram{
@@ -133,6 +211,133 @@ a[class='page-link']:hover{
     min-width: 500px;
     width: 500px;
 }
+
+
+
+/*-------------ADMIN Mobility page---------------*/
+.admin-mobilities-table{
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.admin-mobilities-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/*-------------ADMIN Mobility page---------------*/
+.admin-roles-table{
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.admin-roles-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/*-------------ADMIN Mobility category page---------------*/
+.admin-mobility-category-table{
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.admin-mobility-category-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/*-------------ADMIN blogs page---------------*/
+.admin-blogs-table{
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.admin-blogs-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/*-------------ADMIN Universities page---------------*/
+.admin-universities-table{
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.admin-universities-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/*-------------ADMIN Images page---------------*/
+.admin-images-table{
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.admin-images-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/*-------------ADMIN FAQ page---------------*/
+.admin-FAQ-table{
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.admin-images-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/*-------------ADMIN Office_hours page---------------*/
+.admin-office-hours-table{
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.admin-office-hours-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+
+
+
 
 
 

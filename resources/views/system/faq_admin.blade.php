@@ -1,12 +1,12 @@
 @extends('system.index')
 
 @section('content')
-    <div class="admin-welcome-page">
+    <div class="admin-base-grid">
         @include('system.include.header')
 
         <div class="admin-title">
             <div class="admin-title-text">
-                <h1>Používatelia</h1>
+                <h1>Administrácia FAQ (frequently asked question)</h1>
             </div>
             <div class="admin-title-user">
                 <p>Eduard Gábel</p>
@@ -14,13 +14,13 @@
             </div>
         </div>
 
-        <div class="admin-welcome-content">
+        <div class="admin-content">
 
-            <div class="user-table-wrapper">
-                <div class="user-table-title">
-                    <h2>Správa používateľov</h2>
+            <div class="admin-FAQ-table">
+                <div class="admin-images-title">
+                    <h2>Správa faq</h2>
                     <a href="#">
-                        <button type="button" class="btn btn-outline-primary btn-add">Pridať používateľa</button>
+                        <button type="button" class="btn btn-outline-primary btn-add">Pridať faq</button>
                     </a>
                 </div>
 
@@ -28,31 +28,25 @@
                     <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Meno</th>
-                        <th scope="col">Priezvisko</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Rola</th>
+                        <th scope="col">Názov</th>
+                        <th scope="col">Popis</th>
                         <th scope="col" class="user-form-actions">Akcie</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($users as $item)
-                        <tr>
-                            <th scope="row">{{$item->user_id}}</th>
-                            <td>{{$item->first_name}}</td>
-                            <td>{{$item->last_name}}</td>
-                            <td>{{$item->email}}</td>
-                            <td>{{$item->name}}</td>
-                            <th scope="row">
-                                <a href="/edit-user/{{$item->user_id}}">
-                                    <button type="button" class="btn btn-outline-warning">Upraviť</button>
-                                </a>
-                                <a href="/delete-user/{{$item->user_id}}">
-                                    <button type="button" class="btn btn-outline-danger">Odstrániť</button>
-                                </a>
-                            </th>
-                        </tr>
-                    @endforeach
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Porucha</td>
+                        <td>Stratil sa mi kufor</td>
+                        <th scope="row">
+                            <a href="/edit-role/'number'">
+                                <button type="button" class="btn btn-outline-warning">Upraviť</button>
+                            </a>
+                            <a href="/edit-role/'number'">
+                                <button type="button" class="btn btn-outline-danger">Odstrániť</button>
+                            </a>
+                        </th>
+                    </tr>
                     </tbody>
                 </table>
 
@@ -70,7 +64,11 @@
                     </ul>
                 </nav>
             </div>
+
         </div>
+
+
+
 
         @include('system.include.footer')
     </div>
