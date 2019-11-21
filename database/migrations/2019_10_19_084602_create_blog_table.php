@@ -15,15 +15,15 @@ class CreateBlogTable extends Migration
     {
         Schema::create('blog', function (Blueprint $table) {
             $table->bigIncrements('ID');
-            $table->text('article');
-            $table->string('title',200);
-            $table->tinyInteger('status');
+            $table->string('title', 200);
+            $table->longText('article');
+            $table->date('publish_date');
+            $table->tinyInteger('status')->default(0);
             $table->unsignedBigInteger('users_ID');
             $table->unsignedBigInteger('users_season_ID');
-            $table->unsignedBigInteger('confirm_by');
+            $table->unsignedBigInteger('confirm_by')->nullable()->default(null);
             $table->timestamps();
             $table->softDeletes();
-
 
             $table->foreign('users_ID')
                 ->references('ID')

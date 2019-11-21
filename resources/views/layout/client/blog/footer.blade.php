@@ -27,17 +27,6 @@
 </footer>
 <script type="text/javascript" src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('vendor/bootstrap/bootstrap.min.js') }}"></script>
-<script type="text/javascript">
-    (function ($) {
-        "use strict";
-        $("body").on("input propertychange", ".floating-label-form-group", function (e) {
-            $(this).toggleClass("floating-label-form-group-with-value", !!$(e.target).val());
-        }).on("focus", ".floating-label-form-group", function () {
-            $(this).addClass("floating-label-form-group-with-focus");
-        }).on("blur", ".floating-label-form-group", function () {
-            $(this).removeClass("floating-label-form-group-with-focus");
-        });
-    })(jQuery);
-</script>
+<script type="text/javascript" src="{{ asset('js/client/blog/blog.js') }}"></script>
 </body>
 </html>

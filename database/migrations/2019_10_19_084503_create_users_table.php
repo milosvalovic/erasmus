@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('first_name', 45);
             $table->string('last_name', 45);
             $table->boolean('verified')->default(false);
-            $table->smallInteger('newsletter');
+            $table->smallInteger('newsletter')->default(1);
             $table->string('hash', 128)->nullable();
             $table->rememberToken();
             $table->timestamps();

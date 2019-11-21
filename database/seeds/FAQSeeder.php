@@ -15,7 +15,7 @@ class FAQSeeder extends Seeder
         DB::table('faq')->insert([
             'name' => 'Základné informácie',
             'description' =>
-                '<div class="collapse show" id="basic_information">
+                '
                     <p>Európsky program Erasmus má dlhoročnú tradíciu. Od akademického roka 2014/2015 existuje
                      ako integrovaný program Erasmus+ pre obdobie rokov 2014 – 2021, ktorý poskytuje široké možnosti
                       mobilít študentov a zamestnancov.</p>
@@ -64,7 +64,7 @@ class FAQSeeder extends Seeder
                      V prípade záujmu sa môžu študenti UKF zapojiť do mimoškolskej činnosti v rámci dobrovoľníckej
                      študentskej organizácie ESN UKF v Nitre a pomáhať prichádzajúcim zahraničným študentom pri
                      vybavovaní náležitostí k ich pobytu na UKF.</p>
-                </div>',
+                 ',
         ]);
 
         DB::table('faq')->insert([
@@ -74,8 +74,8 @@ class FAQSeeder extends Seeder
 
         DB::table('faq')->insert([
             'name' => 'Podmineky účasti',
-            'description' => '
-                <div class="collapse show" id="conditions">
+            'description' =>
+                '
                     <p>Na mobilitu (študijný pobyt) Erasmus+ sa môže prihlásiť akýkoľvek študent riadne zapísaný
                      v niektorom  študijnom  programe  UKF. Erasmus  študijný  pobyt  nemôže  absolvovať  študent 1.ročníka
                      Bc. štúdia,  ako  prvák  však  môže  založiť  prihlášku  a byť  schválený  na  pobyt v nasledujúcom
@@ -125,50 +125,52 @@ class FAQSeeder extends Seeder
                      „neakceptovaná“)  podľatoho,  či  boli  katedrou  navrhnutí  alebozamietnutí. Podklady všetkých navrhnutých
                      i zamietnutých uchádzačov azápisnicedoručí fakultný koordinátordo 30.04.2019Erasmus koordinátorovi 
                      na Oddelenie  premedzinárodné vzťahy(OMV UKF).OMV si originály týchto dokumentovponecháva pre svoju evidenciu.</p>
-                </div>',
+                ',
         ]);
 
 
         DB::table('faq')->insert([
             'name' => 'Výška štipendia',
-            'description' => '
-                <div class="collapse show" id="amount">
-                  <table class="table table-responsive">
-                        <thead class="thead-color">
-                        <tr>
-                            <th>Cieľová krajina</th>
-                            <th>Sadzba/mesiac</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Dánsko, Fínsko, Island,  Írsko, Luxembursko, Švédsko, Spojené kráľovstvo, Lichtenštajnsko, Nórsko</td>
-                            <td>520€</td>
-                        </tr>
-                        <tr>
-                            <td>Rakúsko,  Belgicko, Nemecko, Francúzsko, Taliansko,  Grécko, Španielsko, Cyprus, Holandsko, Malta, Portugalsko</td>
-                            <td>470€</td>
-                        </tr>
-                        <tr>
-                            <td>Bulharsko,  Chorvátsko,  Česká republika, Estónsko,  Litva, Lotyšsko,  Maďarsko, Slovensko,  Slovinsko, Poľsko, Rumunsko, FYROM-Macedónsko, Turecko,Srbsko</td>
-                            <td>420€</td>
-                        </tr>
-                        </tbody>
-                     </table>
-
-                    <h3>Študenti poberajúci sociálne štipendium:</h3>
-                    <p>Účastníci mobility(štúdium aj stáž)majú nárok naďalší príspevok nad úroveň grantov na štúdium vo výške 150€/mesiac.</p>
-                    
-                    <h3>Mobility študentov za účelom stáže:</h3>
-                    <p>Účastníci mobility majú nárok naďalší príspevok nad úroveň grantov na štúdium vo výške 100€/mesiac.Neplatí 
-                    to pre študentov, ktorí poberajú sociálne štipendium</p>
-                </div>',
+            'description' =>
+                '
+                    <div class="collapse show" id="amount">
+                      <table class="table table-responsive">
+                            <thead class="thead-color">
+                            <tr>
+                                <th>Cieľová krajina</th>
+                                <th>Sadzba/mesiac</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Dánsko, Fínsko, Island,  Írsko, Luxembursko, Švédsko, Spojené kráľovstvo, Lichtenštajnsko, Nórsko</td>
+                                <td>520€</td>
+                            </tr>
+                            <tr>
+                                <td>Rakúsko,  Belgicko, Nemecko, Francúzsko, Taliansko,  Grécko, Španielsko, Cyprus, Holandsko, Malta, Portugalsko</td>
+                                <td>470€</td>
+                            </tr>
+                            <tr>
+                                <td>Bulharsko,  Chorvátsko,  Česká republika, Estónsko,  Litva, Lotyšsko,  Maďarsko, Slovensko,  Slovinsko, Poľsko, Rumunsko, FYROM-Macedónsko, Turecko,Srbsko</td>
+                                <td>420€</td>
+                            </tr>
+                            </tbody>
+                         </table>
+    
+                        <h3>Študenti poberajúci sociálne štipendium:</h3>
+                        <p>Účastníci mobility(štúdium aj stáž)majú nárok naďalší príspevok nad úroveň grantov na štúdium vo výške 150€/mesiac.</p>
+                        
+                        <h3>Mobility študentov za účelom stáže:</h3>
+                        <p>Účastníci mobility majú nárok naďalší príspevok nad úroveň grantov na štúdium vo výške 100€/mesiac.Neplatí 
+                        to pre študentov, ktorí poberajú sociálne štipendium</p>
+                    </div>
+                ',
         ]);
 
         DB::table('faq')->insert([
             'name' => 'Čo vybavyť pred odchodom',
-            'description' => '
-                <div class="collapse show" id="before_leaving">
+            'description' =>
+                '
                     <p>Pred mobilitou je nevyhnutné vyplniť na prvej strane kontaktné údaje študenta, vysielajúcej 
                     a prijímajúcej inštitúcie. Všetky tri strany musia súhlasiť s časťou vyplnenou pred mobilitou.</p>
                     <p>V prípade, že niektoré administratívne údaje sú už k dispozícií všetkým trom stranám,
@@ -212,13 +214,13 @@ class FAQSeeder extends Seeder
                     <p>V prípade, ak vybraný študent nedosahuje stanovenú úroveň v čase podpisu Zmluvy o štúdiu (alebo Zmluvy o poskytnutí
                     finančnej podpory), dohodne sa vysielajúca inštitúcia so študentom na spôsobe nadobudnutia danej úrovne do začiatku mobility.
                     Takisto sa dohodnú na type jazykovej podpory, ktorú poskytne študentovi vysielajúca alebo prijímajúca inštitúcia.</p>
-                </div>',
+                ',
         ]);
 
         DB::table('faq')->insert([
             'name' => 'Čo odovzdať po návrate',
-            'description' => '
-                <div class="collapse show" id="returns">
+            'description' =>
+                '
                     <p>Prijímajúca inštitúcia sa zaväzuje poskytnúť vysielajúcej inštitúcii a študentovi Výpis výsledkov 
                     v dobe stanovenej v medziinštitucionálnej dohode (spravidla v dobe nie dlhšej ako 5 týždňov po
                     uverejnení/vyhlásení výsledkov študenta v prijímajúcej inštitúcii). Výpis výsledkov môže odoslať elektronicky
@@ -263,7 +265,7 @@ class FAQSeeder extends Seeder
                     vo Výpise výsledkov z prijímajúcej inštitúcie s presnými názvami predmetov, ktoré študent 
                     absolvoval v zahraničí. Toto platí minimálne pre dodatok k diplomu, ktorý vydáva vysielajúca
                     inštitúcia z krajín programu.</p>
-                </div>',
+                ',
         ]);
     }
 }

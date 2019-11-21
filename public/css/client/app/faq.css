@@ -119,20 +119,12 @@ div.content h1 {
     margin-bottom: 10px;
 }
 
-div.content h1:hover{
+div.content h1:hover {
     color: #00515e;
 }
 
 div.content a:hover {
     text-decoration: none;
-}
-
-div.content h1 > i.heading-icon {
-    font-size: 50px;
-    color: #007183;
-}
-div.content h1 > i.heading-icon:hover {
-    color: #00515e;
 }
 
 div.content p {
@@ -142,6 +134,7 @@ div.content p {
     text-align: left;
     margin-bottom: 10px;
 }
+
 div.content h3 {
     font-family: Cairo-SemiBold, serif;
     font-size: 18px;
@@ -154,6 +147,7 @@ div.content ul > li.item {
     list-style: circle;
     margin-left: 40px;
 }
+
 div.content ul {
     margin-bottom: 10px;
 }
@@ -195,9 +189,5 @@ thead.thead-color {
 
     div.content h1 {
         font-size: 25px;
-    }
-
-    div.content h1 > i.heading-icon {
-        font-size: 40px;
     }
 }

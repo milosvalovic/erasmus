@@ -130,7 +130,7 @@ return [
 
     'port' => env('MAIL_PORT', 587),
 
-    'from' => ['address' =>  'ukf.erasmus@gmail.com', 'name' => 'Erasmus+ ukf.sk'],
+    'from' => ['address' => 'ukf.erasmus@gmail.com', 'name' => 'Erasmus+ ukf.sk'],
 
     'encryption' => env('MAIL_ENCRYPTION', 'tls'),
 

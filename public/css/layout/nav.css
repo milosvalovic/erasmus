@@ -110,7 +110,7 @@
     background-color: transparent;
 }
 
-.dropdown-divider{
+.dropdown-divider {
     border: none;
 }
 
@@ -121,7 +121,7 @@
     }
 
     .dropdown-item {
-        color: rgba(0,0,0,.5);
+        color: rgba(0, 0, 0, .5);
     }
 
     .dropdown-item:hover {

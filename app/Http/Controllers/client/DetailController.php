@@ -107,7 +107,7 @@ class DetailController extends Controller
     //Prihlasit sa na mobilitu
     public function signInMobility($mobilityID)
     {
-        $userID = 1; //Upravi na - Ak je prihlásenı
+        $userID = 1; //Upraviï¿½ na - Ak je prihlï¿½senï¿½
         $offset = Variables::TIME_OFFSET;
 
         $count_pending = 0;

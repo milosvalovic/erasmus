@@ -133,12 +133,12 @@ div#opportunities {
     margin-top: 50px;
 }
 
-div#opportunities .badge.badge-secondary{
+div#opportunities .badge.badge-secondary {
     color: #ffffff;
 }
 
-div#opportunities .badge-secondary{
-    background-color:#007183;
+div#opportunities .badge-secondary {
+    background-color: #007183;
 }
 
 div#opportunities img {
@@ -348,21 +348,21 @@ form#search input[type="submit"]:hover {
     }
 }
 
-h2.no-results{
+h2.no-results {
     font-size: 20px;
     margin: 50px;
     font-family: Cairo-Regular, serif;
 }
 
-ul.pagination{
+ul.pagination {
     width: 100%;
 }
 
-ul.pagination > li{
+ul.pagination > li {
     margin: 0 auto;
 }
 
-.disabled{
+.disabled {
     font-family: Cairo-Light, serif;
     font-size: 18px;
     text-decoration: none;

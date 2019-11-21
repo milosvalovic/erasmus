@@ -7,9 +7,11 @@
 @endsection
 @section('content')
     <div class="content">
-        @foreach ($faqs as $faq)
-            @include($faq->layout, ["title" => $faq->name, "content" => $faq->description])
-        @endforeach
+        <div class="container">
+            @foreach ($faqs as $faq)
+                @include('client.app.layout.faq.question', ["title" => $faq->name, "content" => $faq->description])
+            @endforeach
+        </div>
+        @include('layout.client.app.footer')
     </div>
-    @include('layout.client.app.footer')
 @endsection

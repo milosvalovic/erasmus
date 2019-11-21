@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ecneb
- * Date: 2019-10-19
- * Time: 16:54
- */
 
 namespace App\Models;
 
@@ -21,12 +15,12 @@ class Review extends Model
 
     public function user_season()
     {
-        return $this->belongsTo('App\Models\User_Season','users_season_ID','ID');
+        return $this->belongsTo('App\Models\User_Season', 'users_season_ID', 'ID');
     }
 
     public function images()
     {
-        return $this->hasMany('App\Models\Image','reviews_ID','ID');
+        return $this->hasMany('App\Models\Image', 'reviews_ID', 'ID');
     }
 
     public function user()

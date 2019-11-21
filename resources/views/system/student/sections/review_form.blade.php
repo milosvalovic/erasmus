@@ -1,32 +1,46 @@
-<div class="modal fade reviews-modal" tabindex="-1" role="dialog" aria-labelledby="reviewsModal"
-     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">@lang('app.profil_review_upload')</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="input-items">
-                            <form action="{{ url('/') }}" method="POST" enctype="multipart/form-data">
-                                <textarea name="review" id="review" cols="30" rows="10" placeholder="@lang('app.profil_review_placeholder')"></textarea>
-                                <div class="error text-danger">Some Errors related to something</div>
-                                <div class="input-images-container">
-                                    <label for="images" class="input-images-trigger">@lang('app.profil_choose_images')</label>
-                                    <input type="file" class="input-images" id="images" name="images" multiple="multiple">
-                                </div>
-                                <p class="selected-images"></p>
-                                <div class="error text-danger">Some Errors related to something</div>
-                                <input type="submit" name="send" id="send" value="@lang('app.profil_send')">
-                            </form>
-                        </div>
+<section class="resume-section p-3 p-lg-5">
+    <div class="row my-auto">
+        <div class="col-12">
+            <h2 class="  text-center">@lang('app.review_upload_title')</h2>
+            <div class="mb-5 heading-border"></div>
+        </div>
+        <div class="row input-items">
+            <div class="col-lg-12">
+                {{ Form::open(array('url' => '/recenzia/ulozit','files'=>'true')) }}
+                    <label for="review">@lang('app.profil_review')</label>
+                    <textarea name="review" id="review" cols="30" rows="10"></textarea>
+                    @if ($errors->any())
+                        @foreach ($errors->get('review') as $error)
+                            <div class="error text-danger">{{$error}}</div>
+                        @endforeach
+                    @endif
+                    <label for="rating">@lang('app.profil_rating')</label>
+                    {{Form::select('rating', array("0 / 5", "1 / 5", "2 / 5", "3 / 5", "4 / 5", "5 / 5"))}}
+                    @if ($errors->any())
+                        @foreach ($errors->get('rating') as $error)
+                            <div class="error text-danger">{{$error}}</div>
+                        @endforeach
+                    @endif
+                    <div class="input-file-container">
+                        <label for="file" class="input-file-trigger">@lang('app.profil_choose_images')</label>
+                        <input type="file" class="input-file" id="file" name="files[]" multiple="multiple">
                     </div>
-                </div>
+                    <p class="selected-file text-center"></p>
+                    @if ($errors->any())
+                        @foreach ($errors->get('files.*') as $sub_error)
+                            @foreach ($sub_error as $error)
+                                <div class="error text-danger">{{$error}}</div>
+                                @break
+                            @endforeach
+                        @break
+                    @endforeach
+                    @endif
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <div class="submit-button">
+                        <input type="submit" name="send" id="send" value="@lang('app.profil_form_send')">
+                    </div>
+                {{Form::close()}}
             </div>
         </div>
     </div>
-</div>
+</section>

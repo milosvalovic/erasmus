@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ecneb
- * Date: 2019-10-19
- * Time: 16:54
- */
 
 namespace App\Models;
 
@@ -16,7 +10,7 @@ class Blog extends Model
     use SoftDeletes;
 
     protected $table = 'blog';
-    protected $fillable = ['users_ID', 'text', 'title', 'mobility_ID', 'status', 'confirm_by'];
+    protected $fillable = ['ID', 'users_ID', 'title', 'article', 'publish_date', 'mobility_ID', 'status', 'confirm_by'];
 
     public function user_season()
     {

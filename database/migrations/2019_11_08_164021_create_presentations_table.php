@@ -16,7 +16,7 @@ class CreatePresentationsTable extends Migration
         Schema::create('presentations', function (Blueprint $table) {
             $table->bigIncrements('ID');
             $table->unsignedBigInteger('users_season_ID');
-            $table->string('file_url',64);
+            $table->string('file_url', 64);
             $table->timestamps();
             $table->softDeletes();
 

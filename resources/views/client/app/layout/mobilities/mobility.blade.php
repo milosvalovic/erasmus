@@ -6,7 +6,7 @@
                     <div class="row">
                         @endif
                         <div class="col-xl-3 col-sm-6 text-center">
-                            <img src="{{ asset('uploads/mobilities/'.$mobilita['university']['img_url']) }}" alt="{{$mobilita["university"]["country"]["name"]}}" title="{{$mobilita["university"]["country"]["name"]}}"
+                            <img src="{{ asset($mobilita['university']['thumb_url']) }}" alt="{{$mobilita["university"]["country"]["name"]}}" title="{{$mobilita["university"]["country"]["name"]}}"
                                  class="rounded">
                             <br/>
                             <a href="{{ url('/detail/'.$mobilita["ID"]) }}" class="opportunitie-name">{{$mobilita["university"]["country"]["name"]}}</a>
@@ -23,7 +23,7 @@
                     <div class="row">
                         @endif
                         <div class="col-xl-3 col-sm-6 text-center">
-                            <img src="{{ asset('uploads/mobilities/'.$mobilita->mobility->university->img_url) }}" alt="{{$mobilita->mobility->university->country->name}}" title="{{$mobilita->mobility->university->country->name}}"
+                            <img src="{{ asset($mobilita->mobility->university->thumb_url) }}" alt="{{$mobilita->mobility->university->country->name}}" title="{{$mobilita->mobility->university->country->name}}"
                                  class="rounded">
                             <br/>
                             <a href="{{ url('/detail/'.'$mobilita->mobility->ID') }}" class="opportunitie-name">{{$mobilita->mobility->university->country->name}}</a>
@@ -45,7 +45,7 @@
                     </div>
                 @else
                     <div class="col-md-12 text-right">
-                        <a href="{{ url('/mobility/'.$mobilita["mobility_types_ID"]).'/'.(4+count($mobilities)) }}">@lang('app.search_load_items')</a>
+                        <a href="{{ url('/mobility/'.$mobilita["mobility_types_ID"]).'/'.(4+count($mobilities)) }}">@lang('pagination.show_more')</a>
                     </div>
                 @endif
             </div>

@@ -1,30 +1,28 @@
-<div class="modal fade presentation-modal" tabindex="-1" role="dialog" aria-labelledby="presentationModal"
-     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">@lang('app.profil_presentation_upload')</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="input-items">
-                            <form action="{{ url('/') }}" method="POST" enctype="multipart/form-data">
-                                <div class="input-presentation-container">
-                                    <label for="presentation" class="input-presentation-trigger">@lang('app.profil_choose_presentation')</label>
-                                    <input type="file" class="input-presentation" id="presentation" name="presentation">
-                                </div>
-                                <p class="selected-presentation"></p>
-                                <div class="error text-danger">Some Errors related to something</div>
-                                <input type="submit" name="upload" id="upload" value="@lang('app.profil_upload')">
-                            </form>
-                        </div>
+<section class="resume-section p-3 p-lg-5">
+    <div class="row my-auto">
+        <div class="col-12">
+            <h2 class="  text-center">@lang('app.presentation_upload_title')</h2>
+            <div class="mb-5 heading-border"></div>
+        </div>
+        <div class="row input-items">
+            <div class="col-lg-12">
+                {{ Form::open(array('url' => '/prezentacia/ulozit','files'=>'true')) }}
+                    <div class="input-file-container">
+                        <label for="file" class="input-file-trigger">@lang('app.presentation_choose')</label>
+                        <input type="file" class="input-file" id="file" name="file">
                     </div>
-                </div>
+                    <p class="selected-file text-center"></p>
+                    @if ($errors->any())
+                        @foreach ($errors->get('file') as $error)
+                            <div class="error text-danger">{{$error}}</div>
+                        @endforeach
+                    @endif
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <div class="submit-button">
+                        <input type="submit" name="upload" id="upload" value="@lang('app.profil_form_upload')">
+                    </div>
+                {{Form::close()}}
             </div>
         </div>
     </div>
-</div>
+</section>

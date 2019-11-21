@@ -236,14 +236,15 @@ thead.thead-color {
     width: 100%;
 }
 
-.rating{
+.rating {
     margin-bottom: 20px;
 }
 
-.rating > span{
+.rating > span {
     font-size: 25px;
 }
-.rating > span.checked{
+
+.rating > span.checked {
     color: #007183;
 }
 
@@ -288,7 +289,7 @@ div.content div.section-reviews div.review {
         margin-bottom: 30px;
     }
 
-    .rating{
+    .rating {
         width: 135px;
         display: block;
         margin: 10px auto;
