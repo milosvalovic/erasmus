@@ -135,7 +135,7 @@ span[class='dashboard-admin']{
 
 
 
-/*--------ADMIN Welcome page-----------*/
+/*--------ADMIN Dashboard-----------*/
 .admin-welcome-page{
     display: grid;
     grid-template-columns: repeat(9, 1fr);
@@ -151,41 +151,39 @@ span[class='dashboard-admin']{
 .admin-welcome-content{
     display: flex;
     flex-direction: column;
-    padding: 20px;
     grid-area: content;
     position: relative;
+    padding: 20px 20px 20px 50px;
 }
 
-.admin-welcome-content-section-1{
+.admin-welcome-content > .container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.summary-1-sections{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.summary-1-cards{
+    display: grid;
+}
+
+.card-body-item{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.summary-1-sections > div{
     margin-bottom: 1.5rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
-.admin-welcome-content-statistics--1{
-    display: flex;
-    flex-direction: column;
+.card-graph{
+    justify-content: center;
 }
-
-.card-statistics--1{
-    width: 300px;
-    max-width: 300px;
-    height: min-content;
-    margin-bottom: 1.5rem;
-}
-
-.statistics--1-row{
-    display: flex;
-    flex-direction: row;
-}
-
-.admin-welcome-content .admin-welcome-content-section-1 .section-wrapper{
-    display: flex;
-    align-content: center;
-    justify-content: space-around;
-}
-
 
 /*--------ADMIN Users-----------*/
 .user-form-actions{
