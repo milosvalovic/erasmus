@@ -6,6 +6,6 @@
     @include('client.blog.layout.masthead')
 @endsection
 @section('content')
-    @include('client.blog.layout.articles')
+    @include('client.blog.layout.articles', ['articles' => $articles, 'in_row' => $in_row])
     @include('layout.client.blog.footer')
 @endsection

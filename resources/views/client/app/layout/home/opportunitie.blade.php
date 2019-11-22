@@ -25,7 +25,7 @@
             <div class="row more-opportunitie">
                 <div class="container">
                     <div class="cold-md-12 text-right">
-                        <a href="{{ url('/mobility/'.$type["mobility_types_ID"]).'/'.$in_row }}">@lang('pagination.show_more')</a>
+                        <a href="{{ url('/mobility/'.$type["mobility_types_ID"]).'/'.$mobility_in_row }}">@lang('pagination.show_more')</a>
                     </div>
                 </div>
             </div>

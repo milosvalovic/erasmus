@@ -34,10 +34,10 @@ class PresentationController extends Controller
 
         if ($presentation->save()) {
             Session::flash('success', Lang::get('app.presentation_success_messeage'));
-            return redirect('/profil');
+            return redirect('/profil/mobility');
         } else {
             Session::flash('error', Lang::get('app.presentation_fail_messeage'));
-            return redirect('/profil');
+            return redirect('/profil/mobility');
         }
     }
 }

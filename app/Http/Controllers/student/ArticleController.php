@@ -22,23 +22,23 @@ class ArticleController extends Controller
             'title' => 'required|alpha|max:200',
             'article' => 'required',
             'date' => 'required|date',
-            'users_ID' => 'required|numeric',
-            'users_season_ID' => 'required|numeric',
+//            'users_ID' => 'required|numeric',
+//            'users_season_ID' => 'required|numeric',
         ])->validate();
 
         $blog = new Blog();
         $blog->title = $request->input('title');
         $blog->article = $request->input('article');
         $blog->publish_date = date("Y-m-d", strtotime($request->input('date')));
-        $blog->users_ID = $request->input('users_ID');
-        $blog->users_season_ID = $request->input('users_season_ID');
+        $blog->users_ID = 1;
+        $blog->users_season_ID = 1;
 
         if ($blog->save()) {
             Session::flash('success', Lang::get('app.article_success_messeage'));
-            return redirect('/profil');
+            return redirect('/profil/mobility');
         } else {
             Session::flash('error', Lang::get('app.article_fail_messeage'));
-            return redirect('/profil');
+            return redirect('/profil/mobility');
         }
     }
 }

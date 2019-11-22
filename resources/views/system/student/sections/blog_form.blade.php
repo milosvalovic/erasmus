@@ -35,18 +35,8 @@
                 <label for="standalone-container">@lang('app.article_story')</label>
                 <div id="standalone-container">
                     <div id="toolbar-container">
-                            <span class="ql-formats">
-                              <button class="ql-bold"></button>
-                              <button class="ql-italic"></button>
-                              <button class="ql-underline"></button>
-                            </span>
                         <span class="ql-formats">
-                              <button class="ql-header" value="1"></button>
                               <button class="ql-header" value="2"></button>
-                            </span>
-                        <span class="ql-formats">
-                              <button class="ql-list" value="ordered"></button>
-                              <button class="ql-list" value="bullet"></button>
                             </span>
                         <span class="ql-formats">
                               <button class="ql-image"></button>

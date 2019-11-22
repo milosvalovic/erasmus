@@ -14,7 +14,7 @@
                     <a class="nav-link" href="{{ url('/#kontakt') }}">@lang('app.nav_contact')</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link @yield('blog')" href="{{ url('/blog') }}">@lang('app.nav_blog')</a>
+                    <a class="nav-link @yield('blog')" href="{{ url('/clanky').'/' }}@yield('article_in_row')">@lang('app.nav_blog')</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link @yield('faq')" href="{{ url('/otazky') }}">@lang('app.nav_faq')</a>

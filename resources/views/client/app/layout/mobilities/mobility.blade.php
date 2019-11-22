@@ -26,7 +26,7 @@
                             <img src="{{ asset($mobilita->mobility->university->thumb_url) }}" alt="{{$mobilita->mobility->university->country->name}}" title="{{$mobilita->mobility->university->country->name}}"
                                  class="rounded">
                             <br/>
-                            <a href="{{ url('/detail/'.'$mobilita->mobility->ID') }}" class="opportunitie-name">{{$mobilita->mobility->university->country->name}}</a>
+                            <a href="{{ url('/detail/'.$mobilita->mobility->ID) }}" class="opportunitie-name">{{$mobilita->mobility->university->country->name}}</a>
                             <span class="badge badge-secondary">{{ $mobilita->mobility->category->name }}</span>
                             <p class="opportunitie-date">@lang('app.date_end') {{date("d.m.Y", strtotime($mobilita->date_start_reg))}}</p>
                             <p class="opportunitie-comments">@lang('app.reviews'){{count($mobilita->user_season)}}</p>
@@ -45,7 +45,7 @@
                     </div>
                 @else
                     <div class="col-md-12 text-right">
-                        <a href="{{ url('/mobility/'.$mobilita["mobility_types_ID"]).'/'.(4+count($mobilities)) }}">@lang('pagination.show_more')</a>
+                        <a href="{{ url('/mobility/'.$mobilita["mobility_types_ID"]).'/'.($mobility_in_row+count($mobilities)) }}">@lang('pagination.show_more')</a>
                     </div>
                 @endif
             </div>

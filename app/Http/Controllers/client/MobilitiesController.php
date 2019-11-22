@@ -20,6 +20,8 @@ class MobilitiesController extends Controller
                 'office_hours' => Office_Hours::all(),
                 'address' => Address::all(),
                 'mobilities' => Season::simplePaginate(Variables::NUMBER_OF_MOBILITY_ITEMS),
+                'mobility_in_row' => Variables::NUMBER_OF_MOBILITIES_IN_ROW,
+                'article_in_row' => Variables::NUMBER_OF_ARTICLES_IN_ROW
             ]);
     }
 
@@ -34,6 +36,8 @@ class MobilitiesController extends Controller
                 'office_hours' => Office_Hours::all(),
                 'address' => Address::all(),
                 'mobilities' => $sortedMobility,
+                'mobility_in_row' => Variables::NUMBER_OF_MOBILITIES_IN_ROW,
+                'article_in_row' => Variables::NUMBER_OF_ARTICLES_IN_ROW
             ]);
     }
 

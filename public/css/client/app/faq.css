@@ -119,10 +119,6 @@ div.content h1 {
     margin-bottom: 10px;
 }
 
-div.content h1:hover {
-    color: #00515e;
-}
-
 div.content a:hover {
     text-decoration: none;
 }

@@ -190,6 +190,10 @@ return [
     'detail_from' => 'OD: ',
     'detail_to' => 'DO: ',
 
+    //Blog
+    "blog_article_date_part_one" => "Zverejnil ",
+    "blog_article_date_part_two" => ", dňa ",
+
     //Common
     'date_end' => 'prihlášky do ',
     'reviews' => 'Recenzie: ',

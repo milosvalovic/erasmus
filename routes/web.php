@@ -25,6 +25,10 @@ Route::get('/mobility/{id}/{perPage}', ['as' => 'mobility', 'uses' => 'client\Mo
 
 Route::get('/otazky', 'client\FAQController@faq');
 
+Route::get('/clanky/{perPage}', 'blog\BlogController@blog');
+
+Route::get('/clanok/{id}', 'blog\BlogController@article');
+
 Route::get('profil/mobility', 'student\ProfileController@mobilities');
 
 Route::get('profil/prihlasky', 'student\ProfileController@signups');
@@ -47,7 +51,6 @@ Route::post('profil/recenzia/ulozit', ['as' => 'insert-review', 'uses' => 'stude
 //
 //Route::get('/#contact', 'client\HomeController@home');
 //
-//Route::get('/blog', 'blog\BlogController@blog');
 //
 //Route::get('/article', 'blog\BlogController@article');
 //

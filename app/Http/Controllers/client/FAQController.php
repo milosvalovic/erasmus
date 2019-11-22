@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\client;
 
+use App\Http\Variables;
 use App\Models\FAQ;
 use App\Models\University;
 use Illuminate\Routing\Controller;
@@ -17,6 +18,6 @@ class FAQController extends Controller
             }
         }
 
-        return view('client.app.faq', ['faqs' => $faqs]);
+        return view('client.app.faq', ['faqs' => $faqs, 'article_in_row' => Variables::NUMBER_OF_ARTICLES_IN_ROW]);
     }
 }

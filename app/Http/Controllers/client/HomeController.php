@@ -21,7 +21,8 @@ class HomeController extends Controller
                 'office_hours' => Office_Hours::all(), 'address' => Address::all(),
                 'mobilities' => $this->getTopMobility(),
                 'type' => Mobility_Type::pluck('name', 'id'),
-                'in_row' => Variables::NUMBER_OF_MOBILITIES_IN_ROW
+                'mobility_in_row' => Variables::NUMBER_OF_MOBILITIES_IN_ROW,
+                'article_in_row' => Variables::NUMBER_OF_ARTICLES_IN_ROW
             ]);
     }
 

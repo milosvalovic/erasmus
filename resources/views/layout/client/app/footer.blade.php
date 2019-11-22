@@ -25,7 +25,7 @@
                 <ul class="footer-navigation">
                     <li><a class="footer-nav-link" href="{{ url('/mobility') }}">@lang('app.nav_mobilities')</a></li>
                     <li><a class="footer-nav-link" href="{{ url('/#kontakt') }}">@lang('app.nav_contact')</a></li>
-                    <li><a class="footer-nav-link" href="{{ url('/blog') }}">@lang('app.nav_blog')</a></li>
+                    <li><a class="footer-nav-link" href="{{ url('/clanky').'/'.$article_in_row }}">@lang('app.nav_blog')</a></li>
                     <li><a class="footer-nav-link" href="{{ url('/otazky') }}">@lang('app.nav_faq')</a></li>
                     <li><a class="footer-nav-link" href="{{ url('/prihlasovanie') }}">@lang('app.nav_account')</a></li>
                 </ul>

@@ -51,10 +51,10 @@ class ReviewController extends Controller
                 $images->save();
             }
             Session::flash('success', Lang::get('app.review_success_messeage'));
-            return redirect('/profil');
+            return redirect('/profil/mobility');
         } else {
             Session::flash('error', Lang::get('app.review_fail_messeage'));
-            return redirect('/profil');
+            return redirect('/profil/mobility');
         }
     }
 }
