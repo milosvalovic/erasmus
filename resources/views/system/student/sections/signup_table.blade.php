@@ -16,12 +16,14 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>Portugal</td>
-                <td>INSTITUTO POLITECNICO DO PORTO</td>
-                <td>Vybavuje sa</td>
-                <td><a href="{{url('/detail')}}">Otvoriť</a></td>
-            </tr>
+{{--            @foreach($reistrations as $reistration)--}}
+                <tr>
+                    <td>Portugal</td>
+                    <td>INSTITUTO POLITECNICO DO PORTO</td>
+                    <td>Vybavuje sa</td>
+                    <td><a href="{{url('/detail')}}">Otvoriť</a></td>
+                </tr>
+            {{--@endforeach--}}
             </tbody>
         </table>
     </div>

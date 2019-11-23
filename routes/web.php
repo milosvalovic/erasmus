@@ -11,6 +11,8 @@
 |
 */
 
+
+//Client routes
 Route::get('/', 'client\HomeController@home');
 
 Route::get('/mapa/krajiny', 'client\HomeController@getCountryCodes');
@@ -29,71 +31,26 @@ Route::get('/clanky/{perPage}', 'blog\BlogController@blog');
 
 Route::get('/clanok/{id}', 'blog\BlogController@article');
 
-Route::get('profil/mobility', 'student\ProfileController@mobilities');
+Route::get('profil', 'student\ProfileController@mobilities')->middleware('auth');
 
-Route::get('profil/prihlasky', 'student\ProfileController@signups');
+Route::get('profil/mobility', 'student\ProfileController@mobilities')->middleware('auth');
+Route::get('profil/mobilityy', 'student\ProfileController@getMobility')->middleware('auth');
 
-Route::get('profil/clanok/novy', 'student\ArticleController@newArticle');
+Route::get('profil/prihlasky', 'student\ProfileController@signups')->middleware('auth');
+Route::get('profil/prihlaskyy', 'student\ProfileController@getReistrations')->middleware('auth');
 
-Route::post('profil/clanok/ulozit', ['as' => 'insert-article', 'uses' => 'student\ArticleController@insertArticle']);
+Route::get('profil/clanok/novy', 'student\ArticleController@newArticle')->middleware('auth');
 
-Route::get('profil/prezentacia/nova', 'student\PresentationController@newPresentation');
+Route::post('profil/clanok/ulozit', ['as' => 'insert-article', 'uses' => 'student\ArticleController@insertArticle'])->middleware('auth');
 
-Route::post('profil/prezentacia/ulozit', ['as' => 'insert-presentation', 'uses' => 'student\PresentationController@insertPresentation']);
+Route::get('profil/prezentacia/nova', 'student\PresentationController@newPresentation')->middleware('auth');
 
-Route::get('profil/recenzia/nova', 'student\ReviewController@newReview');
+Route::post('profil/prezentacia/ulozit', ['as' => 'insert-presentation', 'uses' => 'student\PresentationController@insertPresentation'])->middleware('auth');
 
-Route::post('profil/recenzia/ulozit', ['as' => 'insert-review', 'uses' => 'student\ReviewController@insertReview']);
+Route::get('profil/recenzia/nova', 'student\ReviewController@newReview')->middleware('auth');
 
-//Route::get('/detail', 'client\DetailController@detail');
-//
-//Route::get('/hladat', 'client\SearchController@search');
-//
-//Route::get('/#contact', 'client\HomeController@home');
-//
-//
-//Route::get('/article', 'blog\BlogController@article');
-//
-//
-//Route::get('/odhlasenie', 'client\AccountController@login');
-//
-//Route::get('/profil', 'student\ProfileController@profil');
-//
-//Route::get('/profil/prezentacia', 'system\student\ProfileController@presentation');
-//
-//Route::get('/profil/recenzia', 'system\student\ProfileController@review');
-//
-//Route::get('/profil/blog', 'system\student\ProfileController@blog');
-//
-//Route::get('/email/newsletter', function () {
-//    $to_name = "Firstname Lastname";
-//    $to_email = "username@gmail.com";
-//    $data = array("header" => "", "text" => "", "mobilities" => array(), "unsubscribe_url" => "");
-//    Mail::send('mail.newsletter', $data, function ($messeage) use ($to_name, $to_email) {
-//        $messeage->to($to_email)
-//            ->subject(Lang::get('app.newsletter_title'));
-//    });
-//});
-//
-//Route::get('/email/activate', function () {
-//    $to_name = "Firstname Lastname";
-//    $to_email = "username@gmail.com";
-//    $data = array("header" => "", "text" => "", "activate_url" => "");
-//    Mail::send('mail.activate', $data, function ($messeage) use ($to_name, $to_email) {
-//        $messeage->to($to_email)
-//            ->subject(Lang::get('app.activate_title'));
-//    });
-//});
-//
-//Route::get('/email/reset', function () {
-//    $to_name = "Firstname Lastname";
-//    $to_email = "username@gmail.com";
-//    $data = array("header" => "", "text" => "", "reset_url" => "");
-//    Mail::send('mail.activate', $data, function ($messeage) use ($to_name, $to_email) {
-//        $messeage->to($to_email)
-//            ->subject(Lang::get('app.reset_title'));
-//    });
-//});
+Route::post('profil/recenzia/ulozit', ['as' => 'insert-review', 'uses' => 'student\ReviewController@insertReview'])->middleware('auth');
+
 
 // Admin routes
 Route::get('/admin', 'system\SystemController@system');
@@ -117,26 +74,17 @@ Route::get('/admin/faq', 'system\FaqController@faq');
 Route::get('/admin/open_hours', 'system\OfficeHourController@office_hours');
 
 
-
-
+//Auth routes
 Route::group(['middleware' => ['web']], function() {
 
-// Login Routes...
     Route::get('/prihlasovanie', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginForm']);
     Route::post('login', ['as' => 'login.post', 'uses' => 'Auth\LoginController@login']);
 
     Route::get('/odhlasenie', 'Auth\LoginController@logout')->name('logout');
 
-// Registration Routes...
     Route::get('/registracia', ['as' => 'register', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
     Route::post('register', ['as' => 'register.post', 'uses' => 'Auth\RegisterController@register']);
     Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
-
-// Password Reset Routes...
-    /*Route::get('/pomoc', ['as' => 'password.reset', 'uses' => 'Auth\ForgotPasswordController@showLinkRequestForm']);
-    Route::post('/password/email', ['as' => 'password.email', 'uses' => 'Auth\ForgotPasswordController@sendResetLinkEmail']);
-    Route::get('/pomoc/{token}', ['as' => 'password.reset.token', 'uses' => 'Auth\ResetPasswordController@showResetForm']);
-    Route::post('/password/reset', ['as' => 'password.reset.post', 'uses' => 'Auth\ResetPasswordController@reset']);*/
 
     Route::get('pomoc/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
     Route::post('pomoc/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');

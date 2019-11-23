@@ -15,40 +15,39 @@
                                     <label for="firstname">@lang('app.register_input_label_firstname')</label>
                                     <input type="text" name="firstname" id="firstname" value=""
                                            placeholder="@lang('app.register_input_firstname_example')">
-                                    @if ($errors->has('firstname'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('lastname') }}</strong>
-                                    </span>
+                                    @if ($errors->any())
+                                        @foreach ($errors->get('firstname') as $error)
+                                            <div class="error text-danger">{{$error}}</div>
+                                        @endforeach
                                     @endif
-                                        <br/>
+                                    <br/>
                                         <label for="lastname">@lang('app.register_input_label_lastname')</label>
                                         <input type="text" name="lastname" id="lastname" value=""
                                                placeholder="@lang('app.register_input_lastname_example')">
-                                        @if ($errors->has('lastname'))
-                                            <span class="help-block">
-                                        <strong>{{ $errors->first('lastname') }}</strong>
-                                    </span>
-                                        @endif
-
-                                        <br/>
+                                    @if ($errors->any())
+                                        @foreach ($errors->get('lastname') as $error)
+                                            <div class="error text-danger">{{$error}}</div>
+                                        @endforeach
+                                    @endif
+                                    <br/>
                                         <label for="email">@lang('app.register_input_label_email')</label>
                                         <input type="email" name="email" id="email" value=""
                                                placeholder="@lang('app.right_email_format')">
-                                        @if ($errors->has('email'))
-                                            <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                        @endif
-                                        <br/>
+                                    @if ($errors->any())
+                                        @foreach ($errors->get('email') as $error)
+                                            <div class="error text-danger">{{$error}}</div>
+                                        @endforeach
+                                    @endif
+                                    <br/>
                                         <label for="password">@lang('app.register_input_label_password')</label>
                                         <input type="password" name="password" id="password" value=""
                                                placeholder="********">
-                                        @if ($errors->has('password'))
-                                            <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                        @endif
-                                        <br/>
+                                    @if ($errors->any())
+                                        @foreach ($errors->get('password') as $error)
+                                            <div class="error text-danger">{{$error}}</div>
+                                        @endforeach
+                                    @endif
+                                    <br/>
                                         <label for="confirm-password">@lang('app.register_input_label_confirm_password')</label>
                                         <input type="password" name="password_confirmation" id="confirm-password"
                                                value="" placeholder="********">

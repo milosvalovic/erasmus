@@ -1,6 +1,7 @@
 @extends('layout.client.app.master')
 @section('faq', 'active')
 @section('title', __('app.nav_faq'))
+@section('article_in_row', $article_in_row)
 @section('css', asset('css/client/app/faq.css'))
 @section('masthead')
     @include('client.app.layout.faq.masthead')

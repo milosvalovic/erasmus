@@ -1,5 +1,6 @@
 @extends('layout.client.app.master')
 @section('account', 'active')
+@section('article_in_row', $article_in_row)
 @section('css', asset('css/client/app/account.css'))
 @section('masthead')
     @switch($view)

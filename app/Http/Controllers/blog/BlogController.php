@@ -23,7 +23,7 @@ class BlogController extends Controller
              'article_in_row' => Variables::NUMBER_OF_ARTICLES_IN_ROW]);
     }
 
-    public function getArticles($perPage)
+    private function getArticles($perPage)
     {
         $articles = Blog::select('ID', 'title', 'status', 'users_season_ID', 'publish_date')
             ->with([
@@ -58,8 +58,7 @@ class BlogController extends Controller
         return $articles;
     }
 
-    //Vrati clanok v blogu
-    public function getArticle($articleID)
+    private function getArticle($articleID)
     {
         $article = Blog::select('ID', 'title', 'status', 'users_season_ID', 'publish_date', 'article')
             ->with([
