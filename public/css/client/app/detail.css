@@ -100,7 +100,7 @@ div.title {
 
 div.title > h1 {
     font-family: Cairo-Bold, serif;
-    font-size: 50px;
+    font-size: 35px;
     margin-bottom: 10px;
 }
 
@@ -114,7 +114,7 @@ nav.sub-navigation {
 
 nav.sub-navigation h2 {
     font-family: Cairo-SemiBold, serif;
-    font-size: 40px;
+    font-size: 35px;
     line-height: 0;
 }
 
@@ -246,6 +246,10 @@ thead.thead-color {
 
 .rating > span.checked {
     color: #007183;
+}
+
+.section-gallery {
+    margin-top: 20px;
 }
 
 @media screen and (max-width: 800px) {

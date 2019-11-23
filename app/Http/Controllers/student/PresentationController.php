@@ -28,7 +28,7 @@ class PresentationController extends Controller
 
         $presentation = new Presentation();
         $presentation->users_season_ID = $request->input('users_season_ID');
-        $presentation->file_url = Variables::PRESENTATIONS_SAVE_PATH . '/' . $file->getClientOriginalName();
+        $presentation->file_url = Variables::PRESENTATIONS_SAVE_PATH . '/' . now()->format('YmdHisu') . '.' . $file->getClientOriginalExtension();
 
         $file->move(Variables::PRESENTATIONS_SAVE_PATH, $file->getClientOriginalName());
 

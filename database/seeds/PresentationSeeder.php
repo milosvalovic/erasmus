@@ -14,12 +14,12 @@ class PresentationSeeder extends Seeder
     {
         DB::table('presentations')->insert([
             'users_season_ID' => 1,
-            'file_url' => '1.pptx'
+            'file_url' => 'uploads/presentations/1.pptx'
         ]);
 
         DB::table('presentations')->insert([
             'users_season_ID' => 2,
-            'file_url' => '2.pptx'
+            'file_url' => 'uploads/presentations/2.pptx'
         ]);
     }
 }

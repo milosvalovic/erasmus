@@ -8,17 +8,26 @@ use App\Models\Status_season;
 use App\Models\User;
 use App\Models\Season_Status;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Lang;
 
 class DetailController extends Controller
 {
-    public function detail()
+    public function detail($id)
     {
-        return view('client.app.detail');
+        return view('client.app.detail', [
+            'article_in_row' => Variables::NUMBER_OF_ARTICLES_IN_ROW,
+            'number_of_pictures' => Variables::NUMBER_OF_VISIBLE_REVIEW_PICTURES,
+            'mobilityDetail' => $this->getMobilityDetail($id),
+            'mobilityPrezentations' => $this->getMobilityPrezentations($id),
+            'getMobilityImages' => $this->getMobilityImages($id),
+            'getMobilityReviews' => $this->getMobilityReviews($id)
+        ]);
     }
 
-    //Vrati vsetky informacie o mobilite
-    public function getMobilityDetail($mobilityID)
+    private function getMobilityDetail($mobilityID)
     {
         $offset = Variables::TIME_OFFSET;
 
@@ -57,8 +66,7 @@ class DetailController extends Controller
         return $mobilityDetail;
     }
 
-    //Vrati tabulku prezentacie pre mobilitu
-    public function getMobilityPrezentations($mobilityID)
+    private function getMobilityPrezentations($mobilityID)
     {
         $mobilityPresentations = Mobility::select('ID')
             ->with([
@@ -78,9 +86,7 @@ class DetailController extends Controller
         return $mobilityPresentations;
     }
 
-
-    //Vrati recenzie a obrazky
-    public function getMobilityReviews($mobilityID)
+    private function getMobilityReviews($mobilityID)
     {
         $mobilityReviews = Mobility::select('ID')
             ->with([
@@ -94,124 +100,148 @@ class DetailController extends Controller
                     $query->select('ID','first_name','last_name');
                 },
                 'review.images' => function($query){
-                    $query->select('ID','reviews_ID','url');
+                    $query->select('ID','reviews_ID','url', 'thumb_url');
                 }
                 ])
             ->where('mobility.ID','=',$mobilityID)
             ->get();
 
-
         return $mobilityReviews;
     }
 
-    //Prihlasit sa na mobilitu
-    public function signInMobility($mobilityID)
+    private function getMobilityImages($mobilityID)
     {
-        $userID = 1; //Upravi� na - Ak je prihl�sen�
-        $offset = Variables::TIME_OFFSET;
-
-        $count_pending = 0;
-        $count_accept = 0;
-
-        $signIn = Mobility::select('ID')
+        $mobilityImages = Mobility::select('ID')
             ->with([
-                'season' => function($query) use ($offset){
-                    $query->select('ID','date_start_reg','date_end_reg','count_students','count_registrations','mobility_ID','date_start_mobility','date_end_mobility')->where('date_end_reg','>',Carbon::now($offset))->first();
+                'review' => function($query){
+                    $query->select('reviews.ID');
                 },
-                'season.user_season' => function($query){
-                    $query->select('ID','users_ID','season_ID');
-                },
-                'season.user_season.status_season' => function($query){
-                    $query->select('ID','season_status_ID','users_season_ID')->orderBy('ID','DESC')->first();
+                'review.images' => function($query){
+                    $query->select('ID','reviews_ID','url', 'thumb_url');
                 }
             ])
             ->where('mobility.ID','=',$mobilityID)
-            ->whereHas('season', function($query) use ($offset){
-                $query->where('season.date_end_reg','>',Carbon::now($offset));
-            })
             ->get();
 
-        $firstSeason = $signIn->first()->season->first();
+        return $mobilityImages;
+    }
 
-        foreach ($firstSeason->user_season as $item){
-            if($item->status_season->first()->season_status_ID == Variables::SEASON_STATUS_ACCEPT){
-                $count_accept++;
-            }else if($item->status_season->first()->season_status_ID == Variables::SEASON_STATUS_ACCEPT){
-                $count_accept++;
+    public function signInMobility(Request $request)
+    {
+        if(Auth::check()) {
+            $userID = Auth::user()->id;
+            $mobilityID = $request->input('mobility_id');
+            $offset = Variables::TIME_OFFSET;
+
+            $count_pending = 0;
+            $count_accept = 0;
+
+            $signIn = Mobility::select('ID')
+                ->with([
+                    'season' => function ($query) use ($offset) {
+                        $query->select('ID', 'date_start_reg', 'date_end_reg', 'count_students', 'count_registrations', 'mobility_ID', 'date_start_mobility', 'date_end_mobility')->where('date_end_reg', '>', Carbon::now($offset))->first();
+                    },
+                    'season.user_season' => function ($query) {
+                        $query->select('ID', 'users_ID', 'season_ID');
+                    },
+                    'season.user_season.status_season' => function ($query) {
+                        $query->select('ID', 'season_status_ID', 'users_season_ID')->orderBy('ID', 'DESC')->first();
+                    }
+                ])
+                ->where('mobility.ID', '=', $mobilityID)
+                ->whereHas('season', function ($query) use ($offset) {
+                    $query->where('season.date_end_reg', '>', Carbon::now($offset));
+                })
+                ->get();
+
+            $firstSeason = $signIn->first()->season->first();
+
+            foreach ($firstSeason->user_season as $item) {
+                if ($item->status_season->first()->season_status_ID == Variables::SEASON_STATUS_ACCEPT) {
+                    $count_accept++;
+                } else if ($item->status_season->first()->season_status_ID == Variables::SEASON_STATUS_ACCEPT) {
+                    $count_accept++;
+                }
             }
-        }
 
-        if($firstSeason->count_students <= $count_accept){
-            return 'error:student_limit'; //Neda sa prihlasit, pocet prihlasenych studentov dostiahol maximum
-        }
-
-        if($firstSeason->count_registrations != -1 && $firstSeason->count_registrations <= $count_pending+$count_accept){
-           return 'error:student_limit';
-        }
-
-        $endMobilityDate = $firstSeason->date_start_mobility;
-        $startMobilityDate = $firstSeason->date_end_mobility;
-        $idSeason = $firstSeason->ID;
-
-        $userSeasons = User::select('ID')
-            ->with([
-                'user_season' => function($query) use ($idSeason){
-                    $query->select('ID','season_ID','users_ID');
-                },
-                'user_season.season' => function($query) use ($endMobilityDate, $startMobilityDate){
-                    $query->select('ID','date_start_mobility','date_end_mobility')
-                        ->where(function ($query) use ($endMobilityDate, $startMobilityDate){
-                            $query->where('season.date_start_mobility','>=',$startMobilityDate)->where('season.date_start_mobility','<=',$endMobilityDate);
-                        })
-                        ->orWhere(function ($query) use ($endMobilityDate, $startMobilityDate){
-                            $query->where('season.date_start_mobility','<=',$startMobilityDate)->where('season.date_end_mobility','>=',$endMobilityDate);
-                        })
-                        ->orWhere(function ($query) use ($endMobilityDate, $startMobilityDate){
-                            $query->where('season.date_start_mobility','>=',$startMobilityDate)->where('season.date_end_mobility','<=',$endMobilityDate);
-                        })
-                        ->orWhere(function ($query) use ($endMobilityDate, $startMobilityDate){
-                            $query->where('season.date_end_mobility','>=',$startMobilityDate)->where('season.date_end_mobility','<=',$endMobilityDate);
-                        });
-
-                },
-                'user_season.status_season' => function($query) use ($idSeason){
-                    $query->select('ID','season_status_ID','users_season_ID')->orderBy('ID','DESC')->first();
-                }])
-            ->where('users.ID','=',$userID)
-            ->get();
-
-        $seasons = $userSeasons->first()->user_season;
-
-        foreach ($seasons as $seasonUser){
-            if($seasonUser->season !=null && $seasonUser->status_season->first()->season_status_ID != Variables::SEASON_STATUS_CANCEL_ID) {
-                return 'error:season_in_date'; //Pocat tohto datumu prebieha ina mobilita na ktorej je prihlaseny / alebo je prihlaseny uz na danej mobilite
+            if ($firstSeason->count_students <= $count_accept) {
+                return json_encode(array('status' => 'error',
+                    'reason' => Lang::get('app.detail_sign_up_mobility_error_max')));
             }
-        }
 
-        $seasonID = $signIn->first()->season->first()->ID;
+            if ($firstSeason->count_registrations != -1 && $firstSeason->count_registrations <= $count_pending + $count_accept) {
+                return json_encode(array('status' => 'error',
+                    'reason' => Lang::get('app.detail_sign_up_mobility_error_max')));
+            }
 
-        \DB::beginTransaction();
-        try{
-            $user = User::find($userID);
-            $user_season = $user->user_season()->create(array('users_ID' => $userID, 'season_ID' => $seasonID))->id;
+            $endMobilityDate = $firstSeason->date_start_mobility;
+            $startMobilityDate = $firstSeason->date_end_mobility;
+            $idSeason = $firstSeason->ID;
+
+            $userSeasons = User::select('ID')
+                ->with([
+                    'user_season' => function ($query) use ($idSeason) {
+                        $query->select('ID', 'season_ID', 'users_ID');
+                    },
+                    'user_season.season' => function ($query) use ($endMobilityDate, $startMobilityDate) {
+                        $query->select('ID', 'date_start_mobility', 'date_end_mobility')
+                            ->where(function ($query) use ($endMobilityDate, $startMobilityDate) {
+                                $query->where('season.date_start_mobility', '>=', $startMobilityDate)->where('season.date_start_mobility', '<=', $endMobilityDate);
+                            })
+                            ->orWhere(function ($query) use ($endMobilityDate, $startMobilityDate) {
+                                $query->where('season.date_start_mobility', '<=', $startMobilityDate)->where('season.date_end_mobility', '>=', $endMobilityDate);
+                            })
+                            ->orWhere(function ($query) use ($endMobilityDate, $startMobilityDate) {
+                                $query->where('season.date_start_mobility', '>=', $startMobilityDate)->where('season.date_end_mobility', '<=', $endMobilityDate);
+                            })
+                            ->orWhere(function ($query) use ($endMobilityDate, $startMobilityDate) {
+                                $query->where('season.date_end_mobility', '>=', $startMobilityDate)->where('season.date_end_mobility', '<=', $endMobilityDate);
+                            });
+
+                    },
+                    'user_season.status_season' => function ($query) use ($idSeason) {
+                        $query->select('ID', 'season_status_ID', 'users_season_ID')->orderBy('ID', 'DESC')->first();
+                    }])
+                ->where('users.ID', '=', $userID)
+                ->get();
+
+            $seasons = $userSeasons->first()->user_season;
+
+            foreach ($seasons as $seasonUser) {
+                if ($seasonUser->season != null && $seasonUser->status_season->first()->season_status_ID != Variables::SEASON_STATUS_CANCEL_ID) {
+                    return json_encode(array('status' => 'error',
+                        'reason' => Lang::get('app.detail_sign_up_mobility_error_date')));
+                }
+            }
+
+            $seasonID = $signIn->first()->season->first()->ID;
+
+            \DB::beginTransaction();
+            try {
+                $user = User::find($userID);
+                $user_season = $user->user_season()->create(array('users_ID' => $userID, 'season_ID' => $seasonID))->id;
 
 
-            $season_status = Season_Status::find(Variables::SEASON_STATUS_PENDING_ID);
-            $system = User::find(1);
+                $season_status = Season_Status::find(Variables::SEASON_STATUS_PENDING_ID);
+                $system = User::find(1);
 
-            $status_season = new Status_season(['season_status_ID' => Variables::SEASON_STATUS_PENDING_ID,'users_ID' => $system, 'users_season_ID' =>$user_season]);
+                $status_season = new Status_season(['season_status_ID' => Variables::SEASON_STATUS_PENDING_ID, 'users_ID' => $system, 'users_season_ID' => $user_season]);
 
-            $status_season->season_status()->associate($season_status);
-            $status_season->user_season()->associate($user_season);
-            $status_season->user()->associate($system);
+                $status_season->season_status()->associate($season_status);
+                $status_season->user_season()->associate($user_season);
+                $status_season->user()->associate($system);
 
-            $status_season->save();
+                $status_season->save();
 
-            \DB::commit();
-            return 'success:sign_in_mobility'; //Pouzivatel sa uspesne prihlasil do mobility
-        }catch (\Exception $e){
-            \DB::rollback();
-            return 'error:sign_in_mobility'; //Nieco sa pokazilo.. Skuste to prosim neskor.
+                \DB::commit();
+                return json_encode(array('status' => 'success',
+                    'reason' => Lang::get('app.detail_sign_up_mobility_success'),
+                    'url' => url('/profil')));
+            } catch (\Exception $e) {
+                \DB::rollback();
+                return json_encode(array('status' => 'success',
+                    'reason' => Lang::get('app.detail_sign_up_mobility_error')));
+            }
         }
     }
 }

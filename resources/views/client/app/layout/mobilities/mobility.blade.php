@@ -18,6 +18,9 @@
                     </div>
                     <div class="row">
                         @endif
+                        @if ($loop->last)
+                            </div>
+                        @endif
             @else
                 @if ($loop->first)
                     <div class="row">
@@ -35,6 +38,9 @@
                            </div>
                            <div class="row">
                          @endif
+                               @if ($loop->last)
+                           </div>
+                @endif
            @endif
         @endforeach
         <div class="row more-opportunitie">

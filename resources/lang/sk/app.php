@@ -183,12 +183,11 @@ return [
 
     //Detail
     'detail_description_title' => 'Popis',
-    'detail_country_title' => 'O krajine',
     'detail_more_title' => 'Ďalšie informácie',
     'detail_more_faq' => 'Často kladané otázky',
     'detail_more_blog' => 'Príbehy študentov',
-    'detail_presentations_title' => 'Prezentacie účastníkov',
-    'detail_presentations_table_title_school' => 'Škola',
+    'detail_presentations_title' => 'Prezentácia účastníkov',
+    'detail_presentations_table_title_student' => 'Názov študenta',
     'detail_presentations_table_title_file' => 'Prezentácia',
     'detail_presentations_table_file_download' => 'Stiahnúť',
     'detail_photos_title' => 'Fotogaléria',
@@ -196,10 +195,16 @@ return [
     'detail_submit_button' => 'Chcem sa zúčastniť',
     'detail_from' => 'OD: ',
     'detail_to' => 'DO: ',
+    'detail_sign_up_mobility_error' => 'Lutujeme ale nepodarilo sa prihlásiť na mobilitu',
+    'detail_sign_up_mobility_error_date' => 'Počas tohto dátumu prebieha iná mobilita na ktorú ste už prihláseny.',
+    'detail_sign_up_mobility_error_max' => 'Počet prihlásených študentov dosiahlo maximum.',
+    'detail_sign_up_mobility_success' => 'Úspešne ste sa prihlásili na mobilitu',
+
 
     //Blog
     "blog_article_date_part_one" => "Zverejnil ",
     "blog_article_date_part_two" => ", dňa ",
+
 
     //Common
     'date_end' => 'prihlášky do ',

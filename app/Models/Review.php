@@ -20,7 +20,7 @@ class Review extends Model
 
     public function images()
     {
-        return $this->hasMany('App\Models\Image', 'reviews_ID', 'ID');
+        return $this->hasMany('App\Models\Images', 'reviews_ID', 'ID');
     }
 
     public function user()

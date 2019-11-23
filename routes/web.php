@@ -25,6 +25,10 @@ Route::get('/mobility', 'client\MobilitiesController@mobilities');
 
 Route::get('/mobility/{id}/{perPage}', ['as' => 'mobility', 'uses' => 'client\MobilitiesController@mobilityByType']);
 
+Route::get('/detail/{id}', 'client\DetailController@detail');
+
+Route::post('detail/mobilita/prihlasit', ['as' => 'mobility-signup', 'uses' => 'client\DetailController@signInMobility'])->middleware('auth');
+
 Route::get('/otazky', 'client\FAQController@faq');
 
 Route::get('/clanky/{perPage}', 'blog\BlogController@blog');

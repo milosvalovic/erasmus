@@ -10,7 +10,7 @@ class Images extends Model
     use SoftDeletes;
 
     protected $table = 'images';
-    protected $fillable= ['url','comments_ID'];
+    protected $fillable= ['url', 'thumb_url', 'comments_ID'];
 
     public function comments()
     {
