@@ -21,6 +21,9 @@
                     <div class="submit-button">
                         <input type="submit" name="upload" id="upload" value="@lang('app.profil_form_upload')">
                     </div>
+                    @foreach($inputs as $key => $input)
+                        <input type="hidden" name="{{$key}}" value="{{$input}}" >
+                    @endforeach
                 {{Form::close()}}
             </div>
         </div>

@@ -14,29 +14,30 @@
                 </div>
             @endif
         </div>
-        <div class="col-md-6 col-sm-12 ">
-            <div class="card mx-0 p-4 mb-5"
-                 style="border-color: #17a2b8; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);">
-
-                <div class=" mobility-content mr-auto">
-                    <a href="{{url('/detail')}}"><i class="fa fa fa-bandcamp mr-3 text-info"></i> Taiwan</a>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                        galley of type and scrambled it to make a type specimen book. It has survived not only five
-                        centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                        passages, and more recently with desktop publishing software like Aldus PageMaker including
-                        versions of Lorem Ipsum.</p>
+        @if(count($mobilities) > 0)
+            @foreach($mobilities as $mobility)
+                <div class="col-md-6 col-sm-12 ">
+                    <div class="card mx-0 p-4 mb-5"
+                         style="border-color: #17a2b8; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);">
+                        <div class=" mobility-content mr-auto">
+                            <a href="{{url('/detail'.'/'.$mobility->season->mobility->ID)}}"><i class="fa fa fa-bandcamp mr-3 text-info"></i>{{$mobility->place_name}}</a>
+                            <p>{{$mobility->season->mobility->info}}</p>
+                        </div>
+                        <div class="mobility text-md-right">
+                            <span class="text-primary">{{date("d.m.Y", strtotime($mobility->season->date_start_mobility))}} - {{date("d.m.Y", strtotime($mobility->season->date_end_mobility))}}</span>
+                            <ul>
+                                <li><a href="{{url('profil/prezentacia/nova'.'/'.$mobility->status_season[0]->users_season_ID)}}">@lang('app.profil_presentation_nav')</a></li>
+                                <li><a href="{{url('profil/recenzia/nova'.'/'.$mobility->status_season[0]->users_season_ID)}}">@lang('app.profil_review_nav')</a></li>
+                                <li><a href="{{url('profil/clanok/novy'.'/'.$mobility->users_ID.'/'.$mobility->status_season[0]->users_season_ID)}}">@lang('app.profil_blog_nav')</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="mobility text-md-right">
-                    <span class="text-primary">01.01.2019 - 02.02.2019</span>
-                    <ul>
-                        <li><a href="{{url('profil/prezentacia/nova')}}">@lang('app.profil_presentation_nav')</a></li>
-                        <li><a href="{{url('profil/recenzia/nova')}}">@lang('app.profil_review_nav')</a></li>
-                        <li><a href="{{url('profil/clanok/novy')}}">@lang('app.profil_blog_nav')</a></li>
-                    </ul>
+            @endforeach
+            @else
+                <div class="col-md-12 col-sm-12 ">
+                    <p class="text-center no-results">@lang('app.profil_no_mobilities')</p>
                 </div>
-            </div>
+            @endif
         </div>
-    </div>
 </section>

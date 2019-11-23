@@ -21,15 +21,5 @@ class UserSeasonSeeder extends Seeder
             'users_ID' => 2,
             'season_ID' => 2,
         ]);
-
-        DB::table('users_season')->insert([
-            'users_ID' => 1,
-            'season_ID' => 3,
-        ]);
-
-        DB::table('users_season')->insert([
-            'users_ID' => 2,
-            'season_ID' => 4,
-        ]);
     }
 }

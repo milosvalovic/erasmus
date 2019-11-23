@@ -53,6 +53,9 @@
                 <div class="submit-button">
                     <input type="submit" name="send" id="send" value="@lang('app.profil_form_send')">
                 </div>
+                @foreach($inputs as $key => $input)
+                    <input type="hidden" name="{{$key}}" value="{{$input}}" >
+                @endforeach
                 {{Form::close()}}
             </div>
         </div>

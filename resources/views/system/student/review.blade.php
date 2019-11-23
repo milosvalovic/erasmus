@@ -2,6 +2,6 @@
 @section('title', __('app.nav_review'))
 @section('css', asset('css/system/student/form.css'))
 @section('content')
-    @include('system.student.sections.review_form')
+    @include('system.student.sections.review_form', ['inputs' => $inputs])
     @include('layout.system.student.footer')
 @endsection

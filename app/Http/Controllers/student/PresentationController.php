@@ -12,9 +12,9 @@ use Illuminate\Support\Facades\Validator;
 
 class PresentationController extends Controller
 {
-    public function newPresentation()
+    public function newPresentation($users_season_ID)
     {
-        return view('system.student.presentation');
+        return view('system.student.presentation', ['inputs'=> array('users_season_ID' =>$users_season_ID)]);
     }
 
     public function insertPresentation(Request $request)

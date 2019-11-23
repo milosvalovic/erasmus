@@ -6,6 +6,7 @@
         </div>
     </div>
     <div class="col-md-12">
+        @if(count($registrations) > 0)
         <table class="table table-responsive">
             <thead class="thead-color">
             <tr>
@@ -16,15 +17,18 @@
             </tr>
             </thead>
             <tbody>
-{{--            @foreach($reistrations as $reistration)--}}
-                <tr>
-                    <td>Portugal</td>
-                    <td>INSTITUTO POLITECNICO DO PORTO</td>
-                    <td>Vybavuje sa</td>
-                    <td><a href="{{url('/detail')}}">Otvoriť</a></td>
-                </tr>
-            {{--@endforeach--}}
+                @foreach($registrations as $registration)
+                    <tr>
+                        <td>{{ $registration->season->mobility->university->country->name }}</td>
+                        <td>{{ $registration->season->mobility->university->name }}</td>
+                        <td>{{ $registration->status_season[0]->season_status->name }}</td>
+                        <td><a href="{{url('/detail'.'/'.$registration->season->mobility->ID)}}">Otvoriť</a></td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
+        @else
+            <p class="text-center no-results">@lang('app.profil_no_signups')</p>
+        @endif
     </div>
 </section>

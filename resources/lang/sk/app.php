@@ -146,12 +146,15 @@ return [
     'profil_blog_nav' => 'Napísať článok',
     'profil_presentation_nav' => 'Odovzdať prezentáciu',
     'profil_review_nav' => 'Napísat recenziu',
+    'profil_no_mobilities' => 'Neabsolvovali ste zatial žiadnú mobilitu.',
+
 
     //Profil - Signups
     'profil_signup_table_country' => 'Krajina',
     'profil_signup_table_mobility' => 'Názov mobility',
     'profil_signup_table_status' => 'Stav',
     'profil_signup_table_detail' => 'Detail',
+    'profil_no_signups' => 'Tabuľka je prázdna! Nepodali ste zatial žiadnú prihlášku.',
 
 
     //Profil - Presentation

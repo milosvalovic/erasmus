@@ -23,17 +23,5 @@ class ImageSeeder extends Seeder
             'url' => '/uploads/reviews/2.jpg',
             'thumb_url' => '/uploads/reviews/thumb/thumb-2.jpg',
         ]);
-
-        DB::table('images')->insert([
-            'reviews_ID' => 3,
-            'url' => '/uploads/reviews/3.jpg',
-            'thumb_url' => '/uploads/reviews/thumb/thumb-3.jpg',
-        ]);
-
-        DB::table('images')->insert([
-            'reviews_ID' => 4,
-            'url' => '/uploads/reviews/4.jpg',
-            'thumb_url' => '/uploads/reviews/thumb/thumb-4.jpg',
-        ]);
     }
 }

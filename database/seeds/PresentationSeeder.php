@@ -21,15 +21,5 @@ class PresentationSeeder extends Seeder
             'users_season_ID' => 2,
             'file_url' => '2.pptx'
         ]);
-
-        DB::table('presentations')->insert([
-            'users_season_ID' => 3,
-            'file_url' => '3.pptx'
-        ]);
-
-        DB::table('presentations')->insert([
-            'users_season_ID' => 4,
-            'file_url' => '4.pptx'
-        ]);
     }
 }

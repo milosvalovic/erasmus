@@ -14,9 +14,9 @@ use Intervention\Image\Facades\Image;
 
 class ReviewController extends Controller
 {
-    public function newReview()
+    public function newReview($users_season_ID)
     {
-        return view('system.student.review');
+        return view('system.student.review', ['inputs'=> array('users_season_ID' => $users_season_ID)]);
     }
 
     public function insertReview(Request $request)

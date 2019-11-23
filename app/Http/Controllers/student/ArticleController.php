@@ -11,9 +11,9 @@ use Illuminate\Support\Facades\Validator;
 
 class ArticleController extends Controller
 {
-    public function newArticle()
+    public function newArticle($users_ID, $users_season_ID)
     {
-        return view('system.student.blog');
+        return view('system.student.blog', ['inputs'=> array('users_ID' => $users_ID, 'users_season_ID' =>$users_season_ID)]);
     }
 
     public function insertArticle(Request $request)
