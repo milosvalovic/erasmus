@@ -21,7 +21,13 @@ class ProfileController extends Controller
                     $query->select('ID','date_start_mobility','date_end_mobility','mobility_ID');
                     },
                     'season.mobility' => function ($query) {
-                        $query->select('ID','info');
+                        $query->select('ID','info','partner_university_ID');
+                    },
+                    'season.mobility.university' => function ($query) {
+                        $query->select('ID','country_ID','name');
+                    },
+                    'season.mobility.university.country' => function ($query) {
+                        $query->select('ID','name');
                     },
                     'status_season' => function ($query) {
                         $query->select('ID','users_season_ID','season_status_ID')->orderBy('ID','DESC')->first();
@@ -33,6 +39,11 @@ class ProfileController extends Controller
                 ->where('users_ID','=',$userID)
                 ->get();
 
+                foreach ($mobility as $item) {
+                    $i = $item->season->mobility->university;
+                    $item->place_name = $i->name . ', ' . $i->country->name;
+                }
+
             return $mobility;
 
         }else{
@@ -41,17 +52,23 @@ class ProfileController extends Controller
     }
 
     //Ziskat vsetky prihlasky
-    public function getReistrations(){
+    public function getRegistrations(){
         if(Auth::check()) {
             $userID = Auth::user()->id;
 
             $registrations = User_Season::select('ID','users_ID','season_ID')
                 ->with([
                     'season' => function ($query) {
-                        $query->select('ID','date_start_mobility','date_end_mobility','mobility_ID');
+                        $query->select('ID','mobility_ID');
                     },
                     'season.mobility' => function ($query) {
-                        $query->select('ID','info');
+                        $query->select('ID','partner_university_ID');
+                    },
+                    'season.mobility.university' => function ($query) {
+                        $query->select('ID','country_ID','name');
+                    },
+                    'season.mobility.university.country' => function ($query) {
+                        $query->select('ID','name');
                     },
                     'status_season' => function ($query) {
                         $query->select('ID','users_season_ID','season_status_ID')->orderBy('ID','DESC')->first();
