@@ -13,7 +13,7 @@
                                 <form action="{{ route('register.post') }}" method="POST"
                                       enctype="application/x-www-form-urlencoded">
                                     <label for="firstname">@lang('app.register_input_label_firstname')</label>
-                                    <input type="text" name="firstname" id="firstname" value=""
+                                    <input type="text" name="firstname" id="firstname" value="" required
                                            placeholder="@lang('app.register_input_firstname_example')">
                                     @if ($errors->any())
                                         @foreach ($errors->get('firstname') as $error)
@@ -22,7 +22,7 @@
                                     @endif
                                     <br/>
                                         <label for="lastname">@lang('app.register_input_label_lastname')</label>
-                                        <input type="text" name="lastname" id="lastname" value=""
+                                        <input type="text" name="lastname" id="lastname" value="" required
                                                placeholder="@lang('app.register_input_lastname_example')">
                                     @if ($errors->any())
                                         @foreach ($errors->get('lastname') as $error)
@@ -31,7 +31,7 @@
                                     @endif
                                     <br/>
                                         <label for="email">@lang('app.register_input_label_email')</label>
-                                        <input type="email" name="email" id="email" value=""
+                                        <input type="email" name="email" id="email" value="" required
                                                placeholder="@lang('app.right_email_format')">
                                     @if ($errors->any())
                                         @foreach ($errors->get('email') as $error)
@@ -40,7 +40,7 @@
                                     @endif
                                     <br/>
                                         <label for="password">@lang('app.register_input_label_password')</label>
-                                        <input type="password" name="password" id="password" value=""
+                                        <input type="password" name="password" id="password" value="" required
                                                placeholder="********">
                                     @if ($errors->any())
                                         @foreach ($errors->get('password') as $error)
@@ -49,7 +49,7 @@
                                     @endif
                                     <br/>
                                         <label for="confirm-password">@lang('app.register_input_label_confirm_password')</label>
-                                        <input type="password" name="password_confirmation" id="confirm-password"
+                                        <input type="password" name="password_confirmation" id="confirm-password" required
                                                value="" placeholder="********">
                                         <br/>
                                         <input type="submit" value="@lang('app.register_input_submit')">

@@ -13,9 +13,8 @@
                                 <p>@lang('app.forget_password_description')</p>
                                 <form action="{{ route('password.email') }}" method="POST" enctype="application/x-www-form-urlencoded">
                                     <label for="email">@lang('app.forget_password_input_label_email')</label>
-                                    <input type="email" name="email" id="email" value=""
+                                    <input type="email" name="email" id="email" value="" required
                                            placeholder="@lang('app.right_email_format')">
-                                    <div class="error text-danger">Some Errors related to something</div>
                                     <br/>
                                     <input type="submit" value="@lang('app.forget_password_input_submit')">
                                     {{ csrf_field() }}

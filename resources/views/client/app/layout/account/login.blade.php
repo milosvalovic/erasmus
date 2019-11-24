@@ -15,9 +15,14 @@
                                         <h5>{{session('verify')}}</h5>
                                     </div>
                                 @endif
+                                @if (isset($error_messeage))
+                                    <div class="alert alert-danger">
+                                        <h5>{{$error_messeage}}</h5>
+                                    </div>
+                                @endif
                                 <form action="{{ route('login.post') }}" method="POST" enctype="application/x-www-form-urlencoded">
                                     <label for="email">@lang('app.login_input_label_email')</label>
-                                    <input type="email" name="email" id="email" value="" placeholder="@lang('app.right_email_format')">
+                                    <input type="email" name="email" id="email" value="" required placeholder="@lang('app.right_email_format')">
                                     @if ($errors->any())
                                         @foreach ($errors->get('email') as $error)
                                             <div class="error text-danger">{{$error}}</div>
@@ -25,7 +30,7 @@
                                     @endif
                                     <br/>
                                     <label for="password">@lang('app.login_input_label_password')</label>
-                                    <input type="password" name="password" id="password" value="" placeholder="********">
+                                    <input type="password" name="password" id="password" value="" required placeholder="********">
                                     @if ($errors->any())
                                         @foreach ($errors->get('password') as $error)
                                             <div class="error text-danger">{{$error}}</div>

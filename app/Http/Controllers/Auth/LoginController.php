@@ -20,9 +20,7 @@ class LoginController extends Controller
 
     protected function sendFailedLoginResponse(Request $request)
     {
-        throw ValidationException::withMessages([
-            $this->username() => [trans('app.login_bad')],
-        ])->redirectTo(route('login'));
+        return view('client.app.account', ['view' => 'login', 'error_messeage'=>Lang::get('app.login_bad'), 'article_in_row' => Variables::NUMBER_OF_ARTICLES_IN_ROW]);
     }
 
 
