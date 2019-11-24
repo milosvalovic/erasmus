@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Blog;
 
-
 use App\Http\Variables;
 use App\Models\Blog;
 use Illuminate\Routing\Controller;
@@ -13,14 +12,14 @@ class BlogController extends Controller
     {
         return view('client.blog.blog',
             ['articles' => $this->getArticles($perPage),
-             'in_row' => Variables::NUMBER_OF_ARTICLES_IN_ROW]);
+                'in_row' => Variables::NUMBER_OF_ARTICLES_IN_ROW]);
     }
 
     public function article($articleID)
     {
         return view('client.blog.article',
             ['article' => $this->getArticle($articleID),
-             'article_in_row' => Variables::NUMBER_OF_ARTICLES_IN_ROW]);
+                'article_in_row' => Variables::NUMBER_OF_ARTICLES_IN_ROW]);
     }
 
     private function getArticles($perPage)

@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use Dotenv\Exception\ValidationException;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
@@ -48,6 +49,11 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        return view('errors/404');
+        $errors = array("Symfony\Component\HttpKernel\Exception\NotFoundHttpException", "Symfony\Component\Debug\Exception\FatalThrowableError" , "ErrorException");
+        if(in_array(get_class($exception), $errors)){
+            return view('errors/404');
+        }else{
+            return parent::render($request, $exception);
+        }
     }
 }

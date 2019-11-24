@@ -252,6 +252,10 @@ thead.thead-color {
     font-size: 30px;
 }
 
+img{
+    padding: 5px;
+}
+
 @media screen and (max-width: 800px) {
     .column {
         -ms-flex: 50%;
@@ -297,6 +301,10 @@ div.content div.section-reviews div.review {
         width: 135px;
         display: block;
         margin: 10px auto;
+    }
+
+    div.content p{
+        text-align: center;
     }
 }
 

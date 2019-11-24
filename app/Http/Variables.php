@@ -2,7 +2,6 @@
 
 namespace App\Http;
 
-
 class Variables
 {
     const HOME_PAGE_COUNT_MOBILITY = 4;
@@ -18,13 +17,13 @@ class Variables
     const SEASON_STATUS_CANCEL_ID = 3;
     const SEASON_STATUS_DONE = 4;
 
-    const PRESENTATIONS_SAVE_PATH = 'public/uploads/presentations/';
+    const PRESENTATIONS_SAVE_PATH = 'uploads/presentations/';
     const REVIEW_IMAGE_SAVE_PATH = '/uploads/reviews/';
     const REVIEW_THUMB_IMAGE_SAVE_PATH = '/uploads/reviews/thumb/';
 
     const NUMBER_OF_VISIBLE_REVIEW_PICTURES = 16;
 
-    const REVIEW_THUMB_WIDTH = 375;
-    const REVIEW_THUMB_HEIGHT = 300;
+    const REVIEW_THUMB_WIDTH = 150;
+    const REVIEW_THUMB_HEIGHT = 113;
     const REVIEW_THUMB_QUALITY = 66;
 }

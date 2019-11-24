@@ -12,7 +12,7 @@
             'article_in_row' => $article_in_row,
             'mobilityDetail' => isset($mobilityDetail[0])?$mobilityDetail[0]:array(),
             'mobilityPrezentations' => isset($mobilityPrezentations[0])?$mobilityPrezentations[0]->presentation:array(),
-            'getMobilityImages' => isset($getMobilityReviews[0]->review[0])?$getMobilityReviews[0]->review[0]->images:array(),
+            'getMobilityImages' => isset($getMobilityImages[0]->review)?$getMobilityImages[0]->review:array(),
             'number_of_pictures' => isset($number_of_pictures)?$number_of_pictures:0,
             'getMobilityReviews' => isset($getMobilityReviews[0])?$getMobilityReviews[0]->review:array(),
         ])

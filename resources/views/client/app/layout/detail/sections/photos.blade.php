@@ -14,17 +14,21 @@
                     <ul id="lightgallery" class="list-unstyled row">
                 @endif
                         @if($loop->iteration >= $number_of_pictures)
-                            <li style="display: none" class="col-xl-3" data-responsive="{{ asset($getMobilityImage->thumb_url) }} 375" data-src="{{ asset($getMobilityImage->url) }}">
-                                <a href="">
-                                    <img class="img-responsive" src="{{ asset($getMobilityImage->thumb_url) }}">
-                                </a>
-                            </li>
+                            @foreach($getMobilityImage->images as $image)
+                                <li style="display: none;" class="col-xl-3 col-md-4" data-responsive="{{ asset($image->thumb_url) }} 375" data-src="{{ asset($image->url) }}">
+                                    <a href="">
+                                        <img class="img-responsive" src="{{ asset($image->thumb_url) }}">
+                                    </a>
+                                </li>
+                            @endforeach
                         @else
-                            <li class="col-xl-3" data-responsive="{{ asset($getMobilityImage->thumb_url) }} 375" data-src="{{ asset($getMobilityImage->url) }}">
-                                <a href="">
-                                    <img class="img-responsive" src="{{ asset($getMobilityImage->thumb_url) }}">
-                                </a>
-                            </li>
+                            @foreach($getMobilityImage->images as $image)
+                                <li class="col-xl-3 col-md-4" data-responsive="{{ asset($image->thumb_url) }} 375" data-src="{{ asset($image->url) }}">
+                                    <a href="">
+                                        <img class="img-responsive" src="{{ asset($image->thumb_url) }}">
+                                    </a>
+                                </li>
+                            @endforeach
                         @endif
                 @if($loop->last)
                     </ul>

@@ -3,6 +3,7 @@
 return [
     'required' => 'Povinné pole',
     'alpha' => 'Pole može obsahovať iba písmená',
+    'regex' => 'Pole može obsahovať iba písmená',
     'numeric' => 'Pole može obsahovať iba čísla',
     'max.string' => 'Prekročiliste maximálnú dlžku poľa',
     'date' => 'Nesprávný formát dátumu',

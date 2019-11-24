@@ -25,12 +25,12 @@ class PresentationController extends Controller
         ])->validate();
 
         $file = $request->file('file');
-
+        $file_name = now()->format('YmdHisu') . '.' . $file->getClientOriginalExtension();
         $presentation = new Presentation();
         $presentation->users_season_ID = $request->input('users_season_ID');
-        $presentation->file_url = Variables::PRESENTATIONS_SAVE_PATH . '/' . now()->format('YmdHisu') . '.' . $file->getClientOriginalExtension();
+        $presentation->file_url = Variables::PRESENTATIONS_SAVE_PATH  . $file_name;
 
-        $file->move(Variables::PRESENTATIONS_SAVE_PATH, $file->getClientOriginalName());
+        $file->move(Variables::PRESENTATIONS_SAVE_PATH, $file_name);
 
         if ($presentation->save()) {
             Session::flash('success', Lang::get('app.presentation_success_messeage'));

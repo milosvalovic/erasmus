@@ -19,7 +19,7 @@ class ArticleController extends Controller
     public function insertArticle(Request $request)
     {
         Validator::make($request->all(), [
-            'title' => 'required|alpha|max:200',
+            'title' => 'required|regex:/^[\pL\s\-]+$/u|max:200',
             'article' => 'required',
             'date' => 'required|date',
             'users_ID' => 'required|numeric',
