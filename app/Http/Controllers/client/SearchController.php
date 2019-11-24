@@ -99,6 +99,7 @@ class SearchController extends Controller
 
         return view('client.app.search',
             ['contact' => array_chunk(Contact::all()->toArray(), Variables::NUMBER_OF_CONTACT_ROW),
+                'article_in_row' => Variables::NUMBER_OF_ARTICLES_IN_ROW,
                 'office_hours' => Office_Hours::all(),
                 'address' => Address::all(),
                 'mobilities' => $sortedAllMobility,
