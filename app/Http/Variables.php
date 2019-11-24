@@ -21,6 +21,9 @@ class Variables
     const REVIEW_IMAGE_SAVE_PATH = '/uploads/reviews/';
     const REVIEW_THUMB_IMAGE_SAVE_PATH = '/uploads/reviews/thumb/';
 
+    const UNIVERSITY_IMAGE_SAVE_PATH = '/uploads/university/';
+    const UNIVERSITY_THUMB_SAVE_PATH = '/uploads/university/thumb/';
+
     const NUMBER_OF_VISIBLE_REVIEW_PICTURES = 16;
 
     const REVIEW_THUMB_WIDTH = 150;
