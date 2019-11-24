@@ -195,6 +195,8 @@ return [
     'detail_submit_button' => 'Chcem sa zúčastniť',
     'detail_from' => 'OD: ',
     'detail_to' => 'DO: ',
+    'detail_dialog_title' => 'Chyba',
+    'detail_dialog_button' => 'Zatvoriť',
     'detail_sign_up_mobility_error' => 'Lutujeme ale nepodarilo sa prihlásiť na mobilitu',
     'detail_sign_up_mobility_error_date' => 'Počas tohto dátumu prebieha iná mobilita na ktorú ste už prihláseny.',
     'detail_sign_up_mobility_error_max' => 'Počet prihlásených študentov dosiahlo maximum.',

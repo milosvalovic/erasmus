@@ -16,8 +16,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/bootstrap/bootstrap.min.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/jquery-jvectormap/jqvmap.min.css') }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('vendor/fancybox/jquery.fancybox-1.3.4.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/bootstrap-datepicker/css/bootstrap-datepicker.standalone.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('vendor/lightgallery/css/lightgallery.min.css') }}"/>
 
     <link rel="stylesheet" type="text/css" href="@yield('css')"/>
 

@@ -239,7 +239,7 @@ class DetailController extends Controller
                     'url' => url('/profil')));
             } catch (\Exception $e) {
                 \DB::rollback();
-                return json_encode(array('status' => 'success',
+                return json_encode(array('status' => 'error',
                     'reason' => Lang::get('app.detail_sign_up_mobility_error')));
             }
         }

@@ -22,7 +22,7 @@ class Variables
     const REVIEW_IMAGE_SAVE_PATH = '/uploads/reviews/';
     const REVIEW_THUMB_IMAGE_SAVE_PATH = '/uploads/reviews/thumb/';
 
-    const NUMBER_OF_VISIBLE_REVIEW_PICTURES = 20;
+    const NUMBER_OF_VISIBLE_REVIEW_PICTURES = 16;
 
     const REVIEW_THUMB_WIDTH = 375;
     const REVIEW_THUMB_HEIGHT = 300;

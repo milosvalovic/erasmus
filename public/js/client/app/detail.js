@@ -12,30 +12,16 @@ $('document').ready(function () {
             data: form.serialize(),
             success: function (data) {
                 var response = JSON.parse(data);
+                console.log(response)
                 if (response.status == "success") {
-                    window.location.href = response.url;
-                } else if (response.status == "error") {
 
+                } else if (response.status == "error") {
+                    $('#response-text').text(response.reason);
+                    $('#messeageDialog').modal('show');
                 }
             }
         });
     });
 
-    $(".sub-navigation").hide();
-    $(function () {
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 100) {
-                $('.sub-navigation').fadeIn();
-            } else {
-                $('.sub-navigation').fadeOut();
-            }
-        });
-    });
-
-
-    $("a[rel=example_group]").fancybox({
-        'transitionIn': 'none',
-        'transitionOut': 'none',
-        'titlePosition': 'over'
-    });
+    lightGallery(document.getElementById('lightgallery'));
 });

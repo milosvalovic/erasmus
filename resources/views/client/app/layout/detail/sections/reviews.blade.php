@@ -26,7 +26,7 @@
                                 @endif
                             @endwhile
                         </div>
-                        <p>{{ $getMobilityReview->review }}</p>
+                        <p class="text-center">{{ $getMobilityReview->review }}</p>
                     </div>
                 </div>
             @endforeach
