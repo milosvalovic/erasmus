@@ -34,7 +34,19 @@
                     <tbody>
                     <tr>
                         <th scope="row">1</th>
-                        <td>Študijný pobyt</td>
+                        <td>Erasmus</td>
+                        <th scope="row">
+                            <a href="/edit-role/'number'">
+                                <button type="button" class="btn btn-outline-warning">Upraviť</button>
+                            </a>
+                            <a href="/edit-role/'number'">
+                                <button type="button" class="btn btn-outline-danger">Odstrániť</button>
+                            </a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>CEEPUS</td>
                         <th scope="row">
                             <a href="/edit-role/'number'">
                                 <button type="button" class="btn btn-outline-warning">Upraviť</button>
