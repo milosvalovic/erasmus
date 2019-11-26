@@ -12,4 +12,15 @@ class CategoryMobilityController extends Controller
         return view('system.mobility_category_admin');
     }
 
+
+    public function addNewCategory()
+    {
+        /*   Add new category --BackEnd--
+        .
+        .
+        .
+         */
+
+    }
+
 }

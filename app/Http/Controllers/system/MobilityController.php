@@ -12,9 +12,5 @@ class MobilityController extends Controller
         return view('system.mobility_admin');
     }
 
-    public function add_mobility()
-    {
-        return view('system.add.add_mobility_category');
-    }
 
 }
