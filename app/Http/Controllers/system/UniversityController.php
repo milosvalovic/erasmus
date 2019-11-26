@@ -15,7 +15,7 @@ class UniversityController extends Controller
     public function universities()
     {
         $universities = University::select('*')
-            ->join('countries', 'countries.country_ID', '=', 'partner_university.ID')->get()->peginate(10);
+            ->join('countries', 'countries.ID', '=', 'partner_university.country_ID')->get();
         return view('system.universities_admin')->with(['universities' => $universities]);
     }
 
