@@ -19,9 +19,6 @@
             <div class="admin-blogs-table">
                 <div class="admin-blogs-title">
                     <h2>Správa blogov</h2>
-                    <a href="#">
-                        <button type="button" class="btn btn-outline-primary btn-add">Pridať blog</button>
-                    </a>
                 </div>
 
                 <table class="table admin-table">

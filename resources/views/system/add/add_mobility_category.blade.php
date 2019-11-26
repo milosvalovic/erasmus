@@ -6,7 +6,7 @@
 
         <div class="admin-title">
             <div class="admin-title-text">
-                <h1>Administrácia fotografií</h1>
+                <h1>Mobilita</h1>
             </div>
             <div class="admin-title-user">
                 <p>Eduard Gábel</p>
@@ -16,11 +16,12 @@
 
         <div class="admin-content">
 
-
+            Pridať novú kategóriu mobility
 
         </div>
 
         @include('system.include.footer')
+
     </div>
 @endsection
 

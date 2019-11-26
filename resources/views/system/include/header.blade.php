@@ -37,10 +37,17 @@
             </a>
         </li>
 
-        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/mobilities_category')) ? 'active' : ''}}">
+        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/mobilities_category')) ? 'active' : ''}} {{(request()->is('admin/mobilities_category/add_mobility')) ? 'active' : ''}}">
             <a class="nav-link" href="{{ action('system\CategoryMobilityController@mobility_category')}}">
                 <i class="fa fa-list-alt" aria-hidden="true"></i>
-                <span>Kategórie mobilít</span>
+                <span>Kategória mobility</span>
+            </a>
+        </li>
+
+        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/mobility_type')) ? 'active' : ''}}">
+            <a class="nav-link" href="{{ action('system\TypeMobilityController@mobility_type')}}">
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                <span>Typ mobility</span>
             </a>
         </li>
 
