@@ -75,19 +75,14 @@
                 </div>
 
                 <div class="col-xs-12 col-md-3 add-mobility-form ">
-                    <form class="form-add-mobility-type">
-                        <h3>Pridanie kategórie</h3>
+                    <form class="form-add-mobility-type" id=formNewMobilityCategory>
+                        <h3>Pridať kategóriu</h3>
                         <div class="form-group">
                             <label for="addMobilityType"> Názov:</label>
                             <input type="text" class="form-control admin-form-input" id="addMobilityType" placeholder="Študijný pobyt">
                         </div>
-                        <div class="form-group">
-                            <label for="addMobilityProperty">Property:</label>
-                            <input type="text" class="form-control admin-form-input" id="addMobilityProperty" placeholder="studijny_pobyt">
-                        </div>
-
                         <div class="form-group-button">
-                            <button class="btn btn-outline-primary btn-add">Uložiť</button>
+                            <button type="submit" class="btn btn-outline-primary btn-add">Uložiť</button>
                         </div>
                     </form>
                 </div>
