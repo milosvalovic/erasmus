@@ -11,7 +11,9 @@
             <li class="nav-item dropdown">
                 <a  class="nav-link dropdown-toggle" href="#" id="logged-user" role="button" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
-                    Meno Priezvisko
+                    @if (Auth::check())
+                    {{ Auth::user()->first_name.' '.Auth::user()->last_name }}
+                    @endif
                 </a>
                 <div class="dropdown-menu user" aria-labelledby="logged-user" id="user">
                     <a class="dropdown-item" href="{{ url('/odhlasenie') }}">@lang('app.nav_logout')</a>
