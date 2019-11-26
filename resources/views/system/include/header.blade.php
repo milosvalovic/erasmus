@@ -2,7 +2,6 @@
 <div class="admin-header">
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-        <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center"
            href="{{ action('system\SystemController@system')}}">
             <div class="sidebar-brand-icon">
@@ -11,7 +10,6 @@
             <div class="sidebar-brand-text mx-3">Erasmus</div>
         </a>
 
-        <!-- Heading -->
         <div class="sidebar-heading">
             Administrácia tabuliek
         </div>
@@ -40,7 +38,7 @@
         <li class="nav-item admin-menu-links-hover {{(request()->is('admin/mobilities_category')) ? 'active' : ''}} {{(request()->is('admin/mobilities_category/add_mobility')) ? 'active' : ''}}">
             <a class="nav-link" href="{{ action('system\CategoryMobilityController@mobility_category')}}">
                 <i class="fa fa-list-alt" aria-hidden="true"></i>
-                <span>Kategória mobility</span>
+                <span>Kategórie mobilít</span>
             </a>
         </li>
 
