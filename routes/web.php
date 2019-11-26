@@ -65,6 +65,9 @@ Route::get('/admin/mobilities', 'system\MobilityController@mobilities');
 
 Route::get('/admin/mobilities_category', 'system\CategoryMobilityController@mobility_category');
 
+Route::get('/admin/mobilities_category/add_mobility', 'system\MobilityController@add_mobility');
+
+
 Route::get('/admin/mobility_type', 'system\TypeMobilityController@mobility_type');
 
 Route::get('/admin/blogs', 'system\BlogController@blog');

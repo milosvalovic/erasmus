@@ -18,7 +18,7 @@
             <div class="admin-mobility-category-table">
                 <div class="admin-mobility-category-title">
                     <h2>Správa kategórií mobilít</h2>
-                    <a href="#">
+                    <a href="{{ action('system\MobilityController@add_mobility')}}">
                         <button type="button" class="btn btn-outline-primary btn-add">Pridať kategóriu</button>
                     </a>
                 </div>
