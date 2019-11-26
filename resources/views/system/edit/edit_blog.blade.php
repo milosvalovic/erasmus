@@ -6,7 +6,7 @@
 
         <div class="admin-title">
             <div class="admin-title-text">
-                <h1>Administrácia fotografií</h1>
+                <h1>Blogy</h1>
             </div>
             <div class="admin-title-user">
                 <p>Eduard Gábel</p>
@@ -21,6 +21,7 @@
         </div>
 
         @include('system.include.footer')
+
     </div>
 @endsection
 
