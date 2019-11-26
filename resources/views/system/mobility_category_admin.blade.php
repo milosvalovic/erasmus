@@ -30,11 +30,13 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($mobilityCategories as $category)
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Erasmus</td>
+                                <th scope="row">{{$category->ID}}</th>
+                                <td>{{$category->name}}</td>
                                 <th scope="row">
-                                    <a href="/edit-role/'number'">
+{{--                                    {{ action('CategoryMobilityController@mobilityCategoryShow',['id' => $category->ID]) }}--}}
+                                    <a href="/admin/mobilities_category/edit_mobility/{{$category->ID}}">
                                         <button type="button" class="btn btn-outline-warning">Upraviť</button>
                                     </a>
                                     <a href="/edit-role/'number'">
@@ -42,20 +44,7 @@
                                     </a>
                                 </th>
                             </tr>
-                            @for ($i = 0; $i < 9; $i++)
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>CEEPUS</td>
-                                <th scope="row">
-                                    <a href="/edit-role/'number'">
-                                        <button type="button" class="btn btn-outline-warning">Upraviť</button>
-                                    </a>
-                                    <a href="/edit-role/'number'">
-                                        <button type="button" class="btn btn-outline-danger">Odstrániť</button>
-                                    </a>
-                                </th>
-                            </tr>
-                                @endfor
+                            @endforeach
                             </tbody>
                         </table>
                         <nav class="admin-users-pagination" aria-label="Page navigation example">

@@ -63,9 +63,11 @@ Route::get('/admin/roles', 'system\UserRoleController@roles');
 
 Route::get('/admin/mobilities', 'system\MobilityController@mobilities');
 
-Route::get('/admin/mobilities_category', 'system\CategoryMobilityController@mobility_category');
+
 
 Route::get('/admin/mobilities_category', 'system\CategoryMobilityController@mobility_category');
+
+Route::get('/admin/mobilities_category/edit_mobility/{id}',['as' => 'edit','category' => 'system\CategoryMobilityController@mobilityCategoryShow']);
 
 Route::get('/admin/mobilities_category/add_mobility', 'system\MobilityController@add_mobility');
 
