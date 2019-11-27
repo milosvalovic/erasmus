@@ -19,8 +19,8 @@
                 <form class="form-add-mobility-type" id=formNewMobilityCategory>
                     <h3>Editácia</h3>
                     <div class="form-group">
-                        <label for="addMobilityType"> Názov:</label>
-                        <input type="text" class="form-control admin-form-input" id="addMobilityType" placeholder="Študijný pobyt">
+                        <label for="addMobilityCategory"> Názov:</label>
+                        <input type="text" class="form-control admin-form-input" id="addMobilityCategory" placeholder="Študijný pobyt">
                     </div>
                     <div class="form-group-button">
                         <button type="submit" class="btn btn-outline-primary btn-add">Uložiť</button>

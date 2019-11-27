@@ -17,7 +17,7 @@
         <div class="admin-content">
             <div class="admin-office-hours-table">
                 <div class="admin-office-hours-title">
-                    <h2>Správa rolí</h2>
+                    <h2>Spravovanie rolí</h2>
                     <a href="#">
                         <button type="button" class="btn btn-outline-primary btn-add">Pridať rolu</button>
                     </a>

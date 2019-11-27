@@ -17,7 +17,7 @@
         <div class="admin-content">
             <div class="admin-mobilities-table">
                 <div class="admin-mobilities-title">
-                    <h2>Správa mobilít</h2>
+                    <h2>Spravovanie mobilít</h2>
                     <a href="#">
                         <button type="button" class="btn btn-outline-primary btn-add">Pridať mobilitu</button>
                     </a>

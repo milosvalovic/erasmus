@@ -18,7 +18,7 @@
 
             <div class="admin-FAQ-table">
                 <div class="admin-images-title">
-                    <h2>Správa faq</h2>
+                    <h2>Spravovanie faq</h2>
                     <a href="#">
                         <button type="button" class="btn btn-outline-primary btn-add">Pridať faq</button>
                     </a>

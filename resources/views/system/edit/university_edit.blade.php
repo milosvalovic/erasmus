@@ -16,7 +16,7 @@
 
         <div class="admin-content">
             <div class="admin-edit-div">
-                <form class="form-add-mobility-type" id=formNewUniversity>
+                <form class="form-add-mobility-type" id=formEditUniversity>
                     <h3>Upraviť univerzitu</h3>
                     <div class="form-group">
                         <label for="editUniversityName">Meno:</label>

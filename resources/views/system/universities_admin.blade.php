@@ -19,9 +19,8 @@
                 <div class="col-xs-12 col-md-8">
                     <div class="admin-universities-table">
                         <div class="admin-universities-title">
-                            <h2>Správa univerzít</h2>
+                            <h2>Spravovanie univerzít</h2>
                         </div>
-
                         <table class="table admin-table">
                             <thead>
                             <tr>
@@ -57,7 +56,6 @@
                             @endforeach
                             </tbody>
                         </table>
-
                         <nav class="admin-users-pagination">
                             <ul class="pagination">
                                 <li class="page-item disabled">
