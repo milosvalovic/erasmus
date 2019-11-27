@@ -33,33 +33,33 @@ class UserController extends Controller
         }
 
         $user = User::create([
-            'first_name' => $request->firstname,
-            'last_name' => $request->lastname,
-            'email' => $request->email,
+            'first_name' => $request->input('firstname'),
+            'last_name' => $request->input('lastname'),
+            'email' => $request->input('email'),
             'newsletter' => 0,
             'verified' => 1,
-            'password' => bcrypt($request->firstname),
+            'password' => bcrypt($request->input('password')),
         ]);
 
         $user->roles()
-            ->attach(Role::where('name', $request->role)->first());
+            ->attach(Role::where('name', $request->input('role'))->first());
     }
 
     public function deleteUser($id)
     {
         User::where('id', '=', $id)->delete();
+        return redirect('/admin/users/');
     }
 
     public function editUser(Request $request)
     {
-        $user = User::find($request->id);
-        $user->first_name = $request->first_name;
-        $user->last_name = $request->last_name;
-        $user->email = $request->email;
-        $user->password = bcrypt($request->password);
+        $user = User::find($request->input('id'));
+        $user->first_name = $request->input('first_name');
+        $user->last_name = $request->input('last_name');
+        $user->email = $request->input('email');
         $user->save();
 
-        $user->roles()->sync([$request->role]);
+        $user->roles()->sync($request->input('role_ID'));
     }
 
     public function validateCreate($request){
@@ -67,7 +67,7 @@ class UserController extends Controller
             'email' => 'required|email|unique:users',
             'first_name' => 'required|string|max:50',
             'last_name' => 'required|string|max:50',
-            'password' => 'required|string|'
+            'password' => 'required|string'
         ]);
 
         return $validator;
