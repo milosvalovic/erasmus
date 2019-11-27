@@ -18,7 +18,7 @@
 
             <div class="user-table-wrapper">
                 <div class="user-table-title">
-                    <h2>Správa používateľov</h2>
+                    <h2>Spravovanie používateľov</h2>
                     <a href="#">
                         <button type="button" class="btn btn-outline-primary btn-add">Pridať používateľa</button>
                     </a>

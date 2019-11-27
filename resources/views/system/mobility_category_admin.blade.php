@@ -6,7 +6,7 @@
 
         <div class="admin-title">
             <div class="admin-title-text">
-                <h1>Kategórie pre mobility</h1>
+                <h1>Kategórie mobilít</h1>
             </div>
             <div class="admin-title-user">
                 <p>Eduard Gábel</p>
@@ -19,7 +19,7 @@
                 <div class="col-xs-12 col-md-8">
                     <div class="admin-mobility-category-table">
                         <div class="admin-mobility-category-title">
-                            <h2>Výpis kategórií</h2>
+                            <h2>Spravovanie kategórií</h2>
                         </div>
                         <table class="table admin-table">
                             <thead>
@@ -70,7 +70,7 @@
                             <input type="text" class="form-control admin-form-input" id="addMobilityType" placeholder="Študijný pobyt" name="name">
                         </div>
                         <div class="form-group-button">
-                            <button type="submit" class="btn btn-outline-primary btn-add">Uložiť</button>
+                            <button type="submit" class="btn btn-outline-primary btn-add">Pridať</button>
                         </div>
                         {{csrf_field()}}
                     </form>

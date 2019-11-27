@@ -78,6 +78,8 @@ Route::get('/admin/mobilities_category/delete/{id}', 'system\CategoryMobilityCon
 /*------Mobility type-------*/
 Route::get('/admin/mobility_type', 'system\TypeMobilityController@mobility_type');
 
+Route::get('/admin/mobility_type/edit_mobility/{id}',['as' => 'edit_type','uses' => 'system\TypeMobilityController@mobilityTypeShowEdit']);
+
 Route::get('/admin/blogs', 'system\BlogController@blog');
 
 
@@ -85,7 +87,6 @@ Route::get('/admin/blogs', 'system\BlogController@blog');
 Route::get('/admin/universities', 'system\UniversityController@universities');
 
 Route::get('/admin/universities/edit_university/{id}',['as' => 'edit_university','uses' => 'system\UniversityController@universityEditShow']);
-
 
 
 Route::get('/admin/images', 'system\ImageController@images');
