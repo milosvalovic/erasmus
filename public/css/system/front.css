@@ -46,6 +46,13 @@ body {
     font-size: 14px;
 }
 
+.admin-edit-div{
+    padding: 20px;
+    width: 350px;
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+}
+
 
 /*-----------------ADMIN table-----------------------*/
 .admin-table{
@@ -305,6 +312,7 @@ a[class='page-link']:hover{
 .form-group-button > button{
     padding: 5px 30px;
 }
+/*-----Edit mobility type----*/
 
 
 /*-----------------Mobility type page---------------------*/

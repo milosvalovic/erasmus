@@ -35,8 +35,7 @@
                                 <th scope="row">{{$category->ID}}</th>
                                 <td>{{$category->name}}</td>
                                 <th scope="row">
-{{--                                    {{ action('CategoryMobilityController@mobilityCategoryShow',['id' => $category->ID]) }}--}}
-                                    <a href="/admin/mobilities_category/edit_mobility/{{$category->ID}}">
+                                    <a href="{{ action('system\CategoryMobilityController@mobilityCategoryShow',['id' => $category->ID]) }}">
                                         <button type="button" class="btn btn-outline-warning">Upraviť</button>
                                     </a>
                                     <a href="/edit-role/'number'">
