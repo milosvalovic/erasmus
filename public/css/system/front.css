@@ -47,8 +47,21 @@ body {
 }
 
 .admin-edit-div{
+    margin: 20px;
     padding: 20px;
-    width: 350px;
+    width: 400px;
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+}
+
+/*Adding new content admin*/
+.admin-add-new-item-div{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.admin-add-new-item-div > form{
+    padding: 30px;
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
 }
@@ -285,17 +298,6 @@ a[class='page-link']:hover{
 }
 
 /*-----Add mobility type----*/
-.add-mobility-form{
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.add-mobility-form > form.form-add-mobility-type{
-    padding: 30px;
-    border: 1px solid #CED0D5;
-    box-shadow: 0 0 15px #cecece;
-}
-
 .form-add-mobility-type > h3{
     color: #565960;
 }
@@ -312,7 +314,6 @@ a[class='page-link']:hover{
 .form-group-button > button{
     padding: 5px 30px;
 }
-/*-----Edit mobility type----*/
 
 
 /*-----------------Mobility type page---------------------*/
@@ -327,6 +328,7 @@ a[class='page-link']:hover{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 20px;
 }
 
 
@@ -342,6 +344,7 @@ a[class='page-link']:hover{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 20px;
 }
 
 
@@ -350,13 +353,22 @@ a[class='page-link']:hover{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
     padding: 10px;
-    margin-top: 30px;
 }
 
 .admin-universities-title{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 20px;
+}
+
+/*----Edit university-----*/
+.admin-edit-university-image{
+    vertical-align: middle;
+    border-style: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 20px 0;
 }
 
 
@@ -365,28 +377,28 @@ a[class='page-link']:hover{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
     padding: 10px;
-    margin-top: 30px;
 }
 
 .admin-images-title{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 20px;
 }
 
 
-/*-------------ADMIN FAQ page----------------------------*/
+/*-------------FAQ page----------------------------*/
 .admin-FAQ-table{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
     padding: 10px;
-    margin-top: 30px;
 }
 
 .admin-images-title{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 20px;
 }
 
 
@@ -395,13 +407,13 @@ a[class='page-link']:hover{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
     padding: 10px;
-    margin-top: 30px;
 }
 
 .admin-office-hours-title{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 20px;
 }
 
 

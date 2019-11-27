@@ -62,7 +62,7 @@
                     </div>
                 </div>
 
-                <div class="col-xs-12 col-md-3 add-mobility-form ">
+                <div class="col-xs-12 col-md-3 admin-add-new-item-div">
                     <form class="form-add-mobility-type" id=formNewMobilityCategory>
                         <h3>Pridať kategóriu</h3>
                         <div class="form-group">
