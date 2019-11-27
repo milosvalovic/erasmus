@@ -117,5 +117,11 @@ class UniversityController extends Controller
 
     }
 
+    public function universityEditShow($id)
+    {
+        $university = University::find($id);
+        return view("system.edit.university_edit", ['university' => $university]);
+    }
+
 
 }

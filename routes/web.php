@@ -54,7 +54,8 @@ Route::get('profil/recenzia/nova/{users_season_ID}', 'student\ReviewController@n
 Route::post('profil/recenzia/ulozit', ['as' => 'insert-review', 'uses' => 'student\ReviewController@insertReview'])->middleware('auth');
 
 
-// Admin routes
+
+/*-------------------- Admin routes--------------------------*/
 Route::get('/admin', 'system\SystemController@system');
 
 Route::get('/admin/users', 'system\UserController@users');
@@ -64,19 +65,25 @@ Route::get('/admin/roles', 'system\UserRoleController@roles');
 Route::get('/admin/mobilities', 'system\MobilityController@mobilities');
 
 
-
+/*------Mobility category-------*/
 Route::get('/admin/mobilities_category', 'system\CategoryMobilityController@mobility_category');
 
 Route::get('/admin/mobilities_category/edit_mobility/{id}',['as' => 'edit_mobility','uses' => 'system\CategoryMobilityController@mobilityCategoryShow']);
 
 Route::get('/admin/mobilities_category/add_mobility', 'system\MobilityController@add_mobility');
 
-
+/*------Mobility type-------*/
 Route::get('/admin/mobility_type', 'system\TypeMobilityController@mobility_type');
 
 Route::get('/admin/blogs', 'system\BlogController@blog');
 
+
+/*------University-------*/
 Route::get('/admin/universities', 'system\UniversityController@universities');
+
+Route::get('/admin/universities/edit_university/{id}',['as' => 'edit_university','uses' => 'system\UniversityController@universityEditShow']);
+
+
 
 Route::get('/admin/images', 'system\ImageController@images');
 
