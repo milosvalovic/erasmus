@@ -44,10 +44,10 @@
                             <td>{{$item->email}}</td>
                             <td>{{$item->name}}</td>
                             <th scope="row">
-                                <a href="/edit-user/{{$item->user_id}}">
+                                <a href="/{{route('editUserForm',['id'=>$item->user_id])}}">
                                     <button type="button" class="btn btn-outline-warning">Upraviť</button>
                                 </a>
-                                <a href="/delete-user/{{$item->user_id}}">
+                                <a href="{{route('deleteUser',['id'=>$item->user_id])}}">
                                     <button type="button" class="btn btn-outline-danger">Odstrániť</button>
                                 </a>
                             </th>
