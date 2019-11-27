@@ -16,15 +16,17 @@
 
         <div class="admin-content">
             <div class="admin-edit-div">
-                <form class="form-add-mobility-type" id=formNewMobilityCategory>
+                <form class="form-add-mobility-type" id=formNewMobilityCategory method="post" action="{{route('editCategory')}}">
                     <h3>Editácia</h3>
                     <div class="form-group">
                         <label for="addMobilityType"> Názov:</label>
-                        <input type="text" class="form-control admin-form-input" id="addMobilityType" placeholder="Študijný pobyt">
+                        <input type="hidden" value="{{$id}}" name="id">
+                        <input type="text" class="form-control admin-form-input" id="addMobilityType" name="name" placeholder="Študijný pobyt" value="{{$category->name}}">
                     </div>
                     <div class="form-group-button">
                         <button type="submit" class="btn btn-outline-primary btn-add">Uložiť</button>
                     </div>
+                    {{csrf_field()}}
                 </form>
             </div>
         </div>

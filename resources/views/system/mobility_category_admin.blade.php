@@ -38,7 +38,7 @@
                                     <a href="{{ action('system\CategoryMobilityController@mobilityCategoryShow',['id' => $category->ID]) }}">
                                         <button type="button" class="btn btn-outline-warning">Upraviť</button>
                                     </a>
-                                    <a href="/edit-role/'number'">
+                                    <a href="{{route('deleteCategory',['id'=>$category->ID])}}">
                                         <button type="button" class="btn btn-outline-danger">Odstrániť</button>
                                     </a>
                                 </th>
@@ -63,15 +63,16 @@
                 </div>
 
                 <div class="col-xs-12 col-md-3 admin-add-new-item-div">
-                    <form class="form-add-mobility-type" id=formNewMobilityCategory>
+                    <form method="post" class="form-add-mobility-type" id=formNewMobilityCategory action="{{action('system\CategoryMobilityController@addNewCategory')}}">
                         <h3>Pridať kategóriu</h3>
                         <div class="form-group">
                             <label for="addMobilityType"> Názov:</label>
-                            <input type="text" class="form-control admin-form-input" id="addMobilityType" placeholder="Študijný pobyt">
+                            <input type="text" class="form-control admin-form-input" id="addMobilityType" placeholder="Študijný pobyt" name="name">
                         </div>
                         <div class="form-group-button">
                             <button type="submit" class="btn btn-outline-primary btn-add">Uložiť</button>
                         </div>
+                        {{csrf_field()}}
                     </form>
                 </div>
             </div>

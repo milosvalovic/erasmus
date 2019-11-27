@@ -70,7 +70,10 @@ Route::get('/admin/mobilities_category', 'system\CategoryMobilityController@mobi
 
 Route::get('/admin/mobilities_category/edit_mobility/{id}',['as' => 'edit_mobility','uses' => 'system\CategoryMobilityController@mobilityCategoryShow']);
 
-Route::get('/admin/mobilities_category/add_mobility', 'system\MobilityController@add_mobility');
+Route::post('/admin/mobilities_category/add_mobility', 'system\CategoryMobilityController@addNewCategory');
+Route::post('/admin/mobilities_category/edit_mobility', 'system\CategoryMobilityController@editCategory')->name('editCategory');
+
+Route::get('/admin/mobilities_category/delete/{id}', 'system\CategoryMobilityController@deleteCategory')->name('deleteCategory');
 
 /*------Mobility type-------*/
 Route::get('/admin/mobility_type', 'system\TypeMobilityController@mobility_type');
