@@ -105,7 +105,7 @@
                             <input type="file" class="form-control admin-form-input" id="addNewUniversityImage" name="universityImage">
                         </div>
                         <div class="form-group-button">
-                            <button type="submit" class="btn btn-outline-primary btn-add">Uložiť</button>
+                            <button type="submit" class="btn btn-outline-primary btn-add">Pridať</button>
                         </div>
                     </form>
                 </div>

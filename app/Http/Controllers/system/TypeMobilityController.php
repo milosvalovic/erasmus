@@ -14,4 +14,10 @@ class TypeMobilityController extends Controller
         return view('system.mobility_type_admin',['mobility_types' => $mobilityTypes]);
     }
 
+    public function mobilityTypeShowEdit($id)
+    {
+        $mobilityType = Mobility_Type::find($id);
+        return view ('system.edit.mobility_type_edit', ['mobilityType' => $mobilityType]);
+    }
+
 }

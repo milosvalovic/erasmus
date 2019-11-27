@@ -35,7 +35,7 @@
                                     <th scope="row">{{$mobilityType->ID}}</th>
                                     <td>{{$mobilityType->name}}</td>
                                     <th scope="row">
-                                        <a href="/edit_category_type/'number'">
+                                        <a href="{{ action('system\TypeMobilityController@mobilityTypeShowEdit',['id' => $mobilityType->ID]) }}">
                                             <button type="button" class="btn btn-outline-warning">Upraviť</button>
                                         </a>
                                         <a href="/delete_category_type/'number'">
@@ -69,7 +69,7 @@
                             <input type="text" class="form-control admin-form-input" id="addMobilityType" placeholder="Študijný pobyt">
                         </div>
                         <div class="form-group-button">
-                            <button type="submit" class="btn btn-outline-primary btn-add">Uložiť</button>
+                            <button type="submit" class="btn btn-outline-primary btn-add">Pridať</button>
                         </div>
                     </form>
                 </div>

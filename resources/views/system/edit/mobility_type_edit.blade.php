@@ -6,7 +6,7 @@
 
         <div class="admin-title">
             <div class="admin-title-text">
-                <h1>Editácia kategórie</h1>
+                <h1>Editácia typu mobility</h1>
             </div>
             <div class="admin-title-user">
                 <p>Eduard Gábel</p>
@@ -16,11 +16,12 @@
 
         <div class="admin-content">
             <div class="admin-edit-div">
-                <form class="form-add-mobility-category" id=formNewMobilityCategory>
-                    <h3>Editácia</h3>
+                <form class="form-add-mobility-type" id="formEditMobilityType">
+                    <h3>Upraviť typ</h3>
                     <div class="form-group">
-                        <label for="addMobilityCategory"> Názov:</label>
-                        <input type="text" class="form-control admin-form-input" id="addMobilityCategory" placeholder="Študijný pobyt">
+                        <label for="editMobilityType">Názov:</label>
+                        <input type="text" class="form-control admin-form-input" id="editMobilityType" placeholder="Študijný pobyt"
+                               name="editMobilityTypeName">
                     </div>
                     <div class="form-group-button">
                         <button type="submit" class="btn btn-outline-primary btn-add">Uložiť</button>

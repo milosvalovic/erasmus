@@ -19,7 +19,7 @@ body {
 .admin-content{
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 20px 20px 20px 40px;
     grid-area: content;
     position: relative;
 }
@@ -87,7 +87,7 @@ table.admin-table tr th a{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 20px;
+    padding: 20px 40px 20px 40px;
     grid-area: title;
 }
 

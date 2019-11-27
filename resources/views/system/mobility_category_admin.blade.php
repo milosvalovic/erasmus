@@ -6,7 +6,7 @@
 
         <div class="admin-title">
             <div class="admin-title-text">
-                <h1>Kategórie pre mobility</h1>
+                <h1>Kategórie mobilít</h1>
             </div>
             <div class="admin-title-user">
                 <p>Eduard Gábel</p>
@@ -70,7 +70,7 @@
                             <input type="text" class="form-control admin-form-input" id="addMobilityCategory" placeholder="ERAZMUS">
                         </div>
                         <div class="form-group-button">
-                            <button type="submit" class="btn btn-outline-primary btn-add">Uložiť</button>
+                            <button type="submit" class="btn btn-outline-primary btn-add">Pridať</button>
                         </div>
                     </form>
                 </div>
