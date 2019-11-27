@@ -18,7 +18,7 @@
 
             <div class="admin-blogs-table">
                 <div class="admin-blogs-title">
-                    <h2>Správa blogov</h2>
+                    <h2>Spravovanie blogov</h2>
                 </div>
 
                 <table class="table admin-table">
