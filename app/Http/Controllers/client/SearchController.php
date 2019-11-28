@@ -6,6 +6,8 @@ use App\Models\Address;
 use App\Models\Contact;
 use App\Models\Mobility_Type;
 use App\Models\Office_Hours;
+use App\Models\Country;
+use App\Models\University;
 use Illuminate\Http\Request;
 use App\Models\Mobility;
 use Illuminate\Routing\Controller;
@@ -114,5 +116,19 @@ class SearchController extends Controller
                     "rating" => $ratingSearch,
                 )
             ]);
+    }
+
+    public function getAutocompleteCountries($value)
+    {
+        $countries = Country::where('name','LIKE','%'.$value.'%')->pluck('ID','name');
+
+        return $countries;
+    }
+
+    public function getAutocompleteUniversity($value)
+    {
+        $university = University::where('name','LIKE','%'.$value.'%')->pluck('ID','name');
+
+        return $university;
     }
 }

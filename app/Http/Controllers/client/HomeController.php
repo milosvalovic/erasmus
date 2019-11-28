@@ -8,6 +8,7 @@ use App\Models\Office_Hours;
 use App\Models\Mobility;
 use App\Models\University;
 use App\Models\Mobility_Type;
+use App\Models\Category;
 use App\Http\Variables;
 use Illuminate\Routing\Controller;
 use Carbon\Carbon;
@@ -21,6 +22,7 @@ class HomeController extends Controller
                 'office_hours' => Office_Hours::all(), 'address' => Address::all(),
                 'mobilities' => $this->getTopMobility(),
                 'type' => Mobility_Type::pluck('name', 'id'),
+                'category' => Category::pluck('name', 'id'),
                 'mobility_in_row' => Variables::NUMBER_OF_MOBILITIES_IN_ROW,
                 'article_in_row' => Variables::NUMBER_OF_ARTICLES_IN_ROW
             ]);
