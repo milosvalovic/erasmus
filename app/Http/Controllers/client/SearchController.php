@@ -23,8 +23,8 @@ class SearchController extends Controller
         $countrySearch = $request->input('country');
         $universitySearch = $request->input('university');
         $typeSearch = $request->input('stays');
-        $grandSearch = $request->('grand');
-        $categorySearch = $request->('category');
+        $grandSearch = $request->input('grand');
+        $categorySearch = $request->input('category');
         $dateStartSearch = ($request->input('from') == '') ? '' : date("Y-m-d", strtotime($request->input('from')));
         $dateEndSearch = ($request->input('to') == '') ? '' : date("Y-m-d", strtotime($request->input('to')));
         $ratingSearch = $request->input('rating');
