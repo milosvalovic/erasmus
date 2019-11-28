@@ -21,6 +21,8 @@ class SearchController extends Controller
         $countrySearch = $request->input('country');
         $universitySearch = $request->input('university');
         $typeSearch = $request->input('stays');
+        $grandSearch = $request->('grand');
+        $categorySearch = $request->('category');
         $dateStartSearch = ($request->input('from') == '') ? '' : date("Y-m-d", strtotime($request->input('from')));
         $dateEndSearch = ($request->input('to') == '') ? '' : date("Y-m-d", strtotime($request->input('to')));
         $ratingSearch = $request->input('rating');
@@ -59,6 +61,16 @@ class SearchController extends Controller
             ->when($universitySearch, function ($query) use ($universitySearch) {
                 return $query->whereHas('university', function ($query) use ($universitySearch) {
                     $query->where('acronym', 'like', '%' . $universitySearch . '%')->orWhere('name', 'like', '%' . $universitySearch . '%');
+                });
+            })
+            ->when($grandSearch, function ($query) use ($grandSearch) {
+                return $query->whereHas('university', function ($query) use ($grandSearch) {
+                    $query->where('grand', '>=', $grandSearch);
+                });
+            })
+            ->when($categorySearch, function ($query) use ($categorySearch) {
+                return $query->whereHas('category', function ($query) use ($categorySearch) {
+                    $query->where('ID', '=', $categorySearch);
                 });
             })
             ->when($typeSearch, function ($query) use ($typeSearch) {
