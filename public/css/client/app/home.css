@@ -200,76 +200,116 @@ div.search-modal {
     box-shadow: 10px 10px 17px -7px rgba(0, 0, 0, 0.75);
 }
 
-div.input-items {
-    overflow: auto;
-}
-
-div.input-items > form > label {
-    position: absolute;
-    font-family: Cairo-SemiBold, serif;
-    color: #000;
-}
-
-div.input-items > form > input, select {
+.typeahead, .tt-query, .tt-hint {
     width: 49%;
     height: 50px;
-    position: relative;
-    top: 23px;
     font-family: Cairo-Regular, serif;
     font-size: 20px;
     padding-left: 10px;
-    margin-bottom: 35px;
     border: solid 1px #a6a6a6;
 }
-
-div.input-items > form > select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background: url(../../../img/drop_down_arrow.gif) 96% / 15% no-repeat;
-    background-size: 25px 15px;
+.typeahead {
+    background-color: #FFFFFF;
+}
+.typeahead:focus {
+    border: 2px solid #0097CF;
+}
+.tt-query {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.tt-hint {
+    color: #999999;
+}
+.tt-menu {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 8px 0;
+    width: 422px;
+}
+.tt-suggestion {
+    font-size: 22px;
+    padding: 3px 20px;
+}
+.tt-suggestion:hover {
+    cursor: pointer;
+    background-color: #0097CF;
+    color: #FFFFFF;
+}
+.tt-suggestion p {
+    margin: 0;
 }
 
-div.input-items > form > input, select > option {
-    font-family: Cairo-Regular, serif;
-    font-size: 20px;
-}
+/*div.input-items {*/
+/*overflow: auto;*/
+/*}*/
 
-div.input-items > form > input[name="country"], input[name="university"], input[name="from"] {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    left: 2px;
-}
+/*div.input-items > form > label {*/
+/*position: absolute;*/
+/*font-family: Cairo-SemiBold, serif;*/
+/*color: #000;*/
+/*}*/
 
-div.input-items > form > select[name="stays"], select[name="rating"], input[name="to"] {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    right: 3px;
-}
+/*div.input-items > form > input, select {*/
+/*width: 49%;*/
+/*height: 50px;*/
+/*position: relative;*/
+/*top: 23px;*/
+/*font-family: Cairo-Regular, serif;*/
+/*font-size: 20px;*/
+/*padding-left: 10px;*/
+/*margin-bottom: 35px;*/
+/*border: solid 1px #a6a6a6;*/
+/*}*/
 
-div.input-items > form > select[name="stays"], select[name="rating"]::selection {
-    font-family: Cairo-Regular, serif;
-    font-size: 20px;
-}
+/*div.input-items > form > select {*/
+/*-webkit-appearance: none;*/
+/*-moz-appearance: none;*/
+/*appearance: none;*/
+/*background: url(../../../img/drop_down_arrow.gif) 96% / 15% no-repeat;*/
+/*background-size: 25px 15px;*/
+/*}*/
 
-div.input-items > form > select[name="rating"], select[name="stays"]::selection {
-    font-family: Cairo-Regular, serif;
-    font-size: 20px;
-}
+/*div.input-items > form > input, select > option {*/
+/*font-family: Cairo-Regular, serif;*/
+/*font-size: 20px;*/
+/*}*/
 
-div.input-items > form > input[type="submit"] {
-    width: 110px;
-    float: right;
-    font-family: Cairo-Bold, serif;
-    border: solid 1px #898989;
-    border-radius: 5px;
-    background: #007183;
-    color: white;
-}
+/*div.input-items > form > input[name="country"], input[name="university"], input[name="from"] {*/
+/*border-top-left-radius: 5px;*/
+/*border-bottom-left-radius: 5px;*/
+/*left: 2px;*/
+/*}*/
 
-div.input-items > form > input[type="submit"]:hover {
-    background: #004351;
-}
+/*div.input-items > form > select[name="stays"], select[name="rating"], input[name="to"] {*/
+/*border-top-right-radius: 5px;*/
+/*border-bottom-right-radius: 5px;*/
+/*right: 3px;*/
+/*}*/
+
+/*div.input-items > form > select[name="stays"], select[name="rating"]::selection {*/
+/*font-family: Cairo-Regular, serif;*/
+/*font-size: 20px;*/
+/*}*/
+
+/*div.input-items > form > select[name="rating"], select[name="stays"]::selection {*/
+/*font-family: Cairo-Regular, serif;*/
+/*font-size: 20px;*/
+/*}*/
+
+/*div.input-items > form > input[type="submit"] {*/
+/*width: 110px;*/
+/*float: right;*/
+/*font-family: Cairo-Bold, serif;*/
+/*border: solid 1px #898989;*/
+/*border-radius: 5px;*/
+/*background: #007183;*/
+/*color: white;*/
+/*}*/
+
+/*div.input-items > form > input[type="submit"]:hover {*/
+/*background: #004351;*/
+/*}*/
 
 div#current-opportunities .badge.badge-secondary {
     color: #ffffff;
