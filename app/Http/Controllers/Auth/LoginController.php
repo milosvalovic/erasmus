@@ -20,7 +20,7 @@ class LoginController extends Controller
 
     protected function sendFailedLoginResponse(Request $request)
     {
-        return view('client.app.account', ['view' => 'login', 'error_messeage'=>Lang::get('app.login_bad'), 'article_in_row' => Variables::NUMBER_OF_ARTICLES_IN_ROW]);
+        return view('client.app.account', ['view' => 'login', 'error_messeage' => Lang::get('app.login_bad'), 'article_in_row' => Variables::NUMBER_OF_ARTICLES_IN_ROW]);
     }
 
 
@@ -47,6 +47,8 @@ class LoginController extends Controller
             return redirect('/dashboard');
         } else if ($user->hasRole("administrator")) {
             return redirect('/dashboard');
+        } else {
+            //TODO presmerovať na 404
         }
     }
 
