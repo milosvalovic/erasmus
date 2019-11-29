@@ -6,7 +6,7 @@
 
         <div class="admin-title">
             <div class="admin-title-text">
-                <h1>Editácia kategórie</h1>
+                <h1>Editácia záznamu otváracích hodín</h1>
             </div>
             <div class="admin-title-user">
                 <p>Eduard Gábel</p>
@@ -16,17 +16,21 @@
 
         <div class="admin-content">
             <div class="admin-edit-div">
-                <form class="form-edit-mobility-category" id=formEditMobilityCategory method="post" action="{{route('editCategory')}}">
-                    <h3>Editácia</h3>
+                <form class="form-edit-hour" id="formEditOfficeHour" method="post" action="">
+                    <h3>Editovať deň - <span>'{{ $item->day }}'</span></h3>
                     <div class="form-group">
-                        <label for="addMobilityCategory"> Názov:</label>
-                        <input type="hidden" value="{{$id}}" name="id">
-                        <input type="text" class="form-control admin-form-input" id="addMobilityCategory" name="name" placeholder="Študijný pobyt" value="{{$category->name}}">
+                        <label for="editHourFrom">Od:</label>
+                        <input type="text" class="form-control admin-form-input" id="editHourFrom" placeholder=""
+                               name="hourFrom" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="editHourTo">Do:</label>
+                        <input type="text" class="form-control admin-form-input" id="editHourTo" placeholder=""
+                               name="hourTo" value="">
                     </div>
                     <div class="form-group-button">
                         <button type="submit" class="btn btn-outline-primary btn-add">Uložiť</button>
                     </div>
-                    {{csrf_field()}}
                 </form>
             </div>
         </div>
