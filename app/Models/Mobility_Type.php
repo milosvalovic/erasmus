@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Mobility_Type extends Model
 {
+    protected $primaryKey = 'ID';
     protected $table = 'mobility_types';
     protected $fillable= ['name'];
 
