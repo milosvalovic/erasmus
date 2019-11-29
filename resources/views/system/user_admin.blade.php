@@ -38,16 +38,16 @@
                     <tbody>
                     @foreach($users as $item)
                         <tr>
-                            <th scope="row">{{$item->user_id}}</th>
+                            <th scope="row">{{$item->id}}</th>
                             <td>{{$item->first_name}}</td>
                             <td>{{$item->last_name}}</td>
                             <td>{{$item->email}}</td>
-                            <td>{{$item->name}}</td>
+                            <td>{{$item->roles->name}}</td>
                             <th scope="row">
-                                <a href="/{{route('editUserForm',['id'=>$item->user_id])}}">
+                                <a href="/{{route('editUserForm',['id'=>$item->id])}}">
                                     <button type="button" class="btn btn-outline-warning">Upraviť</button>
                                 </a>
-                                <a href="{{route('deleteUser',['id'=>$item->user_id])}}">
+                                <a href="{{route('deleteUser',['id'=>$item->id])}}">
                                     <button type="button" class="btn btn-outline-danger">Odstrániť</button>
                                 </a>
                             </th>
@@ -57,17 +57,8 @@
                 </table>
 
                 <nav class="admin-users-pagination" aria-label="Page navigation example">
-                    <ul class="pagination">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1"><</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#"> > </a>
-                        </li>
-                    </ul>
+                    {{$users->links()}}
+
                 </nav>
             </div>
         </div>
