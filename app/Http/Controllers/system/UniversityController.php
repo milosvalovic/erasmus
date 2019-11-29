@@ -72,7 +72,7 @@ class UniversityController extends Controller
             'address' => 'required|string|max:100',
             'name' => 'required|string|unique:partner_university|max:100',
             'acronym' => 'required|string|unique:partner_university|max:10',
-            'file' => 'bail|required|max:8000|mimes:jpeg,jpg,png,gif',
+            'image' => 'bail|required|max:8000|mimes:jpeg,jpg,png,gif',
         ]);
 
         return $validator;
