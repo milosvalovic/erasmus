@@ -66,6 +66,10 @@ body {
     box-shadow: 0 0 15px #cecece;
 }
 
+.form-title{
+    color: #565960;
+}
+
 
 /*-----------------ADMIN table-----------------------*/
 .admin-table{
@@ -273,7 +277,6 @@ a[class='page-link']:hover{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
     padding: 10px;
-    margin-top: 30px;
 }
 
 .admin-roles-title{

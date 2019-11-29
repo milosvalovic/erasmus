@@ -64,7 +64,7 @@
 
                 <div class="col-xs-12 col-md-3 admin-add-new-item-div">
                     {{ Form::open(array('route' => 'add_university','files'=>'true')) }}
-                    <h3>Pridať univerzitu</h3>
+                    <h3 class="form-title">Pridať univerzitu</h3>
 
                     @if (session('error'))
                         <div class="alert alert-danger">
