@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->boolean('verified')->default(false);
             $table->smallInteger('newsletter')->default(1);
             $table->string('hash', 128)->nullable();
-            $table->integer('roles_ID');
+            $table->unsignedBigInteger('roles_ID');
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
