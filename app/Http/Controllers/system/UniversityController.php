@@ -56,10 +56,10 @@ class UniversityController extends Controller
 
         if ($unversity->save()) {
             Session::flash('success', Lang::get('system.university_success_messeage'));
-            return redirect('/admin/university');
+            return redirect('/admin/universities');
         } else {
             Session::flash('error', Lang::get('system.university_error_messeage'));
-            return redirect('/admin/university');
+            return redirect('/admin/universities');
         }
     }
 
