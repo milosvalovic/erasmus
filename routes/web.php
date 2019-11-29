@@ -101,6 +101,7 @@ Route::get('/admin/faq', 'system\FaqController@faq');
 
 /*------Office hour-----------*/
 Route::get('/admin/open_hours', 'system\OfficeHourController@office_hours');
+Route::get('/admin/open_hours/edit_hour/{id}', ['as' => 'edit_office_hour', 'uses' => 'system\OfficeHourController@office_hourEditShow']);
 
 
 //Auth routes
