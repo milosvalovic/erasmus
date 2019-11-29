@@ -78,7 +78,6 @@
             </div>
         </div>
 
-
         @include('system.include.footer')
     </div>
 @endsection
