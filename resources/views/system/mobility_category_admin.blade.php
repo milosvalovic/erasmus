@@ -63,7 +63,7 @@
                 </div>
 
                 <div class="col-xs-12 col-md-3 admin-add-new-item-div">
-                    <form method="post" class="form-add-mobility-type" id=formNewMobilityCategory action="{{action('system\CategoryMobilityController@addNewCategory')}}">
+                    <form method="post" class="form-add-mobility-type" id="formNewMobilityCategory" action="{{action('system\CategoryMobilityController@addNewCategory')}}">
                         <h3>Pridať kategóriu</h3>
                         <div class="form-group">
                             <label for="addMobilityType"> Názov:</label>
@@ -77,7 +77,6 @@
                 </div>
             </div>
         </div>
-
 
         @include('system.include.footer')
     </div>

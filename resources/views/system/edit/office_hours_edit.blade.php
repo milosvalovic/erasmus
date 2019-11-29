@@ -6,7 +6,7 @@
 
         <div class="admin-title">
             <div class="admin-title-text">
-                <h1>Editácia typu mobility</h1>
+                <h1>Editácia záznamu otváracích hodín</h1>
             </div>
             <div class="admin-title-user">
                 <p>Eduard Gábel</p>
@@ -16,18 +16,21 @@
 
         <div class="admin-content">
             <div class="admin-edit-div">
-                <form class="form-add-mobility-type" id="formEditMobilityType" method="post" action="{{route('edit_type')}}">
-                    <h3>Upraviť typ</h3>
+                <form class="form-edit-hour" id="formEditOfficeHour" method="post" action="">
+                    <h3>Editovať deň - <span>'{{ $item->day }}'</span></h3>
                     <div class="form-group">
-                        <label for="editMobilityType">Názov:</label>
-                        <input type="text" class="form-control admin-form-input" id="editMobilityType" placeholder="Študijný pobyt"
-                               name="name" value="{{$mobility_type->name}}">
+                        <label for="editHourFrom">Od:</label>
+                        <input type="text" class="form-control admin-form-input" id="editHourFrom" placeholder=""
+                               name="hourFrom" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="editHourTo">Do:</label>
+                        <input type="text" class="form-control admin-form-input" id="editHourTo" placeholder=""
+                               name="hourTo" value="">
                     </div>
                     <div class="form-group-button">
                         <button type="submit" class="btn btn-outline-primary btn-add">Uložiť</button>
                     </div>
-                    <input type="hidden" name="ID" value="{{$mobility_type->ID}}">
-                    {{csrf_field()}}
                 </form>
             </div>
         </div>

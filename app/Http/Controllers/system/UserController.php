@@ -51,6 +51,12 @@ class UserController extends Controller
         return redirect('/admin/users/');
     }
 
+    public function userEditShow($id)
+    {
+        $user = User::find($id);
+        return view("system.edit.user_edit", ['user' => $user]);
+    }
+
     public function editUser(Request $request)
     {
         $user = User::find($request->input('id'));

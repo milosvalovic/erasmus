@@ -66,6 +66,10 @@ body {
     box-shadow: 0 0 15px #cecece;
 }
 
+.form-title{
+    color: #565960;
+}
+
 
 /*-----------------ADMIN table-----------------------*/
 .admin-table{
@@ -205,10 +209,10 @@ span[class='dashboard-admin']{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
     padding: 10px;
-    margin-top: 30px;
 }
 
 .user-table-wrapper .user-table-title {
+    padding: 20px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -273,7 +277,6 @@ a[class='page-link']:hover{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
     padding: 10px;
-    margin-top: 30px;
 }
 
 .admin-roles-title{
@@ -369,6 +372,16 @@ a[class='page-link']:hover{
     margin: 0 0 20px 0;
 }
 
+.zoom {
+    transition: transform .3s;
+}
+
+.zoom:hover {
+    -ms-transform: scale(1.3); /* IE 9 */
+    -webkit-transform: scale(1.3); /* Safari 3-8 */
+    transform: scale(1.3);
+}
+
 
 /*-----------------Images page--------------------------*/
 .admin-images-table{
@@ -415,6 +428,19 @@ a[class='page-link']:hover{
 }
 
 
+/*-------------Countries--------------------------------*/
+.admin-countries-table{
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+    padding: 10px;
+}
+
+.admin-countries-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
 
 
 

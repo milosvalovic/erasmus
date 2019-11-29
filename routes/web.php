@@ -54,51 +54,62 @@ Route::get('profil/recenzia/nova/{users_season_ID}', 'student\ReviewController@n
 Route::post('profil/recenzia/ulozit', ['as' => 'insert-review', 'uses' => 'student\ReviewController@insertReview'])->middleware('auth');
 
 
-/*-------------------- Admin routes--------------------------*/
+/*------------------------------- Admin routes---------------------------------------------------------------------------------------------------------------------*/
 Route::get('/admin', 'system\SystemController@system');
 
-Route::get('/admin/roles', 'system\UserRoleController@roles');
-
-Route::get('/admin/mobilities', 'system\MobilityController@mobilities');
-
-/*-------------------- User routes--------------------------*/
+/*------User routes-------------*/
 Route::get('/admin/users', 'system\UserController@users');
-
+Route::get('/admin/users/edit_user/{id}', ['as' => 'edit_user_form', 'uses' => 'system\UserController@userEditShow']);
 Route::post('/admin/users/add_user', 'system\UserController@addUser')->name('addUser');
 Route::post('/admin/users/edit_user', 'system\UserController@editUser')->name('editUser');
-Route::get('/admin/users/edit/{id}', 'system\UserController@editUser')->name('editUserForm');
 Route::get('/admin/users/delete/{id}', 'system\UserController@deleteUser')->name('deleteUser');
+
+/*------Roles-------------------*/
+Route::get('/admin/roles', 'system\UserRoleController@roles');
+Route::get('/admin/roles/edit_role/{id}', ['as' => 'edit_role_form', 'uses' => 'system\UserRoleController@userRoleEditShow']);
+
+/*------Mobility----------------*/
+Route::get('/admin/mobilities', 'system\MobilityController@mobilities');
 
 /*------Mobility category-------*/
 Route::get('/admin/mobilities_category', 'system\CategoryMobilityController@mobility_category');
-
 Route::get('/admin/mobilities_category/edit_mobility/{id}', ['as' => 'edit_mobility', 'uses' => 'system\CategoryMobilityController@mobilityCategoryShow']);
-
 Route::post('/admin/mobilities_category/add_mobility', 'system\CategoryMobilityController@addNewCategory');
 Route::post('/admin/mobilities_category/edit_mobility', 'system\CategoryMobilityController@editCategory')->name('editCategory');
-
 Route::get('/admin/mobilities_category/delete/{id}', 'system\CategoryMobilityController@deleteCategory')->name('deleteCategory');
 
-/*------Mobility type-------*/
+/*------Mobility type---------*/
 Route::get('/admin/mobility_type', 'system\TypeMobilityController@mobility_type');
-
 Route::get('/admin/mobility_type/edit_mobility/{id}', ['as' => 'edit_type', 'uses' => 'system\TypeMobilityController@mobilityTypeShowEdit']);
+Route::post('/admin/mobility_type/add_type/', ['as' => 'add_type', 'uses' => 'system\TypeMobilityController@addType']);
+Route::get('/admin/mobility_type/delete_type/{id}', ['as' => 'delete_type', 'uses' => 'system\TypeMobilityController@deleteType']);
+Route::post('/admin/mobility_type/edit_type/', ['as' => 'edit_type', 'uses' => 'system\TypeMobilityController@editType']);
 
+/*------Blog---------*/
 Route::get('/admin/blogs', 'system\BlogController@blog');
+Route::get('/admin/blogs/edit_blog/{id}', ['as' => 'edit_blog_form', 'uses' => 'system\BlogController@blogEditShow']);
 
-
-/*------University-------*/
+/*------University-------------*/
 Route::get('/admin/universities', 'system\UniversityController@universities');
+Route::get('/admin/universities/edit_university/{id}', ['as' => 'edit_university_form', 'uses' => 'system\UniversityController@universityEditShow']);
+Route::get('/admin/universities/delete_university/{id}', ['as' => 'delete_university', 'uses' => 'system\UniversityController@deleteUniversity']);
+Route::post('/admin/universities/add_university/', ['as' => 'add_university', 'uses' => 'system\UniversityController@addUniversity']);
+Route::post('/admin/universities/edit_university/', ['as' => 'edit_university', 'uses' => 'system\UniversityController@editUniversity']);
 
-Route::get('/admin/universities/edit_university/{id}', ['as' => 'edit_university', 'uses' => 'system\UniversityController@universityEditShow']);
-
-
+/*------Images----------------*/
 Route::get('/admin/images', 'system\ImageController@images');
 
+/*------FAQ-------------------*/
 Route::get('/admin/faq', 'system\FaqController@faq');
+Route::get('/admin/faq/edit_faq/{id}', ['as' => 'edit_faq_form', 'uses' => 'system\FaqController@faqEditShow']);
 
+/*------Office hour-----------*/
 Route::get('/admin/open_hours', 'system\OfficeHourController@office_hours');
+Route::get('/admin/open_hours/edit_hour/{id}', ['as' => 'edit_office_hour', 'uses' => 'system\OfficeHourController@office_hourEditShow']);
 
+/*------Countries-------------*/
+Route::get('/admin/countries', 'system\CountryController@countries');
+Route::get('/admin/countries/edit_country/{id}', ['as' => 'edit_country', 'uses' => 'system\CountryController@countryEditShow']);
 
 //Auth routes
 Route::group(['middleware' => ['web']], function () {

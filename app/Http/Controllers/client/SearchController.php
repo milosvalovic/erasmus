@@ -6,6 +6,8 @@ use App\Models\Address;
 use App\Models\Contact;
 use App\Models\Mobility_Type;
 use App\Models\Office_Hours;
+use App\Models\Country;
+use App\Models\University;
 use Illuminate\Http\Request;
 use App\Models\Mobility;
 use Illuminate\Routing\Controller;
@@ -21,6 +23,8 @@ class SearchController extends Controller
         $countrySearch = $request->input('country');
         $universitySearch = $request->input('university');
         $typeSearch = $request->input('stays');
+        $grandSearch = $request->input('grand');
+        $categorySearch = $request->input('category');
         $dateStartSearch = ($request->input('from') == '') ? '' : date("Y-m-d", strtotime($request->input('from')));
         $dateEndSearch = ($request->input('to') == '') ? '' : date("Y-m-d", strtotime($request->input('to')));
         $ratingSearch = $request->input('rating');
@@ -59,6 +63,16 @@ class SearchController extends Controller
             ->when($universitySearch, function ($query) use ($universitySearch) {
                 return $query->whereHas('university', function ($query) use ($universitySearch) {
                     $query->where('acronym', 'like', '%' . $universitySearch . '%')->orWhere('name', 'like', '%' . $universitySearch . '%');
+                });
+            })
+            ->when($grandSearch, function ($query) use ($grandSearch) {
+                return $query->whereHas('university', function ($query) use ($grandSearch) {
+                    $query->where('grand', '>=', $grandSearch);
+                });
+            })
+            ->when($categorySearch, function ($query) use ($categorySearch) {
+                return $query->whereHas('category', function ($query) use ($categorySearch) {
+                    $query->where('ID', '=', $categorySearch);
                 });
             })
             ->when($typeSearch, function ($query) use ($typeSearch) {
@@ -114,5 +128,19 @@ class SearchController extends Controller
                     "rating" => $ratingSearch,
                 )
             ]);
+    }
+
+    public function getAutocompleteCountries($value)
+    {
+        $countries = Country::where('name','LIKE','%'.$value.'%')->pluck('ID','name');
+
+        return $countries;
+    }
+
+    public function getAutocompleteUniversity($value)
+    {
+        $university = University::where('name','LIKE','%'.$value.'%')->pluck('ID','name');
+
+        return $university;
     }
 }
