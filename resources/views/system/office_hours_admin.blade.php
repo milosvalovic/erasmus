@@ -18,9 +18,6 @@
             <div class="admin-office-hours-table">
                 <div class="admin-office-hours-title">
                     <h2>Spravovanie rolí</h2>
-                    <a href="#">
-                        <button type="button" class="btn btn-outline-primary btn-add">Pridať rolu</button>
-                    </a>
                 </div>
 
                 <table class="table admin-table">
@@ -34,20 +31,19 @@
                     </tr>
                     </thead>
                     <tbody>
+                    @foreach($office_hours as $item)
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Streda</td>
-                        <td>6:30</td>
-                        <td>22:00</td>
+                        <th scope="row">{{ $item->ID }}</th>
+                        <td>{{ $item->day }}</td>
+                        <td>{{ $item->from }}</td>
+                        <td>{{ $item->to }}</td>
                         <th scope="row">
-                            <a href="/edit-role/'number'">
+                            <a href="{{ action('system\OfficeHourController@office_hourEditShow',['id' => $item->ID]) }}">
                                 <button type="button" class="btn btn-outline-warning">Upraviť</button>
-                            </a>
-                            <a href="/edit-role/'number'">
-                                <button type="button" class="btn btn-outline-danger">Odstrániť</button>
                             </a>
                         </th>
                     </tr>
+                    @endforeach
                     </tbody>
                 </table>
 
