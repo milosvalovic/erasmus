@@ -122,6 +122,8 @@ return [
     'search_modal_label_university_example' => 'Technische Universität',
     'search_modal_label_rating' => 'HODNOTENIE',
     'search_modal_label_from' => 'ZAČIATOK POBYTU',
+    'search_modal_label_mobility_category' => 'TYP MOBILITY',
+    'search_modal_label_grand' => '	MIN. SADZBA',
     'search_modal_label_from_example' => '01.01.2020',
     'search_modal_label_to' => 'KONIEC POBYTU',
     'search_modal_label_to_example' => '02.02.2020',

@@ -12,26 +12,35 @@ $('document').ready(function () {
         showCursor: false,
     });
 
-    // Defining the local dataset
-    var cars = ['Audi', 'BMW', 'Bugatti', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 'Porsche', 'Rolls-Royce', 'Volkswagen'];
-
-    // Constructing the suggestion engine
-    var cars = new Bloodhound({
+    var countries = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.whitespace,
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        local: cars
+        prefetch: {
+            url: '/erasmus/public/vyhladavanie/krajiny',
+            ttl: 1
+        }
     });
 
-    // Initializing the typeahead
-    $('.typeahead').typeahead({
-            hint: true,
-            highlight: true, /* Enable substring highlighting */
-            minLength: 1 /* Specify minimum characters required for showing result */
-        },
-        {
-            name: 'cars',
-            source: cars
-        });
+    var university = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.whitespace,
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        prefetch: {
+            url: '/erasmus/public/vyhladavanie/univerzity',
+            ttl: 1
+        }
+    });
+
+    $('#country').typeahead(null, {
+        name: 'countries',
+        source: countries,
+        limit: 10
+    });
+
+    $('#university').typeahead(null, {
+        name: 'university',
+        source: university,
+        limit: 10
+    });
 
     $('.datepicker').datepicker({
         format: 'dd.mm.yyyy',

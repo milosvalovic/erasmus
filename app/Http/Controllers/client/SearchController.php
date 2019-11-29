@@ -130,17 +130,25 @@ class SearchController extends Controller
             ]);
     }
 
-    public function getAutocompleteCountries($value)
+    public function getAutocompleteCountries()
     {
-        $countries = Country::where('name','LIKE','%'.$value.'%')->pluck('ID','name');
+        $countries = Country::all('name');
+        $datalist = array();
+        foreach ($countries as $country){
+            array_push($datalist, $country->name);
+        }
 
-        return $countries;
+        return $datalist;
     }
 
-    public function getAutocompleteUniversity($value)
+    public function getAutocompleteUniversity()
     {
-        $university = University::where('name','LIKE','%'.$value.'%')->pluck('ID','name');
+        $university = University::all('name');
+        $datalist = array();
+        foreach ($university as $school){
+            array_push($datalist, $school->name);
+        }
 
-        return $university;
+        return $datalist;
     }
 }
