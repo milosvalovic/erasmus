@@ -16,7 +16,7 @@
 
         <div class="admin-content">
             <div class="admin-edit-div">
-                <form class="form-add-mobility-type" id="formEditMobilityType">
+                <form class="form-edit-mobility-type" id="formEditMobilityType">
                     <h3>Upraviť typ</h3>
                     <div class="form-group">
                         <label for="editMobilityType">Názov:</label>

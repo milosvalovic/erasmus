@@ -84,6 +84,7 @@ Route::get('/admin/mobility_type/edit_mobility/{id}', ['as' => 'edit_type', 'use
 
 /*------Blog---------*/
 Route::get('/admin/blogs', 'system\BlogController@blog');
+Route::get('/admin/blogs/edit_blog/{id}', ['as' => 'edit_blog_form', 'uses' => 'system\BlogController@blogEditShow']);
 
 /*------University-------------*/
 Route::get('/admin/universities', 'system\UniversityController@universities');

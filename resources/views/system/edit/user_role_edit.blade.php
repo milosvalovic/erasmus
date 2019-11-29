@@ -16,7 +16,7 @@
 
         <div class="admin-content">
             <div class="admin-edit-div">
-                <form class="form-add-mobility-category" id=formNewMobilityCategory method="post" action="">
+                <form class="form-edit-role" id="formEditUserRole" method="post" action="">
                     <h3>Editácia</h3>
                     <div class="form-group">
                         <label for="editUserRoleName"> Názov:</label>
