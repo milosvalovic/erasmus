@@ -37,7 +37,7 @@ return [
     'login_input_label_password' => 'Heslo',
     'login_input_submit' => 'Prihlásiť sa',
     'login_bad' => 'Email alebo heslo nie je správne.',
-    'login_account_not_confirmed' => 'Účet nie je potvrdení! Na Vašu emailovú adresu sme poslali aktivacný kód. Prosím skontrolujte Vašu emailovú schránku.',
+    'login_account_not_confirmed' => 'Účet nie je potvrdený! Na Vašu emailovú adresu sme poslali aktivacný kód. Prosím skontrolujte Vašu emailovú schránku.',
 
 
     //Register

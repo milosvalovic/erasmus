@@ -24,8 +24,9 @@ class UserSeeder extends Seeder
         $admin->email = 'system@ukf.sk';
         $admin->password = bcrypt(')-cfC9:kB[bm~Kz]');
         $admin->newsletter = 0;
+        $admin->roles_ID = $role_administrator->id;
         $admin->save();
-        $admin->roles()->attach($role_administrator);
+
 
         $student = new User();
         $student->first_name = 'Peter';
@@ -33,8 +34,9 @@ class UserSeeder extends Seeder
         $student->email = 'peter.varga@student.ukf.sk';
         $student->password = bcrypt('asd123');
         $student->newsletter = 0;
+        $student->roles_ID = $role_student->id;
         $student->save();
-        $student->roles()->attach($role_student);
+
 
         $organizator = new User();
         $organizator->first_name = 'Silvia';
@@ -42,8 +44,9 @@ class UserSeeder extends Seeder
         $organizator->email = 'shrozenska@ukf.sk';
         $organizator->password = bcrypt('asd123');
         $organizator->newsletter = 0;
+        $organizator->roles_ID =$role_oraganizator->id;
         $organizator->save();
-        $organizator->roles()->attach($role_oraganizator);
+
 
         $admin = new User();
         $admin->first_name = 'Root';
@@ -51,7 +54,8 @@ class UserSeeder extends Seeder
         $admin->email = 'admin@ukf.sk';
         $admin->password = bcrypt('root123');
         $admin->newsletter = 0;
+        $admin->roles_ID = $role_administrator->id;
         $admin->save();
-        $admin->roles()->attach($role_administrator);
+
     }
 }
