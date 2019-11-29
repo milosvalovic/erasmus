@@ -4,14 +4,6 @@ $('document').ready(function () {
         $("#search").append("<input type='hidden' name='number' value='" + $("#number-of-items > *").length + "'>").submit();
     });
 
-    const typed = new Typed('#typed', {
-        strings: ['pobyty', 'stáže', 'prednáškové pobyty', 'školenia'],
-        backSpeed: 70,
-        typeSpeed: 70,
-        loop: true,
-        showCursor: false,
-    });
-
     var countries = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.whitespace,
         queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -40,6 +32,14 @@ $('document').ready(function () {
         name: 'university',
         source: university,
         limit: 10
+    });
+
+    const typed = new Typed('#typed', {
+        strings: ['pobyty', 'stáže', 'prednáškové pobyty', 'školenia'],
+        backSpeed: 70,
+        typeSpeed: 70,
+        loop: true,
+        showCursor: false,
     });
 
     $('.datepicker').datepicker({

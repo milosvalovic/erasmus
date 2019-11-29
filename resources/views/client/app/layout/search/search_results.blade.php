@@ -5,7 +5,7 @@
                 {{ Form::open(array('url' => '/hladat#search', "id"=>"search", "enctype"=>"application/x-www-form-urlencoded")) }}
                     <div class="country">
                         <label for="country">@lang('app.search_modal_label_country')</label>
-                        <input type="text" name="country" id="country" value="{{ isset($last_search_criteria['country'])?$last_search_criteria['country']:'' }}" placeholder="">
+                        <input type="text" name="country" id="country" class="typeahead tt-query" value="{{ isset($last_search_criteria['country'])?$last_search_criteria['country']:'' }}" placeholder="">
                     </div>
 
                     <div class="type">
@@ -14,7 +14,7 @@
                     </div>
                     <div class="university">
                         <label for="univerzita">@lang('app.search_modal_label_university')</label>
-                        <input type="text" name="university" id="univerzita" value="{{ isset($last_search_criteria['university'])?$last_search_criteria['university']:'' }}" placeholder="">
+                        <input type="text" name="university" id="university" class="typeahead tt-query" value="{{ isset($last_search_criteria['university'])?$last_search_criteria['university']:'' }}" placeholder="">
                     </div>
                     <div class="rating">
                         <label for="rating">@lang('app.search_modal_label_rating')</label>
@@ -39,6 +39,7 @@
                                data-date-format="dd.mm.yyyy" readonly placeholder="">
                     </div>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <br>
                     <div class="search">
                         <label for="search"></label>
                         <input type="submit" name="search" id="search" value="@lang('app.search_modal_submit')">
