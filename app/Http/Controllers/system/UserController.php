@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\system;
 
 
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -18,8 +19,9 @@ class UserController extends Controller
     public function users()
     {
         $users = User::has('roles')->paginate(15);
+        $roles = Role::all();
 
-        return view('system.user_admin')->with('users', $users);
+        return view('system.user_admin')->with(['users'=> $users, 'roles'=>$roles]);
     }
 
     public function addUser(Request $request)
