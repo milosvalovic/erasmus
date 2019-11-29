@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="col-xs-12 col-md-3 admin-add-new-item-div">
-                    <form method="post" class="form-add-new-user" id=formAddNewUser" action="">
+                    <form method="post" class="form-add-new-user" id="formAddNewUser" action="">
                         <h3>Pridať člena</h3>
                         <div class="form-group">
                             <label for="addUserFirstName">Meno:</label>

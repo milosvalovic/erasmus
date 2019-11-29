@@ -16,59 +16,72 @@
 
         <div class="admin-content">
 
-            <div class="admin-FAQ-table">
-                <div class="admin-images-title">
-                    <h2>Spravovanie faq</h2>
-                    <a href="#">
-                        <button type="button" class="btn btn-outline-primary btn-add">Pridať faq</button>
-                    </a>
+
+            <div class="row">
+                <div class="col-xs-12 col-md-8">
+                    <div class="admin-FAQ-table">
+                        <div class="admin-images-title">
+                            <h2>Spravovanie faq</h2>
+                        </div>
+                        <table class="table admin-table">
+                            <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Názov</th>
+                                <th scope="col" class="user-form-actions">Akcie</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($faqData as $item)
+                                <tr>
+                                    <th scope="row">{{ $item->ID }}</th>
+                                    <td>{{ $item->name }}</td>
+                                    <th scope="row">
+                                        <a href="{{ action('system\FaqController@faqEditShow',['id' => $item->ID]) }}">
+                                            <button type="button" class="btn btn-outline-warning">Upraviť</button>
+                                        </a>
+                                        <a href="/edit-role/'number'">
+                                            <button type="button" class="btn btn-outline-danger">Odstrániť</button>
+                                        </a>
+                                    </th>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                        <nav class="admin-users-pagination" aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1"><</a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#"> > </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
 
-                <table class="table admin-table">
-                    <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Názov</th>
-                        <th scope="col">Popis</th>
-                        <th scope="col" class="user-form-actions">Akcie</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Porucha</td>
-                        <td>Stratil sa mi kufor</td>
-                        <th scope="row">
-                            <a href="/edit-role/'number'">
-                                <button type="button" class="btn btn-outline-warning">Upraviť</button>
-                            </a>
-                            <a href="/edit-role/'number'">
-                                <button type="button" class="btn btn-outline-danger">Odstrániť</button>
-                            </a>
-                        </th>
-                    </tr>
-                    </tbody>
-                </table>
-
-                <nav class="admin-users-pagination" aria-label="Page navigation example">
-                    <ul class="pagination">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1"><</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#"> > </a>
-                        </li>
-                    </ul>
-                </nav>
+                <div class="col-xs-12 col-md-3 admin-add-new-item-div">
+                    <form method="post" class="form-add-faq" id="formNewFaq" action="">
+                        <h3 class="form-title">Pridať faq</h3>
+                        <div class="form-group">
+                            <label for="addFaqName">Názov:</label>
+                            <input type="text" class="form-control admin-form-input" id="addFaqName" placeholder="Sú v tam pekné žienky?" name="faqName">
+                        </div>
+                        <div class="form-group">
+                            <label for="addFaqDescription">Popis:</label>
+                            <textarea type="text" class="form-control admin-form-input" id="addFaqDescription" placeholder="Pre moje fungovanie počas dňa potrebujem pri sebe reprezentantku nežného pohlavia" name="faqName"></textarea>
+                        </div>
+                        <div class="form-group-button">
+                            <button type="submit" class="btn btn-outline-primary btn-add">Pridať</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-
         </div>
-
-
-
 
         @include('system.include.footer')
     </div>
