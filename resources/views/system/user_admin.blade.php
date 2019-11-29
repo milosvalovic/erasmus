@@ -19,11 +19,7 @@
             <div class="user-table-wrapper">
                 <div class="user-table-title">
                     <h2>Spravovanie používateľov</h2>
-                    <a href="#">
-                        <button type="button" class="btn btn-outline-primary btn-add">Pridať používateľa</button>
-                    </a>
                 </div>
-
                 <table class="table admin-table">
                     <thead>
                     <tr>
@@ -36,18 +32,18 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($users as $item)
+                    @foreach($users as $user)
                         <tr>
-                            <th scope="row">{{$item->id}}</th>
-                            <td>{{$item->first_name}}</td>
-                            <td>{{$item->last_name}}</td>
-                            <td>{{$item->email}}</td>
-                            <td>{{$item->roles->name}}</td>
+                            <th scope="row">{{$user->id}}</th>
+                            <td>{{$user->first_name}}</td>
+                            <td>{{$user->last_name}}</td>
+                            <td>{{$user->email}}</td>
+                            <td>{{$user->roles->name}}</td>
                             <th scope="row">
-                                <a href="/{{route('editUserForm',['id'=>$item->id])}}">
+                                <a href="{{ action('system\UserController@userEditShow', ['id' => $user->id]) }}">
                                     <button type="button" class="btn btn-outline-warning">Upraviť</button>
                                 </a>
-                                <a href="{{route('deleteUser',['id'=>$item->id])}}">
+                                <a href="{{route('deleteUser',['id'=>$user->id])}}">
                                     <button type="button" class="btn btn-outline-danger">Odstrániť</button>
                                 </a>
                             </th>
@@ -55,7 +51,6 @@
                     @endforeach
                     </tbody>
                 </table>
-
                 <nav class="admin-users-pagination" aria-label="Page navigation example">
                     {{$users->links()}}
 
