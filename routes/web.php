@@ -84,6 +84,14 @@ Route::get('/admin/mobility_type', 'system\TypeMobilityController@mobility_type'
 
 Route::get('/admin/mobility_type/edit_mobility/{id}', ['as' => 'edit_type', 'uses' => 'system\TypeMobilityController@mobilityTypeShowEdit']);
 
+Route::post('/admin/mobility_type/add_type/', ['as' => 'add_type', 'uses' => 'system\TypeMobilityController@addType']);
+
+Route::get('/admin/mobility_type/delete_type/{id}', ['as' => 'delete_type', 'uses' => 'system\TypeMobilityController@deleteType']);
+
+Route::post('/admin/mobility_type/edit_type/', ['as' => 'edit_type', 'uses' => 'system\TypeMobilityController@editType']);
+
+
+
 Route::get('/admin/blogs', 'system\BlogController@blog');
 
 
