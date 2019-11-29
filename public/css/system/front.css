@@ -428,6 +428,19 @@ a[class='page-link']:hover{
 }
 
 
+/*-------------Countries--------------------------------*/
+.admin-countries-table{
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+    padding: 10px;
+}
+
+.admin-countries-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
 
 
 

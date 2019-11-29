@@ -17,9 +17,8 @@ use Illuminate\Routing\Controller;
 class CountryController extends Controller
 {
     public function countries(){
-        $countries = Country::select('*')->get()->peginate(10);
-
-        return view('system.')->with('countries', $countries);
+        $countries = Country::all();
+        return view('system.countries_admin')->with(['countries' => $countries]);
     }
 
     public function addCountry(Request $request){
@@ -36,6 +35,13 @@ class CountryController extends Controller
         $country->erasmus_code = $request->input("erasmus_code");
 
         $country->save();
+    }
+
+
+    public function countryEditShow($id)
+    {
+        $country = Country::find($id);
+        return view ('system.edit.country_edit',['country' => $country]);
     }
 
     public function editCountry(Request $request){

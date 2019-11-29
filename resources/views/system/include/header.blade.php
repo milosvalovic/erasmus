@@ -91,6 +91,13 @@
             </a>
         </li>
 
+        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/countries')) ? 'active' : ''}}">
+            <a class="nav-link " href="{{ action('system\CountryController@countries')}}">
+                <i class="fa fa-globe" aria-hidden="true"></i>
+                <span>Krajiny</span>
+            </a>
+        </li>
+
     </ul>
 </div>
 <!-- End of Sidebar -->

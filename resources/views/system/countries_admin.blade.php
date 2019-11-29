@@ -6,7 +6,7 @@
 
         <div class="admin-title">
             <div class="admin-title-text">
-                <h1>Administrácia FAQ (frequently asked question)</h1>
+                <h1>Krajiny</h1>
             </div>
             <div class="admin-title-user">
                 <p>Eduard Gábel</p>
@@ -16,11 +16,10 @@
 
         <div class="admin-content">
 
-
             <div class="row">
                 <div class="col-xs-12 col-md-8">
-                    <div class="admin-FAQ-table">
-                        <div class="admin-images-title">
+                    <div class="admin-countries-table">
+                        <div class="admin-countries-title">
                             <h2>Spravovanie faq</h2>
                         </div>
                         <table class="table admin-table">
@@ -28,16 +27,20 @@
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Názov</th>
+                                <th scope="col">Kód krajiny</th>
+                                <th scope="col">Erazmus kód</th>
                                 <th scope="col" class="user-form-actions">Akcie</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($faqData as $item)
+                            @foreach($countries as $country)
                                 <tr>
-                                    <th scope="row">{{ $item->ID }}</th>
-                                    <td>{{ $item->name }}</td>
+                                    <th scope="row">{{ $country->ID }}</th>
+                                    <th>{{ $country->name }}</th>
+                                    <td>{{ $country->country_code }}</td>
+                                    <td>{{ $country->erasmus_code }}</td>
                                     <th scope="row">
-                                        <a href="{{ action('system\FaqController@faqEditShow',['id' => $item->ID]) }}">
+                                        <a href="{{ action('system\CountryController@countryEditShow',['id' => $country->ID]) }}">
                                             <button type="button" class="btn btn-outline-warning">Upraviť</button>
                                         </a>
                                         <a href="/edit-role/'number'">
@@ -65,15 +68,15 @@
                 </div>
 
                 <div class="col-xs-12 col-md-3 admin-add-new-item-div">
-                    <form method="post" class="form-add-faq" id="formNewFaq" action="">
-                        <h3 class="form-title">Pridať faq</h3>
+                    <form method="post" class="form-add-country" id="formAddCountry" action="">
+                        <h3 class="form-title">Pridať krajinu</h3>
                         <div class="form-group">
-                            <label for="addFaqName">Názov:</label>
-                            <input type="text" class="form-control admin-form-input" id="addFaqName" placeholder="Sú v tam pekné žienky?" name="faqName">
+                            <label for="addCountryName">Názov:</label>
+                            <input type="text" class="form-control admin-form-input" id="addCountryName" placeholder="Slovakia" name="countryName">
                         </div>
                         <div class="form-group">
-                            <label for="addFaqDescription">Popis:</label>
-                            <textarea type="text" class="form-control admin-form-input" id="addFaqDescription" placeholder="Pre moje fungovanie počas dňa potrebujem pri sebe reprezentantku nežného pohlavia" name="faqName"></textarea>
+                            <label for="addCountryCode">Kód krajiny:</label>
+                            <input type="text" class="form-control admin-form-input" id="addCountryCode" placeholder="sk" name="countryCode">
                         </div>
                         <div class="form-group-button">
                             <button type="submit" class="btn btn-outline-primary btn-add">Pridať</button>
@@ -81,9 +84,11 @@
                     </form>
                 </div>
             </div>
+
         </div>
 
         @include('system.include.footer')
+
     </div>
 @endsection
 

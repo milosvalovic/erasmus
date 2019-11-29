@@ -81,18 +81,11 @@ Route::get('/admin/mobilities_category/delete/{id}', 'system\CategoryMobilityCon
 /*------Mobility type---------*/
 Route::get('/admin/mobility_type', 'system\TypeMobilityController@mobility_type');
 Route::get('/admin/mobility_type/edit_mobility/{id}', ['as' => 'edit_type', 'uses' => 'system\TypeMobilityController@mobilityTypeShowEdit']);
-
 Route::post('/admin/mobility_type/add_type/', ['as' => 'add_type', 'uses' => 'system\TypeMobilityController@addType']);
-
 Route::get('/admin/mobility_type/delete_type/{id}', ['as' => 'delete_type', 'uses' => 'system\TypeMobilityController@deleteType']);
-
 Route::post('/admin/mobility_type/edit_type/', ['as' => 'edit_type', 'uses' => 'system\TypeMobilityController@editType']);
 
-
-
-
 /*------Blog---------*/
-
 Route::get('/admin/blogs', 'system\BlogController@blog');
 Route::get('/admin/blogs/edit_blog/{id}', ['as' => 'edit_blog_form', 'uses' => 'system\BlogController@blogEditShow']);
 
@@ -114,6 +107,9 @@ Route::get('/admin/faq/edit_faq/{id}', ['as' => 'edit_faq_form', 'uses' => 'syst
 Route::get('/admin/open_hours', 'system\OfficeHourController@office_hours');
 Route::get('/admin/open_hours/edit_hour/{id}', ['as' => 'edit_office_hour', 'uses' => 'system\OfficeHourController@office_hourEditShow']);
 
+/*------Countries-------------*/
+Route::get('/admin/countries', 'system\CountryController@countries');
+Route::get('/admin/countries/edit_country/{id}', ['as' => 'edit_country', 'uses' => 'system\CountryController@countryEditShow']);
 
 //Auth routes
 Route::group(['middleware' => ['web']], function () {
