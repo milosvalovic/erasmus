@@ -1,5 +1,5 @@
 <div class="page-section" id="opportunities">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
                 {{ Form::open(array('url' => '/hladat#search', "id"=>"search", "enctype"=>"application/x-www-form-urlencoded")) }}
@@ -19,6 +19,14 @@
                     <div class="rating">
                         <label for="rating">@lang('app.search_modal_label_rating')</label>
                         {{Form::select('rating', array("0 - 5", "1 - 5", "2 - 5", "3 - 5", "4 - 5", "5"))}}
+                    </div>
+                    <div class="grand">
+                        <label for="from">@lang('app.search_modal_label_grand')</label>
+                        <input type="text" name="grand" id="grand" value="" placeholder="420€">
+                    </div>
+                    <div class="category">
+                        <label for="from">@lang('app.search_modal_label_mobility_category')</label>
+                        {{Form::select('category', $category)}}
                     </div>
                     <div class="from">
                         <label for="from">@lang('app.search_modal_label_from')</label>

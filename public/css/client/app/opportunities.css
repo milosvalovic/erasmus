@@ -219,6 +219,8 @@ form#search > div.country,
 form#search > div.type,
 form#search > div.university,
 form#search > div.rating,
+form#search > div.grand,
+form#search > div.category,
 form#search > div.from,
 form#search > div.to,
 form#search > div.search {

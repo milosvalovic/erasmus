@@ -116,7 +116,7 @@ return [
     //Search
     'search_no_match' => 'Vyhľadávacím kritériam neboli nájdené žiadné mobility',
     'search_modal_label_country' => 'KRAJINA',
-    'search_modal_label_country_example' => 'Nemecko',
+    'search_modal_label_country_example' => 'Germany',
     'search_modal_label_type' => 'TYP POBYTU',
     'search_modal_label_university' => 'UNIVERZITA',
     'search_modal_label_university_example' => 'Technische Universität',
