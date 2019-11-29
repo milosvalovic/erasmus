@@ -76,7 +76,7 @@
                         </div>
                         <div class="form-group">
                             <label for="addUserRole">Rola:</label>
-                            <input type="text" class="form-control admin-form-input" id="addUserRole" placeholder="filip.d@gmail.com" name="userRole">
+                            <input type="text" class="form-control admin-form-input" id="addUserRole" placeholder="študent" name="userRole">
                         </div>
                         <div class="form-group-button">
                             <button type="submit" class="btn btn-outline-primary btn-add">Pridať</button>
