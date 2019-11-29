@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class University extends Model
 {
     use SoftDeletes;
-
+    protected $primaryKey = "ID";
     protected $table = 'partner_university';
-    protected $fillable = ['country_ID', 'city', 'address', 'name', 'acronym', 'info', 'image_URL'];
+    protected $fillable = ['country_ID', 'city', 'address', 'name', 'acronym', 'info', 'img_url', 'thumb_url'];
 
     public function country()
     {

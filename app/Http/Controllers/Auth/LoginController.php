@@ -33,6 +33,24 @@ class LoginController extends Controller
         return view('client.app.account', ['view' => 'login', 'article_in_row' => Variables::NUMBER_OF_ARTICLES_IN_ROW]);
     }
 
+    public function redirectTo() {
+        $user = Auth::user();
+        if (!$user->verified) {
+            auth()->logout();
+            return back()->with('verify', Lang::get('app.login_account_not_confirmed'));
+        }
+
+        if ($user->hasRole("student")) {
+            return redirect('/profil');
+        } else if ($user->hasRole("organizator")) {
+            return redirect('/dashboard');
+        } else if ($user->hasRole("administrator")) {
+            return redirect('/dashboard');
+        } else {
+            abort(404);
+        }
+    }
+
     protected function authenticated(Request $request, $user)
     {
 
@@ -48,7 +66,7 @@ class LoginController extends Controller
         } else if ($user->hasRole("administrator")) {
             return redirect('/dashboard');
         } else {
-            //TODO presmerovať na 404
+            abort(404);
         }
     }
 

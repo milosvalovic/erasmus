@@ -66,6 +66,10 @@ body {
     box-shadow: 0 0 15px #cecece;
 }
 
+.form-title{
+    color: #565960;
+}
+
 
 /*-----------------ADMIN table-----------------------*/
 .admin-table{
@@ -205,10 +209,10 @@ span[class='dashboard-admin']{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
     padding: 10px;
-    margin-top: 30px;
 }
 
 .user-table-wrapper .user-table-title {
+    padding: 20px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -273,7 +277,6 @@ a[class='page-link']:hover{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
     padding: 10px;
-    margin-top: 30px;
 }
 
 .admin-roles-title{

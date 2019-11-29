@@ -17,10 +17,8 @@ class UserController extends Controller
 
     public function users()
     {
-        $users = User::select('*')
-            ->join('role_user', 'users.id', '=', 'role_user.user_id')
-            ->join('roles', 'roles.id', '=', 'role_user.role_id')
-            ->get();
+        $users = User::has('roles')->paginate(15);
+
         return view('system.user_admin')->with('users', $users);
     }
 
@@ -49,6 +47,12 @@ class UserController extends Controller
     {
         User::where('id', '=', $id)->delete();
         return redirect('/admin/users/');
+    }
+
+    public function userEditShow($id)
+    {
+        $user = User::find($id);
+        return view("system.edit.user_edit", ['user' => $user]);
     }
 
     public function editUser(Request $request)
