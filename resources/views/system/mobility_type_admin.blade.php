@@ -20,7 +20,10 @@
                     <div class="admin-mobility-type-table">
                         <div class="admin-mobility-type-title">
                             <h2>Spravovanie typov</h2>
+
+
                         </div>
+
                         <table class="table admin-table">
                             <thead>
                             <tr>
@@ -38,7 +41,7 @@
                                         <a href="{{ action('system\TypeMobilityController@mobilityTypeShowEdit',['id' => $mobilityType->ID]) }}">
                                             <button type="button" class="btn btn-outline-warning">Upraviť</button>
                                         </a>
-                                        <a href="/delete_category_type/'number'">
+                                        <a href="{{route('delete_type',['id' => $mobilityType->ID])}}'">
                                             <button type="button" class="btn btn-outline-danger">Odstrániť</button>
                                         </a>
                                     </th>
@@ -47,30 +50,26 @@
                             </tbody>
                         </table>
                         <nav class="admin-users-pagination" aria-label="Page navigation example">
-                            <ul class="pagination">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1"><</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#"> > </a>
-                                </li>
-                            </ul>
+                            {{$mobility_types->links()}}
                         </nav>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-3 admin-add-new-item-div">
-                    <form class="form-add-mobility-type" id="formNewMobilityCategory">
+                    <form class="form-add-mobility-type" id=formNewMobilityCategory method="post" action="{{route('add_type')}}">
                         <h3>Pridať typ</h3>
+                        @if (session('error'))
+                            <div class="alert alert-danger">
+                                <h5>{{session('error')}}</h5>
+                            </div>
+                        @endif
                         <div class="form-group">
                             <label for="addMobilityType"> Názov:</label>
-                            <input type="text" class="form-control admin-form-input" id="addMobilityType" placeholder="Študijný pobyt">
+                            <input type="text" class="form-control admin-form-input" id="addMobilityType" placeholder="Študijný pobyt" name="name" required>
                         </div>
                         <div class="form-group-button">
                             <button type="submit" class="btn btn-outline-primary btn-add">Pridať</button>
                         </div>
+                        {{csrf_field()}}
                     </form>
                 </div>
             </div>
