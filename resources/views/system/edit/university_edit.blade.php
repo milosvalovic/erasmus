@@ -63,7 +63,7 @@
                 <div class="form-group">
                     <label for="editUniversityImage">Obrázok:</label>
                     <img src="{{ asset($university->thumb_url) }}" alt="" class="admin-edit-university-image" id="editUniversityImage">
-                    <input type="file" class="form-control admin-form-input" id="editUniversityImageInput" name="image">
+                    <input type="file" class="form-control admin-form-input" id="editUniversityImageInput" name="image" accept="image/x-png,image/jpeg">
                 </div>
                 <div class="form-group-button">
                     <button type="submit" class="btn btn-outline-primary btn-add">Uložiť</button>
@@ -77,21 +77,5 @@
         @include('system.include.footer')
 
     </div>
-
-    <script type="text/javascript">
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#editUniversityImage').attr('src', e.target.result);
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-        $("#editUniversityImageInput").change(function(){
-            readURL(this);
-        });
-    </script>
 @endsection
 

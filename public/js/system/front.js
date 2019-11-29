@@ -1,12 +1,18 @@
 $(document).ready(function () {
 
-    var sideLink = $('.admin-menu-links');
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
 
-    function animateSideLink() {
-        sideLink.mouseenter(function () {
-           // $(this).css
-        });
+            reader.onload = function (e) {
+                $('#editUniversityImage').attr('src', e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
     }
+    $("#editUniversityImageInput").change(function(){
+        readURL(this);
+    });
 
 
 });
