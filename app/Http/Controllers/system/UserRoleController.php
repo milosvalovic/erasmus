@@ -63,4 +63,18 @@ class UserRoleController extends Controller
         return $validator;
     }
 
+    public function userRoleEditShow($id)
+    {
+        $role = Role::find($id);
+        return view("system.edit.user_role_edit", ['role' => $role]);
+    }
+
+
+
+
+
+
+
+
+
 }

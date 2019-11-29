@@ -32,12 +32,13 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($roles as $role)
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Administrátor</td>
-                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                                <th scope="row">{{ $role->id }}</th>
+                                <td>{{ $role->name }}</td>
+                                <td>{{ $role->description }}</td>
                                 <th scope="row">
-                                    <a href="/edit-role/'number'">
+                                    <a href="{{ action('system\UserRoleController@userRoleEditShow', ['id' => $role->id]) }}">
                                         <button type="button" class="btn btn-outline-warning">Upraviť</button>
                                     </a>
                                     <a href="/edit-role/'number'">
@@ -45,6 +46,7 @@
                                     </a>
                                 </th>
                             </tr>
+                            @endforeach
                             </tbody>
                         </table>
                         <nav class="admin-users-pagination" aria-label="Page navigation example">
