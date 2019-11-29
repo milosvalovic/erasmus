@@ -11,8 +11,6 @@
         <!--CSS-->
         <link href="{{ asset('css/system/front.css') }}" rel="stylesheet" type="text/css"/>
         <link href="{{ asset('css/system/template/front.css') }}" rel="stylesheet" type="text/css"/>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-
 
         <!--Fonts-->
         <link href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css"/>
