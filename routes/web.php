@@ -107,8 +107,9 @@ Route::get('/admin/faq/edit_faq/{id}', ['as' => 'edit_faq_form', 'uses' => 'syst
 Route::get('/admin/open_hours', 'system\OfficeHourController@office_hours');
 Route::get('/admin/open_hours/edit_hour/{id}', ['as' => 'edit_office_hour', 'uses' => 'system\OfficeHourController@office_hourEditShow']);
 
-/*------Office hour-----------*/
+/*------Countries-------------*/
 Route::get('/admin/countries', 'system\CountryController@countries');
+Route::get('/admin/countries/edit_country/{id}', ['as' => 'edit_country', 'uses' => 'system\CountryController@countryEditShow']);
 
 //Auth routes
 Route::group(['middleware' => ['web']], function () {

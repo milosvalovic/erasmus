@@ -18,7 +18,7 @@ class CountryController extends Controller
 {
     public function countries(){
         $countries = Country::all();
-        return view('system.countries_admin', ['countries' => $countries]);
+        return view('system.countries_admin')->with(['countries' => $countries]);
     }
 
     public function addCountry(Request $request){
@@ -35,6 +35,13 @@ class CountryController extends Controller
         $country->erasmus_code = $request->input("erasmus_code");
 
         $country->save();
+    }
+
+
+    public function countryEditShow($id)
+    {
+        $country = Country::find($id);
+        return view ('system.edit.country_edit',['country' => $country]);
     }
 
     public function editCountry(Request $request){

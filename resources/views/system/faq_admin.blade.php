@@ -48,7 +48,7 @@
                             @endforeach
                             </tbody>
                         </table>
-                        <nav class="admin-users-pagination" aria-label="Page navigation example">
+                        <nav class="admin-users-pagination">
                             <ul class="pagination">
                                 <li class="page-item disabled">
                                     <a class="page-link" href="#" tabindex="-1"><</a>
