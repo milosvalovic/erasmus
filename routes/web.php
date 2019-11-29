@@ -27,7 +27,7 @@ Route::post('/hladat', ['as' => 'search', 'uses' => 'client\SearchController@sea
 
 Route::get('/mobility', 'client\MobilitiesController@mobilities');
 
-Route::get('/mobility/{id}/{perPage}', ['as' => 'mobility', 'uses' => 'client\MobilitiesController@mobilityByType']);
+Route::get('/typmobility', ['as' => 'mobility', 'uses' => 'client\MobilitiesController@mobilityByType']);
 
 Route::get('/detail/{id}', 'client\DetailController@detail');
 

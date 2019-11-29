@@ -8,7 +8,7 @@ use App\Models\Contact;
 use App\Models\Mobility;
 use App\Models\Office_Hours;
 use App\Models\Season;
-use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
 class MobilitiesController extends Controller
@@ -25,52 +25,37 @@ class MobilitiesController extends Controller
             ]);
     }
 
-    public function mobilityByType($typeID, $perPage)
+    public function mobilityByType(Request $request)
     {
-        $sortedMobility = $this->getTopMobilityType($typeID, $perPage)->sortByDesc(function ($col) {
-            return $col->date_end_reg;
-        })->values();
+        $typeID = $request->query('id');
+        $take = $request->query('pocet');
+        $skip = $request->query('skok');
 
-        return view('client.app.mobilities',
-            ['contact' => array_chunk(Contact::all()->toArray(), Variables::NUMBER_OF_CONTACT_ROW),
-                'office_hours' => Office_Hours::all(),
-                'address' => Address::all(),
-                'mobilities' => $sortedMobility,
-                'mobility_in_row' => Variables::NUMBER_OF_MOBILITIES_IN_ROW,
-                'article_in_row' => Variables::NUMBER_OF_ARTICLES_IN_ROW
-            ]);
+        if(($take - $skip) == Variables::NUMBER_OF_MOBILITIES_IN_ROW){
+            return view('client.app.mobilities',
+                ['contact' => array_chunk(Contact::all()->toArray(), Variables::NUMBER_OF_CONTACT_ROW),
+                    'office_hours' => Office_Hours::all(),
+                    'address' => Address::all(),
+                    'mobilities' => $this->getMobilityTypes($typeID, $take, $skip),
+                    'number_of_mobilities' => $this->getCountOfMobilityTypes($typeID),
+                    'mobility_in_row' => Variables::NUMBER_OF_MOBILITIES_IN_ROW,
+                    'article_in_row' => Variables::NUMBER_OF_ARTICLES_IN_ROW
+                ]);
+        }else{
+            return view('errors.404');
+        }
     }
 
-    private function getTopMobilityType($typeID, $perPage)
+    private function getMobilityTypes($typeID, $take, $skip)
     {
-        $offset = Variables::TIME_OFFSET;
-        $topMobility = Mobility::select('ID', 'mobility_types_ID', 'partner_university_ID', 'category_ID')
-            ->with([
-                'university' => function ($query) {
-                    $query->select('ID', 'country_ID', 'name', 'img_url', 'thumb_url');
-                }
-                , 'category' => function ($query) use ($offset) {
-                    $query->select('ID', 'name');
-                }
-                , 'season' => function ($query) use ($offset) {
-                    $query->select('ID', 'mobility_ID', 'date_end_reg')->where('date_end_reg', '>', Carbon::now($offset));
-                }
-                , 'university.country' => function ($query) {
-                    $query->select('ID', 'name');
-                }
-                , 'review' => function ($query) {
-                    $query->select('rating');
-                }
-            ])
-            ->withCount('review')
-            ->whereHas('season', function ($query) use ($offset) {
-                $query->where('season.date_end_reg', '>', Carbon::now($offset));
-            })
-            ->where('mobility_types_ID', '=', $typeID)
-            ->has('university')->has('university.country')
-            ->take($perPage)
+        return Season::whereHas('mobility', function($q) use($typeID) {
+            $q->where('mobility_types_ID', $typeID);})
+            ->take($take)
+            ->skip($skip)
             ->get();
+    }
 
-        return $topMobility;
+    private function getCountOfMobilityTypes($typeID){
+        return Mobility::where(['mobility_types_ID' => $typeID])->get()->count();
     }
 }
