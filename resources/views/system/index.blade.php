@@ -11,6 +11,8 @@
         <!--CSS-->
         <link href="{{ asset('css/system/front.css') }}" rel="stylesheet" type="text/css"/>
         <link href="{{ asset('css/system/template/front.css') }}" rel="stylesheet" type="text/css"/>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+
 
         <!--Fonts-->
         <link href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css"/>
@@ -18,6 +20,22 @@
 
         <!--Animate.css-->
         <link href="{{ asset('css/system/vendor/animate.css') }}" rel="stylesheet" type="text/css"/>
+
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            .zoom {
+                transition: transform .2s;
+            }
+
+            .zoom:hover {
+                -ms-transform: scale(1.5); /* IE 9 */
+                -webkit-transform: scale(1.5); /* Safari 3-8 */
+                transform: scale(1.5);
+            }
+        </style>
 
     </head>
     <body id="page-top">
