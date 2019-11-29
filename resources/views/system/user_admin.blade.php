@@ -83,13 +83,10 @@
                         </div>
                     </form>
                 </div>
+
             </div>
 
-
-
-
         </div>
-
         @include('system.include.footer')
     </div>
 @endsection
