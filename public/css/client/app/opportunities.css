@@ -219,12 +219,69 @@ form#search > div.country,
 form#search > div.type,
 form#search > div.university,
 form#search > div.rating,
+form#search > div.grand,
+form#search > div.category,
 form#search > div.from,
 form#search > div.to,
 form#search > div.search {
-    display: block;
-    float: left;
+    display: inline-block;
+    margin-left: -5px;
     margin-bottom: 30px;
+}
+
+.twitter-typeahead, .tt-hint, .tt-input, .tt-menu { width: 100%; }
+
+.typeahead, .tt-query, .tt-hint {
+    height: 40px;
+    font-family: Cairo-Regular, serif;
+    font-size: 20px;
+    padding-left: 10px;
+    border: solid 1px #a6a6a6;
+}
+
+.typeahead {
+    background-color: #FFFFFF;
+}
+
+.typeahead:focus {
+    border: 2px solid #0097CF;
+}
+
+.tt-query {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+
+.tt-hint {
+    color: #999999;
+}
+
+.tt-menu {
+    width: 163px;
+    font-family: Cairo-Regular, serif;
+    font-size: 18px;
+    color: #000000;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tt-suggestion {
+    font-size: 18px;
+    padding: 3px 20px;
+}
+
+.tt-suggestion:hover {
+    cursor: pointer;
+    background-color: #007183;
+    color: #FFFFFF;
+}
+
+.tt-suggestion p {
+    margin: 0;
+}
+
+form#search {
+    text-align: center;
 }
 
 form#search label {
@@ -232,7 +289,7 @@ form#search label {
     color: #000;
 }
 
-form#search > div > input, select {
+form#search > div input, select {
     display: block;
     width: 163px;
     height: 50px;
@@ -256,96 +313,21 @@ form#search input, select > option {
 }
 
 form#search input[type="submit"] {
-    width: 110px;
+    width: 350px;
     font-family: Cairo-Bold, serif;
     border: solid 1px #898989;
     border-radius: 5px;
     background: #007183;
     color: white;
+    margin-bottom: 30px;
 }
 
 form#search input[type="submit"]:hover {
     background: #004351;
 }
 
-@media only screen and (max-width: 568px) {
-    form#search {
-        width: inherit !important;
-    }
-
-    form#search > div.country,
-    form#search > div.type,
-    form#search > div.university,
-    form#search > div.rating,
-    form#search > div.from,
-    form#search > div.to,
-    form#search > div.search {
-        float: none;
-    }
-
-    form#search > div > label {
-        display: block;
-        width: 90vw;
-        margin: 0 auto;
-    }
-
-    form#search > div > input, select {
-        width: 90vw !important;
-        margin: 0 auto;
-        padding: 0;
-    }
-
-    form#search input[type="submit"] {
-        width: 90vw;
-        display: block;
-        margin: 0 auto;
-    }
-}
-
-@media only screen and (min-width: 1200px) {
-    form#search input[type="submit"] {
-        margin-left: 20px;
-    }
-}
-
-@media only screen and (max-width: 1200px) {
-    form#search {
-        width: 750px;
-        margin: 0 auto;
-        display: block;
-    }
-
-    form#search > div > input, select {
-        width: 250px;
-    }
-
-    form#search > div.university, form#search > div.to {
-        float: none;
-    }
-}
-
-@media only screen and (max-width: 992px) {
-    form#search {
-        width: 600px;
-        margin: 0 auto;
-        display: block;
-    }
-
-    form#search > div > input, select {
-        width: 200px;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    form#search {
-        width: 460px;
-        margin: 0 auto;
-        display: block;
-    }
-
-    form#search > div > input, select {
-        width: 150px;
-    }
+.country, .university {
+    width: 155px;
 }
 
 h2.no-results {
@@ -367,4 +349,26 @@ ul.pagination > li {
     font-size: 18px;
     text-decoration: none;
     color: #007183;
+}
+
+@media only screen and (max-width: 678px) {
+    input, select{
+        width: 90vw !important;
+    }
+
+    form#search > div.country,
+    form#search > div.type,
+    form#search > div.university,
+    form#search > div.rating,
+    form#search > div.grand,
+    form#search > div.category,
+    form#search > div.from,
+    form#search > div.to,
+    form#search > div.search {
+        margin-left: 0;
+    }
+
+    .country, .university {
+        width: 90vw;
+    }
 }

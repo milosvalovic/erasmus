@@ -1,11 +1,11 @@
 <div class="page-section" id="opportunities">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
                 {{ Form::open(array('url' => '/hladat#search', "id"=>"search", "enctype"=>"application/x-www-form-urlencoded")) }}
                     <div class="country">
                         <label for="country">@lang('app.search_modal_label_country')</label>
-                        <input type="text" name="country" id="country" value="{{ isset($last_search_criteria['country'])?$last_search_criteria['country']:'' }}" placeholder="">
+                        <input type="text" name="country" id="country" class="typeahead tt-query" value="{{ isset($last_search_criteria['country'])?$last_search_criteria['country']:'' }}" placeholder="">
                     </div>
 
                     <div class="type">
@@ -14,11 +14,19 @@
                     </div>
                     <div class="university">
                         <label for="univerzita">@lang('app.search_modal_label_university')</label>
-                        <input type="text" name="university" id="univerzita" value="{{ isset($last_search_criteria['university'])?$last_search_criteria['university']:'' }}" placeholder="">
+                        <input type="text" name="university" id="university" class="typeahead tt-query" value="{{ isset($last_search_criteria['university'])?$last_search_criteria['university']:'' }}" placeholder="">
                     </div>
                     <div class="rating">
                         <label for="rating">@lang('app.search_modal_label_rating')</label>
                         {{Form::select('rating', array("0 - 5", "1 - 5", "2 - 5", "3 - 5", "4 - 5", "5"))}}
+                    </div>
+                    <div class="grand">
+                        <label for="from">@lang('app.search_modal_label_grand')</label>
+                        <input type="text" name="grand" id="grand" value="" placeholder="420€">
+                    </div>
+                    <div class="category">
+                        <label for="from">@lang('app.search_modal_label_mobility_category')</label>
+                        {{Form::select('category', $category)}}
                     </div>
                     <div class="from">
                         <label for="from">@lang('app.search_modal_label_from')</label>
@@ -31,6 +39,7 @@
                                data-date-format="dd.mm.yyyy" readonly placeholder="">
                     </div>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <br>
                     <div class="search">
                         <label for="search"></label>
                         <input type="submit" name="search" id="search" value="@lang('app.search_modal_submit')">

@@ -4,7 +4,7 @@
 @section('article_in_row', $article_in_row)
 @section('css', asset('css/client/app/home.css'))
 @section('masthead')
-    @include('client.app.layout.home.masthead', ['type' => $type])
+    @include('client.app.layout.home.masthead', ['type' => $type, 'category' => $category])
 @endsection
 @section('content')
     @include('client.app.layout.home.opportunitie', ['mobilities' => $mobilities, 'mobility_in_row' => $mobility_in_row])

@@ -185,9 +185,9 @@ header.masthead .post-heading .meta a {
 div.search-modal h1 {
     font-family: Cairo-Bold, serif;
     font-style: italic;
+    margin-bottom: 15px;
     font-size: 35px;
     text-align: left;
-    margin-bottom: 30px;
     color: #000000;
 }
 
@@ -200,29 +200,46 @@ div.search-modal {
     box-shadow: 10px 10px 17px -7px rgba(0, 0, 0, 0.75);
 }
 
-div.input-items {
-    overflow: auto;
+div.input-items > form label {
+    margin-top: 15px;
+    width: 150px;
 }
 
-div.input-items > form > label {
-    position: absolute;
-    font-family: Cairo-SemiBold, serif;
-    color: #000;
+div.input-items > form input, select, label {
+    display: block;
+    font-size: 15px;
 }
 
-div.input-items > form > input, select {
-    width: 49%;
-    height: 50px;
-    position: relative;
-    top: 23px;
+div.input-items > form input, select {
+    width: 103%;
+    height: 40px;
     font-family: Cairo-Regular, serif;
-    font-size: 20px;
+    font-size: 18px;
     padding-left: 10px;
-    margin-bottom: 35px;
     border: solid 1px #a6a6a6;
 }
 
-div.input-items > form > select {
+div.input-items > form select {
+    width: 124%;
+}
+
+div.input-items > form > input, select > option {
+    font-family: Cairo-Regular, serif;
+    font-size: 18px;
+}
+
+div.input-items > form label {
+    font-family: Cairo-SemiBold, serif;
+    color: #000;
+    margin-left: 5px;
+}
+
+div.input-items > form select[name="stays"], select[name="rating"], input[name="to"] {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+div.input-items > form select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -230,36 +247,36 @@ div.input-items > form > select {
     background-size: 25px 15px;
 }
 
-div.input-items > form > input, select > option {
-    font-family: Cairo-Regular, serif;
-    font-size: 20px;
-}
-
-div.input-items > form > input[name="country"], input[name="university"], input[name="from"] {
+div.input-items > form input[name="country"], input[name="university"], input[name="from"] {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    left: 2px;
-}
-
-div.input-items > form > select[name="stays"], select[name="rating"], input[name="to"] {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    right: 3px;
 }
 
 div.input-items > form > select[name="stays"], select[name="rating"]::selection {
     font-family: Cairo-Regular, serif;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 div.input-items > form > select[name="rating"], select[name="stays"]::selection {
     font-family: Cairo-Regular, serif;
-    font-size: 20px;
+    font-size: 18px;
+}
+
+div.input-items > form #to {
+    width: 124%;
+}
+div.input-items > form #grand {
+    width: 102.7%;
+}
+
+div.input-items > form .item-group{
+    display: inline-block;
+    width: 44%;
 }
 
 div.input-items > form > input[type="submit"] {
-    width: 110px;
-    float: right;
+    width: 100%;
+    margin-top: 40px;
     font-family: Cairo-Bold, serif;
     border: solid 1px #898989;
     border-radius: 5px;
@@ -269,6 +286,57 @@ div.input-items > form > input[type="submit"] {
 
 div.input-items > form > input[type="submit"]:hover {
     background: #004351;
+}
+
+.twitter-typeahead, .tt-hint, .tt-input, .tt-menu { width: 100%; }
+
+.typeahead, .tt-query, .tt-hint {
+    height: 40px;
+    font-family: Cairo-Regular, serif;
+    font-size: 20px;
+    padding-left: 10px;
+    border: solid 1px #a6a6a6;
+}
+
+.typeahead {
+    background-color: #FFFFFF;
+}
+
+.typeahead:focus {
+    border: 2px solid #0097CF;
+}
+
+.tt-query {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+
+.tt-hint {
+    color: #999999;
+}
+
+.tt-menu {
+    width: 103%;
+    font-family: Cairo-Regular, serif;
+    font-size: 18px;
+    color: #000000;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tt-suggestion {
+    font-size: 18px;
+    padding: 3px 20px;
+}
+
+.tt-suggestion:hover {
+    cursor: pointer;
+    background-color: #007183;
+    color: #FFFFFF;
+}
+
+.tt-suggestion p {
+    margin: 0;
 }
 
 div#current-opportunities .badge.badge-secondary {

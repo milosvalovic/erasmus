@@ -17,6 +17,10 @@ Route::get('/', 'client\HomeController@home');
 
 Route::get('/mapa/krajiny', 'client\HomeController@getCountryCodes');
 
+Route::get('/vyhladavanie/krajiny', 'client\SearchController@getAutocompleteCountries');
+
+Route::get('/vyhladavanie/univerzity', 'client\SearchController@getAutocompleteUniversity');
+
 Route::get('/#kontakt', 'client\HomeController@home');
 
 Route::post('/hladat', ['as' => 'search', 'uses' => 'client\SearchController@search']);

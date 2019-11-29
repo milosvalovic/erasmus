@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\client;
 
 use App\Models\Address;
+use App\Models\Category;
 use App\Models\Contact;
 use App\Models\Mobility_Type;
 use App\Models\Office_Hours;
@@ -119,10 +120,13 @@ class SearchController extends Controller
                 'mobilities' => $sortedAllMobility,
                 'size' => count($sortedAllMobility),
                 'type' => Mobility_Type::pluck('name', 'id'),
+                'category' => Category::pluck('name', 'id'),
                 'last_search_criteria' => array(
                     "country" => $countrySearch,
                     "university" => $universitySearch,
                     "stays" => $typeSearch,
+                    "grand" => $grandSearch,
+                    "category" => $categorySearch,
                     "from" => ($dateStartSearch == '') ? '' : date("d.m.Y", strtotime($dateStartSearch)),
                     "to" => ($dateEndSearch == '') ? '' : date("d.m.Y", strtotime($dateEndSearch)),
                     "rating" => $ratingSearch,
@@ -130,17 +134,25 @@ class SearchController extends Controller
             ]);
     }
 
-    public function getAutocompleteCountries($value)
+    public function getAutocompleteCountries()
     {
-        $countries = Country::where('name','LIKE','%'.$value.'%')->pluck('ID','name');
+        $countries = Country::all('name');
+        $datalist = array();
+        foreach ($countries as $country){
+            array_push($datalist, $country->name);
+        }
 
-        return $countries;
+        return $datalist;
     }
 
-    public function getAutocompleteUniversity($value)
+    public function getAutocompleteUniversity()
     {
-        $university = University::where('name','LIKE','%'.$value.'%')->pluck('ID','name');
+        $university = University::all('name');
+        $datalist = array();
+        foreach ($university as $school){
+            array_push($datalist, $school->name);
+        }
 
-        return $university;
+        return $datalist;
     }
 }
