@@ -70,8 +70,8 @@ class UniversityController extends Controller
             'country_ID' => 'required',
             'city' => 'required|string|max:45',
             'address' => 'required|string|max:100',
-            'name' => 'required|string|unique:partner_university|max:100',
-            'acronym' => 'required|string|unique:partner_university|max:10',
+            'name' => 'required|string|max:100',
+            'acronym' => 'required|string|max:10',
             'image' => 'bail|required|max:8000|mimes:jpeg,jpg,png,gif',
         ]);
 
