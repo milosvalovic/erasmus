@@ -16,7 +16,7 @@
 
         <div class="admin-content">
             <div class="admin-edit-div">
-                <form class="form-add-mobility-category" id=formNewMobilityCategory method="post" action="{{route('editCategory')}}">
+                <form class="form-edit-mobility-category" id=formEditMobilityCategory method="post" action="{{route('editCategory')}}">
                     <h3>Editácia</h3>
                     <div class="form-group">
                         <label for="addMobilityCategory"> Názov:</label>

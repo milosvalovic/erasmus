@@ -20,37 +20,37 @@
                 <div class="admin-blogs-title">
                     <h2>Spravovanie blogov</h2>
                 </div>
-
                 <table class="table admin-table">
                     <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Článok</th>
                         <th scope="col">Titulok</th>
                         <th scope="col">Status</th>
                         <th scope="col">Používateľ</th>
+                        <th scope="col">Potvrdenie</th>
                         <th scope="col" class="user-form-actions">Akcie</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Hodnotenie pobytu</td>
-                        <td>Môj najlepší študijný pobyt</td>
-                        <td>Čakajúci na schválenie</td>
-                        <td>Eduard Gábel</td>
-                        <th scope="row">
-                            <a href="/edit-role/'number'">
-                                <button type="button" class="btn btn-outline-warning">Upraviť</button>
-                            </a>
-                            <a href="/edit-role/'number'">
-                                <button type="button" class="btn btn-outline-danger">Odstrániť</button>
-                            </a>
-                        </th>
-                    </tr>
+                    @foreach($blogs as $blog)
+                        <tr>
+                            <th scope="row">{{ $blog->ID }}</th>
+                            <td>{{ $blog->title }}</td>
+                            <td>{{ $blog->status }}</td>
+                            <td>{{ $blog->users_ID }}</td>
+                            <td>{{ $blog->confirm_by }}</td>
+                            <th scope="row">
+                                <a href="{{ action('system\BlogController@blogEditShow',['id' => $blog->ID]) }}">
+                                    <button type="button" class="btn btn-outline-warning">Upraviť</button>
+                                </a>
+                                <a href="/edit-role/'number'">
+                                    <button type="button" class="btn btn-outline-danger">Odstrániť</button>
+                                </a>
+                            </th>
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
-
                 <nav class="admin-users-pagination" aria-label="Page navigation example">
                     <ul class="pagination">
                         <li class="page-item disabled">
@@ -67,9 +67,6 @@
             </div>
 
         </div>
-
-
-
 
         @include('system.include.footer')
     </div>
