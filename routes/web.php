@@ -90,7 +90,16 @@ Route::get('/admin/blogs', 'system\BlogController@blog');
 /*------University-------*/
 Route::get('/admin/universities', 'system\UniversityController@universities');
 
-Route::get('/admin/universities/edit_university/{id}', ['as' => 'edit_university', 'uses' => 'system\UniversityController@universityEditShow']);
+Route::get('/admin/universities/edit_university/{id}', ['as' => 'edit_university_form', 'uses' => 'system\UniversityController@universityEditShow']);
+
+Route::get('/admin/universities/delete_university/{id}', ['as' => 'delete_university', 'uses' => 'system\UniversityController@deleteUniversity']);
+
+Route::post('/admin/universities/add_university/', ['as' => 'add_university', 'uses' => 'system\UniversityController@addUniversity']);
+
+Route::post('/admin/universities/edit_university/', ['as' => 'edit_university', 'uses' => 'system\UniversityController@editUniversity']);
+
+
+
 
 
 Route::get('/admin/images', 'system\ImageController@images');
