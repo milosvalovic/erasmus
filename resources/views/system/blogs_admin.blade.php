@@ -27,29 +27,27 @@
                         <th scope="col">Titulok</th>
                         <th scope="col">Status</th>
                         <th scope="col">Používateľ</th>
-                        <th scope="col">Users_season</th>
                         <th scope="col">Potvrdenie</th>
                         <th scope="col" class="user-form-actions">Akcie</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($blogs as $blog)
-                    <tr>
-                        <th scope="row">{{ $blog->ID }}</th>
-                        <td>{{ $blog->title }}</td>
-                        <td>{{ $blog->status }}</td>
-                        <td>{{ $blog->users_ID }}</td>
-                        <td>{{ $blog->users_season_ID }}</td>
-                        <td>{{ $blog->confirm_by }}</td>
-                        <th scope="row">
-                            <a href="{{ action('system\BlogController@blogEditShow',['id' => $blog->ID]) }}">
-                                <button type="button" class="btn btn-outline-warning">Upraviť</button>
-                            </a>
-                            <a href="/edit-role/'number'">
-                                <button type="button" class="btn btn-outline-danger">Odstrániť</button>
-                            </a>
-                        </th>
-                    </tr>
+                        <tr>
+                            <th scope="row">{{ $blog->ID }}</th>
+                            <td>{{ $blog->title }}</td>
+                            <td>{{ $blog->status }}</td>
+                            <td>{{ $blog->users_ID }}</td>
+                            <td>{{ $blog->confirm_by }}</td>
+                            <th scope="row">
+                                <a href="{{ action('system\BlogController@blogEditShow',['id' => $blog->ID]) }}">
+                                    <button type="button" class="btn btn-outline-warning">Upraviť</button>
+                                </a>
+                                <a href="/edit-role/'number'">
+                                    <button type="button" class="btn btn-outline-danger">Odstrániť</button>
+                                </a>
+                            </th>
+                        </tr>
                     @endforeach
                     </tbody>
                 </table>
@@ -69,9 +67,6 @@
             </div>
 
         </div>
-
-
-
 
         @include('system.include.footer')
     </div>

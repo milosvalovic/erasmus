@@ -19,11 +19,6 @@
                 <form class="form-edit-mobility-category" id=formNewMobilityCategory method="post" action="">
                     <h3>Editácia</h3>
                     <div class="form-group">
-                        <label for="editBlogTitle">Titulok:</label>
-{{--                          <input type="hidden" value="{{$id}}" name="id">--}}
-                        <input type="text" class="form-control admin-form-input" id="editBlogTitle" name="blogTitle" placeholder="Whoho nadpis" value="">
-                    </div>
-                    <div class="form-group">
                         <label for="editBlogStatus">Status:</label>
                         <input type="text" class="form-control admin-form-input" id="editBlogStatus" placeholder=""
                                name="blogStatus" value="">
@@ -34,12 +29,7 @@
                                name="blogUser" value="">
                     </div>
                     <div class="form-group">
-                        <label for="editBlogUserSeason">User_season:</label>
-                        <input type="text" class="form-control admin-form-input" id="editBlogUserSeason" placeholder=""
-                               name="blogUserSeason" value="">
-                    </div>
-                    <div class="form-group">
-                        <label for="editBlogAffirmation">Potvrdenie:</label>
+                        <label for="editBlogAffirmation">Potvrdené od:</label>
                         <input type="text" class="form-control admin-form-input" id="editBlogAffirmation" placeholder=""
                                name="blogAffirmation" value="">
                     </div>
