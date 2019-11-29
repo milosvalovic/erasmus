@@ -6,7 +6,7 @@
 
         <div class="admin-title">
             <div class="admin-title-text">
-                <h1>Editácia blogu</h1>
+                <h1>Editácia FAQ</h1>
             </div>
             <div class="admin-title-user">
                 <p>Eduard Gábel</p>
@@ -16,22 +16,17 @@
 
         <div class="admin-content">
             <div class="admin-edit-div">
-                <form class="form-edit-blog" id="formEditBlog" method="post" action="">
+                <form class="form-edit-faq" id=formNewMobilityCategory method="post" action="">
                     <h3>Editácia</h3>
                     <div class="form-group">
-                        <label for="editBlogStatus">Status:</label>
-                        <input type="text" class="form-control admin-form-input" id="editBlogStatus" placeholder=""
-                               name="blogStatus" value="">
+                        <label for="editFaqName">Názov:</label>
+                        <input type="text" class="form-control admin-form-input" id="editFaqName" placeholder=""
+                               name="faqName" value="">
                     </div>
                     <div class="form-group">
-                        <label for="editBlogUser">Používateľ:</label>
-                        <input type="text" class="form-control admin-form-input" id="editBlogUser" placeholder=""
-                               name="blogUser" value="">
-                    </div>
-                    <div class="form-group">
-                        <label for="editBlogAffirmation">Potvrdené od:</label>
-                        <input type="text" class="form-control admin-form-input" id="editBlogAffirmation" placeholder=""
-                               name="blogAffirmation" value="">
+                        <label for="editFaqDescription">Popis:</label>
+                        <textarea type="text" class="form-control admin-form-input" id="editFaqDescription" placeholder=""
+                                  name="faqDescription"></textarea>
                     </div>
                     <div class="form-group-button">
                         <button type="submit" class="btn btn-outline-primary btn-add">Uložiť</button>

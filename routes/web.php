@@ -98,6 +98,7 @@ Route::get('/admin/images', 'system\ImageController@images');
 
 /*------FAQ-------------------*/
 Route::get('/admin/faq', 'system\FaqController@faq');
+Route::get('/admin/faq/edit_faq/{id}', ['as' => 'edit_faq_form', 'uses' => 'system\FaqController@faqEditShow']);
 
 /*------Office hour-----------*/
 Route::get('/admin/open_hours', 'system\OfficeHourController@office_hours');
