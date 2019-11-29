@@ -17,9 +17,8 @@ use Illuminate\Routing\Controller;
 class CountryController extends Controller
 {
     public function countries(){
-        $countries = Country::select('*')->get()->peginate(10);
-
-        return view('system.')->with('countries', $countries);
+        $countries = Country::all();
+        return view('system.countries_admin', ['countries' => $countries]);
     }
 
     public function addCountry(Request $request){
