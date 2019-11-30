@@ -67,6 +67,11 @@
                             <label for="addUserRole"> Názov:</label>
                             <input type="text" class="form-control admin-form-input" id="addUserRole" placeholder="Študent" name="name">
                         </div>
+                        <div class="form-group">
+                            <label for="addRoleDescription">Popis:</label>
+                            <textarea type="text" class="form-control admin-form-input"
+                                      placeholder="Krátky popis o tejto roli" id="addRoleDescription" name="description"></textarea>
+                        </div>
                         <div class="form-group-button">
                             <button type="submit" class="btn btn-outline-primary btn-add">Pridať</button>
                         </div>
