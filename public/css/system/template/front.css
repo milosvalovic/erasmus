@@ -147,10 +147,13 @@ sup {
 }
 
 a {
-/* s   color: #007183;*/
+    padding: 10px;
+    color: #007183;
     text-decoration: none;
-/*    padding: .5rem .75rem;*/
-/*    border: 1px solid #dddfeb;*/
+}
+
+li.active{
+    padding: 0 10px 0 10px;
 }
 
 /*a:hover {*/
