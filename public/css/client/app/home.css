@@ -234,7 +234,7 @@ div.input-items > form label {
     margin-left: 5px;
 }
 
-div.input-items > form select[name="stays"], select[name="rating"], input[name="to"] {
+div.input-items > form select[name="stays"], select[name="rating"], select[name="category"], input[name="to"] {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -247,7 +247,7 @@ div.input-items > form select {
     background-size: 25px 15px;
 }
 
-div.input-items > form input[name="country"], input[name="university"], input[name="from"] {
+div.input-items > form input[name="country"], input[name="university"], input[name="grand"], input[name="from"] {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
