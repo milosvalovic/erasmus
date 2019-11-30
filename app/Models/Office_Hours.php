@@ -9,6 +9,7 @@ class Office_Hours extends Model
 {
     use SoftDeletes;
 
+    protected $primaryKey = 'ID';
     protected $table = 'office_hours';
     protected $fillable = ['day', 'from', 'to', 'off'];
 }
