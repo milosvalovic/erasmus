@@ -82,6 +82,7 @@ body {
 table.admin-table tr th a{
     text-decoration: none;
     border: 0;
+    padding: 0;
 }
 
 .image-in-table{
