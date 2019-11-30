@@ -5,7 +5,7 @@
                 {{ Form::open(array('url' => '/hladat#search', "id"=>"search", "enctype"=>"application/x-www-form-urlencoded")) }}
                     <div class="country">
                         <label for="country">@lang('app.search_modal_label_country')</label>
-                        <input type="text" name="country" id="country" class="typeahead tt-query" value="{{ isset($last_search_criteria['country'])?$last_search_criteria['country']:'' }}" placeholder="">
+                        <input type="text" name="country" id="country" class="typeahead tt-query" value="{{ isset($last_search_criteria['country'])?$last_search_criteria['country']:'' }}" placeholder="@lang('app.search_modal_label_country_example')">
                     </div>
 
                     <div class="type">
@@ -14,7 +14,7 @@
                     </div>
                     <div class="university">
                         <label for="univerzita">@lang('app.search_modal_label_university')</label>
-                        <input type="text" name="university" id="university" class="typeahead tt-query" value="{{ isset($last_search_criteria['university'])?$last_search_criteria['university']:'' }}" placeholder="">
+                        <input type="text" name="university" id="university" class="typeahead tt-query" value="{{ isset($last_search_criteria['university'])?$last_search_criteria['university']:'' }}" placeholder="@lang('app.search_modal_label_university_example')">
                     </div>
                     <div class="rating">
                         <label for="rating">@lang('app.search_modal_label_rating')</label>
@@ -31,12 +31,12 @@
                     <div class="from">
                         <label for="from">@lang('app.search_modal_label_from')</label>
                         <input type="text" name="from" id="from" value="{{ isset($last_search_criteria['from'])?$last_search_criteria['from']:'' }}" data-provide="datepicker"
-                               data-date-format="dd.mm.yyyy" readonly placeholder="">
+                               data-date-format="dd.mm.yyyy" readonly placeholder="@lang('app.search_modal_label_from_example')">
                     </div>
                     <div class="to">
                         <label for="to">@lang('app.search_modal_label_to')</label>
                         <input type="text" name="to" id="to" value="{{ isset($last_search_criteria['to'])?$last_search_criteria['to']:'' }}" data-provide="datepicker"
-                               data-date-format="dd.mm.yyyy" readonly placeholder="">
+                               data-date-format="dd.mm.yyyy" readonly placeholder="@lang('app.search_modal_label_to_example')">
                     </div>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <br>
@@ -93,7 +93,9 @@
         <div class="row more-opportunitie">
             <div class="container">
                 <div class="cold-md-12 text-right">
-                    <a id="load" href="#">@lang('pagination.show_more')</a>
+                    @if($size != 0)
+                        <a id="load" href="#">@lang('pagination.show_more')</a>
+                    @endif
                 </div>
             </div>
         </div>
