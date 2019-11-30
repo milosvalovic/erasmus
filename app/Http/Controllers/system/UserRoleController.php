@@ -4,16 +4,17 @@ namespace App\Http\Controllers\system;
 
 
 use App\Models\Role;
-use Illuminate\Contracts\Session\Session;
+
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Illuminate\Validation\Validator;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 class UserRoleController extends Controller
 {
     public function roles()
     {
-        $roles = Role::all();
+        $roles = Role::paginate(15);
         return view('system.users_role_admin')->with('roles',$roles);
     }
 
@@ -26,38 +27,33 @@ class UserRoleController extends Controller
             return redirect()->back()->withInput();
         }
 
-        Role::create([
-            'name' => $request->firstname,
-            'last_name' => $request->lastname,
-            'email' => $request->email,
-            'newsletter' => 0,
-            'verified' => 1,
-            'password' => bcrypt($request->firstname),
-        ]);
+        $role = new Role();
+        $role->name = $request->input("name");
+        $role->description = $request->input('description');
+        $role->save();
 
-        redirect(url('/admin/role'));
+        return redirect(url('/admin/roles'));
     }
 
     public function editRole(Request $request){
-        $role = Role::find($request->id);
-        $role->name = $request->name;
-        $role->description = $request->description;
+        $role = Role::find($request->input('id'));
+        $role->name = $request->input('name');
+        $role->description = $request->input('description');
         $role->save();
-        redirect(url('/admin/role'));
+        return redirect(url('/admin/roles'));
     }
 
     public function deleteRole($id){
         $role = Role::find($id);
         $role->delete();
 
-        redirect(url('/admin/role'));
+        return redirect(url('/admin/roles'));
 
     }
     public function validate($request){
 
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|unique:roles',
-            'description' => 'required|string'
+            'name' => 'required|string|unique:roles'
         ]);
 
         return $validator;
