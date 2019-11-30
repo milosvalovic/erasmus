@@ -15,9 +15,7 @@
         </div>
 
         <div class="admin-content">
-
-
-
+            {{--TODO Content of images--}}
         </div>
 
         @include('system.include.footer')

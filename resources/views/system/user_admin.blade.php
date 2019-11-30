@@ -53,7 +53,7 @@
                             @endforeach
                             </tbody>
                         </table>
-                        <nav class="admin-users-pagination" aria-label="Page navigation example">
+                        <nav class="admin-users-pagination">
                             {{$users->links()}}
                         </nav>
                     </div>
@@ -62,7 +62,7 @@
                 <div class="col-xs-12 col-md-3 admin-add-new-item-div">
 
                     <form method="post" class="form-add-new-user" id="formAddNewUser" action="{{route('addUser')}}">
-                        <h3>Pridať člena</h3>
+                        <h3 class="form-title">Pridať člena</h3>
                         @if (session('error'))
                             <div class="alert alert-danger">
                                 <h5>{{session('error')}}</h5>
@@ -91,7 +91,7 @@
                         <div class="form-group">
                             <label for="addUserPassword">Heslo:</label>
                             <input type="text" class="form-control admin-form-input" id="addUserPassword" placeholder="******" name="password" required>
-                            <a class="btn btn-outline-info" onclick="generate();">Vygenerovať heslo</a>
+                            <a id="generateRandomPassBtn" class="btn btn-outline-info">Vygenerovať heslo</a>
                         </div>
                         <input type="hidden" name="length" value="6">
                         <div class="form-group-button">
@@ -107,20 +107,5 @@
         </div>
         @include('system.include.footer')
     </div>
-    <script>
-        function randomPassword(length) {
-            var chars = "abcdefghijklmnopqrstuvwxyz!@_-+ABCDEFGHIJKLMNOP1234567890";
-            var pass = "";
-            for (var x = 0; x < length; x++) {
-                var i = Math.floor(Math.random() * chars.length);
-                pass += chars.charAt(i);
-            }
-            return pass;
-        }
-
-        function generate() {
-            formAddNewUser.password.value = randomPassword(formAddNewUser.length.value);
-        }
-    </script>
 @endsection
 
