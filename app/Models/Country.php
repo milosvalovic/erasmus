@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Country extends Model
 {
+    protected $primaryKey = 'ID';
     protected $table = 'countries';
     protected $fillable= ['name','country_code','erasmus_code'];
 
