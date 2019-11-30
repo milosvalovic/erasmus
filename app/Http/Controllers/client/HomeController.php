@@ -24,6 +24,7 @@ class HomeController extends Controller
                 'type' => Mobility_Type::pluck('name', 'id'),
                 'category' => Category::pluck('name', 'id'),
                 'mobility_in_row' => Variables::NUMBER_OF_MOBILITIES_IN_ROW,
+                'skip_value' => Variables::NUMBER_OF_INITIAL_SKIP_VALUE,
                 'article_in_row' => Variables::NUMBER_OF_ARTICLES_IN_ROW
             ]);
     }

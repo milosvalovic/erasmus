@@ -4,10 +4,10 @@
 @section('article_in_row', $article_in_row)
 @section('css', asset('css/client/app/home.css'))
 @section('masthead')
-    @include('client.app.layout.home.masthead', ['type' => $type])
+    @include('client.app.layout.home.masthead', ['type' => $type, 'category' => $category])
 @endsection
 @section('content')
-    @include('client.app.layout.home.opportunitie', ['mobilities' => $mobilities, 'mobility_in_row' => $mobility_in_row])
+    @include('client.app.layout.home.opportunitie', ['mobilities' => $mobilities, 'mobility_in_row' => $mobility_in_row, 'skip_value' => $skip_value])
     @include('client.app.layout.home.universities')
     @include('client.app.layout.home.newsletter')
     @include('client.app.layout.home.contact', ["contact" => $contact, "office_hours" => $office_hours, "address" => $address])

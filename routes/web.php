@@ -17,13 +17,17 @@ Route::get('/', 'client\HomeController@home');
 
 Route::get('/mapa/krajiny', 'client\HomeController@getCountryCodes');
 
+Route::get('/vyhladavanie/krajiny', 'client\SearchController@getAutocompleteCountries');
+
+Route::get('/vyhladavanie/univerzity', 'client\SearchController@getAutocompleteUniversity');
+
 Route::get('/#kontakt', 'client\HomeController@home');
 
 Route::post('/hladat', ['as' => 'search', 'uses' => 'client\SearchController@search']);
 
 Route::get('/mobility', 'client\MobilitiesController@mobilities');
 
-Route::get('/mobility/{id}/{perPage}', ['as' => 'mobility', 'uses' => 'client\MobilitiesController@mobilityByType']);
+Route::get('/typmobility', ['as' => 'mobility', 'uses' => 'client\MobilitiesController@mobilityByType']);
 
 Route::get('/detail/{id}', 'client\DetailController@detail');
 

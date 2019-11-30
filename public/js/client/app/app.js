@@ -4,6 +4,36 @@ $('document').ready(function () {
         $("#search").append("<input type='hidden' name='number' value='" + $("#number-of-items > *").length + "'>").submit();
     });
 
+    var countries = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.whitespace,
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        prefetch: {
+            url: '/erasmus/public/vyhladavanie/krajiny',
+            ttl: 1
+        }
+    });
+
+    var university = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.whitespace,
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        prefetch: {
+            url: '/erasmus/public/vyhladavanie/univerzity',
+            ttl: 1
+        }
+    });
+
+    $('#country').typeahead(null, {
+        name: 'countries',
+        source: countries,
+        limit: 10
+    });
+
+    $('#university').typeahead(null, {
+        name: 'university',
+        source: university,
+        limit: 10
+    });
+
     const typed = new Typed('#typed', {
         strings: ['pobyty', 'stáže', 'prednáškové pobyty', 'školenia'],
         backSpeed: 70,
