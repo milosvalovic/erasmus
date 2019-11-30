@@ -7,7 +7,10 @@ use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
+use Ixudra\Curl\Facades\Curl;
 
 class UserController extends Controller
 {
@@ -32,17 +35,32 @@ class UserController extends Controller
             return redirect()->back()->withInput();
         }
 
-        $user = User::create([
-            'first_name' => $request->input('firstname'),
-            'last_name' => $request->input('lastname'),
+        /*$user = User::create([
+            'first_name' => $request->input('first_name'),
+            'last_name' => $request->input('last_name'),
             'email' => $request->input('email'),
+            'roles_ID' => $request->input('role_id'),
             'newsletter' => 0,
             'verified' => 1,
             'password' => bcrypt($request->input('password')),
-        ]);
 
-        $user->roles()
-            ->attach(Role::where('name', $request->input('role'))->first());
+        ]);*/
+
+        $user = new User();
+        $user->first_name = $request->input('first_name');
+        $user->last_name = $request->input('last_name');
+        $user->email = $request->input('email');
+        $user->roles_ID = $request->input('role_id');
+        $user->newsletter = 0;
+        $user->verified = 1;
+        $user->password = bcrypt($request->input('password'));
+        $user->save();
+
+
+        Password::broker()->sendResetLink(['email'=>$user->email]);
+
+        return redirect('/admin/users/');
+
     }
 
     public function deleteUser($id)
@@ -54,7 +72,8 @@ class UserController extends Controller
     public function userEditShow($id)
     {
         $user = User::find($id);
-        return view("system.edit.user_edit", ['user' => $user]);
+        $roles = Role::all();
+        return view("system.edit.user_edit", ['user' => $user, 'roles'=>$roles]);
     }
 
     public function editUser(Request $request)
@@ -63,9 +82,10 @@ class UserController extends Controller
         $user->first_name = $request->input('first_name');
         $user->last_name = $request->input('last_name');
         $user->email = $request->input('email');
+        $user->roles_ID = $request->input('role_id');
         $user->save();
 
-        $user->roles()->sync($request->input('role_ID'));
+        return redirect('/admin/users/');
     }
 
     public function validateCreate($request){
@@ -73,17 +93,8 @@ class UserController extends Controller
             'email' => 'required|email|unique:users',
             'first_name' => 'required|string|max:50',
             'last_name' => 'required|string|max:50',
-            'password' => 'required|string'
-        ]);
-
-        return $validator;
-    }
-
-    public function validateUpdate($request){
-        $validator = Validator::make($request->all(), [
-            'email' => 'required|email|unique:users',
-            'first_name' => 'required|string|max:50',
-            'last_name' => 'required|string|max:50',
+            'password' => 'required|string',
+            'role_id' => 'required'
         ]);
 
         return $validator;
