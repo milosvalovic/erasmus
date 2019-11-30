@@ -17,10 +17,7 @@
         <div class="admin-content">
             <div class="admin-mobilities-table">
                 <div class="admin-mobilities-title">
-                    <h2>Spravovanie mobilít</h2>
-                    <a href="#">
-                        <button type="button" class="btn btn-outline-primary btn-add">Pridať mobilitu</button>
-                    </a>
+                    <h2>Výpis mobilít</h2>
                 </div>
 
                 <table class="table admin-table">
@@ -29,20 +26,23 @@
                         <th scope="col">ID</th>
                         <th scope="col">Názov partnerskej university</th>
                         <th scope="col">Krajina</th>
-                        <th scope="col">Erasmus/Ceepus</th>
+                        <th scope="col">Typ</th>
                         <th scope="col">Kategória</th>
+                        <th scope="col">Štipendium</th>
                         <th scope="col" class="user-form-actions">Akcie</th>
                     </tr>
                     </thead>
                     <tbody>
+                    @foreach($mobilities as $mobility)
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Paris Sciences et Lettres</td>
-                        <td>Francúzsko</td>
-                        <td>Erazmus</td>
-                        <td>Študijný pobyt</td>
+                        <th scope="row">{{ $mobility->ID  }}</th>
+                        <td>{{ $mobility->partner_university_ID }}</td>
+                        <td></td>
+                        <td>{{ $mobility->mobility_types_ID }}</td>
+                        <td>{{ $mobility->category_ID }}</td>
+                        <td>{{ $mobility->grant }}</td>
                         <th scope="row">
-                            <a href="/edit-user/'number'">
+                            <a href="{{ action('system\MobilityController@mobilityEditShow',['id' => $mobility->ID]) }}">
                                 <button type="button" class="btn btn-outline-warning">Upraviť</button>
                             </a>
                             <a href="/delete-user/'number'">
@@ -50,6 +50,7 @@
                             </a>
                         </th>
                     </tr>
+                        @endforeach
                     </tbody>
                 </table>
 
