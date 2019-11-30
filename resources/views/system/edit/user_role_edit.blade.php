@@ -16,22 +16,16 @@
 
         <div class="admin-content">
             <div class="admin-edit-div">
-                <form class="form-edit-role" id="formEditUserRole" method="post" action="{{route('editRole')}}">
+                <form class="form-edit-role" id="formEditUserRole" method="post" action="">
                     <h3>Editácia</h3>
-                    @if (session('error'))
-                        <div class="alert alert-danger">
-                            <h5>{{session('error')}}</h5>
-                        </div>
-                    @endif
                     <div class="form-group">
                         <label for="editUserRoleName"> Názov:</label>
-                        <input type="hidden" value="{{$role->id}}" name="id">
-                        <input type="text" class="form-control admin-form-input" id="editUserRoleName" name="name" placeholder="študent" value="{{$role->name}}">
+{{--                        <input type="hidden" value="{{$id}}" name="id">--}}
+                        <input type="text" class="form-control admin-form-input" id="editUserRoleName" name="name" placeholder="študent" value="">
                     </div>
                     <div class="form-group-button">
                         <button type="submit" class="btn btn-outline-primary btn-add">Uložiť</button>
                     </div>
-                    {{csrf_field()}}
                 </form>
             </div>
         </div>

@@ -41,7 +41,7 @@
                                     <a href="{{ action('system\UserRoleController@userRoleEditShow', ['id' => $role->id]) }}">
                                         <button type="button" class="btn btn-outline-warning">Upraviť</button>
                                     </a>
-                                    <a href="{{route('deleteRole',['id' => $role->id])}}">
+                                    <a href="/edit-role/'number'">
                                         <button type="button" class="btn btn-outline-danger">Odstrániť</button>
                                     </a>
                                 </th>
@@ -50,27 +50,31 @@
                             </tbody>
                         </table>
                         <nav class="admin-users-pagination" aria-label="Page navigation example">
-                            {{$roles->links()}}
+                            <ul class="pagination">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1"><</a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#"> > </a>
+                                </li>
+                            </ul>
                         </nav>
                     </div>
                 </div>
 
                 <div class="col-xs-12 col-md-3 admin-add-new-item-div">
-                    <form class="form-add-user-role" id=formNewUserRole method="post" action="{{route('addRole')}}">
+                    <form class="form-add-user-role" id=formNewUserRole>
                         <h3 class="form-title">Pridať rolu</h3>
-                        @if (session('error'))
-                            <div class="alert alert-danger">
-                                <h5>{{session('error')}}</h5>
-                            </div>
-                        @endif
                         <div class="form-group">
                             <label for="addUserRole"> Názov:</label>
-                            <input type="text" class="form-control admin-form-input" id="addUserRole" placeholder="Študent" name="name">
+                            <input type="text" class="form-control admin-form-input" id="addUserRole" placeholder="Študent">
                         </div>
                         <div class="form-group-button">
                             <button type="submit" class="btn btn-outline-primary btn-add">Pridať</button>
                         </div>
-                        {{csrf_field()}}
                     </form>
                 </div>
             </div>

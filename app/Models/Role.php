@@ -9,7 +9,6 @@ class Role extends Model
 {
     use SoftDeletes;
 
-    protected $primaryKey = "id";
     protected $table = 'roles';
     protected $fillable = ['description', 'name'];
 
