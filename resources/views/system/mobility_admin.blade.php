@@ -15,49 +15,99 @@
         </div>
 
         <div class="admin-content">
-            <div class="admin-mobilities-table">
-                <div class="admin-mobilities-title">
-                    <h2>Spravovanie mobilít</h2>
-                    <a href="#">
-                        <button type="button" class="btn btn-outline-primary btn-add">Pridať mobilitu</button>
-                    </a>
+
+            <div class="row">
+                <div class="col-xs-12 col-md-8">
+                    <div class="admin-mobilities-table">
+                        <div class="admin-mobilities-title">
+                            <h2>Výpis mobilít</h2>
+                        </div>
+                        <table class="table admin-table">
+                            <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Názov partnerskej university</th>
+                                <th scope="col">Krajina</th>
+                                <th scope="col">Typ</th>
+                                <th scope="col">Kategória</th>
+                                <th scope="col">Štipendium</th>
+                                <th scope="col" class="user-form-actions">Akcie</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($mobilities as $mobility)
+                                <tr>
+                                    <th scope="row">{{ $mobility->ID  }}</th>
+                                    <td>{{ $mobility->partner_university_ID }}</td>
+                                    <td></td>
+                                    <td>{{ $mobility->mobility_types_ID }}</td>
+                                    <td>{{ $mobility->category_ID }}</td>
+                                    <td>{{ $mobility->grant }}</td>
+                                    <th scope="row">
+                                        <a href="{{ action('system\MobilityController@mobilityEditShow',['id' => $mobility->ID]) }}">
+                                            <button type="button" class="btn btn-outline-warning">Upraviť</button>
+                                        </a>
+                                        <a href="/delete-user/'number'">
+                                            <button type="button" class="btn btn-outline-danger">Odstrániť</button>
+                                        </a>
+                                    </th>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                        <nav class="admin-users-pagination">
+                            {{--TODO Here pagination--}}
+                        </nav>
+                    </div>
                 </div>
 
-                <table class="table admin-table">
-                    <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Názov partnerskej university</th>
-                        <th scope="col">Krajina</th>
-                        <th scope="col">Erasmus/Ceepus</th>
-                        <th scope="col">Kategória</th>
-                        <th scope="col" class="user-form-actions">Akcie</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Paris Sciences et Lettres</td>
-                        <td>Francúzsko</td>
-                        <td>Erazmus</td>
-                        <td>Študijný pobyt</td>
-                        <th scope="row">
-                            <a href="/edit-user/'number'">
-                                <button type="button" class="btn btn-outline-warning">Upraviť</button>
-                            </a>
-                            <a href="/delete-user/'number'">
-                                <button type="button" class="btn btn-outline-danger">Odstrániť</button>
-                            </a>
-                        </th>
-                    </tr>
-                    </tbody>
-                </table>
+                <div class="col-xs-12 col-md-3 admin-add-new-item-div">
+                    <form method="post" class="form-add-faq" id="formNewFaq" action="">
+                        <h3 class="form-title">Pridať mobilitu</h3>
 
-                <nav class="admin-users-pagination">
-                    {{--TODO Here pagination--}}
-                </nav>
+                        <div class="form-group">
+                            <label for="addMobilityUniversity">Partnerská univerzita: </label>
+                            <select name="addMobilityUniversityId" class="form-control admin-form-input" id="addMobilityUniversity" required>
+                                {{--                            @foreach($universities as $university)--}}
+                                {{--                                <option value="{{$university->ID}}"--}}
+                                {{--                                        @if($university->ID == $mobility->partner_university_ID) selected="selected" @endif>{{$university->name}}</option>--}}
+                                {{--                            @endforeach--}}
+                            </select>
+                        </div>
 
+                        <div class="form-group">
+                            <label for="addMobilityCategory">Kategória: </label>
+                            <select name="addMobilityCategoryId" class="form-control admin-form-input" id="addMobilityCategory" required>
+                                {{--                            @foreach($universities as $university)--}}
+                                {{--                                <option value="{{$university->ID}}"--}}
+                                {{--                                        @if($university->ID == $mobility->partner_university_ID) selected="selected" @endif>{{$university->name}}</option>--}}
+                                {{--                            @endforeach--}}
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="addMobilityType">Typ: </label>
+                            <select name="addMobilityTypeId" class="form-control admin-form-input" id="addMobilityType" required>
+                                {{--                            @foreach($universities as $university)--}}
+                                {{--                                <option value="{{$university->ID}}"--}}
+                                {{--                                        @if($university->ID == $mobility->partner_university_ID) selected="selected" @endif>{{$university->name}}</option>--}}
+                                {{--                            @endforeach--}}
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="addNewUniversityGrand">Výška štipendia:</label>
+                            <input type="text" class="form-control admin-form-input" id="addNewUniversityGrand"
+                                   placeholder="725€" name="addMobilityGrand" required>
+                        </div>
+
+                        <div class="form-group-button">
+                            <button type="submit" class="btn btn-outline-primary btn-add">Pridať</button>
+                        </div>
+                    </form>
+                </div>
             </div>
+
         </div>
 
         @include('system.include.footer')
