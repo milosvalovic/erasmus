@@ -33,7 +33,7 @@
                     <div class="form-group" id="to_input">
                         <label for="editHourOff">Úradný deň:</label>
                         <label class="switch">
-                            <input type="checkbox" name="off" id="editHourOff" @if($item->off==0) checked @endif>
+                            <input type="checkbox" name="off" id="editHourOff" @if($item->off==0) checked @endif value="0">
                             <span class="slider round" ></span>
                         </label>
                     </div>
