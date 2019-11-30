@@ -71,6 +71,9 @@ Route::get('/admin/users/delete/{id}', 'system\UserController@deleteUser')->name
 /*------Roles-------------------*/
 Route::get('/admin/roles', 'system\UserRoleController@roles');
 Route::get('/admin/roles/edit_role/{id}', ['as' => 'edit_role_form', 'uses' => 'system\UserRoleController@userRoleEditShow']);
+Route::post('/admin/roles/add_role', 'system\UserRoleController@addRole')->name('addRole');
+Route::post('/admin/roles/edit_role', 'system\UserRoleController@editRole')->name('editRole');
+Route::get('/admin/roles/delete/{id}', 'system\UserRoleController@deleteRole')->name('deleteRole');
 
 /*------Mobility----------------*/
 Route::get('/admin/mobilities', 'system\MobilityController@mobilities');
