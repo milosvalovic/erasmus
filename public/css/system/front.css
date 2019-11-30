@@ -431,6 +431,16 @@ a[class='page-link']:hover{
     padding: 20px;
 }
 
+/*----Edit-------------*/
+.admin-switch-div{
+    display: flex;
+    align-items: center;
+}
+
+.admin-switch-div > label:nth-child(1){
+    margin-right: 15px;
+}
+
 
 /*-------------Countries--------------------------------*/
 .admin-countries-table{

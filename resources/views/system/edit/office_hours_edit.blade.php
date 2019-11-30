@@ -22,7 +22,7 @@
                     <input type="hidden" name="day" value="{{$item->day}}">
                     <div class="form-group" id="to_input">
                         <label for="editHourFrom">Od:</label>
-                        <input type="text" class="form-control admin-form-input" id="editHourFrom" placeholder=""
+                        <input type="text" class="form-control admin-form   -input" id="editHourFrom" placeholder=""
                                name="from" value="{{$item->from}}">
                     </div>
                     <div class="form-group" id="from_input">
@@ -30,7 +30,7 @@
                         <input type="text" class="form-control admin-form-input" id="editHourTo" placeholder=""
                                name="to" value="{{$item->to}}">
                     </div>
-                    <div class="form-group" id="to_input">
+                    <div class="form-group admin-switch-div" id="to_input">
                         <label for="editHourOff">Úradný deň:</label>
                         <label class="switch">
                             <input type="checkbox" name="off" id="editHourOff" @if($item->off==0) checked @endif>
