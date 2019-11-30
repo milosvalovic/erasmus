@@ -59,7 +59,6 @@
                         <nav class="admin-users-pagination">
                             {{ $universities->links()}}
 {{--                            {!! $universities !!}--}}
-
                         </nav>
                     </div>
                 </div>

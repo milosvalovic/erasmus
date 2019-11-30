@@ -45,6 +45,9 @@
                     @endforeach
                     </tbody>
                 </table>
+                <nav class="admin-users-pagination">
+                    {{--TODO Here pagination--}}
+                </nav>
             </div>
         </div>
 

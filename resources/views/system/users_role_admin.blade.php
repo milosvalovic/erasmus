@@ -49,7 +49,7 @@
                             @endforeach
                             </tbody>
                         </table>
-                        <nav class="admin-users-pagination" aria-label="Page navigation example">
+                        <nav class="admin-users-pagination">
                             {{$roles->links()}}
                         </nav>
                     </div>
