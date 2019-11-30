@@ -113,6 +113,7 @@ Route::get('/admin/faq/edit_faq/{id}', ['as' => 'edit_faq_form', 'uses' => 'syst
 /*------Office hour-----------*/
 Route::get('/admin/open_hours', 'system\OfficeHourController@office_hours');
 Route::get('/admin/open_hours/edit_hour/{id}', ['as' => 'edit_office_hour', 'uses' => 'system\OfficeHourController@office_hourEditShow']);
+Route::post('/admin/open_hours/edit_hour', 'system\OfficeHourController@editHours')->name('editHours');
 
 /*------Countries-------------*/
 Route::get('/admin/countries', 'system\CountryController@countries');
