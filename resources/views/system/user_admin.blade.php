@@ -60,27 +60,45 @@
                 </div>
 
                 <div class="col-xs-12 col-md-3 admin-add-new-item-div">
-                    <form method="post" class="form-add-new-user" id="formAddNewUser" action="">
+
+                    <form method="post" class="form-add-new-user" id="formAddNewUser" action="{{route('addUser')}}">
                         <h3>Pridať člena</h3>
+                        @if (session('error'))
+                            <div class="alert alert-danger">
+                                <h5>{{session('error')}}</h5>
+                            </div>
+                        @endif
                         <div class="form-group">
                             <label for="addUserFirstName">Meno:</label>
-                            <input type="text" class="form-control admin-form-input" id="addUserFirstName" placeholder="Filip" name="userFirstName">
+                            <input type="text" class="form-control admin-form-input" id="addUserFirstName" placeholder="Filip" name="first_name">
                         </div>
                         <div class="form-group">
                             <label for="addUserLastName">Priezvisko:</label>
-                            <input type="text" class="form-control admin-form-input" id="addUserLastName" placeholder="Dobrovoľný" name="userLastName">
+                            <input type="text" class="form-control admin-form-input" id="addUserLastName" placeholder="Dobrovoľný" name="last_name">
                         </div>
                         <div class="form-group">
                             <label for="addUserEmail">Email:</label>
-                            <input type="text" class="form-control admin-form-input" id="addUserEmail" placeholder="filip.d@gmail.com" name="userEmail">
+                            <input type="text" class="form-control admin-form-input" id="addUserEmail" placeholder="filip.d@gmail.com" name="email">
                         </div>
                         <div class="form-group">
                             <label for="addUserRole">Rola:</label>
-                            <input type="text" class="form-control admin-form-input" id="addUserRole" placeholder="študent" name="userRole">
+                            <select name="role_id" class="form-control admin-form-input" id="addUserRole" required>
+                                @foreach($roles as $role)
+                                    <option value="{{$role->id}}">{{$role->name}}</option>
+                                @endforeach
+                            </select>
                         </div>
+                        <div class="form-group">
+                            <label for="addUserPassword">Heslo:</label>
+                            <input type="text" class="form-control admin-form-input" id="addUserPassword" placeholder="******" name="password" required>
+                            <a class="btn btn-outline-info" onclick="generate();">Vygenerovať heslo</a>
+                        </div>
+                        <input type="hidden" name="length" value="6">
                         <div class="form-group-button">
                             <button type="submit" class="btn btn-outline-primary btn-add">Pridať</button>
                         </div>
+                        {{csrf_field()}}
+
                     </form>
                 </div>
 
@@ -89,5 +107,20 @@
         </div>
         @include('system.include.footer')
     </div>
+    <script>
+        function randomPassword(length) {
+            var chars = "abcdefghijklmnopqrstuvwxyz!@_-+ABCDEFGHIJKLMNOP1234567890";
+            var pass = "";
+            for (var x = 0; x < length; x++) {
+                var i = Math.floor(Math.random() * chars.length);
+                pass += chars.charAt(i);
+            }
+            return pass;
+        }
+
+        function generate() {
+            formAddNewUser.password.value = randomPassword(formAddNewUser.length.value);
+        }
+    </script>
 @endsection
 

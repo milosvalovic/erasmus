@@ -134,6 +134,7 @@ class SearchController extends Controller
             ]);
     }
 
+
     public function getAutocompleteCountries()
     {
         $countries = Country::all('name');
