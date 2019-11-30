@@ -43,7 +43,7 @@
                                         <a href="{{ action('system\CountryController@countryEditShow',['id' => $country->ID]) }}">
                                             <button type="button" class="btn btn-outline-warning">Upraviť</button>
                                         </a>
-                                        <a href="/edit-role/'number'">
+                                        <a href="{{route('deleteCountry',['id'=>$country->ID])}}">
                                             <button type="button" class="btn btn-outline-danger">Odstrániť</button>
                                         </a>
                                     </th>
@@ -53,26 +53,36 @@
                         </table>
                         <nav class="admin-users-pagination">
                             <nav class="admin-users-pagination">
-                                {{--TODO Here pagination--}}
+                                {{$countries->links()}}
                             </nav>
                         </nav>
                     </div>
                 </div>
 
                 <div class="col-xs-12 col-md-3 admin-add-new-item-div">
-                    <form method="post" class="form-add-country" id="formAddCountry" action="">
+                    <form method="post" class="form-add-country" id="formAddCountry" action="{{route('addCountry')}}" >
                         <h3 class="form-title">Pridať krajinu</h3>
+                        @if (session('error'))
+                            <div class="alert alert-danger">
+                                <h5>{{session('error')}}</h5>
+                            </div>
+                        @endif
                         <div class="form-group">
                             <label for="addCountryName">Názov:</label>
-                            <input type="text" class="form-control admin-form-input" id="addCountryName" placeholder="Slovakia" name="countryName">
+                            <input type="text" class="form-control admin-form-input" id="addCountryName" placeholder="Slovakia" name="name" required>
                         </div>
                         <div class="form-group">
                             <label for="addCountryCode">Kód krajiny:</label>
-                            <input type="text" class="form-control admin-form-input" id="addCountryCode" placeholder="sk" name="countryCode">
+                            <input type="text" class="form-control admin-form-input" id="addCountryCode" placeholder="sk" name="country_code" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="addErazmusCode">Erazmus kód:</label>
+                            <input type="text" class="form-control admin-form-input" id="addErazmusCode" placeholder="sk" name="erasmus_code" required>
                         </div>
                         <div class="form-group-button">
                             <button type="submit" class="btn btn-outline-primary btn-add">Pridať</button>
                         </div>
+                        {{csrf_field()}}
                     </form>
                 </div>
             </div>

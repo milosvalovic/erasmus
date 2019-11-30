@@ -77,6 +77,7 @@ Route::get('/admin/roles/delete/{id}', 'system\UserRoleController@deleteRole')->
 
 /*------Mobility----------------*/
 Route::get('/admin/mobilities', 'system\MobilityController@mobilities');
+Route::get('/admin/mobilities/edit_mobility/{id}', ['as' => 'edit_mobility_form', 'uses' => 'system\MobilityController@mobilityEditShow']);
 
 /*------Mobility category-------*/
 Route::get('/admin/mobilities_category', 'system\CategoryMobilityController@mobility_category');
@@ -113,10 +114,14 @@ Route::get('/admin/faq/edit_faq/{id}', ['as' => 'edit_faq_form', 'uses' => 'syst
 /*------Office hour-----------*/
 Route::get('/admin/open_hours', 'system\OfficeHourController@office_hours');
 Route::get('/admin/open_hours/edit_hour/{id}', ['as' => 'edit_office_hour', 'uses' => 'system\OfficeHourController@office_hourEditShow']);
+Route::post('/admin/open_hours/edit_hour', 'system\OfficeHourController@editHours')->name('editHours');
 
 /*------Countries-------------*/
 Route::get('/admin/countries', 'system\CountryController@countries');
 Route::get('/admin/countries/edit_country/{id}', ['as' => 'edit_country', 'uses' => 'system\CountryController@countryEditShow']);
+Route::get('/admin/countries/delete/{id}', 'system\CountryController@deleteCountry')->name('deleteCountry');
+Route::post('/admin/countries/add_country', 'system\CountryController@addCountry')->name('addCountry');
+Route::post('/admin/countries/edit_country', 'system\CountryController@editCountry')->name('editCountry');
 
 //Auth routes
 Route::group(['middleware' => ['web']], function () {

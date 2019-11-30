@@ -3,11 +3,17 @@
 namespace App\Http\Controllers\system;
 
 
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use App\Models\Office_Hours;
 
+
 class OfficeHourController extends Controller
 {
+    public function __construct()
+    {
+
+    }
 
     public function office_hours()
     {
@@ -19,6 +25,21 @@ class OfficeHourController extends Controller
     {
         $officeHour = Office_Hours::find($id);
         return view('system.edit.office_hours_edit', ['item' => $officeHour]);
+    }
+
+    public function editHours(Request $request)
+    {
+        $hours = Office_Hours::find($request->input('ID'));
+        $hours->day = $request->input('day');
+        $hours->from = $request->input('from');
+        $hours->to = $request->input('to');
+        if ($request->input('off') == 0)
+            $hours->off = 1;
+        else
+            $hours->off = 0;
+        $hours->save();
+
+        return redirect('/admin/open_hours');
     }
 
 

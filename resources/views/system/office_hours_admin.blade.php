@@ -26,6 +26,7 @@
                         <th scope="col">Deň</th>
                         <th scope="col">Od</th>
                         <th scope="col">Do</th>
+                        <th scope="col">Úradný deň</th>
                         <th scope="col" class="user-form-actions">Akcie</th>
                     </tr>
                     </thead>
@@ -36,6 +37,7 @@
                         <td>{{ $item->day }}</td>
                         <td>{{ $item->from }}</td>
                         <td>{{ $item->to }}</td>
+                        <td>@if($item->off==0)áno @else nie  @endif</td>
                         <th scope="row">
                             <a href="{{ action('system\OfficeHourController@office_hourEditShow',['id' => $item->ID]) }}">
                                 <button type="button" class="btn btn-outline-warning">Upraviť</button>

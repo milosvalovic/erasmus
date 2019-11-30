@@ -13,11 +13,12 @@ use App\Models\Country;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Validator;
 
 class CountryController extends Controller
 {
     public function countries(){
-        $countries = Country::all();
+        $countries = Country::paginate(15);
         return view('system.countries_admin')->with(['countries' => $countries]);
     }
 
@@ -35,6 +36,8 @@ class CountryController extends Controller
         $country->erasmus_code = $request->input("erasmus_code");
 
         $country->save();
+
+        return redirect('/admin/countries');
     }
 
 
@@ -45,14 +48,19 @@ class CountryController extends Controller
     }
 
     public function editCountry(Request $request){
+        $validation = $this->validateCreate($request);
+        if ($validation->fails()) {
+            Session::flash('error', $validation->messages()->first());
+            return redirect()->back()->withInput();
+        }
+
         $country = Country::find($request->input("id"));
         $country->update([
             "name" => $request->input("name"),
             "country_code" => $request->input("country_code"),
             "erasmus_code" => $request->input("erasmus_code")
-
         ]);
-        return redirect()->back();
+        return redirect('/admin/countries');
     }
 
     public function deleteCountry($id){
@@ -62,9 +70,9 @@ class CountryController extends Controller
 
     public function validateCreate($request){
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|unique:country',
-            'country_code' => 'required|string|unique:country',
-            'erasmus_code' => 'required|string|unique:country'
+            'name' => 'required|string',
+            'country_code' => 'required|string',
+            'erasmus_code' => 'required|string'
         ]);
 
         return $validator;
