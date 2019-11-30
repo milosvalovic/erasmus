@@ -24,10 +24,17 @@
                         </div>
                     @endif
                     <div class="form-group">
-                        <label for="editUserRoleName"> Názov:</label>
+                        <label for="editUserRoleName">Názov:</label>
                         <input type="hidden" value="{{$role->id}}" name="id">
                         <input type="text" class="form-control admin-form-input" id="editUserRoleName" name="name" placeholder="študent" value="{{$role->name}}">
                     </div>
+
+                    <div class="form-group">
+                        <label for="editRoleDescription">Popis:</label>
+                        <textarea type="text" class="form-control admin-form-input"
+                                  placeholder="Krátky popis o tejto roli" id="editRoleDescription" name="description">{{ $role->description }}</textarea>
+                    </div>
+
                     <div class="form-group-button">
                         <button type="submit" class="btn btn-outline-primary btn-add">Uložiť</button>
                     </div>
