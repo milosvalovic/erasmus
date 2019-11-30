@@ -28,15 +28,6 @@
 {{--                            @endforeach--}}
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="editMobilityCountry">Krajina:</label>
-                        <select name="countryId" class="form-control admin-form-input" id="editMobilityCountry" required>
-                            {{--                            @foreach($universities as $university)--}}
-                            {{--                                <option value="{{$university->ID}}"--}}
-                            {{--                                        @if($university->ID == $mobility->partner_university_ID) selected="selected" @endif>{{$university->name}}</option>--}}
-                            {{--                            @endforeach--}}
-                        </select>
-                    </div>
 
                     <div class="form-group">
                         <label for="editMobilityType">Typ mobility:</label>
