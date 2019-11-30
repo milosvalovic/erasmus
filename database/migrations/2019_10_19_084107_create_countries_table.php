@@ -18,6 +18,7 @@ class CreateCountriesTable extends Migration
             $table->string('name', 150);
             $table->string('country_code', 150);
             $table->string('erasmus_code', 150);
+            $table->timestamps();
         });
     }
 

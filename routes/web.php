@@ -118,6 +118,9 @@ Route::post('/admin/open_hours/edit_hour', 'system\OfficeHourController@editHour
 /*------Countries-------------*/
 Route::get('/admin/countries', 'system\CountryController@countries');
 Route::get('/admin/countries/edit_country/{id}', ['as' => 'edit_country', 'uses' => 'system\CountryController@countryEditShow']);
+Route::get('/admin/countries/delete/{id}', 'system\CountryController@deleteCountry')->name('deleteCountry');
+Route::post('/admin/countries/add_country', 'system\CountryController@addCountry')->name('addCountry');
+Route::post('/admin/countries/edit_country', 'system\CountryController@editCountry')->name('editCountry');
 
 //Auth routes
 Route::group(['middleware' => ['web']], function () {
