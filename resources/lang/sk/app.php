@@ -130,6 +130,14 @@ return [
     'search_modal_submit' => 'Hľadať',
 
 
+    //Contact
+    'contact_workplace' => 'Pracovisko:',
+    'contact_telephone_work' => 'Telefón do zamestnania:',
+    'contact_telephone' => 'Mobilný telefon:',
+    'contact_room' => 'Označenie kancelárie:',
+    'contact_email' => 'E-mail:',
+
+
     //Newsletter
     'newsletter_question' => 'CHCETE BYŤ INFORMOVANÝ AKO PRVÝ O podujatiach k MOBILITáM?',
     'newsletter_link' => 'ÁNO, ZAREGISTROVAŤ SA',

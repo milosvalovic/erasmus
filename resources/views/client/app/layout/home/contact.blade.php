@@ -11,11 +11,11 @@
                     <div class="col-lg-6 col-sm-12">
                         <h3 class="contact-title">{{$person['title_before_name'].' '.$person['firstname'].' '.$person['lastname'].' '.$person['title_after_name']}}</h3>
                         <ul>
-                            <li><span class="item-name">Pracovisko:</span>&nbsp;{{ $person['workplace'] }}</li>
-                            <li><span class="item-name">Telefón do zamestnania:</span>&nbsp;{{ $person['telephone_work'] }}</li>
-                            <li><span class="item-name">Mobilný telefon:</span>&nbsp;{{ $person['phone'] }}</li>
-                            <li><span class="item-name">Označenie kancelárie:</span>&nbsp;{{ $person['room'] }}</li>
-                            <li><span class="item-name">E-mail:</span>&nbsp;{{ $person['email'] }}</li>
+                            <li><span class="item-name">@lang('app.contact_workplace')</span>&nbsp;{{ $person['workplace'] }}</li>
+                            <li><span class="item-name">@lang('app.contact_telephone_work')</span>&nbsp;{{ $person['telephone_work'] }}</li>
+                            <li><span class="item-name">@lang('app.contact_telephone')</span>&nbsp;{{ $person['phone'] }}</li>
+                            <li><span class="item-name">@lang('app.contact_room')</span>&nbsp;{{ $person['room'] }}</li>
+                            <li><span class="item-name">@lang('app.contact_email')</span>&nbsp;{{ $person['email'] }}</li>
                         </ul>
                     </div>
                 @endforeach
@@ -26,7 +26,7 @@
                 <h3 class="contact-title hours">@lang('app.contact_hours_title')</h3>
                 <ul>
                     @foreach ($office_hours as $hour)
-                    <li><span class="item-name">{{ $hour->day }}&nbsp;</span>@if($hour->off == 0) @lang('app.off_day') @else{{date('g:i', strtotime($hour->from)).' -'.date('g:i', strtotime($hour->to))}}@endif</li>
+                    <li><span class="item-name">{{ $hour->day }}&nbsp;</span>@if($hour->off == 1) @lang('app.off_day') @else{{date('g:i', strtotime($hour->from)).' -'.date('g:i', strtotime($hour->to))}}@endif</li>
                     @endforeach
                 </ul>
             </div>

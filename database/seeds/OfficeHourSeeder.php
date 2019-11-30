@@ -16,35 +16,35 @@ class OfficeHourSeeder extends Seeder
             'day' => 'Po',
             'from' => '08:30',
             'to' => '11:00',
-            'off' => 1
+            'off' => 0
         ]);
 
         DB::table('office_hours')->insert([
             'day' => 'Ut',
             'from' => null,
             'to' => null,
-            'off' => 0
+            'off' => 1
         ]);
 
         DB::table('office_hours')->insert([
             'day' => 'St',
             'from' => '08:30',
             'to' => '11:00',
-            'off' => 1
+            'off' => 0
         ]);
 
         DB::table('office_hours')->insert([
             'day' => 'Št',
             'from' => null,
             'to' => null,
-            'off' => 0
+            'off' => 1
         ]);
 
         DB::table('office_hours')->insert([
             'day' => 'Pi',
             'from' => null,
             'to' => null,
-            'off' => 0
+            'off' => 1
         ]);
     }
 }

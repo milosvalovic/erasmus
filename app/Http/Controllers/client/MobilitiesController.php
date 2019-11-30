@@ -5,11 +5,11 @@ namespace App\Http\Controllers\client;
 use App\Http\Variables;
 use App\Models\Address;
 use App\Models\Contact;
-use App\Models\Mobility;
 use App\Models\Office_Hours;
 use App\Models\Season;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Carbon\Carbon;
 
 class MobilitiesController extends Controller
 {
@@ -48,14 +48,25 @@ class MobilitiesController extends Controller
 
     private function getMobilityTypes($typeID, $take, $skip)
     {
+        $offset = Variables::TIME_OFFSET;
+
         return Season::whereHas('mobility', function($q) use($typeID) {
             $q->where('mobility_types_ID', $typeID);})
+            ->where('date_end_reg', '>', Carbon::now($offset))
+            ->where('season.date_end_reg', '>', Carbon::now($offset))
             ->take($take)
             ->skip($skip)
             ->get();
     }
 
     private function getCountOfMobilityTypes($typeID){
-        return Mobility::where(['mobility_types_ID' => $typeID])->get()->count();
+        $offset = Variables::TIME_OFFSET;
+
+        return Season::whereHas('mobility', function($q) use($typeID) {
+            $q->where('mobility_types_ID', $typeID);})
+            ->where('date_end_reg', '>', Carbon::now($offset))
+            ->where('season.date_end_reg', '>', Carbon::now($offset))
+            ->get()
+            ->count();
     }
 }
