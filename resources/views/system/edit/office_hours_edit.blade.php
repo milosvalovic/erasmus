@@ -31,7 +31,7 @@
                                name="to" value="{{$item->to}}">
                     </div>
                     <div class="form-group admin-switch-div" id="to_input">
-                        <label for="editHourOff">Úradný deň:</label>
+                        <label for="editHourOff">Neúradný deň:</label>
                         <label class="switch">
                             <input type="checkbox" name="off" id="editHourOff" @if($item->off==0) checked @endif>
                             <span class="slider round" ></span>
