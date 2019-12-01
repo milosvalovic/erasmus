@@ -105,6 +105,7 @@ Route::post('/admin/mobility_type/edit_type/', ['as' => 'edit_type', 'uses' => '
 /*------Blog---------*/
 Route::get('/admin/blogs', 'system\BlogController@blog');
 Route::get('/admin/blogs/delete_blog/{id}', 'system\BlogController@deleteBlog')->name('deleteBlog');
+Route::get('/admin/blogs/detail_blog/{id}', ['as' => 'blog_detail', 'uses' => 'system\BlogController@blogDetail']);
 Route::post('/admin/blogs/change_blog_status', 'system\BlogController@changeBlogStatus')->name('changeBlogStatus');
 
 /*------University-------------*/

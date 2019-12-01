@@ -36,7 +36,12 @@
                     @foreach($blogs as $blog)
                         <tr>
                             <th scope="row">{{ $blog->ID }}</th>
-                            <td>{{ $blog->title }}</td>
+                            <td>
+                                <a class="admin-blog-table"
+                                        href="{{ action('system\BlogController@blogDetail',['id' => $blog->ID]) }}">
+                                    {{ $blog->title }}
+                                </a>
+                            </td>
                             <td>{{ $blog->publish_date }}</td>
                             <td>{{ $blog->user->email }}</td>
                             <td>{{ $blog->user_2->email }}</td>

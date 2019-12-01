@@ -385,6 +385,55 @@ a[class='page-link']:hover{
     padding: 20px;
 }
 
+.admin-blog-table:hover{
+    color: red;
+}
+
+.detail-container{
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+    padding: 25px;
+}
+
+.blog-detail-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.blog-detail--title{
+    display: flex;
+    flex-direction: row;
+}
+
+/*.blog-detail--title > h1 {*/
+/*    text-decoration: underline;*/
+/*}*/
+
+.left-side-title{
+    align-items: baseline;
+}
+
+.blog-detail-active-not-status{
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.blog-detail-active-status{
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
 
 /*-----------------Universities page--------------------*/
 .admin-universities-table{
