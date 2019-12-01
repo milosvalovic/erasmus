@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Blog extends Model
 {
     use SoftDeletes;
-
+    protected $primaryKey = 'ID';
     protected $table = 'blog';
     protected $fillable = ['ID', 'users_ID', 'title', 'article', 'publish_date', 'mobility_ID', 'status', 'confirm_by'];
 

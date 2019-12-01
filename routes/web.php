@@ -59,6 +59,7 @@ Route::post('profil/recenzia/ulozit', ['as' => 'insert-review', 'uses' => 'stude
 
 
 /*------------------------------- Admin routes---------------------------------------------------------------------------------------------------------------------*/
+Route::group(['middleware' => ['web','auth']], function () {
 Route::get('/admin', 'system\SystemController@system');
 
 /*------User routes-------------*/
@@ -99,6 +100,8 @@ Route::post('/admin/mobility_type/edit_type/', ['as' => 'edit_type', 'uses' => '
 
 /*------Blog---------*/
 Route::get('/admin/blogs', 'system\BlogController@blog');
+Route::get('/admin/blogs/delete_blog/{id}', 'system\BlogController@deleteBlog')->name('deleteBlog');
+Route::post('/admin/blogs/change_blog_status', 'system\BlogController@changeBlogStatus')->name('changeBlogStatus');
 
 
 /*------University-------------*/
@@ -129,6 +132,8 @@ Route::get('/admin/countries/edit_country/{id}', ['as' => 'edit_country', 'uses'
 Route::get('/admin/countries/delete/{id}', 'system\CountryController@deleteCountry')->name('deleteCountry');
 Route::post('/admin/countries/add_country', 'system\CountryController@addCountry')->name('addCountry');
 Route::post('/admin/countries/edit_country', 'system\CountryController@editCountry')->name('editCountry');
+
+});
 
 //Auth routes
 Route::group(['middleware' => ['web']], function () {
