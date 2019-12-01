@@ -30,7 +30,7 @@
                                 <th scope="col">Krajina</th>
                                 <th scope="col">Typ</th>
                                 <th scope="col">Kategória</th>
-                                <th scope="col">Štipendium (€)</th>
+                                <th scope="col">Štipendium</th>
                                 <th scope="col" class="user-form-actions">Akcie</th>
                             </tr>
                             </thead>
@@ -42,7 +42,7 @@
                                     <td>{{ $mobility->country->name}}</td>
                                     <td>{{ $mobility->mobility_type->name}}</td>
                                     <td>{{ $mobility->category->name}}</td>
-                                    <td>{{ $mobility->grant}}</td>
+                                    <td>{{ $mobility->grant}}€</td>
                                     <th scope="row">
                                         <a href="{{ action('system\MobilityController@mobilityEditShow',['id' => $mobility->ID]) }}">
                                             <button type="button" class="btn btn-outline-warning">Upraviť</button>
