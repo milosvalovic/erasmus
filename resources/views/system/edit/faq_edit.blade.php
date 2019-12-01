@@ -16,21 +16,28 @@
 
         <div class="admin-content">
             <div class="admin-edit-div">
-                <form class="form-edit-faq" id=formNewMobilityCategory method="post" action="">
+                <form class="form-edit-faq" id=formEditFaq method="post" action="{{route('editFaq')}}">
                     <h3>Editácia</h3>
+                    @if (session('error'))
+                        <div class="alert alert-danger">
+                            <h5>{{session('error')}}</h5>
+                        </div>
+                    @endif
+                    <input type="hidden" name="id" value="{{$faqData->ID}}" required>
                     <div class="form-group">
                         <label for="editFaqName">Názov:</label>
                         <input type="text" class="form-control admin-form-input" id="editFaqName" placeholder=""
-                               name="faqName" value="">
+                               name="name" value="{{$faqData->name}}">
                     </div>
                     <div class="form-group">
-                        <label for="editFaqDescription">Popis:</label>
-                        <textarea type="text" class="form-control admin-form-input" id="editFaqDescription" placeholder=""
-                                  name="faqDescription"></textarea>
+                        <label for="editor">Popis:</label>
+                        <textarea id="summernote" name="description" form="formEditFaq" required>{{$faqData->description}}</textarea>
                     </div>
                     <div class="form-group-button">
                         <button type="submit" class="btn btn-outline-primary btn-add">Uložiť</button>
                     </div>
+
+                        {{csrf_field()}}
                 </form>
             </div>
         </div>
@@ -38,5 +45,12 @@
         @include('system.include.footer')
 
     </div>
+
+    <script>
+        $('#summernote').summernote({
+            height: 100
+        });
+        $('.dropdown-toggle').dropdown()
+    </script>
 @endsection
 
