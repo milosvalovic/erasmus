@@ -1918,7 +1918,8 @@ select.form-control[multiple], select.form-control[size] {
 }
 
 textarea.form-control {
-    height: auto
+    height: auto;
+    min-height: 200px;
 }
 
 .form-group {
