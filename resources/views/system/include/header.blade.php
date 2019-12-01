@@ -21,13 +21,6 @@
             </a>
         </li>
 
-        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/roles')) ? 'active' : ''}}">
-            <a class="nav-link" href="{{ action('system\UserRoleController@roles')}}">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                <span>Role používateľov</span>
-            </a>
-        </li>
-
         <li class="nav-item admin-menu-links-hover {{(request()->is('admin/mobilities')) ? 'active' : ''}}">
             <a class="nav-link" href="{{ action('system\MobilityController@mobilities')}}">
                 <i class="fa fa-list-alt" aria-hidden="true"></i>
@@ -35,19 +28,18 @@
             </a>
         </li>
 
-        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/mobilities_category')) ? 'active' : ''}}
-{{--        {{(request()->is('admin/mobilities_category/edit_mobility')) ? 'active' : ''}}--}}
-                ">
-            <a class="nav-link" href="{{ action('system\CategoryMobilityController@mobility_category')}}">
-                <i class="fa fa-list-alt" aria-hidden="true"></i>
-                <span>Kategórie mobilít</span>
+        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/season')) ? 'active' : ''}}
+        {{(request()->is('admin/season/add_season')) ? 'active' : ''}}">
+            <a class="nav-link" href="{{ action('system\SeasonController@season')}}">
+                <i class="fa fa-ravelry" aria-hidden="true"></i>
+                <span>Sezóny</span>
             </a>
         </li>
 
-        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/mobility_type')) ? 'active' : ''}}">
-            <a class="nav-link" href="{{ action('system\TypeMobilityController@mobility_type')}}">
-                <i class="fa fa-list-alt" aria-hidden="true"></i>
-                <span>Typ mobility</span>
+        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/universities')) ? 'active' : ''}}">
+            <a class="nav-link " href="{{ action('system\UniversityController@universities')}}">
+                <i class="fa fa-university" aria-hidden="true"></i>
+                <span>Univerzity</span>
             </a>
         </li>
 
@@ -63,10 +55,26 @@
             </a>
         </li>
 
-        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/universities')) ? 'active' : ''}}">
-            <a class="nav-link " href="{{ action('system\UniversityController@universities')}}">
-                <i class="fa fa-university" aria-hidden="true"></i>
-                <span>Správa univerzít</span>
+        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/mobilities_category')) ? 'active' : ''}}
+        {{--        {{(request()->is('admin/mobilities_category/edit_mobility')) ? 'active' : ''}}--}}
+                ">
+            <a class="nav-link" href="{{ action('system\CategoryMobilityController@mobility_category')}}">
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                <span>Kategórie mobilít</span>
+            </a>
+        </li>
+
+        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/mobility_type')) ? 'active' : ''}}">
+            <a class="nav-link" href="{{ action('system\TypeMobilityController@mobility_type')}}">
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                <span>Typ mobility</span>
+            </a>
+        </li>
+
+        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/roles')) ? 'active' : ''}}">
+            <a class="nav-link" href="{{ action('system\UserRoleController@roles')}}">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <span>Role používateľov</span>
             </a>
         </li>
 

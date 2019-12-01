@@ -78,10 +78,14 @@ Route::get('/admin/roles/delete/{id}', 'system\UserRoleController@deleteRole')->
 /*------Mobility----------------*/
 Route::get('/admin/mobilities', 'system\MobilityController@mobilities');
 Route::get('/admin/mobilities/edit_mobility/{id}', ['as' => 'edit_mobility_form', 'uses' => 'system\MobilityController@mobilityEditShow']);
-
 Route::post('/admin/mobilities/add_mobility', 'system\MobilityController@addMobility')->name('addMobility');
 Route::post('/admin/mobilities/edit_mobility', 'system\MobilityController@editMobility')->name('editMobility');
 Route::get('/admin/mobilities/delete/{id}', 'system\MobilityController@deleteMobility')->name('deleteMobility');
+
+/*------Season----------------*/
+Route::get('/admin/season', 'system\SeasonController@season');
+Route::get('/admin/season/add_season', 'system\SeasonController@newSeasonShow');
+Route::get('/admin/season/edit_season/{id}', ['as' => 'edit_season_form', 'uses' => 'system\SeasonController@seasonEditShow']);
 
 /*------Mobility category-------*/
 Route::get('/admin/mobilities_category', 'system\CategoryMobilityController@mobility_category');
@@ -99,7 +103,6 @@ Route::post('/admin/mobility_type/edit_type/', ['as' => 'edit_type', 'uses' => '
 
 /*------Blog---------*/
 Route::get('/admin/blogs', 'system\BlogController@blog');
-
 
 /*------University-------------*/
 Route::get('/admin/universities', 'system\UniversityController@universities');
