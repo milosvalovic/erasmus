@@ -385,6 +385,10 @@ a[class='page-link']:hover{
     padding: 20px;
 }
 
+.admin-blog-table:hover{
+    color: red;
+}
+
 
 /*-----------------Universities page--------------------*/
 .admin-universities-table{
