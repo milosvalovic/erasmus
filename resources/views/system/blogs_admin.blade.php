@@ -48,7 +48,9 @@
                                 </div>
                             </td>
                             <th scope="row">
-
+                                <a href="{{--Uložiť zmeny--}}#">
+                                    <button type="button" class="btn btn-outline-primary">Uložiť</button>
+                                </a>
                                 <a href="/edit-role/'number'">
                                     <button type="button" class="btn btn-outline-danger">Odstrániť</button>
                                 </a>
