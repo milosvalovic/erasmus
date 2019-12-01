@@ -75,7 +75,7 @@
                                     id="addMobilityUniversity" required>
                                 @foreach($universities as $university)
                                     <option value="{{$university->ID}}">{{$university->name . ' (' . $university->country->name . ')'}}</option>
-                                    @endforeach--}}
+                                    @endforeach
                             </select>
                         </div>
 
