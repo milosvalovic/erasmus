@@ -4,6 +4,13 @@ $('document').ready(function () {
         $("#search").append("<input type='hidden' name='number' value='" + $("#number-of-items > *").length + "'>").submit();
     });
 
+   $("#scroller").click(function(e){
+       e.preventDefault();
+       $([document.documentElement, document.body]).animate({
+           scrollTop: $("#current-opportunities").offset().top
+       }, 1000);
+   }) ;
+
     var countries = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.whitespace,
         queryTokenizer: Bloodhound.tokenizers.whitespace,

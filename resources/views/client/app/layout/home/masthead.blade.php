@@ -59,5 +59,5 @@
             </div>
         </div>
     </div>
-    <a href="#"><span></span></a>
+    <a href="#" id="scroller"><span></span></a>
 </header>
