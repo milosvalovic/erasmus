@@ -407,9 +407,9 @@ a[class='page-link']:hover{
     flex-direction: row;
 }
 
-.blog-detail--title > h2 {
-    text-decoration: underline;
-}
+/*.blog-detail--title > h1 {*/
+/*    text-decoration: underline;*/
+/*}*/
 
 .left-side-title{
     align-items: baseline;
