@@ -193,8 +193,12 @@ div.section-reviews i.background {
     color: #007183;
 }
 
-div.section-more span i:hover {
+div.section-more span i:hover  {
     color: #003e4f;
+}
+
+div.section-more span i.fa-calendar:hover{
+    color: #ffffff;
 }
 
 table {
