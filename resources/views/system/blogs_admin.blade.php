@@ -25,9 +25,10 @@
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Titulok</th>
-                        <th scope="col">Status</th>
+                        <th scope="col">Dátum zverejnenia</th>
                         <th scope="col">Používateľ</th>
-                        <th scope="col">Potvrdenie</th>
+                        <th scope="col">Potvrdené od</th>
+                        <th scope="col">Status</th>
                         <th scope="col" class="user-form-actions">Akcie</th>
                     </tr>
                     </thead>
@@ -36,13 +37,18 @@
                         <tr>
                             <th scope="row">{{ $blog->ID }}</th>
                             <td>{{ $blog->title }}</td>
-                            <td>{{ $blog->status }}</td>
+                            <td>{{ $blog->publish_date }}</td>
                             <td>{{ $blog->users_ID }}</td>
                             <td>{{ $blog->confirm_by }}</td>
+                            <td>
+                                <div class="form-check">
+                                    <input @if($blog->status == 1) checked="checked" @endif
+                                            type="checkbox" class="form-check-input" id="setBlogStatus">
+                                    <label for="setBlogStatus">@if($blog->status == 1) Akceptovaný @else Neakceptovaný @endif</label>
+                                </div>
+                            </td>
                             <th scope="row">
-                                <a href="{{ action('system\BlogController@blogEditShow',['id' => $blog->ID]) }}">
-                                    <button type="button" class="btn btn-outline-warning">Upraviť</button>
-                                </a>
+
                                 <a href="/edit-role/'number'">
                                     <button type="button" class="btn btn-outline-danger">Odstrániť</button>
                                 </a>

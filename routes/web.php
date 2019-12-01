@@ -99,7 +99,7 @@ Route::post('/admin/mobility_type/edit_type/', ['as' => 'edit_type', 'uses' => '
 
 /*------Blog---------*/
 Route::get('/admin/blogs', 'system\BlogController@blog');
-Route::get('/admin/blogs/edit_blog/{id}', ['as' => 'edit_blog_form', 'uses' => 'system\BlogController@blogEditShow']);
+
 
 /*------University-------------*/
 Route::get('/admin/universities', 'system\UniversityController@universities');

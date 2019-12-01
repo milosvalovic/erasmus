@@ -416,6 +416,12 @@ a[class='page-link']:hover{
     padding: 20px;
 }
 
+.obsah-iframe{
+    width: -webkit-fill-available;
+    width: -moz-available;
+}
+
+
 
 /*-------------Office_hours page------------------------*/
 .admin-office-hours-table{
@@ -431,6 +437,7 @@ a[class='page-link']:hover{
     padding: 20px;
 }
 
+
 /*----Edit-------------*/
 .admin-switch-div{
     display: flex;
@@ -439,21 +446,6 @@ a[class='page-link']:hover{
 
 .admin-switch-div > label:nth-child(1){
     margin-right: 15px;
-}
-
-
-/*-------------Countries--------------------------------*/
-.admin-countries-table{
-    border: 1px solid #CED0D5;
-    box-shadow: 0 0 15px #cecece;
-    padding: 10px;
-}
-
-.admin-countries-title{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 20px;
 }
 
 .switch {
@@ -517,6 +509,22 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+
+/*-------------Countries--------------------------------*/
+.admin-countries-table{
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+    padding: 10px;
+}
+
+.admin-countries-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
 
 
 

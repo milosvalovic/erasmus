@@ -48,7 +48,7 @@
 
     <script>
         $('#summernote').summernote({
-            height: 100
+            height: 'auto'
         });
         $('.dropdown-toggle').dropdown()
     </script>

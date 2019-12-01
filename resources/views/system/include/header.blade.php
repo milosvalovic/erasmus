@@ -7,7 +7,7 @@
             <div class="sidebar-brand-icon">
                 <i class="admin-ukf-logo"></i>
             </div>
-            <div class="sidebar-brand-text mx-3">Erasmus</div>
+            <div class="sidebar-brand-text mx-3">Erasmus+</div>
         </a>
 
         <div class="sidebar-heading">

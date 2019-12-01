@@ -28,7 +28,7 @@
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Názov</th>
-                                <th scope="col">Obssah</th>
+                                <th scope="col">Obsah</th>
                                 <th scope="col" class="user-form-actions">Akcie</th>
                             </tr>
                             </thead>
@@ -37,7 +37,7 @@
                                 <tr>
                                     <th scope="row">{{ $item->ID }}</th>
                                     <td>{{ $item->name }}</td>
-                                    <td><iframe srcdoc="{{ $item->description }}"></iframe></td>
+                                    <td><iframe class="obsah-iframe" srcdoc="{{ $item->description }}"></iframe></td>
                                     <th scope="row">
                                         <a href="{{ action('system\FaqController@faqEditShow',['id' => $item->ID]) }}">
                                             <button type="button" class="btn btn-outline-warning">Upraviť</button>
