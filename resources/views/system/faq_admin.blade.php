@@ -28,6 +28,7 @@
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Názov</th>
+                                <th scope="col">Obssah</th>
                                 <th scope="col" class="user-form-actions">Akcie</th>
                             </tr>
                             </thead>
@@ -36,11 +37,12 @@
                                 <tr>
                                     <th scope="row">{{ $item->ID }}</th>
                                     <td>{{ $item->name }}</td>
+                                    <td><iframe srcdoc="{{ $item->description }}"></iframe></td>
                                     <th scope="row">
                                         <a href="{{ action('system\FaqController@faqEditShow',['id' => $item->ID]) }}">
                                             <button type="button" class="btn btn-outline-warning">Upraviť</button>
                                         </a>
-                                        <a href="/edit-role/'number'">
+                                        <a href="{{route('deleteFaq',['id' => $item->ID])}}">
                                             <button type="button" class="btn btn-outline-danger">Odstrániť</button>
                                         </a>
                                     </th>
@@ -49,25 +51,32 @@
                             </tbody>
                         </table>
                         <nav class="admin-users-pagination">
-                            {{--TODO Here pagination--}}
+                            {{$faqData->links()}}
                         </nav>
                     </div>
                 </div>
 
                 <div class="col-xs-12 col-md-3 admin-add-new-item-div">
-                    <form method="post" class="form-add-faq" id="formNewFaq" action="">
+                    <form method="post" class="form-add-faq" id="formNewFaq" action="{{route('addFaq')}}">
                         <h3 class="form-title">Pridať faq</h3>
+                        @if (session('error'))
+                            <div class="alert alert-danger">
+                                <h5>{{session('error')}}</h5>
+                            </div>
+                        @endif
+
                         <div class="form-group">
                             <label for="addFaqName">Názov:</label>
-                            <input type="text" class="form-control admin-form-input" id="addFaqName" placeholder="Sú v tam pekné žienky?" name="faqName">
+                            <input type="text" class="form-control admin-form-input" id="addFaqName" placeholder="Názov" name="name" required>
                         </div>
                         <div class="form-group">
-                            <label for="addFaqDescription">Popis:</label>
-                            <textarea type="text" class="form-control admin-form-input" id="addFaqDescription" placeholder="Pre moje fungovanie počas dňa potrebujem pri sebe reprezentantku nežného pohlavia" name="faqName"></textarea>
+                            <label for="editor">Popis:</label>
+                            <textarea id="summernote" name="description" form="formNewFaq" required></textarea>
                         </div>
                         <div class="form-group-button">
-                            <button type="submit" class="btn btn-outline-primary btn-add">Pridať</button>
+                            <button type="submit" class="btn btn-outline-primary btn-add" id="submitFAQ">Pridať</button>
                         </div>
+                        {{csrf_field()}}
                     </form>
                 </div>
             </div>
@@ -75,5 +84,12 @@
 
         @include('system.include.footer')
     </div>
+
+    <script>
+        $('#summernote').summernote({
+            height: 100
+        });
+        $('.dropdown-toggle').dropdown()
+    </script>
 @endsection
 

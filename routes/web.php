@@ -110,6 +110,9 @@ Route::get('/admin/images', 'system\ImageController@images');
 /*------FAQ-------------------*/
 Route::get('/admin/faq', 'system\FaqController@faq');
 Route::get('/admin/faq/edit_faq/{id}', ['as' => 'edit_faq_form', 'uses' => 'system\FaqController@faqEditShow']);
+Route::post('/admin/faq/addFaq', 'system\FaqController@addFaq')->name('addFaq');
+Route::post('/admin/faq/editFaq', 'system\FaqController@editFaq')->name('editFaq');
+Route::get('/admin/faq/delete/{id}', 'system\FaqController@deleteFaq')->name('deleteFaq');
 
 /*------Office hour-----------*/
 Route::get('/admin/open_hours', 'system\OfficeHourController@office_hours');
