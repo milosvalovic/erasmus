@@ -140,7 +140,7 @@ return [
 
 
     //Newsletter
-    'newsletter_question' => 'CHCETE BYŤ INFORMOVANÝ AKO PRVÝ O podujatiach k MOBILITáM?',
+    'newsletter_question' => 'CHCETE BYŤ O MPODUJATIACH K MOBILITÁM INFORMAVANÝ MEDZI PRVÝMI?',
     'newsletter_link' => 'ÁNO, ZAREGISTROVAŤ SA',
 
 
