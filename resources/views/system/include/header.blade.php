@@ -11,7 +11,7 @@
         </a>
 
         <div class="sidebar-heading">
-            Administrácia tabuliek
+            Administrácia
         </div>
 
         <li class="nav-item admin-menu-links-hover {{ (request()->is('admin/users')) ? 'active' : '' }}">
