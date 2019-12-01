@@ -10,6 +10,7 @@ class Mobility extends Model
     use SoftDeletes;
     use \Staudenmeir\EloquentHasManyDeep\HasRelationships;
 
+    protected $primaryKey = "ID";
     protected $table = 'mobility';
     protected $fillable = ['mobility_types_ID', 'partner_university_ID', 'grant', 'info'];
 
@@ -46,5 +47,9 @@ class Mobility extends Model
     public function user_season()
     {
         return $this->hasManyThrough('App\Models\User_Season','App\Models\Season','mobility_ID','season_ID','ID','ID');
+    }
+
+    public function country(){
+        return $this->hasOneDeep('App\Models\Country',['App\Models\University'], ['ID', 'ID'] ,['partner_university_ID','country_ID']);
     }
 }

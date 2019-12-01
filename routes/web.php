@@ -79,16 +79,20 @@ Route::get('/admin/roles/delete/{id}', 'system\UserRoleController@deleteRole')->
 Route::get('/admin/mobilities', 'system\MobilityController@mobilities');
 Route::get('/admin/mobilities/edit_mobility/{id}', ['as' => 'edit_mobility_form', 'uses' => 'system\MobilityController@mobilityEditShow']);
 
+Route::post('/admin/mobilities/add_mobility', 'system\MobilityController@addMobility')->name('addMobility');
+Route::post('/admin/mobilities/edit_mobility', 'system\MobilityController@editMobility')->name('editMobility');
+Route::get('/admin/mobilities/delete/{id}', 'system\MobilityController@deleteMobility')->name('deleteMobility');
+
 /*------Mobility category-------*/
 Route::get('/admin/mobilities_category', 'system\CategoryMobilityController@mobility_category');
-Route::get('/admin/mobilities_category/edit_mobility/{id}', ['as' => 'edit_mobility', 'uses' => 'system\CategoryMobilityController@mobilityCategoryShow']);
-Route::post('/admin/mobilities_category/add_mobility', 'system\CategoryMobilityController@addNewCategory');
-Route::post('/admin/mobilities_category/edit_mobility', 'system\CategoryMobilityController@editCategory')->name('editCategory');
+Route::get('/admin/mobilities_category/edit_category/{id}', ['as' => 'edit_mobility', 'uses' => 'system\CategoryMobilityController@mobilityCategoryShow']);
+Route::post('/admin/mobilities_category/add_category', 'system\CategoryMobilityController@addNewCategory');
+Route::post('/admin/mobilities_category/edit_category', 'system\CategoryMobilityController@editCategory')->name('editCategory');
 Route::get('/admin/mobilities_category/delete/{id}', 'system\CategoryMobilityController@deleteCategory')->name('deleteCategory');
 
 /*------Mobility type---------*/
 Route::get('/admin/mobility_type', 'system\TypeMobilityController@mobility_type');
-Route::get('/admin/mobility_type/edit_mobility/{id}', ['as' => 'edit_type', 'uses' => 'system\TypeMobilityController@mobilityTypeShowEdit']);
+Route::get('/admin/mobility_type/edit_type/{id}', ['as' => 'edit_type', 'uses' => 'system\TypeMobilityController@mobilityTypeShowEdit']);
 Route::post('/admin/mobility_type/add_type/', ['as' => 'add_type', 'uses' => 'system\TypeMobilityController@addType']);
 Route::get('/admin/mobility_type/delete_type/{id}', ['as' => 'delete_type', 'uses' => 'system\TypeMobilityController@deleteType']);
 Route::post('/admin/mobility_type/edit_type/', ['as' => 'edit_type', 'uses' => 'system\TypeMobilityController@editType']);
