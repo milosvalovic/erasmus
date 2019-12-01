@@ -59,7 +59,7 @@ class User extends Authenticatable
 
     public function hasRole($role)
     {
-        /*var_dump($this->roles()->where('name', $role)->first());
+        /*echo $this->roles()->where('name', $role)->first();
         die;*/
         return null !== $this->roles()->where('name', $role)->first();
     }
