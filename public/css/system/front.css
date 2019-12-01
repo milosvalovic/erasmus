@@ -69,6 +69,8 @@ body {
 
 .form-title{
     color: #565960;
+    margin-bottom: 1.5rem;
+    font-size: 2em;
 }
 
 
@@ -273,6 +275,25 @@ a[class='page-link']:hover{
     flex-direction: row;
     justify-content: space-between;
     padding: 20px;
+}
+
+
+/*-----------------Seasons page--------------------*/
+.admin-season-table{
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+    padding: 10px;
+}
+
+.admin-season-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#addNewSeasonForm{
+    width: 500px;
 }
 
 

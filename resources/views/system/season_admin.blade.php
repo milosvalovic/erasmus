@@ -16,10 +16,10 @@
 
         <div class="admin-content">
 
-            <div class="admin-countries-table">
-                <div class="admin-countries-title">
+            <div class="admin-season-table">
+                <div class="admin-season-title">
                     <h2>Správca sezón</h2>
-                    <a href="#">
+                    <a href="{{ action('system\SeasonController@newSeasonShow') }}">
                         <button type="button" class="btn btn-outline-primary">Pridať novú sezónu</button>
                     </a>
                 </div>

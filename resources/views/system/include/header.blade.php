@@ -28,7 +28,8 @@
             </a>
         </li>
 
-        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/season')) ? 'active' : ''}}">
+        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/season')) ? 'active' : ''}}
+        {{(request()->is('admin/season/add_season')) ? 'active' : ''}}">
             <a class="nav-link" href="{{ action('system\SeasonController@season')}}">
                 <i class="fa fa-ravelry" aria-hidden="true"></i>
                 <span>Sezóny</span>

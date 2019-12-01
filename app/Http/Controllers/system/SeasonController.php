@@ -14,9 +14,14 @@ class SeasonController extends Controller
         return view('system.season_admin',['seasons' => $seasons]);
     }
 
-    public function seasonEditShow()
+    public function newSeasonShow()
     {
-        return view();
+        return view('system.add.season_add');
     }
+
+//    public function seasonEditShow()
+//    {
+//        return view();
+//    }
 
 }

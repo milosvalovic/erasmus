@@ -84,6 +84,7 @@ Route::get('/admin/mobilities/delete/{id}', 'system\MobilityController@deleteMob
 
 /*------Season----------------*/
 Route::get('/admin/season', 'system\SeasonController@season');
+Route::get('/admin/season/add_season', 'system\SeasonController@newSeasonShow');
 
 /*------Mobility category-------*/
 Route::get('/admin/mobilities_category', 'system\CategoryMobilityController@mobility_category');
