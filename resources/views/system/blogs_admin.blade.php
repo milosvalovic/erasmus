@@ -46,7 +46,7 @@
                                     <div class="form-check">
                                         <input @if($blog->status == 1) checked="checked" @endif
                                         type="checkbox" class="form-check-input" id="setBlogStatus" name="status">
-                                        <label for="setBlogStatus">@if($blog->status == 1) Akceptovaný @else
+                                        <label for="">@if($blog->status == 1) Akceptovaný @else
                                                 Neakceptovaný @endif</label>
                                     </div>
                                 </td>
