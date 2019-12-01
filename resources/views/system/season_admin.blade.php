@@ -49,8 +49,7 @@
                             <td>{{ $season->date_start_mobility }}</td>
                             <td>{{ $season->date_end_mobility }}</td>
                             <th scope="row">
-                                {{--                                        {{ action('system\CountryController@countryEditShow',['id' => $season->ID]) }}--}}
-                                <a href="">
+                                <a href="{{ action('system\SeasonController@seasonEditShow',['id' => $season->ID]) }}">
                                     <button type="button" class="btn btn-outline-warning">Upraviť</button>
                                 </a>
                                 <a href="#">

@@ -19,9 +19,10 @@ class SeasonController extends Controller
         return view('system.add.season_add');
     }
 
-//    public function seasonEditShow()
-//    {
-//        return view();
-//    }
+    public function seasonEditShow($id)
+    {
+        $season = Season::find($id);
+        return view('system.edit.season_edit', ['season' => $season]);
+    }
 
 }

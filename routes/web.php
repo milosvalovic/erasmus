@@ -85,6 +85,7 @@ Route::get('/admin/mobilities/delete/{id}', 'system\MobilityController@deleteMob
 /*------Season----------------*/
 Route::get('/admin/season', 'system\SeasonController@season');
 Route::get('/admin/season/add_season', 'system\SeasonController@newSeasonShow');
+Route::get('/admin/season/edit_season/{id}', ['as' => 'edit_season_form', 'uses' => 'system\SeasonController@seasonEditShow']);
 
 /*------Mobility category-------*/
 Route::get('/admin/mobilities_category', 'system\CategoryMobilityController@mobility_category');
@@ -102,7 +103,6 @@ Route::post('/admin/mobility_type/edit_type/', ['as' => 'edit_type', 'uses' => '
 
 /*------Blog---------*/
 Route::get('/admin/blogs', 'system\BlogController@blog');
-
 
 /*------University-------------*/
 Route::get('/admin/universities', 'system\UniversityController@universities');

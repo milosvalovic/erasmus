@@ -73,6 +73,18 @@ body {
     font-size: 2em;
 }
 
+/*Edit content admin*/
+.admin-edit-item-div{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.admin-edit-item-div > form{
+    padding: 30px;
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+}
+
 
 /*-----------------ADMIN table-----------------------*/
 .admin-table{
