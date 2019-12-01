@@ -416,6 +416,11 @@ a[class='page-link']:hover{
     padding: 20px;
 }
 
+.obsah-iframe{
+    width: -webkit-fill-available;
+    width: -moz-available;
+}
+
 
 /*-------------Office_hours page------------------------*/
 .admin-office-hours-table{
@@ -520,11 +525,6 @@ input:checked + .slider:before {
 }
 
 
-
-.obsah-iframe{
-    width: -webkit-fill-available;
-    width: -moz-available;
-}
 
 
 
