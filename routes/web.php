@@ -87,9 +87,12 @@ Route::get('/admin/mobilities/delete/{id}', 'system\MobilityController@deleteMob
 Route::get('/admin/season', 'system\SeasonController@season')->name('seasons');
 Route::get('/admin/season/add_season', 'system\SeasonController@newSeasonShow');
 Route::get('/admin/season/edit_season/{id}', ['as' => 'edit_season_form', 'uses' => 'system\SeasonController@seasonEditShow']);
-Route::get('/admin/season/load_more/{page}', 'system\SeasonController@loadMore');
+Route::get('/admin/season/delete_season/{id}', ['as' => 'deleteSeason', 'uses' => 'system\SeasonController@deleteSeason']);
+Route::get('/admin/season/detail/{id}', ['as' => 'detailSeason', 'uses' => 'system\SeasonController@showDetail']);
+Route::get('/admin/season/autocomplete',['as'=>'autocompleteUsers','uses'=>'system\SeasonController@filterUsers']);
 Route::post('/admin/season/sort_season', 'system\SeasonController@sortSeasons')->name('sortSeasons');
-Route::post('/admin/season/extend', 'system\SeasonController@multiAddSeasonsShow')->name('exntedSeasons');
+Route::post('/admin/season/extend_form', 'system\SeasonController@multiAddSeasonsShow')->name('extendSeasons');
+Route::post('/admin/season/extend', 'system\SeasonController@multiAddSeasons')->name('createMultipleSeasons');
 
 /*------Mobility category-------*/
 Route::get('/admin/mobilities_category', 'system\CategoryMobilityController@mobility_category');

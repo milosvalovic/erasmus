@@ -11,6 +11,7 @@ class Season extends Model
     use \Staudenmeir\EloquentHasManyDeep\HasRelationships;
 
     protected $table = 'season';
+    protected $primaryKey = 'ID';
     protected $fillable = ['date_start_reg', 'date_end_reg', 'count_students', 'count_registrations', 'mobility_ID', 'date_start_mobility', 'date_end_mobility'];
 
     public function mobility()

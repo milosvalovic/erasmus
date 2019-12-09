@@ -19,9 +19,11 @@
             <div class="admin-season-table">
                 <div class="admin-season-title">
                     <h2>Správca sezón</h2>
+                </div>
+                <div class="admin-season-title">
                     <form class="form-inline" id="sortForm">
                         <input type="hidden" id="page" name="page" value="0">
-                        <label for="universities" class="mb-2 mr-sm-2">Vybrať:</label>
+                        <label for="universities" class="mb-2 mr-sm-2">Filter:</label>
                         <select class="form-control mb-2 mr-sm-2-control" id="universities" name="university">
                             <option selected></option>
                             @foreach($universities as $university)
@@ -62,7 +64,7 @@
                             <option value="DESC">Zostupne</option>
                         </select>
                         <label for="active">Zobraziť len aktívne</label>
-                        <input type="checkbox" class="form-check-input" id="active" name="active" value="1">
+                        <input type="checkbox" class="form-check-input" id="active" name="active" value="1" checked>
                         {{csrf_field()}}
                         <button type="submit" class="btn btn-primary">Filtrovať</button>
                         <a href="{{route('seasons')}}">
@@ -75,11 +77,14 @@
                     </a>
 
                 </div>
-                <form method="post" action="{{route('exntedSeasons')}}">
-                    <li class="season-table-list"><input type="checkbox" class="form-check-input" id="select_all">Vybrať
-                        všetky
-                    </li>
-                    <button type="submit" class="btn btn-outline-primary">Zaevidovať vybrané do ďalšej sezóny</button>
+                <form method="post" action="{{route('extendSeasons')}}">
+                    <div class="admin-season-title">
+                        <div class="mb-2 mr-sm-2-control"><input type="checkbox" class="form-check-input" id="select_all">Vybrať
+                            všetky
+                        </div >
+                        <button type="submit" class="btn btn-outline-primary">Zaevidovať vybrané do ďalšej sezóny
+                        </button>
+                    </div>
                     <table class="table admin-table" id="seasonTable">
 
                         <thead>
@@ -149,6 +154,9 @@
             console.log(res);
             //var result = JSON.parse(res);
             res.forEach(function (element) {
+                if(element.count_registrations === -1){
+                    element.count_registrations = "-";
+                }
                 $("#seasonTable tbody").append(
                     "<tr>"
                     + "<th>" + "<div class=\"form-check\">\n" +
@@ -171,6 +179,9 @@
                     "<a href=\"/admin/season/delete_season/" + element.ID + "\">" +
                     "<button type=\"button\" class=\"btn btn-outline-danger\">Odstrániť</button>" +
                     "</a>" +
+                    "<a href=\"/admin/season/detail/" + element.ID + "\">" +
+                    "<button type=\"button\" class=\"btn btn-outline-primary\">Detail</button>" +
+                    "</a>" +
                     "</th>"
                     + "</tr>")
             });
@@ -181,12 +192,9 @@
             }
         }
 
-        $("#loadMore").click(function () {
-            loadData();
-        });
-
         $("#sortForm").submit(function (event) {
             page = 0;
+            $("#page").val(page);
             $("#page").click(function () {
                 $("input:text").val(page);
             });
