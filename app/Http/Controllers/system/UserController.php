@@ -10,7 +10,6 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
-use Ixudra\Curl\Facades\Curl;
 
 class UserController extends Controller
 {
@@ -43,7 +42,6 @@ class UserController extends Controller
             'newsletter' => 0,
             'verified' => 1,
             'password' => bcrypt($request->input('password')),
-
         ]);*/
 
         $user = new User();

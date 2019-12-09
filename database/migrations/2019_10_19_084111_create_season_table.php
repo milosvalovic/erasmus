@@ -17,8 +17,8 @@ class CreateSeasonTable extends Migration
             $table->bigIncrements('ID');
             $table->date('date_start_reg');
             $table->date('date_end_reg');
-            $table->smallInteger('count_students');
-            $table->smallInteger('count_registrations');
+            $table->integer('count_students');
+            $table->integer('count_registrations');
             $table->unsignedBigInteger('mobility_ID');
             $table->date('date_start_mobility');
             $table->date('date_end_mobility');

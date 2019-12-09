@@ -308,6 +308,9 @@ a[class='page-link']:hover{
     width: 500px;
 }
 
+.season-table-list{
+    list-style-type: none;
+}
 
 /*-----------------Roles page-------------------------*/
 .admin-roles-table{
