@@ -37,8 +37,18 @@
                             @foreach($users as $user)
                                 <tr>
                                     <th scope="row">{{$user->id}}</th>
-                                    <td>{{$user->first_name}}</td>
-                                    <td>{{$user->last_name}}</td>
+                                    <td>
+                                        <a class="admin-blog-table"
+                                           href="{{ action('system\UserController@userDetail',['id' => $user->id]) }}">
+                                            {{$user->first_name}}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a class="admin-blog-table"
+                                           href="{{ action('system\UserController@userDetail',['id' => $user->id]) }}">
+                                            {{$user->last_name}}
+                                        </a>
+                                    </td>
                                     <td>{{$user->email}}</td>
                                     <td>{{$user->roles->name}}</td>
                                     <th scope="row">

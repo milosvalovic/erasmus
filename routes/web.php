@@ -69,6 +69,8 @@ Route::post('/admin/users/add_user', 'system\UserController@addUser')->name('add
 Route::post('/admin/users/edit_user', 'system\UserController@editUser')->name('editUser');
 Route::get('/admin/users/delete/{id}', 'system\UserController@deleteUser')->name('deleteUser');
 
+Route::get('/admin/users/detail_user/{id}', ['as' => 'user_detail', 'uses' => 'system\UserController@userDetail']);
+
 /*------Roles-------------------*/
 Route::get('/admin/roles', 'system\UserRoleController@roles');
 Route::get('/admin/roles/edit_role/{id}', ['as' => 'edit_role_form', 'uses' => 'system\UserRoleController@userRoleEditShow']);
