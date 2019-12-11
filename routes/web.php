@@ -89,7 +89,7 @@ Route::get('/admin/season/add_season', 'system\SeasonController@newSeasonShow');
 Route::get('/admin/season/edit_season/{id}', ['as' => 'edit_season_form', 'uses' => 'system\SeasonController@seasonEditShow']);
 Route::get('/admin/season/delete_season/{id}', ['as' => 'deleteSeason', 'uses' => 'system\SeasonController@deleteSeason']);
 Route::get('/admin/season/detail/{id}', ['as' => 'detailSeason', 'uses' => 'system\SeasonController@showDetail']);
-Route::get('/admin/season/autocomplete',['as'=>'autocompleteUsers','uses'=>'system\SeasonController@filterUsers']);
+Route::get('/admin/season/detail/autocompleteUsers',['as'=>'autocompleteUsers','uses'=>'system\SeasonController@filterUsers']);
 Route::post('/admin/season/sort_season', 'system\SeasonController@sortSeasons')->name('sortSeasons');
 Route::post('/admin/season/extend_form', 'system\SeasonController@multiAddSeasonsShow')->name('extendSeasons');
 Route::post('/admin/season/extend', 'system\SeasonController@multiAddSeasons')->name('createMultipleSeasons');
@@ -151,7 +151,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('login', ['as' => 'login.post', 'uses' => 'Auth\LoginController@login']);
 
     Route::get('/odhlasenie', 'Auth\LoginController@logout')->name('logout');
-
     Route::get('/registracia', ['as' => 'register', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
     Route::post('register', ['as' => 'register.post', 'uses' => 'Auth\RegisterController@register']);
     Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');

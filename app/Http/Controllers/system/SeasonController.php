@@ -5,6 +5,7 @@ namespace App\Http\Controllers\system;
 
 use App\Http\Variables;
 use App\Models\Category;
+use App\Models\Country;
 use App\Models\Mobility;
 use App\Models\Mobility_Type;
 use App\Models\Season_status;
@@ -244,22 +245,22 @@ class SeasonController extends Controller
     }
 
     public function filterUsers(Request $request){
-        $userEmail = $request->input('query','');
-        $posts = User::where('email','LIKE','%'.$userEmail.'%')->get();
+        $term = $request->input('term');
+        $page = $request->input('page');
+        $data = User::select('id , first_name, last_name, email')
+            ->orWhere("email","LIKE","%".$term."%")
+            ->orWhere("first_name","LIKE","%".$term."%")
+            ->orWhere("last_name","LIKE","%".$term."%")
+            ->skip($page)
+            ->take($page*15)
+            ->get();
 
-        return response()->json($posts);
+        return $data->toJSON();
 
     }
 
     public function showDetail($id)
     {
-        DB::enableQueryLog();
-        //$users = User_season::has('user')->has('status_season.season_status')->where('season_ID', '=', $id)->paginate(15);
-        /*echo '<pre>';
-        var_dump($users);
-        echo '</pre>';
-        die;*/
-
         $users = User_Season::select('ID', 'users_ID', 'season_ID')
             ->with([
                 'season' => function ($query) {
