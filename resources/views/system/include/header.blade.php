@@ -56,7 +56,6 @@
         </li>
 
         <li class="nav-item admin-menu-links-hover {{(request()->is('admin/mobilities_category')) ? 'active' : ''}}
-        {{--        {{(request()->is('admin/mobilities_category/edit_mobility')) ? 'active' : ''}}--}}
                 ">
             <a class="nav-link" href="{{ action('system\CategoryMobilityController@mobility_category')}}">
                 <i class="fa fa-list-alt" aria-hidden="true"></i>
