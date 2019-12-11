@@ -6,7 +6,7 @@
 
         <div class="admin-title">
             <div class="admin-title-text">
-                <h1>Administrácia partnerských universít</h1>
+                <h1>Administrácia partnerských univerzít</h1>
             </div>
             <div class="admin-title-user">
                 <p>Eduard Gábel</p>
