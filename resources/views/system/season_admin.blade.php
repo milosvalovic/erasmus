@@ -151,10 +151,11 @@
         }
 
         function setTable(res) {
-            console.log(res);
+            // console.log(res);
             //var result = JSON.parse(res);
             res.forEach(function (element) {
                 if(element.count_registrations === -1){
+                    // console.log(element);
                     element.count_registrations = "-";
                 }
                 $("#seasonTable tbody").append(
@@ -163,6 +164,7 @@
                     "                                    <input type=\"checkbox\" class=\"form-check-input\" name=\"season_ids[]\" value=\"" + element.ID + "\">\n" +
                     "                                </div>" + "</th>"
                     + "<td>" + element.date_start_reg + "</td>"
+
                     + "<td>" + element.date_end_reg + "</td>"
                     + "<td>" + element.count_students + "</td>"
                     + "<td>" + element.count_registrations + "</td>"
@@ -190,6 +192,16 @@
             } else {
                 $("#loadMore").show();
             }
+        }
+
+        function slovak_date_format(date){
+            date = date.split('-');
+            let final_date = '';
+            for(var i = date.length; i<= 0; i--){
+                alert(date);
+                final_date += date[i]+'.'
+            }
+            return final_date
         }
 
         $("#sortForm").submit(function (event) {

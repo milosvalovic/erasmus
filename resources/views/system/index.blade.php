@@ -29,6 +29,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
         <link rel="stylesheet" type="text/css" href="{{ asset('vendor/bootstrap-datepicker/css/bootstrap-datepicker.standalone.min.css') }}"/>
         <script type="text/javascript" src="{{ asset('vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('vendor/typeahead/typeahead.bundle.js') }}"></script>
 
     </head>
     <body id="page-top">

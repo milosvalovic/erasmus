@@ -51,13 +51,13 @@ class SeasonController extends Controller
         $date_start_mobility = $request->input('date_start_mobility');
         $date_end_mobility = $request->input('date_end_mobility');
         $arr = [
-            'mobility_ID' => $mobility_ids[$i],
-            'date_start_reg' => date("Y-m-d", strtotime($date_start_req[$i])),
-            'date_end_reg' => date("Y-m-d", strtotime($date_end_req[$i])),
-            'count_students' => $count_student[$i],
-            'count_registrations' => $count_registrations[$i],
-            'date_start_mobility' => date("Y-m-d", strtotime($date_start_mobility[$i])),
-            'date_end_mobility' => date("Y-m-d", strtotime($date_end_mobility[$i]))
+            'mobility_ID' => $mobility_ids,
+            'date_start_reg' => date("Y-m-d", strtotime($date_start_req)),
+            'date_end_reg' => date("Y-m-d", strtotime($date_end_req)),
+            'count_students' => $count_student,
+            'count_registrations' => $count_registrations,
+            'date_start_mobility' => date("Y-m-d", strtotime($date_start_mobility)),
+            'date_end_mobility' => date("Y-m-d", strtotime($date_end_mobility))
         ];
         Season::create($arr);
 
@@ -129,7 +129,7 @@ class SeasonController extends Controller
             })->skip($page * 15)->take(15)->get();
 
         $seasons = $seasons->toArray();
-
+        $result = [];
         foreach ($seasons as $season) {
             if ($season['mobility'] != null && $season['university'] != null) {
                 $season['date_start_reg'] = date("d.m.Y", strtotime($season['date_start_reg']));
@@ -141,7 +141,16 @@ class SeasonController extends Controller
 
 
         }
-        return json_encode($seasons);
+        return json_encode($result);
+    }
+
+    public function dateFormater($date){
+        $time=strtotime($date);
+        $year=date("Y",$time);
+        $month=date("m",$time);
+        $day=date("d",$time);
+
+        return $day.'.'.$month.'.'.$year;
     }
 
     public function multiAddSeasonsShow(Request $request)
