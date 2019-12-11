@@ -28,7 +28,7 @@ body {
     background-color: #007183;
     grid-area: header;
     box-shadow: 11px 12px 7px #979797;
-    position: fixed;
+    /*position: fixed;*/
 }
 
 .admin-footer{
@@ -137,6 +137,16 @@ table.admin-table tr th a{
     margin-bottom: 0;
 }
 
+.admin-title-text span.detail-user-name{
+    color: grey;
+    font-size: 20px;
+}
+
+.admin-title-text h1{
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+
 
 /*-----------------SideMenu--------------------------------*/
 .admin-header > ul > a .sidebar-brand-icon i.admin-ukf-logo{
@@ -243,11 +253,6 @@ span[class='dashboard-admin']{
     padding-left: 20px;
 }
 
-
-
-
-
-
 a[class="page-link"]{
     color: #007183;
 }
@@ -273,6 +278,35 @@ a[class='page-link']:hover{
     width: 500px;
 }
 
+/*---UserDetail--*/
+.detail-user-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.user-detail-name{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.detail-user-content h3 span{
+    color: black;
+}
+
+.detail-user-event-history{
+    margin-top: 50px;
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+}
+
+.detail-user-event-history > h2{
+    padding: 20px;
+}
+
+.user-detail-mobility-state-cell{
+    color: red;
+}
 
 
 /*-----------------Mobility page--------------------*/
@@ -388,8 +422,13 @@ a[class='page-link']:hover{
     padding: 20px;
 }
 
+.admin-blog-table{
+    font-size: 20px;
+}
+
 .admin-blog-table:hover{
     color: red;
+    text-decoration: none;
 }
 
 .detail-container{

@@ -134,7 +134,7 @@
 
         function loadData() {
             $.ajax({
-                url: '/admin/season/sort_season',
+                url: '/public/admin/season/sort_season',
                 type: "POST",
                 dataType: 'json',
                 data: $("#sortForm").serialize(),

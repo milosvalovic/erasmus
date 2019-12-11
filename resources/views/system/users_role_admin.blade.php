@@ -15,7 +15,6 @@
         </div>
 
         <div class="admin-content">
-
             <div class="row">
                 <div class="col-xs-12 col-md-8">
                     <div class="admin-roles-table">
