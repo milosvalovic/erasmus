@@ -153,6 +153,8 @@ return [
     'newsletter_signup_success' => 'Úspešne ste sa prihlásili na odber noviniek o mobilitách',
     'newsletter_signup_error' => 'Nepodarilo sa prihlásiť na odber noviniek o mobilitách',
     'newsletter_signup_not_logged_in' => 'Iba prihlásený používatelia sa môžu prihlásiť na odber noviniek o mobilitách',
+    'newsletter_signout_success' => 'Úspešne ste sa odhlásili z odber noviniek o mobilitách',
+    'newsletter_signout_error' => 'Nepodarilo sa odhlásiť z odber noviniek o mobilitách',
 
 
     //FAQ

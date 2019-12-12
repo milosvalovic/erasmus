@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Dusan
- * Date: 12.12.2019
- * Time: 12:23
- */
 
 namespace App\Http\Controllers\Auth;
-
 
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -40,10 +33,9 @@ class Newsletter extends Controller
     {
         $updated = User::where('email', $email)->where('hash', $hash)->update(['newsletter' => 0]);
         if ($updated > 0) {
-            return $notification = ['success:newsletterSignOut'];
+            return "<script>alert('".Lang::get('app.newsletter_signout_success')."');window.location.replace('/');</script>";
         } else {
-            return $notification = ['error:newsletterSignOut'];
+            return "<script>alert('".Lang::get('app.newsletter_signout_error')."');window.location.replace('/');</script>";
         }
     }
-
 }
