@@ -9,13 +9,13 @@
             <div class="row">
                 @foreach ($mobility as $type)
                     <div class="col-xl-3 col-sm-6 text-center">
-                        <img src="{{ asset($type["university"]["thumb_url"]) }}"
+                        <a href="{{ url('/detail/'.$type["ID"]) }}"
+                           class="current-opportunitie-name"><div class="img-effect"><img src="{{ asset($type["university"]["thumb_url"]) }}"
                              alt="{{$type["university"]["country"]["name"]}}"
                              title="{{$type["university"]["country"]["name"]}}"
-                             class="rounded">
+                             class="rounded"></div>
                         <br/>
-                        <a href="{{ url('/detail/'.$type["ID"]) }}"
-                           class="current-opportunitie-name">{{$type["university"]["country"]["name"]}}</a>
+                        {{$type["university"]["country"]["name"]}}</a>
                         <span class="badge badge-secondary">{{$type["category"]["name"]}}</span>
                         <p class="current-opportunitie-date">@lang('app.date_end') {{ date("d.m.Y", strtotime($type["season"]["0"]["date_end_reg"]))}}</p>
                         <p class="current-opportunitie-comments">@lang('app.reviews'){{$type["review_count"]}}</p>
