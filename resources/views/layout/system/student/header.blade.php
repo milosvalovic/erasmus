@@ -15,6 +15,7 @@
     <link href="{{asset('vendor/bootstrap/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('vendor/quill/quill.snow.css')}}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/layout/preloader.css') }}"/>
 
     <link rel="stylesheet" type="text/css" href="@yield('css')"/>
 

@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/animate-css/animate.min.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/bootstrap/bootstrap.min.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('vendor/jquery-jvectormap/jqvmap.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/layout/preloader.css') }}"/>
 
     <link rel="stylesheet" type="text/css" href="@yield('css')"/>
 

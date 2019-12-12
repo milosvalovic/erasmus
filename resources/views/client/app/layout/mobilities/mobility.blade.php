@@ -9,7 +9,6 @@
                                 <img src="{{ asset($mobilita->mobility->university->thumb_url) }}"
                                      alt="{{$mobilita->mobility->university->country->name}}" title="{{$mobilita->mobility->university->country->name}}" class="rounded">
                             </div>
-                        <br/>
                         {{$mobilita->mobility->university->country->name}}</a>
                         <span class="badge badge-secondary">{{ $mobilita->mobility->category->name }}</span>
                         <p class="opportunitie-date">@lang('app.date_end') {{date("d.m.Y", strtotime($mobilita->date_start_reg))}}</p>

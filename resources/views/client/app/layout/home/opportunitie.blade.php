@@ -14,7 +14,6 @@
                              alt="{{$type["university"]["country"]["name"]}}"
                              title="{{$type["university"]["country"]["name"]}}"
                              class="rounded"></div>
-                        <br/>
                         {{$type["university"]["country"]["name"]}}</a>
                         <span class="badge badge-secondary">{{$type["category"]["name"]}}</span>
                         <p class="current-opportunitie-date">@lang('app.date_end') {{ date("d.m.Y", strtotime($type["season"]["0"]["date_end_reg"]))}}</p>

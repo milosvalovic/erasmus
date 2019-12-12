@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                {{ Form::open(array('url' => '/hladat#search', "id"=>"search", "enctype"=>"application/x-www-form-urlencoded")) }}
+                {{ Form::open(array('url' => '/hladat', "id"=>"search", "enctype"=>"application/x-www-form-urlencoded")) }}
                     <div class="country">
                         <label for="country">@lang('app.search_modal_label_country')</label>
                         <input type="text" name="country" id="country" class="typeahead tt-query" value="{{ isset($last_search_criteria['country'])?$last_search_criteria['country']:'' }}" placeholder="@lang('app.search_modal_label_country_example')">
@@ -19,7 +19,8 @@
                                     <option value="{{$key}}">{{$input}}</option>
                                 @endif
                             @endforeach
-                        </select>                    </div>
+                        </select>
+                    </div>
                     <div class="university">
                         <label for="univerzita">@lang('app.search_modal_label_university')</label>
                         <input type="text" name="university" id="university" class="typeahead tt-query" value="{{ isset($last_search_criteria['university'])?$last_search_criteria['university']:'' }}" placeholder="@lang('app.search_modal_label_university_example')">
@@ -74,13 +75,12 @@
             <div class="row" id="number-of-items">
                 @foreach (array_shift($mobilities) as $group)
                     <div class="col-xl-3 col-sm-6 text-center">
-                        <img src="{{ asset($group["university"]["thumb_url"]) }}"
+                        <a href="{{ url('/detail/'.$group["ID"]) }}"
+                           class="opportunitie-name"><div class="img-effect"><img src="{{ asset($group["university"]["thumb_url"]) }}"
                              alt="{{$group["university"]["country"]["name"]}}"
                              title="{{$group["university"]["country"]["name"]}}"
-                             class="rounded">
-                        <br/>
-                        <a href="{{ url('/detail/'.$group["ID"]) }}"
-                           class="opportunitie-name">{{$group["university"]["country"]["name"]}}</a>
+                              class="rounded"></div>
+                        {{$group["university"]["country"]["name"]}}</a>
                         <span class="badge badge-secondary">{{$group["category"]["name"]}}</span>
                         <p class="opportunitie-date">@lang('app.date_end') {{ date("d.m.Y", strtotime($group["season"]["0"]["date_end_reg"]))}}</p>
                         <p class="opportunitie-comments">@lang('app.reviews'){{$group["review_count"]}}</p>
@@ -92,13 +92,12 @@
             <div class="row" id="number-of-items">
                 @foreach ($group as $mobilita)
                     <div class="col-xl-3 col-sm-6 text-center">
-                        <img src="{{ asset($mobilita["university"]["thumb_url"]) }}"
+                        <a href="{{ url('/detail/'.$mobilita["ID"]) }}"
+                           class="opportunitie-name"><div class="img-effect"><img src="{{ asset($mobilita["university"]["thumb_url"]) }}"
                              alt="{{$mobilita["university"]["country"]["name"]}}"
                              title="{{$mobilita["university"]["country"]["name"]}}"
-                             class="rounded">
-                        <br/>
-                        <a href="{{ url('/detail/'.$mobilita["ID"]) }}"
-                           class="opportunitie-name">{{$mobilita["university"]["country"]["name"]}}</a>
+                             class="rounded"></div>
+                        {{$mobilita["university"]["country"]["name"]}}</a>
                         <span class="badge badge-secondary">{{$mobilita["category"]["name"]}}</span>
                         <p class="opportunitie-date">@lang('app.date_end') {{ date("d.m.Y", strtotime($mobilita["season"]["0"]["date_end_reg"]))}}</p>
                         <p class="opportunitie-comments">@lang('app.reviews'){{$mobilita["review_count"]}}</p>

@@ -25,7 +25,7 @@ Route::get('/vyhladavanie/krajiny', 'client\SearchController@getAutocompleteCoun
 
 Route::get('/vyhladavanie/univerzity', 'client\SearchController@getAutocompleteUniversity');
 
-Route::get('/#kontakt', 'client\HomeController@home');
+Route::get('/kontakt', 'client\HomeController@home');
 
 Route::post('/hladat', ['as' => 'search', 'uses' => 'client\SearchController@search']);
 

@@ -41,7 +41,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{ url('/') }}">@lang('app.nav_main_screen')</a>
                     <a class="dropdown-item" href="{{ url('/mobility') }}">@lang('app.nav_mobilities')</a>
-                    <a class="dropdown-item" href="{{ url('/#kontakt') }}">@lang('app.nav_contact')</a>
+                    <a class="dropdown-item" href="{{ url('/kontakt') }}">@lang('app.nav_contact')</a>
                     <a class="dropdown-item" href="{{ url('/clanky').'/'}}@yield('article_in_row')">@lang('app.nav_blog')</a>
                     <a class="dropdown-item" href="{{ url('/otazky') }}">@lang('app.nav_faq')</a>
                 </div>
