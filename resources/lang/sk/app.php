@@ -213,6 +213,7 @@ return [
     'detail_submit_button' => 'Chcem sa zúčastniť',
     'detail_from' => 'OD: ',
     'detail_to' => 'DO: ',
+    'detail_dialog_title' => 'Oznam',
     'detail_dialog_button' => 'Zatvoriť',
     'detail_sign_up_mobility_error' => 'Ľutujeme ale nepodarilo sa prihlásiť na mobilitu',
     'detail_sign_up_mobility_error_date' => 'Počas tohto dátumu prebieha iná mobilita na ktorú ste už prihláseny.',
