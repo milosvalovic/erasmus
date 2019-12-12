@@ -10,7 +10,7 @@ class User_season extends Model
     use SoftDeletes;
 
     protected $table = 'users_season';
-    protected $fillable = ['user_ID', 'season_ID'];
+    protected $fillable = ['users_ID', 'season_ID'];
 
     public function season()
     {
