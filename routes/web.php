@@ -57,9 +57,9 @@ Route::get('profil/recenzia/nova/{users_season_ID}', 'student\ReviewController@n
 
 Route::post('profil/recenzia/ulozit', ['as' => 'insert-review', 'uses' => 'student\ReviewController@insertReview'])->middleware('auth');
 
-Route::get('/newsletter','Auth\Newsletter@signIn');
+Route::get('/novinky','Auth\Newsletter@signIn');
 
-Route::get('/newsletter/{email}/{hash}','Auth\Newsletter@signOut');
+Route::get('/novinky/{email}/{hash}','Auth\Newsletter@signOut');
 
 
 /*------------------------------- Admin routes---------------------------------------------------------------------------------------------------------------------*/

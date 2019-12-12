@@ -150,6 +150,9 @@ return [
     'newsletter_question' => 'CHCETE BYŤ O PODUJATIACH K MOBILITÁM INFORMAVANÝ MEDZI PRVÝMI?',
     'newsletter_link' => 'ÁNO, PRIHLÁSIŤ SA',
     'newsletter_link_logged' => 'ÁNO, ODOBERAŤ',
+    'newsletter_signup_success' => 'Úspešne ste sa prihlásili na odber noviniek o mobilitách',
+    'newsletter_signup_error' => 'Nepodarilo sa prihlásiť na odber noviniek o mobilitách',
+    'newsletter_signup_not_logged_in' => 'Iba prihlásený používatelia sa môžu prihlásiť na odber noviniek o mobilitách',
 
 
     //FAQ

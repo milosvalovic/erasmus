@@ -1,7 +1,12 @@
 $('document').ready(function () {
     $('#newsletter-form').click(function(e){
         e.preventDefault();
-        $('#newsletter-response-text').text('Working');
-        $('#newsletterDialog').modal('show');
+
+        $.get("/erasmus/public/novinky", function (data) {
+            let response = JSON.parse(data);
+
+            $('#newsletter-response-text').text(response.reason);
+            $('#newsletterDialog').modal('show');
+        });
     });
 });
