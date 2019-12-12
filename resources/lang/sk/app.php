@@ -127,6 +127,7 @@ return [
     'search_modal_label_from_example' => '01.01.2020',
     'search_modal_label_to' => 'KONIEC POBYTU',
     'search_modal_label_to_example' => '02.02.2020',
+    'search_modal_label_all' => 'Všetky',
     'search_modal_submit' => 'Hľadať',
 
 
@@ -139,7 +140,7 @@ return [
 
 
     //Newsletter
-    'newsletter_question' => 'CHCETE BYŤ INFORMOVANÝ AKO PRVÝ O podujatiach k MOBILITáM?',
+    'newsletter_question' => 'CHCETE BYŤ O PODUJATIACH K MOBILITÁM INFORMAVANÝ MEDZI PRVÝMI?',
     'newsletter_link' => 'ÁNO, ZAREGISTROVAŤ SA',
 
 

@@ -13,8 +13,13 @@
                             <input type="text" name="country" id="country" class="typeahead tt-query" value="" placeholder="@lang('app.search_modal_label_country_example')">
                         </div>
                         <div class="item-group">
-                            <label for="stay">@lang('app.search_modal_label_type')</label>
-                            {{Form::select('stays', $type)}}
+                            <label for="stays">@lang('app.search_modal_label_type')</label>
+                            <select name="stays">
+                                <option value="">@lang('app.search_modal_label_all')</option>
+                            @foreach($type as $key => $input)
+                                <option value="{{$key}}">{{$input}}</option>
+                            @endforeach
+                            </select>
                         </div>
                         <div class="item-group">
                             <label for="university">@lang('app.search_modal_label_university')</label>
@@ -29,8 +34,13 @@
                             <input type="text" name="grand" id="grand" value="" placeholder="420€">
                         </div>
                         <div class="item-group">
-                            <label for="from">@lang('app.search_modal_label_mobility_category')</label>
-                            {{Form::select('category', $category)}}
+                            <label for="category">@lang('app.search_modal_label_mobility_category')</label>
+                            <select name="category">
+                                <option value="">@lang('app.search_modal_label_all')</option>
+                                @foreach($category as $key => $input)
+                                    <option value="{{$key}}">{{$input}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="item-group">
                             <label for="from">@lang('app.search_modal_label_from')</label>
@@ -49,5 +59,5 @@
             </div>
         </div>
     </div>
-    <a href="#"><span></span></a>
+    <a href="#" id="scroller"><span></span></a>
 </header>

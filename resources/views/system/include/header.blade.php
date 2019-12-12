@@ -7,24 +7,17 @@
             <div class="sidebar-brand-icon">
                 <i class="admin-ukf-logo"></i>
             </div>
-            <div class="sidebar-brand-text mx-3">Erasmus</div>
+            <div class="sidebar-brand-text mx-3">Erasmus+</div>
         </a>
 
         <div class="sidebar-heading">
-            Administrácia tabuliek
+            Admin
         </div>
 
         <li class="nav-item admin-menu-links-hover {{ (request()->is('admin/users')) ? 'active' : '' }}">
             <a class="nav-link" href="{{ action('system\UserController@users')}}">
                 <i class="fa fa-user" aria-hidden="true"></i>
                 <span>Používatelia</span>
-            </a>
-        </li>
-
-        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/roles')) ? 'active' : ''}}">
-            <a class="nav-link" href="{{ action('system\UserRoleController@roles')}}">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                <span>Role používateľov</span>
             </a>
         </li>
 
@@ -35,19 +28,18 @@
             </a>
         </li>
 
-        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/mobilities_category')) ? 'active' : ''}}
-{{--        {{(request()->is('admin/mobilities_category/edit_mobility')) ? 'active' : ''}}--}}
-                ">
-            <a class="nav-link" href="{{ action('system\CategoryMobilityController@mobility_category')}}">
-                <i class="fa fa-list-alt" aria-hidden="true"></i>
-                <span>Kategórie mobilít</span>
+        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/season')) ? 'active' : ''}}
+        {{(request()->is('admin/season/add_season')) ? 'active' : ''}}">
+            <a class="nav-link" href="{{ action('system\SeasonController@season')}}">
+                <i class="fa fa-ravelry" aria-hidden="true"></i>
+                <span>Sezóny</span>
             </a>
         </li>
 
-        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/mobility_type')) ? 'active' : ''}}">
-            <a class="nav-link" href="{{ action('system\TypeMobilityController@mobility_type')}}">
-                <i class="fa fa-list-alt" aria-hidden="true"></i>
-                <span>Typ mobility</span>
+        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/universities')) ? 'active' : ''}}">
+            <a class="nav-link " href="{{ action('system\UniversityController@universities')}}">
+                <i class="fa fa-university" aria-hidden="true"></i>
+                <span>Univerzity</span>
             </a>
         </li>
 
@@ -63,10 +55,25 @@
             </a>
         </li>
 
-        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/universities')) ? 'active' : ''}}">
-            <a class="nav-link " href="{{ action('system\UniversityController@universities')}}">
-                <i class="fa fa-university" aria-hidden="true"></i>
-                <span>Správa univerzít</span>
+        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/mobilities_category')) ? 'active' : ''}}
+                ">
+            <a class="nav-link" href="{{ action('system\CategoryMobilityController@mobility_category')}}">
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                <span>Kategórie mobilít</span>
+            </a>
+        </li>
+
+        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/mobility_type')) ? 'active' : ''}}">
+            <a class="nav-link" href="{{ action('system\TypeMobilityController@mobility_type')}}">
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                <span>Typ mobility</span>
+            </a>
+        </li>
+
+        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/roles')) ? 'active' : ''}}">
+            <a class="nav-link" href="{{ action('system\UserRoleController@roles')}}">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <span>Role používateľov</span>
             </a>
         </li>
 

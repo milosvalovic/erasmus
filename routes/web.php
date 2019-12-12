@@ -59,6 +59,7 @@ Route::post('profil/recenzia/ulozit', ['as' => 'insert-review', 'uses' => 'stude
 
 
 /*------------------------------- Admin routes---------------------------------------------------------------------------------------------------------------------*/
+Route::group(['middleware' => ['web','auth']], function () {
 Route::get('/admin', 'system\SystemController@system');
 
 /*------User routes-------------*/
@@ -67,6 +68,8 @@ Route::get('/admin/users/edit_user/{id}', ['as' => 'edit_user_form', 'uses' => '
 Route::post('/admin/users/add_user', 'system\UserController@addUser')->name('addUser');
 Route::post('/admin/users/edit_user', 'system\UserController@editUser')->name('editUser');
 Route::get('/admin/users/delete/{id}', 'system\UserController@deleteUser')->name('deleteUser');
+
+Route::get('/admin/users/detail_user/{id}', ['as' => 'user_detail', 'uses' => 'system\UserController@userDetail']);
 
 /*------Roles-------------------*/
 Route::get('/admin/roles', 'system\UserRoleController@roles');
@@ -78,24 +81,40 @@ Route::get('/admin/roles/delete/{id}', 'system\UserRoleController@deleteRole')->
 /*------Mobility----------------*/
 Route::get('/admin/mobilities', 'system\MobilityController@mobilities');
 Route::get('/admin/mobilities/edit_mobility/{id}', ['as' => 'edit_mobility_form', 'uses' => 'system\MobilityController@mobilityEditShow']);
+Route::post('/admin/mobilities/add_mobility', 'system\MobilityController@addMobility')->name('addMobility');
+Route::post('/admin/mobilities/edit_mobility', 'system\MobilityController@editMobility')->name('editMobility');
+Route::get('/admin/mobilities/delete/{id}', 'system\MobilityController@deleteMobility')->name('deleteMobility');
+
+/*------Season----------------*/
+Route::get('/admin/season', 'system\SeasonController@season')->name('seasons');
+Route::get('/admin/season/add_season', 'system\SeasonController@newSeasonShow');
+Route::get('/admin/season/edit_season/{id}', ['as' => 'edit_season_form', 'uses' => 'system\SeasonController@seasonEditShow']);
+Route::get('/admin/season/delete_season/{id}', ['as' => 'deleteSeason', 'uses' => 'system\SeasonController@deleteSeason']);
+Route::get('/admin/season/detail/{id}', ['as' => 'detailSeason', 'uses' => 'system\SeasonController@showDetail']);
+Route::get('/admin/season/autocomplete',['as'=>'autocompleteUsers','uses'=>'system\SeasonController@filterUsers']);
+Route::post('/admin/season/sort_season', 'system\SeasonController@sortSeasons')->name('sortSeasons');
+Route::post('/admin/season/extend_form', 'system\SeasonController@multiAddSeasonsShow')->name('extendSeasons');
+Route::post('/admin/season/extend', 'system\SeasonController@multiAddSeasons')->name('createMultipleSeasons');
 
 /*------Mobility category-------*/
 Route::get('/admin/mobilities_category', 'system\CategoryMobilityController@mobility_category');
-Route::get('/admin/mobilities_category/edit_mobility/{id}', ['as' => 'edit_mobility', 'uses' => 'system\CategoryMobilityController@mobilityCategoryShow']);
-Route::post('/admin/mobilities_category/add_mobility', 'system\CategoryMobilityController@addNewCategory');
-Route::post('/admin/mobilities_category/edit_mobility', 'system\CategoryMobilityController@editCategory')->name('editCategory');
+Route::get('/admin/mobilities_category/edit_category/{id}', ['as' => 'edit_mobility', 'uses' => 'system\CategoryMobilityController@mobilityCategoryShow']);
+Route::post('/admin/mobilities_category/add_category', 'system\CategoryMobilityController@addNewCategory');
+Route::post('/admin/mobilities_category/edit_category', 'system\CategoryMobilityController@editCategory')->name('editCategory');
 Route::get('/admin/mobilities_category/delete/{id}', 'system\CategoryMobilityController@deleteCategory')->name('deleteCategory');
 
 /*------Mobility type---------*/
 Route::get('/admin/mobility_type', 'system\TypeMobilityController@mobility_type');
-Route::get('/admin/mobility_type/edit_mobility/{id}', ['as' => 'edit_type', 'uses' => 'system\TypeMobilityController@mobilityTypeShowEdit']);
+Route::get('/admin/mobility_type/edit_type/{id}', ['as' => 'edit_type', 'uses' => 'system\TypeMobilityController@mobilityTypeShowEdit']);
 Route::post('/admin/mobility_type/add_type/', ['as' => 'add_type', 'uses' => 'system\TypeMobilityController@addType']);
 Route::get('/admin/mobility_type/delete_type/{id}', ['as' => 'delete_type', 'uses' => 'system\TypeMobilityController@deleteType']);
 Route::post('/admin/mobility_type/edit_type/', ['as' => 'edit_type', 'uses' => 'system\TypeMobilityController@editType']);
 
 /*------Blog---------*/
 Route::get('/admin/blogs', 'system\BlogController@blog');
-Route::get('/admin/blogs/edit_blog/{id}', ['as' => 'edit_blog_form', 'uses' => 'system\BlogController@blogEditShow']);
+Route::get('/admin/blogs/delete_blog/{id}', 'system\BlogController@deleteBlog')->name('deleteBlog');
+Route::get('/admin/blogs/detail_blog/{id}', ['as' => 'blog_detail', 'uses' => 'system\BlogController@blogDetail']);
+Route::post('/admin/blogs/change_blog_status', 'system\BlogController@changeBlogStatus')->name('changeBlogStatus');
 
 /*------University-------------*/
 Route::get('/admin/universities', 'system\UniversityController@universities');
@@ -110,6 +129,9 @@ Route::get('/admin/images', 'system\ImageController@images');
 /*------FAQ-------------------*/
 Route::get('/admin/faq', 'system\FaqController@faq');
 Route::get('/admin/faq/edit_faq/{id}', ['as' => 'edit_faq_form', 'uses' => 'system\FaqController@faqEditShow']);
+Route::post('/admin/faq/addFaq', 'system\FaqController@addFaq')->name('addFaq');
+Route::post('/admin/faq/editFaq', 'system\FaqController@editFaq')->name('editFaq');
+Route::get('/admin/faq/delete/{id}', 'system\FaqController@deleteFaq')->name('deleteFaq');
 
 /*------Office hour-----------*/
 Route::get('/admin/open_hours', 'system\OfficeHourController@office_hours');
@@ -122,6 +144,8 @@ Route::get('/admin/countries/edit_country/{id}', ['as' => 'edit_country', 'uses'
 Route::get('/admin/countries/delete/{id}', 'system\CountryController@deleteCountry')->name('deleteCountry');
 Route::post('/admin/countries/add_country', 'system\CountryController@addCountry')->name('addCountry');
 Route::post('/admin/countries/edit_country', 'system\CountryController@editCountry')->name('editCountry');
+
+});
 
 //Auth routes
 Route::group(['middleware' => ['web']], function () {

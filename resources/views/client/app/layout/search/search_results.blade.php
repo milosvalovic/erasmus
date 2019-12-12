@@ -10,8 +10,16 @@
 
                     <div class="type">
                         <label for="stay">@lang('app.search_modal_label_type')</label>
-                        {{Form::select('stays', $type)}}
-                    </div>
+                        <select name="stays">
+                            <option value="">@lang('app.search_modal_label_all')</option>
+                            @foreach($type as $key => $input)
+                                @if($key == $last_search_criteria['stays'])
+                                    <option value="{{$key}}" selected="selected">{{$input}}</option>
+                                @else
+                                    <option value="{{$key}}">{{$input}}</option>
+                                @endif
+                            @endforeach
+                        </select>                    </div>
                     <div class="university">
                         <label for="univerzita">@lang('app.search_modal_label_university')</label>
                         <input type="text" name="university" id="university" class="typeahead tt-query" value="{{ isset($last_search_criteria['university'])?$last_search_criteria['university']:'' }}" placeholder="@lang('app.search_modal_label_university_example')">
@@ -26,7 +34,16 @@
                     </div>
                     <div class="category">
                         <label for="from">@lang('app.search_modal_label_mobility_category')</label>
-                        {{Form::select('category', $category)}}
+                        <select name="category">
+                            <option value="">@lang('app.search_modal_label_all')</option>
+                            @foreach($category as $key => $input)
+                                @if($key == $last_search_criteria['stays'])
+                                    <option value="{{$key}}" selected="selected">{{$input}}</option>
+                                @else
+                                    <option value="{{$key}}">{{$input}}</option>
+                                @endif
+                            @endforeach
+                        </select>
                     </div>
                     <div class="from">
                         <label for="from">@lang('app.search_modal_label_from')</label>

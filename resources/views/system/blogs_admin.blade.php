@@ -25,9 +25,10 @@
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Titulok</th>
-                        <th scope="col">Status</th>
+                        <th scope="col">Dátum zverejnenia</th>
                         <th scope="col">Používateľ</th>
-                        <th scope="col">Potvrdenie</th>
+                        <th scope="col">Potvrdené od</th>
+                        <th scope="col">Status</th>
                         <th scope="col" class="user-form-actions">Akcie</th>
                     </tr>
                     </thead>
@@ -35,24 +36,40 @@
                     @foreach($blogs as $blog)
                         <tr>
                             <th scope="row">{{ $blog->ID }}</th>
-                            <td>{{ $blog->title }}</td>
-                            <td>{{ $blog->status }}</td>
-                            <td>{{ $blog->users_ID }}</td>
-                            <td>{{ $blog->confirm_by }}</td>
-                            <th scope="row">
-                                <a href="{{ action('system\BlogController@blogEditShow',['id' => $blog->ID]) }}">
-                                    <button type="button" class="btn btn-outline-warning">Upraviť</button>
+                            <td>
+                                <a class="admin-blog-table"
+                                        href="{{ action('system\BlogController@blogDetail',['id' => $blog->ID]) }}">
+                                    {{ $blog->title }}
                                 </a>
-                                <a href="/edit-role/'number'">
-                                    <button type="button" class="btn btn-outline-danger">Odstrániť</button>
-                                </a>
-                            </th>
+                            </td>
+                            <td>{{ $blog->publish_date }}</td>
+                            <td>{{ $blog->user->email }}</td>
+                            <td>{{ $blog->user_2->email }}</td>
+                            <form method="post" class="form-add-blogs" id="formChangeBlogStatus"
+                                  action="{{route('changeBlogStatus')}}">
+                                <td>
+                                    <div class="form-check">
+                                        <input @if($blog->status == 1) checked="checked" @endif
+                                        type="checkbox" class="form-check-input" id="setBlogStatus" name="status">
+                                        <label for="">@if($blog->status == 1) Akceptovaný @else
+                                                Neakceptovaný @endif</label>
+                                    </div>
+                                </td>
+                                <th scope="row">
+                                    <button type="submit" class="btn btn-outline-primary">Uložiť</button>
+                                    <a href="{{route('deleteBlog',['id'=>$blog->ID])  }}">
+                                        <button type="button" class="btn btn-outline-danger">Odstrániť</button>
+                                    </a>
+                                </th>
+                                {{csrf_field()}}
+                                <input type="hidden" name="id" value="{{$blog->ID}}">
+                            </form>
                         </tr>
                     @endforeach
                     </tbody>
                 </table>
                 <nav class="admin-users-pagination">
-                    {{--TODO Here pagination--}}
+                    {{$blogs->links()}}
                 </nav>
             </div>
 

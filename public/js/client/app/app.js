@@ -4,11 +4,18 @@ $('document').ready(function () {
         $("#search").append("<input type='hidden' name='number' value='" + $("#number-of-items > *").length + "'>").submit();
     });
 
+   $("#scroller").click(function(e){
+       e.preventDefault();
+       $([document.documentElement, document.body]).animate({
+           scrollTop: $("#current-opportunities").offset().top
+       }, 1000);
+   }) ;
+
     var countries = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.whitespace,
         queryTokenizer: Bloodhound.tokenizers.whitespace,
         prefetch: {
-            url: '/erasmus/public/vyhladavanie/krajiny',
+            url: '/vyhladavanie/krajiny',
             ttl: 1
         }
     });
@@ -17,7 +24,7 @@ $('document').ready(function () {
         datumTokenizer: Bloodhound.tokenizers.whitespace,
         queryTokenizer: Bloodhound.tokenizers.whitespace,
         prefetch: {
-            url: '/erasmus/public/vyhladavanie/univerzity',
+            url: '/vyhladavanie/univerzity',
             ttl: 1
         }
     });
@@ -234,7 +241,7 @@ $('document').ready(function () {
             zw: "5.57"
         };
 
-        $.get("/erasmus/public/mapa/krajiny", function (data) {
+        $.get("/mapa/krajiny", function (data) {
             let values = {};
 
             data.countries.forEach(function (item, index) {
@@ -256,7 +263,7 @@ $('document').ready(function () {
             $('.jqvmap-zoomin').click();
 
             $('#university-map').click(function () {
-                window.location.replace("/erasmus/public/otazky#univerzity");
+                window.location.replace("/otazky#univerzity");
             });
 
             $('#vmap').unbind("click");

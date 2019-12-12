@@ -9,6 +9,8 @@ class FAQ extends Model
 {
     use SoftDeletes;
 
+
+    protected $primaryKey = 'ID';
     protected $table = 'faq';
     protected $fillable = ['name', 'description'];
 }

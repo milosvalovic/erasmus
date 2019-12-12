@@ -122,6 +122,7 @@ header.masthead .post-heading .meta a {
 
 .masthead a {
     padding-top: 40px;
+    outline: 0;
 }
 
 .masthead a span {
@@ -139,6 +140,9 @@ header.masthead .post-heading .meta a {
     animation: sdb07 2s infinite;
     opacity: 0;
     box-sizing: border-box;
+}
+
+.masthead a span:focus{
 }
 
 .masthead a span:nth-of-type(1) {

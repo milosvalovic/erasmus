@@ -21,13 +21,7 @@ class RedirectIfAuthenticated
             return redirect('/mobility');
         }*/
         if (Auth::guard($guard)->check()) {
-            if (Auth::user()->hasRole("student")) {
-                return redirect('/profil');
-            } else if (Auth::user()->hasRole("organizator")) {
-                return redirect('/dashboard');
-            } else if (Auth::user()->hasRole("administrator")) {
-                return redirect('/dashboard');
-            }
+            return $next($request);
         }
 
         return $next($request);

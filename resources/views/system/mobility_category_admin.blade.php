@@ -57,7 +57,7 @@
                         <h3>Pridať kategóriu</h3>
                         <div class="form-group">
                             <label for="addMobilityType"> Názov:</label>
-                            <input type="text" class="form-control admin-form-input" id="addMobilityType" placeholder="Študijný pobyt" name="name">
+                            <input type="text" class="form-control admin-form-input" id="addMobilityType" placeholder="Ceepus" name="name">
                         </div>
                         <div class="form-group-button">
                             <button type="submit" class="btn btn-outline-primary btn-add">Pridať</button>
