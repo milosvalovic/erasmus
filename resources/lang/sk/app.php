@@ -198,7 +198,7 @@ return [
     'detail_more_faq' => 'Často kladané otázky',
     'detail_more_blog' => 'Príbehy študentov',
     'detail_presentations_title' => 'Prezentácia účastníkov',
-    'detail_presentations_table_title_student' => 'Názov študenta',
+    'detail_presentations_table_title_student' => 'Meno študenta',
     'detail_presentations_table_title_file' => 'Prezentácia',
     'detail_presentations_table_file_download' => 'Stiahnúť',
     'detail_photos_title' => 'Fotogaléria',
