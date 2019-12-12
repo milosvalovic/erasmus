@@ -18,32 +18,37 @@
 
             <div class="admin-blogs-table">
                 <div class="admin-blogs-title">
-                    <h2>Zoznam uchádzačov</h2>
+                    <h2>Pridanie použivateľa na sezónu</h2>
 
                 </div>
                 <div class="admin-blogs-title">
-                    <form class="form-inline" id="sortForm">
+                    <form class="form-inline" id="searchForm">
                         <input type="hidden" id="page" name="page" value="0">
                         <label for="search" class="mb-2 mr-sm-2">Hľadať:</label>
-                        <input type="text"
-                               placeholder="Meno/Priezvisko/Email" class="form-control" id="search"
+                        <input type="text" placeholder="Meno/Priezvisko/Email" class="form-control" id="search_user"
                                name="term" autocomplete="off" minlength="3">
-                        <button type="submit" class="btn btn-primary">Hľadať</button>
+                        {{csrf_field()}}
+                        <button type="submit" class="btn btn-primary" id="search_user_buuton">Hľadať</button>
+
                     </form>
                 </div>
-                    <table class="table admin-table">
-                        <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Meno</th>
-                            <th scope="col">Priezvisko</th>
-                            <th scope="col">Email</th>
-                            <th scope="col" class="user-form-actions">Akcie</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
+                <table class="table admin-table" id="users_table">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Meno</th>
+                        <th scope="col">Priezvisko</th>
+                        <th scope="col">Email</th>
+                        <th scope="col" class="user-form-actions">Akcie</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div>
+                    <a id="loadPrev">< Predošlé</a>
+                    <a id="loadNext">Ďalšie ></a>
+                </div>
             </div>
             <div class="admin-content">
 
@@ -111,15 +116,123 @@
 
     <script type="text/javascript">
 
-        var path = "{{ route('autocompleteUsers') }}";
-        $('#search_emails').typeahead({
-            source: function (query, process) {
-                return $.get(path, {query: query}, function (data) {
-                    console.log(process(data));
-                    return process(data);
-                });
-            }
+        var path = "/admin/season/detail/search_users";
+        var season_ID = "{{$season_ID}}";
+
+        $(document).ready(function () {
+            $("#users_table").hide();
+            $("#loadNext").hide();
+            $("#loadPrev").hide();
         });
+
+        $("#loadNext").click(function () {
+            page++;
+            $("#page").val(page);
+            loadData();
+        });
+
+        $("#loadPrev").click(function () {
+            page--;
+            $("#page").val(page);
+            loadData();
+        });
+
+
+        function loadData() {
+
+            $("#seasonTable tbody").empty();
+            $.ajax({
+                url: path,
+                type: "POST",
+                dataType: 'json',
+                data: $("#searchForm").serialize(),
+                success: function (result) {
+                    console.log(result);
+                    $("#users_table tbody").empty();
+                    setTable(result);
+                    $("#users_table").show()
+
+                    if (result.count <= (1 + page) * 1) {
+                        $("#loadNext").hide();
+                    } else {
+                        $("#loadNext").show();
+                    }
+                    if (page === 0) {
+                        $("#loadPrev").hide();
+                    } else {
+                        $("#loadPrev").show();
+                    }
+                },
+                error: function (xhr, resp, text) {
+                    console.log(xhr, resp, text);
+                }
+            });
+        }
+
+        function setTable(res) {
+            res.data.forEach(function (element) {
+
+                $("#users_table > tbody:last-child").append(
+                    "<tr>"
+                    + "<td>" + element.id + "</td>"
+                    + "<td>" + element.first_name + "</td>"
+                    + "<td>" + element.last_name + "</td>"
+                    + "<td>" + element.email + "</td>"
+                    + "<th scope=\"row\"><form method=\"post\"  class=\"signUser\">"
+                    + "<input type=\"hidden\" name=\"season_id\" value=\""+ season_ID +"\">"
+                    + "<input type=\"hidden\" name=\"_token\" value=\""+ "{{csrf_token()}}" +"\">"
+                    + "<input type=\"hidden\" name=\"user_id\" value=\""+ element.id +"\">"
+                    + "<button type=\"submit\" class=\"btn btn-outline-primary\">Pridať</button>"
+                    + "</form></th>"
+                    + "</tr>")
+            });
+            $( ".signUser" ).on( "submit", signInUser );
+
+        }
+
+
+
+        $("#searchForm").submit(function (event) {
+
+            page = 0;
+            $("#page").val(page);
+            $("#page").click(function () {
+                $("input:hidden").val(page);
+            });
+
+            $("#users_table tbody").empty();
+            event.preventDefault();
+            loadData();
+            console.log($( ".signUser" ));
+
+            return false;
+        });
+
+        function signInUser(event){
+            event.preventDefault();
+            var form = $(this);
+            var url = form.attr("action");
+
+            $.ajax({
+                type: "POST",
+                url: '/admin/season/detail/add_user_to_season',
+                dataType: 'json',
+                data: $(form).serialize(),
+                success: function (data) {
+                    var response = JSON.parse(data);
+                    console.log(response);
+                    if (response.status == "success") {
+                        //location.reload();
+                        alert(response.status);
+                    } else if (response.status == "error") {
+                        alert(response.reason);
+                    }
+                }  ,
+                error: function (xhr, resp, text) {
+                    console.log(xhr, resp, text);
+                }
+            });
+        }
 
     </script>
 @endsection

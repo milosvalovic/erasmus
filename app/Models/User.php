@@ -12,7 +12,7 @@ class User extends Authenticatable
     use SoftDeletes;
     use Notifiable;
 
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'ID';
     protected $table = 'users';
     protected $fillable = ['name','email', 'password', 'first_name', 'last_name', 'newsletter', 'hash', 'verified'];
     protected $hidden = ['password', 'remember_token'];

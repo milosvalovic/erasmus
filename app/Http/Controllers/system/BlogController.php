@@ -47,7 +47,7 @@ class BlogController extends Controller
     public function changeBlogStatus(Request $request)
     {
 
-        $adminID = Auth::user()->id;
+        $adminID = Auth::user()->ID;
         $blog = Blog::find($request->input('id'));
         $blog->confirm_by = $adminID;
         $status = $request->input('status');

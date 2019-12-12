@@ -36,16 +36,16 @@
                             <tbody>
                             @foreach($users as $user)
                                 <tr>
-                                    <th scope="row">{{$user->id}}</th>
+                                    <th scope="row">{{$user->ID}}</th>
                                     <td>{{$user->first_name}}</td>
                                     <td>{{$user->last_name}}</td>
                                     <td>{{$user->email}}</td>
                                     <td>{{$user->roles->name}}</td>
                                     <th scope="row">
-                                        <a href="{{ action('system\UserController@userEditShow', ['id' => $user->id]) }}">
+                                        <a href="{{ action('system\UserController@userEditShow', ['id' => $user->ID]) }}">
                                             <button type="button" class="btn btn-outline-warning">Upraviť</button>
                                         </a>
-                                        <a href="{{route('deleteUser',['id'=>$user->id])}}">
+                                        <a href="{{route('deleteUser',['id'=>$user->ID])}}">
                                             <button type="button" class="btn btn-outline-danger">Odstrániť</button>
                                         </a>
                                     </th>

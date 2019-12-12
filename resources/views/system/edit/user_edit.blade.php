@@ -21,7 +21,7 @@
                     <h3>Editácia</h3>
                     <div class="form-group">
                         <label for="editUserFirstName">Meno:</label>
-                        <input type="hidden" value="{{$user->id}}" name="id">
+                        <input type="hidden" value="{{$user->ID}}" name="id">
                         <input type="text" class="form-control admin-form-input" id="editUserFirstName" name="first_name" placeholder="Filip" value="{{$user->first_name}}">
 
                     </div>

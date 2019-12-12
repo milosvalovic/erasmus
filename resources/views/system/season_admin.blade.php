@@ -158,13 +158,12 @@
                     // console.log(element);
                     element.count_registrations = "-";
                 }
-                $("#seasonTable tbody").append(
+                $("#seasonTable > tbody:last-child").append(
                     "<tr>"
                     + "<th>" + "<div class=\"form-check\">\n" +
                     "                                    <input type=\"checkbox\" class=\"form-check-input\" name=\"season_ids[]\" value=\"" + element.ID + "\">\n" +
                     "                                </div>" + "</th>"
                     + "<td>" + element.date_start_reg + "</td>"
-
                     + "<td>" + element.date_end_reg + "</td>"
                     + "<td>" + element.count_students + "</td>"
                     + "<td>" + element.count_registrations + "</td>"
