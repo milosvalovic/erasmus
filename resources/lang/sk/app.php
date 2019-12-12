@@ -80,6 +80,13 @@ return [
     'errors_404_button' => 'Späť na hlavnú stránku',
 
 
+    //Errors - 408
+    'errors_408_title' => '408',
+    'errors_408_subtitle' => 'Požiadavka vypršala',
+    'errors_408_description' => 'Ľutujeme, ale požiadavku sa nám nepodarilo spracovať.',
+    'errors_408_button' => 'Späť na hlavnú stránku',
+
+
     //Errors - 500
     'errors_500_title' => '500',
     'errors_500_subtitle' => 'Chyba servera',
