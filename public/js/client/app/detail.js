@@ -13,8 +13,11 @@ $('document').ready(function () {
             success: function (data) {
                 var response = JSON.parse(data);
                 if (response.status == "success") {
-
+                    $('#messeageDialog').text('Úspech');
+                    $('#response-text').text(response.reason);
+                    $('#messeageDialog').modal('show');
                 } else if (response.status == "error") {
+                    $('#messeageDialog').text('Chyba');
                     $('#response-text').text(response.reason);
                     $('#messeageDialog').modal('show');
                 }

@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/jquery-jvectormap/jqvmap.min.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/bootstrap-datepicker/css/bootstrap-datepicker.standalone.min.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/lightgallery/css/lightgallery.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/layout/preloader.css') }}"/>
 
     <link rel="stylesheet" type="text/css" href="@yield('css')"/>
 
