@@ -147,6 +147,20 @@ div#opportunities img {
     margin-bottom: 5px;
 }
 
+div#opportunities .img-effect{
+    height: 170px;
+    overflow: hidden;
+}
+
+div#opportunities a img {
+    transform-origin: 50% 65%;
+    transition: transform 1s, filter 2s ease-in-out;
+}
+
+div#opportunities a:hover img {
+    transform: scale(1.25);
+}
+
 @media only screen and (max-width: 1200px) {
     div#opportunities img {
         width: 350px;

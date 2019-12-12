@@ -199,6 +199,7 @@ div.section-more span i:hover  {
 
 div.section-more span i.fa-calendar:hover{
     color: #ffffff;
+    cursor: default;
 }
 
 table {

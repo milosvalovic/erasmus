@@ -12,7 +12,6 @@ $('document').ready(function () {
             data: form.serialize(),
             success: function (data) {
                 var response = JSON.parse(data);
-                console.log(response)
                 if (response.status == "success") {
 
                 } else if (response.status == "error") {

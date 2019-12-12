@@ -80,6 +80,13 @@ return [
     'errors_404_button' => 'Späť na hlavnú stránku',
 
 
+    //Errors - 408
+    'errors_408_title' => '408',
+    'errors_408_subtitle' => 'Požiadavka vypršala',
+    'errors_408_description' => 'Ľutujeme, ale požiadavku sa nám nepodarilo spracovať.',
+    'errors_408_button' => 'Späť na hlavnú stránku',
+
+
     //Errors - 500
     'errors_500_title' => '500',
     'errors_500_subtitle' => 'Chyba servera',
@@ -198,7 +205,7 @@ return [
     'detail_more_faq' => 'Často kladané otázky',
     'detail_more_blog' => 'Príbehy študentov',
     'detail_presentations_title' => 'Prezentácia účastníkov',
-    'detail_presentations_table_title_student' => 'Názov študenta',
+    'detail_presentations_table_title_student' => 'Meno študenta',
     'detail_presentations_table_title_file' => 'Prezentácia',
     'detail_presentations_table_file_download' => 'Stiahnúť',
     'detail_photos_title' => 'Fotogaléria',
