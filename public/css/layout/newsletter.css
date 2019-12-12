@@ -35,6 +35,17 @@ div#newsletter > div.container-fluid {
     color: #ffffff;
 }
 
+h2#newsletterDialog{
+    font-size: 30px;
+}
+
+p#newsletter-response-text{
+    font-family: Cairo-Regular, serif;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: left;
+}
+
 @media only screen and (max-width: 992px) {
     .newsletter-background {
         height: 120px;

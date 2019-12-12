@@ -45,5 +45,6 @@
 <script type="text/javascript" src="{{ asset('vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('vendor/typeahead/typeahead.bundle.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/client/app/app.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/client/app/newsletter.js') }}"></script>
 </body>
 </html>

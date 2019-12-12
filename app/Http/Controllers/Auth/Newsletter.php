@@ -23,12 +23,12 @@ class Newsletter extends Controller
 
             $updated = User::where('email', $userEmail)->update(['newsletter' => 1]);
             if ($updated > 0) {
-                return $notification = ['success:newsletterSignIn']; //Úspešne prihlásený na odber noviniek
+                return $notification = ['success:newsletterSignIn'];
             } else {
-                return $notification = ['error:newsletterSignIn']; //Nepodarilo sa prihlási na ober noviniek
+                return $notification = ['error:newsletterSignIn'];
             }
         }else{
-            return $notification = ['error:userLogIn']; //Pre prihlásenie sa na odber noviniek je potrebné by prihlásený
+            return $notification = ['error:userLogIn'];
         }
     }
 
@@ -36,9 +36,9 @@ class Newsletter extends Controller
     {
         $updated = User::where('email',$email)->where('hash',$hash)->update(['newsletter' => 0]);
         if ($updated > 0) {
-            return $notification = ['success:newsletterSignOut']; //Úspešne odhlásený z odberu novidiek
+            return $notification = ['success:newsletterSignOut'];
         } else {
-            return $notification = ['error:newsletterSignOut']; //Email alebo hash je nesprávny
+            return $notification = ['error:newsletterSignOut'];
         }
     }
 

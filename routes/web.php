@@ -13,10 +13,6 @@
 
 //Client routes
 
-Route::get('/newsletter/{email}/{hash}','Auth\Newsletter@signOut');
-
-Route::get('/newsletter','Auth\Newsletter@signIn');
-
 Route::get('/', 'client\HomeController@home');
 
 Route::get('/mapa/krajiny', 'client\HomeController@getCountryCodes');
@@ -60,6 +56,10 @@ Route::post('profil/prezentacia/ulozit', ['as' => 'insert-presentation', 'uses' 
 Route::get('profil/recenzia/nova/{users_season_ID}', 'student\ReviewController@newReview')->middleware('auth');
 
 Route::post('profil/recenzia/ulozit', ['as' => 'insert-review', 'uses' => 'student\ReviewController@insertReview'])->middleware('auth');
+
+Route::get('/newsletter','Auth\Newsletter@signIn');
+
+Route::get('/newsletter/{email}/{hash}','Auth\Newsletter@signOut');
 
 
 /*------------------------------- Admin routes---------------------------------------------------------------------------------------------------------------------*/

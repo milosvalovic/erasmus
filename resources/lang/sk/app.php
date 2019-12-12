@@ -148,7 +148,8 @@ return [
 
     //Newsletter
     'newsletter_question' => 'CHCETE BYŤ O PODUJATIACH K MOBILITÁM INFORMAVANÝ MEDZI PRVÝMI?',
-    'newsletter_link' => 'ÁNO, ZAREGISTROVAŤ SA',
+    'newsletter_link' => 'ÁNO, PRIHLÁSIŤ SA',
+    'newsletter_link_logged' => 'ÁNO, ODOBERAŤ',
 
 
     //FAQ
