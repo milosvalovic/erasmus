@@ -11,8 +11,12 @@
 |
 */
 
-
 //Client routes
+
+Route::get('/newsletter/{email}/{hash}','Auth\Newsletter@signOut');
+
+Route::get('/newsletter','Auth\Newsletter@signIn');
+
 Route::get('/', 'client\HomeController@home');
 
 Route::get('/mapa/krajiny', 'client\HomeController@getCountryCodes');
