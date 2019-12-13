@@ -33,7 +33,7 @@ class OfficeHourController extends Controller
         $hours->day = $request->input('day');
         $hours->from = $request->input('from');
         $hours->to = $request->input('to');
-        if ($request->input('off') == 0)
+        if ($request->input('off') == null)
             $hours->off = 1;
         else
             $hours->off = 0;
