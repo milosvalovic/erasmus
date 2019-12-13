@@ -42,7 +42,12 @@ class RegisterController extends Controller
         $user->last_name = $data['lastname'];
         $user->email = $data['email'];
         $user->newsletter = 0;
+        $hash = str_random(32);
+        while($this->checkIfUnique($hash)){
+            $hash = str_random(32);
+        }
         $user->password = bcrypt($data['password']);
+        $user->hash = $hash;
         $user->roles_ID = 1;
         $user->save();
 
@@ -55,6 +60,14 @@ class RegisterController extends Controller
         Mail::to($user->email)->send(new VerifyMail($user));
 
         return $user;
+    }
+
+    protected function checkIfUnique($hash){
+        $validator = Validator::make(['hash' => $hash], [
+            'hash' => 'required|string|unique:users'
+        ]);
+        if($validator->fails()) return false;
+        else true;
     }
 
     protected function registered(Request $request, $user)
