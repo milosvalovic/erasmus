@@ -152,9 +152,9 @@ table.admin-table tr th a{
 .admin-header > ul > a .sidebar-brand-icon i.admin-ukf-logo{
     display: block;
     background: url("../../img/ukf_logo_white.png") no-repeat;
-    background-size: 70px 70px;
-    width: 70px;
-    height: 70px;
+    background-size: 60px 60px;
+    width: 60px;
+    height: 60px;
     border: 0;
 }
 .sidebar-brand{
@@ -560,6 +560,20 @@ a[class='page-link']:hover{
 }
 
 .admin-office-hours-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/*-------------Reviews page------------------------*/
+.admin-review-table{
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+    padding: 10px;
+}
+
+.admin-review-title{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
