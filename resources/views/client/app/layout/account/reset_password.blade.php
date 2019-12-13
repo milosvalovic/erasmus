@@ -10,15 +10,19 @@
                         <div class="col-md-9 col-lg-8 text-left mx-auto">
                             <div class="content">
                                 <h3>@lang('app.reset_password_title')</h3>
+                                @if (session('error'))
+                                    <div class="alert alert-danger">
+                                        <h5>{{session('error')}}</h5>
+                                    </div>
+                                @endif
                                 <form action="{{ route('password.request') }}" method="POST">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="token" value="{{ $token }}">
                                     <input type="hidden" name="email" value="{{ $email }}">
-                                    <p>{{ $email }}</p>
                                     <label for="password">@lang('app.reset_password_new')</label>
                                     <input type="password" name="password" id="password" value=""
                                            placeholder="********">
-                                    <div class="error text-danger">Some Errors related to something</div>
+
                                     <br/>
                                     <label for="password">@lang('app.reset_password_confirm')</label>
                                     <input type="password" name="password_confirmation" id="password" value=""

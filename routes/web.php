@@ -95,6 +95,7 @@ Route::post('/admin/season/extend_form', 'system\SeasonController@multiAddSeason
 Route::post('/admin/season/extend', 'system\SeasonController@multiAddSeasons')->name('createMultipleSeasons');
 Route::post('/admin/season/detail/add_user_to_season', 'system\SeasonController@signInSeason')->name('signToSeason');
 Route::post('/admin/season/add_season', 'system\SeasonController@addSeason')->name('addSeason');
+Route::post('/admin/season/detail/change_status', 'system\SeasonController@changeStatus')->name('changeStatus');
 
 /*------Mobility category-------*/
 Route::get('/admin/mobilities_category', 'system\CategoryMobilityController@mobility_category');

@@ -73,20 +73,21 @@
                                 <th scope="row">{{ $user->ID }}</th>
                                 <td>{{ $user->user->email }}</td>
                                 <td>{{ $user->status_season[0]->user->email}}</td>
-                                <td><select name="season_status_ID" class="form-control admin-form-input"
-                                            id="editMobilityType"
-                                            required>
-                                        @foreach($statuses as $status)
-                                            <option value="{{$status->ID}}"
-                                                    @if($status->ID == $user->status_season[0]->season_status->ID) selected="selected" @endif>{{$status->name}}</option>
-                                    @endforeach</td>
-                                <td>{{$user->status_season[0]->season_status->created_at}}</td>
-                                <form method="post" class="form-add-blogs" id="formChangeBlogStatus"
-                                      action="">
-                                    <td>
-                                        <div class="form-check">
 
-                                        </div>
+                                <td>{{$user->status_season[0]->created_at}}</td>
+
+                                <form method="post" class="form-add-blogs" id="formChangeBlogStatus"
+                                      action="{{route('changeStatus')}}">
+                                    <td>
+                                    <div class="form-check">
+                                        <select name="season_status_ID" class="form-control admin-form-input"
+                                                id="season_status_ID"
+                                                required>
+                                            @foreach($statuses as $status)
+                                                <option value="{{$status->ID}}"
+                                                        @if($status->ID == $user->status_season[0]->season_status_ID) selected="selected" @endif>{{$status->name}}</option>
+                                            @endforeach</select>
+                                    </div>
                                     </td>
                                     <th scope="row">
                                         <button type="submit" class="btn btn-outline-primary">Uložiť</button>
@@ -96,7 +97,7 @@
                                         </a>
                                     </th>
                                     {{csrf_field()}}
-                                    <input type="hidden" name="id" value="{{$user->ID}}">
+                                    <input type="hidden" name="user_season_ID" value="{{$user->ID}}">
                                 </form>
                             </tr>
                         @endforeach
@@ -174,22 +175,21 @@
 
                 $("#users_table > tbody:last-child").append(
                     "<tr>"
-                    + "<td>" + element.id + "</td>"
+                    + "<td>" + element.ID + "</td>"
                     + "<td>" + element.first_name + "</td>"
                     + "<td>" + element.last_name + "</td>"
                     + "<td>" + element.email + "</td>"
                     + "<th scope=\"row\"><form method=\"post\"  class=\"signUser\">"
-                    + "<input type=\"hidden\" name=\"season_id\" value=\""+ season_ID +"\">"
-                    + "<input type=\"hidden\" name=\"_token\" value=\""+ "{{csrf_token()}}" +"\">"
-                    + "<input type=\"hidden\" name=\"user_id\" value=\""+ element.id +"\">"
+                    + "<input type=\"hidden\" name=\"season_id\" value=\"" + season_ID + "\">"
+                    + "<input type=\"hidden\" name=\"_token\" value=\"" + "{{csrf_token()}}" + "\">"
+                    + "<input type=\"hidden\" name=\"user_id\" value=\"" + element.ID + "\">"
                     + "<button type=\"submit\" class=\"btn btn-outline-primary\">Pridať</button>"
                     + "</form></th>"
                     + "</tr>")
             });
-            $( ".signUser" ).on( "submit", signInUser );
+            $(".signUser").on("submit", signInUser);
 
         }
-
 
 
         $("#searchForm").submit(function (event) {
@@ -203,12 +203,12 @@
             $("#users_table tbody").empty();
             event.preventDefault();
             loadData();
-            console.log($( ".signUser" ));
+            console.log($(".signUser"));
 
             return false;
         });
 
-        function signInUser(event){
+        function signInUser(event) {
             event.preventDefault();
             var form = $(this);
             var url = form.attr("action");
@@ -227,7 +227,7 @@
                     } else if (response.status == "error") {
                         alert(response.reason);
                     }
-                }  ,
+                },
                 error: function (xhr, resp, text) {
                     console.log(xhr, resp, text);
                 }

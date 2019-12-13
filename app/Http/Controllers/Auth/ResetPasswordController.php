@@ -10,6 +10,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Password;
 
 class ResetPasswordController extends Controller
@@ -33,7 +34,7 @@ class ResetPasswordController extends Controller
 
     public function reset(Request $request)
     {
-        $this->validate($request, $this->rules(), $this->validationErrorMessages());
+        $this->validate($request, $this->rules(), Lang::get('app.detail_sign_up_mobility_error_max'));
 
         $response = $this->broker()->reset(
             $this->credentials($request), function ($user, $password) {

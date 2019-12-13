@@ -10,7 +10,7 @@ class Status_season extends Model
     use SoftDeletes;
 
     protected $table = 'status_season';
-    protected $fillable = ['season_status_ID', 'users_season_ID', 'user_ID'];
+    protected $fillable = ['season_status_ID', 'users_season_ID', 'users_ID'];
 
     public function user_season()
     {
@@ -24,6 +24,6 @@ class Status_season extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\Models\User', 'users_id', 'ID');
+        return $this->belongsTo('App\Models\User', 'users_ID', 'ID');
     }
 }

@@ -246,7 +246,7 @@ class SeasonController extends Controller
     {
         $term = $request->input('term');
         $page = $request->input('page');
-        $data = User::select('id', 'first_name', 'last_name', 'email')
+        $data = User::select('ID', 'first_name', 'last_name', 'email')
             ->orWhere("email", "LIKE", "%" . $term . "%")
             ->orWhere("first_name", "LIKE", "%" . $term . "%")
             ->orWhere("last_name", "LIKE", "%" . $term . "%")
@@ -259,69 +259,41 @@ class SeasonController extends Controller
             ->count();
 
 
-
-        return json_encode(['count' => $count,'data' => $data]);
+        return json_encode(['count' => $count, 'data' => $data]);
 
     }
 
     public function showDetail($id)
     {
-        $users = User_Season::select('ID', 'users_ID', 'season_ID')
+        $users = User_season::select('*')->orderBy('ID','ASC')
             ->with([
                 'season' => function ($query) {
-                    $query->select('ID', 'date_start_mobility', 'date_end_mobility', 'mobility_ID');
+                    $query->select('*');
                 },
-                'season.mobility' => function ($query) {
-                    $query->select('ID', 'info', 'partner_university_ID');
-                },
-                'season.mobility.university' => function ($query) {
-                    $query->select('ID', 'country_ID', 'name');
-                },
-                'season.mobility.university.country' => function ($query) {
-                    $query->select('ID', 'name');
+                'user' => function ($query) {
+                    $query->select('*');
                 },
                 'status_season' => function ($query) {
-                    $query->select('ID', 'users_season_ID', 'season_status_ID', 'users_id', 'created_at')->orderBy('ID', 'DESC')->first();
+                    $query->select('*')->orderBy('ID','DESC');
                 },
                 'status_season.user' => function ($query) {
-                    $query->select('ID', 'email')->orderBy('ID', 'DESC')->first();
+                    $query->select('*')->orderBy('ID', 'DESC');
                 }
             ])
+
             ->where('season_ID', '=', $id)
             ->paginate(15);
 
-        $season = Season::select('*')
-            ->with([
-                'user_season' => function ($query) {
-                    $query->select('*');
-                },
-                'user_season.user' => function ($query) {
-                    $query->select('*');
-                }
-            ])
-            ->where('season.ID','=',$id)
-            ->get();
-
-        return $season;
         $statuses = Season_status::get();
 
-        foreach ($users as $item) {
-            $i = $item->season->mobility->university;
-            $item->place_name = $i->name . ', ' . $i->country->name;
-        }
-//        echo '<pre>';
-//        var_dump($users->toJson());
-//        echo '</pre>';
-//        die;
-
-        return view('system.detail_season_admin', ['users' => $users, 'statuses' => $statuses, 'season_ID' => $id ]);
+        return view('system.detail_season_admin', ['users' => $users, 'statuses' => $statuses, 'season_ID' => $id]);
 
     }
 
 
     public function signInSeason(Request $request)
     {
-        if(Auth::check()) {
+        if (Auth::check()) {
             $userID = $request->input('user_id');
             $seasonID = $request->input('season_id');
             $offset = Variables::TIME_OFFSET;
@@ -345,6 +317,7 @@ class SeasonController extends Controller
                         $query->select('ID', 'season_status_ID', 'users_season_ID')->orderBy('ID', 'DESC')->first();
                     },
                     'university' => function ($query) {
+                        $query->select('img_url',"name");
                     },
                 ])
                 ->where('mobility.ID', '=', $mobilityID)
@@ -419,14 +392,14 @@ class SeasonController extends Controller
             try {
                 $user = User::find($userID);
                 $user_season = new User_season();
-                $user_season->users_ID = $user->id;
+                $user_season->users_ID = $user->ID;
                 $user_season->season_ID = $seasonID;
                 $user_season->save();
                 $user_season_ID = DB::getPdo()->lastInsertId();
 
 
                 $season_status = Season_Status::find(Variables::SEASON_STATUS_PENDING_ID);
-                $system = Auth::user()->id;
+                $system = Auth::user()->ID;
                 DB::enableQueryLog();
                 $status_season = new Status_season();
                 $status_season->season_status_ID = Variables::SEASON_STATUS_PENDING_ID;
@@ -451,6 +424,31 @@ class SeasonController extends Controller
                     'reason' => Lang::get('app.detail_sign_up_mobility_error')));
             }
         }
+    }
+
+    public function changeStatus(Request $request){
+        $validation = $this->validateCreate($request);
+        if ($validation->fails()) {
+            Session::flash('error', $validation->messages()->first());
+            return redirect()->back()->withInput();
+        }
+        $season_status_ID = $request->input('status_season_ID');
+        $user_season_ID = $request->input('user_season_ID');
+        $users_id = Auth::user()->ID;
+
+        $status_season = new Status_season();
+        $status_season->season_status_ID = $season_status_ID;
+        $status_season->user_season_ID = $user_season_ID;
+        $status_season->users_ID = $users_id;
+    }
+
+    public function validateSeasonCange($request){
+        $validator = Validator::make($request->all(), [
+            'season_status_ID' => 'required',
+            'users_season_ID' => 'required'
+        ]);
+
+        return $validator;
     }
 
 }
