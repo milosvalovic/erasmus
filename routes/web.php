@@ -127,6 +127,10 @@ Route::get('/admin/universities/delete_university/{id}', ['as' => 'delete_univer
 Route::post('/admin/universities/add_university/', ['as' => 'add_university', 'uses' => 'system\UniversityController@addUniversity']);
 Route::post('/admin/universities/edit_university/', ['as' => 'edit_university', 'uses' => 'system\UniversityController@editUniversity']);
 
+/*------Reviews----------------*/
+Route::get('/admin/reviews', 'system\ReviewsController@reviews');
+Route::get('/admin/reviews/edit_review/{id}', ['as' => 'edit_review_form', 'uses' => 'system\ReviewsController@reviewEditShow']);
+
 /*------Images----------------*/
 Route::get('/admin/images', 'system\ImageController@images');
 

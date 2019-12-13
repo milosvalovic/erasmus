@@ -144,7 +144,7 @@ table.admin-table tr th a{
 
 .admin-title-text h1{
     margin-bottom: 0;
-    margin-left: 10px;
+    margin-left: 0;
 }
 
 
@@ -152,9 +152,9 @@ table.admin-table tr th a{
 .admin-header > ul > a .sidebar-brand-icon i.admin-ukf-logo{
     display: block;
     background: url("../../img/ukf_logo_white.png") no-repeat;
-    background-size: 70px 70px;
-    width: 70px;
-    height: 70px;
+    background-size: 60px 60px;
+    width: 60px;
+    height: 60px;
     border: 0;
 }
 .sidebar-brand{
@@ -566,6 +566,87 @@ a[class='page-link']:hover{
     padding: 20px;
 }
 
+/*-------------Reviews page------------------------*/
+.admin-review-table{
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+    padding: 10px;
+}
+
+.admin-review-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+/*---Detail---*/
+.detail-review-content h3 span{
+    color: black;
+}
+
+.detail-review-images-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+}
+
+.detail-review-images-container > h2{
+    padding: 20px;
+}
+
+.detail-review-images{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /*justify-content: space-around;*/
+    position: relative;
+    padding: 0 20px 20px 20px;
+}
+
+/*.detail-review-images:last-child{*/
+/*    justify-content: left;*/
+/*}*/
+
+.review--image{
+    position: relative;
+    /*flex: 1 0 13%;*/
+    transition: 0.6s;
+}
+
+.review--image img:nth-child(1){
+    width: 215px;
+    margin: 5px;
+    /*flex: 1 0 17%;*/
+    transition: 0.6s;
+}
+
+.review--image img:nth-child(1):hover{
+    cursor: pointer;
+    opacity: 0.7;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    transition: 0.6s;
+    transform: scale(1.1);
+}
+
+.review-delete-icon{
+    display: none;
+    animation-duration: 3s;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 35%;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    z-index: 1;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
 
 /*----Edit-------------*/
 .admin-switch-div{
