@@ -11,9 +11,6 @@ $(document).ready(function () {
         $('#addUserPassword').val(randomPass);
     });
 
-
-
-
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -25,6 +22,52 @@ $(document).ready(function () {
         }
     }
 
+
+    /*----------------------Section for animations in edit Review-----------------------------------------------------*/
+    var reviewImage = $('.review--image');
+    var animationFadeInUp = 'animated fadeInUp faster';
+    var animationFadeInOut = 'animated fadeOutUp faster';
+    var newImageHoverSettings = {'opacity': '0.6', 'border-radius':'10px', 'transform': 'scale(1.1', 'cursor': 'default'};
+
+    reviewImage.each(function(){
+      $(this).mouseover(function(){
+          const imageItem = $(this).children('img.review-image-item');
+          const imageDeleteIcon = $(this).children('img.review-delete-icon');
+
+          imageDeleteIcon.removeClass(animationFadeInOut);
+          imageDeleteIcon.css({"display": "none"});
+          imageItem.css(newImageHoverSettings);
+          imageDeleteIcon.css({"display": "flex"});
+          imageDeleteIcon.addClass(animationFadeInUp);
+
+          imageDeleteIcon.on('click', function(){
+              var imageId = $(this).data('id');
+
+              /* TODO for Miloš - ajax request na delete obrázka >>'imageId'<< */
+
+              imageDeleteIcon.css({display: 'none'});
+              imageItem.css({'width': '30px', 'height': '30px'});
+              setTimeout(function(){
+                  imageItem.css({display: 'none'});
+              },1000);
+
+          });
+      });
+    });
+
+    reviewImage.each(function(){
+        $(this).mouseleave(function(){
+            const imageItem = $(this).children('img.review-image-item');
+            const imageDeleteIcon = $(this).children('img.review-delete-icon');
+
+            imageDeleteIcon.removeClass(animationFadeInUp);
+            imageItem.css('opacity','1');
+            imageItem.css('border-radius','0');
+            imageItem.css('transform','scale(1)');
+            imageDeleteIcon.addClass(animationFadeInOut);
+        });
+    });
+    /*----------------------End of Section----------------------------------------------------------------------------*/
 });
 
 function randomPassword() {

@@ -23,7 +23,7 @@
                     <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Študent</th>
+                        <th scope="col">Autor</th>
                         <th scope="col">Text hodnotenia</th>
                         <th scope="col" class="user-form-actions">Akcie</th>
                     </tr>

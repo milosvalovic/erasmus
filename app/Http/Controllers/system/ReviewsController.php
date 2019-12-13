@@ -4,6 +4,7 @@ namespace App\Http\Controllers\system;
 
 
 use App\Models\Review;
+use App\Models\Images;
 use Illuminate\Routing\Controller;
 
 class ReviewsController extends Controller
@@ -16,7 +17,9 @@ class ReviewsController extends Controller
 
     public function reviewEditShow($id)
     {
-        $review = Review::find($id);
+        $review = Review::with('images')->find($id);
+//        var_dump($review->toJson());
+
         return view('system.edit.review_edit', ['review' => $review]);
     }
 
