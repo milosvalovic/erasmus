@@ -9,8 +9,7 @@
                 <h1>Editácia FAQ</h1>
             </div>
             <div class="admin-title-user">
-                <p>Eduard Gábel</p>
-                <img src="{{ asset('img/cat.png') }}" alt="">
+                <p>{{Auth::user()->roles->name . ' | '.Auth::user()->first_name . ' '. Auth::user()->last_name }}</p>
             </div>
         </div>
 
