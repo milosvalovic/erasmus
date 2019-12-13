@@ -17,8 +17,8 @@
 		$.fn.preloadinator.disableScroll = function() {
             var current_address = window.location.href.split('/');
             current_address = current_address[current_address.length-1];
-            if(current_address == 'kontakt'){
 
+            if(current_address == 'kontakt'){
                 var elmnt = document.getElementById("kontakt");
                 setTimeout(function(){ elmnt.scrollIntoView(); }, 999);
             }
