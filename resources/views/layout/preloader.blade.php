@@ -7,6 +7,7 @@
 </div>
 <script type="text/javascript" src="{{ asset('vendor/preloadinator/jquery.preloadinator.js') }}"></script>
 <script>
+    setTimeout(function() {window.scrollTo(0, 0);},200);
     $('.js-preloader').preloadinator({
         minTime: 1000
     });
