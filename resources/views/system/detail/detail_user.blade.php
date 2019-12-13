@@ -9,8 +9,7 @@
                 <h1>Detail používateľa <span>{{ $user->first_name }}</span></h1>
             </div>
             <div class="admin-title-user">
-                <p>Eduard Gábel</p>
-                <img src="{{ asset('img/cat.png') }}" alt="">
+                <p>{{Auth::user()->roles->name . ' | '.Auth::user()->first_name . ' '. Auth::user()->last_name }}</p>
             </div>
         </div>
 
