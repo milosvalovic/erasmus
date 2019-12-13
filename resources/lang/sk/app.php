@@ -82,6 +82,13 @@ return [
     'errors_404_button' => 'Späť na hlavnú stránku',
 
 
+    //Errors - 408
+    'errors_408_title' => '408',
+    'errors_408_subtitle' => 'Požiadavka vypršala',
+    'errors_408_description' => 'Ľutujeme, ale požiadavku sa nám nepodarilo spracovať.',
+    'errors_408_button' => 'Späť na hlavnú stránku',
+
+
     //Errors - 500
     'errors_500_title' => '500',
     'errors_500_subtitle' => 'Chyba servera',
@@ -145,7 +152,13 @@ return [
 
     //Newsletter
     'newsletter_question' => 'CHCETE BYŤ O PODUJATIACH K MOBILITÁM INFORMAVANÝ MEDZI PRVÝMI?',
-    'newsletter_link' => 'ÁNO, ZAREGISTROVAŤ SA',
+    'newsletter_link' => 'ÁNO, PRIHLÁSIŤ SA',
+    'newsletter_link_logged' => 'ÁNO, ODOBERAŤ',
+    'newsletter_signup_success' => 'Úspešne ste sa prihlásili na odber noviniek o mobilitách',
+    'newsletter_signup_error' => 'Nepodarilo sa prihlásiť na odber noviniek o mobilitách',
+    'newsletter_signup_not_logged_in' => 'Iba prihlásený používatelia sa môžu prihlásiť na odber noviniek o mobilitách',
+    'newsletter_signout_success' => 'Úspešne ste sa odhlásili z odber noviniek o mobilitách',
+    'newsletter_signout_error' => 'Nepodarilo sa odhlásiť z odber noviniek o mobilitách',
 
 
     //FAQ
@@ -202,7 +215,7 @@ return [
     'detail_more_faq' => 'Často kladané otázky',
     'detail_more_blog' => 'Príbehy študentov',
     'detail_presentations_title' => 'Prezentácia účastníkov',
-    'detail_presentations_table_title_student' => 'Názov študenta',
+    'detail_presentations_table_title_student' => 'Meno študenta',
     'detail_presentations_table_title_file' => 'Prezentácia',
     'detail_presentations_table_file_download' => 'Stiahnúť',
     'detail_photos_title' => 'Fotogaléria',
@@ -210,9 +223,9 @@ return [
     'detail_submit_button' => 'Chcem sa zúčastniť',
     'detail_from' => 'OD: ',
     'detail_to' => 'DO: ',
-    'detail_dialog_title' => 'Chyba',
+    'detail_dialog_title' => 'Oznam',
     'detail_dialog_button' => 'Zatvoriť',
-    'detail_sign_up_mobility_error' => 'Lutujeme ale nepodarilo sa prihlásiť na mobilitu',
+    'detail_sign_up_mobility_error' => 'Ľutujeme ale nepodarilo sa prihlásiť na mobilitu',
     'detail_sign_up_mobility_error_date' => 'Počas tohto dátumu prebieha iná mobilita na ktorú ste už prihláseny.',
     'detail_sign_up_mobility_error_max' => 'Počet prihlásených študentov dosiahlo maximum.',
     'detail_sign_up_mobility_success' => 'Úspešne ste sa prihlásili na mobilitu',

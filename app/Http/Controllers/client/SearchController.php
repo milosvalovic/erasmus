@@ -24,7 +24,7 @@ class SearchController extends Controller
         $countrySearch = $request->input('country');
         $universitySearch = $request->input('university');
         $typeSearch = $request->input('stays');
-        $grandSearch = $request->input('grand');
+        $grantSearch = $request->input('grand');
         $categorySearch = $request->input('category');
         $dateStartSearch = ($request->input('from') == '') ? '' : date("Y-m-d", strtotime($request->input('from')));
         $dateEndSearch = ($request->input('to') == '') ? '' : date("Y-m-d", strtotime($request->input('to')));
@@ -66,9 +66,9 @@ class SearchController extends Controller
                     $query->where('acronym', 'like', '%' . $universitySearch . '%')->orWhere('name', 'like', '%' . $universitySearch . '%');
                 });
             })
-            ->when($grandSearch, function ($query) use ($grandSearch) {
-                return $query->whereHas('university', function ($query) use ($grandSearch) {
-                    $query->where('grand', '>=', $grandSearch);
+            ->when($grantSearch, function ($query) use ($grantSearch) {
+                return $query->whereHas('university', function ($query) use ($grantSearch) {
+                    $query->where('grant', '>=', $grantSearch);
                 });
             })
             ->when($categorySearch, function ($query) use ($categorySearch) {
@@ -125,7 +125,7 @@ class SearchController extends Controller
                     "country" => $countrySearch,
                     "university" => $universitySearch,
                     "stays" => $typeSearch,
-                    "grand" => $grandSearch,
+                    "grand" => $grantSearch,
                     "category" => $categorySearch,
                     "from" => ($dateStartSearch == '') ? '' : date("d.m.Y", strtotime($dateStartSearch)),
                     "to" => ($dateEndSearch == '') ? '' : date("d.m.Y", strtotime($dateEndSearch)),

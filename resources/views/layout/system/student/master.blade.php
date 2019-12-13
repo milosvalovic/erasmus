@@ -3,3 +3,5 @@
 @include('layout.system.student.navigation')
 
 @yield('content')
+
+@include('layout.preloader')

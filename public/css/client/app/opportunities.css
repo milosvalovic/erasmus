@@ -144,7 +144,22 @@ div#opportunities .badge-secondary {
 div#opportunities img {
     width: 250px;
     height: 170px;
-    margin-bottom: 5px;
+}
+
+div#opportunities .img-effect {
+    width: 250px;
+    height: 170px;
+    overflow: hidden;
+    margin: 0 auto 5px;
+}
+
+div#opportunities a img {
+    transform-origin: 50% 65%;
+    transition: transform 1s, filter 2s ease-in-out;
+}
+
+div#opportunities a:hover img {
+    transform: scale(1.25);
 }
 
 @media only screen and (max-width: 1200px) {
@@ -229,7 +244,9 @@ form#search > div.search {
     margin-bottom: 30px;
 }
 
-.twitter-typeahead, .tt-hint, .tt-input, .tt-menu { width: 100%; }
+.twitter-typeahead, .tt-hint, .tt-input, .tt-menu {
+    width: 100%;
+}
 
 .typeahead, .tt-query, .tt-hint {
     height: 40px;
@@ -352,7 +369,7 @@ ul.pagination > li {
 }
 
 @media only screen and (max-width: 678px) {
-    input, select{
+    input, select {
         width: 90vw !important;
     }
 

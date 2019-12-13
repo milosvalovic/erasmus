@@ -36,10 +36,16 @@
                     @foreach($blogs as $blog)
                         <tr>
                             <th scope="row">{{ $blog->ID }}</th>
-                            <td>{{ $blog->title }}</td>
+                            <td>
+                                <a class="admin-blog-table"
+                                        href="{{ action('system\BlogController@blogDetail',['id' => $blog->ID]) }}">
+                                    {{ $blog->title }}
+                                </a>
+                            </td>
                             <td>{{ $blog->publish_date }}</td>
                             <td>{{ $blog->user->email }}</td>
                             <td>{{ $blog->user_2->email }}</td>
+
                             <form method="post" class="form-add-blogs" id="formChangeBlogStatus"
                                   action="{{route('changeBlogStatus')}}">
                                 <td>
@@ -59,6 +65,7 @@
                                 {{csrf_field()}}
                                 <input type="hidden" name="id" value="{{$blog->ID}}">
                             </form>
+
                         </tr>
                     @endforeach
                     </tbody>

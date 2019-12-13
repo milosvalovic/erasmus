@@ -11,7 +11,7 @@
         </a>
 
         <div class="sidebar-heading">
-            Admin
+            Hlavné
         </div>
 
         <li class="nav-item admin-menu-links-hover {{ (request()->is('admin/users')) ? 'active' : '' }}">
@@ -56,7 +56,6 @@
         </li>
 
         <li class="nav-item admin-menu-links-hover {{(request()->is('admin/mobilities_category')) ? 'active' : ''}}
-        {{--        {{(request()->is('admin/mobilities_category/edit_mobility')) ? 'active' : ''}}--}}
                 ">
             <a class="nav-link" href="{{ action('system\CategoryMobilityController@mobility_category')}}">
                 <i class="fa fa-list-alt" aria-hidden="true"></i>
@@ -78,12 +77,21 @@
             </a>
         </li>
 
-        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/images')) ? 'active' : ''}}">
-            <a class="nav-link " href="{{ action('system\ImageController@images')}}">
-                <i class="fa fa-picture-o" aria-hidden="true"></i>
-                <span>Správa fotografií</span>
+        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/reviews')) ? 'active' : ''}}">
+            <a class="nav-link" href="{{ action('system\ReviewsController@reviews')}}">
+                <i class="fa fa-telegram" aria-hidden="true"></i>
+                <span>Hodnotenia</span>
             </a>
         </li>
+
+
+
+{{--        <li class="nav-item admin-menu-links-hover {{(request()->is('admin/images')) ? 'active' : ''}}">--}}
+{{--            <a class="nav-link " href="{{ action('system\ImageController@images')}}">--}}
+{{--                <i class="fa fa-picture-o" aria-hidden="true"></i>--}}
+{{--                <span>Správa fotografií</span>--}}
+{{--            </a>--}}
+{{--        </li>--}}
 
         <li class="nav-item admin-menu-links-hover {{(request()->is('admin/faq')) ? 'active' : ''}}">
             <a class="nav-link " href="{{ action('system\FaqController@faq')}}">

@@ -5,10 +5,11 @@
                     <div class="row">
                 @endif
                     <div class="col-xl-3 col-sm-6 text-center">
-                        <img src="{{ asset($mobilita->mobility->university->thumb_url) }}" alt="{{$mobilita->mobility->university->country->name}}" title="{{$mobilita->mobility->university->country->name}}"
-                             class="rounded">
-                        <br/>
-                        <a href="{{ url('/detail/'.$mobilita->mobility->ID) }}" class="opportunitie-name">{{$mobilita->mobility->university->country->name}}</a>
+                        <a href="{{ url('/detail/'.$mobilita->mobility->ID) }}" class="opportunitie-name"><div class="img-effect">
+                                <img src="{{ asset($mobilita->mobility->university->thumb_url) }}"
+                                     alt="{{$mobilita->mobility->university->country->name}}" title="{{$mobilita->mobility->university->country->name}}" class="rounded">
+                            </div>
+                        {{$mobilita->mobility->university->country->name}}</a>
                         <span class="badge badge-secondary">{{ $mobilita->mobility->category->name }}</span>
                         <p class="opportunitie-date">@lang('app.date_end') {{date("d.m.Y", strtotime($mobilita->date_start_reg))}}</p>
                         <p class="opportunitie-comments">@lang('app.reviews'){{count($mobilita->user_season)}}</p>

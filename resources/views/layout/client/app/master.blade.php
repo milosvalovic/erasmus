@@ -6,3 +6,5 @@
 @show
 
 @yield('content')
+
+@include('layout.preloader')

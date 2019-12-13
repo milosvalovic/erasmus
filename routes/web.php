@@ -11,8 +11,8 @@
 |
 */
 
-
 //Client routes
+
 Route::get('/', 'client\HomeController@home');
 
 Route::get('/mapa/krajiny', 'client\HomeController@getCountryCodes');
@@ -21,7 +21,7 @@ Route::get('/vyhladavanie/krajiny', 'client\SearchController@getAutocompleteCoun
 
 Route::get('/vyhladavanie/univerzity', 'client\SearchController@getAutocompleteUniversity');
 
-Route::get('/#kontakt', 'client\HomeController@home');
+Route::get('/kontakt', 'client\HomeController@home');
 
 Route::post('/hladat', ['as' => 'search', 'uses' => 'client\SearchController@search']);
 
@@ -57,6 +57,10 @@ Route::get('profil/recenzia/nova/{users_season_ID}', 'student\ReviewController@n
 
 Route::post('profil/recenzia/ulozit', ['as' => 'insert-review', 'uses' => 'student\ReviewController@insertReview'])->middleware('auth');
 
+Route::get('/novinky','Auth\Newsletter@signIn');
+
+Route::get('/novinky/{email}/{hash}','Auth\Newsletter@signOut');
+
 
 /*------------------------------- Admin routes---------------------------------------------------------------------------------------------------------------------*/
 Route::group(['middleware' => ['web','auth']], function () {
@@ -68,6 +72,8 @@ Route::get('/admin/users/edit_user/{id}', ['as' => 'edit_user_form', 'uses' => '
 Route::post('/admin/users/add_user', 'system\UserController@addUser')->name('addUser');
 Route::post('/admin/users/edit_user', 'system\UserController@editUser')->name('editUser');
 Route::get('/admin/users/delete/{id}', 'system\UserController@deleteUser')->name('deleteUser');
+
+Route::get('/admin/users/detail_user/{id}', ['as' => 'user_detail', 'uses' => 'system\UserController@userDetail']);
 
 /*------Roles-------------------*/
 Route::get('/admin/roles', 'system\UserRoleController@roles');
@@ -116,6 +122,7 @@ Route::post('/admin/mobility_type/edit_type/', ['as' => 'edit_type', 'uses' => '
 /*------Blog---------*/
 Route::get('/admin/blogs', 'system\BlogController@blog');
 Route::get('/admin/blogs/delete_blog/{id}', 'system\BlogController@deleteBlog')->name('deleteBlog');
+Route::get('/admin/blogs/detail_blog/{id}', ['as' => 'blog_detail', 'uses' => 'system\BlogController@blogDetail']);
 Route::post('/admin/blogs/change_blog_status', 'system\BlogController@changeBlogStatus')->name('changeBlogStatus');
 
 /*------University-------------*/
@@ -124,6 +131,10 @@ Route::get('/admin/universities/edit_university/{id}', ['as' => 'edit_university
 Route::get('/admin/universities/delete_university/{id}', ['as' => 'delete_university', 'uses' => 'system\UniversityController@deleteUniversity']);
 Route::post('/admin/universities/add_university/', ['as' => 'add_university', 'uses' => 'system\UniversityController@addUniversity']);
 Route::post('/admin/universities/edit_university/', ['as' => 'edit_university', 'uses' => 'system\UniversityController@editUniversity']);
+
+/*------Reviews----------------*/
+Route::get('/admin/reviews', 'system\ReviewsController@reviews');
+Route::get('/admin/reviews/edit_review/{id}', ['as' => 'edit_review_form', 'uses' => 'system\ReviewsController@reviewEditShow']);
 
 /*------Images----------------*/
 Route::get('/admin/images', 'system\ImageController@images');

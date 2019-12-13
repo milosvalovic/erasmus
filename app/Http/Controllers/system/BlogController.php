@@ -63,4 +63,10 @@ class BlogController extends Controller
 
     }
 
+    public function blogDetail($id)
+    {
+        $blog = Blog::find($id);
+        return view('system.detail.detail_blog_admin',['blog' => $blog]);
+    }
+
 }

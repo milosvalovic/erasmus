@@ -12,9 +12,8 @@ $('document').ready(function () {
             data: form.serialize(),
             success: function (data) {
                 var response = JSON.parse(data);
-                console.log(response)
                 if (response.status == "success") {
-
+                    window.location.href = response.url;
                 } else if (response.status == "error") {
                     $('#response-text').text(response.reason);
                     $('#messeageDialog').modal('show');

@@ -98,5 +98,20 @@ class UserController extends Controller
         return $validator;
     }
 
+    public function userDetail($id)
+    {
+        $user = User::find($id);
+        return view('system.detail.detail_user', ['user' => $user]);
+    }
+
+
+
+
+
+
+
+
+
+
 
 }

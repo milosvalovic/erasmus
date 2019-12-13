@@ -375,10 +375,32 @@ div#kontakt h2.section-heading {
     margin-bottom: 0;
 }
 
+div#current-opportunities{
+    overflow: hidden;
+}
+
 div#current-opportunities img {
     width: 250px;
     height: 170px;
     margin-bottom: 5px;
+}
+
+div.img-effect{
+    margin-bottom: 5px;
+}
+
+div#current-opportunities .img-effect{
+    height: 170px;
+    overflow: hidden;
+}
+
+div#current-opportunities a img {
+    transform-origin: 50% 65%;
+    transition: transform 1s, filter 2s ease-in-out;
+}
+
+div#current-opportunities a:hover img {
+    transform: scale(1.25);
 }
 
 @media only screen and (max-width: 1200px) {

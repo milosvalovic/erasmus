@@ -24,10 +24,14 @@
             <div class="col-xl-6 text-right">
                 <ul class="footer-navigation">
                     <li><a class="footer-nav-link" href="{{ url('/mobility') }}">@lang('app.nav_mobilities')</a></li>
-                    <li><a class="footer-nav-link" href="{{ url('/#kontakt') }}">@lang('app.nav_contact')</a></li>
+                    <li><a class="footer-nav-link" href="{{ url('/kontakt') }}">@lang('app.nav_contact')</a></li>
                     <li><a class="footer-nav-link" href="{{ url('/clanky').'/'.$article_in_row }}">@lang('app.nav_blog')</a></li>
                     <li><a class="footer-nav-link" href="{{ url('/otazky') }}">@lang('app.nav_faq')</a></li>
-                    <li><a class="footer-nav-link" href="{{ url('/prihlasovanie') }}">@lang('app.nav_account')</a></li>
+                    @if (Auth::check())
+                        <li><a class="footer-nav-link" href="{{ url('/profil/mobility') }}">@lang('app.nav_my_mobilities')</a></li>
+                    @else
+                        <li><a class="footer-nav-link" href="{{ url('/prihlasovanie') }}">@lang('app.nav_account')</a></li>
+                    @endif
                 </ul>
             </div>
         </div>
@@ -41,5 +45,6 @@
 <script type="text/javascript" src="{{ asset('vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('vendor/typeahead/typeahead.bundle.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/client/app/app.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/client/app/newsletter.js') }}"></script>
 </body>
 </html>
