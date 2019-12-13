@@ -9,7 +9,8 @@ body {
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: 100px auto 45px;
     background: #ffffff;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     grid-template-areas:
             "header title title title title title title title title"
             "header content content content content content content content content"
@@ -28,7 +29,6 @@ body {
     background-color: #007183;
     grid-area: header;
     box-shadow: 11px 12px 7px #979797;
-    /*position: fixed;*/
 }
 
 .admin-footer{
@@ -168,6 +168,11 @@ table.admin-table tr th a{
 .admin-menu-links-hover:hover{
     background-color: #0093aadb;
 }
+
+li.admin-menu-links-hover:hover{
+    cursor: pointer;
+}
+
 
 span[class='dashboard-admin']{
     font-size: 30px;

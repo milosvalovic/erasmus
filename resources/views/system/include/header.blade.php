@@ -11,7 +11,7 @@
         </a>
 
         <div class="sidebar-heading">
-            Admin
+            Hlavné
         </div>
 
         <li class="nav-item admin-menu-links-hover {{ (request()->is('admin/users')) ? 'active' : '' }}">
