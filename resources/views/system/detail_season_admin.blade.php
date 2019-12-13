@@ -62,12 +62,12 @@
                             <th scope="col">ID</th>
                             <th scope="col">Uchádzač</th>
                             <th scope="col">Zmené uživateľom</th>
-                            <th scope="col">Status</th>
                             <th scope="col">Naposledy zmenené</th>
+                            <th scope="col">Status</th>
                             <th scope="col" class="user-form-actions">Akcie</th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="table_content">
                         @foreach($users as $user)
                             <tr>
                                 <th scope="row">{{ $user->ID }}</th>
@@ -79,15 +79,15 @@
                                 <form method="post" class="form-add-blogs" id="formChangeBlogStatus"
                                       action="{{route('changeStatus')}}">
                                     <td>
-                                    <div class="form-check">
-                                        <select name="season_status_ID" class="form-control admin-form-input"
-                                                id="season_status_ID"
-                                                required>
-                                            @foreach($statuses as $status)
-                                                <option value="{{$status->ID}}"
-                                                        @if($status->ID == $user->status_season[0]->season_status_ID) selected="selected" @endif>{{$status->name}}</option>
-                                            @endforeach</select>
-                                    </div>
+                                        <div class="form-check">
+                                            <select name="season_status_ID" class="form-control admin-form-input"
+                                                    id="season_status_ID"
+                                                    required>
+                                                @foreach($statuses as $status)
+                                                    <option value="{{$status->ID}}"
+                                                            @if($status->ID == $user->status_season[0]->season_status_ID) selected="selected" @endif>{{$status->name}}</option>
+                                                @endforeach</select>
+                                        </div>
                                     </td>
                                     <th scope="row">
                                         <button type="submit" class="btn btn-outline-primary">Uložiť</button>
@@ -98,6 +98,7 @@
                                     </th>
                                     {{csrf_field()}}
                                     <input type="hidden" name="user_season_ID" value="{{$user->ID}}">
+                                    <input type="hidden" name="season_ID" value="{{$season_ID}}">
                                 </form>
                             </tr>
                         @endforeach
@@ -140,8 +141,6 @@
 
 
         function loadData() {
-
-            $("#seasonTable tbody").empty();
             $.ajax({
                 url: path,
                 type: "POST",
@@ -151,9 +150,9 @@
                     console.log(result);
                     $("#users_table tbody").empty();
                     setTable(result);
-                    $("#users_table").show()
 
-                    if (result.count <= (1 + page) * 1) {
+
+                    if (result.count <= (1 + page) * 10) {
                         $("#loadNext").hide();
                     } else {
                         $("#loadNext").show();
@@ -188,6 +187,9 @@
                     + "</tr>")
             });
             $(".signUser").on("submit", signInUser);
+            $("#users_table").fadeIn(1000, function(){
+
+            });
 
         }
 
@@ -219,13 +221,13 @@
                 dataType: 'json',
                 data: $(form).serialize(),
                 success: function (data) {
-                    var response = JSON.parse(data);
-                    console.log(response);
-                    if (response.status == "success") {
-                        //location.reload();
-                        alert(response.status);
-                    } else if (response.status == "error") {
-                        alert(response.reason);
+                    console.log(data);
+
+                    if (data.status == "success") {
+                        location.reload();
+                        alert(data.status);
+                    } else if (data.status == "error") {
+                        alert(data.reason);
                     }
                 },
                 error: function (xhr, resp, text) {

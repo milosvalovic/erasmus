@@ -29,6 +29,6 @@ class StatusChangedEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.status_changed');
+        return $this->view('mail.status_changed')->subject('UKF Mobility - Stav prihlášky sa zmenil')->from('no_reply@ukf.sk');
     }
 }

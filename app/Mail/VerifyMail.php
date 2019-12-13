@@ -28,6 +28,6 @@ class VerifyMail extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.activate');
+        return $this->view('mail.activate')->subject('UKF Mobility - Overenie Emailu');
     }
 }

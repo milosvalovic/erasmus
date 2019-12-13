@@ -13,7 +13,7 @@
             <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border: 1px solid #cccccc; border-collapse: collapse;">
                 <tr>
                     <td align="center" bgcolor="#70bbd9" style="font-size: 28px; font-weight: bold; font-family: Arial, sans-serif;">
-                        <img src="{{ $$statusObject->img_url }}" alt="@lang('app.status_changed_title')" width="749" height="207" style="display: block;" />
+                        <img src="{{ asset('img/mobility_status_change.jpg') }}" alt="@lang('app.status_changed_title')" width="749" height="207" style="display: block;" />
                     </td>
                 </tr>
                 <tr>
@@ -21,13 +21,15 @@
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
                                 <td style="color: #000000; font-family: Arial, sans-serif; font-size: 24px;">
-                                    <b>Lorem ipsum</b>
+                                    @if($statusObject->status == 1) <b>Boli ste prihlásený na mobilitu: </b>
+                                    @else
+                                        Stav vašej prihlášky na mobilitu  <br> <b>{{$statusObject->mobility}}</b> <br> sa zmenil na: {{$statusObject->status_name}}.
+                                    @endif
+
                                 </td>
                             </tr>
                             <tr>
-                                <td style="padding: 20px 0 30px 0; color: #153643; font-family: Arial, sans-serif; font-size: 16px; line-height: 20px;">
-                                    @lang('app.season_status_changed') <b>{{$statusObject->status}}</b>
-                                </td>
+
                             </tr>
                             <tr>
                                 <td>
@@ -37,7 +39,12 @@
                                                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                                     <tr>
                                                         <td style="padding: 10px 0 0 0; font-family: Arial, sans-serif; font-size: 15px; text-align: center">
-                                                            <a href="{{url('profil/mobility')}}" style="text-decoration: none; background-color: #007183; color: #ffffff; padding: 20px; border-radius: 10px; text-transform: uppercase;"><b>@lang('app.season_status_show_my_mobilities')</b></a>
+
+                                                            @if($statusObject->status == 1)
+                                                                <a href="{{url('profil/prihlasky')}}" style="text-decoration: none; background-color: #007183; color: #ffffff; padding: 20px; border-radius: 10px; text-transform: uppercase;"><b>Zobraziť moje prihlášky</b></a>
+                                                            @else
+                                                                <a href="{{url('profil/mobility')}}" style="text-decoration: none; background-color: #007183; color: #ffffff; padding: 20px; border-radius: 10px; text-transform: uppercase;"><b>@lang('app.season_status_show_my_mobilities')</b></a>
+                                                            @endif
                                                         </td>
                                                     </tr>
                                                 </table>

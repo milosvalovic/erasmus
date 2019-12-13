@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class User_season extends Model
 {
     use SoftDeletes;
-
+    protected $primaryKey = 'ID';
     protected $table = 'users_season';
     protected $fillable = ['user_ID', 'season_ID'];
 

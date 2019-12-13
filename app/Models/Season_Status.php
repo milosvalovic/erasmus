@@ -9,8 +9,10 @@ class Season_status extends Model
 {
     use SoftDeletes;
 
+    protected $primaryKey = 'ID';
     protected $table = 'season_status';
     protected $fillable = ['name'];
+
 
     public function status_season()
     {

@@ -30,7 +30,8 @@ return [
     'newsletter_title' => 'Naše najnovšie mobility',
     'activate_title' => 'Aktivácia účtu',
     'reset_title' => 'Zmena hesla',
-    'status_changed_title' => 'Stav prihlášky na mobilu sa zmenil',
+    'status_changed_title' => 'Stav prihlášky na mobililu sa zmenil',
+    'status_added' => 'Boli ste úspešne prihlásený na mobilitu',
 
 
     //Login
@@ -112,7 +113,7 @@ return [
     'email_university_name' => 'Univerzita Konštantína Filozofa v Nitre 2019',
     'email_unsubscribe_text' => 'Neželáte si ďalej dostávať tieto zaujímavé informácie? Odhlásiť sa môžete',
     'email_unsubscribe' => 'tu.',
-    'season_status_changed' => 'Stav vašej prihlášky na mobility sa zmenil: ',
+    'season_status_changed' => 'Stav vašej prihlášky na mobilitu sa zmenil: ',
     'season_status_show_my_mobilities' => 'Zobraziť moje mobility',
 
 
@@ -215,6 +216,8 @@ return [
     'detail_sign_up_mobility_error_date' => 'Počas tohto dátumu prebieha iná mobilita na ktorú ste už prihláseny.',
     'detail_sign_up_mobility_error_max' => 'Počet prihlásených študentov dosiahlo maximum.',
     'detail_sign_up_mobility_success' => 'Úspešne ste sa prihlásili na mobilitu',
+    'detail_sign_up_mobility_success_admin' => 'Úspešne ste prihlásili uživateľa na mobilitu',
+    'detail_sign_up_mobility_error_date_admin' => 'Počas tohto dátumu prebieha iná mobilita na ktorú je už uživateľ prihlásený.',
 
 
     //Blog

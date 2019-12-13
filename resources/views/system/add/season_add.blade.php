@@ -29,28 +29,28 @@
                         <label for="addNewSeasonStartDate">Dátum začiatku registrácie:</label>
                         <input type="text" class="form-control admin-form-input" id="addNewSeasonStartDate"
                                placeholder="1.1.2019" data-provide="datepicker" data-date-format="dd.mm.yyyy"
-                               name="seasonStartDate" required>
+                               name="date_start_reg" required>
                     </div>
 
                     <div class="form-group">
                         <label for="addNewSeasonEndDate">Dátum ukončenia registrácie:</label>
                         <input type="text" class="form-control admin-form-input" id="addNewSeasonEndDate"
                                placeholder="30.6.2019" data-provide="datepicker" data-date-format="dd.mm.yyyy"
-                               name="seasonEndDate" required>
+                               name="date_end_reg" required>
                     </div>
 
                     <div class="form-group">
                         <label for="addNewSeasonStudentLimit">Maximálny limit študentov:</label>
                         <input type="number" class="form-control admin-form-input" id="addNewSeasonStudentLimit"
-                               placeholder="20" name="seasonCountStudents" required>
+                               placeholder="20" name="count_students" required>
                     </div>
 
                     <div class="form-group">
                         <label for="addNewSeasonRegistrationLimit">Maximálny limit registrácii:</label>
                         <input type="number" class="form-control admin-form-input" id="addNewSeasonRegistrationLimit"
-                               placeholder="70" name="seasonCountRegistrations" required>
+                               placeholder="70" name="count_registrations" required>
                         <label for="addNewSeasonRegistrationLimit">Bez obmedzenia</label>
-                        <input type="checkbox" id="addNewSeasonRegistrationLimitInfinite" required>
+                        <input type="checkbox" id="addNewSeasonRegistrationLimitInfinite">
                     </div>
 
                     <div class="form-group">
@@ -58,7 +58,7 @@
                         <select name="mobility_ID" class="form-control admin-form-input" required>
                             <option></option>
                             @foreach($mobilities as $mobility)
-                                <option value="{{$mobility->ID}}">{{$mobility->university->name}}</option>
+                                <option value="{{$mobility->ID}}">{{$mobility->university->name . ' ('. $mobility->mobility_type->name . ' - '. $mobility->category->name .')'}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -66,13 +66,13 @@
                     <div class="form-group">
                         <label for="addNewSeasonDateStartMobility">Dátum začiatku mobility:</label>
                         <input type="text" class="form-control admin-form-input" id="addNewSeasonDateStartMobility" data-provide="datepicker" data-date-format="dd.mm.yyyy"
-                               placeholder="20.1.2019" name="seasonDateStartMobility" required>
+                               placeholder="20.1.2019" name="date_start_mobility" required>
                     </div>
 
                     <div class="form-group">
                         <label for="addNewSeasonDateEndMobility">Dátum ukončenia mobility:</label>
                         <input type="text" class="form-control admin-form-input" id="addNewSeasonDateEndMobility" data-provide="datepicker" data-date-format="dd.mm.yyyy"
-                               placeholder="30.3.2019" name="seasonDateEndMobility" required>
+                               placeholder="30.3.2019" name="date_end_mobility" required>
                     </div>
 
                     <div class="form-group-button">
