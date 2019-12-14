@@ -14,7 +14,6 @@
         </div>
 
         <div class="admin-welcome-content">
-
             <div class="row">
                 <div class="col-xs-12 col-md-8">
                     <div class="user-table-wrapper">
@@ -34,18 +33,18 @@
                             </thead>
                             <tbody>
                             @foreach($users as $user)
-                                <tr>
 
-                                    <th scope="row">{{$user->id}}</th>
+                                <tr>
+                                    <th scope="row">{{$user->ID}}</th>
                                     <td>
                                         <a class="admin-blog-table"
-                                           href="{{ action('system\UserController@userDetail',['id' => $user->id]) }}">
+                                           href="{{ action('system\UserController@userDetail',['id' => $user->ID]) }}">
                                             {{$user->first_name}}
                                         </a>
                                     </td>
                                     <td>
                                         <a class="admin-blog-table"
-                                           href="{{ action('system\UserController@userDetail',['id' => $user->id]) }}">
+                                           href="{{ action('system\UserController@userDetail',['id' => $user->ID]) }}">
                                             {{$user->last_name}}
                                         </a>
                                     </td>

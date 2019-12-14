@@ -17,98 +17,125 @@
 
             <div class="admin-season-table">
                 <div class="admin-season-title">
-                    <h2>Správca sezón</h2>
+                    <h1>Správovanie sezón</h1>
+                    <a href="{{ action('system\SeasonController@newSeasonShow') }}">
+                        <button type="button" class="btn btn-outline-primary wider-button">Pridať novú sezónu</button>
+                    </a>
                 </div>
                 <div class="admin-season-title">
                     <form class="form-inline" id="sortForm">
-                        <input type="hidden" id="page" name="page" value="0">
-                        <label for="universities" class="mb-2 mr-sm-2">Filter:</label>
-                        <select class="form-control mb-2 mr-sm-2-control" id="universities" name="university">
-                            <option selected></option>
-                            @foreach($universities as $university)
-                                <option value="{{$university->ID}}">{{$university->name . ' ('. $university->country->name .')'}}</option>
-                            @endforeach
-                        </select>
-                        <select class="form-control mb-2 mr-sm-2-control" id="category" name="category">
-                            <option selected></option>
-                            @foreach($categories as $category)
-                                <option value="{{$category->ID}}">{{$category->name}}</option>
-                            @endforeach
-                        </select>
-                        <select class="form-control mb-2 mr-sm-2-control" id="type" name="type">
-                            <option selected></option>
-                            @foreach($types as $type)
-                                <option value="{{$type->ID}}">{{$type->name}}</option>
-                            @endforeach
-                        </select>
+                        <div class="season-filter-main">
+                            <input type="hidden" id="page" name="page" value="0">
+                            <h3 class="">Filtrovať</h3>
+                            <div class="season-filter-section-1">
+                                <select class="form-control mr-sm-2-control season-selections" id="category"
+                                        name="category">
+                                    <option disabled selected>Podľa kategórie</option>
+                                    @foreach($categories as $category)
+                                        <option value="{{$category->ID}}">{{$category->name}}</option>
+                                    @endforeach
+                                </select>
+                                <select class="form-control mr-sm-2-control season-selections" id="type" name="type">
+                                    <option disabled selected>Podľa typu</option>
+                                    @foreach($types as $type)
+                                        <option value="{{$type->ID}}">{{$type->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="season-filter-section-university">
+                                <select class="form-control mr-sm-2-control" id="universities" name="university">
+                                    <option disabled selected>Podľa univerzity</option>
+                                    @foreach($universities as $university)
+                                        <option value="{{$university->ID}}">{{$university->name . ' ('. $university->country->name .')'}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="season-filter-section-2">
+                                <input type="text" data-provide="datepicker" data-date-format="dd.mm.yyyy"
+                                       placeholder="Začiatok mobility" class="form-control season-selections"
+                                       id="fromInput"
+                                       name="from" autocomplete="off">
+                                <input type="text" data-provide="datepicker" data-date-format="dd.mm.yyyy"
+                                       placeholder="Koniec mobility" class="form-control season-selections" id="toInput"
+                                       name="to" autocomplete="off">
+                            </div>
+                            <div class="season-filter-section-3">
+                                <h3>Zotriediť</h3>
+                                <div class="season-filter-section-3-content">
+                                    <select class="form-control season-selections" name="sortBy" id="sort">
+                                        <option disabled selected>Vyberte možnosť</option>
+                                        <option value="university">Univerzity</option>
+                                        <option value="date_start_reg">Začiatku registrácie</option>
+                                        <option value="date_end_reg">Konca registrácie</option>
+                                        <option value="date_start_mobility">Začiatku pobytu</option>
+                                        <option value="date_end_mobility">Konca pobytu</option>
+                                    </select>
 
-                        <input type="text" data-provide="datepicker" data-date-format="dd.mm.yyyy"
-                               placeholder="Začiatok mobility" class="form-control mb-2 mr-sm-2" id="fromInput"
-                               name="from" autocomplete="off">
-                        <input type="text" data-provide="datepicker" data-date-format="dd.mm.yyyy"
-                               placeholder="Koniec mobility" class="form-control mb-2 mr-sm-2" id="toInput"
-                               name="to" autocomplete="off">
-                        <label for="sort">Zoradiť poďla:</label>
-                        <select class="form-control mb-2 mr-sm-2-control" name="sortBy" id="sort">
-                            <option selected></option>
-                            <option value="university">Univerzity</option>
-                            <option value="date_start_reg">Začiatku registrácie</option>
-                            <option value="date_end_reg">Konca registrácie</option>
-                            <option value="date_start_mobility">Začiatku pobytu</option>
-                            <option value="date_end_mobility">Konca pobytu</option>
-                        </select>
-                        <select class="form-control mb-2 mr-sm-2" name="sortType" id="sortType">
-                            <option selected></option>
-                            <option value="ASC">Vzostupne</option>
-                            <option value="DESC">Zostupne</option>
-                        </select>
-                        <label for="active">Zobraziť len aktívne</label>
-                        <input type="checkbox" class="form-check-input" id="active" name="active" value="1" checked>
-                        {{csrf_field()}}
-                        <button type="submit" class="btn btn-primary">Filtrovať</button>
-                        <a href="{{route('seasons')}}">
-                            <button type="button" id="reset" class="btn btn-warning">Vynulovať</button>
-                        </a>
+                                    <select class="form-control season-selections" name="sortType" id="sortType">
+                                        <option disabled selected>Zotriedenie</option>
+                                        <option value="ASC">Vzostupne</option>
+                                        <option value="DESC">Zostupne</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="season-filter-section-4">
+                                <div class="season-filter-section-4-content-1">
+                                    <div>
+                                        <label>Zobraziť len aktívne</label>
+                                        <input type="checkbox" class="form-check-input" id="active" name="active"
+                                               value="1" checked>
+                                    </div>
 
+                                    <div>
+                                        <a href="{{route('seasons')}}" class="reset-season-filter">
+                                            <button type="button" id="reset"
+                                                    class="btn btn-outline-secondary wider-button">Vynulovať
+                                            </button>
+                                        </a>
+                                        <button type="submit" class="btn btn-outline-primary wider-button">Filtrovať
+                                        </button>
+                                    </div>
+
+                                </div>
+                                {{csrf_field()}}
+                            </div>
+                        </div>
                     </form>
-                    <a href="{{ action('system\SeasonController@newSeasonShow') }}">
-                        <button type="button" class="btn btn-outline-primary">Pridať novú sezónu</button>
-                    </a>
-
                 </div>
-                <form method="post" action="{{route('extendSeasons')}}">
+                <div class="admin-season-main-content">
                     <div class="admin-season-title">
-                        <div class="mb-2 mr-sm-2-control"><input type="checkbox" class="form-check-input" id="select_all">Vybrať
-                            všetky
-                        </div >
-                        <button type="submit" class="btn btn-outline-primary">Zaevidovať vybrané do ďalšej sezóny
-                        </button>
+{{--                        <div class="admin-season-title-content">--}}
+                            <div class="season-title-sort">
+                                <input type="checkbox" class="" id="select_all">
+                                <label for="select_all">Vybrať všetky</label>
+                            </div>
+                            <button type="submit" class="btn btn-outline-primary">Zaevidovať vybrané do ďalšej sezóny</button>
+{{--                        </div>--}}
                     </div>
-                    <table class="table admin-table" id="seasonTable">
-
-                        <thead>
-
-                        <tr>
-                            <th scope="col">Vybrať</th>
-                            <th scope="col">Začiatok registrácie</th>
-                            <th scope="col">Koniec registrácie</th>
-                            <th scope="col">Limit študentov</th>
-                            <th scope="col">Limit registrácií</th>
-                            <th scope="col">Univerzita</th>
-                            <th scope="col">Typ mobility</th>
-                            <th scope="col">Typ pobytu</th>
-                            <th scope="col">Grant</th>
-                            <th scope="col">Dátum začiatku pobytu</th>
-                            <th scope="col">Dátum konca pobytu</th>
-                            <th scope="col" class="user-form-actions">Akcie</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-
-                        </tbody>
-                    </table>
-                    {{csrf_field()}}
-                </form>
+                    <form method="post" action="{{route('extendSeasons')}}">
+                        <table class="table admin-table" id="seasonTable">
+                            <thead>
+                            <tr>
+                                <th scope="col">Vybrať</th>
+                                <th scope="col">Začiatok registrácie</th>
+                                <th scope="col">Koniec registrácie</th>
+                                <th scope="col">Limit študentov</th>
+                                <th scope="col">Limit registrácií</th>
+                                <th scope="col">Univerzita</th>
+                                <th scope="col">Typ mobility</th>
+                                <th scope="col">Typ pobytu</th>
+                                <th scope="col">Grant</th>
+                                <th scope="col">Dátum začiatku pobytu</th>
+                                <th scope="col">Dátum konca pobytu</th>
+                                <th scope="col" class="user-form-actions">Akcie</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        {{csrf_field()}}
+                    </form>
+                </div>
             </div>
             <a id="loadMore">Načítať viac</a>
         </div>
@@ -153,7 +180,7 @@
             // console.log(res);
             //var result = JSON.parse(res);
             res.forEach(function (element) {
-                if(element.count_registrations === -1){
+                if (element.count_registrations === -1) {
                     // console.log(element);
                     element.count_registrations = "-";
                 }
@@ -173,14 +200,14 @@
                     + "<td>" + element.date_start_mobility + "</td>"
                     + "<td>" + element.date_end_mobility + "</td>"
                     + "<th scope=\"row\">" +
-                    "<a href=\"/admin/season/edit_season/" + element.ID + "\">" +
-                    "<button type=\"button\" class=\"btn btn-outline-warning\">Upraviť</button>" +
+                    "<a href=\"/public/admin/season/edit_season/" + element.ID + "\">" +
+                    "<button type=\"button\" class=\"btn btn-outline-warning small-button sort-season-edit-button\">Upraviť</button>" +
                     "</a>" +
-                    "<a href=\"/admin/season/delete_season/" + element.ID + "\">" +
-                    "<button type=\"button\" class=\"btn btn-outline-danger\">Odstrániť</button>" +
+                    "<a href=\"/public/admin/season/delete_season/" + element.ID + "\">" +
+                    "<button type=\"button\" class=\"btn btn-outline-danger small-button sort-season-delete-button\">Odstrániť</button>" +
                     "</a>" +
-                    "<a href=\"/admin/season/detail/" + element.ID + "\">" +
-                    "<button type=\"button\" class=\"btn btn-outline-primary\">Detail</button>" +
+                    "<a href=\"/public/admin/season/detail/" + element.ID + "\">" +
+                    "<button type=\"button\" class=\"btn btn-outline-primary small-button sort-season-detail-button\">Detail</button>" +
                     "</a>" +
                     "</th>"
                     + "</tr>")
@@ -192,12 +219,12 @@
             }
         }
 
-        function slovak_date_format(date){
+        function slovak_date_format(date) {
             date = date.split('-');
             let final_date = '';
-            for(var i = date.length; i<= 0; i--){
+            for (var i = date.length; i <= 0; i--) {
                 alert(date);
-                final_date += date[i]+'.'
+                final_date += date[i] + '.'
             }
             return final_date
         }

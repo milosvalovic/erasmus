@@ -55,7 +55,7 @@
                     <div class="form-group">
                         <label for="addNewSeasonMobility">Mobilita:</label>
                         <select name="mobility_ID" class="form-control admin-form-input" required>
-                            <option></option>
+                            <option disabled selected>Vybrať mobilitu</option>
                             @foreach($mobilities as $mobility)
                                 <option value="{{$mobility->ID}}">{{$mobility->university->name . ' ('. $mobility->mobility_type->name . ' - '. $mobility->category->name .')'}}</option>
                             @endforeach
