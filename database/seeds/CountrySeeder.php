@@ -13,7 +13,7 @@ class CountrySeeder extends Seeder
     public function run()
     {
         DB::table('countries')->insert([
-            'name' => 'Rakúsko',
+            'name' => 'RakÃºsko',
             'country_code' => 'at',
             'erasmus_code' => 'a'
         ]);
@@ -31,31 +31,31 @@ class CountrySeeder extends Seeder
         ]);
 
         DB::table('countries')->insert([
-            'name' => 'Èeská Republika',
+            'name' => 'ÄŒesko Republika',
             'country_code' => 'cz',
             'erasmus_code' => 'cz'
         ]);
 
         DB::table('countries')->insert([
-            'name' => 'Dánsko',
+            'name' => 'DÃ¡nsko',
             'country_code' => 'dk',
             'erasmus_code' => 'v'
         ]);
 
         DB::table('countries')->insert([
-            'name' => 'Estónsko',
+            'name' => 'EstÃ³nsko',
             'country_code' => 'ee',
             'erasmus_code' => 'ee'
         ]);
 
         DB::table('countries')->insert([
-            'name' => 'Fínsko',
+            'name' => 'FÃ­nsko',
             'country_code' => 'fi',
             'erasmus_code' => 'sf'
         ]);
 
         DB::table('countries')->insert([
-            'name' => 'Francúzsko',
+            'name' => 'FrancÃºzsko',
             'country_code' => 'fe',
             'erasmus_code' => 'f'
         ]);
@@ -67,19 +67,19 @@ class CountrySeeder extends Seeder
         ]);
 
         DB::table('countries')->insert([
-            'name' => 'Grécko',
+            'name' => 'GrÃ©cko',
             'country_code' => 'gr',
             'erasmus_code' => 'g'
         ]);
 
         DB::table('countries')->insert([
-            'name' => 'Maïarsko',
+            'name' => 'MaÄarsko',
             'country_code' => 'hu',
             'erasmus_code' => 'hu'
         ]);
 
         DB::table('countries')->insert([
-            'name' => 'Írsko',
+            'name' => 'Ãrsko',
             'country_code' => 'ie',
             'erasmus_code' => 'irl'
         ]);
@@ -91,7 +91,7 @@ class CountrySeeder extends Seeder
         ]);
 
         DB::table('countries')->insert([
-            'name' => 'Lotyšsko',
+            'name' => 'LotyÅ¡sko',
             'country_code' => 'lv',
             'erasmus_code' => 'lv'
         ]);
@@ -139,19 +139,19 @@ class CountrySeeder extends Seeder
         ]);
 
         DB::table('countries')->insert([
-            'name' => 'Španielsko',
+            'name' => 'Å panielsko',
             'country_code' => 'es',
             'erasmus_code' => 'e'
         ]);
 
         DB::table('countries')->insert([
-            'name' => 'Švédsko',
+            'name' => 'Å vÃ©dsko',
             'country_code' => 'se',
             'erasmus_code' => 's'
         ]);
 
         DB::table('countries')->insert([
-            'name' => 'Ve¾ká Británia',
+            'name' => 'VeÄ¾kÃ¡ Britï¿½nia',
             'country_code' => 'uk',
             'erasmus_code' => 'uk'
         ]);
@@ -163,13 +163,13 @@ class CountrySeeder extends Seeder
         ]);
 
         DB::table('countries')->insert([
-            'name' => 'Lichtenštajnsko',
+            'name' => 'LichtenÅ¡tajnsko',
             'country_code' => 'li',
             'erasmus_code' => 'fl'
         ]);
 
         DB::table('countries')->insert([
-            'name' => 'Nórsko',
+            'name' => 'NÃ³rsko',
             'country_code' => 'no',
             'erasmus_code' => 'n'
         ]);
@@ -181,7 +181,7 @@ class CountrySeeder extends Seeder
         ]);
 
         DB::table('countries')->insert([
-            'name' => 'Po¾sko',
+            'name' => 'PoÄ¾sko',
             'country_code' => 'pl',
             'erasmus_code' => 'pl'
         ]);
