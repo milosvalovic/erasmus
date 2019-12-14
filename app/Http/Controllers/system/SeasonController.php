@@ -316,7 +316,7 @@ class SeasonController extends Controller
 
         $statuses = Season_status::get();
 
-        return view('system.detail_season_admin', ['users' => $users, 'statuses' => $statuses, 'season_ID' => $id]);
+        return view('system.detail.detail_season_admin', ['users' => $users, 'statuses' => $statuses, 'season_ID' => $id]);
 
     }
 

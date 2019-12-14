@@ -85,6 +85,28 @@ body {
     box-shadow: 0 0 15px #cecece;
 }
 
+.wider-button{
+    padding: 7px 10px 7px 10px;
+}
+
+.small-button{
+    padding: 2px 5px 2px 5px;
+}
+
+.sort-season-edit-button{
+    width: 100%;
+}
+
+.sort-season-delete-button{
+    margin-top: 3px;
+    width: 100%;
+}
+
+.sort-season-detail-button{
+    margin-top: 3px;
+    width: 100%
+}
+
 
 /*-----------------ADMIN table-----------------------*/
 .admin-table{
@@ -340,7 +362,7 @@ a[class='page-link']:hover{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 20px;
+    margin-bottom: 10px;
 }
 
 #addNewSeasonForm{
@@ -399,6 +421,114 @@ a[class='page-link']:hover{
 .tt-suggestion p {
     margin: 0;
 }
+/*----FILTER------*/
+.season-filter-main{
+    display: flex;
+    flex-direction: column;
+}
+
+.season-filter-section-1{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.season-filter-main .season-filter-section-1 .season-selections,
+.season-filter-main .season-filter-section-2 .season-selections,
+.season-filter-main .season-filter-section-3 .season-filter-section-3-content .season-selections
+{
+    width: 210px;
+}
+
+.season-filter-section-1 > select:nth-child(2),
+.season-filter-section-2 > input:nth-child(2),
+.season-filter-section-3 .season-filter-section-3-content > select[id=sortType]
+{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.season-filter-section-2{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+}
+
+.season-filter-section-3{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.season-filter-section-3-content{
+    display: flex;
+    flex-direction: row;
+}
+
+.season-filter-section-4{
+    display: flex;
+    flex-direction: column;
+    width: 435px;
+}
+
+.season-filter-section-4 .season-filter-section-4-content-1{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.season-filter-section-4-content-1 > div:first-child{
+    display: flex;
+    flex-direction: row;
+}
+
+.season-filter-section-4-content-1 > div:first-child > input{
+    margin-left: 10px;
+}
+
+.season-filter-section-university{
+    margin-bottom: 15px;
+}
+
+.season-filter-section-university > select[id=universities]{
+    width: 435px;
+}
+
+a.reset-season-filter:hover{
+    text-decoration: none;
+}
+
+#active{
+    width: 20px;
+    height: 20px;
+}
+
+.admin-season-main-content{
+    margin-top: 20px;
+    border: 1px solid #4444443d;
+    padding: 10px;
+}
+
+.admin-season-title-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.season-title-sort{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.season-title-sort > label{
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+
 
 /*-----------------Roles page-------------------------*/
 .admin-roles-table{
