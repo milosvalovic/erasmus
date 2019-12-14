@@ -23,6 +23,10 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle @yield('account')" id="logoutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">@lang('app.nav_account')</a>
                         <div class="dropdown-menu" aria-labelledby="logoutDropdown">
+                            @if (Auth::user()->roles->id == 3 || Auth::user()->roles->id == 2)
+                                <a class="dropdown-item" href="{{ url('/admin') }}">@lang('app.nav_admin')</a>
+                                <div class="dropdown-divider"></div>
+                            @endif
                             <a class="dropdown-item" href="{{ url('/profil/mobility') }}">@lang('app.nav_my_mobilities')</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ url('/odhlasenie') }}">@lang('app.nav_logout')</a>
