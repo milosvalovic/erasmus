@@ -16,7 +16,7 @@ class AdministratorAndOrganizator
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user()->hasRole("administrator") || Auth::user()->hasRole("organisator") ) {
+        if (Auth::user()->hasRole("administrator") || Auth::user()->hasRole("organizator") ) {
             return $next($request);
         }
 
