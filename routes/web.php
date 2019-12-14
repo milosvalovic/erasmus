@@ -135,6 +135,8 @@ Route::post('/admin/universities/edit_university/', ['as' => 'edit_university', 
 /*------Reviews----------------*/
 Route::get('/admin/reviews', 'system\ReviewsController@reviews');
 Route::get('/admin/reviews/edit_review/{id}', ['as' => 'edit_review_form', 'uses' => 'system\ReviewsController@reviewEditShow']);
+Route::get('/admin/reviews/delete/{id}', ['as' => 'delete_image', 'uses' => 'system\ReviewsController@deleteImage']);
+Route::get('/admin/reviews/revert/{id}', ['as' => 'revert_image', 'uses' => 'system\ReviewsController@revertImage']);
 
 /*------Images----------------*/
 Route::get('/admin/images', 'system\ImageController@images');

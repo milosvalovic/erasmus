@@ -31,11 +31,11 @@
                     @foreach($reviews as $review)
                         <tr>
                             <th scope="row">{{ $review->ID }}</th>
-                            <td>{{ $review->users_season_ID }}</td>
+                            <td>{{ $review->user_season->user->first_name . ' ' .$review->user_season->user->last_name . ' (' . $review->user_season->user->email . ')' }}</td>
                             <td>{{ $review->review }}</td>
                             <th scope="row">
                                 <a href="{{ action('system\ReviewsController@reviewEditShow', ['id' => $review->ID]) }}">
-                                    <button type="button" class="btn btn-outline-warning">Upraviť</button>
+                                    <button type="button" class="btn btn-outline-warning">Obrkázky</button>
                                 </a>
 {{--                                <a href="{{route('deleteReview',['id' => $review->ID])}}">--}}
 {{--                                    <button type="button" class="btn btn-outline-danger">Odstrániť</button>--}}

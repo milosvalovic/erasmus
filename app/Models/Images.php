@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Images extends Model
 {
     use SoftDeletes;
-
+    protected $primaryKey = 'ID';
     protected $table = 'images';
     protected $fillable= ['url', 'thumb_url', 'comments_ID'];
 
