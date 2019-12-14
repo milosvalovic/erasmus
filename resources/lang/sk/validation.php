@@ -9,5 +9,6 @@ return [
     'date' => 'Nesprávný formát dátumu',
     'mimes' => 'Nesprávný formát súboru',
     'dimensions' => 'Šírka a výška obrazku musí byť medzi 1920x1080 až 2000x1500',
-    'confirmed' => 'Heslá sa nezhodujú'
+    'confirmed' => 'Heslá sa nezhodujú', 
+    'unique' => 'E-mailová adresa už existuje', 
 ];
