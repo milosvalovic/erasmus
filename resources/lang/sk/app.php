@@ -112,6 +112,7 @@ return [
     'nav_logout' => 'Odhlasiť sa',
     'nav_search' => 'Výsledky vyhľadávania',
     'nav_my_mobilities' => 'Moje mobility',
+    'nav_admin' => 'Administrácia',
     'nav_my_signups' => 'Moje prihlášky',
     'nav_sign_ups' => 'Prihlášky',
 
