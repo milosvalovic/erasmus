@@ -187,7 +187,7 @@
                 $("#seasonTable > tbody:last-child").append(
                     "<tr>"
                     + "<th>" + "<div class=\"form-check\">\n" +
-                    "                                    <input type=\"checkbox\" class=\"form-check-input\" name=\"season_ids[]\" value=\"" + element.ID + "\">\n" +
+                    "                                    <input type=\"checkbox\" class=\"form-check-input check-multi\" name=\"season_ids[]\" value=\"" + element.ID + "\">\n" +
                     "                                </div>" + "</th>"
                     + "<td>" + element.date_start_reg + "</td>"
                     + "<td>" + element.date_end_reg + "</td>"
@@ -245,11 +245,11 @@
 
 
         $("#select_all").change(function () {  //"select all" change
-            $(".form-check-input").prop('checked', $(this).prop("checked")); //change all ".checkbox" checked status
+            $(".check-multi").prop('checked', $(this).prop("checked")); //change all ".checkbox" checked status
         });
 
         //".checkbox" change
-        $('.form-check-input').change(function () {
+        /*$('.form-check-input').change(function () {
             //uncheck "select all", if one of the listed checkbox item is unchecked
             if (false == $(this).prop("checked")) { //if this item is unchecked
                 $("#select_all").prop('checked', false); //change "select all" checked status to false
@@ -258,7 +258,7 @@
             if ($('.checkbox:checked').length == $('.form-check-input').length) {
                 $("#select_all").prop('checked', true);
             }
-        });
+        });*/
 
     </script>
 @endsection
