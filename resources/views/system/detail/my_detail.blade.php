@@ -9,6 +9,7 @@
             </div>
             <div class="admin-title-user">
                 <p><a href="{{ action('system\ProfileController@my_profile')}}">{{ Auth::user()->first_name . ' '. Auth::user()->last_name }}</a> <span> {{ Auth::user()->roles->name }} </span></p>
+                <img src="{{ asset('img/icon_logout.png') }}" alt="" class="logout-admin-button">
             </div>
         </div>
 
