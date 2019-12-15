@@ -384,6 +384,7 @@ class SeasonController extends Controller
             ->where('season_ID', '=', $id)
             ->paginate(15);
 
+
         $statuses = Season_status::get();
 
         return view('system.detail.detail_season_admin', ['users' => $users, 'statuses' => $statuses, 'season_ID' => $id]);
