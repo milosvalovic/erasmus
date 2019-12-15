@@ -14,6 +14,7 @@ class Category extends Model
     use SoftDeletes;
 
     public function mobility(){
-        return $this->hasMany('App\Models\Mobility','country_ID','ID');
+        return $this->hasMany('App\Models\Mobility','category_ID','ID');
     }
+
 }
