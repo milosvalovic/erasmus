@@ -1042,18 +1042,41 @@ input:checked + .slider:before {
     display: flex;
     flex-direction: row;
     align-items: center;
+    position: relative;
 }
 
 .my-detail-newsletter h3{
     margin-bottom: 0;
 }
 
-
 .my-detail-newsletter .sort-filter-checkbox{
     width: 25px;
     height: 25px;
     margin-left: 5px;
 }
+
+#spinnerProfileDetail{
+    display: none;
+    margin: 0 5px 0 5px;
+}
+
+
+.my-profile-changes-success{
+    display: none;
+    width: 35px;
+    height: 35px;
+    margin-left: 5px;
+}
+
+
+.my-profile-changes-error{
+    display: none;
+    width: 35px;
+    height: 35px;
+    margin-left: 5px;
+}
+
+
 
 
 
