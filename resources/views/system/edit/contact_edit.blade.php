@@ -49,6 +49,11 @@
                         <input type="text" class="form-control admin-form-input" id="editContactWorkPlace" name="contactWorkPlace" placeholder="Katedra informatiky" value="{{$contact->workplace}}">
                     </div>
                     <div class="form-group">
+                        <label for="editContactRoom">Miestnosť:</label>
+                        <input type="hidden" value="" name="">
+                        <input type="text" class="form-control admin-form-input" id="editContactRoom" name="contactRoom" placeholder="THC208" value="{{$contact->room}}">
+                    </div>
+                    <div class="form-group">
                         <label for="editContactEmail">Email:</label>
                         <input type="hidden" value="" name="">
                         <input type="text" class="form-control admin-form-input" id="editContactEmail" name="contactEmail" placeholder="daniela.sympaticka@gmail.com" value="{{$contact->email}}">
