@@ -89,7 +89,7 @@
                                         <div class="row-2">
                                             <label>Zobraziť vymazané</label>
                                             <input type="checkbox" class="form-check-input sort-filter-checkbox" id="sortSeasonDeleted" name="active"
-                                                   value="1">
+                                                   value="0">
                                         </div>
                                     </div>
                                     <div class="column-2">
