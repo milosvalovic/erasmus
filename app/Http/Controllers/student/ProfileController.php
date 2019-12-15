@@ -33,7 +33,7 @@ class ProfileController extends Controller
     private function getMobility(){
 
         if(Auth::check()){
-            $userID = Auth::user()->id;
+            $userID = Auth::user()->ID;
 
             $mobility = User_Season::select('ID','users_ID','season_ID')
                 ->with([
@@ -73,7 +73,7 @@ class ProfileController extends Controller
 
     private function getRegistrations(){
         if(Auth::check()) {
-            $userID = Auth::user()->id;
+            $userID = Auth::user()->ID;
 
             $registrations = User_Season::select('ID','users_ID','season_ID')
                 ->with([
