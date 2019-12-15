@@ -19,47 +19,106 @@
         </div>
 
         <div class="admin-content">
-            <div class="admin-contact-table">
-                <div class="admin-contact-title">
-                    <h2>Tabuľka kontaktov</h2>
+
+            <div class="row">
+                <div class="col-xs-12 col-md-8">
+                    <div class="admin-contact-table">
+                        <div class="admin-contact-title">
+                            <h2>Tabuľka kontaktov</h2>
+                        </div>
+                        <table class="table admin-table">
+                            <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Meno</th>
+                                <th scope="col">Priezvisko</th>
+                                <th scope="col">Pracovisko</th>
+                                <th scope="col">Miestnosť</th>
+                                <th scope="col" class="user-form-actions">Akcie</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($contacts as $contact)
+                                <tr>
+                                    <th scope="row">{{ $contact->ID }}</th>
+                                    <td>{{ $contact->firstname }}</td>
+                                    <td>{{ $contact->lastname }}</td>
+                                    <td>{{ $contact->workplace }}</td>
+                                    <td>{{ $contact->room }}</td>
+                                    <th scope="row">
+                                        <a href="{{ action('system\ContactController@countryEditShow',['id' => $contact->ID]) }}">
+                                            <button type="button" class="btn btn-outline-warning">Upraviť</button>
+                                        </a>
+                                        <a href="">
+                                            <button type="button" class="btn btn-outline-danger">Odstrániť</button>
+                                        </a>
+                                    </th>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                        <nav class="admin-users-pagination">
+                            {{--TODO Here pagination--}}
+                        </nav>
+                    </div>
                 </div>
-                <table class="table admin-table">
-                    <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Meno</th>
-                        <th scope="col">Priezvisko</th>
-                        <th scope="col">Pracovisko</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Tel. kontakt</th>
-                        <th scope="col" class="user-form-actions">Akcie</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($contacts as $contact)
-                        <tr>
-                            <th scope="row">{{ $contact->ID }}</th>
-                            <td>{{ $contact->firstname }}</td>
-                            <td>{{ $contact->lastname }}</td>
-                            <td>{{ $contact->workplace }}</td>
-                            <td>{{ $contact->email }}</td>
-                            <td>{{ $contact->phone }}</td>
-                            <th scope="row">
-                                <a href="{{ action('system\ContactController@countryEditShow',['id' => $contact->ID]) }}">
-                                    <button type="button" class="btn btn-outline-warning">Upraviť</button>
-                                </a>
-                                <a href="">
-                                    <button type="button" class="btn btn-outline-danger">Odstrániť</button>
-                                </a>
-                            </th>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
-                <nav class="admin-users-pagination">
-                    {{--TODO Here pagination--}}
-                </nav>
+
+                <div class="col-xs-12 col-md-3 admin-add-new-item-div">
+                    <form id="formAddContact" method="post" action="">
+                        <h3 class="form-title">Pridať zamestnanca</h3>
+                        <div class="form-group">
+                            <label for="addContactFirstName">Meno:</label>
+                            <input type="hidden" value="" name="">
+                            <input type="text" class="form-control admin-form-input" id="addContactFirstName" name="contactFirstName" placeholder="Daniela" >
+                        </div>
+                        <div class="form-group">
+                            <label for="addContactLastName">Priezvisko:</label>
+                            <input type="hidden" value="" name="">
+                            <input type="text" class="form-control admin-form-input" id="addContactLastName" name="contactLastName" placeholder="Sympatická">
+                        </div>
+                        <div class="form-group">
+                            <label for="addContactTitleBefore">Titul pred menom:</label>
+                            <input type="hidden" value="" name="">
+                            <input type="text" class="form-control admin-form-input" id="addContactTitleBefore" name="contactTitleBefore" placeholder="Mgr.">
+                        </div>
+                        <div class="form-group">
+                            <label for="addContactTitleAfter">Titul za menom:</label>
+                            <input type="hidden" value="" name="">
+                            <input type="text" class="form-control admin-form-input" id="addContactTitleAfter" name="contactTitleAfter" placeholder="PhD.">
+                        </div>
+                        <div class="form-group">
+                            <label for="addContactWorkPlace">Pracovisko:</label>
+                            <input type="hidden" value="" name="">
+                            <input type="text" class="form-control admin-form-input" id="addContactWorkPlace" name="contactWorkPlace" placeholder="Katedra informatiky">
+                        </div>
+                        <div class="form-group">
+                            <label for="addContactRoom">Miestnosť:</label>
+                            <input type="hidden" value="" name="">
+                            <input type="text" class="form-control admin-form-input" id="addContactRoom" name="contactRoom" placeholder="THC208">
+                        </div>
+                        <div class="form-group">
+                            <label for="addContactEmail">Email:</label>
+                            <input type="hidden" value="" name="">
+                            <input type="text" class="form-control admin-form-input" id="addContactEmail" name="contactEmail" placeholder="daniela.sympaticka@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="addContactPhoneNumberWork">Telefónne číslo pracovné:</label>
+                            <input type="hidden" value="" name="">
+                            <input type="text" class="form-control admin-form-input" id="addContactPhoneNumberWork" name="contactPhoneNumberWork" placeholder="0917666666">
+                        </div>
+                        <div class="form-group">
+                            <label for="addContactPhoneNumberPersonal">Telefónne číslo súkromné:</label>
+                            <input type="hidden" value="" name="">
+                            <input type="text" class="form-control admin-form-input" id="addContactPhoneNumberPersonal" name="contactPhoneNumberPersonal" placeholder="0917666666">
+                        </div>
+                        <div class="form-group-button">
+                            <button type="submit" class="btn btn-outline-primary btn-add">Uložiť</button>
+                        </div>
+                        {{csrf_field()}}
+                    </form>
+                </div>
             </div>
+
         </div>
 
         @include('system.include.footer')
