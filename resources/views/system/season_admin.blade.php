@@ -134,9 +134,18 @@
                                 <label for="select_all">Vybrať všetky</label>
                             </div>
                             <div>
-                                <button type="button" id="sendNewsletterButton" class="btn btn-outline-primary">Odoslať newsletter pre
-                                    vybrané sezóny
-                                </button>
+                                @if(Auth::user()->roles_ID==2)
+                                    <button type="button" id="sendNewsletterButton" class="btn btn-outline-primary">
+                                        Odoslať newsletter pre
+                                        vybrané sezóny
+                                    </button>
+                                @else
+                                    <a href="{{route('exportActiveSeasons')}}">
+                                    <button type="button" class="btn btn-outline-primary">
+                                        Exportovať aktuálne sezóny
+                                    </button>
+                                    </a>
+                                @endif
                                 <button type="submit" class="btn btn-outline-primary">Zaevidovať vybrané do ďalšej
                                     sezóny
                                 </button>
@@ -301,18 +310,17 @@
         });
 
 
-
-        $( "#sendNewsletterButton" ).click(function() {
+        $("#sendNewsletterButton").click(function () {
             $.ajax({
                 url: '{{route('sendNewsletter')}}',
                 type: "POST",
                 dataType: 'json',
                 data: $("#multiselectForm").serialize(),
-                beforeSend: function(){
-                    alert( "Požiadavka o odoslaní newslettra bola odoslná. O úspešnosit odoslania Vás budeme informovať o krátku chvílu" );
+                beforeSend: function () {
+                    alert("Požiadavka o odoslaní newslettra bola odoslná. O úspešnosit odoslania Vás budeme informovať o krátku chvílu");
                 },
                 success: function (result) {
-                    alert( result.result );
+                    alert(result.result);
                 },
                 error: function (xhr, resp, text) {
                     alert("Newsletter sa nepodarilo odoslať");

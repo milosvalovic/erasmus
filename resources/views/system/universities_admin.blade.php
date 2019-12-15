@@ -24,6 +24,13 @@
                     <div class="admin-universities-table">
                         <div class="admin-universities-title">
                             <h2>Tabuľka univerzít</h2>
+                            @if(Auth::user()->roles_ID == 3)
+                                <a href="{{route('exportUniversities')}}">
+                                    <button type="button" class="btn btn-outline-primary">
+                                        Exportovať partnerské univerzity
+                                    </button>
+                                </a>
+                            @endif
                         </div>
                         <table class="table admin-table">
                             <thead>

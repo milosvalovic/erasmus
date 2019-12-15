@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\system;
 
 
+use App\Exports\UniversitiesExport;
 use App\Http\Variables;
 use App\Models\Country;
 use App\Models\University;
@@ -15,6 +16,7 @@ use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Intervention\Image\Facades\Image;
+use Maatwebsite\Excel\Facades\Excel;
 
 
 class UniversityController extends Controller
@@ -152,6 +154,10 @@ class UniversityController extends Controller
         $university = University::find($id);
         $countries = Country::all();
         return view("system.edit.university_edit", ['university' => $university, 'countries'=>$countries]);
+    }
+
+    public function exportUniversities(){
+        return Excel::download(new UniversitiesExport(), 'Partnerské univerzity.xlsx');
     }
 
 
