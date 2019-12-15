@@ -22,8 +22,10 @@ $(document).ready(function () {
         }
     }
 
-    /*----------------------Section for My Prfile-----------------------------------------------------*/
+    /*----------------------Section for My Profile-----------------------------------------------------*/
     $("#newsletter_active").change(function () {
+        $('#myProfileChangesError').hide();
+        $('#myProfileChangesSuccess').hide();
         var state = 0;
 
         if ($(this).prop("checked") == true)
@@ -31,13 +33,39 @@ $(document).ready(function () {
         else
             state = 0;
 
+
         $.ajax({
             url: '/admin/newsleter_state/' + state,
             type: "get",
             dataType: 'json'
         });
     });
+        $('#spinnerProfileDetail').show();
 
+            $.ajax({
+                url: '/public/admin/newsleter_state/'+state,
+                type: "get",
+                dataType: 'json',
+                success: function (result) {
+                }, error: function (response) {
+                    console.log(response);
+                    if(response.status ==200){
+                        setTimeout(function () {
+                            $('#spinnerProfileDetail').hide();
+                            $('#myProfileChangesSuccess').show();
+                        }, 1500);
+                    } else {
+                        setTimeout(function () {
+                            $('#spinnerProfileDetail').hide();
+                            $('#myProfileChangesError').show();
+                        }, 1500);
+                    }
+
+                }
+            });
+
+
+    });
     /*----------------------End of Section----------------------------------------------------------------------------*/
 
 
