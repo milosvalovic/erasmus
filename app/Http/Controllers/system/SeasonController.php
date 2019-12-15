@@ -4,6 +4,7 @@ namespace App\Http\Controllers\system;
 
 
 use App\Http\Variables;
+use App\Mail\NewsletterMail;
 use App\Mail\StatusChangedEmail;
 use App\Models\Category;
 use App\Models\Mobility;
@@ -67,6 +68,37 @@ class SeasonController extends Controller
 
     }
 
+    public function sendNewsletter(Request $request)
+    {
+        $ids = $request->input('season_ids');
+        if ($ids == null) return ['result' => 'Nevybrali ste žiadné sezóny pre newsletter'];
+        $seasons = Season::with(['mobility' => function ($season) use (&$request) {
+
+        }, 'university' => function ($season) use (&$request) {
+
+        }, 'country' => function ($season) use (&$request) {
+
+        }, 'mobility.mobility_type' => function ($season) use (&$request) {
+
+        }, 'mobility.category' => function ($season) use (&$request) {
+
+        }])->findMany($ids);
+        $users = User::select('ID', 'email', 'hash')->where('newsletter', 1)->get();
+
+        $seasonObject = new \stdClass();
+        $seasonObject->seasons = $seasons;
+        foreach ($users->toArray() as $user) {
+            $seasonObject = new \stdClass();
+            $seasonObject->seasons = $seasons->toArray();
+//            var_dump($seasons->toJson());
+//            die;
+            $seasonObject->unsubscribe = url('/').'/novinky/'.$user['email'] . '/'. $user['hash'];
+            Mail::to($user['email'])->send(new NewsletterMail($seasonObject));
+        }
+        return ['result' => 'Newsletter bol úspešne odoslaný'];
+    }
+
+
     public function sortSeasons(Request $request)
     {
 
@@ -83,7 +115,7 @@ class SeasonController extends Controller
         $onlyDeleted = $request->input('only_deleted');
         $sort = null;
         if ($sortBy && $sortType) $sort = true;
-        if (Auth::user()->roles_ID == 3 && $deleted==1) {
+        if (Auth::user()->roles_ID == 3 && $deleted == 1) {
             $seasons = Season::with(['mobility' => function ($season) use (&$request) {
 
             }, 'university' => function ($season) use (&$request) {
@@ -124,7 +156,7 @@ class SeasonController extends Controller
                 ->when($active, function ($query) {
                     $query->where('date_end_mobility', '>=', date("Y.m.d"));
                 })->withTrashed()->skip($page * 15)->take(15)->get();
-        } elseif (Auth::user()->roles_ID == 3 && $onlyDeleted==1) {
+        } elseif (Auth::user()->roles_ID == 3 && $onlyDeleted == 1) {
             $seasons = Season::with(['mobility' => function ($season) use (&$request) {
 
             }, 'university' => function ($season) use (&$request) {
@@ -165,7 +197,7 @@ class SeasonController extends Controller
                 ->when($active, function ($query) {
                     $query->where('date_end_mobility', '>=', date("Y.m.d"));
                 })->onlyTrashed()->skip($page * 15)->take(15)->get();
-        }else {
+        } else {
             $seasons = Season::with(['mobility' => function ($season) use (&$request) {
 
             }, 'university' => function ($season) use (&$request) {
@@ -611,7 +643,8 @@ class SeasonController extends Controller
         return back();
     }
 
-    public function restoreSeason($id){
+    public function restoreSeason($id)
+    {
         Season::withTrashed()->find($id)->restore();
         return back();
     }

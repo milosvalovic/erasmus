@@ -9,7 +9,9 @@
                 <h1>Administrácia sezón</h1>
             </div>
             <div class="admin-title-user">
-                <p><a href="{{ action('system\ProfileController@my_profile')}}">{{ Auth::user()->first_name . ' '. Auth::user()->last_name }}</a> <span> {{ Auth::user()->roles->name }} </span></p>
+                <p>
+                    <a href="{{ action('system\ProfileController@my_profile')}}">{{ Auth::user()->first_name . ' '. Auth::user()->last_name }}</a>
+                    <span> {{ Auth::user()->roles->name }} </span></p>
                 <img src="{{ asset('img/icon_logout.png') }}" alt="" class="logout-admin-button">
             </div>
         </div>
@@ -122,15 +124,22 @@
                     </form>
                 </div>
                 <div class="admin-season-main-content">
-                    <form method="post" action="{{route('extendSeasons')}}">
-                    <div class="admin-season-title">
-                        <div class="season-title-sort">
-                            <input type="checkbox" class="" id="select_all">
-                            <label for="select_all">Vybrať všetky</label>
+                    <form method="post" action="{{route('extendSeasons')}}" id="multiselectForm">
+                        <div class="admin-season-title">
+                            <div class="season-title-sort">
+                                <input type="checkbox" class="" id="select_all">
+                                <label for="select_all">Vybrať všetky</label>
+                            </div>
+                            <div>
+                                <button type="button" id="sendNewsletterButton" class="btn btn-outline-primary">Odoslať newsletter pre
+                                    vybrané sezóny
+                                </button>
+                                <button type="submit" class="btn btn-outline-primary">Zaevidovať vybrané do ďalšej
+                                    sezóny
+                                </button>
+
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-outline-primary">Zaevidovať vybrané do ďalšej sezóny
-                        </button>
-                    </div>
 
                         <table class="table admin-table" id="seasonTable">
                             <thead>
@@ -190,8 +199,6 @@
                 error: function (xhr, resp, text) {
                     console.log(xhr, resp, text);
                 }
-
-
             });
         }
 
@@ -203,7 +210,7 @@
 
                     element.count_registrations = "-";
                 }
-                if(isAdmin === 1) {
+                if (isAdmin === 1) {
                     var deleteButtonName = element.deleted_at == null ? "Odstrániť" : "Vrátiť";
                     var deleteButtonColor = element.deleted_at == null ? "btn-outline-danger" : "btn-outline-info";
                     var deleteButtonLink = element.deleted_at == null ? "delete_season" : "restore_season";
@@ -233,7 +240,7 @@
                     "<button type=\"button\" class=\"btn btn-outline-warning small-button sort-season-edit-button\">Upraviť</button>" +
                     "</a>" +
                     "<a href=\"/admin/season/" + deleteButtonLink + "/" + element.ID + "\">" +
-                    "<button type=\"button\" class=\"btn " + deleteButtonColor +" small-button sort-season-delete-button\" value=\"" + element.deleted_at + "\">" + deleteButtonName + "</button>" +
+                    "<button type=\"button\" class=\"btn " + deleteButtonColor + " small-button sort-season-delete-button\" value=\"" + element.deleted_at + "\">" + deleteButtonName + "</button>" +
                     "</a>" +
                     "<a href=\"/public/admin/season/detail/" + element.ID + "\">" +
                     "<button type=\"button\" class=\"btn btn-outline-primary small-button sort-season-detail-button\">Detail</button>" +
@@ -280,7 +287,7 @@
         var sortSeasonDeletedChecked = false;
 
         $("#sortSeasonOnlyDeleted").change(function () {
-            if($(this).prop("checked") == true) {
+            if ($(this).prop("checked") == true) {
                 $("#sortSeasonDeleted").prop('disabled', true);
                 sortSeasonDeletedChecked = $("#sortSeasonDeleted").prop('checked')
                 $("#sortSeasonDeleted").prop('checked', false);
@@ -288,6 +295,27 @@
                 $("#sortSeasonDeleted").prop('disabled', false);
                 $("#sortSeasonDeleted").prop('checked', sortSeasonDeletedChecked);
             }
+        });
+
+
+
+        $( "#sendNewsletterButton" ).click(function() {
+            $.ajax({
+                url: '{{route('sendNewsletter')}}',
+                type: "POST",
+                dataType: 'json',
+                data: $("#multiselectForm").serialize(),
+                beforeSend: function(){
+                    alert( "Požiadavka o odoslaní newslettra bola odoslná. O úspešnosit odoslania Vás budeme informovať o krátku chvílu" );
+                },
+                success: function (result) {
+                    alert( result.result );
+                },
+                error: function (xhr, resp, text) {
+                    alert("Newsletter sa nepodarilo odoslať");
+                }
+            });
+
         });
 
         //".checkbox" change
