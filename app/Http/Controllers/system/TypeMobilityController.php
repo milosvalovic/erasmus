@@ -54,7 +54,7 @@ class TypeMobilityController extends Controller
 
     public function validateCreate($request){
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|unique:mobility_types'
+            'name' => 'required|string'
         ]);
 
         return $validator;
