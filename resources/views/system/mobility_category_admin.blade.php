@@ -23,7 +23,7 @@
                 <div class="col-xs-12 col-md-8">
                     <div class="admin-mobility-category-table">
                         <div class="admin-mobility-category-title">
-                            <h2>TabuLka kategórií</h2>
+                            <h2>Tabuľka kategórií</h2>
                         </div>
                         <table class="table admin-table">
                             <thead>

@@ -167,6 +167,11 @@ Route::get('/admin/countries/delete/{id}', 'system\CountryController@deleteCount
 Route::post('/admin/countries/add_country', 'system\CountryController@addCountry')->name('addCountry');
 Route::post('/admin/countries/edit_country', 'system\CountryController@editCountry')->name('editCountry');
 
+/*------Contacts-------------*/
+Route::get('/admin/contacts', 'system\ContactController@contacts');
+Route::get('/admin/contacts/edit_contact/{id}', ['as' => 'edit_contact', 'uses' => 'system\ContactController@countryEditShow']);
+
+
 /*------Admin profile-------------*/
 Route::get('/admin/my_profile', 'system\ProfileController@my_profile');
 Route::get('/admin/newsleter_state/{status}', 'system\ProfileController@newsletterChange');

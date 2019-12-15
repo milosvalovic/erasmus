@@ -101,5 +101,12 @@
             </a>
         </li>
 
+        <li class="nav-item admin-menu-links-hover @if($users = str_contains(url()->current(), "admin/contacts"))active @endif">
+            <a class="nav-link " href="{{ action('system\ContactController@contacts')}}">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>Kontakty</span>
+            </a>
+        </li>
+
     </ul>
 </div>

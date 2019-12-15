@@ -1126,6 +1126,20 @@ input:checked + .slider:before {
     margin-top: 30px;
 }
 
+/*-------------------------------------Contacts--------------------------------*/
+.admin-contact-table{
+    border: 1px solid #CED0D5;
+    box-shadow: 0 0 15px #cecece;
+    padding: 10px;
+}
+
+.admin-contact-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
 
 
 
