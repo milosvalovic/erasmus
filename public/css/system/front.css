@@ -355,7 +355,7 @@ a[class='page-link']:hover{
 .admin-season-table{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
-    padding: 10px;
+    padding: 20px;
 }
 
 .admin-season-title{
@@ -474,14 +474,35 @@ a[class='page-link']:hover{
 .season-filter-section-4 .season-filter-section-4-content-1{
     display: flex;
     flex-direction: row;
-    align-content: center;
-    align-items: center;
-    justify-content: space-between;
 }
 
-.season-filter-section-4-content-1 > div:first-child{
+.column-1{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.column-2{
+    display: flex;
+    align-items: flex-end;
+    margin-left: auto;
+}
+
+.column-2 > button:nth-child(2){
+    margin-left: 10px;
+}
+
+.season-filter-section-4-content-1 > .column-1 > .row-1,
+.season-filter-section-4-content-1 > .column-1 > .row-2{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.season-filter-section-4-content-1 > .column-1 > .row-1 > input,
+.season-filter-section-4-content-1 > .column-1 > .row-2 > input{
+    margin-left: 10px;
 }
 
 .season-filter-section-4-content-1 > div:first-child > input{
@@ -500,9 +521,11 @@ a.reset-season-filter:hover{
     text-decoration: none;
 }
 
-#active{
+.season-filter-section-4 .season-filter-section-4-content-1 .column-1 .row-1 .sort-filter-checkbox,
+.season-filter-section-4 .season-filter-section-4-content-1 .column-1 .row-2 .sort-filter-checkbox{
     width: 20px;
     height: 20px;
+    margin-right: 40px;
 }
 
 .admin-season-main-content{
