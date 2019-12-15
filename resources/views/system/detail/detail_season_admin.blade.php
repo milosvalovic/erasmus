@@ -14,11 +14,9 @@
         </div>
 
         <div class="admin-content">
-
             <div class="admin-blogs-table">
                 <div class="admin-blogs-title">
                     <h2>Pridanie použivateľa na sezónu</h2>
-
                 </div>
                 <div class="admin-blogs-title">
                     <form class="form-inline" id="searchForm">
@@ -27,8 +25,8 @@
                         <input type="text" placeholder="Meno/Priezvisko/Email" class="form-control" id="search_user"
                                name="term" autocomplete="off" minlength="3">
                         {{csrf_field()}}
-                        <button type="submit" class="btn btn-primary" id="search_user_buuton">Hľadať</button>
-
+                        <button type="submit" class="btn btn-outline-primary" id="search_user_buuton">Hľadať</button>
+                        <div class="lds-hourglass" id="loaderSeasonSearchUser"></div>
                     </form>
                 </div>
                 <table class="table admin-table" id="users_table">
@@ -117,7 +115,7 @@
 
     <script type="text/javascript">
 
-        var path = "/admin/season/detail/search_users";
+        var path = "/public/admin/season/detail/search_users";
         var season_ID = "{{$season_ID}}";
 
         $(document).ready(function () {
@@ -140,32 +138,34 @@
 
 
         function loadData() {
-            $.ajax({
-                url: path,
-                type: "POST",
-                dataType: 'json',
-                data: $("#searchForm").serialize(),
-                success: function (result) {
-                    console.log(result);
-                    $("#users_table tbody").empty();
-                    setTable(result);
-
-
-                    if (result.count <= (1 + page) * 10) {
-                        $("#loadNext").hide();
-                    } else {
-                        $("#loadNext").show();
+            $('#loaderSeasonSearchUser').show();
+            setTimeout(function () {
+                $.ajax({
+                    url: path,
+                    type: "POST",
+                    dataType: 'json',
+                    data: $("#searchForm").serialize(),
+                    success: function (result) {
+                        console.log(result);
+                        $("#users_table tbody").empty();
+                        setTable(result);
+                        if (result.count <= (1 + page) * 10) {
+                            $("#loadNext").hide();
+                        } else {
+                            $("#loadNext").show();
+                        }
+                        if (page === 0) {
+                            $("#loadPrev").hide();
+                        } else {
+                            $("#loadPrev").show();
+                        }
+                        $('#loaderSeasonSearchUser').hide();
+                    },
+                    error: function (xhr, resp, text) {
+                        console.log(xhr, resp, text);
                     }
-                    if (page === 0) {
-                        $("#loadPrev").hide();
-                    } else {
-                        $("#loadPrev").show();
-                    }
-                },
-                error: function (xhr, resp, text) {
-                    console.log(xhr, resp, text);
-                }
-            });
+                });
+            },1200);
         }
 
         function setTable(res) {
@@ -216,7 +216,7 @@
 
             $.ajax({
                 type: "POST",
-                url: '/admin/season/detail/add_user_to_season',
+                url: '/public/admin/season/detail/add_user_to_season',
                 dataType: 'json',
                 data: $(form).serialize(),
                 success: function (data) {
@@ -224,7 +224,7 @@
 
                     if (data.status == "success") {
                         location.reload();
-                        alert(data.status);
+                        alert("Užívateľ úspečne pridaný na túto mobilitu");
                     } else if (data.status == "error") {
                         alert(data.reason);
                     }
