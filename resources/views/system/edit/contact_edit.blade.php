@@ -24,44 +24,44 @@
                 <form id="formEditContact" method="post" action="">
                     <h3 class="form-title">Editácia</h3>
                     <div class="form-group">
-                        <label for="addContactFirstName">Meno:</label>
+                        <label for="editContactFirstName">Meno:</label>
                         <input type="hidden" value="" name="">
-                        <input type="text" class="form-control admin-form-input" id="addContactFirstName" name="contactFirstName" placeholder="Daniela" value="{{$contact->firstname}}">
+                        <input type="text" class="form-control admin-form-input" id="editContactFirstName" name="contactFirstName" placeholder="Daniela" value="{{$contact->firstname}}">
                     </div>
                     <div class="form-group">
-                        <label for="addContactLastName">Priezvisko:</label>
+                        <label for="editContactLastName">Priezvisko:</label>
                         <input type="hidden" value="" name="">
-                        <input type="text" class="form-control admin-form-input" id="addContactLastName" name="contactLastName" placeholder="Sympatická" value="{{$contact->lastname}}">
+                        <input type="text" class="form-control admin-form-input" id="editContactLastName" name="contactLastName" placeholder="Sympatická" value="{{$contact->lastname}}">
                     </div>
                     <div class="form-group">
-                        <label for="addContactTitleBefore">Titul pred menom:</label>
+                        <label for="editContactTitleBefore">Titul pred menom:</label>
                         <input type="hidden" value="" name="">
-                        <input type="text" class="form-control admin-form-input" id="addContactTitleBefore" name="contactTitleBefore" placeholder="Mgr." value="{{$contact->title_before_name}}">
+                        <input type="text" class="form-control admin-form-input" id="editContactTitleBefore" name="contactTitleBefore" placeholder="Mgr." value="{{$contact->title_before_name}}">
                     </div>
                     <div class="form-group">
-                        <label for="addContactTitleAfter">Titul za menom:</label>
+                        <label for="editContactTitleAfter">Titul za menom:</label>
                         <input type="hidden" value="" name="">
-                        <input type="text" class="form-control admin-form-input" id="addContactTitleAfter" name="contactTitleAfter" placeholder="PhD." value="{{$contact->title_after_name}}">
+                        <input type="text" class="form-control admin-form-input" id="editContactTitleAfter" name="contactTitleAfter" placeholder="PhD." value="{{$contact->title_after_name}}">
                     </div>
                     <div class="form-group">
-                        <label for="addContactWorkPlace">Pracovisko:</label>
+                        <label for="editContactWorkPlace">Pracovisko:</label>
                         <input type="hidden" value="" name="">
-                        <input type="text" class="form-control admin-form-input" id="addContactWorkPlace" name="contactWorkPlace" placeholder="Katedra informatiky" value="{{$contact->workplace}}">
+                        <input type="text" class="form-control admin-form-input" id="editContactWorkPlace" name="contactWorkPlace" placeholder="Katedra informatiky" value="{{$contact->workplace}}">
                     </div>
                     <div class="form-group">
-                        <label for="addContactEmail">Email:</label>
+                        <label for="editContactEmail">Email:</label>
                         <input type="hidden" value="" name="">
-                        <input type="text" class="form-control admin-form-input" id="addContactEmail" name="contactEmail" placeholder="daniela.sympaticka@gmail.com" value="{{$contact->email}}">
+                        <input type="text" class="form-control admin-form-input" id="editContactEmail" name="contactEmail" placeholder="daniela.sympaticka@gmail.com" value="{{$contact->email}}">
                     </div>
                     <div class="form-group">
-                        <label for="addContactPhoneNumberWork">Telefónne číslo pracovné:</label>
+                        <label for="editContactPhoneNumberWork">Telefónne číslo pracovné:</label>
                         <input type="hidden" value="" name="">
-                        <input type="text" class="form-control admin-form-input" id="addContactPhoneNumberWork" name="contactPhoneNumberWork" placeholder="0917666666" value="{{$contact->telephone_work}}">
+                        <input type="text" class="form-control admin-form-input" id="editContactPhoneNumberWork" name="contactPhoneNumberWork" placeholder="0917666666" value="{{$contact->telephone_work}}">
                     </div>
                     <div class="form-group">
-                        <label for="addContactPhoneNumberPersonal">Telefónne číslo súkromné:</label>
+                        <label for="editContactPhoneNumberPersonal">Telefónne číslo súkromné:</label>
                         <input type="hidden" value="" name="">
-                        <input type="text" class="form-control admin-form-input" id="addContactPhoneNumberPersonal" name="contactPhoneNumberPersonal" placeholder="0917666666" value="{{$contact->phone}}">
+                        <input type="text" class="form-control admin-form-input" id="editContactPhoneNumberPersonal" name="contactPhoneNumberPersonal" placeholder="0917666666" value="{{$contact->phone}}">
                     </div>
                     <div class="form-group-button">
                         <button type="submit" class="btn btn-outline-primary btn-add">Uložiť</button>
