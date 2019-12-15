@@ -89,7 +89,7 @@
                                     </td>
                                     <th scope="row">
                                         <button type="submit" class="btn btn-outline-primary">Uložiť</button>
-                                        <a href="{{route('deleteBlog',['id'=>$user->ID])  }}">
+                                        <a href="{{route('deleteUser_season',['id'=>$user->ID])  }}">
                                             <button type="button" class="btn btn-outline-danger">Odstrániť
                                             </button>
                                         </a>
