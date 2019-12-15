@@ -27,7 +27,7 @@
                     <h3>Účet vytvorený dňa: <span>{{  Auth::user()->created_at }}</span></h3>
                     <h3>Potvrdená registrácia: <span>@if( Auth::user()->verified==1 ) áno @else nie  @endif </span></h3>
                     <div class="my-detail-newsletter">
-                        <h3>Prihlásený na email notifikácie noviniek</h3>
+                        <h3>Prihlásený na email notifikácie noviniek:</h3>
                         <input type="checkbox" class="sort-filter-checkbox" id="newsletter_active" name="newsletter"
                                @if( Auth::user()->newsletter==0) value="0" @else value="1" checked @endif>
                         <div class="spinner-border loading-primary-2" id="spinnerProfileDetail">
@@ -52,7 +52,7 @@
                                name="actual_password" placeholder="Aktuálne heslo">
                         <input type="password" class="form-control admin-form-input" id="myProfilePassNew"
                                name="password"
-                               placeholder="Nově heslo">
+                               placeholder="Nové heslo">
                         <input type="password" class="form-control admin-form-input" id="myProfilePassNewValidation"
                                name="password_confirmation" placeholder="Zopakovať heslo">
                         <div class="my-profile-confirm-div">
