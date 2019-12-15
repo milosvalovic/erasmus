@@ -16,6 +16,7 @@
                     @endif
                 </a>
                 <div class="dropdown-menu user" aria-labelledby="logged-user" id="user">
+                    <a class="dropdown-item" href="{{ url('/profil/heslo/') }}">@lang('app.nav_change_password')</a>
                     <a class="dropdown-item" href="{{ url('/odhlasenie') }}">@lang('app.nav_logout')</a>
                 </div>
             </li>

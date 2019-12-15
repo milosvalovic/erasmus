@@ -39,23 +39,27 @@ Route::get('/clanky/{perPage}', 'blog\BlogController@blog');
 
 Route::get('/clanok/{id}', 'blog\BlogController@article');
 
-Route::get('profil', 'student\ProfileController@mobilities')->middleware('auth');
+Route::get('/profil', 'student\ProfileController@mobilities')->middleware('auth');
 
-Route::get('profil/mobility', 'student\ProfileController@mobilities')->middleware('auth');
+Route::get('/profil/mobility', 'student\ProfileController@mobilities')->middleware('auth');
 
-Route::get('profil/prihlasky', 'student\ProfileController@signups')->middleware('auth');
+Route::get('/profil/prihlasky', 'student\ProfileController@signups')->middleware('auth');
 
-Route::get('profil/clanok/novy/{users_ID}/{users_season_ID}', 'student\ArticleController@newArticle')->middleware('auth');
+Route::get('/profil/clanok/novy/{users_ID}/{users_season_ID}', 'student\ArticleController@newArticle')->middleware('auth');
 
-Route::post('profil/clanok/ulozit', ['as' => 'insert-article', 'uses' => 'student\ArticleController@insertArticle'])->middleware('auth');
+Route::post('/profil/clanok/ulozit', ['as' => 'insert-article', 'uses' => 'student\ArticleController@insertArticle'])->middleware('auth');
 
-Route::get('profil/prezentacia/nova/{users_season_ID}', 'student\PresentationController@newPresentation')->middleware('auth');
+Route::get('/profil/prezentacia/nova/{users_season_ID}', 'student\PresentationController@newPresentation')->middleware('auth');
 
-Route::post('profil/prezentacia/ulozit', ['as' => 'insert-presentation', 'uses' => 'student\PresentationController@insertPresentation'])->middleware('auth');
+Route::post('/profil/prezentacia/ulozit', ['as' => 'insert-presentation', 'uses' => 'student\PresentationController@insertPresentation'])->middleware('auth');
 
-Route::get('profil/recenzia/nova/{users_season_ID}', 'student\ReviewController@newReview')->middleware('auth');
+Route::get('/profil/recenzia/nova/{users_season_ID}', 'student\ReviewController@newReview')->middleware('auth');
 
-Route::post('profil/recenzia/ulozit', ['as' => 'insert-review', 'uses' => 'student\ReviewController@insertReview'])->middleware('auth');
+Route::post('/profil/recenzia/ulozit', ['as' => 'insert-review', 'uses' => 'student\ReviewController@insertReview'])->middleware('auth');
+
+Route::get('/profil/heslo/', 'student\ProfileController@newPassword')->middleware('auth');
+
+Route::post('/profil/heslo/zmenit', ['as' => 'change-password', 'uses' => 'student\ProfileController@changePassword'])->middleware('auth');
 
 Route::get('/novinky','Auth\Newsletter@signIn');
 
