@@ -364,6 +364,17 @@ a[class='page-link']:hover{
     color: #007183;
 }
 
+.user-search-form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.user-search-form > input{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 
 /*-------------------------------------Mobility page--------------------*/
 .admin-mobilities-table{
