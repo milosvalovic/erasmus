@@ -10,6 +10,7 @@
             </div>
             <div class="admin-title-user">
                 <p><a href="{{ action('system\ProfileController@my_profile')}}">{{ Auth::user()->first_name . ' '. Auth::user()->last_name }}</a> <span> {{ Auth::user()->roles->name }} </span></p>
+                <img src="{{ asset('img/icon_logout.png') }}" alt="" class="logout-admin-button">
             </div>
         </div>
 
@@ -146,7 +147,6 @@
                     dataType: 'json',
                     data: $("#searchForm").serialize(),
                     success: function (result) {
-                        console.log(result);
                         $("#users_table tbody").empty();
                         setTable(result);
                         if (result.count <= (1 + page) * 10) {
@@ -204,8 +204,6 @@
             $("#users_table tbody").empty();
             event.preventDefault();
             loadData();
-            console.log($(".signUser"));
-
             return false;
         });
 
@@ -220,7 +218,7 @@
                 dataType: 'json',
                 data: $(form).serialize(),
                 success: function (data) {
-                    console.log(data);
+                    // console.log(data);
 
                     if (data.status == "success") {
                         location.reload();
