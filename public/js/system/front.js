@@ -23,22 +23,31 @@ $(document).ready(function () {
     }
 
 
-    /*----------------------Section for animations in edit Review-----------------------------------------------------*/
+    /*----------------------Section for animations in edit review-----------------------------------------------------*/
     var reviewImage = $('.review--image');
     var animationFadeInUp = 'animated fadeInUp faster';
     var animationFadeInOut = 'animated fadeOutUp faster';
+    var animationFadeOut = 'animated fadeOut Slow';
     var newImageHoverSettings = {
-        'opacity': '0.6',
+        'opacity': '0.5',
         'border-radius': '10px',
-        'transform': 'scale(1.1',
+        'transform': 'scale(1.1)',
         'cursor': 'default'
     };
+    var imageDeletedCss = {'opacity': '0.5'};
 
     reviewImage.each(function () {
+        if($(this).children('img.review-delete-icon').length == 0){
+            $(this).children('img.review-image-item').css(imageDeletedCss);
+        }
+
         $(this).mouseover(function () {
             const imageItem = $(this).children('img.review-image-item');
             const imageDeleteIcon = $(this).children('img.review-delete-icon');
             const imageRevertIcon = $(this).children('img.review-revert-icon');
+            const loadingSpinner = $(this).children('#spinnerDeleteReviewImage');
+            const successDeleteIcon = $(this).children('#successDeleteReviewImage');
+            const errorDeleteIcon = $(this).children('#errorDeleteReviewImage');
 
             if(imageDeleteIcon.length == 1) {
                 imageDeleteIcon.removeClass(animationFadeInOut);
@@ -46,18 +55,24 @@ $(document).ready(function () {
                 imageItem.css(newImageHoverSettings);
                 imageDeleteIcon.css({"display": "flex"});
                 imageDeleteIcon.addClass(animationFadeInUp)
+
             } else {
-                imageRevertIcon.removeClass(animationFadeInOut);
+                // imageRevertIcon.removeClass(animationFadeInOut);
                 imageRevertIcon.css({"display": "none"});
                 imageItem.css(newImageHoverSettings);
                 imageRevertIcon.css({"display": "flex"});
-                imageRevertIcon.addClass(animationFadeInUp);
+                // imageRevertIcon.addClass(animationFadeInUp);
             }
-            var deleted = false;
-            imageDeleteIcon.on('click', function () {
-                var imageId = $(this).data('id');
 
-                var path = '/admin/reviews/delete/' + imageId + '/';
+            var deleted = false;
+            imageDeleteIcon.unbind().one('click', function () {
+                var imageId = $(this).data('id');
+                var path = '/admin/reviews/delete/' + imageId;
+
+                imageDeleteIcon.remove();
+                loadingSpinner.css({'display':'block'});
+                imageItem.css(newImageHoverSettings);
+
                 if (!deleted) {
                     deleted = true;
                     $.ajax({
@@ -65,27 +80,26 @@ $(document).ready(function () {
                         type: "get",
                         dataType: 'json',
                         success: function (result) {
-                            console.log(result);
-                            imageDeleteIcon.css({display: 'none'});
-                            imageItem.css({'width': '30px', 'height': '30px'});
                             setTimeout(function () {
-                                imageItem.css({display: 'none'});
-                            }, 1000);
-
-                        },
-                        error: function (xhr, resp, text) {
-                            console.log(xhr, resp, text);
+                                imageItem.addClass(animationFadeOut);
+                                loadingSpinner.css({'display':'none'});
+                                successDeleteIcon.css({'display': 'block'});
+                            }, 2000);
+                        }, error: function (error) {
+                            setTimeout(function () {
+                                loadingSpinner.css({'display':'none'});
+                                errorDeleteIcon.css({'display': 'block'});
+                                imageItem.css({'opacity': '1'});
+                            }, 2000);
                         }
                     });
-
                 }
-
             });
 
             imageRevertIcon.on('click', function () {
                 var imageId = $(this).data('id');
+                var path = '/public/admin/reviews/revert/' + imageId;
 
-                var path = '/admin/reviews/revert/' + imageId + '/';
                 if (!deleted) {
                     deleted = true;
                     $.ajax({
@@ -99,14 +113,10 @@ $(document).ready(function () {
                             console.log(xhr, resp, text);
                         }
                     });
-
                 }
-
             });
         });
-    });
 
-    reviewImage.each(function () {
         $(this).mouseleave(function () {
             const imageItem = $(this).children('img.review-image-item');
             const imageDeleteIcon = $(this).children('img.review-delete-icon');
@@ -118,15 +128,15 @@ $(document).ready(function () {
                 imageItem.css('transform', 'scale(1)');
                 imageDeleteIcon.addClass(animationFadeInOut);
             } else {
-                imageRevertIcon.removeClass(animationFadeInUp);
-                imageItem.css('opacity', '1');
+                // imageRevertIcon.removeClass(animationFadeInUp);
+                // imageItem.css('opacity', '1');
                 imageItem.css('border-radius', '0');
                 imageItem.css('transform', 'scale(1)');
-                imageRevertIcon.addClass(animationFadeInOut);
+                // imageRevertIcon.addClass(animationFadeInOut);
             }
         });
     });
-    /*----------------------End of Section----------------------------------------------------------------------------*/
+    /*----------------------Section End edit review----------------------------------------------------------------------------*/
 
 
 
@@ -146,7 +156,7 @@ $(document).ready(function () {
         $('#active').prop('checked',true);
         $('#sortSeasonDeleted').prop('checked',false);
     }
-    /*----------------------End of Section----------------------------------------------------------------------------*/
+    /*----------------------Section End----------------------------------------------------------------------------*/
 
 });
 

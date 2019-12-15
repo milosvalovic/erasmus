@@ -6110,6 +6110,10 @@ a.close.disabled {
     animation: spinner-border .75s linear infinite
 }
 
+.spinner-border:hover{
+    cursor: default;
+}
+
 .spinner-border-sm {
     width: 1rem;
     height: 1rem;
@@ -9500,6 +9504,22 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
 
 .text-primary {
     color: #4e73df !important
+}
+
+.loading-primary{
+    color: #007183;
+    display: none;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 35%;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    z-index: 1;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
 }
 
 a.text-primary:focus, a.text-primary:hover {
