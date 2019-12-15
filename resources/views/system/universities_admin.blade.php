@@ -18,7 +18,7 @@
                 <div class="col-xs-12 col-md-8">
                     <div class="admin-universities-table">
                         <div class="admin-universities-title">
-                            <h2>Spravovanie univerzít</h2>
+                            <h2>Tabuľka univerzít</h2>
                         </div>
                         <table class="table admin-table">
                             <thead>

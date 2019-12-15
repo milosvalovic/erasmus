@@ -35,7 +35,7 @@
                             <td>{{ $review->review }}</td>
                             <th scope="row">
                                 <a href="{{ action('system\ReviewsController@reviewEditShow', ['id' => $review->ID]) }}">
-                                    <button type="button" class="btn btn-outline-warning">Obrkázky</button>
+                                    <button type="button" class="btn btn-outline-primary">Obrkázky</button>
                                 </a>
 {{--                                <a href="{{route('deleteReview',['id' => $review->ID])}}">--}}
 {{--                                    <button type="button" class="btn btn-outline-danger">Odstrániť</button>--}}

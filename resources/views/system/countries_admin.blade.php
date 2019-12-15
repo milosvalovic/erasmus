@@ -6,7 +6,7 @@
 
         <div class="admin-title">
             <div class="admin-title-text">
-                <h1>Krajiny</h1>
+                <h1>Administrácia krajín</h1>
             </div>
             <div class="admin-title-user">
                 <p>{{Auth::user()->roles->name . ' | '.Auth::user()->first_name . ' '. Auth::user()->last_name }}</p>
@@ -19,7 +19,7 @@
                 <div class="col-xs-12 col-md-8">
                     <div class="admin-countries-table">
                         <div class="admin-countries-title">
-                            <h2>Spravovanie faq</h2>
+                            <h2>Tabuľka krajín</h2>
                         </div>
                         <table class="table admin-table">
                             <thead>
@@ -72,7 +72,7 @@
                         </div>
                         <div class="form-group">
                             <label for="addCountryCode">Kód krajiny:</label>
-                            <input type="text" class="form-control admin-form-input" id="addCountryCode" placeholder="sk" name="country_code" required>
+                            <input type="text" class="form-control admin-form-input" id="addCountryCode" placeholder="SK" name="country_code" required>
                         </div>
                         <div class="form-group">
                             <label for="addErazmusCode">Erazmus kód:</label>

@@ -17,7 +17,7 @@
 
             <div class="admin-season-table">
                 <div class="admin-season-title">
-                    <h1>Správovanie sezón</h1>
+                    <h1>Tabuľka sezón</h1>
                     <a href="{{ action('system\SeasonController@newSeasonShow') }}">
                         <button type="button" class="btn btn-outline-primary wider-button">Pridať novú sezónu</button>
                     </a>

@@ -16,7 +16,7 @@
         <div class="admin-content">
             <div class="admin-office-hours-table">
                 <div class="admin-office-hours-title">
-                    <h2>Spravovanie rolí</h2>
+                    <h2>Tabuľka hodín</h2>
                 </div>
                 <table class="table admin-table">
                     <thead>

@@ -18,7 +18,7 @@
                 <div class="col-xs-12 col-md-8">
                     <div class="admin-roles-table">
                         <div class="admin-roles-title">
-                            <h2>Spravovanie rolí</h2>
+                            <h2>Tabuľka rolí</h2>
                         </div>
                         <table class="table admin-table">
                             <thead>

@@ -6,7 +6,7 @@
 
         <div class="admin-title">
             <div class="admin-title-text">
-                <h1>Blogy</h1>
+                <h1>Administrácia blogov</h1>
             </div>
             <div class="admin-title-user">
                 <p>{{Auth::user()->roles->name . ' | '.Auth::user()->first_name . ' '. Auth::user()->last_name }}</p>
@@ -17,7 +17,7 @@
 
             <div class="admin-blogs-table">
                 <div class="admin-blogs-title">
-                    <h2>Spravovanie blogov</h2>
+                    <h2>Tabuľka blogov</h2>
                 </div>
                 <table class="table admin-table">
                     <thead>
