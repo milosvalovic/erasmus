@@ -9,7 +9,7 @@
                 <h1>Administrácia sezón</h1>
             </div>
             <div class="admin-title-user">
-                <p>{{Auth::user()->roles->name . ' | '.Auth::user()->first_name . ' '. Auth::user()->last_name }}</p>
+                <p><a href="{{ action('system\ProfileController@my_profile')}}">{{ Auth::user()->first_name . ' '. Auth::user()->last_name }}</a> <span> {{ Auth::user()->roles->name }} </span></p>
             </div>
         </div>
 
@@ -17,7 +17,7 @@
 
             <div class="admin-season-table">
                 <div class="admin-season-title">
-                    <h1>Správovanie sezón</h1>
+                    <h1>Tabuľka sezón</h1>
                     <a href="{{ action('system\SeasonController@newSeasonShow') }}">
                         <button type="button" class="btn btn-outline-primary wider-button">Pridať novú sezónu</button>
                     </a>
@@ -87,6 +87,7 @@
                                                    id="active" name="active"
                                                    value="1" checked>
                                         </div>
+
                                         @if(Auth::user()->roles_ID == 3)
                                             <div class="row-1">
                                                 <label>Zobraziť aj vymazané</label>
@@ -102,6 +103,7 @@
                                                        value="1">
                                             </div>
                                         @endif
+
                                     </div>
                                     <div class="column-2">
                                         <button type="button" id="reset"

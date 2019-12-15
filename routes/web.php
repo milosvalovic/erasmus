@@ -161,6 +161,9 @@ Route::get('/admin/countries/delete/{id}', 'system\CountryController@deleteCount
 Route::post('/admin/countries/add_country', 'system\CountryController@addCountry')->name('addCountry');
 Route::post('/admin/countries/edit_country', 'system\CountryController@editCountry')->name('editCountry');
 
+/*------Admin profile-------------*/
+    Route::get('/admin/my_profile', 'system\ProfileController@my_profile');
+
 });
 
 //Auth routes

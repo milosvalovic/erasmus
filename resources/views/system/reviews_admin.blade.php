@@ -9,7 +9,7 @@
                 <h1>Administrácia hodnotení</h1>
             </div>
             <div class="admin-title-user">
-                <p>{{Auth::user()->roles->name . ' | '.Auth::user()->first_name . ' '. Auth::user()->last_name }}</p>
+                <p><a href="{{ action('system\ProfileController@my_profile')}}">{{ Auth::user()->first_name . ' '. Auth::user()->last_name }}</a> <span> {{ Auth::user()->roles->name }} </span></p>
             </div>
         </div>
 
@@ -35,7 +35,7 @@
                             <td>{{ $review->review }}</td>
                             <th scope="row">
                                 <a href="{{ action('system\ReviewsController@reviewEditShow', ['id' => $review->ID]) }}">
-                                    <button type="button" class="btn btn-outline-warning">Obrkázky</button>
+                                    <button type="button" class="btn btn-outline-primary">Obrkázky</button>
                                 </a>
 {{--                                <a href="{{route('deleteReview',['id' => $review->ID])}}">--}}
 {{--                                    <button type="button" class="btn btn-outline-danger">Odstrániť</button>--}}

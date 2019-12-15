@@ -6,10 +6,10 @@
 
         <div class="admin-title">
             <div class="admin-title-text">
-                <h1>Typy mobilít</h1>
+                <h1>Administrácia typov mobilít</h1>
             </div>
             <div class="admin-title-user">
-                <p>{{Auth::user()->roles->name . ' | '.Auth::user()->first_name . ' '. Auth::user()->last_name }}</p>
+                <p><a href="{{ action('system\ProfileController@my_profile')}}">{{ Auth::user()->first_name . ' '. Auth::user()->last_name }}</a> <span> {{ Auth::user()->roles->name }} </span></p>
             </div>
         </div>
 
@@ -18,9 +18,7 @@
                 <div class="col-xs-12 col-md-8">
                     <div class="admin-mobility-type-table">
                         <div class="admin-mobility-type-title">
-                            <h2>Spravovanie typov</h2>
-
-
+                            <h2>Tabuľka typov</h2>
                         </div>
 
                         <table class="table admin-table">
