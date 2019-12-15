@@ -186,7 +186,6 @@ $(document).ready(function () {
 
 
     /*----------------------Section Users list-----------------------------------------------------------------------*/
-
     var pageUsers = 0;
 
     $("#loadNextUsers").hide();
@@ -208,7 +207,7 @@ $(document).ready(function () {
 
     function loadUsersData() {
         $.ajax({
-            url: "/admin/users/search",
+            url: "/public/admin/users/search",
             type: "POST",
             dataType: 'json',
             data: $("#userSearchForm").serialize(),
