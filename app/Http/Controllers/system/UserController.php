@@ -5,6 +5,7 @@ namespace App\Http\Controllers\system;
 
 use App\Models\Role;
 use App\Models\User;
+use App\Models\User_season;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Password;
@@ -100,8 +101,40 @@ class UserController extends Controller
 
     public function userDetail($id)
     {
-        $user = User::find($id);
-        return view('system.detail.detail_user', ['user' => $user]);
+        $user = User::has('roles')->find($id);
+
+        $seasons = User_season::select('*')->orderBy('ID', 'ASC')
+            ->with([
+                'season' => function ($query) {
+                    $query->select('*');
+                },
+                'season.mobility' => function ($query) {
+                    $query->select('ID','mobility_types_ID', 'partner_university_ID', 'category_ID');
+                },
+                'season.mobility.mobility_type' => function ($query) {
+                    $query->select('ID', 'name');
+                },
+                'season.mobility.category' => function ($query) {
+                    $query->select('ID', 'name');
+                },
+                'season.mobility.university' => function ($query) {
+                    $query->select('ID', 'name');
+                },
+                'status_season' => function ($query) {
+                    $query->select('*')->orderBy('ID', 'DESC')->first();
+                },
+                'status_season.season_status' => function ($query) {
+                    $query->select('ID','name');
+                }
+            ])
+            ->where('users_ID', '=', $id)
+            ->paginate(15);
+
+        /*echo $seasons->toJson();
+        die;*/
+
+
+        return view('system.detail.detail_user', ['user' => $user, 'seasons' => $seasons]);
     }
 
 
