@@ -15,7 +15,8 @@
 
         <div class="admin-content">
             <div class="detail-review-content">
-                <h3>Autor: <span>{{ $review->user_season->user->first_name . ' ' .$review->user_season->user->last_name . ' (' . $review->user_season->user->email . ')' }} </span></h3>
+                <h3>Autor: <span>{{ $review->user_season->user->first_name . ' ' .$review->user_season->user->last_name }} </span></h3>
+                <h3>Email autora: <span>{{ $review->user_season->user->email }}</span></h3>
                 <h3>Text: <span>{{ $review->review }}</span></h3>
             </div>
 
