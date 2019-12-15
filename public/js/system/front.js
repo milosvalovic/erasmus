@@ -127,6 +127,27 @@ $(document).ready(function () {
         });
     });
     /*----------------------End of Section----------------------------------------------------------------------------*/
+
+
+
+    /*----------------------Section season list-----------------------------------------------------------------------*/
+    $('#reset').on('click', function () {
+        setDefaultFilter();
+    });
+
+    function setDefaultFilter() {
+        $('#sort option:first').prop('selected',true);
+        $('#sortType option:first').prop('selected',true);
+        $('#category option:first').prop('selected',true);
+        $('#type option:first').prop('selected',true);
+        $('#universities option:first').prop('selected',true);
+        $('#fromInput').val('');
+        $('#toInput').val('');
+        $('#active').prop('checked',true);
+        $('#sortSeasonDeleted').prop('checked',false);
+    }
+    /*----------------------End of Section----------------------------------------------------------------------------*/
+
 });
 
 function randomPassword() {

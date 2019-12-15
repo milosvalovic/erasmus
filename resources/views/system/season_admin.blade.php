@@ -63,7 +63,7 @@
                                 <h3>Zotriediť</h3>
                                 <div class="season-filter-section-3-content">
                                     <select class="form-control season-selections" name="sortBy" id="sort">
-                                        <option disabled selected>Vyberte možnosť</option>
+                                        <option disabled selected value="default">Vyberte možnosť</option>
                                         <option value="university">Univerzity</option>
                                         <option value="date_start_reg">Začiatku registrácie</option>
                                         <option value="date_end_reg">Konca registrácie</option>
@@ -72,7 +72,7 @@
                                     </select>
 
                                     <select class="form-control season-selections" name="sortType" id="sortType">
-                                        <option disabled selected>Zotriedenie</option>
+                                        <option disabled selected>Vybrať triedenie</option>
                                         <option value="ASC">Vzostupne</option>
                                         <option value="DESC">Zostupne</option>
                                     </select>
@@ -80,18 +80,21 @@
                             </div>
                             <div class="season-filter-section-4">
                                 <div class="season-filter-section-4-content-1">
-                                    <div>
-                                        <label>Zobraziť len aktívne</label>
-                                        <input type="checkbox" class="form-check-input" id="active" name="active"
-                                               value="1" checked>
+                                    <div class="column-1">
+                                        <div class="row-1">
+                                            <label>Zobraziť len aktívne</label>
+                                            <input type="checkbox" class="form-check-input sort-filter-checkbox" id="active" name="active"
+                                                   value="1" checked>
+                                        </div>
+                                        <div class="row-2">
+                                            <label>Zobraziť vymazané</label>
+                                            <input type="checkbox" class="form-check-input sort-filter-checkbox" id="sortSeasonDeleted" name="active"
+                                                   value="1">
+                                        </div>
                                     </div>
-
-                                    <div>
-                                        <a href="{{route('seasons')}}" class="reset-season-filter">
-                                            <button type="button" id="reset"
-                                                    class="btn btn-outline-secondary wider-button">Vynulovať
-                                            </button>
-                                        </a>
+                                    <div class="column-2">
+                                        <button type="button" id="reset"
+                                                class="btn btn-outline-secondary wider-button">Vynulovať</button>
                                         <button type="submit" class="btn btn-outline-primary wider-button">Filtrovať
                                         </button>
                                     </div>
@@ -104,13 +107,12 @@
                 </div>
                 <div class="admin-season-main-content">
                     <div class="admin-season-title">
-{{--                        <div class="admin-season-title-content">--}}
-                            <div class="season-title-sort">
-                                <input type="checkbox" class="" id="select_all">
-                                <label for="select_all">Vybrať všetky</label>
-                            </div>
-                            <button type="submit" class="btn btn-outline-primary">Zaevidovať vybrané do ďalšej sezóny</button>
-{{--                        </div>--}}
+                        <div class="season-title-sort">
+                            <input type="checkbox" class="" id="select_all">
+                            <label for="select_all">Vybrať všetky</label>
+                        </div>
+                        <button type="submit" class="btn btn-outline-primary">Zaevidovať vybrané do ďalšej sezóny
+                        </button>
                     </div>
                     <form method="post" action="{{route('extendSeasons')}}">
                         <table class="table admin-table" id="seasonTable">
