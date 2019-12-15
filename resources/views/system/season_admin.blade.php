@@ -122,6 +122,7 @@
                     </form>
                 </div>
                 <div class="admin-season-main-content">
+                    <form method="post" action="{{route('extendSeasons')}}">
                     <div class="admin-season-title">
                         <div class="season-title-sort">
                             <input type="checkbox" class="" id="select_all">
@@ -130,7 +131,7 @@
                         <button type="submit" class="btn btn-outline-primary">Zaevidovať vybrané do ďalšej sezóny
                         </button>
                     </div>
-                    <form method="post" action="{{route('extendSeasons')}}">
+
                         <table class="table admin-table" id="seasonTable">
                             <thead>
                             <tr>
@@ -164,7 +165,7 @@
 
     <script>
         var page = 0;
-        var isAdmin = {{Auth::user()->roles_ID == 3}};
+        var isAdmin = {{Auth::user()->roles_ID == 3 ? 1 : 0}};
 
         $(document).ready(function () {
             loadData();
@@ -202,9 +203,15 @@
 
                     element.count_registrations = "-";
                 }
-                var deleteButtonName = element.deleted_at==null  && isAdmin ? "Odstrániť" : "Vrátiť";
-                var deleteButtonColor = element.deleted_at==null && isAdmin ? "btn-outline-danger" : "btn-outline-info";
-                var deleteButtonLink = element.deleted_at==null && isAdmin ? "delete_season" : "restore_season";
+                if(isAdmin === 1) {
+                    var deleteButtonName = element.deleted_at == null ? "Odstrániť" : "Vrátiť";
+                    var deleteButtonColor = element.deleted_at == null ? "btn-outline-danger" : "btn-outline-info";
+                    var deleteButtonLink = element.deleted_at == null ? "delete_season" : "restore_season";
+                } else {
+                    var deleteButtonName = "Odstrániť";
+                    var deleteButtonColor = "btn-outline-danger";
+                    var deleteButtonLink = "delete_season";
+                }
 
                 $("#seasonTable > tbody:last-child").append(
                     "<tr>"

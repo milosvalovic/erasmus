@@ -14,7 +14,7 @@ class User extends Authenticatable
 
     protected $primaryKey = 'ID';
     protected $table = 'users';
-    protected $fillable = ['name','email', 'password', 'first_name', 'last_name', 'newsletter', 'hash', 'verified'];
+    protected $fillable = ['name','email', 'password', 'first_name', 'last_name', 'newsletter', 'hash', 'verified','roles_ID'];
     protected $hidden = ['password', 'remember_token'];
 
     public function status_season()

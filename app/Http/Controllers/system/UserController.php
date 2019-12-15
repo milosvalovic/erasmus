@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\User_season;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
@@ -24,7 +25,41 @@ class UserController extends Controller
         $users = User::has('roles')->paginate(15);
         $roles = Role::all();
 
-        return view('system.user_admin')->with(['users'=> $users, 'roles'=>$roles]);
+        return view('system.user_admin')->with(['users' => $users, 'roles' => $roles]);
+    }
+
+    public function sortUsers(Request $request)
+    {
+        $term = $request->input('term');
+        $role = $request->input('role');
+        $page = $request->input('page');
+        DB::enableQueryLog();
+        $users = User::with('roles')
+            ->when($term, function ($query) use ($term) {
+                $query->where(function ($query) use ($term) {
+                    $query->orWhere("email", "LIKE", "%" . $term . "%")
+                        ->orWhere("first_name", "LIKE", "%" . $term . "%")
+                        ->orWhere("last_name", "LIKE", "%" . $term . "%");
+                });
+            })
+            ->when($role, function ($query) use ($role) {
+                $query->where('roles_ID', '=', $role);
+            })
+            ->skip($page * 15)
+            ->take(15)
+            ->get();
+
+        $count = User::with('roles')
+            ->orWhere("email", "LIKE", "%" . $term . "%")
+            ->orWhere("first_name", "LIKE", "%" . $term . "%")
+            ->orWhere("last_name", "LIKE", "%" . $term . "%")
+            ->when($role, function ($query) use ($role) {
+                $query->where('roles_ID', '=', $role);
+            })->count();
+
+        $result = ['count' => $count, 'data' => $users];
+
+        return $result;
     }
 
     public function addUser(Request $request)
@@ -56,7 +91,7 @@ class UserController extends Controller
         $user->save();
 
 
-        Password::broker()->sendResetLink(['email'=>$user->email]);
+        Password::broker()->sendResetLink(['email' => $user->email]);
 
         return redirect('/admin/users/');
 
@@ -72,7 +107,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $roles = Role::all();
-        return view("system.edit.user_edit", ['user' => $user, 'roles'=>$roles]);
+        return view("system.edit.user_edit", ['user' => $user, 'roles' => $roles]);
     }
 
     public function editUser(Request $request)
@@ -87,7 +122,8 @@ class UserController extends Controller
         return redirect('/admin/users/');
     }
 
-    public function validateCreate($request){
+    public function validateCreate($request)
+    {
         $validator = Validator::make($request->all(), [
             'email' => 'required|email|unique:users',
             'first_name' => 'required|string|max:50',
@@ -109,7 +145,7 @@ class UserController extends Controller
                     $query->select('*');
                 },
                 'season.mobility' => function ($query) {
-                    $query->select('ID','mobility_types_ID', 'partner_university_ID', 'category_ID');
+                    $query->select('ID', 'mobility_types_ID', 'partner_university_ID', 'category_ID');
                 },
                 'season.mobility.mobility_type' => function ($query) {
                     $query->select('ID', 'name');
@@ -124,7 +160,7 @@ class UserController extends Controller
                     $query->select('*')->orderBy('ID', 'DESC')->first();
                 },
                 'status_season.season_status' => function ($query) {
-                    $query->select('ID','name');
+                    $query->select('ID', 'name');
                 }
             ])
             ->where('users_ID', '=', $id)
@@ -136,15 +172,6 @@ class UserController extends Controller
 
         return view('system.detail.detail_user', ['user' => $user, 'seasons' => $seasons]);
     }
-
-
-
-
-
-
-
-
-
 
 
 }
