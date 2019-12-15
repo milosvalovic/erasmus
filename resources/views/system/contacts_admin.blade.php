@@ -45,7 +45,7 @@
                             <td>{{ $contact->email }}</td>
                             <td>{{ $contact->phone }}</td>
                             <th scope="row">
-                                <a href="{{ action('system\OfficeHourController@office_hourEditShow',['id' => $contact->ID]) }}">
+                                <a href="{{ action('system\ContactController@countryEditShow',['id' => $contact->ID]) }}">
                                     <button type="button" class="btn btn-outline-warning">Upraviť</button>
                                 </a>
                                 <a href="">
