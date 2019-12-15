@@ -9,6 +9,7 @@ class Contact extends Model
 {
     use SoftDeletes;
 
+    protected $primaryKey = 'ID';
     protected $table = 'contact';
     protected $fillable = ['firstname', 'lastname', 'title_before_name', 'title_after_name', 'workplace', 'telephone_work', 'phone', 'room', 'email'];
 }

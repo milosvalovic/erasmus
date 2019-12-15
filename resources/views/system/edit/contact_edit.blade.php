@@ -21,8 +21,13 @@
         <div class="admin-content">
             <h2>Celým menom - {{ $contact->title_before_name .' '. $contact->firstname .' '. $contact->lastname .' '. $contact->title_after_name }}</h2>
             <div class="admin-edit-div">
-                <form id="formEditContact" method="post" action="">
+                <form id="formEditContact" method="post" action="{{route('editContact')}}">
                     <h3 class="form-title">Editácia</h3>
+                    @if (session('error'))
+                        <div class="alert alert-danger">
+                            <h5>{{session('error')}}</h5>
+                        </div>
+                    @endif
                     <div class="form-group">
                         <label for="editContactFirstName">Meno:</label>
                         <input type="hidden" value="" name="">
@@ -71,6 +76,7 @@
                     <div class="form-group-button">
                         <button type="submit" class="btn btn-outline-primary btn-add">Uložiť</button>
                     </div>
+                    <input type="hidden" name="ID" value="{{$contact->ID}}">
                     {{csrf_field()}}
                 </form>
             </div>

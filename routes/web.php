@@ -172,7 +172,10 @@ Route::post('/admin/countries/edit_country', 'system\CountryController@editCount
 
 /*------Contacts-------------*/
 Route::get('/admin/contacts', 'system\ContactController@contacts');
-Route::get('/admin/contacts/edit_contact/{id}', ['as' => 'edit_contact', 'uses' => 'system\ContactController@countryEditShow']);
+Route::get('/admin/contacts/edit_contact/{id}', ['as' => 'edit_contact', 'uses' => 'system\ContactController@contactsEditShow']);
+Route::post('/admin/contacts/add', 'system\ContactController@addContact')->name('addContact');
+Route::post('/admin/contacts/edit', 'system\ContactController@editContact')->name('editContact');
+Route::get('/admin/contacts/delete/{id}', 'system\ContactController@deleteContact')->name('deleteContact');
 
 
 /*------Admin profile-------------*/

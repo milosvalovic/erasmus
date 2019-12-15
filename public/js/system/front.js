@@ -211,7 +211,7 @@ loadUsersData();
 
 function loadUsersData() {
     $.ajax({
-        url: "/public/admin/users/search",
+        url: "/admin/users/search",
         type: "POST",
         dataType: 'json',
         data: $("#userSearchForm").serialize(),
