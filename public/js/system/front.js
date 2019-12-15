@@ -22,6 +22,24 @@ $(document).ready(function () {
         }
     }
 
+    /*----------------------Section for My Prfile-----------------------------------------------------*/
+    $("#newsletter_active").change(function () {
+        var state = 0;
+
+        if($(this).prop("checked") == true)
+            state = 1;
+        else
+            state = 0;
+
+            $.ajax({
+                url: '/admin/newsleter_state/'+state,
+                type: "get",
+                dataType: 'json'
+            });
+    });
+
+    /*----------------------End of Section----------------------------------------------------------------------------*/
+
 
     /*----------------------Section for animations in edit Review-----------------------------------------------------*/
     var reviewImage = $('.review--image');
