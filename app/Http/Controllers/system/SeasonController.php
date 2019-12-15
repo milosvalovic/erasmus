@@ -82,51 +82,134 @@ class SeasonController extends Controller
         $type = $request->input('type');
         $category = $request->input('category');
         $page = $request->input('page');
+        $deleted = $request->input('deleted');
+        $onlyDeleted = $request->input('only_deleted');
         $sort = null;
         if ($sortBy && $sortType) $sort = true;
+        if (Auth::user()->roles_ID == 3 && $deleted==1) {
+            $seasons = Season::with(['mobility' => function ($season) use (&$request) {
 
-        $seasons = Season::with(['mobility' => function ($season) use (&$request) {
+            }, 'university' => function ($season) use (&$request) {
 
-        }, 'university' => function ($season) use (&$request) {
+            }, 'country' => function ($season) use (&$request) {
 
-        }, 'country' => function ($season) use (&$request) {
+            }, 'mobility.mobility_type' => function ($season) use (&$request) {
 
-        }, 'mobility.mobility_type' => function ($season) use (&$request) {
+            }, 'mobility.category' => function ($season) use (&$request) {
 
-        }, 'mobility.category' => function ($season) use (&$request) {
-
-        }])->join('mobility', 'mobility_ID', '=', 'mobility.ID')
-            ->join('partner_university', 'partner_university_ID', '=', 'partner_university.ID')
-            ->when($universitySearch, function ($query) use ($universitySearch) {
+            }])->when($universitySearch, function ($query) use ($universitySearch) {
                 return $query->whereHas('university', function ($query) use ($universitySearch) {
                     $query->where('partner_university.ID', '=', $universitySearch);
                 });
             })
-            ->when($type, function ($query) use ($type) {
-                return $query->whereHas('mobility.mobility_type', function ($query) use ($type) {
-                    $query->where('mobility_types.ID', '=', $type);
+                ->when($type, function ($query) use ($type) {
+                    return $query->whereHas('mobility.mobility_type', function ($query) use ($type) {
+                        $query->where('mobility_types.ID', '=', $type);
+                    });
+                })->when($category, function ($query) use ($category) {
+                    return $query->whereHas('mobility.category', function ($query) use ($category) {
+                        $query->where('category.ID', '=', $category);
+                    });
+                })
+                ->when($sort, function ($query) use ($sortBy, $sortType) {
+                    if ($sortBy == 'university') {
+                        $query->orderBy('name', $sortType);
+                    } else {
+                        $query->orderBy($sortBy, $sortType);
+                    }
+                })
+                ->when($from, function ($query) use ($from) {
+                    $query->where('date_start_reg', '>=', $from);
+                })
+                ->when($to, function ($query) use ($to) {
+                    $query->where('date_end_mobility', '<=', $to);
+                })
+                ->when($active, function ($query) {
+                    $query->where('date_end_mobility', '>=', date("Y.m.d"));
+                })->withTrashed()->skip($page * 15)->take(15)->get();
+        } elseif (Auth::user()->roles_ID == 3 && $onlyDeleted==1) {
+            $seasons = Season::with(['mobility' => function ($season) use (&$request) {
+
+            }, 'university' => function ($season) use (&$request) {
+
+            }, 'country' => function ($season) use (&$request) {
+
+            }, 'mobility.mobility_type' => function ($season) use (&$request) {
+
+            }, 'mobility.category' => function ($season) use (&$request) {
+
+            }])->when($universitySearch, function ($query) use ($universitySearch) {
+                return $query->whereHas('university', function ($query) use ($universitySearch) {
+                    $query->where('partner_university.ID', '=', $universitySearch);
                 });
-            })->when($category, function ($query) use ($category) {
-                return $query->whereHas('mobility.category', function ($query) use ($category) {
-                    $query->where('category.ID', '=', $category);
+            })
+                ->when($type, function ($query) use ($type) {
+                    return $query->whereHas('mobility.mobility_type', function ($query) use ($type) {
+                        $query->where('mobility_types.ID', '=', $type);
+                    });
+                })->when($category, function ($query) use ($category) {
+                    return $query->whereHas('mobility.category', function ($query) use ($category) {
+                        $query->where('category.ID', '=', $category);
+                    });
+                })
+                ->when($sort, function ($query) use ($sortBy, $sortType) {
+                    if ($sortBy == 'university') {
+                        $query->orderBy('name', $sortType);
+                    } else {
+                        $query->orderBy($sortBy, $sortType);
+                    }
+                })
+                ->when($from, function ($query) use ($from) {
+                    $query->where('date_start_reg', '>=', $from);
+                })
+                ->when($to, function ($query) use ($to) {
+                    $query->where('date_end_mobility', '<=', $to);
+                })
+                ->when($active, function ($query) {
+                    $query->where('date_end_mobility', '>=', date("Y.m.d"));
+                })->onlyTrashed()->skip($page * 15)->take(15)->get();
+        }else {
+            $seasons = Season::with(['mobility' => function ($season) use (&$request) {
+
+            }, 'university' => function ($season) use (&$request) {
+
+            }, 'country' => function ($season) use (&$request) {
+
+            }, 'mobility.mobility_type' => function ($season) use (&$request) {
+
+            }, 'mobility.category' => function ($season) use (&$request) {
+
+            }])->when($universitySearch, function ($query) use ($universitySearch) {
+                return $query->whereHas('university', function ($query) use ($universitySearch) {
+                    $query->where('partner_university.ID', '=', $universitySearch);
                 });
             })
-            ->when($sort, function ($query) use ($sortBy, $sortType) {
-                if ($sortBy == 'university') {
-                    $query->orderBy('name', $sortType);
-                } else {
-                    $query->orderBy($sortBy, $sortType);
-                }
-            })
-            ->when($from, function ($query) use ($from) {
-                $query->where('date_start_reg', '>=', $from);
-            })
-            ->when($to, function ($query) use ($to) {
-                $query->where('date_end_mobility', '<=', $to);
-            })
-            ->when($active, function ($query) {
-                $query->where('date_end_mobility', '>=', date("Y.m.d"));
-            })->skip($page * 15)->take(15)->get();
+                ->when($type, function ($query) use ($type) {
+                    return $query->whereHas('mobility.mobility_type', function ($query) use ($type) {
+                        $query->where('mobility_types.ID', '=', $type);
+                    });
+                })->when($category, function ($query) use ($category) {
+                    return $query->whereHas('mobility.category', function ($query) use ($category) {
+                        $query->where('category.ID', '=', $category);
+                    });
+                })
+                ->when($sort, function ($query) use ($sortBy, $sortType) {
+                    if ($sortBy == 'university') {
+                        $query->orderBy('name', $sortType);
+                    } else {
+                        $query->orderBy($sortBy, $sortType);
+                    }
+                })
+                ->when($from, function ($query) use ($from) {
+                    $query->where('date_start_reg', '>=', $from);
+                })
+                ->when($to, function ($query) use ($to) {
+                    $query->where('date_end_mobility', '<=', $to);
+                })
+                ->when($active, function ($query) {
+                    $query->where('date_end_mobility', '>=', date("Y.m.d"));
+                })->skip($page * 15)->take(15)->get();
+        }
 
         $seasons = $seasons->toArray();
         $result = [];
@@ -142,16 +225,6 @@ class SeasonController extends Controller
 
         }
         return json_encode($result);
-    }
-
-    public function dateFormater($date)
-    {
-        $time = strtotime($date);
-        $year = date("Y", $time);
-        $month = date("m", $time);
-        $day = date("d", $time);
-
-        return $day . '.' . $month . '.' . $year;
     }
 
     public function multiAddSeasonsShow(Request $request)
@@ -231,7 +304,7 @@ class SeasonController extends Controller
     {
         $season = Season::find($id);
         $mobilities = Mobility::has('mobility_type')->has('category')->has('university')->has('country')->get();
-        return view('system.edit.season_edit', ['season' => $season, 'mobilities'=>$mobilities]);
+        return view('system.edit.season_edit', ['season' => $season, 'mobilities' => $mobilities]);
     }
 
     public function seasonEdit(Request $request)
@@ -335,7 +408,7 @@ class SeasonController extends Controller
             $mobilityID = $actualSeason->mobility_ID;
 
 
-            $signIn = Mobility::select('ID','partner_university_ID', 'category_ID', 'mobility_types_ID')
+            $signIn = Mobility::select('ID', 'partner_university_ID', 'category_ID', 'mobility_types_ID')
                 ->with([
                     'season' => function ($query) use ($offset) {
                         $query->select('ID', 'date_start_reg', 'date_end_reg', 'count_students', 'count_registrations', 'mobility_ID', 'date_start_mobility', 'date_end_mobility')->where('date_end_reg', '>', Carbon::now($offset))->first();
@@ -347,7 +420,7 @@ class SeasonController extends Controller
                         $query->select('ID', 'season_status_ID', 'users_season_ID')->orderBy('ID', 'DESC');
                     },
                     'university' => function ($query) {
-                        $query->select('ID','img_url', 'name');
+                        $query->select('ID', 'img_url', 'name');
                     },
                     'category' => function ($query) {
                         $query->select('ID', 'name');
@@ -357,9 +430,8 @@ class SeasonController extends Controller
                     },
                 ])
                 ->where('mobility.ID', '=', $mobilityID)
-
-                ->whereHas('season', function ($query) use ($offset,$seasonID) {
-                    $query->where('season.date_end_reg', '>', Carbon::now($offset))->where('season.ID','=',$seasonID);
+                ->whereHas('season', function ($query) use ($offset, $seasonID) {
+                    $query->where('season.date_end_reg', '>', Carbon::now($offset))->where('season.ID', '=', $seasonID);
                 })
                 ->get();
 
@@ -373,7 +445,7 @@ class SeasonController extends Controller
                         $count_accept++;
                     }
                 }
-            } catch (\Exception $e){
+            } catch (\Exception $e) {
                 return json_encode(array('status' => 'error',
                     'reason' => Lang::get('app.detail_sign_up_mobility_error')));
             }
@@ -422,7 +494,6 @@ class SeasonController extends Controller
             $seasons = $userSeasons->first()->user_season;
 
 
-
             foreach ($seasons as $seasonUser) {
                 if ($seasonUser->season != null && $seasonUser->status_season->first()->season_status_ID != Variables::SEASON_STATUS_CANCEL_ID) {
                     return json_encode(array('status' => 'error',
@@ -444,17 +515,15 @@ class SeasonController extends Controller
 
                 $season_status = Season_Status::find(Variables::SEASON_STATUS_PENDING_ID);
                 $system = Auth::user()->ID;
-                //DB::enableQueryLog();
                 $status_season = new Status_season();
                 $status_season->season_status_ID = Variables::SEASON_STATUS_PENDING_ID;
                 $status_season->users_ID = $system;
                 $status_season->users_season_ID = $user_season_ID;
 
                 $status_season->save();
-                //var_dump(DB::last);
                 \DB::commit();
                 $seasonObject = new \stdClass();
-                $seasonObject->mobility = $signIn->first()->university->name . ' ('.$signIn->first()->category->name . ' / '. $signIn->first()->mobility_type->name. ')';
+                $seasonObject->mobility = $signIn->first()->university->name . ' (' . $signIn->first()->category->name . ' / ' . $signIn->first()->mobility_type->name . ')';
                 $seasonObject->status = Variables::SEASON_STATUS_PENDING_ID;
                 $seasonObject->status_name = $season_status->name;
                 Mail::to($user->email)->send(new StatusChangedEmail($seasonObject));
@@ -486,9 +555,9 @@ class SeasonController extends Controller
         $status_season->users_ID = $users_id;
         $status_season->save();
 
-        $season = Season::with('mobility')->with('mobility.university')->with('mobility.category')->with('mobility.mobility_type')->where('season.ID','=',$season_ID)->get()->first();
+        $season = Season::with('mobility')->with('mobility.university')->with('mobility.category')->with('mobility.mobility_type')->where('season.ID', '=', $season_ID)->get()->first();
         $seasonObject = new \stdClass();
-        $seasonObject->mobility = $season->mobility->university->name. ' ('.$season->mobility->category->name. ' / '. $season->mobility->mobility_type->name. ')';
+        $seasonObject->mobility = $season->mobility->university->name . ' (' . $season->mobility->category->name . ' / ' . $season->mobility->mobility_type->name . ')';
         $seasonObject->status = $season_status_ID;
         $seasonObject->status_name = Season_status::select('name')->find($season_status_ID)->name;
 
@@ -509,36 +578,43 @@ class SeasonController extends Controller
         return $validator;
     }
 
-    public function deleteUser_season($id){
+    public function deleteUser_season($id)
+    {
         $user_season = User_season::with('user')->find($id);
         $season_ID = $user_season->season_ID;
-        $season = Season::with('mobility')->with('mobility.university')->with('mobility.category')->with('mobility.mobility_type')->where('season.ID','=',$season_ID)->get()->first();
+        $season = Season::with('mobility')->with('mobility.university')->with('mobility.category')->with('mobility.mobility_type')->where('season.ID', '=', $season_ID)->get()->first();
         $seasonObject = new \stdClass();
-        $seasonObject->mobility = $season->mobility->university->name. ' ('.$season->mobility->category->name. ' / '. $season->mobility->mobility_type->name. ')';
+        $seasonObject->mobility = $season->mobility->university->name . ' (' . $season->mobility->category->name . ' / ' . $season->mobility->mobility_type->name . ')';
         $seasonObject->status = -1;
         $seasonObject->status_name = 'Odstránená';
-        Status_season::where('users_season_ID','=',$id)->delete();
+        Status_season::where('users_season_ID', '=', $id)->delete();
         Mail::to($user_season->user->email)->send(new StatusChangedEmail($seasonObject));
         $user_season->delete();
         return back();
     }
 
-    public function deleteSeason($id){
-        $season = Season::with('mobility')->with('mobility.university')->with('mobility.category')->with('mobility.mobility_type')->where('season.ID','=',$id)->get()->first();
+    public function deleteSeason($id)
+    {
+        $season = Season::with('mobility')->with('mobility.university')->with('mobility.category')->with('mobility.mobility_type')->where('season.ID', '=', $id)->get()->first();
 
-        $user_season = User_season::with('user')->where('season_ID','=',$id)->get();
+        $user_season = User_season::with('user')->where('season_ID', '=', $id)->get();
         $seasonObject = new \stdClass();
-        $seasonObject->mobility = $season->mobility->university->name. ' ('.$season->mobility->category->name. ' / '. $season->mobility->mobility_type->name. ')';
+        $seasonObject->mobility = $season->mobility->university->name . ' (' . $season->mobility->category->name . ' / ' . $season->mobility->mobility_type->name . ')';
         $seasonObject->status = -1;
         $seasonObject->status_name = 'Odstránená';
-        foreach ($user_season as $item){
+        foreach ($user_season as $item) {
 
             Mail::to($item->user->email)->send(new StatusChangedEmail($seasonObject));
             User_season::find($item->ID)->delete();
-            Status_season::where('users_season_ID','=',$item->ID)->delete();
+            Status_season::where('users_season_ID', '=', $item->ID)->delete();
         }
 
         Season::find($id)->delete();
+        return back();
+    }
+
+    public function restoreSeason($id){
+        Season::withTrashed()->find($id)->restore();
         return back();
     }
 
