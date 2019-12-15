@@ -109,6 +109,7 @@ return [
     'nav_registration' => 'Registrácia',
     'nav_forget_password' => 'Zabudnuté heslo',
     'nav_reset_password' => 'Nové heslo',
+    'nav_change_password' => 'Zmena hesla',
     'nav_logout' => 'Odhlasiť sa',
     'nav_search' => 'Výsledky vyhľadávania',
     'nav_my_mobilities' => 'Moje mobility',
@@ -198,6 +199,15 @@ return [
     'profil_choose_images' => 'Vyberte obrázky.',
     'review_success_messeage' => 'Recenzia bola úspešne uložená.',
     'review_fail_messeage' => 'Recenziu sa nepodarilo uložiť.',
+
+
+    //Profil - Password
+    'profil_password_actual' => 'AKTUÁLNE HESLO',
+    'profil_password_new' => 'NOVÉ HESLO',
+    'profil_password_confirm' => 'POTVRDE NOVÉ HESLO',
+    'profil_password_change' => 'Zmeniť',
+    'profil_password_error' => 'Pôvodné heslo sa nezhoduje s heslom, čo ste zadali.',
+    'profil_password_success' => 'Heslo bolo úspešne zmenené',
 
 
     //Profil - Blog

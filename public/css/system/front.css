@@ -148,14 +148,14 @@ table.admin-table tr th a{
     padding: 0 4px 0 0;
 }
 
-.admin-title-user > img{
+.admin-title-user > a > img{
     margin-left: 10px;
     width: 25px;
     height: 25px;
     cursor: pointer;
 }
 
-.admin-title-user > img:hover{
+.admin-title-user > a > img:hover{
     opacity: 0.5;
 }
 
@@ -362,6 +362,17 @@ a[class='page-link']:hover{
 
 .user-detail-mobility-state-cell{
     color: #007183;
+}
+
+.user-search-form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.user-search-form > input{
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 
@@ -1058,7 +1069,7 @@ input:checked + .slider:before {
     margin-left: 5px;
 }
 
-#spinnerProfileDetail{
+.my-detail-newsletter > #spinnerProfileDetail{
     display: none;
     margin: 0 5px 0 5px;
 }

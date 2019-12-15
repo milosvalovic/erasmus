@@ -22,10 +22,13 @@ $(document).ready(function () {
         }
     }
 
-    /*----------------------Section for My Profile-----------------------------------------------------*/
+    /*----------------------Section My Profile-----------------------------------------------------*/
+    var newsletterCheckStatus = $('#newsletter_active').val();
     $("#newsletter_active").change(function () {
         $('#myProfileChangesError').hide();
         $('#myProfileChangesSuccess').hide();
+        $('#spinnerProfileDetail').fadeIn('slow', function () {});
+
         var state = 0;
 
         if ($(this).prop("checked") == true)
@@ -33,267 +36,267 @@ $(document).ready(function () {
         else
             state = 0;
 
-
         $.ajax({
-            url: '/admin/newsleter_state/' + state,
+            url: '/public/admin/newsleter_state/' + state,
             type: "get",
-            dataType: 'json'
+            dataType: 'json',
+            success: function (result) {
+            }, error: function (response) {
+                if (response.status == 200) {
+                    setTimeout(function () {
+                        $('#spinnerProfileDetail').hide();
+                        $('#myProfileChangesSuccess').fadeIn('slow', function () {});
+                        setTimeout(function () {
+                            $('#myProfileChangesSuccess').fadeOut('slow', function () {});
+                        },1000);
+                    }, 1500);
+                } else {
+                    setTimeout(function () {
+                        $('#spinnerProfileDetail').hide();
+                        $('#myProfileChangesError').fadeIn('slow', function () {});
+                        setTimeout(function () {
+                            if(newsletterCheckStatus==1){
+                                $('#newsletter_active').prop('checked', true);
+                            } else {
+                                $('#newsletter_active').prop('checked', false);
+                            }
+                            $('#myProfileChangesError').fadeOut("slow", function () {
+                            });
+                        },1000);
+                    }, 1500);
+                }
+
+            }
         });
     });
-        $('#spinnerProfileDetail').show();
-
-            $.ajax({
-                url: '/public/admin/newsleter_state/'+state,
-                type: "get",
-                dataType: 'json',
-                success: function (result) {
-                }, error: function (response) {
-                    console.log(response);
-                    if(response.status ==200){
-                        setTimeout(function () {
-                            $('#spinnerProfileDetail').hide();
-                            $('#myProfileChangesSuccess').show();
-                        }, 1500);
-                    } else {
-                        setTimeout(function () {
-                            $('#spinnerProfileDetail').hide();
-                            $('#myProfileChangesError').show();
-                        }, 1500);
-                    }
-
-                }
-            });
+});
+/*----------------------End of Section----------------------------------------------------------------------------*/
 
 
-    });
-    /*----------------------End of Section----------------------------------------------------------------------------*/
+/*----------------------Section for animations in edit review-----------------------------------------------------*/
+var reviewImage = $('.review--image');
+var animationFadeInUp = 'animated fadeInUp faster';
+var animationFadeInOut = 'animated fadeOutUp faster';
+var animationFadeOut = 'animated fadeOut Slow';
+var newImageHoverSettings = {
+    'opacity': '0.5',
+    'border-radius': '10px',
+    'transform': 'scale(1.1)',
+    'cursor': 'default'
+};
+var imageDeletedCss = {'opacity': '0.5'};
 
+reviewImage.each(function () {
+    if ($(this).children('img.review-delete-icon').length == 0) {
+        $(this).children('img.review-image-item').css(imageDeletedCss);
+    }
 
-    /*----------------------Section for animations in edit review-----------------------------------------------------*/
-    var reviewImage = $('.review--image');
-    var animationFadeInUp = 'animated fadeInUp faster';
-    var animationFadeInOut = 'animated fadeOutUp faster';
-    var animationFadeOut = 'animated fadeOut Slow';
-    var newImageHoverSettings = {
-        'opacity': '0.5',
-        'border-radius': '10px',
-        'transform': 'scale(1.1)',
-        'cursor': 'default'
-    };
-    var imageDeletedCss = {'opacity': '0.5'};
+    $(this).mouseover(function () {
+        const imageItem = $(this).children('img.review-image-item');
+        const imageDeleteIcon = $(this).children('img.review-delete-icon');
+        const imageRevertIcon = $(this).children('img.review-revert-icon');
+        const loadingSpinner = $(this).children('#spinnerDeleteReviewImage');
+        const successDeleteIcon = $(this).children('#successDeleteReviewImage');
+        const errorDeleteIcon = $(this).children('#errorDeleteReviewImage');
 
-    reviewImage.each(function () {
-        if ($(this).children('img.review-delete-icon').length == 0) {
-            $(this).children('img.review-image-item').css(imageDeletedCss);
+        if (imageDeleteIcon.length == 1) {
+            imageDeleteIcon.removeClass(animationFadeInOut);
+            imageDeleteIcon.css({"display": "none"});
+            imageItem.css(newImageHoverSettings);
+            imageDeleteIcon.css({"display": "flex"});
+            imageDeleteIcon.addClass(animationFadeInUp)
+
+        } else {
+            // imageRevertIcon.removeClass(animationFadeInOut);
+            imageRevertIcon.css({"display": "none"});
+            imageItem.css(newImageHoverSettings);
+            imageRevertIcon.css({"display": "flex"});
+            // imageRevertIcon.addClass(animationFadeInUp);
         }
 
-        $(this).mouseover(function () {
-            const imageItem = $(this).children('img.review-image-item');
-            const imageDeleteIcon = $(this).children('img.review-delete-icon');
-            const imageRevertIcon = $(this).children('img.review-revert-icon');
-            const loadingSpinner = $(this).children('#spinnerDeleteReviewImage');
-            const successDeleteIcon = $(this).children('#successDeleteReviewImage');
-            const errorDeleteIcon = $(this).children('#errorDeleteReviewImage');
+        var deleted = false;
+        imageDeleteIcon.unbind().one('click', function () {
+            var imageId = $(this).data('id');
+            var path = '/admin/reviews/delete/' + imageId;
 
-            if (imageDeleteIcon.length == 1) {
-                imageDeleteIcon.removeClass(animationFadeInOut);
-                imageDeleteIcon.css({"display": "none"});
-                imageItem.css(newImageHoverSettings);
-                imageDeleteIcon.css({"display": "flex"});
-                imageDeleteIcon.addClass(animationFadeInUp)
+            imageDeleteIcon.remove();
+            loadingSpinner.css({'display': 'block'});
+            imageItem.css(newImageHoverSettings);
 
-            } else {
-                // imageRevertIcon.removeClass(animationFadeInOut);
-                imageRevertIcon.css({"display": "none"});
-                imageItem.css(newImageHoverSettings);
-                imageRevertIcon.css({"display": "flex"});
-                // imageRevertIcon.addClass(animationFadeInUp);
+            if (!deleted) {
+                deleted = true;
+                $.ajax({
+                    url: path,
+                    type: "get",
+                    dataType: 'json',
+                    success: function (result) {
+                        setTimeout(function () {
+                            imageItem.addClass(animationFadeOut);
+                            loadingSpinner.css({'display': 'none'});
+                            successDeleteIcon.css({'display': 'block'});
+                        }, 2000);
+                    }, error: function (error) {
+                        setTimeout(function () {
+                            loadingSpinner.css({'display': 'none'});
+                            errorDeleteIcon.css({'display': 'block'});
+                            imageItem.css({'opacity': '1'});
+                        }, 2000);
+                    }
+                });
             }
-
-            var deleted = false;
-            imageDeleteIcon.unbind().one('click', function () {
-                var imageId = $(this).data('id');
-                var path = '/admin/reviews/delete/' + imageId;
-
-                imageDeleteIcon.remove();
-                loadingSpinner.css({'display': 'block'});
-                imageItem.css(newImageHoverSettings);
-
-                if (!deleted) {
-                    deleted = true;
-                    $.ajax({
-                        url: path,
-                        type: "get",
-                        dataType: 'json',
-                        success: function (result) {
-                            setTimeout(function () {
-                                imageItem.addClass(animationFadeOut);
-                                loadingSpinner.css({'display': 'none'});
-                                successDeleteIcon.css({'display': 'block'});
-                            }, 2000);
-                        }, error: function (error) {
-                            setTimeout(function () {
-                                loadingSpinner.css({'display': 'none'});
-                                errorDeleteIcon.css({'display': 'block'});
-                                imageItem.css({'opacity': '1'});
-                            }, 2000);
-                        }
-                    });
-                }
-            });
-
-            imageRevertIcon.on('click', function () {
-                var imageId = $(this).data('id');
-                var path = '/admin/reviews/revert/' + imageId;
-
-                if (!deleted) {
-                    deleted = true;
-                    $.ajax({
-                        url: path,
-                        type: "get",
-                        dataType: 'json',
-                        success: function (result) {
-                            location.reload();
-                        },
-                        error: function (xhr, resp, text) {
-                            console.log(xhr, resp, text);
-                        }
-                    });
-                }
-            });
         });
 
-        $(this).mouseleave(function () {
-            const imageItem = $(this).children('img.review-image-item');
-            const imageDeleteIcon = $(this).children('img.review-delete-icon');
-            const imageRevertIcon = $(this).children('img.review-revert-icon');
-            if (imageDeleteIcon.length == 1) {
-                imageDeleteIcon.removeClass(animationFadeInUp);
-                imageItem.css('opacity', '1');
-                imageItem.css('border-radius', '0');
-                imageItem.css('transform', 'scale(1)');
-                imageDeleteIcon.addClass(animationFadeInOut);
-            } else {
-                // imageRevertIcon.removeClass(animationFadeInUp);
-                // imageItem.css('opacity', '1');
-                imageItem.css('border-radius', '0');
-                imageItem.css('transform', 'scale(1)');
-                // imageRevertIcon.addClass(animationFadeInOut);
+        imageRevertIcon.on('click', function () {
+            var imageId = $(this).data('id');
+            var path = '/admin/reviews/revert/' + imageId;
+
+            if (!deleted) {
+                deleted = true;
+                $.ajax({
+                    url: path,
+                    type: "get",
+                    dataType: 'json',
+                    success: function (result) {
+                        location.reload();
+                    },
+                    error: function (xhr, resp, text) {
+                        console.log(xhr, resp, text);
+                    }
+                });
             }
         });
     });
-    /*----------------------Section End edit review----------------------------------------------------------------------------*/
+
+    $(this).mouseleave(function () {
+        const imageItem = $(this).children('img.review-image-item');
+        const imageDeleteIcon = $(this).children('img.review-delete-icon');
+        const imageRevertIcon = $(this).children('img.review-revert-icon');
+        if (imageDeleteIcon.length == 1) {
+            imageDeleteIcon.removeClass(animationFadeInUp);
+            imageItem.css('opacity', '1');
+            imageItem.css('border-radius', '0');
+            imageItem.css('transform', 'scale(1)');
+            imageDeleteIcon.addClass(animationFadeInOut);
+        } else {
+            // imageRevertIcon.removeClass(animationFadeInUp);
+            // imageItem.css('opacity', '1');
+            imageItem.css('border-radius', '0');
+            imageItem.css('transform', 'scale(1)');
+            // imageRevertIcon.addClass(animationFadeInOut);
+        }
+    });
+});
+/*----------------------Section End edit review----------------------------------------------------------------------------*/
 
 
-    /*----------------------Section Users list-----------------------------------------------------------------------*/
+/*----------------------Section Users list-----------------------------------------------------------------------*/
+var pageUsers = 0;
 
-    var pageUsers = 0;
+$("#loadNextUsers").hide();
+$("#loadPrevUsers").hide();
 
-    $("#loadNextUsers").hide();
-    $("#loadPrevUsers").hide();
+$("#loadNextUsers").click(function () {
+    pageUsers++;
+    $("#pageUsers").val(pageUsers);
+    loadUsersData();
+});
 
-    $("#loadNextUsers").click(function () {
-        pageUsers++;
-        $("#pageUsers").val(pageUsers);
-        loadUsersData();
+$("#loadPrev").click(function () {
+    pageUsers--;
+    $("#pageUsers").val(pageUsers);
+    loadUsersData();
+});
+
+loadUsersData();
+
+function loadUsersData() {
+    $.ajax({
+        url: "/public/admin/users/search",
+        type: "POST",
+        dataType: 'json',
+        data: $("#userSearchForm").serialize(),
+        success: function (result) {
+            console.log(result);
+            $("#main_users_table tbody").empty();
+            setUsersTable(result);
+
+
+            if (result.count <= (1 + pageUsers) * 15) {
+                $("#loadNextUsers").hide();
+            } else {
+                $("#loadNextUsers").show();
+            }
+            if (pageUsers === 0) {
+                $("#loadPrevUsers").hide();
+            } else {
+                $("#loadPrevUsers").show();
+            }
+        },
+        error: function (xhr, resp, text) {
+            // console.log(xhr, resp, text);
+        }
+    });
+}
+
+function setUsersTable(res) {
+    res.data.forEach(function (element) {
+        console.log(element);
+        $("#main_users_table > tbody:last-child").append(
+            "<tr>"
+            + "<td>" + element.ID + "</td>"
+            + "<td><a class=\"admin-blog-table\" href = \"" + "/admin/users/detail/" + element.ID + "\" >" + element.first_name + "</a></td>"
+            + "<td><a class=\"admin-blog-table\" href = \"" + "/admin/users/detail/" + element.ID + "\" >" + element.last_name + "</a></td>"
+            + "<td>" + element.email + "</td>"
+            + "<td>" + element.roles.name + "</td>"
+            + "<th scope=\"row\">" +
+            "<a href=\"/admin/users/edit_user/" + element.ID + "\">" +
+            "<button type=\"button\" class=\"btn btn-outline-warning\">Upraviť</button>" +
+            "</a>" +
+            "<a href=\"/admin/users/delete/" + element.ID + "\">" +
+            "<button type=\"button\" class=\"btn btn-outline-danger\">Odstrániť</button>" +
+            "</a>"
+            + "</th></tr>"
+        )
+    });
+    $("#main_users_table").fadeIn(1000, function () {
+
     });
 
-    $("#loadPrev").click(function () {
-        pageUsers--;
-        $("#pageUsers").val(pageUsers);
-        loadUsersData();
-    });
+}
 
+
+$("#userSearchForm").submit(function (event) {
+
+    pageUsers = 0;
+    $("#pageUsers").val(pageUsers);
+
+    $("#main_users_table tbody").empty();
+    event.preventDefault();
     loadUsersData();
 
-    function loadUsersData() {
-        $.ajax({
-            url: "/admin/users/search",
-            type: "POST",
-            dataType: 'json',
-            data: $("#userSearchForm").serialize(),
-            success: function (result) {
-                console.log(result);
-                $("#main_users_table tbody").empty();
-                setUsersTable(result);
+    return false;
+});
 
+/*----------------------Section end-----------------------------------------------------------------------*/
 
-                if (result.count <= (1 + pageUsers) * 15) {
-                    $("#loadNextUsers").hide();
-                } else {
-                    $("#loadNextUsers").show();
-                }
-                if (pageUsers === 0) {
-                    $("#loadPrevUsers").hide();
-                } else {
-                    $("#loadPrevUsers").show();
-                }
-            },
-            error: function (xhr, resp, text) {
-                console.log(xhr, resp, text);
-            }
-        });
-    }
+/*----------------------Section season list-----------------------------------------------------------------------*/
+$('#reset').on('click', function () {
+    setDefaultFilter();
+});
 
-    function setUsersTable(res) {
-        res.data.forEach(function (element) {
-            console.log(element);
-            $("#main_users_table > tbody:last-child").append(
-                "<tr>"
-                + "<td>" + element.ID + "</td>"
-                + "<td><a class=\"admin-blog-table\" href = \"" + "/admin/users/detail/" + element.ID + "\" >" + element.first_name + "</a></td>"
-                + "<td><a class=\"admin-blog-table\" href = \"" + "/admin/users/detail/" + element.ID + "\" >" + element.last_name + "</a></td>"
-                + "<td>" + element.email + "</td>"
-                + "<td>" + element.roles.name + "</td>"
-                + "<th scope=\"row\">" +
-                "<a href=\"/admin/users/edit_user/" + element.ID + "\">" +
-                "<button type=\"button\" class=\"btn btn-outline-warning\">Upraviť</button>" +
-                "</a>" +
-                "<a href=\"/admin/users/delete/" + element.ID + "\">" +
-                "<button type=\"button\" class=\"btn btn-outline-danger\">Odstrániť</button>" +
-                "</a>"
-                + "</th></tr>"
-            )
-        });
-        $("#main_users_table").fadeIn(1000, function () {
+function setDefaultFilter() {
+    $('#sort option:first').prop('selected', true);
+    $('#sortType option:first').prop('selected', true);
+    $('#category option:first').prop('selected', true);
+    $('#type option:first').prop('selected', true);
+    $('#universities option:first').prop('selected', true);
+    $('#fromInput').val('');
+    $('#toInput').val('');
+    $('#active').prop('checked', true);
+    $('#sortSeasonDeleted').prop('checked', false);
+};
 
-        });
-
-    }
-
-
-    $("#userSearchForm").submit(function (event) {
-
-        pageUsers = 0;
-        $("#pageUsers").val(pageUsers);
-
-        $("#main_users_table tbody").empty();
-        event.preventDefault();
-        loadUsersData();
-
-        return false;
-    });
-
-    /*----------------------Section end-----------------------------------------------------------------------*/
-
-    /*----------------------Section season list-----------------------------------------------------------------------*/
-    $('#reset').on('click', function () {
-        setDefaultFilter();
-    });
-
-    function setDefaultFilter() {
-        $('#sort option:first').prop('selected', true);
-        $('#sortType option:first').prop('selected', true);
-        $('#category option:first').prop('selected', true);
-        $('#type option:first').prop('selected', true);
-        $('#universities option:first').prop('selected', true);
-        $('#fromInput').val('');
-        $('#toInput').val('');
-        $('#active').prop('checked', true);
-        $('#sortSeasonDeleted').prop('checked', false);
-    };
-
-    /*----------------------Section End----------------------------------------------------------------------------*/
+/*----------------------Section End----------------------------------------------------------------------------*/
 
 
 function randomPassword() {

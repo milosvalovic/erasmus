@@ -9,8 +9,12 @@
                 <h1>Administrácia používateľov</h1>
             </div>
             <div class="admin-title-user">
-                <p><a href="{{ action('system\ProfileController@my_profile')}}">{{ Auth::user()->first_name . ' '. Auth::user()->last_name }}</a> <span> {{ Auth::user()->roles->name }} </span></p>
-                <img src="{{ asset('img/icon_logout.png') }}" alt="" class="logout-admin-button">
+                <p>
+                    <a href="{{ action('system\ProfileController@my_profile')}}">{{ Auth::user()->first_name . ' '. Auth::user()->last_name }}</a>
+                    <span> {{ Auth::user()->roles->name }} </span></p>
+                <a href="{{ route('logout')}}" class="logout-admin-button">
+                    <img src="{{ asset('img/icon_logout.png') }}" alt="" class="logout-admin-button">
+                </a>
             </div>
         </div>
 
@@ -21,17 +25,11 @@
                         <div class="user-table-title">
                             <h2>Tabuľka používateľov</h2>
                             <form class="form-inline" id="userSearchForm">
-
-                                <input type="hidden" id="pageUsers" name="page" value="0">
-                                <div>
-                                    <label for="search" class="mb-2 mr-sm-2">Filtrovať:</label>
-                                </div>
-                                <div>
+                                <div class="user-search-form">
+                                    <input type="hidden" id="pageUsers" name="page" value="0">
                                     <input type="text" placeholder="Meno/Priezvisko/Email" class="form-control"
                                            id="search_user"
                                            name="term" autocomplete="off">
-                                </div>
-                                <div>
                                     <select name="role" class="form-control admin-form-input" id="addUserRole">
                                         <option disabled selected>Rola</option>
                                         <option value="">Všetky</option>
@@ -40,7 +38,7 @@
                                         @endforeach
                                     </select>
                                     {{csrf_field()}}
-                                    <button type="submit" class="btn btn-primary" id="search_user_buuton">Hľadať
+                                    <button type="submit" class="btn btn-outline-primary wider-button" id="search_user_buuton">Hľadať
                                     </button>
                                 </div>
                             </form>
