@@ -216,7 +216,11 @@ table.admin-table tr th a{
     background-color: #0093aadb;
 }
 
-li.admin-menu-links-hover:hover{
+.admin-header > ul > li.active{
+    background: #0093aadb;
+}
+
+.admin-base-grid li.admin-menu-links-hover:hover{
     cursor: pointer;
 }
 
@@ -550,7 +554,6 @@ a.reset-season-filter:hover{
 .season-filter-section-4 .season-filter-section-4-content-1 .column-1 .row-2 .sort-filter-checkbox{
     width: 20px;
     height: 20px;
-    margin-right: 40px;
 }
 
 .admin-season-main-content{
@@ -1111,8 +1114,6 @@ input:checked + .slider:before {
     width: fit-content;
     margin-top: 30px;
 }
-
-
 
 
 
