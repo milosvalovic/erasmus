@@ -165,6 +165,7 @@ Route::post('/admin/countries/edit_country', 'system\CountryController@editCount
 /*------Admin profile-------------*/
 Route::get('/admin/my_profile', 'system\ProfileController@my_profile');
 Route::get('/admin/newsleter_state/{status}', 'system\ProfileController@newsletterChange');
+Route::post('/admin/change_password', 'system\ProfileController@changePassword')->name('changePassword');
 
 });
 
