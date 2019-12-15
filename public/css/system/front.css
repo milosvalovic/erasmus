@@ -132,6 +132,7 @@ table.admin-table tr th a{
     justify-content: space-between;
     padding: 20px 40px 20px 40px;
     grid-area: title;
+    align-items: center;
 }
 
 .admin-title-text{
@@ -140,12 +141,32 @@ table.admin-table tr th a{
     align-items: center;
 }
 
+.admin-title-user p a{
+    text-decoration: none;
+    color: #858796;
+    font-size: 20px;
+    padding: 0 4px 0 0;
+}
+
+.admin-title-user p a:hover{
+    text-decoration: none;
+    color: red;
+}
+
+.admin-title .admin-title-user span{
+    color: #007183;
+    font-size: 20px;
+    border-left: 1px solid grey;
+    padding-left: 5px;
+}
+
 .admin-title-user{
     display: flex;
     flex-direction: row;
     align-items: center;
     border-left: 1px solid grey;
-    padding-left: 10px;
+    padding-left: 5px;
+    height: 30px;
 }
 
 .admin-title-user > img{

@@ -9,7 +9,7 @@
                 <h1>Administrácia blogov</h1>
             </div>
             <div class="admin-title-user">
-                <p>{{Auth::user()->roles->name . ' | '.Auth::user()->first_name . ' '. Auth::user()->last_name }}</p>
+                <p><a href="{{ action('system\ProfileController@my_profile')}}">{{ Auth::user()->first_name . ' '. Auth::user()->last_name }}</a> <span> {{ Auth::user()->roles->name }} </span></p>
             </div>
         </div>
 
@@ -25,7 +25,7 @@
                         <th scope="col">ID</th>
                         <th scope="col">Titulok</th>
                         <th scope="col">Dátum zverejnenia</th>
-                        <th scope="col">Používateľ</th>
+                        <th scope="col">Autor</th>
                         <th scope="col">Potvrdené od</th>
                         <th scope="col">Status</th>
                         <th scope="col" class="user-form-actions">Akcie</th>
