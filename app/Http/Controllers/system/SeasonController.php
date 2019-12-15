@@ -6,7 +6,6 @@ namespace App\Http\Controllers\system;
 use App\Http\Variables;
 use App\Mail\StatusChangedEmail;
 use App\Models\Category;
-use App\Models\Country;
 use App\Models\Mobility;
 use App\Models\Mobility_Type;
 use App\Models\Season_status;
@@ -24,8 +23,6 @@ use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
-use function MongoDB\BSON\toJSON;
-use mysql_xdevapi\Exception;
 
 class SeasonController extends Controller
 {

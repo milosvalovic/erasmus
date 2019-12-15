@@ -17,19 +17,17 @@
                 <h3>ID: <span>{{ Auth::user()->ID }}</span></h3>
                 <h3>Meno a priezvisko: <span>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</span></h3>
                 <h3>Email: <span>{{ Auth::user()->email }}</span></h3>
-                <h3>Rola: <span>{{ Auth::user()->roles_ID }}</span></h3>
+                <h3>Rola: <span>{{ Auth::user()->roles->name }}</span></h3>
                 <h3>Účet vytvorený dňa: <span>{{  Auth::user()->created_at }}</span></h3>
                 <h3>Potvrdená registrácia: <span>@if( Auth::user()->verified==1 ) áno @else nie  @endif </span></h3>
                 <div class="my-detail-newsletter">
                     <h3>Prihlásený na email notifikácie noviniek</h3>
-                    <input type="checkbox" class="sort-filter-checkbox" id="active" name="newsletter"
+                    <input type="checkbox" class="sort-filter-checkbox" id="newsletter_active" name="newsletter"
                            @if( Auth::user()->newsletter==0) value="0" @else value="1" checked @endif>
                 </div>
             </div>
         </div>
-
         @include('system.include.footer')
-
     </div>
 @endsection
 
