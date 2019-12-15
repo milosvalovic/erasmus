@@ -27,9 +27,7 @@ $(document).ready(function () {
     $("#newsletter_active").change(function () {
         $('#myProfileChangesError').hide();
         $('#myProfileChangesSuccess').hide();
-        $('#spinnerProfileDetail').fadeIn('slow', function () {
-
-        });
+        $('#spinnerProfileDetail').fadeIn('slow', function () {});
 
         var state = 0;
 
@@ -37,7 +35,6 @@ $(document).ready(function () {
             state = 1;
         else
             state = 0;
-
 
         $.ajax({
             url: '/public/admin/newsleter_state/' + state,
@@ -48,21 +45,15 @@ $(document).ready(function () {
                 if (response.status == 200) {
                     setTimeout(function () {
                         $('#spinnerProfileDetail').hide();
-                        $('#myProfileChangesSuccess').fadeIn('slow', function () {
-
-                        });
+                        $('#myProfileChangesSuccess').fadeIn('slow', function () {});
                         setTimeout(function () {
-                            $('#myProfileChangesSuccess').fadeOut('slow', function () {
-
-                            });
+                            $('#myProfileChangesSuccess').fadeOut('slow', function () {});
                         },1000);
                     }, 1500);
                 } else {
                     setTimeout(function () {
                         $('#spinnerProfileDetail').hide();
-                        $('#myProfileChangesError').fadeIn('slow', function () {
-
-                        });
+                        $('#myProfileChangesError').fadeIn('slow', function () {});
                         setTimeout(function () {
                             if(newsletterCheckStatus==1){
                                 $('#newsletter_active').prop('checked', true);
