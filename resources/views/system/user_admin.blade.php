@@ -19,8 +19,31 @@
                     <div class="user-table-wrapper">
                         <div class="user-table-title">
                             <h2>Tabuĺka používateľov</h2>
+                            <form class="form-inline" id="userSearchForm">
+
+                                <input type="hidden" id="pageUsers" name="page" value="0">
+                                <div>
+                                    <label for="search" class="mb-2 mr-sm-2">Filtrovať:</label>
+                                </div>
+                                <div>
+                                    <input type="text" placeholder="Meno/Priezvisko/Email" class="form-control"
+                                           id="search_user"
+                                           name="term" autocomplete="off">
+                                </div>
+                                <div>
+                                    <select name="role" class="form-control admin-form-input" id="addUserRole">
+                                        <option disabled selected>Rola</option>
+                                        @foreach($roles as $role)
+                                            <option value="{{$role->id}}">{{$role->name}}</option>
+                                        @endforeach
+                                    </select>
+                                    {{csrf_field()}}
+                                    <button type="submit" class="btn btn-primary" id="search_user_buuton">Hľadať
+                                    </button>
+                                </div>
+                            </form>
                         </div>
-                        <table class="table admin-table">
+                        <table class="table admin-table" id="main_users_table">
                             <thead>
                             <tr>
                                 <th scope="col">ID</th>
@@ -32,39 +55,17 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($users as $user)
 
-                                <tr>
-                                    <th scope="row">{{$user->ID}}</th>
-                                    <td>
-                                        <a class="admin-blog-table"
-                                           href="{{ action('system\UserController@userDetail',['id' => $user->ID]) }}">
-                                            {{$user->first_name}}
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a class="admin-blog-table"
-                                           href="{{ action('system\UserController@userDetail',['id' => $user->ID]) }}">
-                                            {{$user->last_name}}
-                                        </a>
-                                    </td>
-                                    <td>{{$user->email}}</td>
-                                    <td>{{$user->roles->name}}</td>
-                                    <th scope="row">
-                                        <a href="{{ action('system\UserController@userEditShow', ['id' => $user->ID]) }}">
-                                            <button type="button" class="btn btn-outline-warning">Upraviť</button>
-                                        </a>
-                                        <a href="{{route('deleteUser',['id'=>$user->ID])}}">
-                                            <button type="button" class="btn btn-outline-danger">Odstrániť</button>
-                                        </a>
-                                    </th>
-                                </tr>
-                            @endforeach
                             </tbody>
                         </table>
-                        <nav class="admin-users-pagination">
-                            {{$users->links()}}
-                        </nav>
+                        {{--<nav class="admin-users-pagination">--}}
+                        {{--{{$users->links()}}--}}
+                        {{--</nav>--}}
+
+                        <div>
+                            <a id="loadPrevUsers">< Predošlé</a>
+                            <a id="loadNextUsers">Ďalšie ></a>
+                        </div>
                     </div>
                 </div>
 
@@ -79,15 +80,18 @@
                         @endif
                         <div class="form-group">
                             <label for="addUserFirstName">Meno:</label>
-                            <input type="text" class="form-control admin-form-input" id="addUserFirstName" placeholder="Filip" name="first_name">
+                            <input type="text" class="form-control admin-form-input" id="addUserFirstName"
+                                   placeholder="Filip" name="first_name">
                         </div>
                         <div class="form-group">
                             <label for="addUserLastName">Priezvisko:</label>
-                            <input type="text" class="form-control admin-form-input" id="addUserLastName" placeholder="Dobrovoľný" name="last_name">
+                            <input type="text" class="form-control admin-form-input" id="addUserLastName"
+                                   placeholder="Dobrovoľný" name="last_name">
                         </div>
                         <div class="form-group">
                             <label for="addUserEmail">Email:</label>
-                            <input type="text" class="form-control admin-form-input" id="addUserEmail" placeholder="filip.d@gmail.com" name="email">
+                            <input type="text" class="form-control admin-form-input" id="addUserEmail"
+                                   placeholder="filip.d@gmail.com" name="email">
                         </div>
                         <div class="form-group">
                             <label for="addUserRole">Rola:</label>
@@ -99,7 +103,8 @@
                         </div>
                         <div class="form-group">
                             <label for="addUserPassword">Heslo:</label>
-                            <input type="text" class="form-control admin-form-input" id="addUserPassword" placeholder="******" name="password" required>
+                            <input type="text" class="form-control admin-form-input" id="addUserPassword"
+                                   placeholder="******" name="password" required>
                             <a id="generateRandomPassBtn" class="btn btn-outline-info">Vygenerovať heslo</a>
                         </div>
                         <input type="hidden" name="length" value="6">

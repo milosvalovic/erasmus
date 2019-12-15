@@ -71,6 +71,7 @@ Route::get('/admin/users', 'system\UserController@users');
 Route::get('/admin/users/edit_user/{id}', ['as' => 'edit_user_form', 'uses' => 'system\UserController@userEditShow']);
 Route::post('/admin/users/add_user', 'system\UserController@addUser')->name('addUser');
 Route::post('/admin/users/edit_user', 'system\UserController@editUser')->name('editUser');
+Route::post('/admin/users/search', 'system\UserController@sortUsers')->name('searchUsersMain');
 Route::get('/admin/users/delete/{id}', 'system\UserController@deleteUser')->name('deleteUser');
 
 Route::get('/admin/users/detail/{id}', ['as' => 'user_detail', 'uses' => 'system\UserController@userDetail']);

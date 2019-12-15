@@ -69,7 +69,7 @@ class SeasonController extends Controller
 
     public function sortSeasons(Request $request)
     {
-        DB::enableQueryLog();
+
         $universitySearch = $request->input('university');
         $from = ($request->input('from') == '') ? '' : date("Y-m-d", strtotime($request->input('from')));
         $to = ($request->input('to') == '') ? '' : date("Y-m-d", strtotime($request->input('to')));
