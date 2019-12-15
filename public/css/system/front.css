@@ -108,7 +108,7 @@ body {
 }
 
 
-/*-----------------ADMIN table-----------------------*/
+/*-------------------------------------ADMIN table-----------------------*/
 .admin-table{
     width: 500px;
     background: #FFFFFF;
@@ -125,7 +125,7 @@ table.admin-table tr th a{
     width: 100px;
 }
 
-/*-----------------Title--------------------------------*/
+/*----Title-------*/
 .admin-title {
     display: flex;
     flex-direction: row;
@@ -191,7 +191,7 @@ table.admin-table tr th a{
 }
 
 
-/*-----------------SideMenu--------------------------------*/
+/*-----SideMenu---------*/
 .admin-header > ul > a .sidebar-brand-icon i.admin-ukf-logo{
     display: block;
     background: url("../../img/ukf_logo_white.png") no-repeat;
@@ -220,13 +220,13 @@ li.admin-menu-links-hover:hover{
 span[class='dashboard-admin']{
     font-size: 30px;
 }
-/*-----------------END ADMIN general------------------------*/
+/*-------------------------------------END ADMIN general------------------------*/
 
 
 
 
 
-/*-----------------Dashboard---------------------------------*/
+/*-----Dashboard-------*/
 .admin-welcome-page{
     display: grid;
     grid-template-columns: repeat(9, 1fr);
@@ -276,7 +276,7 @@ span[class='dashboard-admin']{
     justify-content: center;
 }
 
-/*-----------------Users-------------------------*/
+/*-------------------------------------Users------------------------------*/
 .user-form-actions{
     width: 200px;
 }
@@ -357,7 +357,7 @@ a[class='page-link']:hover{
 }
 
 
-/*-----------------Mobility page--------------------*/
+/*-------------------------------------Mobility page--------------------*/
 .admin-mobilities-table{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
@@ -372,7 +372,7 @@ a[class='page-link']:hover{
 }
 
 
-/*-----------------Seasons page--------------------*/
+/*-------------------------------------Seasons page--------------------*/
 .admin-season-table{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
@@ -572,9 +572,51 @@ a.reset-season-filter:hover{
     margin-bottom: 0;
     margin-left: 10px;
 }
+/*----Detail------*/
+#search_user_buuton{
+    margin-left: 10px;
+}
+
+#searchForm #loaderSeasonSearchUser{
+    margin: 10px 0 0 5px;
+    display: none;
+}
+
+.lds-hourglass {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-hourglass:after {
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    margin: 8px;
+    box-sizing: border-box;
+    border: 28px solid #007183;
+    border-color: #007183 transparent #007183 transparent;
+    animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+    0% {
+        transform: rotate(0);
+        animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    50% {
+        transform: rotate(900deg);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    100% {
+        transform: rotate(1800deg);
+    }
+}
 
 
-/*-----------------Roles page-------------------------*/
+
+/*-------------------------------------Roles page-------------------------*/
 .admin-roles-table{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
@@ -588,7 +630,7 @@ a.reset-season-filter:hover{
 }
 
 
-/*---------------Mobility category page------------------*/
+/*-------------------------------------Mobility category page------------------*/
 .admin-mobility-category-table{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
@@ -621,7 +663,7 @@ a.reset-season-filter:hover{
 }
 
 
-/*-----------------Mobility type page---------------------*/
+/*-------------------------------------Mobility type page---------------------*/
 .admin-mobility-type-table{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
@@ -636,7 +678,7 @@ a.reset-season-filter:hover{
 }
 
 
-/*-----------------Blogs page------------------------------*/
+/*-------------------------------------Blogs page------------------------------*/
 .admin-blogs-table{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
@@ -705,7 +747,7 @@ a.reset-season-filter:hover{
     border-radius: 50%;
 }
 
-/*-----------------Universities page--------------------*/
+/*-------------------------------------Universities page--------------------*/
 .admin-universities-table{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
@@ -739,7 +781,7 @@ a.reset-season-filter:hover{
 }
 
 
-/*-----------------Images page--------------------------*/
+/*-------------------------------------Images page--------------------------*/
 .admin-images-table{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
@@ -754,7 +796,7 @@ a.reset-season-filter:hover{
 }
 
 
-/*-------------FAQ page----------------------------*/
+/*-------------------------------------FAQ page----------------------------*/
 .admin-FAQ-table{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
@@ -775,7 +817,7 @@ a.reset-season-filter:hover{
 
 
 
-/*-------------Office_hours page------------------------*/
+/*-------------------------------------Office_hours page------------------------*/
 .admin-office-hours-table{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
@@ -851,7 +893,7 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-/*-------------Reviews page------------------------*/
+/*-------------------------------------Reviews page------------------------*/
 .admin-review-table{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
@@ -968,7 +1010,7 @@ input:checked + .slider:before {
     margin-right: 15px;
 }
 
-/*-------------Countries--------------------------------*/
+/*-------------------------------------Countries--------------------------------*/
 .admin-countries-table{
     border: 1px solid #CED0D5;
     box-shadow: 0 0 15px #cecece;
@@ -982,7 +1024,7 @@ input:checked + .slider:before {
     padding: 20px;
 }
 
-/*-------------My profile--------------------------------*/
+/*-------------------------------------My profile--------------------------------*/
 .my-profile-content{
     display: flex;
     flex-direction: column;

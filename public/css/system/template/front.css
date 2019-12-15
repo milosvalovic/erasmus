@@ -6114,6 +6114,22 @@ a.close.disabled {
     cursor: default;
 }
 
+.spinner-border-2 {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    vertical-align: text-bottom;
+    border: .25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: spinner-border .75s linear infinite;
+    animation: spinner-border .75s linear infinite
+}
+
+.spinner-border-2:hover{
+    cursor: default;
+}
+
 .spinner-border-sm {
     width: 1rem;
     height: 1rem;
@@ -9520,6 +9536,10 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
+}
+
+.loading-primary-2{
+    color: #007183;
 }
 
 a.text-primary:focus, a.text-primary:hover {
