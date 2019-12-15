@@ -102,6 +102,8 @@ Route::get('/admin/season/delete_season/{id}', ['as' => 'deleteSeason', 'uses' =
 Route::get('/admin/season/restore_season/{id}', ['as' => 'restoreSeason', 'uses' => 'system\SeasonController@restoreSeason']);
 Route::get('/admin/season/detail/{id}', ['as' => 'detailSeason', 'uses' => 'system\SeasonController@showDetail']);
 Route::get('/admin/season/detail/delete_user_season/{id}', 'system\SeasonController@deleteUser_season')->name('deleteUser_season');
+Route::get('/admin/season/export_active', 'system\SeasonController@exportActiveSeasons')->name('exportActiveSeasons');
+Route::get('/admin/season/detail/export/{id}', 'system\SeasonController@exportUserSeason')->name('exportUserSeason');
 Route::post('/admin/season/newsletter', 'system\SeasonController@sendNewsletter')->name('sendNewsletter');
 Route::post('/admin/season/detail/search_users','system\SeasonController@filterUsers')->name('searchUsers');
 Route::post('/admin/season/edit','system\SeasonController@seasonEdit')->name('editSeason');
@@ -136,6 +138,7 @@ Route::post('/admin/blogs/change_blog_status', 'system\BlogController@changeBlog
 Route::get('/admin/universities', 'system\UniversityController@universities');
 Route::get('/admin/universities/edit_university/{id}', ['as' => 'edit_university_form', 'uses' => 'system\UniversityController@universityEditShow']);
 Route::get('/admin/universities/delete_university/{id}', ['as' => 'delete_university', 'uses' => 'system\UniversityController@deleteUniversity']);
+Route::get('/admin/universities/export', ['as' => 'exportUniversities', 'uses' => 'system\UniversityController@exportUniversities']);
 Route::post('/admin/universities/add_university/', ['as' => 'add_university', 'uses' => 'system\UniversityController@addUniversity']);
 Route::post('/admin/universities/edit_university/', ['as' => 'edit_university', 'uses' => 'system\UniversityController@editUniversity']);
 

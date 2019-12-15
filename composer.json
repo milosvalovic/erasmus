@@ -9,14 +9,15 @@
   "type": "project",
   "require": {
     "php": ">=7.0.0",
+    "ext-curl": "*",
     "fideloper/proxy": "~3.3",
     "intervention/image": "^2.5",
+    "ixudra/curl": "6.*",
     "laravel/framework": "5.5.*",
     "laravel/tinker": "~1.0",
     "laravelcollective/html": "~5.0",
-    "staudenmeir/eloquent-has-many-deep": "^1.7",
-    "ext-curl": "*",
-    "ixudra/curl": "6.*"
+    "maatwebsite/excel": "^3.1",
+    "staudenmeir/eloquent-has-many-deep": "^1.7"
   },
   "require-dev": {
     "filp/whoops": "~2.0",

@@ -57,6 +57,13 @@
                 <div class="admin-blogs-table">
                     <div class="admin-blogs-title">
                         <h2>Zoznam uchádzačov</h2>
+                        {{--@if(Auth::user()->roles_ID == 3)--}}
+                            {{--<a href="{{route('exportUserSeason',['id'=>$season_ID])}}">--}}
+                                {{--<button type="button" class="btn btn-outline-primary">--}}
+                                    {{--Exportovať aktuálne sezóny--}}
+                                {{--</button>--}}
+                            {{--</a>--}}
+                        {{--@endif--}}
                     </div>
                     <table class="table admin-table">
                         <thead>
@@ -169,7 +176,7 @@
                         console.log(xhr, resp, text);
                     }
                 });
-            },1200);
+            }, 1200);
         }
 
         function setTable(res) {
@@ -190,7 +197,7 @@
                     + "</tr>")
             });
             $(".signUser").on("submit", signInUser);
-            $("#users_table").fadeIn(1000, function(){
+            $("#users_table").fadeIn(1000, function () {
 
             });
 

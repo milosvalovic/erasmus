@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\system;
 
 
+use App\Exports\SeasonExport;
+use App\Exports\User_SeasonExport;
 use App\Http\Variables;
 use App\Mail\NewsletterMail;
 use App\Mail\StatusChangedEmail;
@@ -24,6 +26,7 @@ use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+use Maatwebsite\Excel\Facades\Excel;
 
 class SeasonController extends Controller
 {
@@ -647,6 +650,16 @@ class SeasonController extends Controller
     {
         Season::withTrashed()->find($id)->restore();
         return back();
+    }
+
+    public function exportActiveSeasons()
+    {
+        return Excel::download(new SeasonExport(), 'Akttívne sezóny - ' . date("d.m.Y",strtotime(now())) . '.xlsx');
+    }
+
+    public function exportUserSeason($id)
+    {
+        return Excel::download(new User_SeasonExport($id), 'Deatil sezóny.xlsx');
     }
 
 }
