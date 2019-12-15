@@ -34,6 +34,7 @@
                                 <div>
                                     <select name="role" class="form-control admin-form-input" id="addUserRole">
                                         <option disabled selected>Rola</option>
+                                        <option value="">Všetky</option>
                                         @foreach($roles as $role)
                                             <option value="{{$role->id}}">{{$role->name}}</option>
                                         @endforeach

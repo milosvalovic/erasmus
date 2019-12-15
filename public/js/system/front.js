@@ -291,11 +291,10 @@ $(document).ready(function () {
         $('#toInput').val('');
         $('#active').prop('checked', true);
         $('#sortSeasonDeleted').prop('checked', false);
-    }
+    };
 
     /*----------------------Section End----------------------------------------------------------------------------*/
 
-});
 
 function randomPassword() {
     var chars = "abcdefghijklmnopqrstuvwxyz!@_-+ABCDEFGHIJKLMNOP1234567890";
