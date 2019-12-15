@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="blog-detail--title">
-                        <p>Autor : Eduard Gabel&nbsp;&nbsp;|&nbsp;&nbsp;</p>
+                        <p>Autor : {{ $blog->user->first_name . ' ' . $blog->user->last_name}}&nbsp;&nbsp;|&nbsp;&nbsp;</p>
                         <p> Zverejnený dňa : {{ $blog->publish_date }}</p>
                         @if( $blog->status==1 )
                         <div class="blog-detail-active-status"></div>
