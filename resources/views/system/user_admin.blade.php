@@ -6,7 +6,7 @@
 
         <div class="admin-title">
             <div class="admin-title-text">
-                <h1>Používatelia</h1>
+                <h1>Administrácia používateľov</h1>
             </div>
             <div class="admin-title-user">
                 <p>{{Auth::user()->roles->name . ' | '.Auth::user()->first_name . ' '. Auth::user()->last_name }}</p>
@@ -18,7 +18,7 @@
                 <div class="col-xs-12 col-md-8">
                     <div class="user-table-wrapper">
                         <div class="user-table-title">
-                            <h2>Spravovanie používateľov</h2>
+                            <h2>Tabuĺka používateľov</h2>
                         </div>
                         <table class="table admin-table">
                             <thead>
@@ -71,7 +71,7 @@
                 <div class="col-xs-12 col-md-3 admin-add-new-item-div">
 
                     <form method="post" class="form-add-new-user" id="formAddNewUser" action="{{route('addUser')}}">
-                        <h3 class="form-title">Pridať člena</h3>
+                        <h3 class="form-title">Pridať užívateľa</h3>
                         @if (session('error'))
                             <div class="alert alert-danger">
                                 <h5>{{session('error')}}</h5>

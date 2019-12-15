@@ -9,14 +9,14 @@
                 <h1>Administrácia otváracích hodín</h1>
             </div>
             <div class="admin-title-user">
-                <p>{{Auth::user()->roles->name . ' | '.Auth::user()->first_name . ' '. Auth::user()->last_name }}</p>
+                <p><a href="{{ action('system\ProfileController@my_profile')}}">{{ Auth::user()->first_name . ' '. Auth::user()->last_name }}</a> <span> {{ Auth::user()->roles->name }} </span></p>
             </div>
         </div>
 
         <div class="admin-content">
             <div class="admin-office-hours-table">
                 <div class="admin-office-hours-title">
-                    <h2>Spravovanie rolí</h2>
+                    <h2>Tabuľka hodín</h2>
                 </div>
                 <table class="table admin-table">
                     <thead>

@@ -6,10 +6,10 @@
 
         <div class="admin-title">
             <div class="admin-title-text">
-                <h1>Detail</h1>
+                <h1>Detail blogu</h1>
             </div>
             <div class="admin-title-user">
-                <p>{{Auth::user()->roles->name . ' | '.Auth::user()->first_name . ' '. Auth::user()->last_name }}</p>
+                <p><a href="{{ action('system\ProfileController@my_profile')}}">{{ Auth::user()->first_name . ' '. Auth::user()->last_name }}</a> <span> {{ Auth::user()->roles->name }} </span></p>
             </div>
         </div>
 
@@ -24,7 +24,8 @@
                     </div>
 
                     <div class="blog-detail--title">
-                        <p>Zverejnený dňa / {{ $blog->publish_date }}</p>
+                        <p>Autor : Eduard Gabel&nbsp;&nbsp;|&nbsp;&nbsp;</p>
+                        <p> Zverejnený dňa : {{ $blog->publish_date }}</p>
                         @if( $blog->status==1 )
                         <div class="blog-detail-active-status"></div>
                         @else
