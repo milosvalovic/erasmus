@@ -7,9 +7,10 @@
         </ul>
     </div>
     <div>
-        {{ Form::open(array('url' => 'detail/mobilita/prihlasit', "id"=>"sign-up-mobility", "class"=>"form-inline my-2 my-lg-0", "enctype"=>"application/x-www-form-urlencoded")) }}
+        {{ Form::open(array('url' => '/detail/mobilita/prihlasit', "id"=>"sign-up-mobility", "class"=>"form-inline my-2 my-lg-0", "enctype"=>"application/x-www-form-urlencoded")) }}
             @if (Auth::check())
             <input type="hidden" name="mobility_id" value="{{$mobility_id->ID}}">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input class="form-control mr-sm-2"
                    type="submit" value="@lang('app.detail_submit_button')">
             @else

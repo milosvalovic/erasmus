@@ -248,7 +248,7 @@ class DetailController extends Controller
     public function signInMobility(Request $request)
     {
         if(Auth::check()) {
-            $userID = Auth::user()->id;
+            $userID = Auth::user()->ID;
             $mobilityID = $request->input('mobility_id');
             $offset = Variables::TIME_OFFSET;
 

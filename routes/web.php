@@ -31,7 +31,7 @@ Route::get('/typmobility', ['as' => 'mobility', 'uses' => 'client\MobilitiesCont
 
 Route::get('/detail/{id}', 'client\DetailController@detail');
 
-Route::post('detail/mobilita/prihlasit', ['as' => 'mobility-signup', 'uses' => 'client\DetailController@signInMobility'])->middleware('auth');
+Route::post('/detail/mobilita/prihlasit', ['as' => 'mobility-signup', 'uses' => 'client\DetailController@signInMobility'])->middleware('auth');
 
 Route::get('/otazky', 'client\FAQController@faq');
 
