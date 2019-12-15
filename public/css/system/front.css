@@ -148,14 +148,14 @@ table.admin-table tr th a{
     padding: 0 4px 0 0;
 }
 
-.admin-title-user > img{
+.admin-title-user > a > img{
     margin-left: 10px;
     width: 25px;
     height: 25px;
     cursor: pointer;
 }
 
-.admin-title-user > img:hover{
+.admin-title-user > a > img:hover{
     opacity: 0.5;
 }
 

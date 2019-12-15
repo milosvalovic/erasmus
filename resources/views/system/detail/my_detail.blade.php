@@ -11,7 +11,7 @@
                     <a href="{{ action('system\ProfileController@my_profile')}}">{{ Auth::user()->first_name . ' '. Auth::user()->last_name }}</a>
                     <span> {{ Auth::user()->roles->name }} </span></p>
                 <a href="{{ route('logout')}}" class="logout-admin-button">
-                    <img src="{{ asset('img/icon_logout.png') }}" href="{{ route('logout')}}" alt="" class="logout-admin-button">
+                    <img src="{{ asset('img/icon_logout.png') }}" alt="" class="logout-admin-button">
                 </a>
             </div>
         </div>
