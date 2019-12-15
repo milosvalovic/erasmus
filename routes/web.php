@@ -94,6 +94,7 @@ Route::get('/admin/season', 'system\SeasonController@season')->name('seasons');
 Route::get('/admin/season/add_season', 'system\SeasonController@newSeasonShow');
 Route::get('/admin/season/edit_season/{id}', ['as' => 'edit_season_form', 'uses' => 'system\SeasonController@seasonEditShow']);
 Route::get('/admin/season/delete_season/{id}', ['as' => 'deleteSeason', 'uses' => 'system\SeasonController@deleteSeason']);
+Route::get('/admin/season/restore_season/{id}', ['as' => 'restoreSeason', 'uses' => 'system\SeasonController@restoreSeason']);
 Route::get('/admin/season/detail/{id}', ['as' => 'detailSeason', 'uses' => 'system\SeasonController@showDetail']);
 Route::get('/admin/season/detail/delete_user_season/{id}', 'system\SeasonController@deleteUser_season')->name('deleteUser_season');
 Route::post('/admin/season/detail/search_users','system\SeasonController@filterUsers')->name('searchUsers');

@@ -83,21 +83,34 @@
                                     <div class="column-1">
                                         <div class="row-1">
                                             <label>Zobraziť len aktívne</label>
-                                            <input type="checkbox" class="form-check-input sort-filter-checkbox" id="active" name="active"
+                                            <input type="checkbox" class="form-check-input sort-filter-checkbox"
+                                                   id="active" name="active"
                                                    value="1" checked>
                                         </div>
-                                        <div class="row-2">
-                                            <label>Zobraziť vymazané</label>
-                                            <input type="checkbox" class="form-check-input sort-filter-checkbox" id="sortSeasonDeleted" name="active"
-                                                   value="1">
-                                        </div>
+                                        @if(Auth::user()->roles_ID == 3)
+                                            <div class="row-1">
+                                                <label>Zobraziť aj vymazané</label>
+                                                <input type="checkbox" class="form-check-input sort-filter-checkbox"
+                                                       id="sortSeasonDeleted" name="deleted"
+                                                       value="1">
+                                            </div>
+
+                                            <div class="row-1">
+                                                <label>Zobraziť len vymazané</label>
+                                                <input type="checkbox" class="form-check-input sort-filter-checkbox"
+                                                       id="sortSeasonOnlyDeleted" name="only_deleted"
+                                                       value="1">
+                                            </div>
+                                        @endif
                                     </div>
                                     <div class="column-2">
                                         <button type="button" id="reset"
-                                                class="btn btn-outline-secondary wider-button">Vynulovať</button>
+                                                class="btn btn-outline-secondary wider-button">Vynulovať
+                                        </button>
                                         <button type="submit" class="btn btn-outline-primary wider-button">Filtrovať
                                         </button>
                                     </div>
+
 
                                 </div>
                                 {{csrf_field()}}
@@ -148,6 +161,7 @@
 
     <script>
         var page = 0;
+        var isAdmin = {{Auth::user()->roles_ID == 3}};
 
         $(document).ready(function () {
             loadData();
@@ -183,9 +197,13 @@
             //var result = JSON.parse(res);
             res.forEach(function (element) {
                 if (element.count_registrations === -1) {
-                    // console.log(element);
+
                     element.count_registrations = "-";
                 }
+                var deleteButtonName = element.deleted_at==null  && isAdmin ? "Odstrániť" : "Vrátiť";
+                var deleteButtonColor = element.deleted_at==null && isAdmin ? "btn-outline-danger" : "btn-outline-info";
+                var deleteButtonLink = element.deleted_at==null && isAdmin ? "delete_season" : "restore_season";
+
                 $("#seasonTable > tbody:last-child").append(
                     "<tr>"
                     + "<th>" + "<div class=\"form-check\">\n" +
@@ -198,15 +216,15 @@
                     + "<td>" + element.university.name + " (" + element.country.name + ")</td>"
                     + "<td>" + element.mobility.mobility_type.name + "</td>"
                     + "<td>" + element.mobility.category.name + "</td>"
-                    + "<td>" + element.grant + "€</td>"
+                    + "<td>" + element.mobility.grant + "€</td>"
                     + "<td>" + element.date_start_mobility + "</td>"
                     + "<td>" + element.date_end_mobility + "</td>"
                     + "<th scope=\"row\">" +
                     "<a href=\"/public/admin/season/edit_season/" + element.ID + "\">" +
                     "<button type=\"button\" class=\"btn btn-outline-warning small-button sort-season-edit-button\">Upraviť</button>" +
                     "</a>" +
-                    "<a href=\"/public/admin/season/delete_season/" + element.ID + "\">" +
-                    "<button type=\"button\" class=\"btn btn-outline-danger small-button sort-season-delete-button\">Odstrániť</button>" +
+                    "<a href=\"/admin/season/" + deleteButtonLink + "/" + element.ID + "\">" +
+                    "<button type=\"button\" class=\"btn " + deleteButtonColor +" small-button sort-season-delete-button\" value=\"" + element.deleted_at + "\">" + deleteButtonName + "</button>" +
                     "</a>" +
                     "<a href=\"/public/admin/season/detail/" + element.ID + "\">" +
                     "<button type=\"button\" class=\"btn btn-outline-primary small-button sort-season-detail-button\">Detail</button>" +
@@ -248,6 +266,19 @@
 
         $("#select_all").change(function () {  //"select all" change
             $(".check-multi").prop('checked', $(this).prop("checked")); //change all ".checkbox" checked status
+        });
+
+        var sortSeasonDeletedChecked = false;
+
+        $("#sortSeasonOnlyDeleted").change(function () {
+            if($(this).prop("checked") == true) {
+                $("#sortSeasonDeleted").prop('disabled', true);
+                sortSeasonDeletedChecked = $("#sortSeasonDeleted").prop('checked')
+                $("#sortSeasonDeleted").prop('checked', false);
+            } else {
+                $("#sortSeasonDeleted").prop('disabled', false);
+                $("#sortSeasonDeleted").prop('checked', sortSeasonDeletedChecked);
+            }
         });
 
         //".checkbox" change
