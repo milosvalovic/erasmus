@@ -162,8 +162,8 @@ Route::post('/admin/countries/add_country', 'system\CountryController@addCountry
 Route::post('/admin/countries/edit_country', 'system\CountryController@editCountry')->name('editCountry');
 
 /*------Admin profile-------------*/
-    Route::get('/admin/my_profile', 'system\ProfileController@my_profile');
-    Route::get('/admin/newsleter_state/{status}', 'system\ProfileController@newsletterChange');
+Route::get('/admin/my_profile', 'system\ProfileController@my_profile');
+Route::get('/admin/newsleter_state/{status}', 'system\ProfileController@newsletterChange');
 
 });
 
