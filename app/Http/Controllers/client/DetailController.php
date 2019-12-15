@@ -21,7 +21,7 @@ class DetailController extends Controller
     public function signInMobilityTest($id)
     {
         if(Auth::check()) {
-            $userID = Auth::user()->id;
+            $userID = Auth::user()->ID;
             $mobilityID = $id;//$request->input('mobility_id');
             $offset = Variables::TIME_OFFSET;
 
@@ -340,7 +340,7 @@ class DetailController extends Controller
             try {
                 $season = Season::find($seasonID);
 
-                $user_season = $season->user_season()->create(array('users_ID' => $userID, 'season_ID' => $seasonID))->id;
+                $user_season = $season->user_season()->create(array('users_ID' => $userID, 'season_ID' => $seasonID))->ID;
 
                 $status_season = new Status_season();
                 $status_season->season_status_ID = Variables::SEASON_STATUS_PENDING_ID;
