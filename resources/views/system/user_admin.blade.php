@@ -19,7 +19,7 @@
                 <div class="col-xs-12 col-md-8">
                     <div class="user-table-wrapper">
                         <div class="user-table-title">
-                            <h2>Tabuĺka používateľov</h2>
+                            <h2>Tabuľka používateľov</h2>
                             <form class="form-inline" id="userSearchForm">
 
                                 <input type="hidden" id="pageUsers" name="page" value="0">
