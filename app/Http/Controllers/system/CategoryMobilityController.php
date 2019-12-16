@@ -17,7 +17,7 @@ class CategoryMobilityController extends Controller
 {
     public function mobility_category()
     {
-        $categories = Category::paginate(10);
+        $categories = Category::paginate(15);
         return view('system.mobility_category_admin',['mobilityCategories'=> $categories]);
     }
 

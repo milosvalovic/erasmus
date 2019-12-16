@@ -51,7 +51,7 @@
                             </tbody>
                         </table>
                         <nav class="admin-users-pagination" aria-label="Page navigation example">
-                            {{--TODO Here pagination--}}
+                            {{$mobilityCategories->links()}}
                         </nav>
                     </div>
                 </div>
