@@ -43,10 +43,10 @@
                                     <td><iframe class="obsah-iframe" srcdoc="{{ $item->description }}"></iframe></td>
                                     <th scope="row">
                                         <a href="{{ action('system\FaqController@faqEditShow',['id' => $item->ID]) }}">
-                                            <button type="button" class="btn btn-outline-warning">Upraviť</button>
+                                            <button type="button" class="btn btn-outline-warning admin-edit-button small-button">Upraviť</button>
                                         </a>
                                         <a href="{{route('deleteFaq',['id' => $item->ID])}}">
-                                            <button type="button" class="btn btn-outline-danger">Odstrániť</button>
+                                            <button type="button" class="btn btn-outline-danger admin-delete-button small-button">Odstrániť</button>
                                         </a>
                                     </th>
                                 </tr>

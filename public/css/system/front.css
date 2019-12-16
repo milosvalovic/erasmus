@@ -107,6 +107,16 @@ body {
     width: 100%
 }
 
+.admin-edit-button{
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+.admin-delete-button{
+    width: 100%;
+    margin-bottom: 4px;
+}
+
 
 /*-------------------------------------ADMIN table-----------------------*/
 .admin-table{
