@@ -1,4 +1,12 @@
 $('document').ready(function () {
+    if($("#number-of-mobilities")){
+        if($("#number-of-mobilities").children().length > 3){
+            $('#mobility-title').css("height", "auto");
+        }else{
+            $('#mobility-title').css("height", "100vh");
+        }
+    }
+
     const fileInput = document.querySelector(".input-file"),
         fileButton = document.querySelector(".input-file-trigger"),
         fileReturn = document.querySelector(".selected-file");
