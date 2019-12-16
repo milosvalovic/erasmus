@@ -4,7 +4,7 @@
 @section('css', asset('css/client/app/detail.css'))
 @section('masthead')
     @include('client.app.layout.detail.masthead', ['title'=> isset($mobilityDetail[0]->title)?$mobilityDetail[0]->title:'', 'background'=> isset($mobilityDetail[0]->university->img_url)?$mobilityDetail[0]->university->img_url:''])
-    @include('client.app.layout.detail.subnavigation', ['title'=> isset($mobilityDetail[0]->university->name)?$mobilityDetail[0]->university->name:'', 'season'=> isset($mobilityDetail[0]->season[0])?$mobilityDetail[0]->season[0]:'', 'mobility_id' => isset($mobilityDetail[0])?$mobilityDetail[0]:-1])
+    @include('client.app.layout.detail.subnavigation', ['title' => isset($mobilityDetail[0]->university->acronym)?$mobilityDetail[0]->university->acronym:'', 'season'=> isset($mobilityDetail[0]->season[0])?$mobilityDetail[0]->season[0]:'', 'mobility_id' => isset($mobilityDetail[0])?$mobilityDetail[0]:-1])
 @endsection
 @section('content')
     <div class="content">

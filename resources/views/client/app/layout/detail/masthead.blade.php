@@ -4,7 +4,13 @@
         <div class="row">
             <div class="col-xl-12 text-left">
                 <div class="title">
-                    <h1>{{$title}}</h1>
+                    @if(strlen($title)> 60)
+                    @php $pieces = explode(":", $title);@endphp
+                    <h1>{{$pieces[0]}}:</h1>
+                    <h1>{{$pieces[1]}}</h1>
+                    @else
+                        <h1>{{$title}}</h1>
+                    @endif
                 </div>
             </div>
         </div>

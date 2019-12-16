@@ -44,7 +44,7 @@ class ProfileController extends Controller
                         $query->select('ID','info','partner_university_ID');
                     },
                     'season.mobility.university' => function ($query) {
-                        $query->select('ID','country_ID','name');
+                        $query->select('ID','country_ID','name', 'acronym');
                     },
                     'season.mobility.university.country' => function ($query) {
                         $query->select('ID','name');
@@ -61,7 +61,7 @@ class ProfileController extends Controller
 
             foreach ($mobility as $item) {
                 $i = $item->season->mobility->university;
-                $item->place_name = $i->name . ', ' . $i->country->name;
+                $item->place_name = $i->acronym . ', ' . $i->country->name;
             }
 
             return $mobility;
