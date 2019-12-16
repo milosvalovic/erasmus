@@ -216,7 +216,6 @@ function loadUsersData() {
         dataType: 'json',
         data: $("#userSearchForm").serialize(),
         success: function (result) {
-            // console.log(result);
             $("#main_users_table tbody").empty();
             setUsersTable(result);
 
@@ -240,7 +239,6 @@ function loadUsersData() {
 
 function setUsersTable(res) {
     res.data.forEach(function (element) {
-        // console.log(element);
         $("#main_users_table > tbody:last-child").append(
             "<tr>"
             + "<td>" + element.ID + "</td>"
@@ -308,3 +306,137 @@ function randomPassword() {
     }
     return pass;
 }
+
+
+
+/*------------------------------------------Chart Section------------------------------------------------------------------*/
+
+$.ajax({
+    url: "/admin/charts",
+    type: "get",
+    dataType: 'json',
+    success: function (result) {
+        console.log(result);
+        var categoriesCount = new Array();
+        var categoriesNames = new Array();
+
+        var universitiesCount = new Array();
+        var universitiesNames = new Array();
+
+        var countriesCount = new Array();
+        var countriesNames = new Array();
+        result["categories"].forEach(function(data){
+            categoriesCount.push(data.mobility_count);
+            categoriesNames.push(data.name);
+        });
+        result.universities.forEach(function(data){
+            universitiesCount.push(data.user_season_count);
+            universitiesNames.push(data.acronym);
+        });
+        result.countries.forEach(function(data){
+            countriesCount.push(data.user_season_count);
+            countriesNames.push(data.name);
+        });
+        var universityCtx = document.getElementById("topUniversities").getContext('2d');
+
+        var universityChart = new Chart(universityCtx, {
+            type: 'bar',
+            data: {
+                labels:universitiesNames,
+                datasets: [{
+                    label: 'Počet prhlášok: ',
+                    data: universitiesCount,
+                    fill:false,
+                    backgroundColor:[
+                        "rgba(0, 113, 131, 1)",
+                        "rgba(0, 113, 131, 0.85)",
+                        "rgba(0, 113, 131, 0.75)",
+                        "rgba(0, 113, 131, 0.65)",
+                        "rgba(0, 113, 131, 0.6)",],
+
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                },
+                legend: {
+                    display: true
+                },
+            }
+        });
+
+        var countryCtx = document.getElementById("topCountries").getContext('2d');
+
+        var countriesChart = new Chart(countryCtx, {
+            type: 'bar',
+            data: {
+                labels:countriesNames,
+                datasets: [{
+                    label: 'Počet prhlášok: ',
+                    data: countriesCount,
+                    fill:false,
+                    backgroundColor:[
+                        "rgba(0, 113, 131, 1)",
+                        "rgba(0, 113, 131, 0.85)",
+                        "rgba(0, 113, 131, 0.75)",
+                        "rgba(0, 113, 131, 0.65)",
+                        "rgba(0, 113, 131, 0.6)",],
+
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
+
+        var categoryCtx = document.getElementById("topCategories");
+        var myPieChart = new Chart(categoryCtx, {
+            type: 'doughnut',
+            data: {
+                labels: categoriesNames,
+                datasets: [{
+                    data: categoriesCount,
+                    backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+                    hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+                    hoverBorderColor: "rgba(234, 236, 244, 1)",
+                }],
+            },
+            options: {
+                maintainAspectRatio: false,
+                tooltips: {
+                    backgroundColor: "rgb(255,255,255)",
+                    bodyFontColor: "#858796",
+                    borderColor: '#dddfeb',
+                    borderWidth: 1,
+                    xPadding: 15,
+                    yPadding: 15,
+                    displayColors: false,
+                    caretPadding: 10,
+                },
+                legend: {
+                    display: true
+                },
+                cutoutPercentage: 80,
+            },
+        });
+    },
+    error: function (xhr, resp, text) {
+        // console.log(xhr, resp, text);
+    }
+});
