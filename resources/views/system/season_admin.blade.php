@@ -140,10 +140,10 @@
                                         vybrané výzvy
                                     </button>
                                 @else
-                                    <a href="{{route('exportActiveSeasons')}}">
-                                    <button type="button" class="btn btn-outline-primary">
-                                        Exportovať aktuálne výzvy
-                                    </button>
+                                    <a href="{{route('exportActiveSeasons')}}" class="export-season--link">
+                                        <button type="button" class="btn btn-outline-primary">
+                                            Exportovať aktuálne výzvy
+                                        </button>
                                     </a>
                                 @endif
                                 <button type="submit" class="btn btn-outline-primary">Zaevidovať vybrané do ďalšej
