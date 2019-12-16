@@ -117,6 +117,29 @@ body {
     margin-bottom: 4px;
 }
 
+.admin-dashboard-menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.admin-dashboard-menu a{
+    margin-left: auto;
+    margin-right: auto;
+    color: #ffffff !important;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.admin-dashboard-menu a:hover{
+    color: grey !important;
+}
+
+.admin-dashboard-menu:hover{
+
+}
+
 
 /*-------------------------------------ADMIN table-----------------------*/
 .admin-table{
