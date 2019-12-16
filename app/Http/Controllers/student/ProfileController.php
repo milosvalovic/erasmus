@@ -50,7 +50,7 @@ class ProfileController extends Controller
                         $query->select('ID','name');
                     },
                     'status_season' => function ($query) {
-                        $query->select('ID','users_season_ID','season_status_ID')->orderBy('ID','DESC')->first();
+                        $query->select('ID','users_season_ID','season_status_ID')->orderBy('ID','DESC');
                     }
                 ])
                 ->whereHas('status_season', function($query){
@@ -90,7 +90,7 @@ class ProfileController extends Controller
                         $query->select('ID','name');
                     },
                     'status_season' => function ($query) {
-                        $query->select('ID','users_season_ID','season_status_ID')->orderBy('ID','DESC')->first();
+                        $query->select('ID','users_season_ID','season_status_ID')->orderBy('ID','DESC');
                     },
                     'status_season.season_status' => function ($query) {
                         $query->select('ID','name');

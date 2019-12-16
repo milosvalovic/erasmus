@@ -21,7 +21,7 @@
                     <tr>
                         <td>{{ $registration->season->mobility->university->country->name }}</td>
                         <td>{{ $registration->season->mobility->university->name }}</td>
-                        <td>{{ $registration->status_season[0]->season_status->name }}</td>
+                        <td>@if(isset($registration->status_season[0])){{ $registration->status_season[0]->season_status->name }} @else @lang('app.profil_status_error') @endif</td>
                         <td><a href="{{url('/detail'.'/'.$registration->season->mobility->ID)}}">Otvoriť</a></td>
                     </tr>
                 @endforeach

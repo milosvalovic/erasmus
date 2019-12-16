@@ -185,6 +185,7 @@ return [
     'profil_signup_table_status' => 'Stav',
     'profil_signup_table_detail' => 'Detail',
     'profil_no_signups' => 'Tabuľka je prázdna! Nepodali ste zatial žiadnú prihlášku.',
+    'profil_status_error' => 'Zistuje sa ',
 
 
     //Profil - Presentation
