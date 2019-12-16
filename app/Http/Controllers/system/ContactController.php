@@ -40,6 +40,7 @@ class ContactController extends Controller
         $contact->workplace = $request->input('contactWorkPlace');
         $contact->phone = $request->input('contactPhoneNumberPersonal');
         $contact->email = $request->input('contactEmail');
+        $contact->room = $request->input('contactRoom');
         $contact->save();
 
         return redirect('/admin/contacts');
@@ -62,6 +63,7 @@ class ContactController extends Controller
         $contact->workplace = $request->input('contactWorkPlace');
         $contact->phone = $request->input('contactPhoneNumberPersonal');
         $contact->email = $request->input('contactEmail');
+        $contact->room = $request->input('contactRoom');
         $contact->save();
 
         return redirect('/admin/contacts');
@@ -77,7 +79,6 @@ class ContactController extends Controller
         $validator = Validator::make($request->all(), [
             'contactFirstName' => 'required',
             'contactLastName' => 'required',
-            'contactWorkPlace' => 'required',
             'contactPhoneNumberWork' => 'required',
             'contactEmail' => 'required'
         ]);
