@@ -154,7 +154,7 @@ class DetailController extends Controller
         $mobilityDetail = Mobility::select('ID','mobility_types_ID','partner_university_ID','info','category_ID')
             ->with([
                 'university' => function($query){
-                    $query->select('ID','country_ID','name','img_url','info');
+                    $query->select('ID','country_ID','name','img_url','info', 'acronym');
                 }
                 ,'season' => function($query) use ($offset){
                     $query->select('ID','mobility_ID','date_end_reg','date_start_mobility','date_end_mobility')->where('date_end_reg','>',Carbon::now($offset))->first();
@@ -352,7 +352,7 @@ class DetailController extends Controller
                 \DB::commit();
                 return json_encode(array('status' => 'success',
                     'reason' => Lang::get('app.detail_sign_up_mobility_success'),
-                    'url' => url('/profil')));
+                    'url' => url('/profil/prihlasky')));
             } catch (\Exception $e) {
                 \DB::rollback();
                 return json_encode(array('status' => 'error',

@@ -31,7 +31,6 @@ class ProfileController extends Controller
     }
 
     private function getMobility(){
-
         if(Auth::check()){
             $userID = Auth::user()->ID;
 
@@ -44,13 +43,13 @@ class ProfileController extends Controller
                         $query->select('ID','info','partner_university_ID');
                     },
                     'season.mobility.university' => function ($query) {
-                        $query->select('ID','country_ID','name');
+                        $query->select('ID','country_ID','name', 'acronym');
                     },
                     'season.mobility.university.country' => function ($query) {
                         $query->select('ID','name');
                     },
                     'status_season' => function ($query) {
-                        $query->select('ID','users_season_ID','season_status_ID')->orderBy('ID','DESC')->first();
+                        $query->select('ID','users_season_ID','season_status_ID')->orderBy('ID','DESC');
                     }
                 ])
                 ->whereHas('status_season', function($query){
@@ -59,13 +58,16 @@ class ProfileController extends Controller
                 ->where('users_ID','=',$userID)
                 ->get();
 
+            $filterMobility = array();
             foreach ($mobility as $item) {
                 $i = $item->season->mobility->university;
-                $item->place_name = $i->name . ', ' . $i->country->name;
+                $item->place_name = $i->acronym . ', ' . $i->country->name;
+
+                if($item->status_season->first()->season_status_ID == Variables::SEASON_STATUS_DONE){
+                    array_push($filterMobility,$item);
+                }
             }
-
-            return $mobility;
-
+            return $filterMobility;
         }else{
             return 'error:user_login';
         }
@@ -90,7 +92,7 @@ class ProfileController extends Controller
                         $query->select('ID','name');
                     },
                     'status_season' => function ($query) {
-                        $query->select('ID','users_season_ID','season_status_ID')->orderBy('ID','DESC')->first();
+                        $query->select('ID','users_season_ID','season_status_ID')->orderBy('ID','DESC');
                     },
                     'status_season.season_status' => function ($query) {
                         $query->select('ID','name');
@@ -101,9 +103,14 @@ class ProfileController extends Controller
                 })
                 ->where('users_ID','=',$userID)
                 ->get();
+            $filterRegistrations = array();
+            foreach ($registrations as $item) {
+                if($item->status_season->first()->season_status_ID !== Variables::SEASON_STATUS_DONE){
+                    array_push($filterRegistrations,$item);
+                }
+            }
 
-
-            return $registrations;
+            return $filterRegistrations;
         }else{
             return 'error:user_login';
         }
