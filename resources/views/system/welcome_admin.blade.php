@@ -42,7 +42,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <canvas id="myPieChart" style="display: block; width: 486px; height: 245px;" width="486" height="245" class="chartjs-render-monitor"></canvas>
+                                        <canvas id="myPieChart" style="display: block; width: 486px; height: 245px;"
+                                                width="486" height="245" class="chartjs-render-monitor"></canvas>
                                     </div>
                                     <div class="mt-4 text-center small">
                                         <span class="mr-2">Kanada</span>
@@ -61,7 +62,9 @@
                                             <div class="card-body card-body-item">
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col mr-2">
-                                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Celkový počet používateľov</div>
+                                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                            Celkový počet používateľov
+                                                        </div>
                                                         <div class="h5 mb-0 font-weight-bold text-gray-800">746</div>
                                                     </div>
                                                     <div class="col-auto">
@@ -78,7 +81,9 @@
                                             <div class="card-body card-body-item">
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col mr-2">
-                                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Počet mobilít a výziev</div>
+                                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                            Počet mobilít a výziev
+                                                        </div>
                                                         <div class="h5 mb-0 font-weight-bold text-gray-800">18 345</div>
                                                     </div>
                                                     <div class="col-auto">
@@ -94,35 +99,39 @@
                                 <div class="row">
 
                                     <div class="col-md-6">
-                                    <div class="card border-left-warning shadow h-100 py-2">
-                                        <div class="card-body card-body-item">
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col mr-2">
-                                                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Počet partnerských univerzít</div>
-                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">45</div>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <i class="fa fa-university fa-3x" aria-hidden="true"></i>
+                                        <div class="card border-left-warning shadow h-100 py-2">
+                                            <div class="card-body card-body-item">
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="col mr-2">
+                                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                            Počet partnerských univerzít
+                                                        </div>
+                                                        <div class="h5 mb-0 font-weight-bold text-gray-800">45</div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <i class="fa fa-university fa-3x" aria-hidden="true"></i>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                     <div class="col-md-6">
-                                    <div class="card border-left-info shadow h-100 py-2">
-                                        <div class="card-body card-body-item">
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col mr-2">
-                                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Lorem ipsum</div>
-                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <i class="fa fa-battery-full fa-3x"></i>
+                                        <div class="card border-left-info shadow h-100 py-2">
+                                            <div class="card-body card-body-item">
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="col mr-2">
+                                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                            Lorem ipsum
+                                                        </div>
+                                                        <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <i class="fa fa-battery-full fa-3x"></i>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                 </div>
                             </div>
                         </div>
@@ -136,8 +145,17 @@
                                 <h6 class="m-0 font-weight-bold text-primary">Počet prihlásených študentov za deň</h6>
                             </div>
                             <div class="card-body">
-                                <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                                    <canvas id="myAreaChart" style="display: block; width: 1037px; height: 320px;" width="1037" height="320" class="chartjs-render-monitor"></canvas>
+                                <div class="chart-area">
+                                    <div class="chartjs-size-monitor">
+                                        <div class="chartjs-size-monitor-expand">
+                                            <div class=""></div>
+                                        </div>
+                                        <div class="chartjs-size-monitor-shrink">
+                                            <div class=""></div>
+                                        </div>
+                                    </div>
+                                    <canvas id="myAreaChart" style="display: block; width: 1037px; height: 320px;"
+                                            width="1037" height="320" class="chartjs-render-monitor"></canvas>
                                 </div>
                             </div>
                         </div>
