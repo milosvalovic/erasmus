@@ -124,20 +124,13 @@ body {
     margin-top: 5px;
 }
 
-.admin-dashboard-menu a{
-    margin-left: auto;
-    margin-right: auto;
-    color: #ffffff !important;
-    font-size: 24px;
-    cursor: pointer;
+.admin-dashboard-menu > a{
+    text-align: center !important;
+    padding: 10px !important;
 }
 
-.admin-dashboard-menu a:hover{
-    color: grey !important;
-}
-
-.admin-dashboard-menu:hover{
-
+.admin-dashboard-menu > a > span{
+    font-size: 24px !important;
 }
 
 

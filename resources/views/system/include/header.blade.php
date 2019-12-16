@@ -9,8 +9,8 @@
             <div class="sidebar-brand-text mx-3">Erasmus+</div>
         </a>
 
-        <li class="nav-item admin-menu-links-hover @if($url = str_contains(url()->current(), "admin/dashboard"))active @endif">
-            <a class="nav-link " href="{{ action('system\SystemController@system')}}">
+        <li class="nav-item admin-menu-links-hover admin-dashboard-menu @if($url = str_contains(url()->current(), "admin/dashboard"))active @endif">
+            <a class="nav-link" href="{{ action('system\SystemController@system')}}">
                 <span>Dashboard</span>
             </a>
         </li>
