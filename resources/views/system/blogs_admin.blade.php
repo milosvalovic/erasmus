@@ -61,9 +61,9 @@
                                     </div>
                                 </td>
                                 <th scope="row">
-                                    <button type="submit" class="btn btn-outline-primary">Uložiť</button>
+                                    <button type="submit" class="btn btn-outline-primary button wider-button">Uložiť</button>
                                     <a href="{{route('deleteBlog',['id'=>$blog->ID])  }}">
-                                        <button type="button" class="btn btn-outline-danger">Odstrániť</button>
+                                        <button type="button" class="btn btn-outline-danger wider-button">Odstrániť</button>
                                     </a>
                                 </th>
                                 {{csrf_field()}}

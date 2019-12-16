@@ -57,19 +57,13 @@
 
                             </tbody>
                         </table>
-                        {{--<nav class="admin-users-pagination">--}}
-                        {{--{{$users->links()}}--}}
-                        {{--</nav>--}}
-
                         <div>
                             <a id="loadPrevUsers">< Predošlé</a>
                             <a id="loadNextUsers">Ďalšie ></a>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-xs-12 col-md-3 admin-add-new-item-div">
-
                     <form method="post" class="form-add-new-user" id="formAddNewUser" action="{{route('addUser')}}">
                         <h3 class="form-title">Pridať užívateľa</h3>
                         @if (session('error'))
@@ -114,7 +108,6 @@
 
                     </form>
                 </div>
-
             </div>
 
         </div>

@@ -44,7 +44,7 @@
                         <td>@if($item->off==0)áno @else nie  @endif</td>
                         <th scope="row">
                             <a href="{{ action('system\OfficeHourController@office_hourEditShow',['id' => $item->ID]) }}">
-                                <button type="button" class="btn btn-outline-warning">Upraviť</button>
+                                <button type="button" class="btn btn-outline-warning admin-edit-button wider-button">Upraviť</button>
                             </a>
                         </th>
                     </tr>

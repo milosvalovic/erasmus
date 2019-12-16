@@ -40,10 +40,10 @@
                                 <td>{{$category->name}}</td>
                                 <th scope="row">
                                     <a href="{{ action('system\CategoryMobilityController@mobilityCategoryShow',['id' => $category->ID]) }}">
-                                        <button type="button" class="btn btn-outline-warning">Upraviť</button>
+                                        <button type="button" class="btn btn-outline-warning admin-edit-button small-button">Upraviť</button>
                                     </a>
                                     <a href="{{route('deleteCategory',['id'=>$category->ID])}}">
-                                        <button type="button" class="btn btn-outline-danger">Odstrániť</button>
+                                        <button type="button" class="btn btn-outline-danger admin-delete-button small-button">Odstrániť</button>
                                     </a>
                                 </th>
                             </tr>
@@ -51,7 +51,7 @@
                             </tbody>
                         </table>
                         <nav class="admin-users-pagination" aria-label="Page navigation example">
-                            {{--TODO Here pagination--}}
+                            {{$mobilityCategories->links()}}
                         </nav>
                     </div>
                 </div>
