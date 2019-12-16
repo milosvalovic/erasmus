@@ -251,7 +251,7 @@
                     "<a href=\"/admin/season/edit_season/" + element.ID + "\">" +
                     "<button type=\"button\" class=\"btn btn-outline-warning small-button sort-season-edit-button\">Upraviť</button>" +
                     "</a>" +
-                    "<a href=\"/season/" + deleteButtonLink + "/" + element.ID + "\">" +
+                    "<a href=\"/admin/season/" + deleteButtonLink + "/" + element.ID + "\">" +
                     "<button type=\"button\" class=\"btn " + deleteButtonColor + " small-button sort-season-delete-button\" value=\"" + element.deleted_at + "\">" + deleteButtonName + "</button>" +
                     "</a>" +
                     "<a href=\"/admin/season/detail/" + element.ID + "\">" +

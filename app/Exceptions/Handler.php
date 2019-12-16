@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Dotenv\Exception\ValidationException;
 use Exception;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
@@ -49,6 +50,9 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($exception instanceof AuthenticationException)
+            return response()->make(view('errors.408'), 408);
+
         $errors = array("Illuminate\Database\QueryException", "Symfony\Component\HttpKernel\Exception\NotFoundHttpException", "Symfony\Component\Debug\Exception\FatalThrowableError" , "ErrorException");
         if(in_array(get_class($exception), $errors)){
             return response()->make(view('errors.404'), 404);

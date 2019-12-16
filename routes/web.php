@@ -71,9 +71,6 @@ Route::group(['middleware' => ['web','auth','admin&org']], function () {
 Route::get('/admin/dashboard', 'system\SystemController@system');
 Route::get('/admin/charts', 'system\SystemController@charts');
 
-
-
-
 /*------Mobility----------------*/
 Route::get('/admin/mobilities', 'system\MobilityController@mobilities');
 Route::get('/admin/mobilities/edit_mobility/{id}', ['as' => 'edit_mobility_form', 'uses' => 'system\MobilityController@mobilityEditShow']);
@@ -90,8 +87,6 @@ Route::get('/admin/season/restore_season/{id}', ['as' => 'restoreSeason', 'uses'
 Route::get('/admin/season/detail/{id}', ['as' => 'detailSeason', 'uses' => 'system\SeasonController@showDetail']);
 Route::get('/admin/season/detail/delete_user_season/{id}', 'system\SeasonController@deleteUser_season')->name('deleteUser_season');
 Route::get('/admin/season/export_active', 'system\SeasonController@exportActiveSeasons')->name('exportActiveSeasons');
-
-
 Route::post('/admin/season/detail/search_users','system\SeasonController@filterUsers')->name('searchUsers');
 Route::post('/admin/season/edit','system\SeasonController@seasonEdit')->name('editSeason');
 Route::post('/admin/season/sort_season', 'system\SeasonController@sortSeasons')->name('sortSeasons');
