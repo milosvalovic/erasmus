@@ -701,6 +701,10 @@ a.reset-season-filter:hover{
     margin-bottom: 10px;
 }
 
+.export-season--link:hover{
+    text-decoration: none;
+}
+
 
 
 /*-------------------------------------Roles page-------------------------*/
