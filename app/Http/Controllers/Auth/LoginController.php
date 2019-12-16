@@ -43,9 +43,9 @@ class LoginController extends Controller
         if ($user->hasRole("student")) {
             return redirect('/profil');
         } else if ($user->hasRole("organizator")) {
-            return redirect('/admin');
+            return redirect('/admin/dashboard');
         } else if ($user->hasRole("administrator")) {
-            return redirect('/admin');
+            return redirect('/admin/dashboard');
         } else {
             abort(404);
         }
@@ -62,9 +62,9 @@ class LoginController extends Controller
         if ($user->hasRole("student")) {
             return redirect('/profil');
         } else if ($user->hasRole("organizator")) {
-            return redirect('/admin');
+            return redirect('/admin/dashboard');
         } else if ($user->hasRole("administrator")) {
-            return redirect('/admin');
+            return redirect('/admin/dashboard');
         } else {
             abort(404);
         }
