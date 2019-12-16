@@ -49,10 +49,10 @@
                                     <td>{{ $mobility->grant}}€</td>
                                     <th scope="row">
                                         <a href="{{ action('system\MobilityController@mobilityEditShow',['id' => $mobility->ID]) }}">
-                                            <button type="button" class="btn btn-outline-warning">Upraviť</button>
+                                            <button type="button" class="btn btn-outline-warning admin-edit-button small-button">Upraviť</button>
                                         </a>
                                         <a href="{{route('deleteMobility',['id' => $mobility->ID])}}">
-                                            <button type="button" class="btn btn-outline-danger">Odstrániť</button>
+                                            <button type="button" class="btn btn-outline-danger admin-delete-button small-button">Odstrániť</button>
                                         </a>
                                     </th>
                                 </tr>
