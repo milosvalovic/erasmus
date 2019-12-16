@@ -31,7 +31,6 @@ class ProfileController extends Controller
     }
 
     private function getMobility(){
-
         if(Auth::check()){
             $userID = Auth::user()->ID;
 
@@ -59,13 +58,16 @@ class ProfileController extends Controller
                 ->where('users_ID','=',$userID)
                 ->get();
 
+            $filterMobility = array();
             foreach ($mobility as $item) {
                 $i = $item->season->mobility->university;
                 $item->place_name = $i->acronym . ', ' . $i->country->name;
+
+                if($item->status_season->first()->season_status_ID == Variables::SEASON_STATUS_DONE){
+                    array_push($filterMobility,$item);
+                }
             }
-
-            return $mobility;
-
+            return $filterMobility;
         }else{
             return 'error:user_login';
         }
@@ -101,9 +103,14 @@ class ProfileController extends Controller
                 })
                 ->where('users_ID','=',$userID)
                 ->get();
+            $filterRegistrations = array();
+            foreach ($registrations as $item) {
+                if($item->status_season->first()->season_status_ID !== Variables::SEASON_STATUS_DONE){
+                    array_push($filterRegistrations,$item);
+                }
+            }
 
-
-            return $registrations;
+            return $filterRegistrations;
         }else{
             return 'error:user_login';
         }
