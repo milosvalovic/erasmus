@@ -6,7 +6,7 @@
 
         <div class="admin-title">
             <div class="admin-title-text">
-                <h1>Administrácia sezón</h1>
+                <h1>Administrácia výziev</h1>
             </div>
             <div class="admin-title-user">
                 <p>
@@ -23,9 +23,9 @@
 
             <div class="admin-season-table">
                 <div class="admin-season-title">
-                    <h1>Tabuľka sezón</h1>
+                    <h1>Tabuľka výziev</h1>
                     <a href="{{ action('system\SeasonController@newSeasonShow') }}">
-                        <button type="button" class="btn btn-outline-primary wider-button">Pridať novú sezónu</button>
+                        <button type="button" class="btn btn-outline-primary wider-button">Pridať novú výzvu</button>
                     </a>
                 </div>
                 <div class="admin-season-title">
@@ -137,17 +137,17 @@
                                 @if(Auth::user()->roles_ID==2)
                                     <button type="button" id="sendNewsletterButton" class="btn btn-outline-primary">
                                         Odoslať newsletter pre
-                                        vybrané sezóny
+                                        vybrané výzvy
                                     </button>
                                 @else
                                     <a href="{{route('exportActiveSeasons')}}">
                                     <button type="button" class="btn btn-outline-primary">
-                                        Exportovať aktuálne sezóny
+                                        Exportovať aktuálne výzvy
                                     </button>
                                     </a>
                                 @endif
                                 <button type="submit" class="btn btn-outline-primary">Zaevidovať vybrané do ďalšej
-                                    sezóny
+                                    výzvy
                                 </button>
 
                             </div>
@@ -248,13 +248,13 @@
                     + "<td>" + element.date_start_mobility + "</td>"
                     + "<td>" + element.date_end_mobility + "</td>"
                     + "<th scope=\"row\">" +
-                    "<a href=\"/public/admin/season/edit_season/" + element.ID + "\">" +
+                    "<a href=\"/admin/season/edit_season/" + element.ID + "\">" +
                     "<button type=\"button\" class=\"btn btn-outline-warning small-button sort-season-edit-button\">Upraviť</button>" +
                     "</a>" +
-                    "<a href=\"/admin/season/" + deleteButtonLink + "/" + element.ID + "\">" +
+                    "<a href=\"/season/" + deleteButtonLink + "/" + element.ID + "\">" +
                     "<button type=\"button\" class=\"btn " + deleteButtonColor + " small-button sort-season-delete-button\" value=\"" + element.deleted_at + "\">" + deleteButtonName + "</button>" +
                     "</a>" +
-                    "<a href=\"/public/admin/season/detail/" + element.ID + "\">" +
+                    "<a href=\"/admin/season/detail/" + element.ID + "\">" +
                     "<button type=\"button\" class=\"btn btn-outline-primary small-button sort-season-detail-button\">Detail</button>" +
                     "</a>" +
                     "</th>"

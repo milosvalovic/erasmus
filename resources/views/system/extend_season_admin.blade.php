@@ -6,7 +6,7 @@
 
         <div class="admin-title">
             <div class="admin-title-text">
-                <h1>Sezóny</h1>
+                <h1>Výzvy</h1>
             </div>
             <div class="admin-title-user">
                 <p>
@@ -26,7 +26,7 @@
                         {{Form::open(['url'=>'/admin/season/extend'])}}
                         <div class="user-table-title">
 
-                            <h2>Multievidencia nových sezón</h2>
+                            <h2>Multievidencia nových výzvy</h2>
                             @if (session('error'))
                                 <div class="alert alert-danger">
                                     <h5>{{session('error')}}</h5>

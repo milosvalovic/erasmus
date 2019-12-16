@@ -151,7 +151,7 @@ class CountrySeeder extends Seeder
         ]);
 
         DB::table('countries')->insert([
-            'name' => 'Veľká Brit�nia',
+            'name' => 'Veľká Británia',
             'country_code' => 'uk',
             'erasmus_code' => 'uk'
         ]);

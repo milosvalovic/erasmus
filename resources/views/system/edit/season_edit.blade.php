@@ -6,7 +6,7 @@
 
         <div class="admin-title">
             <div class="admin-title-text">
-                <h1>Editácia sezóny</h1>
+                <h1>Editácia výzvy</h1>
             </div>
             <div class="admin-title-user">
                 <p>

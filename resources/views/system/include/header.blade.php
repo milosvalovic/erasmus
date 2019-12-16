@@ -38,7 +38,7 @@
         <li class="nav-item admin-menu-links-hover @if($url = str_contains(url()->current(), "admin/season"))active @endif">
             <a class="nav-link" href="{{ action('system\SeasonController@season')}}">
                 <i class="fa fa-ravelry" aria-hidden="true"></i>
-                <span>Sezóny</span>
+                <span>Výzvy</span>
             </a>
         </li>
 

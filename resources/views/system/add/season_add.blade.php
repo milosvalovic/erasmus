@@ -6,7 +6,7 @@
 
         <div class="admin-title">
             <div class="admin-title-text">
-                <h1>Pridanie novej sezóny</h1>
+                <h1>Pridanie novej výzvy</h1>
             </div>
             <div class="admin-title-user">
                 <p>
@@ -22,7 +22,7 @@
 
             <div class="admin-add-new-item-div">
                 <form id="addNewSeasonForm" method="post" action="">
-                    <h3 class="form-title">Pridať sezónu</h3>
+                    <h3 class="form-title">Pridať výzvy</h3>
 
                     @if (session('error'))
                         <div class="alert alert-danger">

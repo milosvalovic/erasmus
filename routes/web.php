@@ -123,11 +123,6 @@ Route::get('/admin/reviews/edit_review/{id}', ['as' => 'edit_review_form', 'uses
 Route::get('/admin/reviews/delete/{id}', ['as' => 'delete_image', 'uses' => 'system\ReviewsController@deleteImage']);
 Route::get('/admin/reviews/revert/{id}', ['as' => 'revert_image', 'uses' => 'system\ReviewsController@revertImage']);
 
-/*------Images----------------*/
-Route::get('/admin/images', 'system\ImageController@images');
-
-
-
 /*------Countries-------------*/
 Route::get('/admin/countries', 'system\CountryController@countries');
 Route::get('/admin/countries/edit_country/{id}', ['as' => 'edit_country', 'uses' => 'system\CountryController@countryEditShow']);
