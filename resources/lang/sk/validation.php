@@ -13,4 +13,5 @@ return [
     'confirmed' => 'Heslá sa nezhodujú', 
     'unique' => 'E-mailová adresa sa už používa',
     'after' => 'Postupnosť dátumov nie je správna',
+    'email' => 'E-mailová adresa nemá správny tvar',
 ];
