@@ -28,7 +28,7 @@
                         <input type="hidden" id="page" name="page" value="0">
                         <label for="search" class="mb-2 mr-sm-2">Hľadať:</label>
                         <input type="text" placeholder="Meno/Priezvisko/Email" class="form-control" id="search_user"
-                               name="term" autocomplete="off" minlength="3">
+                               name="term" autocomplete="off">
                         {{csrf_field()}}
                         <button type="submit" class="btn btn-outline-primary" id="search_user_buuton">Hľadať</button>
                         <div class="lds-hourglass" id="loaderSeasonSearchUser"></div>
@@ -127,7 +127,7 @@
 
     <script type="text/javascript">
 
-        var path = "/public/admin/season/detail/search_users";
+        var path = "/admin/season/detail/search_users";
         var season_ID = "{{$season_ID}}";
 
         $(document).ready(function () {
@@ -173,7 +173,7 @@
                         $('#loaderSeasonSearchUser').hide();
                     },
                     error: function (xhr, resp, text) {
-                        console.log(xhr, resp, text);
+                        $('#loaderSeasonSearchUser').hide();
                     }
                 });
             }, 1200);
@@ -225,7 +225,7 @@
 
             $.ajax({
                 type: "POST",
-                url: '/public/admin/season/detail/add_user_to_season',
+                url: '/admin/season/detail/add_user_to_season',
                 dataType: 'json',
                 data: $(form).serialize(),
                 success: function (data) {
