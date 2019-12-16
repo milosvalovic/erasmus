@@ -47,10 +47,10 @@
                                     <td>{{ $contact->room }}</td>
                                     <th scope="row">
                                         <a href="{{ action('system\ContactController@contactsEditShow',['id' => $contact->ID]) }}">
-                                            <button type="button" class="btn btn-outline-warning">Upraviť</button>
+                                            <button type="button" class="btn btn-outline-warning admin-edit-button small-button">Upraviť</button>
                                         </a>
                                         <a href="{{route('deleteContact',['id'=>$contact->ID])}}">
-                                            <button type="button" class="btn btn-outline-danger">Odstrániť</button>
+                                            <button type="button" class="btn btn-outline-danger admin-edit-button small-button">Odstrániť</button>
                                         </a>
                                     </th>
                                 </tr>
