@@ -31,14 +31,14 @@
                     </div>
                     <div class="grand">
                         <label for="from">@lang('app.search_modal_label_grand')</label>
-                        <input type="text" name="grand" id="grand" value="" placeholder="420€">
+                        <input type="text" name="grand" id="grand" value="{{ isset($last_search_criteria['grand'])?$last_search_criteria['grand']:'' }}" placeholder="420€">
                     </div>
                     <div class="category">
                         <label for="from">@lang('app.search_modal_label_mobility_category')</label>
                         <select name="category">
                             <option value="">@lang('app.search_modal_label_all')</option>
                             @foreach($category as $key => $input)
-                                @if($key == $last_search_criteria['stays'])
+                                @if($key == $last_search_criteria['category'])
                                     <option value="{{$key}}" selected="selected">{{$input}}</option>
                                 @else
                                     <option value="{{$key}}">{{$input}}</option>
