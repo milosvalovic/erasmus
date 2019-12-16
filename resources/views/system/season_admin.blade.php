@@ -215,8 +215,6 @@
         }
 
         function setTable(res) {
-            // console.log(res);
-            //var result = JSON.parse(res);
             res.forEach(function (element) {
                 if (element.count_registrations === -1) {
 
@@ -301,7 +299,7 @@
         $("#sortSeasonOnlyDeleted").change(function () {
             if ($(this).prop("checked") == true) {
                 $("#sortSeasonDeleted").prop('disabled', true);
-                sortSeasonDeletedChecked = $("#sortSeasonDeleted").prop('checked')
+                sortSeasonDeletedChecked = $("#sortSeasonDeleted").prop('checked');
                 $("#sortSeasonDeleted").prop('checked', false);
             } else {
                 $("#sortSeasonDeleted").prop('disabled', false);
@@ -328,19 +326,6 @@
             });
 
         });
-
-        //".checkbox" change
-        /*$('.form-check-input').change(function () {
-            //uncheck "select all", if one of the listed checkbox item is unchecked
-            if (false == $(this).prop("checked")) { //if this item is unchecked
-                $("#select_all").prop('checked', false); //change "select all" checked status to false
-            }
-            //check "select all" if all checkbox items are checked
-            if ($('.checkbox:checked').length == $('.form-check-input').length) {
-                $("#select_all").prop('checked', true);
-            }
-        });*/
-
     </script>
 @endsection
 
