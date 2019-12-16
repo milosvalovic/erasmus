@@ -69,6 +69,7 @@ Route::get('/novinky/{email}/{hash}','Auth\Newsletter@signOut');
 /*------------------------------- Admin routes---------------------------------------------------------------------------------------------------------------------*/
 Route::group(['middleware' => ['web','auth','admin&org']], function () {
 Route::get('/admin', 'system\SystemController@system');
+Route::get('/admin/charts', 'system\SystemController@charts');
 
 /*------User routes-------------*/
 Route::get('/admin/users', 'system\UserController@users');
