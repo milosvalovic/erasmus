@@ -1,13 +1,14 @@
 <div class="admin-header">
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-        <a class="sidebar-brand d-flex align-items-center justify-content-center"
-           href="{{ action('system\SystemController@system')}}">
-            <div class="sidebar-brand-icon">
-                <i class="admin-ukf-logo"></i>
-            </div>
+        <div class="sidebar-brand">
+            <a class="d-flex align-items-center justify-content-center" href="{{url('')}}">
+                <div class="sidebar-brand-icon">
+                    <i class="admin-ukf-logo"></i>
+                </div>
+            </a>
             <div class="sidebar-brand-text mx-3">Erasmus+</div>
-        </a>
+        </div>
 
         <li class="nav-item admin-menu-links-hover admin-dashboard-menu @if($url = str_contains(url()->current(), "admin/dashboard"))active @endif">
             <a class="nav-link" href="{{ action('system\SystemController@system')}}">
@@ -26,7 +27,7 @@
             </a>
         </li>
 
-        <li class="nav-item admin-menu-links-hover @if($url = str_contains(url()->current(), "admin/mobilities"))active @endif">
+        <li class="nav-item admin-menu-links-hover @if($url = str_contains(url()->current(), "admin/mobilities/"))active @endif">
             <a class="nav-link" href="{{ action('system\MobilityController@mobilities')}}">
                 <i class="fa fa-list-alt" aria-hidden="true"></i>
                 <span>Mobility</span>
