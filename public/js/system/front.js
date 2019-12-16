@@ -211,12 +211,12 @@ loadUsersData();
 
 function loadUsersData() {
     $.ajax({
-        url: "/admin/users/search",
+        url: "/public/admin/users/search",
         type: "POST",
         dataType: 'json',
         data: $("#userSearchForm").serialize(),
         success: function (result) {
-            console.log(result);
+            // console.log(result);
             $("#main_users_table tbody").empty();
             setUsersTable(result);
 
@@ -240,20 +240,20 @@ function loadUsersData() {
 
 function setUsersTable(res) {
     res.data.forEach(function (element) {
-        console.log(element);
+        // console.log(element);
         $("#main_users_table > tbody:last-child").append(
             "<tr>"
             + "<td>" + element.ID + "</td>"
-            + "<td><a class=\"admin-blog-table\" href = \"" + "/admin/users/detail/" + element.ID + "\" >" + element.first_name + "</a></td>"
-            + "<td><a class=\"admin-blog-table\" href = \"" + "/admin/users/detail/" + element.ID + "\" >" + element.last_name + "</a></td>"
+            + "<td><a class=\"admin-blog-table\" href = \"" + "/public/admin/users/detail/" + element.ID + "\" >" + element.first_name + "</a></td>"
+            + "<td><a class=\"admin-blog-table\" href = \"" + "/public/admin/users/detail/" + element.ID + "\" >" + element.last_name + "</a></td>"
             + "<td>" + element.email + "</td>"
             + "<td>" + element.roles.name + "</td>"
             + "<th scope=\"row\">" +
             "<a href=\"/admin/users/edit_user/" + element.ID + "\">" +
-            "<button type=\"button\" class=\"btn btn-outline-warning\">Upraviť</button>" +
+            "<button type=\"button\" class=\"btn btn-outline-warning admin-edit-button small-button\">Upraviť</button>" +
             "</a>" +
             "<a href=\"/admin/users/delete/" + element.ID + "\">" +
-            "<button type=\"button\" class=\"btn btn-outline-danger\">Odstrániť</button>" +
+            "<button type=\"button\" class=\"btn btn-outline-danger admin-delete-button small-button\">Odstrániť</button>" +
             "</a>"
             + "</th></tr>"
         )
