@@ -292,6 +292,8 @@ function setDefaultFilter() {
     $('#toInput').val('');
     $('#active').prop('checked', true);
     $('#sortSeasonDeleted').prop('checked', false);
+    $("#sortSeasonDeleted").prop('disabled', false);
+    $('#sortSeasonOnlyDeleted').prop('checked', false);
 };
 
 /*----------------------Section End----------------------------------------------------------------------------*/

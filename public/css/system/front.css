@@ -678,6 +678,29 @@ a.reset-season-filter:hover{
     }
 }
 
+/*--Extend-season--*/
+
+.season-university{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 300px;
+    max-width: 300px;
+}
+
+.extend-limit-table-data input#registrationLimitCheckbox{
+    width: 20px;
+    height: 20px;
+}
+
+#seasonTable thead tr th.typ-season-head{
+    min-width: 130px;
+}
+
+#saveNewSeasons{
+    margin-bottom: 10px;
+}
+
 
 
 /*-------------------------------------Roles page-------------------------*/

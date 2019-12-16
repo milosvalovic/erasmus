@@ -58,7 +58,7 @@
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col mr-2">
                                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                            Celkový počet používateľov
+                                                            Počet používateľov
                                                         </div>
                                                         <div class="h5 mb-0 font-weight-bold text-gray-800">{{$userCount}}</div>
                                                     </div>
@@ -77,7 +77,7 @@
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col mr-2">
                                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                            Celkový počet prihlášok
+                                                            Počet prihlášok
                                                         </div>
                                                         <div class="h5 mb-0 font-weight-bold text-gray-800">{{$user_seasonCount}}</div>
                                                     </div>
@@ -99,7 +99,7 @@
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col mr-2">
                                                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                            Počet partnerských univerzít
+                                                            Partnerských univerzít
                                                         </div>
                                                         <div class="h5 mb-0 font-weight-bold text-gray-800">{{$university_count}}</div>
                                                     </div>
@@ -116,7 +116,7 @@
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col mr-2">
                                                         <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                                            Celkový počet hodnotení
+                                                            Počet hodnotení
                                                         </div>
                                                         <div class="h5 mb-0 font-weight-bold text-gray-800">{{$reviews_count}}</div>
                                                     </div>
