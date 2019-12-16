@@ -26,7 +26,7 @@
                         <div class="col-xs-12 col-md-4">
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Najnavštevovanejšie krajiny</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Najpopularnejšie kategórie</h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="chart-pie pt-4 pb-2">
@@ -42,13 +42,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <canvas id="myPieChart" style="display: block; width: 486px; height: 245px;"
+                                        <canvas id="topCategories" style="display: block; width: 486px; height: 245px;"
                                                 width="486" height="245" class="chartjs-render-monitor"></canvas>
-                                    </div>
-                                    <div class="mt-4 text-center small">
-                                        <span class="mr-2">Kanada</span>
-                                        <span class="mr-2">Čína</span>
-                                        <span class="mr-2">Austrália</span>
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +60,7 @@
                                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                             Celkový počet používateľov
                                                         </div>
-                                                        <div class="h5 mb-0 font-weight-bold text-gray-800">746</div>
+                                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$userCount}}</div>
                                                     </div>
                                                     <div class="col-auto">
                                                         <i class="fa fa-user-o fa-3x"></i>
@@ -82,9 +77,9 @@
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col mr-2">
                                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                            Počet mobilít a výziev
+                                                            Celkový počet prihlášok
                                                         </div>
-                                                        <div class="h5 mb-0 font-weight-bold text-gray-800">18 345</div>
+                                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$user_seasonCount}}</div>
                                                     </div>
                                                     <div class="col-auto">
                                                         <i class="fa fa-list-alt fa-3x" aria-hidden="true"></i>
@@ -106,7 +101,7 @@
                                                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                             Počet partnerských univerzít
                                                         </div>
-                                                        <div class="h5 mb-0 font-weight-bold text-gray-800">45</div>
+                                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$university_count}}</div>
                                                     </div>
                                                     <div class="col-auto">
                                                         <i class="fa fa-university fa-3x" aria-hidden="true"></i>
@@ -121,12 +116,12 @@
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col mr-2">
                                                         <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                                            Lorem ipsum
+                                                            Celkový počet hodnotení
                                                         </div>
-                                                        <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$reviews_count}}</div>
                                                     </div>
                                                     <div class="col-auto">
-                                                        <i class="fa fa-battery-full fa-3x"></i>
+                                                        <i class="fa fa-star-o fa-3x"></i>
                                                     </div>
                                                 </div>
                                             </div>
@@ -142,7 +137,7 @@
                     <div class="row card-graph">
                         <div class="card shadow mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">Počet prihlásených študentov za deň</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Najpopulárnejšie univerzity</h6>
                             </div>
                             <div class="card-body">
                                 <div class="chart-area">
@@ -154,7 +149,31 @@
                                             <div class=""></div>
                                         </div>
                                     </div>
-                                    <canvas id="myAreaChart" style="display: block; width: 1037px; height: 320px;"
+                                    <canvas id="topUniversities" style="display: block; width: 1037px; height: 320px;"
+                                            width="1037" height="420" class="chartjs-render-monitor"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="dashboard-summary-3">
+                    <div class="row card-graph">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">Najväčší zaujem o krajny</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-area">
+                                    <div class="chartjs-size-monitor">
+                                        <div class="chartjs-size-monitor-expand">
+                                            <div class=""></div>
+                                        </div>
+                                        <div class="chartjs-size-monitor-shrink">
+                                            <div class=""></div>
+                                        </div>
+                                    </div>
+                                    <canvas id="topCountries" style="display: block; width: 1037px; height: 320px;"
                                             width="1037" height="320" class="chartjs-render-monitor"></canvas>
                                 </div>
                             </div>
