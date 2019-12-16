@@ -53,7 +53,7 @@ class Handler extends ExceptionHandler
         if ($exception instanceof AuthenticationException)
             return response()->make(view('errors.408'), 408);
 
-        $errors = array("Illuminate\Database\QueryException", "Symfony\Component\HttpKernel\Exception\NotFoundHttpException", "Symfony\Component\Debug\Exception\FatalThrowableError" , "ErrorException");
+        $errors = array("Illuminate\Database\QueryException", "Symfony\Component\HttpKernel\Exception\NotFoundHttpException", "Symfony\Component\Debug\Exception\FatalThrowableError" , "ErrorException" ,"Illuminate\Support\Facades\Mail");
         if(in_array(get_class($exception), $errors)){
             return response()->make(view('errors.404'), 404);
         }else{
