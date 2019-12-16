@@ -57,10 +57,6 @@
 
                             </tbody>
                         </table>
-                        {{--<nav class="admin-users-pagination">--}}
-                        {{--{{$users->links()}}--}}
-                        {{--</nav>--}}
-
                         <div>
                             <a id="loadPrevUsers">< Predošlé</a>
                             <a id="loadNextUsers">Ďalšie ></a>

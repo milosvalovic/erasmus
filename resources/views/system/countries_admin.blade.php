@@ -45,10 +45,10 @@
                                     <td>{{ $country->erasmus_code }}</td>
                                     <th scope="row">
                                         <a href="{{ action('system\CountryController@countryEditShow',['id' => $country->ID]) }}">
-                                            <button type="button" class="btn btn-outline-warning">Upraviť</button>
+                                            <button type="button" class="btn btn-outline-warning admin-edit-button small-button">Upraviť</button>
                                         </a>
                                         <a href="{{route('deleteCountry',['id'=>$country->ID])}}">
-                                            <button type="button" class="btn btn-outline-danger">Odstrániť</button>
+                                            <button type="button" class="btn btn-outline-danger admin-delete-button small-button">Odstrániť</button>
                                         </a>
                                     </th>
                                 </tr>
