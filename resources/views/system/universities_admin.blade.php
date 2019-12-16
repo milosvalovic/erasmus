@@ -57,10 +57,10 @@
                                              class="image-in-table zoom"></td>
                                     <th scope="row">
                                         <a href="{{ action('system\UniversityController@universityEditShow',['id' => $university->ID]) }}">
-                                            <button type="button" class="btn btn-outline-warning">Upraviť</button>
+                                            <button type="button" class="btn btn-outline-warning admin-edit-button small-button">Upraviť</button>
                                         </a>
                                         <a href="{{route('delete_university',['id' => $university->ID])}}">
-                                            <button type="button" class="btn btn-outline-danger">Odstrániť</button>
+                                            <button type="button" class="btn btn-outline-danger admin-delete-button small-button">Odstrániť</button>
                                         </a>
                                     </th>
                                 </tr>
@@ -69,11 +69,9 @@
                         </table>
                         <nav class="admin-users-pagination">
                             {{ $universities->links()}}
-{{--                            {!! $universities !!}--}}
                         </nav>
                     </div>
                 </div>
-
                 <div class="col-xs-12 col-md-3 admin-add-new-item-div">
                     {{ Form::open(array('route' => 'add_university','files'=>'true')) }}
                     <h3 class="form-title">Pridať univerzitu</h3>
@@ -132,7 +130,6 @@
                     {{csrf_field()}}
                     {{Form::close()}}
                 </div>
-
             </div>
         </div>
 
