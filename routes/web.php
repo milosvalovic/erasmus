@@ -72,22 +72,7 @@ Route::get('/admin/dashboard', 'system\SystemController@system');
 Route::get('/admin/charts', 'system\SystemController@charts');
 
 
-/*------User routes-------------*/
-Route::get('/admin/users', 'system\UserController@users');
-Route::get('/admin/users/edit_user/{id}', ['as' => 'edit_user_form', 'uses' => 'system\UserController@userEditShow']);
-Route::post('/admin/users/add_user', 'system\UserController@addUser')->name('addUser');
-Route::post('/admin/users/edit_user', 'system\UserController@editUser')->name('editUser');
-Route::post('/admin/users/search', 'system\UserController@sortUsers')->name('searchUsersMain');
-Route::get('/admin/users/delete/{id}', 'system\UserController@deleteUser')->name('deleteUser');
 
-Route::get('/admin/users/detail/{id}', ['as' => 'user_detail', 'uses' => 'system\UserController@userDetail']);
-
-/*------Roles-------------------*/
-Route::get('/admin/roles', 'system\UserRoleController@roles');
-Route::get('/admin/roles/edit_role/{id}', ['as' => 'edit_role_form', 'uses' => 'system\UserRoleController@userRoleEditShow']);
-Route::post('/admin/roles/add_role', 'system\UserRoleController@addRole')->name('addRole');
-Route::post('/admin/roles/edit_role', 'system\UserRoleController@editRole')->name('editRole');
-Route::get('/admin/roles/delete/{id}', 'system\UserRoleController@deleteRole')->name('deleteRole');
 
 /*------Mobility----------------*/
 Route::get('/admin/mobilities', 'system\MobilityController@mobilities');
@@ -105,8 +90,8 @@ Route::get('/admin/season/restore_season/{id}', ['as' => 'restoreSeason', 'uses'
 Route::get('/admin/season/detail/{id}', ['as' => 'detailSeason', 'uses' => 'system\SeasonController@showDetail']);
 Route::get('/admin/season/detail/delete_user_season/{id}', 'system\SeasonController@deleteUser_season')->name('deleteUser_season');
 Route::get('/admin/season/export_active', 'system\SeasonController@exportActiveSeasons')->name('exportActiveSeasons');
-Route::get('/admin/season/detail/export/{id}', 'system\SeasonController@exportUserSeason')->name('exportUserSeason');
-Route::post('/admin/season/newsletter', 'system\SeasonController@sendNewsletter')->name('sendNewsletter');
+
+
 Route::post('/admin/season/detail/search_users','system\SeasonController@filterUsers')->name('searchUsers');
 Route::post('/admin/season/edit','system\SeasonController@seasonEdit')->name('editSeason');
 Route::post('/admin/season/sort_season', 'system\SeasonController@sortSeasons')->name('sortSeasons');
@@ -116,19 +101,7 @@ Route::post('/admin/season/detail/add_user_to_season', 'system\SeasonController@
 Route::post('/admin/season/add_season', 'system\SeasonController@addSeason')->name('addSeason');
 Route::post('/admin/season/detail/change_status', 'system\SeasonController@changeStatus')->name('changeStatus');
 
-/*------Mobility category-------*/
-Route::get('/admin/mobilities_category', 'system\CategoryMobilityController@mobility_category');
-Route::get('/admin/mobilities_category/edit_category/{id}', ['as' => 'edit_mobility', 'uses' => 'system\CategoryMobilityController@mobilityCategoryShow']);
-Route::post('/admin/mobilities_category/add_category', 'system\CategoryMobilityController@addNewCategory');
-Route::post('/admin/mobilities_category/edit_category', 'system\CategoryMobilityController@editCategory')->name('editCategory');
-Route::get('/admin/mobilities_category/delete/{id}', 'system\CategoryMobilityController@deleteCategory')->name('deleteCategory');
 
-/*------Mobility type---------*/
-Route::get('/admin/mobility_type', 'system\TypeMobilityController@mobility_type');
-Route::get('/admin/mobility_type/edit_type/{id}', ['as' => 'edit_type', 'uses' => 'system\TypeMobilityController@mobilityTypeShowEdit']);
-Route::post('/admin/mobility_type/add_type/', ['as' => 'add_type', 'uses' => 'system\TypeMobilityController@addType']);
-Route::get('/admin/mobility_type/delete_type/{id}', ['as' => 'delete_type', 'uses' => 'system\TypeMobilityController@deleteType']);
-Route::post('/admin/mobility_type/edit_type/', ['as' => 'edit_type', 'uses' => 'system\TypeMobilityController@editType']);
 
 /*------Blog---------*/
 Route::get('/admin/blogs', 'system\BlogController@blog');
@@ -140,7 +113,7 @@ Route::post('/admin/blogs/change_blog_status', 'system\BlogController@changeBlog
 Route::get('/admin/universities', 'system\UniversityController@universities');
 Route::get('/admin/universities/edit_university/{id}', ['as' => 'edit_university_form', 'uses' => 'system\UniversityController@universityEditShow']);
 Route::get('/admin/universities/delete_university/{id}', ['as' => 'delete_university', 'uses' => 'system\UniversityController@deleteUniversity']);
-Route::get('/admin/universities/export', ['as' => 'exportUniversities', 'uses' => 'system\UniversityController@exportUniversities']);
+
 Route::post('/admin/universities/add_university/', ['as' => 'add_university', 'uses' => 'system\UniversityController@addUniversity']);
 Route::post('/admin/universities/edit_university/', ['as' => 'edit_university', 'uses' => 'system\UniversityController@editUniversity']);
 
@@ -153,17 +126,7 @@ Route::get('/admin/reviews/revert/{id}', ['as' => 'revert_image', 'uses' => 'sys
 /*------Images----------------*/
 Route::get('/admin/images', 'system\ImageController@images');
 
-/*------FAQ-------------------*/
-Route::get('/admin/faq', 'system\FaqController@faq');
-Route::get('/admin/faq/edit_faq/{id}', ['as' => 'edit_faq_form', 'uses' => 'system\FaqController@faqEditShow']);
-Route::post('/admin/faq/addFaq', 'system\FaqController@addFaq')->name('addFaq');
-Route::post('/admin/faq/editFaq', 'system\FaqController@editFaq')->name('editFaq');
-Route::get('/admin/faq/delete/{id}', 'system\FaqController@deleteFaq')->name('deleteFaq');
 
-/*------Office hour-----------*/
-Route::get('/admin/open_hours', 'system\OfficeHourController@office_hours');
-Route::get('/admin/open_hours/edit_hour/{id}', ['as' => 'edit_office_hour', 'uses' => 'system\OfficeHourController@office_hourEditShow']);
-Route::post('/admin/open_hours/edit_hour', 'system\OfficeHourController@editHours')->name('editHours');
 
 /*------Countries-------------*/
 Route::get('/admin/countries', 'system\CountryController@countries');
@@ -172,19 +135,73 @@ Route::get('/admin/countries/delete/{id}', 'system\CountryController@deleteCount
 Route::post('/admin/countries/add_country', 'system\CountryController@addCountry')->name('addCountry');
 Route::post('/admin/countries/edit_country', 'system\CountryController@editCountry')->name('editCountry');
 
-/*------Contacts-------------*/
-Route::get('/admin/contacts', 'system\ContactController@contacts');
-Route::get('/admin/contacts/edit_contact/{id}', ['as' => 'edit_contact', 'uses' => 'system\ContactController@contactsEditShow']);
-Route::post('/admin/contacts/add', 'system\ContactController@addContact')->name('addContact');
-Route::post('/admin/contacts/edit', 'system\ContactController@editContact')->name('editContact');
-Route::get('/admin/contacts/delete/{id}', 'system\ContactController@deleteContact')->name('deleteContact');
-
-
 /*------Admin profile-------------*/
 Route::get('/admin/my_profile', 'system\ProfileController@my_profile');
 Route::get('/admin/newsleter_state/{status}', 'system\ProfileController@newsletterChange');
 Route::post('/admin/change_password', 'system\ProfileController@changePassword')->name('changePassword');
 
+});
+
+Route::group(['middleware' => ['web','auth','administrator']], function () {
+    /*------User routes-------------*/
+    Route::get('/admin/users', 'system\UserController@users');
+    Route::get('/admin/users/edit_user/{id}', ['as' => 'edit_user_form', 'uses' => 'system\UserController@userEditShow']);
+    Route::post('/admin/users/add_user', 'system\UserController@addUser')->name('addUser');
+    Route::post('/admin/users/edit_user', 'system\UserController@editUser')->name('editUser');
+    Route::post('/admin/users/search', 'system\UserController@sortUsers')->name('searchUsersMain');
+    Route::get('/admin/users/delete/{id}', 'system\UserController@deleteUser')->name('deleteUser');
+    Route::get('/admin/users/detail/{id}', ['as' => 'user_detail', 'uses' => 'system\UserController@userDetail']);
+
+    /*------Roles-------------------*/
+    Route::get('/admin/roles', 'system\UserRoleController@roles');
+    Route::get('/admin/roles/edit_role/{id}', ['as' => 'edit_role_form', 'uses' => 'system\UserRoleController@userRoleEditShow']);
+    Route::post('/admin/roles/add_role', 'system\UserRoleController@addRole')->name('addRole');
+    Route::post('/admin/roles/edit_role', 'system\UserRoleController@editRole')->name('editRole');
+    Route::get('/admin/roles/delete/{id}', 'system\UserRoleController@deleteRole')->name('deleteRole');
+
+    /*------Mobility category-------*/
+    Route::get('/admin/mobilities_category', 'system\CategoryMobilityController@mobility_category');
+    Route::get('/admin/mobilities_category/edit_category/{id}', ['as' => 'edit_mobility', 'uses' => 'system\CategoryMobilityController@mobilityCategoryShow']);
+    Route::post('/admin/mobilities_category/add_category', 'system\CategoryMobilityController@addNewCategory');
+    Route::post('/admin/mobilities_category/edit_category', 'system\CategoryMobilityController@editCategory')->name('editCategory');
+    Route::get('/admin/mobilities_category/delete/{id}', 'system\CategoryMobilityController@deleteCategory')->name('deleteCategory');
+
+    /*------Mobility type---------*/
+    Route::get('/admin/mobility_type', 'system\TypeMobilityController@mobility_type');
+    Route::get('/admin/mobility_type/edit_type/{id}', ['as' => 'edit_type', 'uses' => 'system\TypeMobilityController@mobilityTypeShowEdit']);
+    Route::post('/admin/mobility_type/add_type/', ['as' => 'add_type', 'uses' => 'system\TypeMobilityController@addType']);
+    Route::get('/admin/mobility_type/delete_type/{id}', ['as' => 'delete_type', 'uses' => 'system\TypeMobilityController@deleteType']);
+    Route::post('/admin/mobility_type/edit_type/', ['as' => 'edit_type', 'uses' => 'system\TypeMobilityController@editType']);
+
+    /*------FAQ-------------------*/
+    Route::get('/admin/faq', 'system\FaqController@faq');
+    Route::get('/admin/faq/edit_faq/{id}', ['as' => 'edit_faq_form', 'uses' => 'system\FaqController@faqEditShow']);
+    Route::post('/admin/faq/addFaq', 'system\FaqController@addFaq')->name('addFaq');
+    Route::post('/admin/faq/editFaq', 'system\FaqController@editFaq')->name('editFaq');
+    Route::get('/admin/faq/delete/{id}', 'system\FaqController@deleteFaq')->name('deleteFaq');
+
+    /*------Office hour-----------*/
+    Route::get('/admin/open_hours', 'system\OfficeHourController@office_hours');
+    Route::get('/admin/open_hours/edit_hour/{id}', ['as' => 'edit_office_hour', 'uses' => 'system\OfficeHourController@office_hourEditShow']);
+    Route::post('/admin/open_hours/edit_hour', 'system\OfficeHourController@editHours')->name('editHours');
+
+    /*------Contacts-------------*/
+    Route::get('/admin/contacts', 'system\ContactController@contacts');
+    Route::get('/admin/contacts/edit_contact/{id}', ['as' => 'edit_contact', 'uses' => 'system\ContactController@contactsEditShow']);
+    Route::post('/admin/contacts/add', 'system\ContactController@addContact')->name('addContact');
+    Route::post('/admin/contacts/edit', 'system\ContactController@editContact')->name('editContact');
+    Route::get('/admin/contacts/delete/{id}', 'system\ContactController@deleteContact')->name('deleteContact');
+
+    /*------Season Export-------------*/
+    Route::get('/admin/season/detail/export/{id}', 'system\SeasonController@exportUserSeason')->name('exportUserSeason');
+    Route::get('/admin/universities/export', ['as' => 'exportUniversities', 'uses' => 'system\UniversityController@exportUniversities']);
+
+    /*------University Export-------------*/
+    Route::get('/admin/universities/export', ['as' => 'exportUniversities', 'uses' => 'system\UniversityController@exportUniversities']);
+});
+
+Route::group(['middleware' => ['web','auth','organizator']], function () {
+    Route::post('/admin/season/newsletter', 'system\SeasonController@sendNewsletter')->name('sendNewsletter');
 });
 
 //Auth routes
@@ -202,4 +219,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('pomoc/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
     Route::get('/pomoc/reset/{token}/{email}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
     Route::post('pomoc/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
+
+
 });
