@@ -39,7 +39,7 @@
                                 <th scope="col">Začiatok registrácie</th>
                                 <th scope="col">Koniec registrácie</th>
                                 <th scope="col">Limit študentov</th>
-                                <th scope="col">Limit registrácií</th>
+                                <th scope="col">Limit registrácií(-1=neobmedzene)</th>
                                 <th scope="col">Univerzita</th>
                                 <th scope="col" class="typ-season-head">Typ výzvy</th>
                                 <th scope="col">Kat. výzvy</th>
@@ -48,7 +48,6 @@
                             </tr>
                             </thead>
                             <thead>
-{{--                            @foreach($seasons as $season)--}}
                             <tr>
                                 <th>
                                     <input type="text" data-provide="datepicker" data-date-format="dd.mm.yyyy" id="fromInput" placeholder="Začiatok výzvy" class="form-control admin-form-input" autocomplete="off">
@@ -61,7 +60,7 @@
                                 </th>
                                 <th class="extend-limit-table-data">
                                     <input type="number" class="form-control admin-form-input" id="registrationLimitInput">
-                                    {{--                                    <input type="checkbox" class="form-control admin-form-input" value="-1" id="registrationLimitCheckbox">Off--}}
+                                    <input type="checkbox" class="form-control admin-form-input" value="-1" id="registrationLimitCheckbox">Off
                                 </th>
                                 <th></th>
                                 <th></th>
@@ -77,7 +76,6 @@
                                            class="form-control admin-form-input" id="to_mobility" autocomplete="off">
                                 </th>
                             </tr>
-{{--                                @endforeach--}}
                             </thead>
                             <tbody>
                             @foreach($seasons as $season)
@@ -101,7 +99,7 @@
                                     </td>
                                     <td class="extend-limit-table-data">
                                         <input type="number" class="form-control admin-form-input registration-limit" name="count_registrations[]">
-                                        {{--                                        <input type="checkbox" class="form-control admin-form-input unlimited-checkbox" value="-1">Off--}}
+                                        <input type="checkbox" class="form-control admin-form-input unlimited-checkbox" value="-1"  id="registrationLimitCheckbox">Off
                                     </td>
                                     <td>
                                         <div class="season-university">
@@ -152,19 +150,19 @@
             $('').val($("#registrationLimitInput").val());
         });
 
-        // $('#registrationLimitCheckbox').change(function () {
-        //     if ($('#registrationLimitCheckbox').is(":checked")) {
-        //         $('.unlimited-checkbox').attr("checked", true);
-        //         // $('.registration-limit').hide();
-        //         $('.registration-limit').val(5);
-        //         // $('#registrationLimitInput').hide();
-        //     } else {
-        //         $('.unlimited-checkbox').attr("checked", false);
-        //         $('.registration-limit').show();
-        //         $('#registrationLimitInput').show();
-        //         $('.registration-limit').val(null);
-        //     }
-        // });
+        $('#registrationLimitCheckbox').change(function () {
+            if ($('#registrationLimitCheckbox').is(":checked")) {
+                $('.unlimited-checkbox').attr("checked", true);
+                $('.registration-limit').hide();
+                $('.registration-limit').val();
+                $('#registrationLimitInput').hide();
+            } else {
+                $('.unlimited-checkbox').attr("checked", false);
+                $('.registration-limit').show();
+                $('#registrationLimitInput').show();
+                $('.registration-limit').val(null);
+            }
+        });
 
         $("#from_mobility").change(function () {
             $('.from-mobility').val($("#from_mobility").val());
