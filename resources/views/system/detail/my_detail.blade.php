@@ -49,13 +49,13 @@
                             </div>
                         @endif
                         <input type="password" class="form-control admin-form-input" id="myProfilePassNow"
-                               name="actual_password" placeholder="Aktuálne heslo">
+                               name="actual_password" placeholder="Aktuálne heslo" required>
                         <input type="password" class="form-control admin-form-input" id="myProfilePassNew"
                                name="password"
-                               placeholder="Nové heslo">
+                               placeholder="Nové heslo" required>
                         <input type="password" class="form-control admin-form-input" id="myProfilePassNewValidation"
                                name="password_confirmation" placeholder="Zopakovať heslo">
-                        <div class="my-profile-confirm-div">
+                        <div class="my-profile-confirm-div" required>
 
                             <button type="submit" class="btn btn-outline-primary" id="myProfileChangePass">Zmeniť
                                 heslo

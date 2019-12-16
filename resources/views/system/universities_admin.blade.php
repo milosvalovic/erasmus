@@ -116,7 +116,7 @@
                     <div class="form-group">
                         <label for="addNewUniversityInfo">Info:</label>
                         <textarea type="text" class="form-control admin-form-input" id="addNewUniversityInfo"
-                                  placeholder="Najlepšia univerzita, ktorú môže človek navštevovať, jupí. Nenávidím matematiku"
+                                  placeholder="Informácie o škole"
                                   name="info" required></textarea>
                     </div>
                     <div class="form-group">

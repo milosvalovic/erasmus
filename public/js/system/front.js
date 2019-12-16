@@ -37,7 +37,7 @@ $(document).ready(function () {
             state = 0;
 
         $.ajax({
-            url: '/public/admin/newsleter_state/' + state,
+            url: '/admin/newsleter_state/' + state,
             type: "get",
             dataType: 'json',
             success: function (result) {
@@ -211,7 +211,7 @@ loadUsersData();
 
 function loadUsersData() {
     $.ajax({
-        url: "/public/admin/users/search",
+        url: "/admin/users/search",
         type: "POST",
         dataType: 'json',
         data: $("#userSearchForm").serialize(),
@@ -242,8 +242,8 @@ function setUsersTable(res) {
         $("#main_users_table > tbody:last-child").append(
             "<tr>"
             + "<td>" + element.ID + "</td>"
-            + "<td><a class=\"admin-blog-table\" href = \"" + "/public/admin/users/detail/" + element.ID + "\" >" + element.first_name + "</a></td>"
-            + "<td><a class=\"admin-blog-table\" href = \"" + "/public/admin/users/detail/" + element.ID + "\" >" + element.last_name + "</a></td>"
+            + "<td><a class=\"admin-blog-table\" href = \"" + "/admin/users/detail/" + element.ID + "\" >" + element.first_name + "</a></td>"
+            + "<td><a class=\"admin-blog-table\" href = \"" + "/admin/users/detail/" + element.ID + "\" >" + element.last_name + "</a></td>"
             + "<td>" + element.email + "</td>"
             + "<td>" + element.roles.name + "</td>"
             + "<th scope=\"row\">" +

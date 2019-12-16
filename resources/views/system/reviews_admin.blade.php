@@ -51,7 +51,7 @@
                     </tbody>
                 </table>
                 <nav class="admin-users-pagination">
-{{--                    {{reviews->links()}}--}}
+                    {{$reviews->links()}}
                 </nav>
             </div>
         </div>

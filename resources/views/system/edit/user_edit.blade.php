@@ -43,7 +43,7 @@
                                name="email" value="{{$user->email}}">
                     </div>
                     <div class="form-group">
-                        <label for="addNewUniversityCountry">Krajina:</label>
+                        <label for="addNewUniversityCountry">Rola:</label>
                         <select name="role_id" class="form-control admin-form-input" required>
                             @foreach($roles as $role)
                                 <option value="{{$role->id}}" @if($role->id == $user->roles_ID) selected="selected" @endif >{{$role->name}}</option>

@@ -6,7 +6,7 @@
 
         <div class="admin-title">
             <div class="admin-title-text">
-                <h1>Detail sezóny</h1>
+                <h1>Detail výzvy</h1>
             </div>
             <div class="admin-title-user">
                 <p>
@@ -21,7 +21,7 @@
         <div class="admin-content">
             <div class="admin-blogs-table">
                 <div class="admin-blogs-title">
-                    <h2>Pridanie použivateľa na sezónu</h2>
+                    <h2>Prihlásenie použivateľa na výzvu</h2>
                 </div>
                 <div class="admin-blogs-title">
                     <form class="form-inline" id="searchForm">
@@ -60,7 +60,7 @@
                         {{--@if(Auth::user()->roles_ID == 3)--}}
                             {{--<a href="{{route('exportUserSeason',['id'=>$season_ID])}}">--}}
                                 {{--<button type="button" class="btn btn-outline-primary">--}}
-                                    {{--Exportovať aktuálne sezóny--}}
+                                    {{--Exportovať aktuálne výzvy--}}
                                 {{--</button>--}}
                             {{--</a>--}}
                         {{--@endif--}}
@@ -192,7 +192,7 @@
                     + "<input type=\"hidden\" name=\"season_id\" value=\"" + season_ID + "\">"
                     + "<input type=\"hidden\" name=\"_token\" value=\"" + "{{csrf_token()}}" + "\">"
                     + "<input type=\"hidden\" name=\"user_id\" value=\"" + element.ID + "\">"
-                    + "<button type=\"submit\" class=\"btn btn-outline-primary\">Pridať</button>"
+                    + "<button type=\"submit\" class=\"btn btn-outline-primary\">Prihlásiť</button>"
                     + "</form></th>"
                     + "</tr>")
             });
