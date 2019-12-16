@@ -17,7 +17,7 @@ class UserController extends Controller
 {
     public function system()
     {
-        return view('system.welcome_admin');
+        return view('');
     }
 
     public function users()
@@ -33,8 +33,8 @@ class UserController extends Controller
         $term = $request->input('term');
         $role = $request->input('role');
         $page = $request->input('page');
-        DB::enableQueryLog();
         $users = User::with('roles')
+
             ->when($term, function ($query) use ($term) {
                 $query->where(function ($query) use ($term) {
                     $query->orWhere("email", "LIKE", "%" . $term . "%")
@@ -50,12 +50,19 @@ class UserController extends Controller
             ->get();
 
         $count = User::with('roles')
-            ->orWhere("email", "LIKE", "%" . $term . "%")
-            ->orWhere("first_name", "LIKE", "%" . $term . "%")
-            ->orWhere("last_name", "LIKE", "%" . $term . "%")
+
+            ->when($term, function ($query) use ($term) {
+                $query->where(function ($query) use ($term) {
+                    $query->orWhere("email", "LIKE", "%" . $term . "%")
+                        ->orWhere("first_name", "LIKE", "%" . $term . "%")
+                        ->orWhere("last_name", "LIKE", "%" . $term . "%");
+                });
+            })
             ->when($role, function ($query) use ($role) {
                 $query->where('roles_ID', '=', $role);
-            })->count();
+            })
+            ->skip($page * 15)
+            ->take(15)->count();
 
         $result = ['count' => $count, 'data' => $users];
 

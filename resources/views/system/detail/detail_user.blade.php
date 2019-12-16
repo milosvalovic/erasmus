@@ -47,7 +47,11 @@
                             <td>{{$season->season->mobility->university->name . ' | ' . $season->season->mobility->mobility_type->name . ' | ' . $season->season->mobility->category->name}}</td>
                             <td>{{date("d.m.Y", strtotime($season->season->date_start_mobility))}}</td>
                             <td>{{date("d.m.Y", strtotime($season->season->date_end_mobility))}}</td>
+                            @if($season->status_season!=null)
                             <td><span class="user-detail-mobility-state-cell">{{$season->status_season[0]->season_status->name}}</span></td>
+                            @else
+                                <td><span class="user-detail-mobility-state-cell">-</span></td>
+                            @endif
                         </tr>
                     @endforeach
                     </tbody>

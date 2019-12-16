@@ -29,7 +29,7 @@ class User extends Authenticatable
 
     public function roles()
     {
-        return $this->belongsTo(Role::class,'roles_ID','ID');
+        return $this->belongsTo('App\Models\Role','roles_ID','id');
     }
 
     public function blog()
