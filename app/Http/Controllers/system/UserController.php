@@ -124,6 +124,10 @@ class UserController extends Controller
         $user->last_name = $request->input('last_name');
         $user->email = $request->input('email');
         $user->roles_ID = $request->input('role_id');
+        if ($request->input('verified') == null)
+            $user->verified = 0;
+        else
+            $user->verified = 1;
         $user->save();
 
         return redirect('/admin/users/');

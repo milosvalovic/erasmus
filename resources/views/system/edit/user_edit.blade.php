@@ -52,6 +52,22 @@
 
                     </div>
 
+                    <div class="form-group">
+                        <label for="editUserEmail">Email:</label>
+                        <input type="text" class="form-control admin-form-input" id="editUserEmail" placeholder="filip.d@gmail.com"
+
+                               name="email" value="{{$user->email}}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="editUserActive">Učet aktívny:</label>
+
+                        <label class="switch">
+                            <input type="checkbox" name="verified" id="editUserActive" @if($user->verified==1) checked @endif>
+                            <span class="slider round" ></span>
+                        </label>
+                    </div>
+
                     <div class="form-group-button">
                         <button type="submit" class="btn btn-outline-primary btn-add">Uložiť</button>
                     </div>
