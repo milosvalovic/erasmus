@@ -59,7 +59,7 @@
                                name="email" value="{{$user->email}}">
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group admin-switch-div" id="to_input">
                         <label for="editUserActive">Učet aktívny:</label>
 
                         <label class="switch">
